@@ -18,1487 +18,6 @@
       "minimumMultiplicity": "0",
       "maximumMultiplicity": "1",
       "mro": "R",
-      "name": "About me",
-      "description": "About me",
-      "items": [
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "*",
-          "mro": "R",
-          "name": "GP practice record entry",
-          "description": "This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "GP name",
-              "description": "The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "70"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "GP practice details",
-              "description": "Name and address of the person's registered GP practice Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text",
-                  "property": [
-                    {
-                      "maxLength": "150"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "1",
-              "maximumMultiplicity": "1",
-              "mro": "M",
-              "name": "GP practice identifier",
-              "description": "The identifier of the registered GP practice.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "General medical practice code (patient registration)",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "6"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "1",
-          "maximumMultiplicity": "1",
-          "mro": "M",
-          "name": "Person demographics",
-          "implementationGuidance": "",
-          "description": "The person's details and contact information.",
-          "items": [
-            {
-              "type": "group",
-              "minimumMultiplicity": "1",
-              "maximumMultiplicity": "1",
-              "mro": "M",
-              "name": "Person name",
-              "description": "Details of the person's name",
-              "items": [
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "1",
-                  "maximumMultiplicity": "*",
-                  "mro": "M",
-                  "name": "Person first name",
-                  "description": "The first name(s) of the person. This includes middle names.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Person given name",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "1",
-                  "maximumMultiplicity": "*",
-                  "mro": "M",
-                  "name": "Person family name",
-                  "description": "The family name or surname of the person",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Person family name",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/person_family_name.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Person preferred name",
-                  "description": "The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Person full name",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "70"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Title",
-                  "description": "Person's title",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Person title",
-                      "expression": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "*",
-                  "mro": "R",
-                  "name": "Person name suffix",
-                  "description": "A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Person suffix",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/person_name_suffix.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Person full name",
-                  "description": "The full name of the person in text representation.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Patient full name",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "70"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "1",
-              "maximumMultiplicity": "1",
-              "mro": "M",
-              "name": "Date of birth",
-              "description": "The date of birth of the person.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person birth date",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/person_birth_date.html?hl=person%2Cbirth%2Cdate",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "date",
-                  "property": [
-                    {
-                      "timeStampPrecision": "YMD!"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Gender",
-              "description": "The person's stated gender.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person stated gender code",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/person_stated_gender_code.html?hl=person%2Cstated%2Cgender%2Ccode",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Ethnicity",
-              "description": "The ethnicity of the person as specified by the person.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Ethnic category",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/ethnic_category.html",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Religion",
-              "description": "The religious affiliation as specified by the person.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Religion",
-                  "expression": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000531000000100&edition=uk-edition&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
-                  "popUpText": ""
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "name": "Sex",
-              "description": "The person\u2019s phenotypic sex. Determines how the person will be treated clinically.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "person phenotypic sex",
-                  "expression": "https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "NHS number",
-              "description": "The unique identifier for a person within the NHS in England and Wales.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "NHS number",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/nhs_number.html",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "10"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "NHS number status indicator",
-              "description": "Provides an indication of the reliability of an NHS Number.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "NHS number status indicator",
-                  "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/n/nhs/nhs_number_status_indicator_code_de.asp?shownav=1",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "*",
-              "mro": "R",
-              "name": "Other identifier",
-              "description": "Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Local patient identifier(extended)",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
-                  "popUpText": ", <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>,\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a>\u00a0(Scotland only)</div>"
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "20"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "group",
-              "minimumMultiplicity": "1",
-              "maximumMultiplicity": "*",
-              "mro": "M",
-              "name": "Person's address",
-              "description": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
-              "items": [
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "1",
-                  "maximumMultiplicity": "1",
-                  "mro": "M",
-                  "name": "Address line 1",
-                  "description": "Person's first line of address.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address line 1",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Address line 2",
-                  "description": "Person's second line of address.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address line 2",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Address line 3",
-                  "description": "Person's third line of address.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address line 3",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Address line 4",
-                  "description": "Person's fourth line of address.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address line 4",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Address line 5",
-                  "description": "Person's fifth line of address.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address line 5",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "35"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Postcode",
-                  "description": "The person's postcode.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Postcode of usual address",
-                      "expression": "https://datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "8"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Address type",
-                  "description": "The type of address e.g. Main address, Temp address",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Address association type",
-                      "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/a/add/address_association_type_de.asp?shownav=1",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "1"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "group",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Person's contact details",
-              "description": "Details of the person's contact information.",
-              "items": [
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Preferred contact method",
-                  "description": "Preferred contact method, e.g. email, letter, phone, text message etc.",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Communication contact method",
-                      "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/com/communication_contact_method_de.asp?shownav=1",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "1"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "group",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "*",
-                  "mro": "R",
-                  "name": "Person's telephone number details",
-                  "description": "The person's telephone number details",
-                  "items": [
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Person's telephone number",
-                      "description": "The person's telephone number",
-                      "valueSets": [
-                        {
-                          "prefix": "NHS_DD",
-                          "use": "EXAM",
-                          "text": "UK telephone number",
-                          "expression": "https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html",
-                          "popUpText": ""
-                        }
-                      ],
-                      "valueDomain": [
-                        {
-                          "type": "string",
-                          "property": [
-                            {
-                              "maxLength": "35"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Person's telephone number type",
-                      "description": "The contact type e.g. home, mobile",
-                      "valueSets": [
-                        {
-                          "prefix": "FHIR",
-                          "use": "EXAM",
-                          "text": "Contact point use",
-                          "expression": "http://hl7.org/fhir/stu3/codesystem-contact-point-use.html",
-                          "popUpText": ""
-                        }
-                      ],
-                      "valueDomain": [
-                        {
-                          "type": "string",
-                          "property": [
-                            {
-                              "maxLength": "6"
-                            }
-                          ],
-                          "example": [
-                            {
-                              "type": "valid",
-                              "#text": "Home"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "Mobile"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "Temp"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "Old"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "Work"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Preference of telephone number",
-                      "description": "The preferred order of use for the telephone number",
-                      "valueSets": [
-                        {
-                          "prefix": "PPPP",
-                          "use": "EXAM",
-                          "text": "Preference of use 1-5, 1 being the highest.",
-                          "expression": "",
-                          "popUpText": ""
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "group",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "*",
-                  "mro": "R",
-                  "name": "Person's email address details",
-                  "description": "Details of the person's email address",
-                  "items": [
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Person's email address",
-                      "description": "Email address of the person.",
-                      "valueSets": [
-                        {
-                          "prefix": "NHS_DD",
-                          "use": "EXAM",
-                          "text": "NHS data dictionary :- Contact email address",
-                          "expression": "",
-                          "popUpText": ""
-                        }
-                      ],
-                      "valueDomain": [
-                        {
-                          "type": "string",
-                          "property": [
-                            {
-                              "maxLength": "255"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Person's email address type",
-                      "description": "The type of email address, home, work",
-                      "valueSets": [
-                        {
-                          "prefix": "FHIR",
-                          "use": "EXAM",
-                          "text": "Contact point use",
-                          "expression": "http://hl7.org/fhir/stu3/codesystem-contact-point-use.html",
-                          "popUpText": ""
-                        }
-                      ],
-                      "valueDomain": [
-                        {
-                          "type": "string",
-                          "property": [
-                            {
-                              "maxLength": "6"
-                            }
-                          ],
-                          "example": [
-                            {
-                              "type": "valid",
-                              "#text": "Home"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "Work"
-                            },
-                            {
-                              "type": "valid",
-                              "#text": "old"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "item",
-                      "minimumMultiplicity": "0",
-                      "maximumMultiplicity": "1",
-                      "mro": "R",
-                      "name": "Preference of email address",
-                      "description": "The preferred order of use of email address",
-                      "valueSets": [
-                        {
-                          "prefix": "PPPP",
-                          "use": "EXAM",
-                          "text": "Preference of use 1-5, 1 being the highest.",
-                          "expression": "",
-                          "popUpText": ""
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Other contact information",
-                  "description": "Contact details via fax, sms, url",
-                  "valueSets": [
-                    {
-                      "prefix": "NHS_DD",
-                      "use": "EXAM",
-                      "text": "Communication contact string",
-                      "expression": "https://datadictionary.nhs.uk/attributes/communication_contact_string.html",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "string",
-                      "property": [
-                        {
-                          "maxLength": "255"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Photograph",
-              "description": "A photograph of the person for identification and to show what the person looks like normally.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Mulitmedia file",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "identifier"
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "name": "Place of birth",
-              "description": "The country of birth of the person.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Country code (birth)",
-                  "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/cou/country_code_de.asp?shownav=1",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "name": "Marital status",
-              "description": "An indicator to identify the legal marital status of the person.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person marital status",
-                  "expression": "https://www.datadictionary.nhs.uk/data_elements/person_marital_status.html?hl=marital%2Cstatus",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "group",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Immigration status",
-              "description": "Include details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK. Include start date, end date and any comments.",
-              "items": [
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Immigration status",
-                  "description": "Details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK.",
-                  "valueSets": [
-                    {
-                      "prefix": "PPPP",
-                      "use": "EXAM",
-                      "text": "Code :- 1: Asylum Seeker; 2: Exceptional leave to remain in UK; 3: Indefinite Leave to Remain in UK ;4: Limited Leave to Remain in UK; 5: No Recourse to Public Funds (NRPF); 6: Other Nationals; 7: Refugee; 8: Unaccompanied Asylum Seeker; 9 EU pre-settled status; 10: EU settled status",
-                      "expression": "",
-                      "popUpText": ""
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Start date",
-                  "description": "Start date of immigration status",
-                  "valueSets": [
-                    {
-                      "prefix": "PPPP",
-                      "use": "EXAM",
-                      "text": "Date and time",
-                      "expression": "",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "datetime",
-                      "property": [
-                        {
-                          "timeStampPrecision": "YMDHM"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "End date",
-                  "description": "End date of immigration status",
-                  "valueSets": [
-                    {
-                      "prefix": "PPPP",
-                      "use": "EXAM",
-                      "text": "Date and time",
-                      "expression": "",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "datetime",
-                      "property": [
-                        {
-                          "timeStampPrecision": "YMDHM"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "item",
-                  "minimumMultiplicity": "0",
-                  "maximumMultiplicity": "1",
-                  "mro": "R",
-                  "name": "Comment",
-                  "description": "Relevant comments about the person's immigration status",
-                  "valueSets": [
-                    {
-                      "prefix": "PPPP",
-                      "use": "EXAM",
-                      "text": "Free text",
-                      "expression": "",
-                      "popUpText": ""
-                    }
-                  ],
-                  "valueDomain": [
-                    {
-                      "type": "text",
-                      "property": [
-                        {
-                          "maxLength": "150"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Organ and tissue donation",
-              "description": "Whether the person has given consent for organ and/or tissue donation or opted out of automatic donation where applicable. This is information provided by the national register.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Flag: - Yes or No",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "boolean"
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Overseas visitor status",
-              "description": "The charging category relating to an overseas visitor.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Overseas visitor charging catergory",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/overseas_visitor_charging_category.html",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "1"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "What is most important to me",
-          "description": "A description of what is most important to you. <br clear=\"none\"/> \n                ",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "What is most important to me",
-              "description": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">A description of what is most important to you\u00a0<br clear=\"none\"/>\n                        </span> \n                         <b>Emergency Information : -</b> \u00a0Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. <br clear=\"none\"/> \n                         <span style=\"font-weight: bold;\">Other Information : -</span> This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "People who are important to me",
-          "description": "Details of who is important to you and why.\u00a0",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "People who are important to me",
-              "description": "Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "How I communicate and how to communicate with me",
-          "description": "A description of how you communicate normally.\u00a0",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "How I communicate and how to communicate with me",
-              "description": "\n                         <p>A description of how you communicate normally including any communication aids you use, for example a hearing aid.</p> \n                         <ul>\n                            <li>Include your preferred language of communication, if your first language is not English.</li>\n                            <li>Include how you would communicate when you are in pain or distress.</li>\n                            <li>Include how you communicate choices.</li>\n                            <li>Include how you give feedback or raise a concern.</li>\n                            <li>Include how you like to receive information</li>\n                        </ul> \n                         <p>Describe how you would like others to engage and communicate with you, including how you would like to be addressed.</p> \n                    ",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "My wellness",
-          "description": "A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell.",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "My wellness",
-              "description": "\n                         <div>\n                            <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; max-width: 100%;\">\n                                <tbody>\n                                    <tr>\n                                        <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                            <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                    <p style=\"margin: 0px 0px 10px;\">A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell</p>\n                                                </div>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div> \n                         <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                <p style=\"margin: 0px 0px 10px;\">\n                                                    <ul>\n                                                        <li>Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation.</li>\n                                                        <li>Include any signs that indicate you might be becoming unwell.</li>\n                                                        <li>On a bad day describe what is different about what you are able to do, how you engage with others and how you feel.</li>\n                                                        <li>Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions.</li>\n                                                        <li>Include past health issues or experiences that need to be considered</li>\n                                                        <li>Include your wellbeing and lifestyle goals and aspirations</li>\n                                                    </ul>\n                                                </p>\n                                            </div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                         <ul/> \n                    ",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "Please do and please don't",
-          "description": "A description of things you want someone supporting you to do (or not to do).\u00a0",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Please do and please don't",
-              "description": "A description of things you want someone supporting you to do (or not to do). <br clear=\"none\"/> Things you want someone to\u00a0 <b>do\u00a0</b> might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. <br clear=\"none\"/> A description of things you\u00a0 <b>do not</b> \u00a0want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "How and when to support me",
-          "description": "A description of how and when you want someone caring for you to support you.",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "How and when to support me",
-              "description": "\n                         <p>A description of how and when you want someone caring for you to support you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include support needs in an emergency situation (for example taking blood)</li>\n                                <li>This could include support you need to maintain important routines or to carry out particular activities, for example: - Personal care routines, Eating and drinking, Bedtime routines, Taking medications, Moving and transitioning</li>\n                                <li>This could also include support needed with:- wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion.</li>\n                                <li>Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.</li>\n                            </ul>\n                        </p> \n                         <p/> \n                    ",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "Also worth knowing about me",
-          "description": "A description of what is also worth knowing about you for people caring or supporting you.\u00a0",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "Also worth knowing about me",
-              "description": "\n                         <p>A description of what is also worth knowing about you for people caring or supporting you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life).</li>\n                                <li>This could include a short profile of your current life:- your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike</li>\n                                <li>This could also include any care and support preferences that have not been included elsewhere.</li>\n                            </ul>\n                        </p> \n                    ",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "Date",
-          "description": "This is a record of the date that this information was last updated.",
-          "valueSets": [
-            {
-              "prefix": "PPPP",
-              "use": "EXAM",
-              "text": "Date and Time",
-              "expression": "",
-              "popUpText": ""
-            }
-          ],
-          "valueDomain": [
-            {
-              "type": "datetime",
-              "property": [
-                {
-                  "timeStampPrecision": "YMDHM"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "Supported to write this by",
-          "description": "Where relevant, this is a record of name, relationship/role and contact details of the individual who supported the person to write this section e.g. carer, family member, advocate, professional.",
-          "valueSets": [
-            {
-              "prefix": "PPPP",
-              "use": "EXAM",
-              "text": "Free text",
-              "expression": "",
-              "popUpText": ""
-            }
-          ],
-          "valueDomain": [
-            {
-              "type": "text",
-              "property": [
-                {
-                  "maxLength": "150"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "1",
-          "mro": "R",
-          "name": "Location to multimedia file",
-          "description": "The link to the person's multimedia file",
-          "valueSets": [
-            {
-              "prefix": "PPPP",
-              "use": "EXAM",
-              "text": "Link to URL",
-              "expression": "",
-              "popUpText": ""
-            }
-          ],
-          "valueDomain": [
-            {
-              "type": "text"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "minimumMultiplicity": "0",
-      "maximumMultiplicity": "1",
-      "mro": "R",
       "name": "Individual requirements",
       "description": "The individual requirements of the person.",
       "items": [
@@ -4190,6 +2709,1487 @@
       "name": "Alerts",
       "description": "Details of alerts.",
       "items": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "About me",
+          "description": "About me",
+          "items": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "GP practice record entry",
+              "description": "This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "GP name",
+                  "description": "The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "70"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "GP practice details",
+                  "description": "Name and address of the person's registered GP practice Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [
+                        {
+                          "maxLength": "150"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "GP practice identifier",
+                  "description": "The identifier of the registered GP practice.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "General medical practice code (patient registration)",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Person demographics",
+              "implementationGuidance": "",
+              "description": "The person's details and contact information.",
+              "items": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Person name",
+                  "description": "Details of the person's name",
+                  "items": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "1",
+                      "maximumMultiplicity": "*",
+                      "mro": "M",
+                      "name": "Person first name",
+                      "description": "The first name(s) of the person. This includes middle names.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Person given name",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "1",
+                      "maximumMultiplicity": "*",
+                      "mro": "M",
+                      "name": "Person family name",
+                      "description": "The family name or surname of the person",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Person family name",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/person_family_name.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person preferred name",
+                      "description": "The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Person full name",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "70"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Title",
+                      "description": "Person's title",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Person title",
+                          "expression": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Person name suffix",
+                      "description": "A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Person suffix",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/person_name_suffix.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person full name",
+                      "description": "The full name of the person in text representation.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Patient full name",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "70"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Date of birth",
+                  "description": "The date of birth of the person.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Person birth date",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/person_birth_date.html?hl=person%2Cbirth%2Cdate",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "date",
+                      "property": [
+                        {
+                          "timeStampPrecision": "YMD!"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Gender",
+                  "description": "The person's stated gender.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Person stated gender code",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/person_stated_gender_code.html?hl=person%2Cstated%2Cgender%2Ccode",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Ethnicity",
+                  "description": "The ethnicity of the person as specified by the person.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Ethnic category",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/ethnic_category.html",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Religion",
+                  "description": "The religious affiliation as specified by the person.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Religion",
+                      "expression": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000531000000100&edition=uk-edition&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+                      "popUpText": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Sex",
+                  "description": "The person\u2019s phenotypic sex. Determines how the person will be treated clinically.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "person phenotypic sex",
+                      "expression": "https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "NHS number",
+                  "description": "The unique identifier for a person within the NHS in England and Wales.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "NHS number",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/nhs_number.html",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "10"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "NHS number status indicator",
+                  "description": "Provides an indication of the reliability of an NHS Number.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "NHS number status indicator",
+                      "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/n/nhs/nhs_number_status_indicator_code_de.asp?shownav=1",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Other identifier",
+                  "description": "Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Local patient identifier(extended)",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
+                      "popUpText": ", <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>,\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a>\u00a0(Scotland only)</div>"
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "20"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "*",
+                  "mro": "M",
+                  "name": "Person's address",
+                  "description": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
+                  "items": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "1",
+                      "maximumMultiplicity": "1",
+                      "mro": "M",
+                      "name": "Address line 1",
+                      "description": "Person's first line of address.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address line 1",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Address line 2",
+                      "description": "Person's second line of address.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address line 2",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Address line 3",
+                      "description": "Person's third line of address.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address line 3",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Address line 4",
+                      "description": "Person's fourth line of address.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address line 4",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Address line 5",
+                      "description": "Person's fifth line of address.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address line 5",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "35"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Postcode",
+                      "description": "The person's postcode.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Postcode of usual address",
+                          "expression": "https://datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Address type",
+                      "description": "The type of address e.g. Main address, Temp address",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Address association type",
+                          "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/a/add/address_association_type_de.asp?shownav=1",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person's contact details",
+                  "description": "Details of the person's contact information.",
+                  "items": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Preferred contact method",
+                      "description": "Preferred contact method, e.g. email, letter, phone, text message etc.",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Communication contact method",
+                          "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/com/communication_contact_method_de.asp?shownav=1",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Person's telephone number details",
+                      "description": "The person's telephone number details",
+                      "items": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Person's telephone number",
+                          "description": "The person's telephone number",
+                          "valueSets": [
+                            {
+                              "prefix": "NHS_DD",
+                              "use": "EXAM",
+                              "text": "UK telephone number",
+                              "expression": "https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html",
+                              "popUpText": ""
+                            }
+                          ],
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [
+                                {
+                                  "maxLength": "35"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Person's telephone number type",
+                          "description": "The contact type e.g. home, mobile",
+                          "valueSets": [
+                            {
+                              "prefix": "FHIR",
+                              "use": "EXAM",
+                              "text": "Contact point use",
+                              "expression": "http://hl7.org/fhir/stu3/codesystem-contact-point-use.html",
+                              "popUpText": ""
+                            }
+                          ],
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [
+                                {
+                                  "maxLength": "6"
+                                }
+                              ],
+                              "example": [
+                                {
+                                  "type": "valid",
+                                  "#text": "Home"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "Mobile"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "Temp"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "Old"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "Work"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Preference of telephone number",
+                          "description": "The preferred order of use for the telephone number",
+                          "valueSets": [
+                            {
+                              "prefix": "PPPP",
+                              "use": "EXAM",
+                              "text": "Preference of use 1-5, 1 being the highest.",
+                              "expression": "",
+                              "popUpText": ""
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Person's email address details",
+                      "description": "Details of the person's email address",
+                      "items": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Person's email address",
+                          "description": "Email address of the person.",
+                          "valueSets": [
+                            {
+                              "prefix": "NHS_DD",
+                              "use": "EXAM",
+                              "text": "NHS data dictionary :- Contact email address",
+                              "expression": "",
+                              "popUpText": ""
+                            }
+                          ],
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [
+                                {
+                                  "maxLength": "255"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Person's email address type",
+                          "description": "The type of email address, home, work",
+                          "valueSets": [
+                            {
+                              "prefix": "FHIR",
+                              "use": "EXAM",
+                              "text": "Contact point use",
+                              "expression": "http://hl7.org/fhir/stu3/codesystem-contact-point-use.html",
+                              "popUpText": ""
+                            }
+                          ],
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [
+                                {
+                                  "maxLength": "6"
+                                }
+                              ],
+                              "example": [
+                                {
+                                  "type": "valid",
+                                  "#text": "Home"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "Work"
+                                },
+                                {
+                                  "type": "valid",
+                                  "#text": "old"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Preference of email address",
+                          "description": "The preferred order of use of email address",
+                          "valueSets": [
+                            {
+                              "prefix": "PPPP",
+                              "use": "EXAM",
+                              "text": "Preference of use 1-5, 1 being the highest.",
+                              "expression": "",
+                              "popUpText": ""
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Other contact information",
+                      "description": "Contact details via fax, sms, url",
+                      "valueSets": [
+                        {
+                          "prefix": "NHS_DD",
+                          "use": "EXAM",
+                          "text": "Communication contact string",
+                          "expression": "https://datadictionary.nhs.uk/attributes/communication_contact_string.html",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "maxLength": "255"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Photograph",
+                  "description": "A photograph of the person for identification and to show what the person looks like normally.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Mulitmedia file",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "identifier"
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Place of birth",
+                  "description": "The country of birth of the person.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Country code (birth)",
+                      "expression": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/cou/country_code_de.asp?shownav=1",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Marital status",
+                  "description": "An indicator to identify the legal marital status of the person.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Person marital status",
+                      "expression": "https://www.datadictionary.nhs.uk/data_elements/person_marital_status.html?hl=marital%2Cstatus",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Immigration status",
+                  "description": "Include details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK. Include start date, end date and any comments.",
+                  "items": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Immigration status",
+                      "description": "Details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK.",
+                      "valueSets": [
+                        {
+                          "prefix": "PPPP",
+                          "use": "EXAM",
+                          "text": "Code :- 1: Asylum Seeker; 2: Exceptional leave to remain in UK; 3: Indefinite Leave to Remain in UK ;4: Limited Leave to Remain in UK; 5: No Recourse to Public Funds (NRPF); 6: Other Nationals; 7: Refugee; 8: Unaccompanied Asylum Seeker; 9 EU pre-settled status; 10: EU settled status",
+                          "expression": "",
+                          "popUpText": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Start date",
+                      "description": "Start date of immigration status",
+                      "valueSets": [
+                        {
+                          "prefix": "PPPP",
+                          "use": "EXAM",
+                          "text": "Date and time",
+                          "expression": "",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "datetime",
+                          "property": [
+                            {
+                              "timeStampPrecision": "YMDHM"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "End date",
+                      "description": "End date of immigration status",
+                      "valueSets": [
+                        {
+                          "prefix": "PPPP",
+                          "use": "EXAM",
+                          "text": "Date and time",
+                          "expression": "",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "datetime",
+                          "property": [
+                            {
+                              "timeStampPrecision": "YMDHM"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Comment",
+                      "description": "Relevant comments about the person's immigration status",
+                      "valueSets": [
+                        {
+                          "prefix": "PPPP",
+                          "use": "EXAM",
+                          "text": "Free text",
+                          "expression": "",
+                          "popUpText": ""
+                        }
+                      ],
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [
+                            {
+                              "maxLength": "150"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organ and tissue donation",
+                  "description": "Whether the person has given consent for organ and/or tissue donation or opted out of automatic donation where applicable. This is information provided by the national register.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Flag: - Yes or No",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Overseas visitor status",
+                  "description": "The charging category relating to an overseas visitor.",
+                  "valueSets": [
+                    {
+                      "prefix": "NHS_DD",
+                      "use": "EXAM",
+                      "text": "Overseas visitor charging catergory",
+                      "expression": "https://datadictionary.nhs.uk/data_elements/overseas_visitor_charging_category.html",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "maxLength": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "What is most important to me",
+              "description": "A description of what is most important to you. <br clear=\"none\"/> \n                ",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "What is most important to me",
+                  "description": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">A description of what is most important to you\u00a0<br clear=\"none\"/>\n                        </span> \n                         <b>Emergency Information : -</b> \u00a0Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. <br clear=\"none\"/> \n                         <span style=\"font-weight: bold;\">Other Information : -</span> This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "People who are important to me",
+              "description": "Details of who is important to you and why.\u00a0",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "People who are important to me",
+                  "description": "Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "How I communicate and how to communicate with me",
+              "description": "A description of how you communicate normally.\u00a0",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "How I communicate and how to communicate with me",
+                  "description": "\n                         <p>A description of how you communicate normally including any communication aids you use, for example a hearing aid.</p> \n                         <ul>\n                            <li>Include your preferred language of communication, if your first language is not English.</li>\n                            <li>Include how you would communicate when you are in pain or distress.</li>\n                            <li>Include how you communicate choices.</li>\n                            <li>Include how you give feedback or raise a concern.</li>\n                            <li>Include how you like to receive information</li>\n                        </ul> \n                         <p>Describe how you would like others to engage and communicate with you, including how you would like to be addressed.</p> \n                    ",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "My wellness",
+              "description": "A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell.",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "My wellness",
+                  "description": "\n                         <div>\n                            <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; max-width: 100%;\">\n                                <tbody>\n                                    <tr>\n                                        <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                            <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                    <p style=\"margin: 0px 0px 10px;\">A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell</p>\n                                                </div>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div> \n                         <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                <p style=\"margin: 0px 0px 10px;\">\n                                                    <ul>\n                                                        <li>Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation.</li>\n                                                        <li>Include any signs that indicate you might be becoming unwell.</li>\n                                                        <li>On a bad day describe what is different about what you are able to do, how you engage with others and how you feel.</li>\n                                                        <li>Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions.</li>\n                                                        <li>Include past health issues or experiences that need to be considered</li>\n                                                        <li>Include your wellbeing and lifestyle goals and aspirations</li>\n                                                    </ul>\n                                                </p>\n                                            </div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                         <ul/> \n                    ",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Please do and please don't",
+              "description": "A description of things you want someone supporting you to do (or not to do).\u00a0",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Please do and please don't",
+                  "description": "A description of things you want someone supporting you to do (or not to do). <br clear=\"none\"/> Things you want someone to\u00a0 <b>do\u00a0</b> might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. <br clear=\"none\"/> A description of things you\u00a0 <b>do not</b> \u00a0want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want.",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "How and when to support me",
+              "description": "A description of how and when you want someone caring for you to support you.",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "How and when to support me",
+                  "description": "\n                         <p>A description of how and when you want someone caring for you to support you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include support needs in an emergency situation (for example taking blood)</li>\n                                <li>This could include support you need to maintain important routines or to carry out particular activities, for example: - Personal care routines, Eating and drinking, Bedtime routines, Taking medications, Moving and transitioning</li>\n                                <li>This could also include support needed with:- wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion.</li>\n                                <li>Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.</li>\n                            </ul>\n                        </p> \n                         <p/> \n                    ",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Also worth knowing about me",
+              "description": "A description of what is also worth knowing about you for people caring or supporting you.\u00a0",
+              "items": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Also worth knowing about me",
+                  "description": "\n                         <p>A description of what is also worth knowing about you for people caring or supporting you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life).</li>\n                                <li>This could include a short profile of your current life:- your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike</li>\n                                <li>This could also include any care and support preferences that have not been included elsewhere.</li>\n                            </ul>\n                        </p> \n                    ",
+                  "valueSets": [
+                    {
+                      "prefix": "PPPP",
+                      "use": "EXAM",
+                      "text": "Free text",
+                      "expression": "",
+                      "popUpText": ""
+                    }
+                  ],
+                  "valueDomain": [
+                    {
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Date",
+              "description": "This is a record of the date that this information was last updated.",
+              "valueSets": [
+                {
+                  "prefix": "PPPP",
+                  "use": "EXAM",
+                  "text": "Date and Time",
+                  "expression": "",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [
+                    {
+                      "timeStampPrecision": "YMDHM"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Supported to write this by",
+              "description": "Where relevant, this is a record of name, relationship/role and contact details of the individual who supported the person to write this section e.g. carer, family member, advocate, professional.",
+              "valueSets": [
+                {
+                  "prefix": "PPPP",
+                  "use": "EXAM",
+                  "text": "Free text",
+                  "expression": "",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "text",
+                  "property": [
+                    {
+                      "maxLength": "150"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Location to multimedia file",
+              "description": "The link to the person's multimedia file",
+              "valueSets": [
+                {
+                  "prefix": "PPPP",
+                  "use": "EXAM",
+                  "text": "Link to URL",
+                  "expression": "",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "group",
           "minimumMultiplicity": "0",
