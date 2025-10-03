@@ -14,6 +14,33 @@
   ],
   "concept": [
     {
+      "derivedFrom": "PRSB-Standards/WRIST-ips-datatypes/ips-datatypes/List Concept@1-build.0.1",
+      "description": "<p><br></p>",
+      "implementationGuidance": "",
+      "informationType": "",
+      "isComponent": true,
+      "maximumMultiplicity": "",
+      "minimumMultiplicity": "",
+      "mro": "",
+      "name": "List Concept",
+      "relationshipType": "extension",
+      "type": "",
+      "valueDomain": [
+        {
+          "type": ""
+        }
+      ],
+      "valueSets": [
+        {
+          "expression": "",
+          "popUpText": "",
+          "prefix": "PPPP",
+          "text": "",
+          "use": "EXAM"
+        }
+      ]
+    },
+    {
       "type": "group",
       "minimumMultiplicity": "1",
       "maximumMultiplicity": "1",
