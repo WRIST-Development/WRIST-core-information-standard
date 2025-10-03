@@ -9,6 +9,107 @@
       "minimumMultiplicity": "1",
       "maximumMultiplicity": "1",
       "mro": "M",
+      "name": "GP practice",
+      "description": "Details of the person's GP practice.",
+      "items": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "*",
+          "mro": "R",
+          "name": "GP practice record entry",
+          "description": "This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
+          "items": [
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "GP name",
+              "description": "The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative.",
+              "valueSets": [
+                {
+                  "prefix": "PPPP",
+                  "use": "EXAM",
+                  "text": "Free text",
+                  "expression": "",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [
+                    {
+                      "maxLength": "70"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "GP practice details",
+              "description": "Name and address of the person's registered GP practice Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address.",
+              "valueSets": [
+                {
+                  "prefix": "PPPP",
+                  "use": "EXAM",
+                  "text": "Free text",
+                  "expression": "",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "text",
+                  "property": [
+                    {
+                      "maxLength": "150"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "GP practice identifier",
+              "description": "The identifier of the registered GP practice.",
+              "valueSets": [
+                {
+                  "prefix": "NHS_DD",
+                  "use": "EXAM",
+                  "text": "General medical practice code (patient registration)",
+                  "expression": "https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration",
+                  "popUpText": ""
+                }
+              ],
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [
+                    {
+                      "maxLength": "6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "minimumMultiplicity": "1",
+      "maximumMultiplicity": "1",
+      "mro": "M",
       "name": "Person demographics",
       "implementationGuidance": "",
       "description": "The person's details and contact information.",
@@ -1077,107 +1178,6 @@
               "property": [
                 {
                   "maxLength": "1"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "minimumMultiplicity": "1",
-      "maximumMultiplicity": "1",
-      "mro": "M",
-      "name": "GP practice",
-      "description": "Details of the person's GP practice.",
-      "items": [
-        {
-          "type": "group",
-          "minimumMultiplicity": "0",
-          "maximumMultiplicity": "*",
-          "mro": "R",
-          "name": "GP practice record entry",
-          "description": "This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
-          "items": [
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "GP name",
-              "description": "The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "70"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "0",
-              "maximumMultiplicity": "1",
-              "mro": "R",
-              "name": "GP practice details",
-              "description": "Name and address of the person's registered GP practice Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address.",
-              "valueSets": [
-                {
-                  "prefix": "PPPP",
-                  "use": "EXAM",
-                  "text": "Free text",
-                  "expression": "",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "text",
-                  "property": [
-                    {
-                      "maxLength": "150"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "item",
-              "minimumMultiplicity": "1",
-              "maximumMultiplicity": "1",
-              "mro": "M",
-              "name": "GP practice identifier",
-              "description": "The identifier of the registered GP practice.",
-              "valueSets": [
-                {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "General medical practice code (patient registration)",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration",
-                  "popUpText": ""
-                }
-              ],
-              "valueDomain": [
-                {
-                  "type": "string",
-                  "property": [
-                    {
-                      "maxLength": "6"
-                    }
-                  ]
                 }
               ]
             }
