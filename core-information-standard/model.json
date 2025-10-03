@@ -41,6 +41,113 @@
       ]
     },
     {
+      "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death@1-build.12.0",
+      "description": "<p>Details of place and date of death. </p>",
+      "implementationGuidance": "",
+      "informationType": "",
+      "isComponent": true,
+      "items": [
+        {
+          "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death/Actual place of death@1-build.12.0",
+          "description": "<p>The location where the person actually died as recorded on the death certificate. If the person died somewhere other than their preferred place, record the reasons why this happened.</p>",
+          "implementationGuidance": "",
+          "informationType": "Event.Record",
+          "isComponent": false,
+          "items": [
+            {
+              "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death/Actual place of death/Name of the place@1-build.12.0",
+              "description": "<p>The name of the actual place of death.</p>",
+              "implementationGuidance": "",
+              "informationType": "",
+              "isComponent": false,
+              "maximumMultiplicity": "1",
+              "minimumMultiplicity": "0",
+              "mro": "R",
+              "name": "Name of the place",
+              "relationshipType": "specialisation",
+              "type": "item",
+              "valueDomain": [
+                {
+                  "type": "PRSB-Standards/WRIST-IPS-Datatypes/Text@1-build.0.1"
+                }
+              ],
+              "valueSets": []
+            },
+            {
+              "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death/Actual place of death/Type of place@1-build.12.0",
+              "description": "<p>The type of place where the person's death took place.</p>",
+              "implementationGuidance": "",
+              "informationType": "",
+              "isComponent": false,
+              "maximumMultiplicity": "1",
+              "minimumMultiplicity": "0",
+              "mro": "R",
+              "name": "Type of place",
+              "relationshipType": "specialisation",
+              "type": "item",
+              "valueDomain": [
+                {
+                  "type": "PRSB-Standards/WRIST-IPS-Datatypes/Coded Element@1-build.0.1"
+                }
+              ],
+              "valueSets": [
+                {
+                  "expression": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999002761000000100&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+                  "popUpText": "<br/></p> <p><br/></p>",
+                  "prefix": "SNOMED_CT",
+                  "text": "^999002761000000100 |Actual place of death findings simple reference set|",
+                  "use": "EXAM"
+                }
+              ]
+            }
+          ],
+          "maximumMultiplicity": "1",
+          "minimumMultiplicity": "0",
+          "mro": "R",
+          "name": "Actual place of death",
+          "relationshipType": "specialisation",
+          "type": "group",
+          "valueDomain": [
+            {
+              "type": ""
+            }
+          ],
+          "valueSets": []
+        },
+        {
+          "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death/Date of death@1-build.12.0",
+          "description": "<p>The date on which a person died or is officially deemed to have died, as recorded on the death certificate.</p>",
+          "implementationGuidance": "",
+          "informationType": "Event.Record",
+          "isComponent": false,
+          "maximumMultiplicity": "1",
+          "minimumMultiplicity": "0",
+          "mro": "R",
+          "name": "Date of death",
+          "relationshipType": "specialisation",
+          "type": "item",
+          "valueDomain": [
+            {
+              "type": "PRSB-Standards/WRIST-IPS-Datatypes/Date Time@1-build.0.1"
+            }
+          ],
+          "valueSets": []
+        }
+      ],
+      "maximumMultiplicity": "1",
+      "minimumMultiplicity": "0",
+      "mro": "R",
+      "name": "After death",
+      "relationshipType": "both",
+      "type": "group",
+      "valueDomain": [
+        {
+          "type": ""
+        }
+      ],
+      "valueSets": []
+    },
+    {
       "type": "group",
       "minimumMultiplicity": "1",
       "maximumMultiplicity": "1",
