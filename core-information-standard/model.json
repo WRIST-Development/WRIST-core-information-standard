@@ -6,15 +6,6 @@
   "concept": [
     {
       "type": "group",
-      "minimumMultiplicity": "1",
-      "maximumMultiplicity": "1",
-      "mro": "M",
-      "name": "GP practice",
-      "description": "Details of the person's GP practice.",
-      "items": []
-    },
-    {
-      "type": "group",
       "minimumMultiplicity": "0",
       "maximumMultiplicity": "1",
       "mro": "R",
