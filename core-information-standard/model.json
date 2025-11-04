@@ -161,7 +161,7 @@
       "maximumMultiplicity": "1",
       "mro": "M",
       "name": "Person demographics",
-      "implementationGuidance": "",
+      "implementationGuidance": "<p>See the <a href="https://example.com/guide">full guide</a> for details.</p>",
       "description": "The person's details and contact information.",
       "items": [
         {
