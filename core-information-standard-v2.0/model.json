@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "name": "core-information-standard-v2.0",
   "description": "",
   "component_sets": [],
@@ -38875,5 +38875,8 @@
       "valueSets": [],
       "implementationGuidance": "<p><br></p>"
     }
-  ]
+  ],
+  "ui": {
+    "media_queries": []
+  }
 }
