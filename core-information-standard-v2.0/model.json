@@ -5,6 +5,19 @@
   "component_sets": [],
   "concept": [
     {
+      "name": "New Row",
+      "mro": "",
+      "description": "",
+      "valueSets": [],
+      "implementationGuidance": "",
+      "informationType": "",
+      "minimumMultiplicity": "",
+      "maximumMultiplicity": "",
+      "derivedFrom": "",
+      "isComponent": false,
+      "items": []
+    },
+    {
       "type": "",
       "minimumMultiplicity": "",
       "maximumMultiplicity": "",
