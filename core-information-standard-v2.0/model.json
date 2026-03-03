@@ -1,5 +1,5 @@
 {
-  "version": "2-build.1.14",
+  "version": "2-build.1.15",
   "name": "core-information-standard-v2.0",
   "description": "",
   "component_sets": [],
@@ -38892,7 +38892,7 @@
   "ui": {
     "media_queries": [
       {
-        "max_width": "600",
+        "max_width": "600px",
         "hide_cols": [
           "data_types",
           "derived_from",
@@ -38902,10 +38902,11 @@
           "value_sets"
         ],
         "col_widths": {
-          "name": "30",
-          "description": "60",
-          "cardinality": "10"
-        }
+          "name": "30%",
+          "description": "60%",
+          "cardinality": "10%"
+        },
+        "font_size": null
       }
     ]
   }
