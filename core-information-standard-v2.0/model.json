@@ -5,11 +5,11 @@
   "component_sets": [],
   "concept": [
     {
-      "name": "New Row",
+      "name": "Rest Row",
       "mro": "",
-      "description": "",
+      "description": "<p><br></p>",
       "valueSets": [],
-      "implementationGuidance": "",
+      "implementationGuidance": "<p><br></p>",
       "informationType": "",
       "minimumMultiplicity": "",
       "maximumMultiplicity": "",
@@ -29,7 +29,14 @@
           "isComponent": false,
           "items": []
         }
-      ]
+      ],
+      "type": "",
+      "valueDomain": [
+        {
+          "type": ""
+        }
+      ],
+      "relationshipType": "specialisation"
     },
     {
       "name": "New Row",
