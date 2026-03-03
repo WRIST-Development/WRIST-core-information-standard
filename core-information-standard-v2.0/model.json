@@ -5,13 +5,13 @@
   "component_sets": [],
   "concept": [
     {
-      "type": "group",
-      "minimumMultiplicity": "1",
-      "maximumMultiplicity": "1",
-      "mro": "M",
-      "name": "Person demographics",
-      "implementationGuidance": "",
-      "description": "<p>The person's details and contact information.</p>",
+      "type": "",
+      "minimumMultiplicity": "",
+      "maximumMultiplicity": "",
+      "mro": "",
+      "name": "Test Row",
+      "implementationGuidance": "<p><br></p>",
+      "description": "<p><br></p>",
       "items": [
         {
           "type": "group",
@@ -288,7 +288,7 @@
           "minimumMultiplicity": "0",
           "maximumMultiplicity": "1",
           "name": "Sex",
-          "description": "The person’s phenotypic sex. Determines how the person will be treated clinically.",
+          "description": "The person\u2019s phenotypic sex. Determines how the person will be treated clinically.",
           "valueSets": [
             {
               "prefix": "NHS_DD",
@@ -376,7 +376,7 @@
               "use": "EXAM",
               "text": "Local patient identifier(extended)",
               "expression": "https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
-              "popUpText": ", <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>, <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a> (Scotland only)</div>"
+              "popUpText": ", <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>,\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a>\u00a0(Scotland only)</div>"
             }
           ],
           "valueDomain": [
@@ -396,7 +396,7 @@
           "maximumMultiplicity": "*",
           "mro": "M",
           "name": "Person's address",
-          "description": "Person’s usual place of residence, and where relevant temporary and correspondence addresses.",
+          "description": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
           "items": [
             {
               "type": "item",
@@ -1091,7 +1091,7 @@
         }
       ],
       "relationshipType": "specialisation",
-      "isComponent": true,
+      "isComponent": false,
       "valueSets": []
     },
     {
@@ -1223,7 +1223,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "What is most important to me",
-              "description": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">A description of what is most important to you <br clear=\"none\"/>\n                        </span> \n                         <b>Emergency Information : -</b>  Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. <br clear=\"none\"/> \n                         <span style=\"font-weight: bold;\">Other Information : -</span> This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering",
+              "description": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">A description of what is most important to you\u00a0<br clear=\"none\"/>\n                        </span> \n                         <b>Emergency Information : -</b> \u00a0Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. <br clear=\"none\"/> \n                         <span style=\"font-weight: bold;\">Other Information : -</span> This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -1247,7 +1247,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "People who are important to me",
-          "description": "Details of who is important to you and why. ",
+          "description": "Details of who is important to you and why.\u00a0",
           "items": [
             {
               "type": "item",
@@ -1279,7 +1279,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "How I communicate and how to communicate with me",
-          "description": "A description of how you communicate normally. ",
+          "description": "A description of how you communicate normally.\u00a0",
           "items": [
             {
               "type": "item",
@@ -1319,7 +1319,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "My wellness",
-              "description": "\n                         <div>\n                            <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; max-width: 100%;\">\n                                <tbody>\n                                    <tr>\n                                        <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                            <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895≡xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                <div class=\"xforms-output-output\" id=\"xf-895≡xf-1189≡≡c\" style=\"zoom: 1;\">\n                                                    <p style=\"margin: 0px 0px 10px;\">A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell</p>\n                                                </div>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div> \n                         <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895≡xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895≡xf-1189≡≡c\" style=\"zoom: 1;\">\n                                                <p style=\"margin: 0px 0px 10px;\">\n                                                    <ul>\n                                                        <li>Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation.</li>\n                                                        <li>Include any signs that indicate you might be becoming unwell.</li>\n                                                        <li>On a bad day describe what is different about what you are able to do, how you engage with others and how you feel.</li>\n                                                        <li>Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions.</li>\n                                                        <li>Include past health issues or experiences that need to be considered</li>\n                                                        <li>Include your wellbeing and lifestyle goals and aspirations</li>\n                                                    </ul>\n                                                </p>\n                                            </div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                         <ul/> \n                    ",
+              "description": "\n                         <div>\n                            <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; max-width: 100%;\">\n                                <tbody>\n                                    <tr>\n                                        <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                            <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                    <p style=\"margin: 0px 0px 10px;\">A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell</p>\n                                                </div>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div> \n                         <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                <p style=\"margin: 0px 0px 10px;\">\n                                                    <ul>\n                                                        <li>Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation.</li>\n                                                        <li>Include any signs that indicate you might be becoming unwell.</li>\n                                                        <li>On a bad day describe what is different about what you are able to do, how you engage with others and how you feel.</li>\n                                                        <li>Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions.</li>\n                                                        <li>Include past health issues or experiences that need to be considered</li>\n                                                        <li>Include your wellbeing and lifestyle goals and aspirations</li>\n                                                    </ul>\n                                                </p>\n                                            </div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                         <ul/> \n                    ",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -1343,7 +1343,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Please do and please don't",
-          "description": "A description of things you want someone supporting you to do (or not to do). ",
+          "description": "A description of things you want someone supporting you to do (or not to do).\u00a0",
           "items": [
             {
               "type": "item",
@@ -1351,7 +1351,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Please do and please don't",
-              "description": "A description of things you want someone supporting you to do (or not to do). <br clear=\"none\"/> Things you want someone to  <b>do </b> might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. <br clear=\"none\"/> A description of things you  <b>do not</b>  want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want.",
+              "description": "A description of things you want someone supporting you to do (or not to do). <br clear=\"none\"/> Things you want someone to\u00a0 <b>do\u00a0</b> might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. <br clear=\"none\"/> A description of things you\u00a0 <b>do not</b> \u00a0want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want.",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -1407,7 +1407,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Also worth knowing about me",
-          "description": "A description of what is also worth knowing about you for people caring or supporting you. ",
+          "description": "A description of what is also worth knowing about you for people caring or supporting you.\u00a0",
           "items": [
             {
               "type": "item",
@@ -1617,7 +1617,7 @@
                   "maximumMultiplicity": "1",
                   "mro": "R",
                   "name": "Reasonable adjustment flag",
-                  "description": "\n                             <p>Under the <a tabindex=\"-1\" class=\"\" aria-disabled=\"false\" title=\"https://www.gov.uk/guidance/equality-act-2010-guidance\" href=\"https://www.gov.uk/guidance/equality-act-2010-guidance\" rel=\"noopener noreferrer\" target=\"_blank\">Equality Act 2010</a>, organisations have a legal duty to make changes in their approach or provision to ensure that services are as accessible to people with disabilities as they are for everybody else. These changes are called reasonable adjustments.</p> \n                             <p>Reasonable adjustments can mean alterations to buildings by providing lifts, wide doors, ramps and tactile signage, but may also mean changes to policies, procedures and staff training to ensure that services work equally well for people with physical or sensory disabilities, learning disabilities or long-term conditions such as dementia.</p> \n                             <p>Other adjustments include longer appointments, providing easy read materials or communications via a carer. This legal duty is anticipatory which means a service should know about a person’s need for adjustments when they are referred or present for care. For this to happen, and for optimum care to be delivered, adjustments need to be recorded and shared across the NHS.</p> \n                        ",
+                  "description": "\n                             <p>Under the <a tabindex=\"-1\" class=\"\" aria-disabled=\"false\" title=\"https://www.gov.uk/guidance/equality-act-2010-guidance\" href=\"https://www.gov.uk/guidance/equality-act-2010-guidance\" rel=\"noopener noreferrer\" target=\"_blank\">Equality Act 2010</a>, organisations have a legal duty to make changes in their approach or provision to ensure that services are as accessible to people with disabilities as they are for everybody else. These changes are called reasonable adjustments.</p> \n                             <p>Reasonable adjustments can mean alterations to buildings by providing lifts, wide doors, ramps and tactile signage, but may also mean changes to policies, procedures and staff training to ensure that services work equally well for people with physical or sensory disabilities, learning disabilities or long-term conditions such as dementia.</p> \n                             <p>Other adjustments include longer appointments, providing easy read materials or communications via a carer. This legal duty is anticipatory which means a service should know about a person\u2019s need for adjustments when they are referred or present for care. For this to happen, and for optimum care to be delivered, adjustments need to be recorded and shared across the NHS.</p> \n                        ",
                   "valueSets": [
                     {
                       "prefix": "SNOMED_CT",
@@ -6268,7 +6268,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Lasting power of attorney for health and welfare or court appointed deputy (or equivalent)",
-              "description": "Record of one or more people who have been given power (LPA) by the person when they had capacity to make decisions about their health and welfare should they lose capacity to make those decisions. To be valid, an LPA must have been registered with the Court of Protection. If life-sustaining treatment is being considered the LPA document must state specifically that the attorney has been given power to consent to or refuse life-sustaining treatment. Details of any person (deputy) appointed by the court to make decisions about the person’s health and welfare. A deputy does not have the power to refuse life-sustaining treatment.",
+              "description": "Record of one or more people who have been given power (LPA) by the person when they had capacity to make decisions about their health and welfare should they lose capacity to make those decisions. To be valid, an LPA must have been registered with the Court of Protection. If life-sustaining treatment is being considered the LPA document must state specifically that the attorney has been given power to consent to or refuse life-sustaining treatment. Details of any person (deputy) appointed by the court to make decisions about the person\u2019s health and welfare. A deputy does not have the power to refuse life-sustaining treatment.",
               "items": [
                 {
                   "type": "item",
@@ -7772,7 +7772,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Advance decision to refuse treatment",
-              "description": "A record of an advance decision to refuse one or more specific types of future treatment, made by a person who had capacity at the time of recording the decision. The decision only applies when the person no longer has the capacity to consent to or refuse the specific treatment being considered. An ADRT must be in writing, signed and witnessed. If the ADRT is refusing life-sustaining treatment it must state specifically that the treatment is refused even if the person’s life is at risk.",
+              "description": "A record of an advance decision to refuse one or more specific types of future treatment, made by a person who had capacity at the time of recording the decision. The decision only applies when the person no longer has the capacity to consent to or refuse the specific treatment being considered. An ADRT must be in writing, signed and witnessed. If the ADRT is refusing life-sustaining treatment it must state specifically that the treatment is refused even if the person\u2019s life is at risk.",
               "items": [
                 {
                   "type": "item",
@@ -9851,7 +9851,7 @@
       "maximumMultiplicity": "1",
       "mro": "R",
       "name": "Professional contacts",
-      "description": "<p>The details of the person’s professional contacts.</p>",
+      "description": "<p>The details of the person\u2019s professional contacts.</p>",
       "items": [
         {
           "type": "group",
@@ -10973,7 +10973,7 @@
       "maximumMultiplicity": "1",
       "mro": "R",
       "name": "Contacts with professionals",
-      "description": "<p>The details of the person’s contact with a professional.</p>",
+      "description": "<p>The details of the person\u2019s contact with a professional.</p>",
       "items": [
         {
           "type": "group",
@@ -14790,7 +14790,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Complications related to procedure",
-              "description": "Details of any intra-operative complications encountered during the procedure, arising during the person’s stay in the recovery unit or directly attributable to the procedure.",
+              "description": "Details of any intra-operative complications encountered during the procedure, arising during the person\u2019s stay in the recovery unit or directly attributable to the procedure.",
               "items": [
                 {
                   "type": "item",
@@ -18996,7 +18996,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Social circumstances",
-              "description": "A person’s social background, network and personal circumstances, e.g. housing. This should include whether the person is a  <a href=\"https://datadictionary.nhs.uk/nhs_business_definitions/carer.html\" target=\"\" title=\"\">carer</a> .",
+              "description": "A person\u2019s social background, network and personal circumstances, e.g. housing. This should include whether the person is a  <a href=\"https://datadictionary.nhs.uk/nhs_business_definitions/carer.html\" target=\"\" title=\"\">carer</a> .",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -26272,7 +26272,7 @@
               "maximumMultiplicity": "1",
               "mro": "M",
               "name": "Formulation",
-              "description": "An account, shared by a therapist and person, of the personal meaning and origins of a person’s difficulties. This is viewed in the context of multiple factors including relationships, social circumstances and life events and will indicate the most helpful way forward.",
+              "description": "An account, shared by a therapist and person, of the personal meaning and origins of a person\u2019s difficulties. This is viewed in the context of multiple factors including relationships, social circumstances and life events and will indicate the most helpful way forward.",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -27180,7 +27180,7 @@
               "maximumMultiplicity": "1",
               "mro": "M",
               "name": "Causative agent",
-              "description": "The agent such as food, drug or substances that has caused or may cause an allergy, intolerance or adverse reaction in this person Or “No known drug allergies or adverse reactions” Or “Information not available”",
+              "description": "The agent such as food, drug or substances that has caused or may cause an allergy, intolerance or adverse reaction in this person Or \u201cNo known drug allergies or adverse reactions\u201d Or \u201cInformation not available\u201d",
               "items": [
                 {
                   "type": "item",
@@ -28876,7 +28876,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Dose type",
-                      "description": "The kind of rate or dose specified ",
+                      "description": "The kind of rate or dose specified\u00a0",
                       "valueSets": [
                         {
                           "prefix": "PPPP",
@@ -28898,7 +28898,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Structured dose amount",
-                      "description": "A structural representation of dose amount, e.g. 20mg or 2 tablets. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):  <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
+                      "description": "A structural representation of dose amount, e.g. 20mg or 2 tablets. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):\u00a0 <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
                       "items": [
                         {
                           "type": "item",
@@ -28928,7 +28928,7 @@
                           "maximumMultiplicity": "1",
                           "mro": "R",
                           "name": "Rate",
-                          "description": "Amount of medication per unit of time. Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. Sometimes, a rate can imply duration when expressed as total volume / duration (e.g. 500mL/2 hours implies a duration of 2 hours). However, when rate doesn't imply duration (e.g. 250mL/hour), then the timing.repeat.duration is needed to convey the infuse over time period.",
+                          "description": "Amount of medication per unit of time.\u00a0Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. Sometimes, a rate can imply duration when expressed as total volume / duration (e.g. 500mL/2 hours implies a duration of 2 hours). However, when rate doesn't imply duration (e.g. 250mL/hour), then the timing.repeat.duration is needed to convey the infuse over time period.",
                           "valueSets": [
                             {
                               "prefix": "PPPP",
@@ -28952,7 +28952,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Structured dose timing",
-                      "description": "A slot containing a structural, computable representation of dose timing and maximum dose. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):  <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
+                      "description": "A slot containing a structural, computable representation of dose timing and maximum dose. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):\u00a0 <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
                       "valueSets": [
                         {
                           "prefix": "PPPP",
@@ -28974,7 +28974,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Dose direction duration",
-                      "description": "Recommendation of the time period for which the medication should be continued, including direction not to discontinue. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):  <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
+                      "description": "Recommendation of the time period for which the medication should be continued, including direction not to discontinue. As per FHIR Dose Syntax Implementation Guidance (NHS Digital):\u00a0 <a class=\"\" href=\"https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home\" target=\"\" title=\"\">https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home</a> \n                            ",
                       "valueSets": [
                         {
                           "prefix": "PPPP",
@@ -28996,7 +28996,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Dose directions description",
-                      "description": "Describes the entire medication dosage and administration directions including dose quantity and medication frequency and optionally duration e.g. “1 tablet at night\" or “2mg at 10pm”.",
+                      "description": "Describes the entire medication dosage and administration directions including dose quantity and medication frequency and optionally duration e.g. \u201c1 tablet at night\" or \u201c2mg at 10pm\u201d.",
                       "valueSets": [
                         {
                           "prefix": "PPPP",
@@ -30256,7 +30256,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Actions for professionals",
-              "description": "Including planned investigations, procedures and treatment for a person's identified conditions and priorities. For each action the following should be identified:outcome expectations, including the person’s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies.",
+              "description": "Including planned investigations, procedures and treatment for a person's identified conditions and priorities. For each action the following should be identified:outcome expectations, including the person\u2019s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies.",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -30278,7 +30278,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Actions for person or their carer",
-              "description": "For each action the following should be identified:outcome expectations, including person’s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies.",
+              "description": "For each action the following should be identified:outcome expectations, including person\u2019s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies.",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -30581,7 +30581,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Coded value ",
-              "description": "The coded value associated with the person's strengths.  Could be derived from the assessment of the person e.g. 300738008 |Able to participate in leisure activities (finding)| <br clear=\"none\"/> \n                         <div>\n                            <span style=\"color: rgb(255, 255, 255); font-family: &#34;Segoe UI&#34;, system-ui, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, sans-serif; font-size: 14px;\">\n                                <br clear=\"none\"/>\n                            </span>\n                        </div> \n                    ",
+              "description": "The coded value associated with the person's strengths.\u00a0 Could be derived from the assessment of the person e.g.\u00a0300738008 |Able to participate in leisure activities (finding)| <br clear=\"none\"/> \n                         <div>\n                            <span style=\"color: rgb(255, 255, 255); font-family: &#34;Segoe UI&#34;, system-ui, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, sans-serif; font-size: 14px;\">\n                                <br clear=\"none\"/>\n                            </span>\n                        </div> \n                    ",
               "valueSets": [
                 {
                   "prefix": "SNOMED_CT",
@@ -30647,7 +30647,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Free text",
-              "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895≡xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895≡xf-1189≡≡c\" style=\"zoom: 1;\">Any supplementary or personalised information that relates to the person's needs, concerns and problems.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
+              "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">Any supplementary or personalised information that relates to the person's needs, concerns and problems.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
               "valueSets": [
                 {
                   "prefix": "PPPP",
@@ -30669,7 +30669,7 @@
               "maximumMultiplicity": "*",
               "mro": "R",
               "name": "Goals and hopes",
-              "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895≡xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895≡xf-1189≡≡c\" style=\"zoom: 1;\">The overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
+              "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">The overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
               "items": [
                 {
                   "type": "item",
@@ -30677,7 +30677,7 @@
                   "maximumMultiplicity": "1",
                   "mro": "R",
                   "name": "Coded value",
-                  "description": "The coded value associated with the person's goals, aim's and hopes. e.g. 999002111000000103 |Occupational therapy goals simple reference set (foundation metadata concept)|",
+                  "description": "The coded value associated with the person's goals, aim's and hopes. e.g.\u00a0999002111000000103 |Occupational therapy goals simple reference set (foundation metadata concept)|",
                   "valueSets": [
                     {
                       "prefix": "SNOMED_CT",
@@ -30754,14 +30754,14 @@
                           "maximumMultiplicity": "1",
                           "mro": "R",
                           "name": "Coded value",
-                          "description": "The coded value for the action. <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                                        <tbody>\n                                            <tr>\n                                                <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                                    <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895≡xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                        <div class=\"xforms-output-output\" id=\"xf-895≡xf-1189≡≡c\" style=\"zoom: 1;\">\n                                                            <br clear=\"none\"/>\n                                                        </div>\n                                                    </div>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table> \n                                ",
+                          "description": "The coded value for the action. <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                                        <tbody>\n                                            <tr>\n                                                <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                                    <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                        <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                            <br clear=\"none\"/>\n                                                        </div>\n                                                    </div>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table> \n                                ",
                           "valueSets": [
                             {
                               "prefix": "SNOMED_CT",
                               "use": "EXAM",
                               "text": "71388002",
                               "expression": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=71388002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
-                              "popUpText": "|Procedure| OR &lt;&lt; <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\">129125009</a>  |Procedure with explicit context|"
+                              "popUpText": "|Procedure| OR &lt;&lt; <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\">129125009</a> \u00a0|Procedure with explicit context|"
                             }
                           ]
                         },
@@ -31050,7 +31050,7 @@
                       "maximumMultiplicity": "1",
                       "mro": "R",
                       "name": "Review date",
-                      "description": "When the action evaluation needs to be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |",
+                      "description": "When the action evaluation needs to be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
                       "valueSets": [
                         {
                           "prefix": "PPPP",
@@ -31213,7 +31213,7 @@
                   "maximumMultiplicity": "*",
                   "mro": "R",
                   "name": "Outcomes",
-                  "description": "Outcomes of each of the person’s goals, aims and targets. Includes comments recorded by the person, date and status.",
+                  "description": "Outcomes of each of the person\u2019s goals, aims and targets. Includes comments recorded by the person, date and status.",
                   "items": [
                     {
                       "type": "item",
@@ -31457,7 +31457,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Planned review date/interval",
-          "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |",
+          "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
           "valueSets": [
             {
               "prefix": "PPPP",
@@ -32005,7 +32005,7 @@
       "maximumMultiplicity": "*",
       "mro": "R",
       "name": "Contingency/safety plans",
-      "description": "<p>These are the things to do and people to contact, should an individual’s health or other circumstances get worse for safety.</p>",
+      "description": "<p>These are the things to do and people to contact, should an individual\u2019s health or other circumstances get worse for safety.</p>",
       "items": [
         {
           "type": "group",
@@ -32021,7 +32021,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Coded value",
-              "description": "The trigger that leads to instigation of a significant change in health or other circumstances. <br clear=\"none\"/> \n                    ",
+              "description": "The trigger that leads to instigation of\u00a0a significant change in health or other circumstances. <br clear=\"none\"/> \n                    ",
               "valueSets": [
                 {
                   "prefix": "SNOMED_CT",
@@ -32062,7 +32062,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Contingency plan name",
-          "description": "When the action evaluation needs to be reviewed. ",
+          "description": "When the action evaluation needs to be reviewed.\u00a0",
           "items": [
             {
               "type": "item",
@@ -32126,7 +32126,7 @@
                   "use": "EXAM",
                   "text": "71388002",
                   "expression": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=71388002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
-                  "popUpText": "|Procedure| OR &lt;&lt;<a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\" style=\"color: rgb(0, 136, 204); text-decoration-line: none;\">129125009</a> |Procedure with explicit context|</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>"
+                  "popUpText": "|Procedure| OR &lt;&lt;<a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\" style=\"color: rgb(0, 136, 204); text-decoration-line: none;\">129125009</a>\u00a0|Procedure with explicit context|</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>"
                 }
               ]
             },
@@ -32344,7 +32344,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Planned review date/interval",
-          "description": "This is the date/interval when this contingency plan will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |",
+          "description": "This is the date/interval when this contingency plan will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
           "valueSets": [
             {
               "prefix": "PPPP",
@@ -33155,7 +33155,7 @@
           "maximumMultiplicity": "*",
           "mro": "R",
           "name": "Anticipatory medicines/equipment",
-          "description": "Medicines or equipment available that may be required in specific situations and their location. A statement regarding the availability or location of the anticipatory medicines/equipment. SNOMED CT Tag : - 871021000000106 | Prescription of palliative care anticipatory medication (procedure) |",
+          "description": "Medicines or equipment available that may be required in specific situations and their location. A statement regarding the availability or location of the anticipatory medicines/equipment. SNOMED CT Tag : -\u00a0871021000000106 | Prescription of palliative care anticipatory medication (procedure) |",
           "valueSets": [
             {
               "prefix": "PPPP",
@@ -33715,7 +33715,7 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Planned review date/interval",
-          "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |",
+          "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
           "valueSets": [
             {
               "prefix": "PPPP",
@@ -38561,7 +38561,7 @@
               "maximumMultiplicity": "1",
               "mro": "R",
               "name": "Service",
-              "description": "The high level imaging speciality code e.g. (R-3027B, SRT, “Radiology”)",
+              "description": "The high level imaging speciality code e.g. (R-3027B, SRT, \u201cRadiology\u201d)",
               "valueSets": [
                 {
                   "prefix": "SNOMED_CT",
