@@ -38,6 +38,40 @@
             "title": "This is a test value set",
             "url": "https://ramseysystems.co.uk/fhir/ValueSet/testvs-4ed7c0a5e47b"
           }
+        },
+        {
+          "fhirValueSet": {
+            "compose": {
+              "include": [
+                {
+                  "concept": [
+                    {
+                      "code": "7661111000001104",
+                      "display": "Liquid paraffin 11% cream"
+                    },
+                    {
+                      "code": "14609511000001101",
+                      "display": "White soft paraffin solid"
+                    },
+                    {
+                      "code": "11411811000001108",
+                      "display": "Paracetamol 15mg suppositories"
+                    },
+                    {
+                      "code": "35046411000001100",
+                      "display": "Paracetamol 25mg suppositories"
+                    }
+                  ],
+                  "system": "https://dmd.nhs.uk"
+                }
+              ]
+            },
+            "name": "TestVSNEW",
+            "resourceType": "ValueSet",
+            "status": "draft",
+            "title": "This is a test value set new",
+            "url": "https://ramseysystems.co.uk/fhir/ValueSet/testvsnew-c88913283f27"
+          }
         }
       ],
       "implementationGuidance": "<p><br></p>",
