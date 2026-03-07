@@ -1298,7 +1298,7 @@
             {
               "derivedFrom": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/Person demographics/Person name/Person first name@1-build.12.0",
               "description": "<p>The first name(s) of the person. This includes middle names.</p>",
-              "implementationGuidance": "",
+              "implementationGuidance": "<p><br></p>",
               "informationType": "",
               "isComponent": false,
               "maximumMultiplicity": "*",
@@ -1309,16 +1309,39 @@
               "type": "item",
               "valueDomain": [
                 {
-                  "type": "PRSB-Standards/WRIST-IPS-Datatypes/String@1-build.0.1"
+                  "type": ""
                 }
               ],
               "valueSets": [
                 {
-                  "expression": "https://www.datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname",
-                  "popUpText": "<p><br></p>",
-                  "prefix": "NHS_DD",
-                  "text": "PERSON GIVEN NAME",
-                  "use": "EXAM"
+                  "fhirValueSet": {
+                    "compose": {
+                      "include": [
+                        {
+                          "concept": [
+                            {
+                              "code": "40890411000001103",
+                              "display": "Generic Barkat gluten free par baked rolls"
+                            },
+                            {
+                              "code": "4072011000001101",
+                              "display": "Liquid paraffin liquid"
+                            },
+                            {
+                              "code": "4340011000001100",
+                              "display": "Paraffin hard solid"
+                            }
+                          ],
+                          "system": "https://dmd.nhs.uk"
+                        }
+                      ]
+                    },
+                    "name": "testingValueSets",
+                    "resourceType": "ValueSet",
+                    "status": "draft",
+                    "title": "Testing",
+                    "url": "https://ramseysystems.co.uk/fhir/ValueSet/testingvaluesets-59f5ae7070cc"
+                  }
                 }
               ],
               "vs_label": "NHS Data Dictionary :",
