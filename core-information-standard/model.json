@@ -366,6 +366,36 @@
                 "title": "Etaets",
                 "url": "https://ramseysystems.co.uk/fhir/ValueSet/test-cdda0407720b"
               }
+            },
+            {
+              "fhirValueSet": {
+                "compose": {
+                  "include": [
+                    {
+                      "concept": [
+                        {
+                          "code": "3254311000001101",
+                          "display": "Paramax sachets (Sanofi)"
+                        },
+                        {
+                          "code": "186611000001100",
+                          "display": "Paramax tablets (Sanofi)"
+                        },
+                        {
+                          "code": "18605711000001105",
+                          "display": "Paramax tablets (DE Pharmaceuticals)"
+                        }
+                      ],
+                      "system": "https://dmd.nhs.uk"
+                    }
+                  ]
+                },
+                "name": "Testing",
+                "resourceType": "ValueSet",
+                "status": "draft",
+                "title": "TEstig",
+                "url": "https://ramseysystems.co.uk/fhir/ValueSet/testing-3cbac1d517f0"
+              }
             }
           ],
           "valueDomain": [
