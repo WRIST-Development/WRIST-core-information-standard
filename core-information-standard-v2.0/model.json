@@ -408,26 +408,45 @@
           "maximumMultiplicity": "*",
           "mro": "R",
           "name": "Other identifier",
-          "description": "Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.",
+          "description": "<p>Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.</p>",
           "valueSets": [
             {
-              "prefix": "NHS_DD",
-              "use": "EXAM",
-              "text": "Local patient identifier(extended)",
-              "expression": "https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
-              "popUpText": ", <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>,\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a>\u00a0(Scotland only)</div>"
+              "fhirValueSet": {
+                "compose": {
+                  "include": [
+                    {
+                      "concept": [
+                        {
+                          "code": "40823411000001100",
+                          "display": "Generic Barkat gluten free par baked baguettes"
+                        },
+                        {
+                          "code": "40890411000001103",
+                          "display": "Generic Barkat gluten free par baked rolls"
+                        }
+                      ],
+                      "system": "https://dmd.nhs.uk"
+                    }
+                  ]
+                },
+                "name": "fdg",
+                "resourceType": "ValueSet",
+                "status": "draft",
+                "title": "dfgfg",
+                "url": "https://ramseysystems.co.uk/fhir/ValueSet/fdg-942e7273ab33"
+              }
             }
           ],
           "valueDomain": [
             {
-              "type": "string",
-              "property": [
-                {
-                  "maxLength": "20"
-                }
-              ]
+              "type": ""
             }
-          ]
+          ],
+          "informationType": "",
+          "derivedFrom": "",
+          "relationshipType": "specialisation",
+          "isComponent": false,
+          "implementationGuidance": "<p><br></p>"
         },
         {
           "type": "group",
