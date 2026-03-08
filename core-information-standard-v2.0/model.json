@@ -300,26 +300,42 @@
           "maximumMultiplicity": "1",
           "mro": "R",
           "name": "Ethnicity",
-          "description": "The ethnicity of the person as specified by the person.",
+          "description": "<p>The ethnicity of the person as specified by the person.</p>",
           "valueSets": [
             {
-              "prefix": "NHS_DD",
-              "use": "EXAM",
-              "text": "Ethnic category",
-              "expression": "https://datadictionary.nhs.uk/data_elements/ethnic_category.html",
-              "popUpText": ""
+              "fhirValueSet": {
+                "compose": {
+                  "include": [
+                    {
+                      "filter": [
+                        {
+                          "op": "=",
+                          "property": "constraint",
+                          "value": "<! 42668711000001107|Blood glucose meters - for personal use (single user)| OR <! 42754311000001102|Combination blood glucose and blood ketone meters - for personal use (single user)|"
+                        }
+                      ],
+                      "system": "http://snomed.info/sct"
+                    }
+                  ]
+                },
+                "name": "sfsdf",
+                "resourceType": "ValueSet",
+                "status": "draft",
+                "title": "dsfsd",
+                "url": "https://ramseysystems.co.uk/fhir/ValueSet/sfsdf-cdda0407720b"
+              }
             }
           ],
           "valueDomain": [
             {
-              "type": "string",
-              "property": [
-                {
-                  "maxLength": "2"
-                }
-              ]
+              "type": ""
             }
-          ]
+          ],
+          "informationType": "",
+          "derivedFrom": "",
+          "relationshipType": "specialisation",
+          "isComponent": false,
+          "implementationGuidance": "<p><br></p>"
         },
         {
           "type": "item",
