@@ -76,11 +76,27 @@
               "description": "The family name or surname of the person",
               "valueSets": [
                 {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person family name",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/person_family_name.html",
-                  "popUpText": ""
+                  "binding": {
+                    "strength": "example",
+                    "valueSet": {
+                      "resourceType": "ValueSet",
+                      "status": "draft",
+                      "title": "Person family name",
+                      "name": "Person_family_name",
+                      "compose": {
+                        "include": [
+                          {
+                            "system": "NHS_DD",
+                            "concept": [
+                              {
+                                "code": "https://datadictionary.nhs.uk/data_elements/person_family_name.html"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               ],
               "valueDomain": [
