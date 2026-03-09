@@ -293,22 +293,31 @@
           "description": "<p>The date of birth of the person.</p>",
           "valueSets": [
             {
-              "fhirValueSet": {
-                "resourceType": "ValueSet",
-                "status": "draft",
-                "title": "Person birth date",
-                "name": "Person_birth_date",
-                "compose": {
-                  "include": [
-                    {
-                      "system": "NHS_DD",
-                      "concept": [
-                        {
-                          "code": "https://datadictionary.nhs.uk/data_elements/person_birth_date.html?hl=person%2Cbirth%2Cdate"
-                        }
-                      ]
-                    }
-                  ]
+              "binding": {
+                "strength": "preferred",
+                "valueSet": {
+                  "compose": {
+                    "include": [
+                      {
+                        "concept": [
+                          {
+                            "code": "1629581000001106",
+                            "display": "Paravit"
+                          },
+                          {
+                            "code": "9299101000001108",
+                            "display": "Paramol"
+                          }
+                        ],
+                        "system": "http://snomed.info/sct"
+                      }
+                    ]
+                  },
+                  "name": "rtrw",
+                  "resourceType": "ValueSet",
+                  "status": "draft",
+                  "title": "sdfsf",
+                  "url": "https://ramseysystems.co.uk/fhir/ValueSet/rtrw-41378b056703"
                 }
               }
             },
