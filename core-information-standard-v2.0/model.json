@@ -205,11 +205,27 @@
               "description": "A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM",
               "valueSets": [
                 {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person suffix",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/person_name_suffix.html",
-                  "popUpText": ""
+                  "binding": {
+                    "strength": "example",
+                    "valueSet": {
+                      "resourceType": "ValueSet",
+                      "status": "draft",
+                      "title": "Person suffix",
+                      "name": "Person_suffix",
+                      "compose": {
+                        "include": [
+                          {
+                            "system": "NHS_DD",
+                            "concept": [
+                              {
+                                "code": "https://datadictionary.nhs.uk/data_elements/person_name_suffix.html"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               ],
               "valueDomain": [
