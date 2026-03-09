@@ -162,11 +162,27 @@
               "description": "Person's title",
               "valueSets": [
                 {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person title",
-                  "expression": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1",
-                  "popUpText": ""
+                  "binding": {
+                    "strength": "example",
+                    "valueSet": {
+                      "resourceType": "ValueSet",
+                      "status": "draft",
+                      "title": "Person title",
+                      "name": "Person_title",
+                      "compose": {
+                        "include": [
+                          {
+                            "system": "NHS_DD",
+                            "concept": [
+                              {
+                                "code": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               ],
               "valueDomain": [
