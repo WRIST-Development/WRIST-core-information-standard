@@ -30,11 +30,30 @@
               "description": "The first name(s) of the person. This includes middle names.",
               "valueSets": [
                 {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "Person given name",
-                  "expression": "https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname",
-                  "popUpText": ""
+                  "binding": {
+                    "strength": "example",
+                    "valueSet": {
+                      "compose": {
+                        "include": [
+                          {
+                            "filter": [
+                              {
+                                "op": "=",
+                                "property": "constraint",
+                                "value": "<! 34865511000001109|Glucose interstitial fluid detection sensor|"
+                              }
+                            ],
+                            "system": "http://snomed.info/sct"
+                          }
+                        ]
+                      },
+                      "name": "NewValueSet",
+                      "resourceType": "ValueSet",
+                      "status": "draft",
+                      "title": "TestingTEST",
+                      "url": "https://ramseysystems.co.uk/fhir/ValueSet/newvalueset-cbda06c6d3c7"
+                    }
+                  }
                 }
               ],
               "valueDomain": [
