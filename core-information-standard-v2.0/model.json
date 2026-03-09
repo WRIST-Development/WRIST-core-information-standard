@@ -1248,16 +1248,35 @@
               "type": "item",
               "valueDomain": [
                 {
-                  "type": "PRSB-Standards/WRIST-ips-datatypes/ips-datatypes/Coded Element@1-build.0.1"
+                  "type": ""
                 }
               ],
               "valueSets": [
                 {
-                  "prefix": "NHS_DD",
-                  "use": "EXAM",
-                  "text": "GENERAL MEDICAL PRACTICE (PATIENT REGISTRATION)",
-                  "expression": "https://www.datadictionary.nhs.uk/data_elements/general_medical_practice__patient_registration_.html",
-                  "popUpText": "<p>ODS code - Of person's GP practice</p><p>V81997 - No Registered GP Practice</p><p>V81998 - GP Practice Code not applicable</p><p>V81999 - GP Practice Code not known</p>"
+                  "binding": {
+                    "strength": "example",
+                    "valueSet": {
+                      "compose": {
+                        "include": [
+                          {
+                            "filter": [
+                              {
+                                "op": "=",
+                                "property": "constraint",
+                                "value": "<! 34865511000001109|Glucose interstitial fluid detection sensor|"
+                              }
+                            ],
+                            "system": "http://snomed.info/sct"
+                          }
+                        ]
+                      },
+                      "name": "TEsting",
+                      "resourceType": "ValueSet",
+                      "status": "draft",
+                      "title": "This is another test value set. It should be under binding.",
+                      "url": "https://ramseysystems.co.uk/fhir/ValueSet/testing-cbda06c6d3c7"
+                    }
+                  }
                 }
               ]
             }
