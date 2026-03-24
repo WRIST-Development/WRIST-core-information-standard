@@ -1,0 +1,221 @@
+## Overview
+
+This section defines the decision-support logic embedded within the Core Information Standard to ensure data quality, safety alerts, and appropriate information handling. These decision tables guide system behavior and support clinical decision-making.
+
+## CIS.DT.01: Emergency Information Priority
+
+**Title:** Emergency Information Display Priority
+**Description:** Determines which information elements must be immediately visible in emergency situations
+
+**Input Elements:**
+- Access context (emergency/routine)
+- User role
+- Time available
+
+**Decision Table:**
+
+| Condition ID | Access Context | User Role | Time Available | Output Action | Annotation |
+|--------------|----------------|-----------|----------------|---------------|------------|
+| C1 | Emergency | Paramedic | <2 minutes | Display: Allergies, Current Medications, DNACPR, Key Contacts | Critical safety information only |
+| C2 | Emergency | ED Clinician | <5 minutes | Display: C1 + Problem List, Recent Procedures, LPA Status | Extended emergency summary |
+| C3 | Emergency | Any | >5 minutes | Display: Full emergency summary including safeguarding | Complete emergency view |
+| C4 | Routine | Any | Any | Display: Standard view based on user role | Normal access pattern |
+
+## CIS.DT.02: Reasonable Adjustment Alerts
+
+**Title:** Reasonable Adjustment Alert Generation
+**Description:** Determines when and how to alert users about required reasonable adjustments
+
+**Input Elements:**
+- Reasonable adjustment flag status
+- Type of adjustment
+- Current care context
+- User acknowledgment status
+
+**Decision Table:**
+
+| Condition ID | Adjustment Flag | Adjustment Type | Care Context | User Acknowledged | Output Action | Annotation |
+|--------------|-----------------|-----------------|--------------|-------------------|---------------|------------|
+| C5 | True | Communication | Any | No | Display prominent alert, require acknowledgment | Ensure communication needs met |
+| C6 | True | Mobility | Physical exam/procedure | No | Alert + suggest environmental check | Prevent access barriers |
+| C7 | True | Cognitive | Consent process | No | Alert + provide easy-read resources | Support understanding |
+| C8 | True | Any | Any | Yes | Display indicator only | User already aware |
+| C9 | False | N/A | Any | N/A | No action | No adjustments needed |
+
+## CIS.DT.03: Information Sharing Decisions
+
+**Title:** Information Sharing Authorization Logic
+**Description:** Determines what information can be shared based on consent and legal framework
+
+**Input Elements:**
+- Consent status
+- Information category
+- Requesting organization type
+- Legal basis claimed
+
+**Decision Table:**
+
+| Condition ID | Consent Given | Info Category | Requester Type | Legal Basis | Output Action | Annotation |
+|--------------|---------------|---------------|----------------|-------------|---------------|------------|
+| C10 | Yes | Clinical | Healthcare | Consent | Share full clinical record | Standard consented sharing |
+| C11 | Yes | Social care | Local authority | Consent | Share agreed subset | Limited to agreed scope |
+| C12 | No | Emergency only | Emergency services | Vital interests | Share emergency dataset | Override for life-threatening |
+| C13 | No | Safeguarding | Any professional | Legal duty | Share safeguarding info only | Statutory requirement |
+| C14 | Not recorded | Any | Any | None | Request consent first | Cannot proceed without consent |
+| C15 | Refused | Any | Any | Any | Do not share + log attempt | Respect person's decision |
+
+## CIS.DT.04: Medication Safety Checks
+
+**Title:** Medication Safety Alert Generation
+**Description:** Identifies potential medication safety issues requiring clinical review
+
+**Input Elements:**
+- Current medications list
+- Known allergies
+- Recent medication changes
+- Renal function (if available)
+
+**Decision Table:**
+
+| Condition ID | Allergy Match | Duplicate Therapy | High Risk Med | Renal Impairment | Output Action | Annotation |
+|--------------|---------------|-------------------|---------------|------------------|---------------|------------|
+| C16 | Exact match | Any | Any | Any | Critical alert - prevent prescription | Allergy contraindication |
+| C17 | Class match | Any | Any | Any | Warning - clinical review required | Potential cross-sensitivity |
+| C18 | No | Yes | Any | Any | Warning - check intentional | Possible duplication error |
+| C19 | No | No | Yes | Yes | Alert - dose adjustment needed | Renal dosing required |
+| C20 | No | No | Yes | No | Information - monitoring required | Standard high-risk monitoring |
+
+## CIS.DT.05: Safeguarding Risk Assessment
+
+**Title:** Safeguarding Risk Level Determination
+**Description:** Assesses overall safeguarding risk level based on multiple factors
+
+**Input Elements:**
+- Active safeguarding flag
+- Number of previous concerns
+- Mental capacity status
+- Living situation
+- Professional concerns raised
+
+**Decision Table:**
+
+| Condition ID | Active Flag | Previous Concerns | Lacks Capacity | Lives Alone | Professional Concern | Output Action | Annotation |
+|--------------|-------------|-------------------|----------------|-------------|---------------------|---------------|------------|
+| C21 | Yes | Any | Any | Any | Any | High risk - immediate review | Active safeguarding |
+| C22 | No | ≥3 | Yes | Yes | Yes | High risk - urgent assessment | Multiple risk factors |
+| C23 | No | 1-2 | Yes | No | Yes | Medium risk - review within 48h | Significant concerns |
+| C24 | No | 1-2 | No | Yes | No | Low risk - routine monitoring | Historical concerns only |
+| C25 | No | 0 | No | No | No | No specific risk identified | Standard care |
+
+## CIS.DT.06: Care Transition Requirements
+
+**Title:** Care Transition Information Requirements
+**Description:** Determines mandatory information for safe care transitions
+
+**Input Elements:**
+- Transition type (admission/discharge/transfer)
+- Receiving service type
+- Person's complexity score
+- Outstanding actions
+
+**Decision Table:**
+
+| Condition ID | Transition Type | To Service Type | Complexity | Outstanding Actions | Output Action | Annotation |
+|--------------|-----------------|-----------------|------------|---------------------|---------------|------------|
+| C26 | Discharge | Community | High | Any | Full package + verbal handover | Complex discharge |
+| C27 | Discharge | Care home | Any | None | Standard discharge summary | Routine discharge |
+| C28 | Transfer | Hospital | Any | Yes | Immediate handover + action list | Ensure continuity |
+| C29 | Admission | ED | Any | Any | Emergency summary only | Time-critical |
+| C30 | Any | Social care | Any | Any | Include social assessment | Different info needs |
+
+## CIS.DT.07: Information Currency Checks
+
+**Title:** Information Review Requirements
+**Description:** Determines when information elements require review or update
+
+**Input Elements:**
+- Information type
+- Last update date
+- Clinical changes flag
+- Regulatory requirement
+
+**Decision Table:**
+
+| Condition ID | Info Type | Days Since Update | Clinical Change | Regulatory Requirement | Output Action | Annotation |
+|--------------|-----------|-------------------|-----------------|----------------------|---------------|------------|
+| C31 | Medications | Any | Yes | Any | Immediate review required | Safety critical |
+| C32 | Care plan | >90 | Any | Any | Review required - alert team | Quarterly review |
+| C33 | About Me | >365 | Any | Any | Annual review due | Person-centered info |
+| C34 | Safeguarding | >28 | No | Yes | Statutory review required | Legal requirement |
+| C35 | Contact details | >180 | Any | Any | Verification needed | Ensure accessibility |
+
+## CIS.DT.08: Consent Validity Assessment
+
+**Title:** Consent Validity and Scope Determination
+**Description:** Assesses whether existing consent covers requested information sharing
+
+**Input Elements:**
+- Original consent scope
+- Current request details
+- Time since consent
+- Person's capacity status
+
+**Decision Table:**
+
+| Condition ID | Consent Scope | Request Type | Months Elapsed | Capacity Changed | Output Action | Annotation |
+|--------------|---------------|--------------|----------------|------------------|---------------|------------|
+| C36 | Broad sharing | Covered by scope | <12 | No | Valid - proceed with sharing | Current valid consent |
+| C37 | Specific purpose | Different purpose | Any | Any | Invalid - new consent needed | Out of scope |
+| C38 | Any | Any | >24 | Any | Review consent with person | Potentially stale |
+| C39 | Any | Any | Any | Yes | Reassess consent approach | Capacity change |
+| C40 | Emergency only | Non-emergency | Any | Any | Invalid for this request | Limited consent |
+
+## CIS.DT.09: Access Control Decisions
+
+**Title:** Role-Based Access Determination
+**Description:** Controls access to sensitive information based on user role and context
+
+**Input Elements:**
+- User role
+- Relationship to person
+- Information sensitivity level
+- Access justification
+
+**Decision Table:**
+
+| Condition ID | User Role | Relationship | Sensitivity | Justification | Output Action | Annotation |
+|--------------|-----------|--------------|-------------|---------------|---------------|------------|
+| C41 | Clinician | Direct care | Any | Valid | Full access to relevant sections | Normal clinical access |
+| C42 | Admin | None | Low | Appointment | Limited demographic access only | Minimum necessary |
+| C43 | Carer | Named carer | Medium | Daily care | Access to care plans + About Me | Support care delivery |
+| C44 | Professional | Safeguarding | High | Investigation | Safeguarding sections only | Legal basis |
+| C45 | Any | None | High | None | Deny access + audit | Protect sensitive data |
+
+## CIS.DT.10: Quality Assurance Triggers
+
+**Title:** Data Quality Issue Detection
+**Description:** Identifies data quality issues requiring correction
+
+**Input Elements:**
+- Completeness percentage
+- Inconsistency flags
+- Age of information
+- Source reliability
+
+**Decision Table:**
+
+| Condition ID | Completeness | Inconsistencies | Info Age | Source Rating | Output Action | Annotation |
+|--------------|--------------|-----------------|----------|---------------|---------------|------------|
+| C46 | <60% | Any | Any | Any | Block record closure - too incomplete | Minimum data required |
+| C47 | 60-79% | None | Current | Verified | Warning - consider completing | Usable but improvable |
+| C48 | Any | Multiple | Any | Any | Alert - clinical review needed | Potential safety issue |
+| C49 | >80% | None | Current | Verified | Pass quality check | Good quality record |
+| C50 | Any | Any | >2 years | Unverified | Flag for comprehensive review | Potentially unreliable |
+
+## Implementation Notes
+
+1. **Real-time Execution**: Decision tables C1-C4 (Emergency), C10-C15 (Sharing), and C16-C20 (Medication) must execute in real-time
+2. **Batch Processing**: Tables C31-C35 (Currency) and C46-C50 (Quality) can run as scheduled batch processes
+3. **Audit Requirements**: All decisions must be logged with timestamp, user, and outcome
+4. **Override Capability**: Clinical users must be able to override non-critical alerts with justification
+5. **Performance**: Emergency access decisions must complete within 100ms
