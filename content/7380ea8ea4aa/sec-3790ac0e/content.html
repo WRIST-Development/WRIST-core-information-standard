@@ -1,0 +1,125 @@
+## Overview
+
+This section provides detailed specifications for all data elements within the Core Information Standard v2.0. Elements are organized by functional domain and include data types, validation rules, terminology bindings, and linkages to business processes.
+
+## Person Demographics
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| DEM-001 | NHS Number | Unique identifier for person within NHS England/Wales | String | M | 10 digits, modulus 11 check | BP01, BP06 | NHS Data Dictionary |
+| DEM-002 | Person First Name | First name(s) including middle names | String | M | Max 35 chars, UTF-8 | BP01 | NHS Data Dictionary |
+| DEM-003 | Person Family Name | Family name or surname | String | M | Max 35 chars, UTF-8 | BP01 | NHS Data Dictionary |
+| DEM-004 | Person Preferred Name | Name person wishes to be called | String | R | Max 70 chars | BP01, BP05 | NHS Data Dictionary |
+| DEM-005 | Title | Person's title (Mr, Mrs, Dr, etc.) | String | R | Max 35 chars | BP01 | NHS Data Dictionary |
+| DEM-006 | Date of Birth | Person's date of birth | Date | M | Format: YYYY-MM-DD, not future | BP01, All | NHS Data Dictionary |
+| DEM-007 | Gender | Person's stated gender | String | R | Valid codes: M, F, X | BP01 | NHS Data Dictionary |
+| DEM-008 | Sex | Person's phenotypic sex | String | R | Valid codes: 1, 2, 9 | BP02 | NHS Data Dictionary |
+| DEM-009 | Ethnicity | Ethnic category as specified by person | String | R | NHS ethnicity codes | BP01 | NHS Data Dictionary |
+| DEM-010 | Religion | Religious affiliation | String | R | SNOMED subset | BP01 | SNOMED 999000531000000100 |
+| DEM-011 | Marital Status | Legal marital status | String | R | Valid codes: S, M, D, W, P | BP01 | NHS Data Dictionary |
+| DEM-012 | Photograph | Photo for identification | Binary | R | JPEG/PNG, max 5MB | BP01 | DICOM |
+| DEM-013 | NHS Number Status | Reliability indicator for NHS number | String | R | Valid codes: 01-08 | BP01 | NHS Data Dictionary |
+
+## Address Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ADD-001 | Address Line 1 | First line of address | String | M | Max 35 chars | BP01 | NHS Data Dictionary |
+| ADD-002 | Address Line 2 | Second line of address | String | R | Max 35 chars | BP01 | NHS Data Dictionary |
+| ADD-003 | Address Line 3 | Third line of address | String | R | Max 35 chars | BP01 | NHS Data Dictionary |
+| ADD-004 | Address Line 4 | Fourth line of address | String | R | Max 35 chars | BP01 | NHS Data Dictionary |
+| ADD-005 | Address Line 5 | Fifth line of address | String | R | Max 35 chars | BP01 | NHS Data Dictionary |
+| ADD-006 | Postcode | UK postcode | String | R | Valid UK postcode format | BP01 | NHS Data Dictionary |
+| ADD-007 | Address Type | Type of address | String | R | Valid codes: 1-9 | BP01 | NHS Data Dictionary |
+
+## Contact Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CON-001 | Preferred Contact Method | How person prefers to be contacted | String | R | Valid codes: 1-8 | BP01, BP05 | NHS Data Dictionary |
+| CON-002 | Telephone Number | Person's phone number | String | R | Max 35 chars, E.164 format | BP01 | NHS Data Dictionary |
+| CON-003 | Telephone Type | Type of phone (home, mobile, etc.) | String | R | FHIR ContactPointUse | BP01 | FHIR |
+| CON-004 | Email Address | Person's email | String | R | Valid email format, max 255 | BP01 | NHS Data Dictionary |
+| CON-005 | Email Type | Type of email (personal, work) | String | R | FHIR ContactPointUse | BP01 | FHIR |
+
+## Clinical Information - Problem List
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PRB-001 | Problem/Diagnosis | Clinical problem or diagnosis | Coded | M | Valid SNOMED code | BP02, BP05 | SNOMED 1127581000000103 |
+| PRB-002 | Onset Date | When problem began | DateTime | R | Not future date | BP02 | N/A |
+| PRB-003 | End Date | When problem resolved | DateTime | R | After onset date | BP02 | N/A |
+| PRB-004 | Stage of Disease | Disease stage where relevant | String | R | Max 150 chars | BP02 | Free text |
+| PRB-005 | Date Recorded | When added to problem list | DateTime | M | Auto-generated | BP02 | N/A |
+| PRB-006 | Recording Professional | Who added the problem | Complex | M | See professional structure | BP02 | Multiple |
+
+## Medications
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| MED-001 | Medication Name | Generic or brand name | Coded | M | Valid dm+d code | BP03 | dm+d (VTM/VMP/AMP) |
+| MED-002 | Form | Medication form (tablet, liquid) | Coded | R | dm+d dose forms | BP03 | SNOMED 999000781000001107 |
+| MED-003 | Route | Administration route | Coded | R | SNOMED route subset | BP03 | SNOMED 999000051000001100 |
+| MED-004 | Dose | Dose amount | Quantity | R | Positive number + units | BP03 | UCUM |
+| MED-005 | Frequency | How often taken | String | R | Structured dose syntax | BP03 | HL7 timing |
+| MED-006 | Start Date | When medication started | DateTime | R | Not future date | BP03 | N/A |
+| MED-007 | End Date | When medication stopped | DateTime | R | After start date | BP03 | N/A |
+| MED-008 | Indication | Reason for medication | String | R | Max 150 chars | BP03 | Free text |
+| MED-009 | Prescriber | Who prescribed | Complex | M | See professional structure | BP03 | Multiple |
+| MED-010 | Status | Active/stopped/suspended | String | M | FHIR MedicationStatus | BP03 | FHIR |
+
+## Allergies and Adverse Reactions
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ALL-001 | Causative Agent | Substance causing reaction | Coded | M | dm+d or SNOMED | BP02, BP03 | Multiple |
+| ALL-002 | Type of Reaction | Allergy/intolerance/adverse | String | R | FHIR AllergyType | BP02 | FHIR |
+| ALL-003 | Reaction Description | Manifestation of reaction | Coded | R | SNOMED finding | BP02 | SNOMED 1127581000000103 |
+| ALL-004 | Severity | Severity of reaction | String | R | FHIR AllergySeverity | BP02 | FHIR |
+| ALL-005 | Certainty | Certainty of diagnosis | String | R | FHIR AllergyCertainty | BP02 | FHIR |
+| ALL-006 | Date Recorded | When allergy recorded | DateTime | M | Auto-generated | BP02 | N/A |
+| ALL-007 | Recorder | Who recorded allergy | Complex | M | See professional structure | BP02 | Multiple |
+
+## Individual Requirements
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| REQ-001 | Reasonable Adjustment Flag | Has reasonable adjustments | Boolean | R | Yes/No | BP01, All | SNOMED 1108111000000107 |
+| REQ-002 | Adjustment Type | Type of adjustment needed | Coded | R | SNOMED subset | BP01, All | SNOMED 999002121000000109 |
+| REQ-003 | Adjustment Details | Specific requirements | String | R | Max 500 chars | BP01, All | Free text |
+| REQ-004 | Communication Needs | Communication support required | Coded | R | SNOMED subset | BP01, All | SNOMED 999002151000000104 |
+| REQ-005 | Mobility Needs | Mobility support required | Coded | R | SNOMED subset | BP01, All | SNOMED 999002551000000108 |
+| REQ-006 | Cognitive Support | Cognitive support needs | String | R | Max 150 chars | BP01, BP05 | Free text |
+
+## Safeguarding
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| SAF-001 | Safeguarding Flag | Active safeguarding concerns | Boolean | R | Yes/No | BP04 | N/A |
+| SAF-002 | Safeguarding Type | Type of concern | Coded | R | SNOMED subset | BP04 | SNOMED 999002381000000108 |
+| SAF-003 | Date Identified | When concern identified | DateTime | M | Not future date | BP04 | N/A |
+| SAF-004 | Risk Level | Level of risk | String | R | High/Medium/Low | BP04 | Local |
+| SAF-005 | Safeguarding Plan | Active plan details | String | R | Max 500 chars | BP04 | Free text |
+| SAF-006 | Lead Professional | Safeguarding lead | Complex | R | See professional structure | BP04 | Multiple |
+
+## Legal Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| LEG-001 | Mental Capacity Status | Capacity for decisions | String | R | Has capacity/Lacks capacity | BP05, BP06 | Local |
+| LEG-002 | LPA Health Welfare | Lasting power of attorney | Boolean | R | Yes/No | BP05, BP06 | SNOMED 999001951000000107 |
+| LEG-003 | LPA Contact Details | Attorney contact info | Complex | R | Name + contact | BP05, BP06 | Multiple |
+| LEG-004 | DNACPR Status | Do not resuscitate decision | String | R | For CPR/Not for CPR | BP05 | SNOMED 450475007/450476008 |
+| LEG-005 | ADRT Status | Advance decision status | Boolean | R | Yes/No | BP05 | SNOMED 816281000000101 |
+| LEG-006 | Deprivation of Liberty | DoLS status | String | R | Requested/Authorised | BP04, BP05 | Local |
+
+## Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CPL-001 | Care Plan Type | Type of care plan | Coded | R | SNOMED subset | BP05 | SNOMED 999001471000000108 |
+| CPL-002 | Goals | Person's goals | String | R | Max 500 chars | BP05 | Free text |
+| CPL-003 | Actions | Planned actions | Complex | R | What/Who/When structure | BP05 | Multiple |
+| CPL-004 | Review Date | Next review date | Date | R | Future date | BP05 | N/A |
+| CPL-005 | Agreed With Person | Person agreement status | Boolean | M | Yes/No | BP05 | N/A |
+| CPL-006 | Care Coordinator | Lead professional | Complex | R | See professional structure | BP05 | Multiple |
