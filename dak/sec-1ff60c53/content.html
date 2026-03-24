@@ -1,0 +1,137 @@
+## Overview
+
+The WRIST Core Information Standard comprises hundreds of discrete data elements organized into 47 major concept groups. This section provides detailed specifications for key data elements, including their clinical purpose, data types, validation rules, and relationships to business processes. Elements are grouped by their primary domain of use.
+
+## Person Identification and Demographics
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| DEM-001 | NHS Number | Unique national health service identifier for person | Identifier | Yes | 10-digit format, modulus 11 check | All processes | OID: 2.16.840.1.113883.2.1.3.2.4.16.1 |
+| DEM-002 | Family Name | Current family/surname | String | Yes | 1-70 characters, UTF-8 | BP-001, BP-002 | - |
+| DEM-003 | Given Name | First/given name(s) | String | Yes | 1-70 characters, UTF-8 | BP-001, BP-002 | - |
+| DEM-004 | Date of Birth | Person's date of birth | Date | Yes | Past date, format YYYY-MM-DD | All processes | - |
+| DEM-005 | Gender | Administrative gender for matching | Code | Yes | Value set: Male/Female/Unknown | BP-001, BP-005 | SNOMED: 248152002, 248153007 |
+| DEM-006 | Address Line 1 | First line of current address | String | Yes | 1-255 characters | BP-001, BP-011 | - |
+| DEM-007 | Postcode | Current residential postcode | String | Yes | Valid UK postcode format | BP-001, BP-005 | - |
+| DEM-008 | Mobile Phone | Primary contact mobile number | String | No | Valid UK mobile format | All processes | - |
+| DEM-009 | Email Address | Primary email for digital contact | String | No | Valid email format (RFC 5322) | BP-002, BP-003 | - |
+| DEM-010 | Preferred Language | Language for communication | Code | No | ISO 639-1 language codes | BP-002, BP-003 | - |
+| DEM-011 | Interpreter Required | Flag for interpreter needs | Boolean | No | True/False | BP-002, BP-007 | SNOMED: 315594003 |
+| DEM-012 | GP Practice ODS Code | Organization identifier for registered practice | Identifier | Yes | Valid ODS code format | BP-001, BP-010 | OID: 2.16.840.1.113883.2.1.3.2.4.18.48 |
+
+## Clinical Problems and Diagnoses
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PROB-001 | Problem/Diagnosis Code | SNOMED CT code for condition | Code | Yes | Valid SNOMED concept | BP-002, BP-003 | SNOMED CT |
+| PROB-002 | Problem/Diagnosis Text | Free text if no suitable code | String | Conditional | Required if no code; 1-500 chars | BP-002 | - |
+| PROB-003 | Clinical Status | Active/Resolved/Remission | Code | Yes | Value set: active/resolved/remission | BP-001, BP-003 | FHIR Clinical Status |
+| PROB-004 | Verification Status | Confirmed/Provisional/Differential | Code | Yes | Value set per FHIR | BP-002 | FHIR Verification Status |
+| PROB-005 | Onset Date | When condition started | Date | No | Past or present date | BP-001, BP-002 | - |
+| PROB-006 | Date Recorded | When added to problem list | DateTime | Yes | Auto-populated, not future | All processes | - |
+| PROB-007 | Severity | Mild/Moderate/Severe | Code | No | SNOMED severity scale | BP-001, BP-005 | SNOMED: 255604002 |
+| PROB-008 | Body Site | Anatomical location | Code | No | SNOMED body structure | BP-002 | SNOMED Body Structure |
+| PROB-009 | Primary Diagnosis Flag | Main diagnosis for episode | Boolean | No | Only one per episode | BP-008 | - |
+| PROB-010 | Significant Problem Flag | Part of summary problem list | Boolean | No | True/False | BP-001, BP-003 | - |
+
+## Medications and Prescribing
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| MED-001 | Medication Code | dm+d code for prescribed item | Code | Yes | Valid dm+d concept | BP-003, BP-007 | dm+d |
+| MED-002 | Medication Name | Display name if no code | String | Conditional | Required if no code | BP-003 | - |
+| MED-003 | Dose Amount | Numeric dose quantity | Decimal | Yes | Positive number | BP-003 | - |
+| MED-004 | Dose Unit | Unit of dose (mg, ml, etc) | Code | Yes | UCUM units | BP-003 | UCUM |
+| MED-005 | Route | How medication administered | Code | Yes | SNOMED route codes | BP-003 | SNOMED: 284009009 |
+| MED-006 | Frequency Text | Timing instructions | String | Yes | 1-255 characters | BP-003 | - |
+| MED-007 | Start Date | When medication commenced | Date | Yes | Not future date | BP-003 | - |
+| MED-008 | End Date | When stopped/completed | Date | No | After start date | BP-003 | - |
+| MED-009 | Discontinuation Reason | Why medication stopped | Code | No | SNOMED finding codes | BP-003 | SNOMED CT |
+| MED-010 | Prescriber Name | Clinician who prescribed | String | Yes | Professional name format | BP-003 | - |
+| MED-011 | Prescriber GMC/NMC | Professional registration | Identifier | Yes | Valid format for profession | BP-003 | - |
+| MED-012 | Medication Status | Active/Stopped/Completed | Code | Yes | Value set defined | BP-003 | FHIR Medication Status |
+
+## Allergies and Adverse Reactions
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ALL-001 | Allergen Code | SNOMED code for substance | Code | Yes | Valid SNOMED substance | BP-001, BP-005 | SNOMED Substance |
+| ALL-002 | Allergen Text | Free text if no code | String | Conditional | Required if no code | BP-001 | - |
+| ALL-003 | Reaction Type | Allergy/Intolerance/ADR | Code | Yes | Value set defined | BP-001, BP-005 | SNOMED: 609328004 |
+| ALL-004 | Reaction Manifestation | How reaction presents | Code[] | Yes | SNOMED clinical finding | BP-005 | SNOMED: 404684003 |
+| ALL-005 | Severity | Mild/Moderate/Severe/Life-threatening | Code | Yes | FHIR severity value set | BP-005 | FHIR AllergyIntolerance |
+| ALL-006 | Certainty | Confirmed/Suspected/Refuted | Code | Yes | Certainty value set | BP-001 | SNOMED: 410605003 |
+| ALL-007 | Date Recorded | When allergy documented | DateTime | Yes | Auto-populated | BP-001 | - |
+| ALL-008 | Recorder Details | Who documented allergy | Reference | Yes | Link to professional | BP-001 | - |
+
+## Assessments and Scores
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ASS-001 | Assessment Type | Which assessment performed | Code | Yes | Valid assessment type | BP-001, BP-007 | SNOMED CT |
+| ASS-002 | Assessment Date | When assessment conducted | DateTime | Yes | Not future | BP-001, BP-007 | - |
+| ASS-003 | Total Score | Overall assessment score | Integer | No | Within scale range | BP-001, BP-005 | - |
+| ASS-004 | Score Interpretation | Clinical meaning of score | Code | No | Per assessment type | BP-001 | SNOMED CT |
+| ASS-005 | Component Scores | Individual item scores | Structure | No | Per assessment structure | BP-001 | - |
+| ASS-006 | Assessor Name | Professional conducting | String | Yes | Professional name | BP-001, BP-007 | - |
+| ASS-007 | Assessor Role | Professional role/title | Code | Yes | Professional role codes | BP-001 | SNOMED: 223366009 |
+| ASS-008 | Next Review Date | When to reassess | Date | No | Future date | BP-001, BP-003 | - |
+| ASS-009 | Assessment Location | Where conducted | Code | No | Location type codes | BP-001 | SNOMED: 257728005 |
+
+## Care Planning Elements
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PLAN-001 | Goal Description | What person wants to achieve | String | Yes | 1-1000 characters | BP-003 | - |
+| PLAN-002 | Goal Category | Type of goal | Code | No | Goal category codes | BP-003 | SNOMED: 410518001 |
+| PLAN-003 | Target Date | When to achieve by | Date | No | Future date | BP-003 | - |
+| PLAN-004 | Goal Status | Proposed/Active/Achieved | Code | Yes | Status value set | BP-003 | FHIR Goal Status |
+| PLAN-005 | Intervention Description | Planned activity/support | String | Yes | 1-2000 characters | BP-003 | - |
+| PLAN-006 | Intervention Type | Category of intervention | Code | No | SNOMED intervention | BP-003 | SNOMED: 386053000 |
+| PLAN-007 | Responsible Person | Who will deliver | String | Yes | Name or role | BP-003 | - |
+| PLAN-008 | Frequency | How often intervention | String | No | Frequency description | BP-003 | - |
+| PLAN-009 | Review Date | When to review plan | Date | Yes | Future date | BP-003 | - |
+| PLAN-010 | Outcome Achieved | Free text outcome | String | No | 1-2000 characters | BP-003 | - |
+
+## Risk Assessment and Management
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| RISK-001 | Risk Type | Falls/Pressure/Suicide etc | Code | Yes | Risk type value set | BP-005 | SNOMED CT |
+| RISK-002 | Risk Score | Calculated risk value | Decimal | No | Per tool range | BP-005 | - |
+| RISK-003 | Risk Level | Low/Medium/High/Very High | Code | Yes | Risk level value set | BP-005 | - |
+| RISK-004 | Risk Factors | Contributing factors | String[] | No | Multiple entries allowed | BP-005 | - |
+| RISK-005 | Mitigation Actions | Risk reduction plan | String | Yes | 1-2000 characters | BP-005 | - |
+| RISK-006 | Review Frequency | How often to reassess | Code | Yes | Frequency value set | BP-005 | - |
+| RISK-007 | Last Review Date | Most recent assessment | Date | Yes | Not future | BP-005 | - |
+| RISK-008 | Next Review Date | When to reassess | Date | Yes | Future date | BP-005 | - |
+
+## Legal and Consent Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| LEG-001 | Capacity Decision | Specific decision assessed | String | Yes | 1-500 characters | BP-007 | - |
+| LEG-002 | Has Capacity | Yes/No for decision | Boolean | Yes | True/False | BP-007 | - |
+| LEG-003 | Assessment Date | When assessed | DateTime | Yes | Not future | BP-007 | - |
+| LEG-004 | Assessor Details | Who assessed capacity | Reference | Yes | Link to professional | BP-007 | - |
+| LEG-005 | LPA Type | Health/Finance/Both | Code | No | LPA type codes | BP-007 | - |
+| LEG-006 | Attorney Name | LPA holder name | String | Conditional | Required if LPA exists | BP-007 | - |
+| LEG-007 | DNACPR Decision | Yes/No | Boolean | No | True/False | BP-011 | SNOMED: 450475007 |
+| LEG-008 | DNACPR Review Date | When to review decision | Date | Conditional | Required if DNACPR | BP-011 | - |
+| LEG-009 | Advance Decision | Exists Yes/No | Boolean | No | True/False | BP-011 | - |
+| LEG-010 | MHA Status | Section type if applicable | Code | No | MHA section codes | BP-007 | SNOMED: 413307004 |
+
+## Investigation Results
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| INV-001 | Test Code | LOINC or SNOMED code | Code | Yes | Valid LOINC/SNOMED | BP-002 | LOINC/SNOMED |
+| INV-002 | Test Name | Display name | String | Yes | 1-255 characters | BP-002 | - |
+| INV-003 | Result Value | Numeric or coded result | Varies | Yes | Per test type | BP-002 | - |
+| INV-004 | Result Unit | Unit of measurement | Code | Conditional | UCUM if numeric | BP-002 | UCUM |
+| INV-005 | Reference Range | Normal range | String | No | Range format | BP-002 | - |
+| INV-006 | Abnormal Flag | High/Low/Abnormal | Code | No | Abnormality codes | BP-002 | HL7 v2 Table 0078 |
+| INV-007 | Specimen Date | When sample taken | DateTime | Yes | Not future | BP-002 | - |
+| INV-008 | Report Date | When resulted | DateTime | Yes | After specimen date | BP-002 | - |
+| INV-009 | Performing Lab | Laboratory name/code | String | No | Organization identifier | BP-002 | - |
+| INV-010 | Clinical Notes | Interpretation | String | No | 1-2000 characters | BP-002 | - |
