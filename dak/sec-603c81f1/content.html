@@ -1,0 +1,83 @@
+## Overview
+
+This section defines key performance indicators (KPIs) and quality metrics that can be automatically calculated from WRIST-compliant systems. These indicators support quality improvement, population health management, regulatory compliance, and outcome monitoring across integrated health and social care services. Each indicator includes precise specifications for calculation from WRIST data elements.
+
+## Clinical Quality Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| CQI001 | Comprehensive Assessment Completion Rate | Count of persons with completed comprehensive assessment (BP001) in period | Count of all persons newly registered or requiring reassessment in period | By age group, ethnicity, deprivation quintile, care setting | Monthly | NICE Quality Standards |
+| CQI002 | Care Plan Review Timeliness | Count of active care plans (CPL004 = active) reviewed within specified timeframe | Count of all active care plans requiring review in period | By condition, complexity level, responsible team | Monthly | Care Act 2014 Guidance |
+| CQI003 | Medication Reconciliation at Transitions | Count of admissions/discharges with medication reconciliation completed within 24 hours | Count of all admissions and discharges in period | By transition type, ward/department, day of week | Weekly | NICE NG5 Medicines Optimisation |
+| CQI004 | High-Risk Medication Monitoring | Count of persons on high-risk medications with required monitoring completed on schedule | Count of all persons prescribed high-risk medications requiring monitoring | By medication class, prescribing team, patient age | Monthly | NPSA Guidance |
+| CQI005 | Allergy Documentation Completeness | Count of persons with allergy status documented (including "no known allergies") | Count of all registered persons | By care setting, registration date cohort | Quarterly | NHS Digital Standards |
+| CQI006 | Mental Capacity Assessment Documentation | Count of persons lacking capacity with decision-specific assessments documented | Count of persons identified as potentially lacking capacity | By decision type, setting, assessor profession | Monthly | Mental Capacity Act Quality Indicators |
+| CQI007 | Falls Risk Assessment Coverage | Count of persons ≥65 years with falls risk assessment completed in last 12 months | Count of all persons ≥65 years | By risk score, residential status, previous falls | Quarterly | NICE CG161 |
+| CQI008 | Pressure Ulcer Risk Assessment | Count of admitted patients with pressure ulcer risk assessed within 6 hours | Count of all admissions in period | By ward, admission type, risk category | Weekly | NICE QS89 |
+| CQI009 | Advance Care Planning Uptake | Count of persons with life-limiting conditions having documented advance care plans | Count of persons on palliative care register or with specified conditions | By diagnosis, age, ethnic group, deprivation | Quarterly | NICE NG142 End of Life Care |
+| CQI010 | Clinical Coding Accuracy | Count of episodes with complete and validated clinical coding | Count of all clinical episodes requiring coding | By specialty, coder, complexity | Monthly | NHS Digital Clinical Coding Standards |
+
+## Patient Safety Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| PSI001 | Medication Error Rate | Count of reported medication errors (prescribing, dispensing, administration) | Total medication transactions in period | By error type, severity, stage, medication class | Monthly | NRLS Taxonomy |
+| PSI002 | Patient Safety Alert Compliance | Count of persons with required safety alerts active and visible | Count of persons requiring safety alerts based on criteria | By alert type, clinical area, time since trigger | Weekly | NHS Patient Safety Strategy |
+| PSI003 | Never Events Occurrence | Count of never events reported in period | Total patient care episodes | By event type, location, contributing factors | Monthly | NHS Never Events Framework |
+| PSI004 | Safeguarding Referral Timeliness | Count of safeguarding concerns referred within required timeframe | Count of all safeguarding concerns identified | By concern type, vulnerability, outcome | Weekly | Local Safeguarding Board Standards |
+| PSI005 | Controlled Drug Discrepancies | Count of controlled drug discrepancies identified | Total controlled drug transactions | By drug schedule, ward/department, shift | Daily | Controlled Drugs Regulations |
+| PSI006 | Clinical Deterioration Recognition | Count of deteriorating patients with escalation within 30 minutes | Count of patients triggering early warning scores | By score severity, time of day, response team | Daily | NEWS2 Implementation Guide |
+| PSI007 | Diagnostic Result Acknowledgement | Count of critical/urgent results acknowledged within required timeframe | Count of all critical/urgent results issued | By test type, requesting team, communication method | Daily | RCPath Guidelines |
+| PSI008 | Restraint Use Monitoring | Count of restraint episodes with complete documentation and review | Count of all restraint episodes | By restraint type, duration, setting, outcome | Weekly | Mental Health Act Code of Practice |
+
+## Population Health Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| PHI001 | Immunization Coverage - Childhood | Count of children up-to-date with immunization schedule by age milestones | Count of all children at specified age milestones | By vaccine, geographical area, deprivation | Monthly | UK Immunization Schedule |
+| PHI002 | Chronic Disease Prevalence | Count of persons with diagnosed chronic conditions | Total registered population | By condition, age standardized, ethnicity | Annual | QOF Disease Registers |
+| PHI003 | Screening Programme Uptake | Count of eligible persons completing screening within invitation period | Count of persons invited for screening | By programme, demographic factors, previous attendance | Quarterly | UK NSC Standards |
+| PHI004 | Smoking Cessation Success | Count of smokers quit at 4 weeks | Count of smokers setting quit date | By intervention type, advisor, demographic factors | Monthly | NICE PH10 |
+| PHI005 | Obesity Prevalence | Count of persons with BMI ≥30 | Count of persons with BMI recorded in last 2 years | By age group, gender, deprivation quintile | Annual | NICE PH53 |
+| PHI006 | Mental Health Recovery Rate | Count of persons moving to recovery (clinical scores below threshold) | Count entering psychological therapy | By therapy type, presenting condition, wait time | Monthly | IAPT Standards |
+| PHI007 | Substance Misuse Treatment Completion | Count completing planned substance misuse treatment | Count starting structured treatment | By substance, treatment type, complexity | Quarterly | NDTMS Outcomes Framework |
+| PHI008 | Long-Term Condition Control | Count achieving condition-specific control targets | Count with condition regularly monitored | By condition, socioeconomic factors | Quarterly | NICE Quality Standards |
+
+## Service Performance Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| SPI001 | Appointment Utilization | Count of attended appointments | Count of all booked appointments | By clinic type, day/time, booking method | Weekly | NHS Operational Standards |
+| SPI002 | Referral to Treatment Time | Count seen within target timeframe from referral | Count of all routine referrals | By specialty, referral source, clinical priority | Weekly | NHS Constitution Standards |
+| SPI003 | Discharge Planning Effectiveness | Count of discharges with zero delayed days | Count of all discharges | By delay reason, destination, complexity | Daily | Better Care Fund Metrics |
+| SPI004 | Care Coordination Contacts | Count of persons with documented care coordinator | Count requiring care coordination | By team, caseload size, contact frequency | Monthly | NHS Community Standards |
+| SPI005 | Digital Service Utilization | Count of persons actively using digital services | Count offered digital access | By service type, age, digital exclusion factors | Monthly | NHS Digital Inclusion Strategy |
+| SPI006 | Integrated Care Effectiveness | Count receiving coordinated health and social care | Count with both health and social care needs | By integration type, outcome achievement | Quarterly | Integration Index Framework |
+| SPI007 | Crisis Response Time | Count receiving crisis response within target | Count of crisis presentations | By crisis type, time of day, team availability | Daily | Crisis Care Concordat |
+| SPI008 | Readmission Rate | Count readmitted within 30 days | Count of index discharges | By condition, discharge destination, support received | Monthly | NHS Outcomes Framework |
+
+## Patient Experience Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| PEI001 | Care Plan Co-production | Count of care plans with documented person/carer involvement | Count of all care plans created | By setting, condition, capacity status | Monthly | Person-Centred Care Standards |
+| PEI002 | Communication Preferences Met | Count receiving information in preferred format/language | Count with communication preferences recorded | By preference type, service area | Quarterly | Accessible Information Standard |
+| PEI003 | Shared Decision Making | Count reporting involvement in treatment decisions | Count surveyed about decision involvement | By decision type, clinician, setting | Quarterly | NICE Shared Decision Making |
+| PEI004 | Complaint Resolution Timeliness | Count of complaints resolved within agreed timeframe | Count of all complaints received | By complaint type, severity, outcome | Monthly | NHS Complaints Standards |
+| PEI005 | Friends and Family Test Score | Count recommending service | Count responding to FFT | By service, demographic factors, free text themes | Monthly | NHS FFT Guidance |
+| PEI006 | Continuity of Care Index | Average continuity score (usual provider concentration) | All persons with >3 contacts | By condition, team model, geographical area | Quarterly | Continuity of Care Measures |
+| PEI007 | Reasonable Adjustments Provided | Count receiving all identified reasonable adjustments | Count with reasonable adjustments identified | By adjustment type, disability, setting | Quarterly | Equality Act Compliance |
+| PEI008 | End of Life Care Quality | Count dying in preferred place | Count with preferred place of death recorded | By place, condition, support received | Monthly | National End of Life Care Audit |
+
+## Data Quality Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|---|
+| DQI001 | Core Data Completeness | Count of records with all mandatory fields completed | Count of all active records | By section, data entry team, record age | Weekly | WRIST Mandatory Fields |
+| DQI002 | Clinical Coding Timeliness | Count of episodes coded within 48 hours | Count of all episodes requiring coding | By coder, complexity, day of week | Daily | NHS Digital Standards |
+| DQI003 | Data Validation Pass Rate | Count of records passing automated validation rules | Count of records validated | By validation type, data source, entry method | Daily | Information Quality Standards |
+| DQI004 | Duplicate Record Rate | Count of confirmed duplicate person records | Total person records | By matching criteria, merge outcome | Monthly | Master Patient Index Quality |
+| DQI005 | Terminology Usage Rate | Count of clinical entries using standard terminology | Count of all clinical entries | By domain, user type, terminology system | Monthly | UK Core Implementation Guide |
+| DQI006 | Audit Trail Completeness | Count of data changes with complete audit information | Count of all data changes | By change type, system component | Weekly | Data Protection Compliance |
+| DQI007 | Interoperability Success Rate | Count of successful inter-system data exchanges | Count of all attempted exchanges | By system pair, message type, error category | Daily | Interoperability Standards |
+| DQI008 | Patient Data Access Rate | Count of persons accessing their own records | Count with activated access | By access method, data viewed, demographics | Monthly | Patient Access Standards |
