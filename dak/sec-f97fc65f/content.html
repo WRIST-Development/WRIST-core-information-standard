@@ -1,0 +1,180 @@
+## Overview
+
+The WRIST Core Information Standard enables sophisticated clinical decision support through structured data capture and rule-based logic. This section defines key decision tables that transform WRIST data elements into actionable clinical guidance, alerts, and automated workflows. Each decision table specifies input conditions, evaluation logic, and resulting actions.
+
+## DT-001: Frailty Identification and Escalation
+
+**Purpose**: Automatically identify frailty indicators and trigger appropriate assessment pathways based on multiple WRIST data elements.
+
+**Description**: This decision table monitors key frailty markers including falls history, weight loss, mobility problems, and polypharmacy to identify patients requiring Comprehensive Geriatric Assessment.
+
+**Input Elements**:
+- Age (from Demographics)
+- Number of falls in past 12 months (from Problem List)
+- Number of active medications (from Medications)
+- Recent weight loss >5% (from Examination Findings)
+- Mobility aid use (from Equipment and Adaptations)
+- Hospital admissions in past 6 months (from Admission Details)
+
+| Condition ID | Age | Falls Count | Medication Count | Weight Loss | Mobility Aid | Admissions | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| FRA-001 | ≥65 | ≥2 | Any | Any | Any | Any | Trigger CGA referral (BP-001) | Multiple falls indicates high risk |
+| FRA-002 | ≥65 | 1 | ≥10 | Yes | Any | Any | Trigger CGA referral (BP-001) | Combined risk factors present |
+| FRA-003 | ≥65 | 0 | ≥15 | Any | Any | Any | Medication review alert | Severe polypharmacy risk |
+| FRA-004 | ≥75 | Any | Any | Yes | Yes | ≥2 | Urgent CGA referral (BP-001) | Multiple severe frailty markers |
+| FRA-005 | ≥65 | 1 | 5-9 | No | Yes | 0 | Schedule routine frailty screening | Moderate risk - monitor closely |
+| FRA-006 | <65 | ≥2 | Any | Any | Any | Any | Falls assessment required | Abnormal for age - investigate |
+| FRA-007 | ≥85 | Any | Any | Any | Any | ≥3 | Urgent MDT review needed | Severe instability pattern |
+
+## DT-002: Medication Safety Alerts
+
+**Purpose**: Generate real-time medication safety alerts based on drug interactions, contraindications, and patient-specific risk factors.
+
+**Description**: Evaluates new prescriptions against existing medications, allergies, conditions, and test results to prevent adverse drug events.
+
+**Input Elements**:
+- New medication (dm+d code)
+- Current medication list
+- Allergy list with reaction types
+- Problem list (especially renal/liver disease)
+- Latest eGFR (from Investigation Results)
+- Age
+
+| Condition ID | Medication Class | Existing Meds | Allergies | Renal Function | Age | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|
+| MED-001 | NSAID | ACE inhibitor | Any | eGFR <60 | Any | High risk alert - avoid | Triple whammy risk |
+| MED-002 | NSAID | ACE + Diuretic | Any | Any | Any | Contraindication alert | Triple whammy - do not prescribe |
+| MED-003 | Any | Any | Matches drug class | Any | Any | Allergy alert - block prescribing | Previous allergic reaction |
+| MED-004 | Metformin | Any | Any | eGFR <30 | Any | Contraindication alert | Severe renal impairment |
+| MED-005 | Benzodiazepine | Any | Any | Any | ≥65 | Falls risk warning | Increase falls risk in elderly |
+| MED-006 | Anticholinergic | ≥2 other anticholinergics | Any | Any | ≥65 | Cognitive risk alert | High anticholinergic burden |
+| MED-007 | Warfarin | NSAID or Aspirin | Any | Any | Any | Bleeding risk alert | Increased INR and bleeding |
+| MED-008 | Digoxin | Any | Any | eGFR <50 | ≥70 | Dose adjustment needed | Reduce dose for renal function |
+
+## DT-003: Safeguarding Risk Identification
+
+**Purpose**: Identify safeguarding concerns through pattern recognition across multiple WRIST data elements.
+
+**Description**: Monitors for indicators of abuse, neglect, or self-neglect requiring safeguarding intervention.
+
+**Input Elements**:
+- Unexplained injuries (from Examination Findings)
+- Frequent A&E attendance (from Contacts)
+- Missed appointments pattern
+- Weight loss/malnutrition markers
+- Mental capacity status
+- Living situation (from Social Context)
+
+| Condition ID | Injury Pattern | A&E Frequency | Missed Appointments | Malnutrition Signs | Capacity | Living Alone | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| SAF-001 | Unexplained bruising | Any | Any | Any | Lacks capacity | No | Immediate safeguarding referral | Possible abuse - urgent response |
+| SAF-002 | Multiple injuries | ≥3 in 6 months | Any | Any | Any | Any | Safeguarding assessment needed | Concerning pattern of injuries |
+| SAF-003 | Any | ≥4 in 3 months | >50% | Yes | Any | Yes | Self-neglect assessment | Multiple risk indicators |
+| SAF-004 | Unexplained fracture | Any | Any | Any | Impaired | Any | Urgent safeguarding referral | High risk of abuse |
+| SAF-005 | None | 1-2 | >30% | Yes | Has capacity | Yes | Welfare check needed | Early warning signs |
+| SAF-006 | Pressure sores | Any | Any | Yes | Any | No | Care quality review | Possible neglect by carers |
+
+## DT-004: Mental Health Crisis Indicators
+
+**Purpose**: Identify escalating mental health risks requiring urgent intervention.
+
+**Description**: Analyzes mental health assessments, risk factors, and behavioral indicators to trigger appropriate crisis responses.
+
+**Input Elements**:
+- PHQ-9 or GAD-7 scores (from Assessments)
+- Suicidal ideation presence
+- Self-harm history
+- Substance use changes
+- Social isolation indicators
+- Previous crisis admissions
+
+| Condition ID | Depression Score | Anxiety Score | Suicidal Ideation | Self-Harm Recent | Substance Use | Previous Crisis | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| MH-001 | PHQ-9 ≥20 | Any | Yes | Any | Any | Any | Immediate crisis team referral | Severe depression with SI |
+| MH-002 | Any | Any | Yes + Plan | Any | Any | Any | Emergency response required | Active suicide plan |
+| MH-003 | PHQ-9 ≥15 | GAD-7 ≥15 | No | Yes | Increased | Any | Urgent MH assessment | Multiple deteriorating factors |
+| MH-004 | PHQ-9 10-14 | Any | Passive | No | Stable | No | Routine MH referral | Moderate risk - monitor |
+| MH-005 | Any | Any | Previous | Yes | Any | ≥2 | Crisis plan activation | Pattern of escalation |
+| MH-006 | Improving | Improving | No | No | Reducing | Any | Continue current plan | Positive trajectory |
+
+## DT-005: End of Life Care Indicators
+
+**Purpose**: Identify patients who would benefit from advance care planning or palliative care referral.
+
+**Description**: Uses disease progression markers and prognostic indicators to trigger end-of-life care discussions.
+
+**Input Elements**:
+- Surprise question response
+- Disease trajectory (from Problem List)
+- Performance status
+- Hospital admissions frequency
+- Weight loss pattern
+- Expressed wishes (from About Me)
+
+| Condition ID | Surprise Question | Primary Diagnosis | Performance | Admissions 6mo | Weight Loss | Wishes Documented | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| EOL-001 | No | Advanced cancer | ECOG 3-4 | Any | Any | No | Urgent ACP discussion (BP-011) | Poor prognosis - needs planning |
+| EOL-002 | No | Organ failure | Declining | ≥3 | >10% | No | Initiate ACP process | Multiple indicators present |
+| EOL-003 | No | Any | ECOG 4 | Any | Any | Yes | Review and update ACP | Deteriorating - confirm wishes |
+| EOL-004 | Maybe | Progressive disease | ECOG 2-3 | 2 | 5-10% | No | Routine ACP offer | Early planning opportunity |
+| EOL-005 | No | Any | Any | Any | Any | Prefers home death | Community palliative referral | Enable preferred place of death |
+| EOL-006 | Yes | Any | ECOG 0-1 | 0-1 | None | Any | No action needed | Stable - reassess later |
+
+## DT-006: Care Coordination Triggers
+
+**Purpose**: Identify patients requiring enhanced care coordination based on complexity indicators.
+
+**Description**: Monitors for patterns indicating need for care coordinator assignment or MDT review.
+
+**Input Elements**:
+- Number of active problems
+- Number of involved professionals
+- Number of services/agencies
+- Recent transitions of care
+- Failed appointments
+- Carer stress indicators
+
+| Condition ID | Problem Count | Professional Count | Services Count | Recent Transitions | Failed Appointments | Carer Stress | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| CC-001 | ≥5 | ≥8 | ≥4 | ≥2 in 3mo | Any | Any | Assign care coordinator | High complexity needs coordination |
+| CC-002 | ≥3 | ≥5 | ≥3 | 1 | >20% | High | MDT review required | System failing - needs review |
+| CC-003 | Any | ≥10 | Any | Any | Any | Any | Rationalize professional input | Too many professionals involved |
+| CC-004 | ≥4 | 3-7 | 2-3 | 0 | <10% | Low | Routine MDT discussion | Moderate complexity - monitor |
+| CC-005 | Any | Any | Any | ≥3 in 1mo | Any | Any | Urgent care plan review | Instability - frequent transitions |
+| CC-006 | 1-2 | 1-4 | 1-2 | 0 | 0 | None | Standard care pathway | Low complexity - no action |
+
+## DT-007: Reasonable Adjustments Automation
+
+**Purpose**: Automatically flag required reasonable adjustments based on recorded impairments and needs.
+
+**Description**: Ensures accessibility requirements are met by triggering adjustments for appointments and communications.
+
+**Input Elements**:
+- Sensory impairments (from Individual Requirements)
+- Cognitive impairments
+- Physical disabilities
+- Communication preferences
+- Learning disabilities
+- Mental health conditions
+
+| Condition ID | Visual | Hearing | Cognitive | Mobility | Communication Need | Learning Disability | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| ADJ-001 | Blind | Any | Any | Any | Any | Any | Large print/audio + extra time | Multiple format needs |
+| ADJ-002 | Any | Profound deaf | Any | Any | BSL | Any | Book BSL interpreter | Communication support essential |
+| ADJ-003 | Any | Any | Dementia | Any | Any | Any | Simple language + supporter | Cognitive support needed |
+| ADJ-004 | Any | Any | Any | Wheelchair | Any | Any | Accessible room + extra time | Physical access requirements |
+| ADJ-005 | Any | Any | Any | Any | Easy read | Yes | Easy read materials + advocate | LD specific adjustments |
+| ADJ-006 | Partial | Partial | Mild | Walking aid | Written preferred | No | Quiet room + written summary | Multiple mild adjustments |
+| ADJ-007 | Any | Any | Anxiety disorder | Any | Any | Any | Flexible appointment + breaks | Mental health adjustments |
+
+## Implementation Notes
+
+These decision tables should be:
+
+1. **Implemented as real-time rules** evaluated on data entry/update
+2. **Configurable by organizations** to match local pathways
+3. **Auditable** with logs of all triggered actions
+4. **Overrideable by clinicians** with reason capture
+5. **Regularly reviewed** and updated based on evidence
+6. **Integrated with workflow** to ensure actions are completed
+7. **Monitored for effectiveness** through outcome tracking
