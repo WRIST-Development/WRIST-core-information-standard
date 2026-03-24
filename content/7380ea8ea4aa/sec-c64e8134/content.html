@@ -1,0 +1,93 @@
+## Overview
+
+This section defines key performance indicators (KPIs) and metrics to monitor the implementation and effectiveness of the Core Information Standard. These indicators support quality improvement, regulatory compliance, and outcome measurement.
+
+## Core Implementation Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-001 | Patient Identity Verification Rate | Number of patients with verified NHS number and 2+ demographic identifiers | Total registered patients | By facility, age group, registration type | Monthly | System audit log |
+| IND-002 | Record Completeness - Demographics | Number of patients with all mandatory demographic fields completed | Total registered patients | By facility, registration date | Monthly | Data quality report |
+| IND-003 | Contact Information Currency | Number of patients with contact details updated within 12 months | Total active patients | By age group, care setting | Quarterly | System timestamp |
+| IND-004 | GP Registration Coverage | Number of patients with recorded GP practice details | Total registered patients | By locality, age group | Monthly | Registration system |
+
+## Clinical Information Quality Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-005 | Problem List Maintenance | Number of patients with problem list reviewed within 6 months | Total patients with chronic conditions | By condition, clinician, facility | Monthly | Clinical system |
+| IND-006 | Allergy Documentation Rate | Number of patients with allergy status documented (including NKDA) | Total registered patients | By age group, care setting | Monthly | Clinical records |
+| IND-007 | Medication Reconciliation Timeliness | Number of admissions with medicines reconciled within 24 hours | Total hospital admissions | By ward, admission type | Weekly | Pharmacy system |
+| IND-008 | SNOMED Coding Compliance | Number of diagnoses recorded with SNOMED codes | Total diagnoses recorded | By clinician type, facility | Monthly | Clinical system |
+
+## Person-Centered Care Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-009 | Reasonable Adjustments Identified | Number of patients with reasonable adjustments flagged | Total patients assessed | By adjustment type, disability | Monthly | Equality monitoring |
+| IND-010 | About Me Completion | Number of patients with completed "About Me" section | Total patients in long-term care | By care setting, age | Quarterly | Care records |
+| IND-011 | Care Plan Agreement | Number of care plans agreed with person/representative | Total care plans created | By setting, capacity status | Monthly | Care planning system |
+| IND-012 | Preferred Name Usage | Number of patients with preferred name recorded and used | Total registered patients | By age group, gender | Quarterly | System audit |
+
+## Safeguarding and Legal Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-013 | Safeguarding Screening Rate | Number of patients screened for safeguarding risks | Total eligible patients | By risk type, age group | Monthly | Safeguarding system |
+| IND-014 | Mental Capacity Documentation | Number of relevant decisions with capacity assessment | Total significant decisions made | By decision type, setting | Monthly | Legal records |
+| IND-015 | Advance Decision Recording | Number of patients with ADRT/DNACPR status documented | Total patients >65 or with life-limiting illness | By age, diagnosis | Quarterly | Clinical system |
+| IND-016 | Consent Documentation Rate | Number of episodes with valid consent recorded | Total treatment episodes | By treatment type, urgency | Monthly | Consent system |
+
+## Safety and Quality Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-017 | Clinical Alert Response Time | Number of critical alerts acknowledged within 1 hour | Total critical alerts generated | By alert type, time of day | Weekly | Alert system |
+| IND-018 | Medication Error Rate | Number of medication errors linked to information gaps | Total medication orders | By error type, stage | Monthly | Incident system |
+| IND-019 | Information Transfer Completeness | Number of transfers with complete information package | Total care transfers | By transfer type, destination | Weekly | Transfer audit |
+| IND-020 | Duplicate Record Rate | Number of duplicate patient records identified | Total patient records | By creation source | Monthly | MPI system |
+
+## Access and Sharing Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-021 | Appropriate Access Rate | Number of access events with valid care relationship | Total access events | By user role, time | Daily | Access log |
+| IND-022 | Consent Override Justification | Number of override events with complete documentation | Total consent overrides | By reason, user type | Weekly | Audit system |
+| IND-023 | Information Sharing Timeliness | Number of discharge summaries sent within 24 hours | Total discharges | By destination, day of week | Daily | Discharge system |
+| IND-024 | Cross-Organization Access | Number of successful cross-organization record access | Total access attempts | By organization pair | Monthly | HIE logs |
+
+## User Experience Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-025 | Patient Portal Adoption | Number of patients actively using portal/app | Total eligible patients | By age, digital literacy | Monthly | Portal analytics |
+| IND-026 | Information Accuracy Reports | Number of patient-reported inaccuracies | Total patient reviews | By data type | Monthly | Feedback system |
+| IND-027 | Staff System Satisfaction | Staff rating system as easy to use (≥4/5) | Total staff surveyed | By role, department | Quarterly | User survey |
+| IND-028 | Documentation Time | Average time to complete standard documentation | N/A | By task type, user role | Monthly | Time tracking |
+
+## Outcome Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-029 | Care Coordination Effectiveness | Patients reporting well-coordinated care | Total patients surveyed | By condition complexity | Annual | Patient survey |
+| IND-030 | Preventable Readmission Rate | Readmissions linked to information gaps | Total readmissions within 30 days | By initial diagnosis | Monthly | Readmission audit |
+| IND-031 | Medication Adherence | Patients with improved adherence after reconciliation | Total patients with reconciliation | By number of medications | Quarterly | Pharmacy data |
+| IND-032 | Safeguarding Outcome Success | Safeguarding cases with positive outcome | Total closed safeguarding cases | By intervention type | Quarterly | Safeguarding review |
+
+## Regulatory Compliance Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-033 | Equality Act Compliance | Services meeting all adjustment requirements | Total services audited | By service type | Annual | Compliance audit |
+| IND-034 | Information Governance Compliance | IG incidents related to core information | Total IG incidents | By severity, cause | Monthly | IG system |
+| IND-035 | Statutory Reporting Completeness | Reports with all required data elements | Total statutory reports | By report type | Monthly | Reporting system |
+| IND-036 | Audit Trail Completeness | Records with complete audit trail | Total records accessed | By record type | Weekly | Audit system |
+
+## Implementation Progress Indicators
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency | Source |
+|---|---|---|---|---|---|---|
+| IND-037 | Staff Training Completion | Staff completing core standard training | Total clinical staff | By role, department | Monthly | Training system |
+| IND-038 | System Integration Progress | Data elements successfully mapped | Total required data elements | By source system | Monthly | Integration dashboard |
+| IND-039 | Workflow Adoption Rate | Encounters using standard workflows | Total encounters | By workflow type | Weekly | Workflow engine |
+| IND-040 | Data Migration Completeness | Historical records successfully migrated | Total historical records | By record age, type | One-time | Migration report |
