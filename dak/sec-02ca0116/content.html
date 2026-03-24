@@ -1,0 +1,245 @@
+## BP001: Comprehensive Health and Social Care Assessment
+
+**Process ID:** BP001
+**Process Title:** Comprehensive Health and Social Care Assessment
+
+### Objectives
+
+This process ensures systematic capture of all relevant health, social, and personal information needed to understand an individual's complete needs and circumstances. It supports person-centered care planning by gathering holistic information across multiple domains including physical health, mental wellbeing, social situation, and personal preferences. The process enables integrated assessment reducing duplication while ensuring all critical information is captured for safe, effective care delivery.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP001.SE01 | Assessment Triggered |
+| User Task | BP001.UT01 | Review Existing Records |
+| User Task | BP001.UT02 | Conduct Person Interview |
+| User Task | BP001.UT03 | Document About Me Information |
+| User Task | BP001.UT04 | Assess Individual Requirements |
+| User Task | BP001.UT05 | Evaluate Social Context |
+| User Task | BP001.UT06 | Review Medical History |
+| User Task | BP001.UT07 | Document Current Medications |
+| User Task | BP001.UT08 | Identify Risks and Alerts |
+| Service Task | BP001.ST01 | Generate Assessment Summary |
+| Decision Gateway | BP001.DG01 | Additional Assessments Needed? |
+| User Task | BP001.UT09 | Conduct Specialist Assessments |
+| End Event | BP001.EE01 | Assessment Complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP001.SE01 | BP001.UT01 | Always |
+| BP001.UT01 | BP001.UT02 | Records reviewed |
+| BP001.UT02 | BP001.UT03 | Interview completed |
+| BP001.UT03 | BP001.UT04 | About Me documented |
+| BP001.UT04 | BP001.UT05 | Requirements captured |
+| BP001.UT05 | BP001.UT06 | Social context evaluated |
+| BP001.UT06 | BP001.UT07 | Medical history reviewed |
+| BP001.UT07 | BP001.UT08 | Medications documented |
+| BP001.UT08 | BP001.ST01 | Risks identified |
+| BP001.ST01 | BP001.DG01 | Summary generated |
+| BP001.DG01 | BP001.UT09 | Additional assessments = Yes |
+| BP001.DG01 | BP001.EE01 | Additional assessments = No |
+| BP001.UT09 | BP001.EE01 | Specialist assessments complete |
+
+## BP002: Investigation Ordering and Results Management
+
+**Process ID:** BP002
+**Process Title:** Investigation Ordering and Results Management
+
+### Objectives
+
+This process standardizes the ordering of diagnostic investigations and systematic management of results. It ensures appropriate test selection based on clinical need, proper documentation of indications, timely review of results, and clear communication of findings to patients and care teams. The process supports clinical decision-making while maintaining safety through abnormal result flagging and fail-safe review mechanisms.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP002.SE01 | Investigation Need Identified |
+| User Task | BP002.UT01 | Select Investigation Type |
+| User Task | BP002.UT02 | Document Clinical Indication |
+| User Task | BP002.UT03 | Specify Urgency Level |
+| System Task | BP002.ST01 | Check Previous Results |
+| Decision Gateway | BP002.DG01 | Recent Similar Test? |
+| User Task | BP002.UT04 | Confirm or Cancel Order |
+| System Task | BP002.ST02 | Transmit Order |
+| Intermediate Event | BP002.IE01 | Awaiting Results |
+| System Task | BP002.ST03 | Receive Results |
+| System Task | BP002.ST04 | Flag Abnormal Values |
+| User Task | BP002.UT05 | Review Results |
+| User Task | BP002.UT06 | Document Interpretation |
+| Decision Gateway | BP002.DG02 | Action Required? |
+| User Task | BP002.UT07 | Plan Follow-up Actions |
+| User Task | BP002.UT08 | Communicate to Patient |
+| End Event | BP002.EE01 | Investigation Complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP002.SE01 | BP002.UT01 | Always |
+| BP002.UT01 | BP002.UT02 | Investigation selected |
+| BP002.UT02 | BP002.UT03 | Indication documented |
+| BP002.UT03 | BP002.ST01 | Urgency specified |
+| BP002.ST01 | BP002.DG01 | Previous results checked |
+| BP002.DG01 | BP002.UT04 | Recent test exists |
+| BP002.DG01 | BP002.ST02 | No recent test |
+| BP002.UT04 | BP002.ST02 | Order confirmed |
+| BP002.UT04 | BP002.EE01 | Order cancelled |
+| BP002.ST02 | BP002.IE01 | Order transmitted |
+| BP002.IE01 | BP002.ST03 | Results available |
+| BP002.ST03 | BP002.ST04 | Results received |
+| BP002.ST04 | BP002.UT05 | Abnormal flags applied |
+| BP002.UT05 | BP002.UT06 | Results reviewed |
+| BP002.UT06 | BP002.DG02 | Interpretation documented |
+| BP002.DG02 | BP002.UT07 | Action required = Yes |
+| BP002.DG02 | BP002.UT08 | Action required = No |
+| BP002.UT07 | BP002.UT08 | Actions planned |
+| BP002.UT08 | BP002.EE01 | Patient informed |
+
+## BP003: Integrated Care Planning
+
+**Process ID:** BP003
+**Process Title:** Integrated Care Planning
+
+### Objectives
+
+This process creates person-centered care plans that integrate inputs from multiple professionals and services. It ensures care plans reflect individual goals and preferences while addressing identified needs through coordinated interventions. The process supports regular review and updating of plans based on progress monitoring and changing circumstances, maintaining alignment between health and social care provision.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP003.SE01 | Care Planning Initiated |
+| User Task | BP003.UT01 | Review Assessment Findings |
+| User Task | BP003.UT02 | Identify Goals with Person |
+| User Task | BP003.UT03 | Map Needs to Interventions |
+| User Task | BP003.UT04 | Assign Responsible Professionals |
+| User Task | BP003.UT05 | Set Review Timescales |
+| System Task | BP003.ST01 | Check Service Availability |
+| Decision Gateway | BP003.DG01 | All Services Available? |
+| User Task | BP003.UT06 | Identify Alternatives |
+| User Task | BP003.UT07 | Document Care Plan |
+| User Task | BP003.UT08 | Agree Plan with Person |
+| System Task | BP003.ST02 | Distribute to Team |
+| Timer Event | BP003.TE01 | Review Date Reached |
+| User Task | BP003.UT09 | Conduct Plan Review |
+| Decision Gateway | BP003.DG02 | Plan Effective? |
+| User Task | BP003.UT10 | Update Plan |
+| End Event | BP003.EE01 | Care Plan Active |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP003.SE01 | BP003.UT01 | Always |
+| BP003.UT01 | BP003.UT02 | Assessment reviewed |
+| BP003.UT02 | BP003.UT03 | Goals identified |
+| BP003.UT03 | BP003.UT04 | Interventions mapped |
+| BP003.UT04 | BP003.UT05 | Professionals assigned |
+| BP003.UT05 | BP003.ST01 | Timescales set |
+| BP003.ST01 | BP003.DG01 | Availability checked |
+| BP003.DG01 | BP003.UT06 | Services unavailable |
+| BP003.DG01 | BP003.UT07 | All services available |
+| BP003.UT06 | BP003.UT07 | Alternatives identified |
+| BP003.UT07 | BP003.UT08 | Plan documented |
+| BP003.UT08 | BP003.ST02 | Plan agreed |
+| BP003.ST02 | BP003.EE01 | Team notified |
+| BP003.TE01 | BP003.UT09 | Review triggered |
+| BP003.UT09 | BP003.DG02 | Review completed |
+| BP003.DG02 | BP003.UT10 | Changes needed |
+| BP003.DG02 | BP003.EE01 | Plan remains effective |
+| BP003.UT10 | BP003.ST02 | Plan updated |
+
+## BP004: Clinical Risk Assessment and Management
+
+**Process ID:** BP004
+**Process Title:** Clinical Risk Assessment and Management
+
+### Objectives
+
+This process systematically identifies, evaluates, and manages clinical risks to ensure patient safety and optimal outcomes. It encompasses various risk domains including falls, pressure ulcers, malnutrition, medication errors, self-harm, and violence. The process ensures risks are regularly reassessed, mitigation strategies are implemented, and high risks trigger appropriate alerts and interventions.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP004.SE01 | Risk Assessment Due |
+| User Task | BP004.UT01 | Select Risk Domain |
+| User Task | BP004.UT02 | Apply Assessment Tool |
+| System Task | BP004.ST01 | Calculate Risk Score |
+| Decision Gateway | BP004.DG01 | High Risk Identified? |
+| User Task | BP004.UT03 | Create Risk Mitigation Plan |
+| User Task | BP004.UT04 | Generate Safety Alert |
+| User Task | BP004.UT05 | Document Standard Precautions |
+| System Task | BP004.ST02 | Schedule Reassessment |
+| User Task | BP004.UT06 | Communicate to Team |
+| Timer Event | BP004.TE01 | Reassessment Due |
+| End Event | BP004.EE01 | Risk Management Active |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP004.SE01 | BP004.UT01 | Always |
+| BP004.UT01 | BP004.UT02 | Domain selected |
+| BP004.UT02 | BP004.ST01 | Tool completed |
+| BP004.ST01 | BP004.DG01 | Score calculated |
+| BP004.DG01 | BP004.UT03 | High risk = Yes |
+| BP004.DG01 | BP004.UT05 | High risk = No |
+| BP004.UT03 | BP004.UT04 | Mitigation planned |
+| BP004.UT04 | BP004.ST02 | Alert created |
+| BP004.UT05 | BP004.ST02 | Precautions documented |
+| BP004.ST02 | BP004.UT06 | Reassessment scheduled |
+| BP004.UT06 | BP004.EE01 | Team informed |
+| BP004.TE01 | BP004.UT02 | Reassessment triggered |
+
+## BP005: Medication Management and Reconciliation
+
+**Process ID:** BP005
+**Process Title:** Medication Management and Reconciliation
+
+### Objectives
+
+This process ensures safe and effective medication management across all care settings. It includes medication reconciliation at transitions of care, ongoing monitoring for effectiveness and adverse effects, and clear documentation of all medication-related decisions. The process reduces medication errors, prevents adverse drug events, and optimizes therapeutic outcomes through systematic review and monitoring.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP005.SE01 | Medication Review Triggered |
+| User Task | BP005.UT01 | Gather Medication Sources |
+| User Task | BP005.UT02 | Reconcile Medication Lists |
+| System Task | BP005.ST01 | Check Drug Interactions |
+| System Task | BP005.ST02 | Verify Allergy Status |
+| Decision Gateway | BP005.DG01 | Safety Concerns? |
+| User Task | BP005.UT03 | Resolve Safety Issues |
+| User Task | BP005.UT04 | Optimize Therapy |
+| User Task | BP005.UT05 | Document Changes |
+| User Task | BP005.UT06 | Create Administration Schedule |
+| User Task | BP005.UT07 | Provide Patient Education |
+| System Task | BP005.ST03 | Update All Systems |
+| Timer Event | BP005.TE01 | Monitoring Due |
+| User Task | BP005.UT08 | Assess Effectiveness |
+| End Event | BP005.EE01 | Medication Plan Active |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP005.SE01 | BP005.UT01 | Always |
+| BP005.UT01 | BP005.UT02 | Sources gathered |
+| BP005.UT02 | BP005.ST01 | Lists reconciled |
+| BP005.ST01 | BP005.ST02 | Interactions checked |
+| BP005.ST02 | BP005.DG01 | Allergies verified |
+| BP005.DG01 | BP005.UT03 | Concerns identified |
+| BP005.DG01 | BP005.UT04 | No concerns |
+| BP005.UT03 | BP005.UT04 | Issues resolved |
+| BP005.UT04 | BP005.UT05 | Therapy optimized |
+| BP005.UT05 | BP005.UT06 | Changes documented |
+| BP005.UT06 | BP005.UT07 | Schedule created |
+| BP005.UT07 | BP005.ST03 | Education provided |
+| BP005.ST03 | BP005.EE01 | Systems updated |
+| BP005.TE01 | BP005.UT08 | Monitoring triggered |
+| BP005.UT08 | BP005.UT04 | Effectiveness assessed |
