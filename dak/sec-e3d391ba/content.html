@@ -1,0 +1,182 @@
+## Overview
+
+This section defines the decision-support logic embedded within WRIST-based systems. These decision tables translate clinical guidelines and best practices into computable rules that provide real-time support for healthcare professionals. Each table specifies conditions based on WRIST data elements and corresponding actions or recommendations.
+
+## DT001: Medication Safety Checking
+
+### Description
+
+This decision table implements comprehensive medication safety checks including allergy cross-checking, drug interaction screening, dose range validation, and duplicate therapy detection. It operates whenever medications are prescribed, dispensed, or administered, using the person's allergy profile, current medication list, and clinical parameters.
+
+### Input Elements
+- MED001 (Medication Code)
+- MED003 (Dose Amount)
+- MED005 (Route)
+- ALG001 (Allergen Code)
+- ALG003 (Reaction Type)
+- ALG004 (Reaction Severity)
+- PRB001 (Problem/Diagnosis Code)
+- PER004 (Date of Birth)
+- INV003 (Result Value - for renal/hepatic function)
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT001.C01 | New medication substance matches known allergen with severity = severe/fatal | BLOCK prescription, generate critical alert | Prevent anaphylaxis and severe reactions |
+| DT001.C02 | New medication substance matches known allergen with severity = mild/moderate | WARNING with override option, document reason | Allow clinical judgment for minor reactions |
+| DT001.C03 | Drug interaction checker returns contraindicated combination | BLOCK prescription, suggest alternatives | Based on BNF interaction tables |
+| DT001.C04 | Drug interaction checker returns caution required | WARNING with monitoring requirements | Specify required monitoring parameters |
+| DT001.C05 | Dose exceeds age-appropriate maximum (calculate from DOB) | WARNING with dose range guidance | Reference BNF for Children/Elderly |
+| DT001.C06 | Renal function (eGFR) < 30 AND medication requires adjustment | Calculate adjusted dose, WARNING | Use Cockcroft-Gault or MDRD formula |
+| DT001.C07 | Duplicate therapeutic class already prescribed | WARNING for duplicate therapy | Check ATC classification level 3 |
+| DT001.C08 | Controlled drug prescribed without appropriate registration | BLOCK prescription, registration required | Check prescriber CD authorization |
+| DT001.C09 | High-risk medication AND no recent monitoring | PROMPT for required blood tests | e.g., warfarin needs INR, lithium needs levels |
+| DT001.C10 | Pregnancy status = active AND medication category D/X | BLOCK prescription, teratogenic risk | Reference UK Teratology Information Service |
+
+## DT002: Falls Risk Assessment and Prevention
+
+### Description
+
+This decision table calculates falls risk scores and triggers appropriate preventive interventions based on multiple risk factors. It integrates with mobility assessments, medication reviews, and environmental evaluations to provide comprehensive falls prevention recommendations.
+
+### Input Elements
+- Assessment score from standardized falls tool (e.g., STRATIFY)
+- REQ004 (Mobility Requirement)
+- Previous falls history from Problem List
+- Age from PER004
+- Medications flagged as increasing falls risk
+- Cognitive impairment indicators
+- Environmental hazards documented
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT002.C01 | Falls score ≥ 2 OR previous fall in last 12 months | Trigger comprehensive falls assessment | NICE CG161 recommendation |
+| DT002.C02 | Age ≥ 65 AND taking ≥ 4 medications | Medication review for falls risk | Polypharmacy increases risk |
+| DT002.C03 | Mobility aid required AND no OT assessment in 6 months | Refer to occupational therapy | Equipment suitability check |
+| DT002.C04 | Cognitive impairment AND living alone | High risk alert, consider telecare | Wandering/forgetting hazards |
+| DT002.C05 | Psychotropic medications ≥ 2 classes | Urgent medication review required | Sedation and orthostatic effects |
+| DT002.C06 | Postural hypotension documented | Lying/standing BP monitoring plan | Check medication causes |
+| DT002.C07 | Visual impairment AND no recent eye exam | Refer for ophthalmology assessment | Correct vision problems |
+| DT002.C08 | High risk score AND hospital admission | Automatic falls prevention bundle | Before discharge planning |
+| DT002.C09 | Parkinson's disease OR stroke diagnosis | Specialist physiotherapy referral | Disease-specific interventions |
+| DT002.C10 | Recurrent falls (≥ 2 in 6 months) | MDT falls clinic referral | Comprehensive assessment needed |
+
+## DT003: Safeguarding Risk Detection
+
+### Description
+
+This decision table identifies potential safeguarding concerns through pattern recognition across multiple data points. It considers vulnerability factors, concerning patterns in health service use, and specific risk indicators to trigger appropriate safeguarding responses.
+
+### Input Elements
+- REQ009 (Learning Disability)
+- REQ010 (Mental Capacity)
+- Attendance patterns from Contacts
+- Injury patterns from Problem List
+- Social Context indicators
+- Professional concerns documented
+- Previous safeguarding alerts
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT003.C01 | Non-accidental injury pattern AND vulnerable adult | Immediate safeguarding referral | Follow local authority procedures |
+| DT003.C02 | Repeated A&E attendance with inconsistent histories | Flag for safeguarding review | Potential abuse indicator |
+| DT003.C03 | Learning disability AND unexplained weight loss/injuries | Safeguarding assessment required | Enhanced vulnerability |
+| DT003.C04 | Financial abuse indicators AND lacks capacity | Adult protection referral | May need Court of Protection |
+| DT003.C05 | Child not brought to ≥ 3 appointments | Child safeguarding concern | Was not brought vs did not attend |
+| DT003.C06 | Domestic violence disclosed or suspected | MARAC referral consideration | Multi-agency risk assessment |
+| DT003.C07 | Professional reports neglect indicators | Strategy discussion required | Within 24 hours |
+| DT003.C08 | Self-neglect AND refusing services | Mental capacity assessment | Consider best interests |
+| DT003.C09 | Carer stress indicators AND violence risk | Urgent carer's assessment | Prevention focus |
+| DT003.C10 | Previous safeguarding AND new concerns | Escalate to safeguarding lead | Pattern recognition |
+
+## DT004: Chronic Disease Monitoring
+
+### Description
+
+This decision table ensures evidence-based monitoring for major chronic conditions. It generates reminders for required tests, identifies when results are overdue, and flags abnormal trends requiring intervention.
+
+### Input Elements
+- PRB001 (Problem/Diagnosis Code) for chronic conditions
+- Latest investigation results and dates
+- Current medications
+- Date of last review
+- Risk factor assessments
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT004.C01 | Type 2 diabetes AND HbA1c not done in 6 months | Order HbA1c, generate reminder | NICE NG28 monitoring schedule |
+| DT004.C02 | Type 2 diabetes AND HbA1c > 58 mmol/mol | Intensify treatment, 3-month review | Target 53 mmol/mol for most |
+| DT004.C03 | Chronic kidney disease AND eGFR drop > 5 in year | Nephrology referral indicated | Progressive decline trigger |
+| DT004.C04 | Heart failure AND no echo in 12 months | Order echocardiogram | Assess ejection fraction |
+| DT004.C05 | Hypertension AND BP > 140/90 on 3 occasions | Medication review required | NICE NG136 targets |
+| DT004.C06 | COPD AND no spirometry in 12 months | Pulmonary function testing due | Assess disease progression |
+| DT004.C07 | Atrial fibrillation AND CHA2DS2-VASc ≥ 2 AND no anticoagulation | Review anticoagulation decision | Stroke prevention priority |
+| DT004.C08 | Rheumatoid arthritis on methotrexate AND monitoring overdue | Urgent blood tests required | Monthly FBC/LFTs initially |
+| DT004.C09 | Any chronic disease AND no care plan review in 12 months | Annual review required | Holistic assessment needed |
+| DT004.C10 | Multiple conditions AND conflicting monitoring | Create unified monitoring schedule | Reduce appointment burden |
+
+## DT005: Mental Health Crisis Indicators
+
+### Description
+
+This decision table identifies early warning signs of mental health deterioration and triggers appropriate interventions. It uses validated assessment scores, risk indicators, and pattern changes to prevent crisis escalation.
+
+### Input Elements
+- Mental health assessment scores (PHQ-9, GAD-7, etc.)
+- Risk assessment documentation
+- Medication compliance indicators
+- Contact patterns with services
+- Substance use documentation
+- Sleep pattern data
+- Social support changes
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT005.C01 | PHQ-9 score ≥ 20 OR significant increase | Urgent mental health assessment | Severe depression indicated |
+| DT005.C02 | Suicidal ideation documented with plan | Immediate crisis team referral | Same-day assessment |
+| DT005.C03 | Antipsychotic non-compliance > 2 weeks | Contact patient, consider depot | Relapse prevention |
+| DT005.C04 | Mania indicators AND sleep < 3 hours | Early intervention team alert | Bipolar relapse signs |
+| DT005.C05 | Increased substance use documented | Dual diagnosis team involvement | Comorbidity management |
+| DT005.C06 | Social isolation AND depression scores rising | Social prescribing referral | Address contributing factors |
+| DT005.C07 | Psychosis history AND cannabis use reported | Psychoeducation and monitoring | High relapse risk |
+| DT005.C08 | Trauma disclosure AND no therapy access | Psychology referral priority | NICE trauma guidelines |
+| DT005.C09 | Perinatal period AND mood changes | Perinatal mental health team | Specialist support needed |
+| DT005.C10 | Command hallucinations reported | Risk assessment update required | Violence/self-harm risk |
+
+## DT006: End of Life Care Identification
+
+### Description
+
+This decision table supports timely identification of patients approaching end of life, enabling proactive advance care planning and appropriate palliative care interventions. It uses multiple indicators including clinical markers, functional decline, and prognostic tools.
+
+### Input Elements
+- Diagnosis codes for life-limiting conditions
+- Performance status/functional assessments
+- Hospital admission frequency
+- Weight loss trends
+- Prognostic indicator guidance criteria
+- Surprise question responses
+
+### Decision Logic
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT006.C01 | Cancer diagnosis AND performance status declining | Initiate advance care planning | When curative treatment ending |
+| DT006.C02 | ≥ 3 unplanned admissions in 6 months | Consider palliative care approach | Disease progression indicator |
+| DT006.C03 | Heart failure NYHA IV OR ejection fraction < 20% | End of life planning discussion | Poor prognosis markers |
+| DT006.C04 | COPD with FEV1 < 30% AND recurrent admissions | Supportive care focus | Advanced disease |
+| DT006.C05 | Frailty score severe AND functional decline | Comprehensive geriatric assessment | Multiple markers present |
+| DT006.C06 | Dementia advanced AND swallowing difficulties | Palliative approach indicated | Natural disease course |
+| DT006.C07 | Weight loss > 10% in 6 months unexplained | Investigation and support | Cachexia consideration |
+| DT006.C08 | "No" to surprise question from clinician | Add to palliative register | Would I be surprised if died in 12 months? |
+| DT006.C09 | Patient requests advance planning discussion | Facilitate ACP conversation | Patient-initiated planning |
+| DT006.C10 | Multiple end-of-life indicators present | MDT palliative care referral | Coordinate approach |
