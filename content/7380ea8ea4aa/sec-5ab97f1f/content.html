@@ -1,0 +1,133 @@
+## Functional Requirements
+
+### Core Patient Information Management
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR001 | Patient Registration | System shall capture all mandatory demographic fields with real-time validation including NHS number verification, postcode lookup, and duplicate checking | BP001 | Critical |
+| FR002 | Multi-format Name Support | System shall support multiple name formats including preferred names, previous names, and cultural naming conventions with appropriate display logic | BP001 | High |
+| FR003 | Contact Preference Management | System shall record multiple contact methods with preferences, restrictions (do not call times), and requirement for third-party contact | BP001 | High |
+| FR004 | Relationship Mapping | System shall maintain relationships between patients, carers, and professionals with role-based permissions and contact authorities | BP001, BP003 | Critical |
+| FR005 | Historical Data Tracking | System shall maintain full audit trail of changes to core demographics with reason for change and authorization | All | Critical |
+
+### Clinical Information Capture
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR006 | Problem List Management | System shall maintain structured problem list with SNOMED CT coding, onset dates, resolution tracking, and significance flagging | BP003 | Critical |
+| FR007 | Allergy and Intolerance Recording | System shall enforce allergy documentation with severity, certainty, manifestation details, and automatic alert generation | BP002 | Critical |
+| FR008 | Medication Reconciliation | System shall support multi-source medication reconciliation with discrepancy identification and resolution tracking | BP002 | Critical |
+| FR009 | Immunization Tracking | System shall record complete immunization history with batch numbers, sites, reactions, and contraindications | BP001 | High |
+| FR010 | Clinical Document Management | System shall store and index clinical documents with metadata, version control, and cross-references to care episodes | All | High |
+
+### Decision Support and Alerts
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR011 | Reasonable Adjustment Alerts | System shall automatically identify need for reasonable adjustments based on conditions and generate appropriate alerts | BP001 | Critical |
+| FR012 | Medication Safety Checks | System shall perform real-time drug interaction checking, allergy cross-checking, and dose range validation | BP002 | Critical |
+| FR013 | Safeguarding Indicators | System shall identify safeguarding risk patterns and prompt appropriate assessment and referral workflows | BP004 | Critical |
+| FR014 | Capacity Assessment Prompts | System shall prompt for capacity assessment when relevant decisions are being made for at-risk patients | BP003, BP005 | High |
+| FR015 | Care Coordination Triggers | System shall identify patients requiring MDT coordination based on complexity algorithms | BP003 | High |
+
+### Care Planning and Coordination
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR016 | Integrated Care Planning | System shall support creation of multi-professional care plans with goals, actions, responsibilities, and timelines | BP003 | Critical |
+| FR017 | Goal Setting and Tracking | System shall enable SMART goal documentation with patient priorities, progress tracking, and outcome measurement | BP003 | High |
+| FR018 | Team Communication | System shall facilitate secure messaging between care team members with task assignment and escalation | BP003 | High |
+| FR019 | Review Scheduling | System shall automatically schedule and remind for care plan reviews based on condition-specific intervals | BP003 | Medium |
+| FR020 | Outcome Reporting | System shall generate outcome reports showing goal achievement, intervention effectiveness, and quality metrics | BP003 | Medium |
+
+### Legal and Regulatory Compliance
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR021 | Consent Management | System shall record granular consent decisions for information sharing with full audit trail | All | Critical |
+| FR022 | Mental Capacity Documentation | System shall enforce structured capacity assessment documentation with decision-specific recording | BP003, BP005 | Critical |
+| FR023 | Legal Status Tracking | System shall maintain current legal status (MHA, DoLS, LPA) with automatic expiry alerts | BP003 | Critical |
+| FR024 | Safeguarding Workflow | System shall support complete safeguarding workflow from concern identification through referral tracking | BP004 | Critical |
+| FR025 | Advance Decision Recording | System shall securely store advance decisions with verification status and applicability conditions | BP005 | High |
+
+### End of Life Care
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR026 | EoL Register Management | System shall maintain palliative care register with automated inclusion criteria and review triggers | BP005 | High |
+| FR027 | DNACPR Documentation | System shall enforce complete DNACPR documentation with mandatory review dates and communication tracking | BP005 | Critical |
+| FR028 | Preference Recording | System shall capture detailed preferences for place of death, place of care, and treatment limitations | BP005 | High |
+| FR029 | Anticipatory Prescribing | System shall support anticipatory medication prescribing with location tracking and access instructions | BP005 | High |
+| FR030 | Bereavement Support | System shall identify and track bereavement support needs for families after patient death | BP005 | Medium |
+
+### Patient Engagement
+
+| Requirement ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| FR031 | Patient Portal Access | System shall provide secure patient portal for viewing records, updating preferences, and communication | All | High |
+| FR032 | About Me Functionality | System shall enable patients to document personal preferences, values, and care preferences | BP001 | High |
+| FR033 | Proxy Access Management | System shall support delegated access for carers and representatives with appropriate restrictions | All | High |
+| FR034 | Accessible Information | System shall generate information in multiple formats (large print, easy read, audio) on demand | BP001 | Critical |
+| FR035 | Appointment Preferences | System shall honor booking preferences including time, location, and professional preferences | BP001 | Medium |
+
+## Non-Functional Requirements
+
+### Performance Requirements
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR001 | Response Time | System shall display patient records within 3 seconds of request under normal load conditions | Performance | Critical |
+| NFR002 | Concurrent Users | System shall support minimum 500 concurrent users per deployment without degradation | Performance | Critical |
+| NFR003 | Batch Processing | System shall process bulk updates (e.g., QOF extracts) outside core hours within 4-hour window | Performance | High |
+| NFR004 | Search Performance | System shall return search results for patients within 1 second for up to 1 million records | Performance | High |
+| NFR005 | Report Generation | System shall generate standard reports within 30 seconds, complex analytics within 5 minutes | Performance | Medium |
+
+### Reliability and Availability
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR006 | System Availability | System shall maintain 99.5% availability during core hours (8am-8pm weekdays) | Reliability | Critical |
+| NFR007 | Planned Downtime | System shall limit planned downtime to 4 hours monthly, outside core hours with 72-hour notice | Reliability | High |
+| NFR008 | Disaster Recovery | System shall support full recovery within 4 hours (RTO) with maximum 1 hour data loss (RPO) | Reliability | Critical |
+| NFR009 | Failover Capability | System shall automatically failover to secondary site within 5 minutes of primary failure | Reliability | Critical |
+| NFR010 | Data Backup | System shall perform hourly incremental and daily full backups with offsite replication | Reliability | Critical |
+
+### Security Requirements
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR011 | Authentication | System shall support NHS smartcard authentication and modern MFA methods (FIDO2, biometric) | Security | Critical |
+| NFR012 | Role-Based Access | System shall enforce granular role-based access control with legitimate relationship verification | Security | Critical |
+| NFR013 | Encryption | System shall encrypt all data at rest (AES-256) and in transit (TLS 1.3 minimum) | Security | Critical |
+| NFR014 | Audit Logging | System shall log all access and changes with tamper-proof audit trail retained for 7 years | Security | Critical |
+| NFR015 | Penetration Testing | System shall pass annual CREST-certified penetration testing with critical findings remediated within 30 days | Security | High |
+
+### Usability Requirements
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR016 | Accessibility Compliance | System shall meet WCAG 2.1 AA standards for all user interfaces | Usability | Critical |
+| NFR017 | Mobile Responsiveness | System shall provide full functionality on tablets and essential features on smartphones | Usability | High |
+| NFR018 | Clinical Workflow Optimization | System shall require maximum 3 clicks to access frequently used functions | Usability | High |
+| NFR019 | Training Requirement | System shall be usable by clinical staff with maximum 4 hours role-specific training | Usability | Medium |
+| NFR020 | Error Prevention | System shall prevent data entry errors through validation, templates, and confirmation dialogs | Usability | High |
+
+### Interoperability Requirements
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR021 | FHIR Compliance | System shall expose all data elements via FHIR R4 UK Core conformant APIs | Interoperability | Critical |
+| NFR022 | NHS Spine Integration | System shall integrate with NHS Spine services (PDS, SCR, e-RS, EPS) using current standards | Interoperability | Critical |
+| NFR023 | Local System Integration | System shall support HL7v2 and API integration with local PAS, labs, and radiology systems | Interoperability | High |
+| NFR024 | Terminology Services | System shall integrate with NHS terminology service for real-time SNOMED CT validation | Interoperability | Critical |
+| NFR025 | Document Exchange | System shall support IHE XDS.b profile for clinical document exchange | Interoperability | High |
+
+### Scalability Requirements
+
+| Requirement ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| NFR026 | Patient Volume | System shall scale to support practices from 5,000 to 50,000 patients without architecture change | Scalability | Critical |
+| NFR027 | Data Growth | System shall accommodate 20% annual data growth for 10 years without performance impact | Scalability | High |
+| NFR028 | Geographic Distribution | System shall support multi-site deployment with edge caching for remote locations | Scalability | Medium |
+| NFR029 | Service Expansion | System shall allow modular addition of new services without core system modification | Scalability | High |
+| NFR030 | Load Balancing | System shall automatically distribute load across available resources | Scalability | High |
