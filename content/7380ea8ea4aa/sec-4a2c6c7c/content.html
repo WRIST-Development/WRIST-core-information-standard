@@ -1,0 +1,142 @@
+## Overview
+
+The decision support logic embedded within the Core Information Standard ensures data quality, clinical safety, and appropriate care coordination. These decision tables define automated rules that trigger alerts, validations, and workflow guidance based on documented information.
+
+## DT001: Reasonable Adjustments Alert Generation
+
+### Description
+Automatically identifies when reasonable adjustments should be flagged based on documented conditions, communication needs, or explicit requests. Ensures compliance with Equality Act 2010 requirements.
+
+### Input Elements
+- Diagnosis/Problem list entries
+- Communication preferences
+- Sensory impairments documented
+- Learning disability flag
+- Mobility requirements
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT001.1 | Diagnosis contains "learning disability" OR "intellectual disability" | Set Adjustment Flag = TRUE, Prompt for specific needs | Legal requirement to identify |
+| DT001.2 | Diagnosis contains "dementia" OR "cognitive impairment" | Set Adjustment Flag = TRUE, Add "longer appointments" | Cognitive support needed |
+| DT001.3 | Preferred language ≠ English | Set Communication Need = "Interpreter required" | Ensure language specified |
+| DT001.4 | Diagnosis contains "deaf" OR "hearing impairment" | Set Communication Need = "BSL interpreter" or "Hearing loop" | Check preference |
+| DT001.5 | Diagnosis contains "blind" OR "visual impairment" | Set Information Format = "Large print" or "Audio" | Confirm format preference |
+| DT001.6 | Mobility aid documented OR wheelchair user | Set Access Need = "Step-free access required" | Physical accessibility |
+| DT001.7 | Autism spectrum condition documented | Set Adjustment Flag = TRUE, Add "Quiet environment" | Sensory considerations |
+
+## DT002: Safeguarding Risk Escalation
+
+### Description
+Evaluates combinations of risk factors to determine when safeguarding alerts should be raised and which professionals should be notified.
+
+### Input Elements
+- Age of patient
+- Mental capacity status
+- Living situation
+- Recent attendance patterns
+- Documented injuries
+- Financial concerns raised
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT002.1 | Age < 18 AND unexplained injury documented | Raise child safeguarding alert, Notify designated lead | Mandatory reporting |
+| DT002.2 | Lacks capacity AND financial concern raised | Adult safeguarding referral, Document in care plan | Vulnerable adult protection |
+| DT002.3 | Multiple A&E attendances (>3 in 3 months) AND lives alone | Flag for MDT review, Consider vulnerability assessment | Pattern recognition |
+| DT002.4 | Pressure sores AND care package in place | Notify care coordinator, Review care quality | Care quality concern |
+| DT002.5 | Disclosure of abuse/neglect | Immediate safeguarding referral, Ensure safety plan | Direct disclosure |
+| DT002.6 | Sudden behavior change AND carer stress documented | Welfare check required, Support for carer | Risk prevention |
+
+## DT003: Medication Safety Checks
+
+### Description
+Performs automated safety checks on medication combinations, dosing, and patient-specific contraindications.
+
+### Input Elements
+- Current medication list
+- Allergy records
+- Renal function (if available)
+- Age
+- Documented conditions
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT003.1 | New medication = documented allergy substance | Block prescribing, Alert prescriber | Prevent allergic reaction |
+| DT003.2 | Age > 65 AND anticholinergic burden score > 3 | Warning: Increased falls risk, Review needed | Elderly safety |
+| DT003.3 | Metformin prescribed AND eGFR < 45 | Alert: Dose adjustment needed | Renal impairment |
+| DT003.4 | Warfarin + NSAID combination | High risk interaction alert | Bleeding risk |
+| DT003.5 | >10 regular medications | Polypharmacy review recommended | Medication burden |
+| DT003.6 | Opioid prescription AND no laxative | Suggest co-prescription of laxatives | Prevent constipation |
+
+## DT004: Care Coordination Triggers
+
+### Description
+Identifies when multi-disciplinary team involvement or care coordination is required based on complexity indicators.
+
+### Input Elements
+- Number of active problems
+- Number of services involved
+- Hospital admissions in past year
+- Social circumstances
+- Care plan presence/age
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT004.1 | Active problems > 5 AND no care plan | Prompt care planning discussion | Complex needs |
+| DT004.2 | Hospital admissions > 2 in 6 months | Flag for discharge planning team | Frequent attender |
+| DT004.3 | Mental health + physical health + social care needs | Suggest integrated care team referral | Multiple domains |
+| DT004.4 | Care plan > 12 months old | Review reminder to care coordinator | Maintain currency |
+| DT004.5 | Transition age (17-18) AND complex needs | Initiate transition planning | Pediatric to adult |
+| DT004.6 | Palliative care + no advance care plan | Prompt ACP discussion | End of life planning |
+
+## DT005: Mental Capacity Assessment Prompts
+
+### Description
+Provides decision support for when formal capacity assessments should be considered and documented.
+
+### Input Elements
+- Diagnosis indicating cognitive impairment
+- Decision type required
+- Previous capacity assessments
+- Behavioral indicators
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT005.1 | Dementia diagnosis AND treatment decision needed | Prompt capacity assessment for specific decision | Decision-specific |
+| DT005.2 | Refusing essential treatment AND no recent assessment | Flag for urgent capacity review | Safety concern |
+| DT005.3 | Request for ADRT AND cognitive impairment | Ensure capacity confirmed before proceeding | Legal requirement |
+| DT005.4 | Fluctuating capacity documented | Note best time for assessment | Optimize assessment |
+| DT005.5 | Family disagreement about care | Formal best interests meeting required | Conflict resolution |
+| DT005.6 | Financial decision AND cognitive concerns | Consider Court of Protection referral | Financial protection |
+
+## DT006: End of Life Care Cascade
+
+### Description
+Ensures comprehensive end of life planning is initiated when indicators suggest patient is in last year of life.
+
+### Input Elements
+- Diagnosis with poor prognosis
+- Surprise question response
+- Performance status
+- Expressed wishes
+- Current documentation
+
+### Decision Table
+
+| Condition ID | Input Conditions | Output Action | Annotation |
+|---|---|---|---|
+| DT006.1 | "Would not be surprised if died within year" = Yes | Add to palliative register, Initiate ACP | Early identification |
+| DT006.2 | On palliative register AND no preferred place of death | Prompt preferences discussion | Patient choice |
+| DT006.3 | DNACPR in place AND family not aware | Flag for sensitive communication | Family involvement |
+| DT006.4 | Preferred place = home AND no anticipatory meds | Arrange Just in Case box | Symptom control |
+| DT006.5 | Prognosis < 3 months AND no welfare LPA | Discuss proxy decisions urgently | Time-critical |
+| DT006.6 | Multiple hospital admissions AND palliative | Consider hospice referral | Quality of life |
