@@ -1,0 +1,210 @@
+## BP001: Patient Registration and Initial Assessment
+**Process ID**: BP001
+
+### Objectives
+To ensure comprehensive capture of essential patient information at the point of registration, establishing a complete baseline record that supports safe and effective care delivery while meeting legal and regulatory requirements.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP001.1 | Patient presents for registration |
+| User Task | BP001.2 | Verify patient identity and eligibility |
+| User Task | BP001.3 | Capture demographic information |
+| User Task | BP001.4 | Record contact preferences |
+| Decision | BP001.5 | Reasonable adjustments required? |
+| User Task | BP001.6 | Document reasonable adjustments |
+| User Task | BP001.7 | Record GP practice details |
+| System Task | BP001.8 | Validate NHS number |
+| User Task | BP001.9 | Capture emergency contacts |
+| Decision | BP001.10 | Capacity concerns identified? |
+| User Task | BP001.11 | Conduct capacity assessment |
+| User Task | BP001.12 | Document legal representatives |
+| End Event | BP001.13 | Registration complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP001.1 | BP001.2 | Always |
+| BP001.2 | BP001.3 | Identity verified |
+| BP001.3 | BP001.4 | Demographics captured |
+| BP001.4 | BP001.5 | Contact details complete |
+| BP001.5 | BP001.6 | Adjustments = Yes |
+| BP001.5 | BP001.7 | Adjustments = No |
+| BP001.6 | BP001.7 | Adjustments documented |
+| BP001.7 | BP001.8 | GP details recorded |
+| BP001.8 | BP001.9 | NHS number valid |
+| BP001.9 | BP001.10 | Emergency contacts recorded |
+| BP001.10 | BP001.11 | Capacity concerns = Yes |
+| BP001.10 | BP001.13 | Capacity concerns = No |
+| BP001.11 | BP001.12 | Assessment complete |
+| BP001.12 | BP001.13 | Legal status documented |
+
+## BP002: Medication Reconciliation and Allergy Documentation
+**Process ID**: BP002
+
+### Objectives
+To establish accurate, complete medication and allergy records through systematic reconciliation processes, ensuring patient safety across care transitions and supporting informed prescribing decisions.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP002.1 | Medication review triggered |
+| User Task | BP002.2 | Access current medication lists |
+| User Task | BP002.3 | Interview patient/carer |
+| System Task | BP002.4 | Query external medication records |
+| User Task | BP002.5 | Reconcile discrepancies |
+| Decision | BP002.6 | New allergies identified? |
+| User Task | BP002.7 | Document allergy details |
+| System Task | BP002.8 | Update allergy alerts |
+| User Task | BP002.9 | Verify medication details |
+| Decision | BP002.10 | Changes required? |
+| User Task | BP002.11 | Update medication records |
+| System Task | BP002.12 | Generate reconciliation report |
+| End Event | BP002.13 | Reconciliation complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP002.1 | BP002.2 | Always |
+| BP002.2 | BP002.3 | Lists accessed |
+| BP002.3 | BP002.4 | Patient interviewed |
+| BP002.4 | BP002.5 | External data retrieved |
+| BP002.5 | BP002.6 | Discrepancies resolved |
+| BP002.6 | BP002.7 | New allergies = Yes |
+| BP002.6 | BP002.9 | New allergies = No |
+| BP002.7 | BP002.8 | Allergies documented |
+| BP002.8 | BP002.9 | Alerts updated |
+| BP002.9 | BP002.10 | Medications verified |
+| BP002.10 | BP002.11 | Changes = Yes |
+| BP002.10 | BP002.12 | Changes = No |
+| BP002.11 | BP002.12 | Records updated |
+| BP002.12 | BP002.13 | Report generated |
+
+## BP003: Multi-Disciplinary Team Care Planning
+**Process ID**: BP003
+
+### Objectives
+To facilitate collaborative care planning across professional boundaries, ensuring coordinated interventions, clear accountability, and patient-centered goal setting through structured MDT processes.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP003.1 | MDT referral received |
+| User Task | BP003.2 | Schedule MDT meeting |
+| System Task | BP003.3 | Notify team members |
+| User Task | BP003.4 | Prepare case summary |
+| User Task | BP003.5 | Conduct MDT meeting |
+| User Task | BP003.6 | Document patient goals |
+| User Task | BP003.7 | Agree intervention plan |
+| User Task | BP003.8 | Assign responsibilities |
+| Decision | BP003.9 | Patient consent obtained? |
+| User Task | BP003.10 | Document consent/best interests |
+| System Task | BP003.11 | Distribute care plan |
+| User Task | BP003.12 | Schedule reviews |
+| End Event | BP003.13 | Care plan activated |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP003.1 | BP003.2 | Always |
+| BP003.2 | BP003.3 | Meeting scheduled |
+| BP003.3 | BP003.4 | Notifications sent |
+| BP003.4 | BP003.5 | Summary prepared |
+| BP003.5 | BP003.6 | Meeting conducted |
+| BP003.6 | BP003.7 | Goals documented |
+| BP003.7 | BP003.8 | Plan agreed |
+| BP003.8 | BP003.9 | Responsibilities assigned |
+| BP003.9 | BP003.10 | Consent = No/Unable |
+| BP003.9 | BP003.11 | Consent = Yes |
+| BP003.10 | BP003.11 | Legal basis documented |
+| BP003.11 | BP003.12 | Plan distributed |
+| BP003.12 | BP003.13 | Reviews scheduled |
+
+## BP004: Safeguarding Identification and Referral
+**Process ID**: BP004
+
+### Objectives
+To ensure timely identification, documentation, and appropriate escalation of safeguarding concerns while maintaining information governance requirements and supporting vulnerable individuals.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP004.1 | Safeguarding concern identified |
+| User Task | BP004.2 | Document observations |
+| Decision | BP004.3 | Immediate risk? |
+| User Task | BP004.4 | Take protective action |
+| User Task | BP004.5 | Assess mental capacity |
+| Decision | BP004.6 | Consent to share? |
+| User Task | BP004.7 | Document consent decision |
+| User Task | BP004.8 | Complete safeguarding referral |
+| System Task | BP004.9 | Submit to authorities |
+| User Task | BP004.10 | Inform relevant professionals |
+| User Task | BP004.11 | Create safety plan |
+| End Event | BP004.12 | Referral completed |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP004.1 | BP004.2 | Always |
+| BP004.2 | BP004.3 | Observations documented |
+| BP004.3 | BP004.4 | Immediate risk = Yes |
+| BP004.3 | BP004.5 | Immediate risk = No |
+| BP004.4 | BP004.5 | Protection arranged |
+| BP004.5 | BP004.6 | Capacity assessed |
+| BP004.6 | BP004.7 | Always |
+| BP004.7 | BP004.8 | Decision documented |
+| BP004.8 | BP004.9 | Referral complete |
+| BP004.9 | BP004.10 | Submitted successfully |
+| BP004.10 | BP004.11 | Professionals informed |
+| BP004.11 | BP004.12 | Safety plan created |
+
+## BP005: Advance Care Planning Documentation
+**Process ID**: BP005
+
+### Objectives
+To facilitate sensitive advance care planning discussions, ensure legally valid documentation of patient preferences, and enable appropriate sharing of end-of-life care decisions across care settings.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP005.1 | ACP discussion initiated |
+| User Task | BP005.2 | Assess patient readiness |
+| User Task | BP005.3 | Explore values and preferences |
+| User Task | BP005.4 | Discuss prognosis sensitively |
+| User Task | BP005.5 | Document care preferences |
+| Decision | BP005.6 | DNACPR appropriate? |
+| User Task | BP005.7 | Complete DNACPR form |
+| Decision | BP005.8 | ADRT requested? |
+| User Task | BP005.9 | Support ADRT completion |
+| User Task | BP005.10 | Identify proxy decision makers |
+| System Task | BP005.11 | Flag records appropriately |
+| User Task | BP005.12 | Share with relevant services |
+| End Event | BP005.13 | ACP documented |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP005.1 | BP005.2 | Always |
+| BP005.2 | BP005.3 | Patient ready |
+| BP005.3 | BP005.4 | Values explored |
+| BP005.4 | BP005.5 | Prognosis discussed |
+| BP005.5 | BP005.6 | Preferences documented |
+| BP005.6 | BP005.7 | DNACPR = Yes |
+| BP005.6 | BP005.8 | DNACPR = No |
+| BP005.7 | BP005.8 | DNACPR complete |
+| BP005.8 | BP005.9 | ADRT = Yes |
+| BP005.8 | BP005.10 | ADRT = No |
+| BP005.9 | BP005.10 | ADRT documented |
+| BP005.10 | BP005.11 | Proxy identified |
+| BP005.11 | BP005.12 | Records flagged |
+| BP005.12 | BP005.13 | Information shared |
