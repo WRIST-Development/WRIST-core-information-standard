@@ -1,0 +1,244 @@
+## Overview
+
+These user scenarios illustrate how different personas interact with the Core Information Standard in real-world situations. Each scenario demonstrates key workflows, data requirements, and system interactions.
+
+## Scenario 1: Emergency Hospital Admission
+
+### Title: Elderly Patient with Complex Needs Admitted via Emergency Department
+
+**Context:** Mrs. Ethel Johnson (78) is brought to the Emergency Department after a fall at home. She has mild cognitive impairment and multiple chronic conditions.
+
+**Narrative:**
+The paramedics arrive at the ED with Mrs. Johnson at 14:30 on a Tuesday afternoon. She is confused and unable to provide a clear history. The triage nurse, using a tablet device, searches for her record using her name and date of birth. The system immediately flags several critical alerts:
+- Penicillin allergy with previous anaphylaxis
+- Cognitive impairment requiring simple language
+- Son Michael is primary contact and holds Lasting Power of Attorney
+- High falls risk with previous fractures
+- Current medications include warfarin with recent INR of 3.2
+
+The ED consultant accesses her GP summary, noting recent increasing confusion reported by the district nurse. Her 'About Me' section indicates she becomes distressed in noisy environments and responds better to a calm, slow approach. The team moves her to a quiet side room and contacts her son.
+
+**Data Elements Utilized:**
+
+| Category | Description |
+|---|---|
+| Identity | NHS number, name, DOB, photograph for identification |
+| Clinical | Allergy status, current medications, recent test results, problem list |
+| Safeguarding | Falls risk assessment, vulnerability indicators |
+| Legal | LPA status, capacity assessment from GP |
+| Personal | Communication preferences, environmental needs |
+| Contacts | Next of kin, GP details, community nurse information |
+
+**Personas Involved:**
+- P004: Ward Nurse (triage and initial assessment)
+- P003: Hospital Doctor (clinical decision-making)
+- P009: Informal Carer (providing collateral history)
+- P001: GP (accessed records)
+
+**Related Business Processes:**
+- BP01: Patient Registration and Verification
+- BP02: Clinical Assessment and Documentation
+- BP03: Safeguarding Screening
+- BP04: Care Coordination
+
+## Scenario 2: Planned Care Home Admission
+
+### Title: Social Care Assessment and Care Home Placement
+
+**Context:** Mr. George Patterson (82) is being assessed for residential care following a hospital admission. He lives alone and is struggling to manage independently.
+
+**Narrative:**
+Social worker Rebecca Williams receives a referral for Mr. Patterson, who is medically fit for discharge but cannot return home safely. She accesses the Core Information Standard to review his comprehensive assessment.
+
+The system shows:
+- Recent occupational therapy assessment indicating inability to manage stairs
+- No family support (widower, no children)
+- Mild depression following wife's death last year
+- Type 2 diabetes requiring twice-daily insulin
+- Previous good engagement with services
+- Receives attendance allowance
+- Owner-occupier of 3-bedroom house
+
+Rebecca conducts a mental capacity assessment, which Mr. Patterson passes. Together they complete the 'About Me' section, where he expresses:
+- Preference to stay in the local area
+- Enjoys reading and classical music
+- Vegetarian for 40 years
+- Would like a room with garden view
+- Anxious about losing independence
+
+The care home manager, Patricia Brown, receives the electronic referral with full information, enabling appropriate room allocation and care planning before admission.
+
+**Data Elements Utilized:**
+
+| Category | Description |
+|---|---|
+| Assessment | Functional assessments, mental capacity, social circumstances |
+| Preferences | About Me section, dietary requirements, lifestyle choices |
+| Clinical | Medical conditions, medication needs, mobility status |
+| Financial | Benefits information, property ownership |
+| Legal | Capacity assessment, consent for placement |
+
+**Personas Involved:**
+- P005: Social Worker (assessment and coordination)
+- P007: Care Home Manager (receiving information)
+- P008: Patient (active participation)
+- P003: Hospital Doctor (medical summary)
+
+**Related Business Processes:**
+- BP05: Social Care Assessment
+- BP06: Mental Capacity Assessment
+- BP07: Care Transition Planning
+- BP08: Information Sharing
+
+## Scenario 3: Community Nursing Visit
+
+### Title: District Nurse Home Visit for Wound Care
+
+**Context:** David Lee, a district nurse, visits Mrs. Amelia Singh (68) for daily wound dressing following leg ulcer treatment.
+
+**Narrative:**
+David prepares for his morning visits by syncing his tablet with the latest patient information. For Mrs. Singh, the system shows:
+- Wound photos from yesterday showing improvement
+- New antibiotics started by GP yesterday
+- Daughter now staying to help (updated contact)
+- Dog warning - must be secured before entry
+- Prefers female nurses but accepts male staff
+- Speaks Punjabi primarily, daughter interprets
+
+Arriving at the property, David uses the keysafe code from the system. Mrs. Singh's daughter greets him and secures the dog. During the visit, David:
+- Photographs the wound for progress monitoring
+- Updates the wound assessment template
+- Notes Mrs. Singh seems low in mood
+- Records that daughter is managing medications well
+- Identifies need for interpreter at next GP appointment
+
+The information immediately syncs when back online, alerting the GP to the mood concerns.
+
+**Data Elements Utilized:**
+
+| Category | Description |
+|---|---|
+| Clinical | Wound assessments, medication changes, mood observation |
+| Access | Keysafe code, dog warning, entry instructions |
+| Communication | Language needs, interpreter requirement |
+| Contacts | Updated daughter's details, GP for alerts |
+| Preferences | Gender preference for care, cultural needs |
+
+**Personas Involved:**
+- P006: Community Nurse (direct care delivery)
+- P009: Informal Carer (daughter supporting)
+- P001: GP (receiving alerts)
+- P008: Patient (care recipient)
+
+**Related Business Processes:**
+- BP09: Community Care Delivery
+- BP10: Mobile Working
+- BP11: Clinical Photography
+- BP12: Alert Management
+
+## Scenario 4: Annual Health Check
+
+### Title: Learning Disability Annual Health Check in General Practice
+
+**Context:** James Thompson, a practice nurse, conducts an annual health check for Simon Williams (34), who has moderate learning disability.
+
+**Narrative:**
+Simon attends with his support worker for his annual health check. The system flags:
+- Reasonable adjustments: needs easy-read materials, double appointments, preparation visit offered
+- Previous difficult experience with blood tests
+- Responds well to clear explanations and choices
+- Lives in supported accommodation
+- Works part-time at local garden center
+- No capacity concerns for routine healthcare
+
+James uses the structured template, which automatically adjusts for Simon's needs:
+- Easy-read consent forms appear
+- Simplified health questionnaire loads
+- Visual pain scale available
+- Desensitization protocol for blood tests flagged
+
+During the check, James:
+- Uses pictures to explain procedures
+- Allows Simon to handle equipment first
+- Records Simon's report of feeling tired lately
+- Notes weight gain of 5kg since last year
+- Updates that Simon now self-administers medication
+- Books follow-up for blood tests with preparation visit
+
+**Data Elements Utilized:**
+
+| Category | Description |
+|---|---|
+| Adjustments | Communication needs, appointment requirements, preparation protocols |
+| Clinical | Health measurements, medication management, symptoms |
+| Social | Employment status, living situation, support networks |
+| Preferences | How to explain procedures, coping strategies |
+
+**Personas Involved:**
+- P002: Practice Nurse (conducting check)
+- P008: Patient (active participant)
+- Support Worker (attending but not documented persona)
+- P001: GP (reviewing results)
+
+**Related Business Processes:**
+- BP13: Structured Health Assessments
+- BP14: Reasonable Adjustments Implementation
+- BP15: Easy-Read Documentation
+- BP16: Capacity-Based Consent
+
+## Scenario 5: Multi-Disciplinary Team Meeting
+
+### Title: Hospital Discharge Planning for Complex Patient
+
+**Context:** A multi-disciplinary team meets to plan discharge for Mr. Robert Thompson (79), who was admitted with pneumonia but has complex ongoing needs.
+
+**Narrative:**
+The team gathers in the discharge planning meeting room, with some members joining virtually. The ward sister presents via the shared screen showing the Core Information Standard record:
+
+**Medical status:**
+- Pneumonia resolving, still on IV antibiotics
+- New diagnosis of mild cognitive impairment
+- Previous stroke with left-sided weakness
+- Polypharmacy - 12 regular medications
+
+**Social situation:**
+- Lives with wife who has her own health issues
+- Daughter lives nearby but works full-time
+- Previously independent with personal care
+- Two-story house with bathroom upstairs
+
+**Current assessments:**
+- Physiotherapy: Mobility decreased, recommends stairlift
+- OT: Needs equipment and possible adaptation
+- Nursing: Requires prompting with medication
+- Social work: Wife struggling to cope, needs support
+
+The team collaboratively updates the discharge plan in real-time:
+- Intermediate care placement for 2 weeks
+- Fast-track OT home assessment
+- Carer's assessment for wife
+- Community nursing for IV antibiotics
+- Memory clinic referral
+
+**Data Elements Utilized:**
+
+| Category | Description |
+|---|---|
+| Assessments | Multi-professional assessments and recommendations |
+| Care Planning | Discharge plan, follow-up arrangements |
+| Social | Family dynamics, housing situation, carer needs |
+| Clinical | Diagnosis, treatment, medication changes |
+| Referrals | New referrals generated from meeting |
+
+**Personas Involved:**
+- P004: Ward Nurse (presenting case)
+- P003: Hospital Doctor (medical overview)
+- P005: Social Worker (discharge coordination)
+- Physiotherapist (mobility assessment)
+- Occupational Therapist (home assessment)
+
+**Related Business Processes:**
+- BP17: Multi-Disciplinary Team Meetings
+- BP18: Discharge Planning
+- BP19: Complex Care Coordination
+- BP20: Real-time Documentation
