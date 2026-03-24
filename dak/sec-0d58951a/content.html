@@ -1,0 +1,144 @@
+## Overview
+
+The Core Information Standard defines essential data elements organized into logical groupings that support comprehensive person-centered care. Each element includes precise definitions, data types, validation rules, and terminology bindings to ensure consistent implementation across systems.
+
+## Person Demographics
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| DEM001 | NHS Number | Unique identifier for NHS patients in England and Wales | string | M | 10 digits, modulus 11 check | BP001 | NHS Data Dictionary |
+| DEM002 | Person First Name | Given name(s) including middle names | string | M | Max 35 chars, UTF-8 | BP001 | NHS DD: Person given name |
+| DEM003 | Person Family Name | Surname or family name | string | M | Max 35 chars, UTF-8 | BP001 | NHS DD: Person family name |
+| DEM004 | Person Preferred Name | Name person wishes to be called | string | R | Max 70 chars | BP001, BP004 | NHS DD: Person full name |
+| DEM005 | Date of Birth | Person's birth date | date | M | Format: YYYY-MM-DD, not future | BP001 | NHS DD: Person birth date |
+| DEM006 | Gender | Person's stated gender | string | R | Max 1 char, coded | BP001 | NHS DD: Person stated gender code |
+| DEM007 | Sex | Person's phenotypic sex for clinical purposes | string | O | Max 1 char, coded | BP001 | NHS DD: Person phenotypic sex |
+| DEM008 | Address Line 1-5 | Structured address components | string | M | Max 35 chars each line | BP001 | NHS DD: Patient usual address |
+| DEM009 | Postcode | Postal code for address | string | R | UK postcode format | BP001 | NHS DD: Postcode |
+| DEM010 | Telephone Number | Contact phone number | string | R | E.164 format | BP001 | NHS DD: UK telephone number |
+| DEM011 | Email Address | Electronic mail address | string | R | RFC 5322 format | BP001 | NHS DD: Contact email |
+| DEM012 | Ethnicity | Self-declared ethnic category | string | R | 2A-2S codes | BP001 | NHS DD: Ethnic category |
+| DEM013 | Preferred Contact Method | How person prefers to be contacted | string | R | Coded value | BP001 | NHS DD: Communication contact method |
+| DEM014 | Interpreter Required | Need for language interpretation | boolean | R | Y/N flag | BP001, BP003 | SNOMED: 315594003 |
+
+## Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CLIN001 | Allergy Causative Agent | Substance causing allergic reaction | coded | M | dm+d/SNOMED | BP002 | dm+d VTM/AMP/VMP |
+| CLIN002 | Allergy Reaction Type | Nature of reaction (allergy/intolerance) | coded | R | FHIR valueset | BP002 | FHIR AllergyIntoleranceType |
+| CLIN003 | Allergy Severity | Severity of allergic reaction | coded | R | Mild/Moderate/Severe | BP002 | FHIR AllergyIntoleranceSeverity |
+| CLIN004 | Allergy Status | Active/inactive/resolved status | coded | R | Active/Inactive/Resolved | BP002 | FHIR AllergyIntoleranceStatus |
+| CLIN005 | Problem/Diagnosis | Clinical problem or diagnosis | coded | M | SNOMED preferred | BP002, BP004 | SNOMED: < 404684003 |
+| CLIN006 | Problem Onset Date | When problem started | date | R | Partial dates allowed | BP004 | ISO 8601 |
+| CLIN007 | Problem Status | Active/inactive/resolved | coded | R | Problem status codes | BP004 | SNOMED problem status |
+| CLIN008 | Medication Name | Name of prescribed medication | coded | M | dm+d preferred | BP002 | dm+d VTM/VMP/AMP |
+| CLIN009 | Medication Dose | Dose amount and units | string | M | Structured dose syntax | BP002 | UCUM units |
+| CLIN010 | Medication Frequency | How often medication taken | string | M | Structured timing | BP002 | HL7 timing codes |
+| CLIN011 | Medication Route | Route of administration | coded | M | SNOMED route codes | BP002 | SNOMED: < 284009009 |
+| CLIN012 | Medication Status | Active/stopped/suspended | coded | M | Status codes | BP002, BP005 | FHIR MedicationStatus |
+| CLIN013 | Vaccination Given | Vaccine product administered | coded | M | dm+d vaccine codes | BP001 | dm+d immunological products |
+| CLIN014 | Vaccination Date | Date vaccine given | datetime | M | Not future date | BP001 | ISO 8601 |
+| CLIN015 | Vaccination Site | Body site for injection | coded | R | SNOMED body site | BP001 | SNOMED: < 442083009 |
+
+## Assessments and Observations
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ASSESS001 | Blood Pressure Systolic | Systolic BP measurement | quantity | R | 40-300 mmHg | BP004 | LOINC: 8480-6 |
+| ASSESS002 | Blood Pressure Diastolic | Diastolic BP measurement | quantity | R | 20-200 mmHg | BP004 | LOINC: 8462-4 |
+| ASSESS003 | Heart Rate | Pulse rate | quantity | R | 20-300 bpm | BP004 | LOINC: 8867-4 |
+| ASSESS004 | Temperature | Body temperature | quantity | R | 25-45 Celsius | BP004 | LOINC: 8310-5 |
+| ASSESS005 | Respiratory Rate | Breaths per minute | quantity | R | 5-60 /min | BP004 | LOINC: 9279-1 |
+| ASSESS006 | Oxygen Saturation | SpO2 percentage | quantity | R | 50-100% | BP004 | LOINC: 59408-5 |
+| ASSESS007 | Weight | Body weight | quantity | R | 0.5-500 kg | BP004 | LOINC: 29463-7 |
+| ASSESS008 | Height | Body height | quantity | R | 30-250 cm | BP004 | LOINC: 8302-2 |
+| ASSESS009 | BMI | Body mass index | quantity | R | 10-70 kg/m2 | BP004 | LOINC: 39156-5 |
+| ASSESS010 | Smoking Status | Current smoking behavior | coded | R | SNOMED codes | BP004 | SNOMED: < 365980008 |
+| ASSESS011 | Alcohol Use | Alcohol consumption pattern | coded | R | SNOMED codes | BP004 | SNOMED: < 228273003 |
+| ASSESS012 | Mental Capacity | Capacity for specific decision | coded | R | Has/Lacks capacity | BP003, BP006 | SNOMED: < 719500002 |
+| ASSESS013 | Functional Status | Activities of daily living | coded | R | Structured assessment | BP005 | SNOMED ADL codes |
+| ASSESS014 | Pain Score | Numerical pain rating | quantity | R | 0-10 scale | BP004 | LOINC: 38208-5 |
+| ASSESS015 | Falls Risk | Risk of falling assessment | coded | R | Low/Medium/High | BP003, BP005 | SNOMED: 404904002 |
+
+## Legal and Consent
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| LEGAL001 | Information Sharing Consent | Consent to share information | boolean | R | Y/N with date | BP001, BP003 | SNOMED: 425691002 |
+| LEGAL002 | Mental Capacity Decision | Specific capacity assessment outcome | string | R | Decision + rationale | BP003, BP006 | MCA 2005 framework |
+| LEGAL003 | Best Interests Decision | Decision made in best interests | string | R | Decision + consultation | BP003 | MCA 2005 framework |
+| LEGAL004 | LPA Health Welfare | Lasting Power of Attorney details | string | R | Name + contact + scope | BP003, BP006 | Court of Protection |
+| LEGAL005 | DNACPR Status | Do Not Attempt CPR decision | coded | M | For/Not for CPR | BP006 | SNOMED: 450475007/450476008 |
+| LEGAL006 | DNACPR Review Date | When DNACPR to be reviewed | date | R | Future date | BP006 | ISO 8601 |
+| LEGAL007 | Advance Statement | Person's advance wishes | text | R | Free text document | BP006 | MCA 2005 |
+| LEGAL008 | MHA Status | Mental Health Act legal status | coded | R | Section codes | BP003 | NHS DD: MHA codes |
+| LEGAL009 | DoLS Authorization | Deprivation of Liberty status | coded | R | Standard/Urgent/None | BP003 | DoLS framework |
+| LEGAL010 | Safeguarding Alert | Active safeguarding concern | boolean | M | Y/N flag | BP003 | Local authority codes |
+
+## Care Planning and Coordination
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CARE001 | Care Plan Goals | Person's goals and priorities | text | R | SMART goals | BP004 | SNOMED goal concepts |
+| CARE002 | Care Plan Actions | Planned interventions | text | R | Who/what/when | BP004 | SNOMED procedures |
+| CARE003 | Care Plan Review Date | Next review scheduled | date | R | Future date | BP004 | ISO 8601 |
+| CARE004 | Key Worker | Named care coordinator | string | R | Name + contact | BP004, BP005 | Local roles |
+| CARE005 | Preferred Place of Care | Where person wants care | coded | R | Home/hospital/hospice | BP006 | Local codes |
+| CARE006 | Preferred Place of Death | Where person wants to die | coded | R | Coded locations | BP006 | SCC11580 codes |
+| CARE007 | Contingency Plan | Crisis/deterioration plan | text | R | Triggers + actions | BP004 | Free text |
+| CARE008 | Equipment Provided | Assistive equipment issued | string | R | Item + date | BP005 | SNOMED devices |
+| CARE009 | Services Involved | Active service providers | string | R | Service + contact | BP004, BP005 | ODS codes |
+| CARE010 | Discharge Destination | Where discharged to | coded | R | Destination codes | BP005 | NHS DD codes |
+
+## Social Context
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| SOCIAL001 | Living Situation | Household composition | coded | R | Lives alone/with others | BP003, BP005 | SNOMED: < 365481000 |
+| SOCIAL002 | Housing Type | Type of accommodation | coded | R | House/flat/residential | BP005 | NHS DD accommodation |
+| SOCIAL003 | Main Carer | Primary informal carer | string | R | Name + relationship | BP003, BP004 | Relationship codes |
+| SOCIAL004 | Carer Assessment | Carer's needs assessed | boolean | R | Y/N + date | BP003 | Care Act 2014 |
+| SOCIAL005 | Employment Status | Current work situation | coded | R | Employed/retired etc | BP004 | SNOMED occupation |
+| SOCIAL006 | Benefits Received | Welfare benefits | string | R | Benefit types | BP003 | DWP codes |
+| SOCIAL007 | Social Isolation Risk | Risk of loneliness | coded | R | Risk level | BP003, BP004 | Local assessment |
+| SOCIAL008 | Immigration Status | Legal status in UK | coded | R | Status codes | BP001 | Home Office codes |
+| SOCIAL009 | Dependents | Caring responsibilities | string | R | Who + needs | BP003 | Free text |
+| SOCIAL010 | Accessing Property | How to access home | text | R | Keys/codes/instructions | BP005 | Free text |
+
+## Personal Preferences (About Me)
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PREF001 | Important to Me | What matters most | text | R | Free text | BP004 | Person reported |
+| PREF002 | Communication Style | How I communicate | text | R | Free text | BP001, BP004 | Person reported |
+| PREF003 | Daily Routine | Typical day structure | text | R | Free text | BP004, BP005 | Person reported |
+| PREF004 | Likes and Dislikes | Preferences | text | R | Free text | BP004 | Person reported |
+| PREF005 | Cultural Needs | Cultural requirements | text | R | Free text | BP004 | Person reported |
+| PREF006 | Spiritual Needs | Faith/spiritual needs | text | R | Free text | BP004, BP006 | Person reported |
+| PREF007 | Dietary Preferences | Food preferences/needs | text | R | Free text | BP005 | Person reported |
+| PREF008 | Sleep Pattern | Normal sleep routine | text | R | Free text | BP005 | Person reported |
+| PREF009 | Mobility Preferences | How I like to move | text | R | Free text | BP005 | Person reported |
+| PREF010 | Personal Care | Washing/dressing preferences | text | R | Free text | BP005 | Person reported |
+
+## Data Quality and Governance
+
+### Validation Rules
+- **Mandatory fields** must be completed before record can be saved
+- **Coded fields** must use specified terminology where available
+- **Dates** cannot be future dates unless specifically allowed (e.g., review dates)
+- **Clinical measurements** must fall within clinically plausible ranges
+- **Cross-field validation** ensures consistency (e.g., end date after start date)
+
+### Terminology Bindings
+- **SNOMED CT** - Primary clinical terminology
+- **dm+d** - All UK medications and devices
+- **LOINC** - Laboratory and observation codes
+- **NHS Data Dictionary** - Administrative codes
+- **Local codes** - Where national codes unavailable
+
+### Privacy and Security
+- **Role-based access** controls who can view/edit elements
+- **Audit trail** required for all data changes
+- **Consent flags** control information sharing
+- **Sensitive data** (e.g., mental health, sexual health) requires additional controls
