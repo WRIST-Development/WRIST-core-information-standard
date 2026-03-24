@@ -1,0 +1,147 @@
+## Overview
+
+This section provides detailed specifications for all data elements within the Core Information Standard v2.0. Elements are organized by functional domains and include identifiers, descriptions, data types, validation rules, and terminology bindings.
+
+## Person Demographics Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE1 | Person First Name | The first name(s) of the person including middle names | String | Yes | Max length: 35 chars | All processes | NHS DD: Person given name |
+| CIS.DE2 | Person Family Name | The family name or surname of the person | String | Yes | Max length: 35 chars | All processes | NHS DD: Person family name |
+| CIS.DE3 | Person Preferred Name | The name by which a person wishes to be addressed | String | No | Max length: 70 chars | CIS.BP4 | NHS DD: Person full name |
+| CIS.DE4 | Title | Person's title (Mr, Mrs, Dr, etc.) | String | No | Max length: 35 chars | All processes | NHS DD: Person title |
+| CIS.DE5 | Date of Birth | The date of birth of the person | Date | Yes | Format: YYYY-MM-DD, Must be past date | All processes | NHS DD: Person birth date |
+| CIS.DE6 | Gender | The person's stated gender | String | No | Max length: 1 char, Values: M/F/X | CIS.BP3, CIS.BP4 | NHS DD: Person stated gender code |
+| CIS.DE7 | Sex | The person's phenotypic sex for clinical purposes | String | No | Max length: 1 char | CIS.BP5 | NHS DD: Person phenotypic sex |
+| CIS.DE8 | NHS Number | The unique identifier for a person within the NHS | String | No | 10 digits, MOD11 check | All processes | NHS DD: NHS number |
+| CIS.DE9 | NHS Number Status | Reliability indicator for NHS Number | String | No | Max length: 2 chars | All processes | NHS DD: NHS number status indicator |
+| CIS.DE10 | Other Identifier | Local or country-specific identifiers (CHI, H&C Number) | String | No | Max length: 20 chars | CIS.BP1, CIS.BP7 | NHS DD: Local patient identifier |
+| CIS.DE11 | Address Line 1 | First line of person's address | String | Yes | Max length: 35 chars | All processes | NHS DD: Address line 1 |
+| CIS.DE12 | Address Line 2 | Second line of person's address | String | No | Max length: 35 chars | All processes | NHS DD: Address line 2 |
+| CIS.DE13 | Address Line 3 | Third line of person's address | String | No | Max length: 35 chars | All processes | NHS DD: Address line 3 |
+| CIS.DE14 | Address Line 4 | Fourth line of person's address | String | No | Max length: 35 chars | All processes | NHS DD: Address line 4 |
+| CIS.DE15 | Address Line 5 | Fifth line of person's address | String | No | Max length: 35 chars | All processes | NHS DD: Address line 5 |
+| CIS.DE16 | Postcode | The person's postcode | String | No | Max length: 8 chars, UK postcode format | All processes | NHS DD: Postcode of usual address |
+| CIS.DE17 | Address Type | Type of address (home, temporary, correspondence) | String | No | Max length: 1 char | CIS.BP8 | NHS DD: Address association type |
+| CIS.DE18 | Preferred Contact Method | How the person prefers to be contacted | String | No | Max length: 1 char | CIS.BP2, CIS.BP4 | NHS DD: Communication contact method |
+| CIS.DE19 | Telephone Number | Person's telephone number | String | No | Max length: 35 chars | All processes | NHS DD: UK telephone number |
+| CIS.DE20 | Telephone Type | Type of phone (home, mobile, work) | String | No | Max length: 6 chars | All processes | FHIR: Contact point use |
+| CIS.DE21 | Email Address | Person's email address | String | No | Max length: 255 chars, Email format | CIS.BP2 | NHS DD: Contact email address |
+| CIS.DE22 | Email Type | Type of email (home, work) | String | No | Max length: 6 chars | CIS.BP2 | FHIR: Contact point use |
+
+## Clinical Information Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE23 | GP Practice Name | Name of registered GP practice | Text | No | Complex type | CIS.BP5 | Custom structure |
+| CIS.DE24 | GP Practice Identifier | ODS code of GP practice | String | Yes | ODS code format | CIS.BP5, CIS.BP7 | NHS DD: General medical practice |
+| CIS.DE25 | Problem | Condition requiring attention | Coded | Yes | SNOMED CT subset | CIS.BP5 | SNOMED CT: Health issues |
+| CIS.DE26 | Problem Onset Date | When the problem began | DateTime | No | Past or present date | CIS.BP5 | Custom |
+| CIS.DE27 | Problem End Date | When the problem resolved | DateTime | No | After onset date | CIS.BP5 | Custom |
+| CIS.DE28 | Allergy Causative Agent | Substance causing allergy | Coded | Yes | dm+d or SNOMED CT | CIS.BP1, CIS.BP5 | dm+d/SNOMED CT |
+| CIS.DE29 | Allergy Reaction Type | Type of reaction (allergy/intolerance) | String | No | Enumerated values | CIS.BP1 | FHIR: AllergyIntoleranceType |
+| CIS.DE30 | Allergy Severity | Severity of allergic reaction | String | No | Mild/Moderate/Severe | CIS.BP1 | FHIR: Severity |
+| CIS.DE31 | Medication Name | Name of medication | Coded | Yes | dm+d preferred | CIS.BP1, CIS.BP5 | dm+d codes |
+| CIS.DE32 | Medication Dose | Dose and frequency | Text | No | Parseable dose syntax | CIS.BP5 | FHIR Dose syntax |
+| CIS.DE33 | Medication Route | How medication administered | Coded | No | SNOMED CT routes | CIS.BP5 | SNOMED CT: Routes |
+| CIS.DE34 | Medication Status | Active/stopped/suspended | String | No | Enumerated values | CIS.BP5 | FHIR: MedicationStatus |
+| CIS.DE35 | Vaccination Procedure | Vaccine administered | Coded | Yes | SNOMED CT | CIS.BP5 | SNOMED CT: Vaccination procedures |
+| CIS.DE36 | Vaccination Date | Date vaccine given | DateTime | No | Past or present date | CIS.BP5 | Custom |
+| CIS.DE37 | Investigation Type | Type of investigation performed | Coded | Yes | SNOMED CT procedures | CIS.BP5 | SNOMED CT: Procedures |
+| CIS.DE38 | Investigation Result | Result of investigation | Mixed | No | Numeric or coded | CIS.BP5 | LOINC/SNOMED CT |
+| CIS.DE39 | Pregnancy Status | Whether person is pregnant | Boolean | No | Yes/No | CIS.BP1, CIS.BP3 | Custom |
+| CIS.DE40 | Expected Delivery Date | EDD if pregnant | Date | No | Future date if pregnant | CIS.BP3 | Custom |
+
+## About Me Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE41 | What Is Important To Me | Person's values and priorities | Text | No | Free text | CIS.BP4, CIS.BP6 | Free text |
+| CIS.DE42 | People Important To Me | Key relationships | Text | No | Free text | CIS.BP6 | Free text |
+| CIS.DE43 | How I Communicate | Communication methods and needs | Text | No | Free text | CIS.BP4 | Free text |
+| CIS.DE44 | My Wellness | Description of good/bad days | Text | No | Free text | CIS.BP6 | Free text |
+| CIS.DE45 | Please Do and Don't | Specific preferences | Text | No | Free text | CIS.BP4, CIS.BP6 | Free text |
+| CIS.DE46 | Support Needs | When and how support needed | Text | No | Free text | CIS.BP3, CIS.BP4 | Free text |
+| CIS.DE47 | About Me Date | When information last updated | DateTime | No | Past or present date | CIS.BP6 | Custom |
+| CIS.DE48 | Supported By | Who helped write this section | Text | No | Max length: 150 chars | CIS.BP6 | Free text |
+
+## Individual Requirements Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE49 | Reasonable Adjustment Flag | Requires adjustments indicator | Boolean | No | Yes/No | CIS.BP4 | SNOMED CT: 1108111000000107 |
+| CIS.DE50 | Reasonable Adjustment Type | Type of adjustment needed | Coded | No | SNOMED CT subset | CIS.BP4 | SNOMED CT: Accessible information |
+| CIS.DE51 | Adjustment Details | Specifics of adjustment | Text | No | Free text | CIS.BP4 | Free text |
+| CIS.DE52 | Impairment Category | Type of impairment | Coded | No | SNOMED CT | CIS.BP4 | SNOMED CT |
+| CIS.DE53 | Impairment Impact | How impairment affects person | Text | No | Free text | CIS.BP3, CIS.BP4 | Free text |
+| CIS.DE54 | Cognition Details | Cognitive support needs | Text | No | Free text | CIS.BP3, CIS.BP4 | Free text |
+| CIS.DE55 | Mobility Needs | Mobility requirements | Coded | No | SNOMED CT subset | CIS.BP4 | SNOMED CT: Mobility findings |
+| CIS.DE56 | Other Requirements | Additional individual needs | Text | No | Free text | CIS.BP4 | Free text |
+
+## Legal Information Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE57 | Information Sharing Consent | Consent status for sharing | Text | No | Free text | CIS.BP2 | Free text |
+| CIS.DE58 | Consent Date | When consent given/refused | DateTime | No | Past or present date | CIS.BP2 | Custom |
+| CIS.DE59 | Mental Capacity Assessment | Outcome of MCA | Text | No | Free text | CIS.BP3 | Free text |
+| CIS.DE60 | LPA Health Welfare | LPA details if applicable | Text | No | Free text | CIS.BP1 | SNOMED CT: LPA findings |
+| CIS.DE61 | DoLS Status | Deprivation of Liberty status | Text | No | Free text | CIS.BP9 | Free text |
+| CIS.DE62 | DoLS Authorisation Date | When DoLS authorized | DateTime | No | Past or present date | CIS.BP9 | Custom |
+| CIS.DE63 | MHA Status | Mental Health Act status | Coded | No | NHS DD codes | CIS.BP9 | NHS DD: MHA legal status |
+| CIS.DE64 | ADRT Status | Advance decision status | Coded | No | SNOMED CT | CIS.BP1, CIS.BP11 | SNOMED CT: ADRT preferences |
+
+## Safeguarding Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE65 | Safeguarding Flag | Active safeguarding indicator | Boolean | No | Yes/No | CIS.BP9 | Custom |
+| CIS.DE66 | Safeguarding Concern Type | Type of safeguarding issue | Coded | No | SNOMED CT subset | CIS.BP9 | SNOMED CT: Safeguarding issues |
+| CIS.DE67 | Safeguarding Start Date | When concern identified | DateTime | No | Past or present date | CIS.BP9 | Custom |
+| CIS.DE68 | Safeguarding Lead | Professional leading | Text | No | Free text | CIS.BP9 | Free text |
+| CIS.DE69 | Looked After Child | LAC status | Boolean | No | Yes/No | CIS.BP9 | Custom |
+| CIS.DE70 | Local Authority | Responsible LA | Coded | No | ODS code | CIS.BP9 | NHS DD: Organisation code |
+
+## Care Planning Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE71 | Care Plan Goal | Person's goal/aim | Mixed | No | Text or coded | CIS.BP6 | SNOMED CT/Free text |
+| CIS.DE72 | Goal Importance | How important (1-10) | Decimal | No | Range 1-10 | CIS.BP6 | Custom |
+| CIS.DE73 | Care Plan Action | Planned intervention | Mixed | No | Text or coded | CIS.BP6 | SNOMED CT: Procedures |
+| CIS.DE74 | Action Owner | Who will do it | Text | No | Free text | CIS.BP6 | Free text |
+| CIS.DE75 | Action Status | Progress status | Coded | No | SNOMED CT subset | CIS.BP6 | SNOMED CT: Action context |
+| CIS.DE76 | Review Date | When to review | DateTime | No | Future date | CIS.BP6 | Custom |
+| CIS.DE77 | Contingency Trigger | Warning signs | Mixed | No | Text or coded | CIS.BP6 | SNOMED CT/Free text |
+| CIS.DE78 | Contingency Action | What to do | Text | No | Free text | CIS.BP6 | Free text |
+
+## End of Life Care Domain
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|------------|-------|-------------|-----------|----------|------------|----------------|------|
+| CIS.DE79 | CPR Decision | Resuscitation decision | Coded | No | For/Not for CPR | CIS.BP1, CIS.BP11 | SNOMED CT: CPR decisions |
+| CIS.DE80 | CPR Decision Date | When decided | DateTime | No | Past or present date | CIS.BP11 | Custom |
+| CIS.DE81 | Preferred Place Death | Where person wants to die | Text | No | Free text | CIS.BP11 | SCC11580 codes |
+| CIS.DE82 | Prognosis Estimate | Clinical estimate | Text | No | Free text | CIS.BP11 | Free text |
+| CIS.DE83 | Prognosis Awareness | What person knows | Text | No | Free text | CIS.BP11 | Free text |
+| CIS.DE84 | Priorities of Care | Focus of care | Text | No | Free text | CIS.BP11 | Free text |
+
+## Validation Rules
+
+### Cross-Field Validations
+1. If Pregnancy Status = Yes, Expected Delivery Date should be populated
+2. If CPR Decision exists, CPR Decision Date is required
+3. If Safeguarding Flag = Yes, at least one Safeguarding Concern Type required
+4. Address must have at least Address Line 1 and Postcode for UK addresses
+5. If NHS Number provided, NHS Number Status should be populated
+
+### Temporal Validations
+1. Problem End Date must be after Problem Onset Date
+2. DoLS End Date must be after DoLS Authorisation Date
+3. All dates cannot be future dates unless specifically allowed
+4. Review dates must be in the future
+
+### Conditional Requirements
+1. If person lacks capacity, Mental Capacity Assessment required
+2. If reasonable adjustments needed, details must be provided
+3. If safeguarding concerns active, lead professional must be identified
