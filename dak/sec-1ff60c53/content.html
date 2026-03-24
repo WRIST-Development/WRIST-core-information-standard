@@ -1,11 +1,9 @@
 ## Overview
-
-The WRIST Core Information Standard comprises hundreds of discrete data elements organized into 47 major concept groups. This section provides detailed specifications for key data elements, including their clinical purpose, data types, validation rules, and relationships to business processes. Elements are grouped by their primary domain of use.
-
+The WRIST Core Information Standard comprises hundreds of discrete data elements organised into 47 major concept groups. This section provides detailed specifications for key data elements, including their clinical purpose, data types, validation rules, and relationships to business processes. Elements are grouped by their primary domain of use.
 ## Person Identification and Demographics
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | DEM-001 | NHS Number | Unique national health service identifier for person | Identifier | Yes | 10-digit format, modulus 11 check | All processes | OID: 2.16.840.1.113883.2.1.3.2.4.16.1 |
 | DEM-002 | Family Name | Current family/surname | String | Yes | 1-70 characters, UTF-8 | BP-001, BP-002 | - |
 | DEM-003 | Given Name | First/given name(s) | String | Yes | 1-70 characters, UTF-8 | BP-001, BP-002 | - |
@@ -22,7 +20,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Clinical Problems and Diagnoses
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | PROB-001 | Problem/Diagnosis Code | SNOMED CT code for condition | Code | Yes | Valid SNOMED concept | BP-002, BP-003 | SNOMED CT |
 | PROB-002 | Problem/Diagnosis Text | Free text if no suitable code | String | Conditional | Required if no code; 1-500 chars | BP-002 | - |
 | PROB-003 | Clinical Status | Active/Resolved/Remission | Code | Yes | Value set: active/resolved/remission | BP-001, BP-003 | FHIR Clinical Status |
@@ -37,7 +35,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Medications and Prescribing
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | MED-001 | Medication Code | dm+d code for prescribed item | Code | Yes | Valid dm+d concept | BP-003, BP-007 | dm+d |
 | MED-002 | Medication Name | Display name if no code | String | Conditional | Required if no code | BP-003 | - |
 | MED-003 | Dose Amount | Numeric dose quantity | Decimal | Yes | Positive number | BP-003 | - |
@@ -54,7 +52,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Allergies and Adverse Reactions
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | ALL-001 | Allergen Code | SNOMED code for substance | Code | Yes | Valid SNOMED substance | BP-001, BP-005 | SNOMED Substance |
 | ALL-002 | Allergen Text | Free text if no code | String | Conditional | Required if no code | BP-001 | - |
 | ALL-003 | Reaction Type | Allergy/Intolerance/ADR | Code | Yes | Value set defined | BP-001, BP-005 | SNOMED: 609328004 |
@@ -67,7 +65,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Assessments and Scores
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | ASS-001 | Assessment Type | Which assessment performed | Code | Yes | Valid assessment type | BP-001, BP-007 | SNOMED CT |
 | ASS-002 | Assessment Date | When assessment conducted | DateTime | Yes | Not future | BP-001, BP-007 | - |
 | ASS-003 | Total Score | Overall assessment score | Integer | No | Within scale range | BP-001, BP-005 | - |
@@ -81,7 +79,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Care Planning Elements
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | PLAN-001 | Goal Description | What person wants to achieve | String | Yes | 1-1000 characters | BP-003 | - |
 | PLAN-002 | Goal Category | Type of goal | Code | No | Goal category codes | BP-003 | SNOMED: 410518001 |
 | PLAN-003 | Target Date | When to achieve by | Date | No | Future date | BP-003 | - |
@@ -96,7 +94,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Risk Assessment and Management
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | RISK-001 | Risk Type | Falls/Pressure/Suicide etc | Code | Yes | Risk type value set | BP-005 | SNOMED CT |
 | RISK-002 | Risk Score | Calculated risk value | Decimal | No | Per tool range | BP-005 | - |
 | RISK-003 | Risk Level | Low/Medium/High/Very High | Code | Yes | Risk level value set | BP-005 | - |
@@ -109,7 +107,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Legal and Consent Information
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | LEG-001 | Capacity Decision | Specific decision assessed | String | Yes | 1-500 characters | BP-007 | - |
 | LEG-002 | Has Capacity | Yes/No for decision | Boolean | Yes | True/False | BP-007 | - |
 | LEG-003 | Assessment Date | When assessed | DateTime | Yes | Not future | BP-007 | - |
@@ -124,7 +122,7 @@ The WRIST Core Information Standard comprises hundreds of discrete data elements
 ## Investigation Results
 
 | Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | INV-001 | Test Code | LOINC or SNOMED code | Code | Yes | Valid LOINC/SNOMED | BP-002 | LOINC/SNOMED |
 | INV-002 | Test Name | Display name | String | Yes | 1-255 characters | BP-002 | - |
 | INV-003 | Result Value | Numeric or coded result | Varies | Yes | Per test type | BP-002 | - |
