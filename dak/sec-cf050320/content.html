@@ -1,0 +1,280 @@
+## Overview
+
+The Core Information Standard supports critical business processes across health and social care settings. These workflows demonstrate how standardized data collection, sharing, and utilization enable safe, effective, and person-centered care delivery.
+
+## Process 1: Patient Registration and Demographic Verification
+
+**Process ID**: BP001
+**Process Title**: New Patient Registration and Identity Verification
+
+### Objectives
+Ensure accurate patient identification and demographic data capture to support safe care delivery, reduce duplication, and enable appropriate information sharing across care settings.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP001.01 | Patient presents for registration |
+| User Task | BP001.02 | Verify patient identity documents |
+| System Task | BP001.03 | Check NHS Spine for existing records |
+| User Task | BP001.04 | Capture/update demographic details |
+| User Task | BP001.05 | Record contact preferences |
+| User Task | BP001.06 | Document communication needs |
+| Decision Gateway | BP001.07 | Reasonable adjustments required? |
+| User Task | BP001.08 | Record reasonable adjustments |
+| System Task | BP001.09 | Generate unique patient record |
+| End Event | BP001.10 | Registration complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP001.01 | BP001.02 | Always |
+| BP001.02 | BP001.03 | Identity verified |
+| BP001.03 | BP001.04 | Always |
+| BP001.04 | BP001.05 | Demographics captured |
+| BP001.05 | BP001.06 | Always |
+| BP001.06 | BP001.07 | Always |
+| BP001.07 | BP001.08 | Yes - adjustments needed |
+| BP001.07 | BP001.09 | No - no adjustments |
+| BP001.08 | BP001.09 | Adjustments recorded |
+| BP001.09 | BP001.10 | Record created |
+
+## Process 2: Medication Reconciliation at Admission
+
+**Process ID**: BP002
+**Process Title**: Medication Reconciliation for Hospital Admission
+
+### Objectives
+Accurately identify all medications a patient is taking, resolve discrepancies, and create a complete current medication list to prevent adverse drug events and therapeutic failures.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP002.01 | Patient admitted to hospital |
+| User Task | BP002.02 | Review GP medication list |
+| User Task | BP002.03 | Interview patient/carer |
+| User Task | BP002.04 | Check previous discharge summaries |
+| System Task | BP002.05 | Query community pharmacy records |
+| User Task | BP002.06 | Compare all sources |
+| Decision Gateway | BP002.07 | Discrepancies found? |
+| User Task | BP002.08 | Investigate discrepancies |
+| User Task | BP002.09 | Document reconciled list |
+| User Task | BP002.10 | Prescribe admission medications |
+| System Task | BP002.11 | Check for interactions/allergies |
+| End Event | BP002.12 | Reconciliation complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP002.01 | BP002.02 | Within 24 hours |
+| BP002.02 | BP002.03 | Always |
+| BP002.03 | BP002.04 | Always |
+| BP002.04 | BP002.05 | If available |
+| BP002.05 | BP002.06 | Always |
+| BP002.06 | BP002.07 | Sources compared |
+| BP002.07 | BP002.08 | Yes - discrepancies |
+| BP002.07 | BP002.09 | No - all match |
+| BP002.08 | BP002.09 | Resolved |
+| BP002.09 | BP002.10 | List documented |
+| BP002.10 | BP002.11 | Always |
+| BP002.11 | BP002.12 | Checks complete |
+
+## Process 3: Safeguarding Assessment and Referral
+
+**Process ID**: BP003
+**Process Title**: Adult Safeguarding Screening and Referral
+
+### Objectives
+Identify adults at risk of abuse or neglect, document concerns appropriately, and initiate timely referrals to protect vulnerable individuals while respecting autonomy.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP003.01 | Safeguarding concern identified |
+| User Task | BP003.02 | Assess immediate safety |
+| Decision Gateway | BP003.03 | Immediate danger? |
+| User Task | BP003.04 | Take protective action |
+| User Task | BP003.05 | Document concern details |
+| User Task | BP003.06 | Assess mental capacity |
+| Decision Gateway | BP003.07 | Has capacity? |
+| User Task | BP003.08 | Discuss with individual |
+| User Task | BP003.09 | Follow best interests |
+| User Task | BP003.10 | Complete referral form |
+| System Task | BP003.11 | Submit to local authority |
+| User Task | BP003.12 | Update care plan |
+| End Event | BP003.13 | Process complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP003.01 | BP003.02 | Immediately |
+| BP003.02 | BP003.03 | Assessment done |
+| BP003.03 | BP003.04 | Yes - immediate risk |
+| BP003.03 | BP003.05 | No - no immediate risk |
+| BP003.04 | BP003.05 | Action taken |
+| BP003.05 | BP003.06 | Always |
+| BP003.06 | BP003.07 | Assessment complete |
+| BP003.07 | BP003.08 | Yes - has capacity |
+| BP003.07 | BP003.09 | No - lacks capacity |
+| BP003.08 | BP003.10 | Discussion complete |
+| BP003.09 | BP003.10 | Best interests determined |
+| BP003.10 | BP003.11 | Form complete |
+| BP003.11 | BP003.12 | Submitted |
+| BP003.12 | BP003.13 | Plan updated |
+
+## Process 4: Care Plan Development and Review
+
+**Process ID**: BP004
+**Process Title**: Person-Centered Care Plan Creation
+
+### Objectives
+Develop comprehensive, person-centered care plans that reflect individual goals, preferences, and needs while coordinating multi-professional inputs and ensuring regular review.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP004.01 | Care planning initiated |
+| User Task | BP004.02 | Review assessments |
+| User Task | BP004.03 | Explore person's goals |
+| User Task | BP004.04 | Identify strengths/assets |
+| User Task | BP004.05 | Define SMART objectives |
+| User Task | BP004.06 | Assign responsibilities |
+| User Task | BP004.07 | Set review date |
+| Decision Gateway | BP004.08 | Person agrees? |
+| User Task | BP004.09 | Revise plan |
+| User Task | BP004.10 | Finalize plan |
+| System Task | BP004.11 | Distribute to team |
+| Timer Event | BP004.12 | Review date reached |
+| User Task | BP004.13 | Conduct review |
+| End Event | BP004.14 | Plan active |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP004.01 | BP004.02 | Always |
+| BP004.02 | BP004.03 | Assessments reviewed |
+| BP004.03 | BP004.04 | Goals explored |
+| BP004.04 | BP004.05 | Strengths identified |
+| BP004.05 | BP004.06 | Objectives defined |
+| BP004.06 | BP004.07 | Responsibilities assigned |
+| BP004.07 | BP004.08 | Review date set |
+| BP004.08 | BP004.09 | No - changes needed |
+| BP004.08 | BP004.10 | Yes - agreed |
+| BP004.09 | BP004.03 | Revisions made |
+| BP004.10 | BP004.11 | Plan finalized |
+| BP004.11 | BP004.14 | Distributed |
+| BP004.12 | BP004.13 | Review triggered |
+| BP004.13 | BP004.01 | Review complete |
+
+## Process 5: Discharge Planning and Coordination
+
+**Process ID**: BP005
+**Process Title**: Hospital Discharge Planning
+
+### Objectives
+Ensure safe, timely discharge from hospital with appropriate support services, equipment, and follow-up arrangements in place to prevent readmission.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP005.01 | Discharge planning initiated |
+| User Task | BP005.02 | Assess discharge needs |
+| User Task | BP005.03 | Evaluate home environment |
+| Decision Gateway | BP005.04 | Support needed? |
+| User Task | BP005.05 | Arrange services |
+| User Task | BP005.06 | Order equipment |
+| User Task | BP005.07 | Reconcile medications |
+| User Task | BP005.08 | Create discharge summary |
+| User Task | BP005.09 | Book follow-up |
+| User Task | BP005.10 | Educate patient/carer |
+| System Task | BP005.11 | Send summary to GP |
+| User Task | BP005.12 | Complete discharge |
+| End Event | BP005.13 | Patient discharged |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP005.01 | BP005.02 | 48hrs before discharge |
+| BP005.02 | BP005.03 | Needs assessed |
+| BP005.03 | BP005.04 | Environment evaluated |
+| BP005.04 | BP005.05 | Yes - support required |
+| BP005.04 | BP005.07 | No - independent |
+| BP005.05 | BP005.06 | Services arranged |
+| BP005.06 | BP005.07 | Equipment ordered |
+| BP005.07 | BP005.08 | Medications reconciled |
+| BP005.08 | BP005.09 | Summary created |
+| BP005.09 | BP005.10 | Follow-up booked |
+| BP005.10 | BP005.11 | Education complete |
+| BP005.11 | BP005.12 | Summary sent |
+| BP005.12 | BP005.13 | Discharge complete |
+
+## Process 6: Advance Care Planning Documentation
+
+**Process ID**: BP006
+**Process Title**: Advance Care Planning Conversation and Documentation
+
+### Objectives
+Facilitate and document advance care planning discussions, ensuring patient preferences for future care are recorded and accessible across all care settings.
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP006.01 | ACP discussion requested |
+| User Task | BP006.02 | Assess readiness |
+| User Task | BP006.03 | Explore values/preferences |
+| User Task | BP006.04 | Discuss treatment options |
+| User Task | BP006.05 | Document preferences |
+| Decision Gateway | BP006.06 | DNACPR discussed? |
+| User Task | BP006.07 | Complete DNACPR form |
+| User Task | BP006.08 | Identify proxy decision maker |
+| User Task | BP006.09 | Create advance statement |
+| System Task | BP006.10 | Update electronic records |
+| User Task | BP006.11 | Share with relevant parties |
+| End Event | BP006.12 | ACP documented |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP006.01 | BP006.02 | Always |
+| BP006.02 | BP006.03 | Patient ready |
+| BP006.03 | BP006.04 | Values explored |
+| BP006.04 | BP006.05 | Options discussed |
+| BP006.05 | BP006.06 | Preferences documented |
+| BP006.06 | BP006.07 | Yes - DNACPR wanted |
+| BP006.06 | BP006.08 | No - no DNACPR |
+| BP006.07 | BP006.08 | Form completed |
+| BP006.08 | BP006.09 | Proxy identified |
+| BP006.09 | BP006.10 | Statement created |
+| BP006.10 | BP006.11 | Records updated |
+| BP006.11 | BP006.12 | Shared appropriately |
+
+## Cross-Process Integration Points
+
+### Data Dependencies
+- Registration process creates foundation for all other processes
+- Medication reconciliation feeds into discharge planning
+- Safeguarding assessments inform care planning
+- Advance care planning influences all acute care decisions
+
+### Critical Handoffs
+- ED to inpatient teams: medication list, allergies, advance directives
+- Hospital to community: discharge summary, care plans, follow-up needs
+- Primary to secondary care: problem list, social context, preferences
+- Health to social care: functional assessments, safeguarding alerts, capacity decisions
+
+### Quality Checkpoints
+- Identity verification before any clinical documentation
+- Capacity assessment before major care decisions
+- Patient/carer agreement before finalizing plans
+- GP notification within 24 hours of discharge
