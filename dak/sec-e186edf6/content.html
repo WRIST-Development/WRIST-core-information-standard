@@ -1,0 +1,255 @@
+## BP-001: Comprehensive Geriatric Assessment (CGA)
+
+**Process ID**: BP-001
+**Process Title**: Comprehensive Geriatric Assessment
+
+Comprehensive Geriatric Assessment is a multidimensional, interdisciplinary diagnostic process to determine the medical, psychological, and functional capabilities of an older person. This process aims to develop a coordinated and integrated plan for treatment and long-term follow-up. Within WRIST, CGA involves systematic data collection across multiple domains, synthesis of findings, and collaborative care planning.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-001-A01 | Receive referral for CGA |
+| Activity | BP-001-A02 | Schedule multidisciplinary assessment |
+| Activity | BP-001-A03 | Conduct medical assessment |
+| Activity | BP-001-A04 | Perform functional assessment |
+| Activity | BP-001-A05 | Complete psychological/cognitive assessment |
+| Activity | BP-001-A06 | Assess social circumstances |
+| Activity | BP-001-A07 | Review medications |
+| Activity | BP-001-A08 | Synthesize findings in MDT meeting |
+| Activity | BP-001-A09 | Develop integrated care plan |
+| Activity | BP-001-A10 | Communicate plan to patient/family |
+| Decision | BP-001-D01 | Urgent vs routine pathway |
+| Decision | BP-001-D02 | Additional specialist input needed? |
+| Data | BP-001-DATA01 | Referral details with frailty indicators |
+| Data | BP-001-DATA02 | Assessment findings across domains |
+| Data | BP-001-DATA03 | Integrated care plan with goals |
+
+| From | To | Condition |
+|---|---|---|
+| BP-001-A01 | BP-001-D01 | Referral received and triaged |
+| BP-001-D01 | BP-001-A02 | Routine pathway (within 2 weeks) |
+| BP-001-D01 | BP-001-A03 | Urgent pathway (within 48 hours) |
+| BP-001-A02 | BP-001-A03 | Assessment scheduled |
+| BP-001-A03 | BP-001-A04 | Medical assessment complete |
+| BP-001-A04 | BP-001-A05 | Functional assessment complete |
+| BP-001-A05 | BP-001-A06 | Cognitive assessment complete |
+| BP-001-A06 | BP-001-A07 | Social assessment complete |
+| BP-001-A07 | BP-001-D02 | Medication review complete |
+| BP-001-D02 | BP-001-A08 | All assessments adequate |
+| BP-001-D02 | BP-001-A03 | Specialist input required (loop back) |
+| BP-001-A08 | BP-001-A09 | MDT synthesis complete |
+| BP-001-A09 | BP-001-A10 | Care plan developed |
+| BP-001-A10 | End | Process complete |
+
+## BP-002: Diagnosis Communication and Shared Decision Making
+
+**Process ID**: BP-002
+**Process Title**: Diagnosis Communication and Shared Decision Making
+
+This process ensures that new diagnoses are communicated effectively to patients and their families, incorporating shared decision-making principles. It emphasizes clear communication, emotional support, and collaborative treatment planning, aligned with NICE guidelines on patient experience.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-002-A01 | Prepare for diagnosis discussion |
+| Activity | BP-002-A02 | Arrange appropriate setting and support |
+| Activity | BP-002-A03 | Communicate diagnosis clearly |
+| Activity | BP-002-A04 | Assess patient understanding |
+| Activity | BP-002-A05 | Explore emotional response |
+| Activity | BP-002-A06 | Discuss treatment options |
+| Activity | BP-002-A07 | Support shared decision-making |
+| Activity | BP-002-A08 | Document in Problem List |
+| Activity | BP-002-A09 | Provide written information |
+| Activity | BP-002-A10 | Arrange follow-up support |
+| Decision | BP-002-D01 | Patient ready to hear diagnosis? |
+| Decision | BP-002-D02 | Additional support needed? |
+| Data | BP-002-DATA01 | Investigation results confirming diagnosis |
+| Data | BP-002-DATA02 | Patient preferences from 'About Me' |
+| Data | BP-002-DATA03 | Documented diagnosis and plan |
+
+| From | To | Condition |
+|---|---|---|
+| BP-002-A01 | BP-002-A02 | Preparation complete |
+| BP-002-A02 | BP-002-D01 | Setting arranged |
+| BP-002-D01 | BP-002-A03 | Patient ready |
+| BP-002-D01 | BP-002-A02 | Delay needed (loop back) |
+| BP-002-A03 | BP-002-A04 | Diagnosis communicated |
+| BP-002-A04 | BP-002-A05 | Understanding checked |
+| BP-002-A05 | BP-002-D02 | Emotional response assessed |
+| BP-002-D02 | BP-002-A06 | Patient coping adequately |
+| BP-002-D02 | BP-002-A10 | Additional psychological support needed |
+| BP-002-A06 | BP-002-A07 | Options presented |
+| BP-002-A07 | BP-002-A08 | Decision made |
+| BP-002-A08 | BP-002-A09 | Problem List updated |
+| BP-002-A09 | BP-002-A10 | Information provided |
+| BP-002-A10 | End | Follow-up arranged |
+
+## BP-003: Person-Centered Care Planning
+
+**Process ID**: BP-003
+**Process Title**: Person-Centered Care Planning
+
+This process creates individualized care plans that reflect the person's values, preferences, and goals. It integrates clinical needs with personal priorities, ensuring the voice of the person is central to all planning decisions.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-003-A01 | Review 'About Me' information |
+| Activity | BP-003-A02 | Assess current needs and problems |
+| Activity | BP-003-A03 | Explore personal goals and priorities |
+| Activity | BP-003-A04 | Identify available resources |
+| Activity | BP-003-A05 | Co-develop SMART goals |
+| Activity | BP-003-A06 | Plan interventions and support |
+| Activity | BP-003-A07 | Assign responsibilities |
+| Activity | BP-003-A08 | Set review date |
+| Activity | BP-003-A09 | Document in Care and Support Plan |
+| Activity | BP-003-A10 | Share plan with all involved |
+| Decision | BP-003-D01 | Person has capacity? |
+| Decision | BP-003-D02 | Goals achievable? |
+| Data | BP-003-DATA01 | About Me preferences and values |
+| Data | BP-003-DATA02 | Problem List and assessments |
+| Data | BP-003-DATA03 | Completed Care and Support Plan |
+
+| From | To | Condition |
+|---|---|---|
+| Start | BP-003-A01 | Initiate planning process |
+| BP-003-A01 | BP-003-D01 | About Me reviewed |
+| BP-003-D01 | BP-003-A02 | Person has capacity |
+| BP-003-D01 | BP-003-A02 | Best interests process if lacks capacity |
+| BP-003-A02 | BP-003-A03 | Needs assessed |
+| BP-003-A03 | BP-003-A04 | Goals explored |
+| BP-003-A04 | BP-003-A05 | Resources identified |
+| BP-003-A05 | BP-003-D02 | Goals developed |
+| BP-003-D02 | BP-003-A06 | Goals realistic |
+| BP-003-D02 | BP-003-A05 | Revise goals (loop back) |
+| BP-003-A06 | BP-003-A07 | Interventions planned |
+| BP-003-A07 | BP-003-A08 | Responsibilities assigned |
+| BP-003-A08 | BP-003-A09 | Review scheduled |
+| BP-003-A09 | BP-003-A10 | Plan documented |
+| BP-003-A10 | End | Plan shared and activated |
+
+## BP-005: Clinical Risk Assessment and Management
+
+**Process ID**: BP-005
+**Process Title**: Clinical Risk Assessment and Management
+
+This process systematically identifies, assesses, and manages clinical risks including falls, pressure ulcers, malnutrition, suicide, violence, and absconding. It ensures proactive risk management with clear mitigation strategies.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-005-A01 | Identify risk triggers |
+| Activity | BP-005-A02 | Select appropriate risk tools |
+| Activity | BP-005-A03 | Conduct risk assessments |
+| Activity | BP-005-A04 | Calculate risk scores |
+| Activity | BP-005-A05 | Determine risk level |
+| Activity | BP-005-A06 | Develop mitigation plan |
+| Activity | BP-005-A07 | Implement interventions |
+| Activity | BP-005-A08 | Document in Risks section |
+| Activity | BP-005-A09 | Set review frequency |
+| Activity | BP-005-A10 | Communicate to team |
+| Decision | BP-005-D01 | High risk identified? |
+| Decision | BP-005-D02 | Immediate action required? |
+| Data | BP-005-DATA01 | Risk assessment scores |
+| Data | BP-005-DATA02 | Risk mitigation plans |
+| Data | BP-005-DATA03 | Risk register updates |
+
+| From | To | Condition |
+|---|---|---|
+| Start | BP-005-A01 | Risk assessment triggered |
+| BP-005-A01 | BP-005-A02 | Triggers identified |
+| BP-005-A02 | BP-005-A03 | Tools selected |
+| BP-005-A03 | BP-005-A04 | Assessments completed |
+| BP-005-A04 | BP-005-A05 | Scores calculated |
+| BP-005-A05 | BP-005-D01 | Risk level determined |
+| BP-005-D01 | BP-005-D02 | High risk = Yes |
+| BP-005-D01 | BP-005-A06 | Moderate/low risk |
+| BP-005-D02 | BP-005-A07 | Immediate action = Yes |
+| BP-005-D02 | BP-005-A06 | Planned action sufficient |
+| BP-005-A06 | BP-005-A07 | Plan developed |
+| BP-005-A07 | BP-005-A08 | Interventions implemented |
+| BP-005-A08 | BP-005-A09 | Risks documented |
+| BP-005-A09 | BP-005-A10 | Review scheduled |
+| BP-005-A10 | End | Team notified |
+
+## BP-007: Mental Capacity Assessment
+
+**Process ID**: BP-007
+**Process Title**: Mental Capacity Assessment
+
+This process implements the Mental Capacity Act 2005 principles for assessing decision-specific capacity. It ensures legal compliance while supporting autonomous decision-making wherever possible.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-007-A01 | Identify decision required |
+| Activity | BP-007-A02 | Apply presumption of capacity |
+| Activity | BP-007-A03 | Optimize decision-making ability |
+| Activity | BP-007-A04 | Assess understanding |
+| Activity | BP-007-A05 | Assess retention |
+| Activity | BP-007-A06 | Assess weighing up |
+| Activity | BP-007-A07 | Assess communication |
+| Activity | BP-007-A08 | Determine capacity outcome |
+| Activity | BP-007-A09 | Document in Legal Information |
+| Activity | BP-007-A10 | Proceed with best interests if needed |
+| Decision | BP-007-D01 | Impairment of mind/brain? |
+| Decision | BP-007-D02 | All four tests passed? |
+| Data | BP-007-DATA01 | Specific decision details |
+| Data | BP-007-DATA02 | Capacity assessment record |
+| Data | BP-007-DATA03 | Best interests documentation |
+
+| From | To | Condition |
+|---|---|---|
+| Start | BP-007-A01 | Assessment triggered |
+| BP-007-A01 | BP-007-A02 | Decision identified |
+| BP-007-A02 | BP-007-D01 | Presumption applied |
+| BP-007-D01 | BP-007-A03 | Impairment present |
+| BP-007-D01 | End | No impairment - has capacity |
+| BP-007-A03 | BP-007-A04 | Support provided |
+| BP-007-A04 | BP-007-A05 | Understanding tested |
+| BP-007-A05 | BP-007-A06 | Retention tested |
+| BP-007-A06 | BP-007-A07 | Weighing tested |
+| BP-007-A07 | BP-007-D02 | Communication tested |
+| BP-007-D02 | BP-007-A08 | All tests evaluated |
+| BP-007-A08 | BP-007-A09 | Outcome determined |
+| BP-007-A09 | BP-007-A10 | Lacks capacity |
+| BP-007-A09 | End | Has capacity |
+| BP-007-A10 | End | Best interests process complete |
+
+## BP-011: Advance Care Planning
+
+**Process ID**: BP-011
+**Process Title**: Advance Care Planning
+
+This process facilitates discussions about future care preferences, particularly for end-of-life situations. It ensures wishes are clearly documented and accessible when needed.
+
+| Type | Element ID | Label |
+|---|---|---|
+| Activity | BP-011-A01 | Identify appropriate timing |
+| Activity | BP-011-A02 | Prepare for sensitive discussion |
+| Activity | BP-011-A03 | Explore understanding of condition |
+| Activity | BP-011-A04 | Discuss prognosis sensitively |
+| Activity | BP-011-A05 | Explore values and priorities |
+| Activity | BP-011-A06 | Discuss specific preferences |
+| Activity | BP-011-A07 | Address DNACPR if appropriate |
+| Activity | BP-011-A08 | Document in End of Life Care |
+| Activity | BP-011-A09 | Create Advance Decision if wanted |
+| Activity | BP-011-A10 | Share with relevant services |
+| Decision | BP-011-D01 | Person ready for discussion? |
+| Decision | BP-011-D02 | Formal advance decision wanted? |
+| Data | BP-011-DATA01 | Current health status and prognosis |
+| Data | BP-011-DATA02 | Documented preferences and decisions |
+| Data | BP-011-DATA03 | Advance care plan distribution list |
+
+| From | To | Condition |
+|---|---|---|
+| Start | BP-011-A01 | ACP indicated |
+| BP-011-A01 | BP-011-A02 | Timing appropriate |
+| BP-011-A02 | BP-011-D01 | Preparation complete |
+| BP-011-D01 | BP-011-A03 | Person ready |
+| BP-011-D01 | End | Defer discussion |
+| BP-011-A03 | BP-011-A04 | Understanding explored |
+| BP-011-A04 | BP-011-A05 | Prognosis discussed |
+| BP-011-A05 | BP-011-A06 | Values explored |
+| BP-011-A06 | BP-011-A07 | Preferences discussed |
+| BP-011-A07 | BP-011-D02 | DNACPR addressed |
+| BP-011-D02 | BP-011-A09 | Formal decision wanted |
+| BP-011-D02 | BP-011-A08 | Informal preferences only |
+| BP-011-A08 | BP-011-A10 | EoLC documented |
+| BP-011-A09 | BP-011-A08 | Advance Decision complete |
+| BP-011-A10 | End | Plan shared |
