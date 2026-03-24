@@ -1,0 +1,199 @@
+## Overview
+
+The Core Information Standard enables automated decision support to enhance patient safety, improve care quality, and support clinical decision-making. These decision tables define the logic for key clinical scenarios, triggered by specific data combinations.
+
+## Decision Table 1: Medication Safety Alerts
+
+**Title**: Medication Allergy and Interaction Checking
+**Description**: Automatically checks prescribed medications against documented allergies and current medications to prevent adverse drug events.
+
+### Input Elements
+- Current medication list (CLIN008)
+- Documented allergies (CLIN001, CLIN002, CLIN003)
+- New prescription request
+- Patient age (calculated from DEM005)
+- Renal function (if available)
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| MED001 | New prescription = Penicillin AND Allergy = Penicillin | BLOCK prescription + Alert prescriber | Absolute contraindication |
+| MED002 | New prescription = NSAID AND Current meds include ACE inhibitor AND Age > 65 | WARNING - High risk combination | Risk of renal impairment |
+| MED003 | New prescription = Warfarin AND Current meds include Antibiotic | WARNING - Check INR | Increased bleeding risk |
+| MED004 | New prescription = Metformin AND eGFR < 30 | BLOCK prescription + Suggest alternative | Contraindicated in severe renal impairment |
+| MED005 | Allergy severity = "Anaphylaxis" AND Drug class matches | BLOCK + Emergency alert | Life-threatening allergy |
+| MED006 | Polypharmacy (>10 meds) AND Age > 75 | PROMPT medication review | High risk of adverse events |
+| MED007 | Duplicate therapy detected | WARNING - Verify intentional | Prevent therapeutic duplication |
+
+## Decision Table 2: Safeguarding Risk Assessment
+
+**Title**: Adult Safeguarding Alert Generation
+**Description**: Identifies combinations of factors that indicate potential safeguarding concerns requiring immediate action.
+
+### Input Elements
+- Living situation (SOCIAL001)
+- Mental capacity status (ASSESS012)
+- Recent injuries/presentations
+- Carer stress indicators
+- Previous safeguarding history (LEGAL010)
+- Behavioral indicators
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| SAFE001 | Unexplained injury AND Lives with others AND Previous safeguarding alert | IMMEDIATE safeguarding referral | High risk pattern |
+| SAFE002 | Lacks capacity AND No LPA AND Financial concerns raised | URGENT capacity assessment + Safeguarding | Financial abuse risk |
+| SAFE003 | Multiple ED visits (>3 in month) AND Unexplained symptoms | FLAG for MDT review | Possible neglect/abuse |
+| SAFE004 | Carer expressing inability to cope AND Person has high needs | URGENT carer assessment + Support | Prevention opportunity |
+| SAFE005 | Self-neglect indicators AND Lacks capacity | Best interests meeting needed | Complex safeguarding |
+| SAFE006 | Pressure ulcers AND Care home resident | INVESTIGATE care quality | Possible neglect |
+| SAFE007 | Sudden behavior change AND Cognitive impairment | ASSESS for abuse/illness | Multiple causes possible |
+
+## Decision Table 3: Discharge Safety Assessment
+
+**Title**: Safe Discharge Decision Support
+**Description**: Evaluates multiple factors to determine if patient is safe for discharge and what support is needed.
+
+### Input Elements
+- Mobility assessment (ASSESS013)
+- Living situation (SOCIAL001, SOCIAL002)
+- Cognitive status (ASSESS012)
+- Falls history (ASSESS015)
+- Medication changes
+- Support network (SOCIAL003)
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| DISCH001 | Lives alone AND Mobility impaired AND No support | BLOCK discharge - Arrange support | Unsafe without help |
+| DISCH002 | Falls risk = High AND Stairs at home | OT assessment required | Environmental hazard |
+| DISCH003 | >5 medication changes AND Cognitive impairment | ARRANGE pharmacy support | Medication safety |
+| DISCH004 | New oxygen therapy AND Lives alone | ENSURE equipment training | Safety critical |
+| DISCH005 | Pressure ulcer AND No care package | ARRANGE district nursing | Wound care needed |
+| DISCH006 | Palliative AND No anticipatory meds | PRESCRIBE anticipatory care | Prevent crisis |
+| DISCH007 | Complex needs AND Carer stress | RESPITE care consideration | Sustainability check |
+
+## Decision Table 4: Capacity and Consent Validation
+
+**Title**: Mental Capacity and Consent Decision Logic
+**Description**: Ensures appropriate consent processes based on capacity assessments and identifies when best interests decisions are required.
+
+### Input Elements
+- Mental capacity assessment (ASSESS012, LEGAL002)
+- Type of decision required
+- Advance directives (LEGAL007)
+- LPA status (LEGAL004)
+- Urgency of decision
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| CAP001 | Major treatment AND No capacity assessment | STOP - Assess capacity first | Legal requirement |
+| CAP002 | Lacks capacity AND No LPA AND Non-urgent | ARRANGE best interests meeting | MCA compliance |
+| CAP003 | Lacks capacity AND Valid advance directive | FOLLOW advance directive | Legally binding |
+| CAP004 | Emergency treatment AND Unknown capacity | PROCEED in best interests + Document | Emergency exception |
+| CAP005 | Fluctuating capacity AND Major decision | WAIT for lucid period if possible | Respect autonomy |
+| CAP006 | Research participation AND Lacks capacity | CHECK for research-specific consent | Additional safeguards |
+| CAP007 | Refusing treatment AND Has capacity | RESPECT decision + Document | Autonomy principle |
+
+## Decision Table 5: Clinical Deterioration Detection
+
+**Title**: Early Warning Score and Escalation
+**Description**: Calculates risk scores based on vital signs and triggers appropriate clinical escalation.
+
+### Input Elements
+- Vital signs (ASSESS001-006)
+- Level of consciousness
+- Age (from DEM005)
+- Baseline observations
+- Oxygen therapy status
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| EWS001 | NEWS2 score ≥ 7 | IMMEDIATE medical review | Critical illness |
+| EWS002 | NEWS2 score 5-6 OR single parameter = 3 | URGENT review within 1 hour | Moderate concern |
+| EWS003 | Oxygen sats < 92% AND Not on oxygen | START oxygen + Medical review | Hypoxia |
+| EWS004 | Systolic BP < 90 OR > 220 | IMMEDIATE medical attention | Cardiovascular instability |
+| EWS005 | RR < 8 OR > 25 | URGENT assessment | Respiratory failure risk |
+| EWS006 | Temp > 39°C AND Immunosuppressed | SEPSIS protocol activation | High risk group |
+| EWS007 | Deteriorating trend over 3 observations | INCREASE monitoring frequency | Early intervention |
+
+## Decision Table 6: Preventive Care Alerts
+
+**Title**: Opportunistic Health Screening Reminders
+**Description**: Identifies opportunities for preventive care interventions based on patient characteristics and history.
+
+### Input Elements
+- Age and sex (DEM005, DEM007)
+- Existing conditions (CLIN005)
+- Last screening dates
+- Risk factors (smoking, BMI, family history)
+- Immunization history (CLIN013)
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| PREV001 | Age ≥ 50 AND No bowel screening recorded | PROMPT bowel cancer screening | Population screening |
+| PREV002 | Female AND Age 50-70 AND >3 years since mammogram | PROMPT breast screening | NHS programme |
+| PREV003 | Diabetes AND No retinal screen in 12 months | URGENT referral to eye screening | Prevent complications |
+| PREV004 | Age ≥ 65 AND No flu vaccine this season | OFFER flu vaccination | High risk group |
+| PREV005 | Smoker AND No cessation support offered | OFFER smoking cessation | Every contact counts |
+| PREV006 | BMI > 30 AND No weight management discussed | PROMPT healthy weight discussion | Prevention opportunity |
+| PREV007 | Age ≥ 75 AND No frailty assessment | CONDUCT frailty scoring | Proactive care |
+
+## Decision Table 7: End-of-Life Care Triggers
+
+**Title**: Palliative and End-of-Life Care Recognition
+**Description**: Identifies patients who may benefit from palliative care approach or end-of-life planning.
+
+### Input Elements
+- Diagnosis (CLIN005)
+- Hospital admissions frequency
+- Functional decline (ASSESS013)
+- Surprise question response
+- Weight loss pattern
+- Advance care planning status (LEGAL005, CARE005)
+
+### Decision Logic
+
+| Condition ID | Inputs | Output Action | Annotation |
+|---|---|---|---|
+| EOL001 | "Would not be surprised if died within year" = Yes | INITIATE advance care planning | Clinical trigger |
+| EOL002 | ≥3 admissions in 6 months AND Progressive disease | REFER palliative care team | Complex needs |
+| EOL003 | Metastatic cancer AND No ACP documented | URGENT ACP discussion | Time sensitive |
+| EOL004 | COPD + Home oxygen AND No ceiling of care | DISCUSS treatment limits | Prevent inappropriate care |
+| EOL005 | Dementia stage 7 AND Recurrent infections | CONSIDER comfort care focus | Natural progression |
+| EOL006 | Weight loss >10% AND No reversible cause | ASSESS for EOL care needs | Prognostic indicator |
+| EOL007 | Preferred place of death recorded AND Not achievable | REVIEW and update plan | Manage expectations |
+
+## Implementation Considerations
+
+### Alert Fatigue Management
+- Suppress duplicate alerts within 24-hour period
+- Allow clinician override with reason documentation
+- Regular review of alert effectiveness
+- Customizable alert thresholds by organization
+
+### Clinical Override
+- All automated decisions can be overridden by clinicians
+- Override reasons must be documented
+- Regular audit of overrides to refine logic
+
+### Integration Requirements
+- Real-time access to current data elements
+- Sub-second response time for safety alerts
+- Clear visual distinction between alert severity levels
+- Mobile-friendly alert display
+
+### Continuous Improvement
+- Monthly review of alert patterns
+- Clinician feedback incorporation
+- Regular updates based on new evidence
+- Machine learning for pattern refinement
