@@ -1,0 +1,110 @@
+## Overview
+
+The Core Information Standard defines comprehensive data elements organized into logical groupings. Each element includes validation rules, terminology bindings, and implementation guidance to ensure consistent capture across systems.
+
+## Person Demographics
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| DEM001 | Person First Name | The first name(s) of the person, including middle names | String | M | Max length: 35 chars | BP001 | NHS_DD: person_given_name |
+| DEM002 | Person Family Name | The family name or surname of the person | String | M | Max length: 35 chars | BP001 | NHS_DD: person_family_name |
+| DEM003 | Person Preferred Name | Name by which person wishes to be addressed | String | R | Max length: 70 chars | BP001 | NHS_DD: person_full_name |
+| DEM004 | Title | Person's title (Mr, Mrs, Dr, etc.) | String | R | Max length: 35 chars | BP001 | NHS_DD: person_title |
+| DEM005 | Date of Birth | The date of birth of the person | Date | M | Format: YYYY-MM-DD, Not future date | BP001 | NHS_DD: person_birth_date |
+| DEM006 | Gender | Person's stated gender | String | R | Max length: 1 char, Values: M/F/X | BP001 | NHS_DD: person_stated_gender_code |
+| DEM007 | Sex | Person's phenotypic sex for clinical purposes | String | O | Max length: 1 char, Values: M/F/X | BP001 | NHS_DD: person_phenotypic_sex |
+| DEM008 | Ethnicity | Ethnicity as specified by the person | String | R | Max length: 2 chars, NHS DD codes | BP001 | NHS_DD: ethnic_category |
+| DEM009 | Religion | Religious affiliation as specified by person | String | R | SNOMED CT subset | BP001 | SNOMED_CT: 999000531000000100 |
+| DEM010 | NHS Number | Unique NHS identifier | String | R | 10 digits, Modulus 11 check | BP001 | NHS_DD: nhs_number |
+| DEM011 | NHS Number Status | Reliability indicator for NHS number | String | R | Max length: 2 chars, Valid codes only | BP001 | NHS_DD: nhs_number_status_indicator |
+
+## Contact Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CON001 | Address Line 1 | First line of patient address | String | M | Max length: 35 chars | BP001 | NHS_DD: patient_usual_address |
+| CON002 | Address Line 2-5 | Additional address lines | String | R | Max length: 35 chars each | BP001 | NHS_DD: patient_usual_address |
+| CON003 | Postcode | UK postcode | String | R | Valid UK postcode format | BP001 | NHS_DD: postcode_of_usual_address |
+| CON004 | Address Type | Type of address (home, temporary, etc.) | String | R | Max length: 1 char, Valid codes | BP001 | NHS_DD: address_association_type |
+| CON005 | Telephone Number | Contact telephone number | String | R | Max length: 35 chars | BP001 | NHS_DD: uk_telephone_number |
+| CON006 | Telephone Type | Type of phone (home, mobile, work) | String | R | Max length: 6 chars, FHIR values | BP001 | FHIR: contact-point-use |
+| CON007 | Email Address | Contact email address | String | R | Max length: 255, Valid email format | BP001 | NHS_DD: contact_email_address |
+| CON008 | Preferred Contact Method | How person prefers to be contacted | String | R | Max length: 1 char, Valid codes | BP001 | NHS_DD: communication_contact_method |
+
+## Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CLIN001 | Problem/Diagnosis | Active problem or diagnosis | String | M | SNOMED CT required | BP003 | SNOMED_CT: 1127581000000103 |
+| CLIN002 | Onset Date | When problem started | Date | R | Not future date | BP003 | Generic date |
+| CLIN003 | Problem Status | Active/Inactive/Resolved | String | R | Valid status codes | BP003 | FHIR: condition-clinical |
+| CLIN004 | Allergy Substance | Causative agent for allergy | String | M | dm+d or SNOMED CT | BP002 | DM&D/SNOMED_CT |
+| CLIN005 | Allergy Type | Allergy/Intolerance/Adverse | String | R | FHIR value set | BP002 | FHIR: allergy-intolerance-type |
+| CLIN006 | Allergy Severity | Mild/Moderate/Severe | String | R | FHIR value set | BP002 | FHIR: reaction-event-severity |
+| CLIN007 | Allergy Status | Confirmed/Suspected/Refuted | String | R | Valid status codes | BP002 | FHIR: allergy-verification-status |
+
+## Medications
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| MED001 | Medication Name | Name of medication | String | M | dm+d preferred | BP002 | DM&D: VTM/VMP/AMP |
+| MED002 | Dose | Dose amount | String | R | Numeric + units | BP002 | UCUM units |
+| MED003 | Frequency | How often taken | String | R | Structured dose syntax | BP002 | FHIR dose syntax |
+| MED004 | Route | Route of administration | String | R | SNOMED CT subset | BP002 | SNOMED_CT: 999000051000001100 |
+| MED005 | Start Date | When medication started | Date | R | Not future date | BP002 | Generic date |
+| MED006 | Review Date | Next review due | Date | R | Future date | BP002 | Generic date |
+| MED007 | Prescriber Type | Who prescribed (GP, hospital, etc.) | String | R | Valid prescriber codes | BP002 | FHIR: medication-prescribing-agency |
+
+## Reasonable Adjustments
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ADJ001 | Adjustment Flag | Requires reasonable adjustments | Boolean | R | True/False | BP001 | SNOMED_CT: 1108111000000107 |
+| ADJ002 | Adjustment Type | Type of adjustment needed | String | R | SNOMED CT subset | BP001 | SNOMED_CT: 999002121000000109 |
+| ADJ003 | Adjustment Details | Specific requirements | Text | R | Max 500 chars | BP001 | Free text |
+| ADJ004 | Communication Needs | Specific communication requirements | String | R | SNOMED CT subset | BP001 | SNOMED_CT: 999002151000000104 |
+| ADJ005 | Information Format | Required information formats | String | R | SNOMED CT subset | BP001 | SNOMED_CT: 999002141000000102 |
+
+## Mental Capacity and Legal Status
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| LEG001 | Capacity Status | Has capacity for healthcare decisions | String | R | Valid status codes | BP003, BP005 | SNOMED CT codes |
+| LEG002 | LPA Flag | Has LPA for health and welfare | Boolean | R | True/False | BP005 | SNOMED_CT: 999001951000000107 |
+| LEG003 | LPA Details | Name and contact of attorney | Text | R | Max 500 chars | BP005 | Free text |
+| LEG004 | ADRT Flag | Has advance decision to refuse treatment | Boolean | R | True/False | BP005 | SNOMED_CT: 816281000000101 |
+| LEG005 | ADRT Details | Specific refusals documented | Text | R | Structured format | BP005 | Free text |
+| LEG006 | MHA Status | Mental Health Act status | String | R | NHS DD codes | BP003 | NHS_DD: MHA_legal_status |
+| LEG007 | DoLS Status | Deprivation of Liberty status | String | R | Valid status codes | BP003 | Free text |
+
+## Safeguarding
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| SAFE001 | Safeguarding Flag | Active safeguarding concerns | Boolean | R | True/False | BP004 | Boolean |
+| SAFE002 | Safeguarding Type | Type of safeguarding concern | String | R | SNOMED CT subset | BP004 | SNOMED_CT: 999002381000000108 |
+| SAFE003 | Safeguarding Details | Specific concerns | Text | R | Max 1000 chars | BP004 | Free text |
+| SAFE004 | Lead Agency | Safeguarding lead organization | String | R | ODS code | BP004 | NHS_DD: organisation_code |
+| SAFE005 | Review Date | Next safeguarding review | Date | R | Future date | BP004 | Generic date |
+
+## Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CARE001 | Care Plan Type | Type of care plan | String | R | SNOMED CT subset | BP003 | SNOMED_CT: 999001471000000108 |
+| CARE002 | Patient Goals | Patient's stated goals | Text | R | Max 500 chars | BP003 | Free text |
+| CARE003 | Planned Actions | Specific interventions planned | Text | R | Structured format | BP003 | SNOMED_CT: procedures |
+| CARE004 | Responsible Professional | Lead professional for action | String | R | Name and role | BP003 | Free text |
+| CARE005 | Review Date | When plan should be reviewed | Date | R | Future date | BP003 | Generic date |
+| CARE006 | Patient Agreement | Patient agreed to plan | Boolean | R | True/False | BP003 | Boolean |
+
+## End of Life Care
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| EOL001 | On EoL Register | On palliative care register | Boolean | R | True/False | BP005 | Boolean |
+| EOL002 | Preferred Place Death | Where person wants to die | String | R | Valid location codes | BP005 | Custom codes |
+| EOL003 | DNACPR Status | Do not attempt CPR decision | Boolean | R | True/False | BP005 | SNOMED_CT: 450475007/450476008 |
+| EOL004 | DNACPR Date | When decision made | Date | R | Not future date | BP005 | Generic date |
+| EOL005 | Prognosis | Estimated prognosis | String | R | Days/Weeks/Months | BP005 | Free text |
+| EOL006 | Awareness Status | Patient awareness of prognosis | String | R | Full/Partial/Unaware | BP005 | Free text |
