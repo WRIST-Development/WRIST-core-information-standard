@@ -1,0 +1,186 @@
+## Overview
+
+This section defines the decision-support logic embedded within the Core Information Standard implementation. These decision tables guide system behavior, clinical alerts, validation rules, and workflow routing based on the core data elements.
+
+## DT01: Patient Identity Verification
+### Title: Identity Matching and Verification Rules
+### Description: Determines the level of identity verification required and actions to take based on available identifiers
+
+**Input Elements:**
+- NHS Number (DEM-001)
+- First Name (DEM-002)
+- Family Name (DEM-003)
+- Date of Birth (DEM-006)
+- Postcode (ADD-006)
+
+### Decision Table
+
+| Condition ID | NHS Number Present | NHS Number Valid | Name Match | DOB Match | Postcode Match | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|
+| C01.1 | Yes | Yes | Yes | Yes | Yes | Allow full access | High confidence match |
+| C01.2 | Yes | Yes | Yes | Yes | No | Confirm address change | Possible recent move |
+| C01.3 | Yes | Yes | No | Yes | Yes | Flag name discrepancy | Possible name change |
+| C01.4 | Yes | No | - | - | - | Block access, investigate | Invalid NHS number |
+| C01.5 | No | - | Yes | Yes | Yes | Create temporary ID | New registration |
+| C01.6 | No | - | Partial | Yes | No | Manual verification required | Insufficient match |
+| C01.7 | No | - | No | No | No | Deny access | No match found |
+
+## DT02: Clinical Alert Generation
+### Title: Automated Clinical Alert Rules
+### Description: Generates appropriate clinical alerts based on patient data patterns and risk indicators
+
+**Input Elements:**
+- Age (calculated from DEM-006)
+- Allergies (ALL-001)
+- Safeguarding Flag (SAF-001)
+- Mental Capacity (LEG-001)
+- DNACPR Status (LEG-004)
+- Falls Risk (from Problem List)
+
+### Decision Table
+
+| Condition ID | Age >75 | Drug Allergy | Safeguarding | Lacks Capacity | DNACPR | Falls Risk | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| C02.1 | Yes | Yes | - | - | - | Yes | Generate high priority alert bundle | Multiple risks |
+| C02.2 | - | Yes | - | - | - | - | Display allergy banner | Medication safety |
+| C02.3 | - | - | Yes | - | - | - | Restrict access, notify safeguarding lead | Protection required |
+| C02.4 | - | - | - | Yes | - | - | Display capacity banner, check LPA | Decision support |
+| C02.5 | - | - | - | - | Yes | - | Display DNACPR status prominently | Emergency response |
+| C02.6 | Yes | - | - | - | - | Yes | Initiate falls prevention pathway | Preventive care |
+| C02.7 | No | No | No | No | No | No | Standard display | No special alerts |
+
+## DT03: Reasonable Adjustment Requirements
+### Title: Adjustment Need Identification
+### Description: Identifies required adjustments based on patient characteristics and recorded needs
+
+**Input Elements:**
+- Communication Needs (REQ-004)
+- Mobility Needs (REQ-005)
+- Cognitive Support (REQ-006)
+- Sensory Impairments (from Problem List)
+- Learning Disability (from Problem List)
+
+### Decision Table
+
+| Condition ID | Communication Need | Mobility Need | Cognitive Need | Visual Impairment | Hearing Impairment | Learning Disability | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| C03.1 | Interpreter | - | - | - | - | - | Book interpreter, allow double appointment | Language support |
+| C03.2 | - | Wheelchair | - | - | - | - | Ensure accessible room, ground floor | Physical access |
+| C03.3 | - | - | Yes | - | - | Yes | Provide easy-read materials, allow supporter | Cognitive support |
+| C03.4 | - | - | - | Yes | - | - | Large print materials, verbal communication | Visual adjustment |
+| C03.5 | - | - | - | - | Yes | - | Book BSL interpreter or use hearing loop | Hearing adjustment |
+| C03.6 | Easy read | - | Yes | - | - | Yes | Comprehensive support package | Multiple needs |
+| C03.7 | Multiple | Multiple | Multiple | - | - | - | Refer to disability liaison nurse | Complex needs |
+
+## DT04: Medication Safety Checks
+### Title: Medication Prescribing Safety Rules
+### Description: Validates medication orders against patient data to prevent errors
+
+**Input Elements:**
+- Medication to prescribe (MED-001)
+- Current medications (MED-001 list)
+- Allergies (ALL-001)
+- Age (calculated)
+- Renal function (from recent labs)
+- Pregnancy status
+
+### Decision Table
+
+| Condition ID | Penicillin Allergy | Prescribing Penicillin | Age >75 | eGFR <30 | Pregnancy | Interacting Drug | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| C04.1 | Yes | Yes | - | - | - | - | Block prescription | Allergy contraindication |
+| C04.2 | - | - | Yes | - | - | Yes | Warning: adjust dose | Elderly + interaction |
+| C04.3 | - | - | - | Yes | - | - | Calculate renal dosing | Renal impairment |
+| C04.4 | - | - | - | - | Yes | - | Check pregnancy category | Pregnancy safety |
+| C04.5 | No | No | Yes | Yes | - | - | Multiple warnings | Multiple factors |
+| C04.6 | No | No | No | No | No | No | Allow prescription | No contraindications |
+
+## DT05: Care Transition Requirements
+### Title: Information Requirements for Care Transitions
+### Description: Determines what information must be shared during care transitions
+
+**Input Elements:**
+- Transition Type (admission, discharge, referral)
+- Destination Setting (hospital, home, care home)
+- Patient Complexity Score
+- Active Safeguarding (SAF-001)
+- Consent Status
+
+### Decision Table
+
+| Condition ID | Transition Type | To Hospital | To Care Home | To Home | Complex Patient | Safeguarding | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| C05.1 | Admission | Yes | - | - | - | - | Send GP summary + medications | Standard admission |
+| C05.2 | Discharge | - | Yes | - | Yes | - | Full assessment pack + care plan | Complex to care home |
+| C05.3 | Discharge | - | - | Yes | Yes | - | Arrange community follow-up | Complex to home |
+| C05.4 | Any | Any | Any | Any | - | Yes | Include safeguarding plan | Protection required |
+| C05.5 | Referral | Yes | - | - | - | - | Clinical summary + reason | Standard referral |
+| C05.6 | Discharge | - | Yes | - | - | - | Medication list + care needs | Standard to care home |
+
+## DT06: Capacity and Consent Decisions
+### Title: Consent Validity and Override Rules
+### Description: Determines when consent can be overridden and what documentation is required
+
+**Input Elements:**
+- Mental Capacity Status (LEG-001)
+- Consent Given (Y/N)
+- LPA Status (LEG-002)
+- Emergency Status
+- Best Interests Assessment
+
+### Decision Table
+
+| Condition ID | Has Capacity | Consent Given | LPA Present | Emergency | Best Interests Done | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|
+| C06.1 | Yes | Yes | - | - | - | Proceed with treatment | Standard consent |
+| C06.2 | Yes | No | - | No | - | Cannot proceed | Patient refusal |
+| C06.3 | Yes | No | - | Yes | - | Treat under emergency | Life-threatening |
+| C06.4 | No | - | Yes | - | - | Consult LPA | Attorney decides |
+| C06.5 | No | - | No | No | Yes | Proceed per assessment | Best interests |
+| C06.6 | No | - | No | Yes | No | Treat, document later | Emergency + no capacity |
+| C06.7 | No | - | No | No | No | Cannot proceed | Need assessment |
+
+## DT07: Safeguarding Escalation
+### Title: Safeguarding Response Requirements
+### Description: Determines escalation requirements based on safeguarding indicators
+
+**Input Elements:**
+- Safeguarding Type (SAF-002)
+- Risk Level (SAF-004)
+- Person Age
+- Existing Plan (SAF-005)
+- Professional Judgment
+
+### Decision Table
+
+| Condition ID | Child <18 | Vulnerable Adult | Risk Level High | Active Plan | New Concern | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|
+| C07.1 | Yes | - | Yes | No | Yes | Immediate referral to children's services | Child protection |
+| C07.2 | Yes | - | Medium | Yes | Yes | Update plan, notify social worker | Existing case |
+| C07.3 | No | Yes | High | No | Yes | Adult safeguarding referral within 24h | Adult protection |
+| C07.4 | No | Yes | Low | No | Yes | Document, monitor, review in 7 days | Low risk |
+| C07.5 | - | - | High | Yes | Yes | Immediate case conference | Escalation |
+| C07.6 | No | No | Low | No | No | No action required | No concerns |
+
+## DT08: Access Control
+### Title: Information Access Permissions
+### Description: Determines what information can be accessed based on user role and context
+
+**Input Elements:**
+- User Role (from Personas)
+- Care Relationship
+- Information Sensitivity
+- Patient Consent
+- Legal Override
+
+### Decision Table
+
+| Condition ID | Direct Care | Emergency Access | Admin Role | Sensitive Data | Consent | Legal Override | Output Action | Annotation |
+|---|---|---|---|---|---|---|---|---|
+| C08.1 | Yes | - | No | No | Yes | - | Full clinical access | Standard care |
+| C08.2 | Yes | - | No | Yes | Yes | - | Access with audit | Sensitive + consent |
+| C08.3 | No | Yes | No | - | - | Yes | Emergency access only | Life-saving |
+| C08.4 | No | No | Yes | No | - | - | Demographics only | Admin access |
+| C08.5 | Yes | - | No | Yes | No | No | Restricted access | No consent |
+| C08.6 | - | - | - | Yes | No | Yes | Override with documentation | Legal requirement |
+| C08.7 | No | No | No | - | - | - | Access denied | No relationship |
