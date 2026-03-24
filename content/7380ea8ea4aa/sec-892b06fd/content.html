@@ -1,0 +1,260 @@
+## Overview
+
+This section details the key business processes and workflows required to implement the Core Information Standard. Each process includes objectives, workflow elements, and integration points with the standard's data model.
+
+## BP01: Patient Registration and Verification
+**Process ID:** BP01
+
+### Objectives
+- Ensure accurate patient identification and prevent duplicate records
+- Capture mandatory demographic information
+- Establish foundation for longitudinal health record
+- Enable secure information sharing across care settings
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP01-SE01 | Patient presents for registration |
+| User Task | BP01-UT01 | Search existing records |
+| Gateway | BP01-GW01 | Record found? |
+| User Task | BP01-UT02 | Verify patient identity |
+| User Task | BP01-UT03 | Create new patient record |
+| User Task | BP01-UT04 | Capture demographic details |
+| User Task | BP01-UT05 | Record contact information |
+| User Task | BP01-UT06 | Capture GP details |
+| System Task | BP01-ST01 | Validate NHS number |
+| System Task | BP01-ST02 | Check for duplicates |
+| End Event | BP01-EE01 | Registration complete |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP01-SE01 | BP01-UT01 | Always |
+| BP01-UT01 | BP01-GW01 | Search completed |
+| BP01-GW01 | BP01-UT02 | Record found = Yes |
+| BP01-GW01 | BP01-UT03 | Record found = No |
+| BP01-UT02 | BP01-UT04 | Identity verified |
+| BP01-UT03 | BP01-UT04 | New record created |
+| BP01-UT04 | BP01-UT05 | Demographics captured |
+| BP01-UT05 | BP01-UT06 | Contact info recorded |
+| BP01-UT06 | BP01-ST01 | GP details entered |
+| BP01-ST01 | BP01-ST02 | NHS number validated |
+| BP01-ST02 | BP01-EE01 | No duplicates found |
+
+## BP02: Clinical Assessment Documentation
+**Process ID:** BP02
+
+### Objectives
+- Standardize clinical information capture across all settings
+- Ensure comprehensive assessment of health status
+- Support clinical decision-making with complete information
+- Enable continuity of care through consistent documentation
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP02-SE01 | Clinical encounter begins |
+| User Task | BP02-UT01 | Review existing information |
+| User Task | BP02-UT02 | Conduct clinical assessment |
+| User Task | BP02-UT03 | Document vital signs |
+| User Task | BP02-UT04 | Update problem list |
+| User Task | BP02-UT05 | Review medications |
+| Gateway | BP02-GW01 | New diagnosis? |
+| User Task | BP02-UT06 | Add diagnosis with SNOMED code |
+| User Task | BP02-UT07 | Document examination findings |
+| System Task | BP02-ST01 | Clinical validation checks |
+| System Task | BP02-ST02 | Generate clinical alerts |
+| End Event | BP02-EE01 | Assessment documented |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP02-SE01 | BP02-UT01 | Always |
+| BP02-UT01 | BP02-UT02 | Review complete |
+| BP02-UT02 | BP02-UT03 | Assessment performed |
+| BP02-UT03 | BP02-UT04 | Vitals recorded |
+| BP02-UT04 | BP02-UT05 | Problem list updated |
+| BP02-UT05 | BP02-GW01 | Medications reviewed |
+| BP02-GW01 | BP02-UT06 | New diagnosis = Yes |
+| BP02-GW01 | BP02-UT07 | New diagnosis = No |
+| BP02-UT06 | BP02-UT07 | Diagnosis added |
+| BP02-UT07 | BP02-ST01 | Findings documented |
+| BP02-ST01 | BP02-ST02 | Validation passed |
+| BP02-ST02 | BP02-EE01 | Alerts generated |
+
+## BP03: Medication Management
+**Process ID:** BP03
+
+### Objectives
+- Maintain accurate medication records across care transitions
+- Prevent medication errors through systematic reconciliation
+- Support safe prescribing with allergy and interaction checking
+- Enable patient medication adherence through clear documentation
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP03-SE01 | Medication review triggered |
+| User Task | BP03-UT01 | Access current medication list |
+| User Task | BP03-UT02 | Verify with patient/carer |
+| Gateway | BP03-GW01 | Discrepancies found? |
+| User Task | BP03-UT03 | Reconcile medications |
+| User Task | BP03-UT04 | Check allergies/interactions |
+| Gateway | BP03-GW02 | New prescription needed? |
+| User Task | BP03-UT05 | Create prescription |
+| System Task | BP03-ST01 | Clinical decision support |
+| System Task | BP03-ST02 | Send to pharmacy |
+| User Task | BP03-UT06 | Document changes |
+| End Event | BP03-EE01 | Medication record updated |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP03-SE01 | BP03-UT01 | Always |
+| BP03-UT01 | BP03-UT02 | List retrieved |
+| BP03-UT02 | BP03-GW01 | Verification complete |
+| BP03-GW01 | BP03-UT03 | Discrepancies = Yes |
+| BP03-GW01 | BP03-UT04 | Discrepancies = No |
+| BP03-UT03 | BP03-UT04 | Reconciliation done |
+| BP03-UT04 | BP03-GW02 | Checks complete |
+| BP03-GW02 | BP03-UT05 | Prescription = Yes |
+| BP03-GW02 | BP03-UT06 | Prescription = No |
+| BP03-UT05 | BP03-ST01 | Prescription created |
+| BP03-ST01 | BP03-ST02 | CDS checks passed |
+| BP03-ST02 | BP03-UT06 | Pharmacy notified |
+| BP03-UT06 | BP03-EE01 | Documentation complete |
+
+## BP04: Safeguarding Workflow
+**Process ID:** BP04
+
+### Objectives
+- Identify and document safeguarding concerns promptly
+- Ensure appropriate escalation and multi-agency coordination
+- Maintain confidentiality while enabling necessary information sharing
+- Support vulnerable individuals through systematic assessment
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP04-SE01 | Safeguarding concern identified |
+| User Task | BP04-UT01 | Document initial concern |
+| Gateway | BP04-GW01 | Immediate risk? |
+| User Task | BP04-UT02 | Initiate emergency protocol |
+| User Task | BP04-UT03 | Conduct risk assessment |
+| User Task | BP04-UT04 | Check existing alerts |
+| System Task | BP04-ST01 | Generate safeguarding flag |
+| User Task | BP04-UT05 | Create safeguarding plan |
+| User Task | BP04-UT06 | Notify relevant agencies |
+| System Task | BP04-ST02 | Secure documentation |
+| End Event | BP04-EE01 | Safeguarding recorded |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP04-SE01 | BP04-UT01 | Always |
+| BP04-UT01 | BP04-GW01 | Concern documented |
+| BP04-GW01 | BP04-UT02 | Immediate risk = Yes |
+| BP04-GW01 | BP04-UT03 | Immediate risk = No |
+| BP04-UT02 | BP04-UT03 | Emergency addressed |
+| BP04-UT03 | BP04-UT04 | Assessment complete |
+| BP04-UT04 | BP04-ST01 | History reviewed |
+| BP04-ST01 | BP04-UT05 | Flag generated |
+| BP04-UT05 | BP04-UT06 | Plan created |
+| BP04-UT06 | BP04-ST02 | Agencies notified |
+| BP04-ST02 | BP04-EE01 | Documentation secured |
+
+## BP05: Care Planning Process
+**Process ID:** BP05
+
+### Objectives
+- Develop person-centered care plans with individual involvement
+- Coordinate multi-professional input into integrated plans
+- Set measurable goals with regular review cycles
+- Ensure plans are accessible across care settings
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP05-SE01 | Care planning initiated |
+| User Task | BP05-UT01 | Review assessments |
+| User Task | BP05-UT02 | Engage person/carer |
+| User Task | BP05-UT03 | Identify strengths/needs |
+| User Task | BP05-UT04 | Set goals with person |
+| User Task | BP05-UT05 | Define interventions |
+| Gateway | BP05-GW01 | Multi-disciplinary input needed? |
+| User Task | BP05-UT06 | Coordinate team input |
+| User Task | BP05-UT07 | Agree review schedule |
+| System Task | BP05-ST01 | Link related plans |
+| System Task | BP05-ST02 | Set review reminders |
+| End Event | BP05-EE01 | Care plan activated |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP05-SE01 | BP05-UT01 | Always |
+| BP05-UT01 | BP05-UT02 | Assessments reviewed |
+| BP05-UT02 | BP05-UT03 | Person engaged |
+| BP05-UT03 | BP05-UT04 | Needs identified |
+| BP05-UT04 | BP05-UT05 | Goals agreed |
+| BP05-UT05 | BP05-GW01 | Interventions defined |
+| BP05-GW01 | BP05-UT06 | MDT input = Yes |
+| BP05-GW01 | BP05-UT07 | MDT input = No |
+| BP05-UT06 | BP05-UT07 | Team input received |
+| BP05-UT07 | BP05-ST01 | Schedule set |
+| BP05-ST01 | BP05-ST02 | Plans linked |
+| BP05-ST02 | BP05-EE01 | Reminders configured |
+
+## BP06: Information Sharing Workflow
+**Process ID:** BP06
+
+### Objectives
+- Enable secure, appropriate information sharing between providers
+- Respect patient consent and confidentiality requirements
+- Support integrated care through timely information exchange
+- Maintain audit trails of all information access and sharing
+
+### Process Elements
+
+| Type | Element ID | Label |
+|---|---|---|
+| Start Event | BP06-SE01 | Information request received |
+| System Task | BP06-ST01 | Verify requester identity |
+| Gateway | BP06-GW01 | Legitimate relationship? |
+| User Task | BP06-UT01 | Check consent status |
+| Gateway | BP06-GW02 | Consent given? |
+| User Task | BP06-UT02 | Apply information filters |
+| System Task | BP06-ST02 | Redact sensitive data |
+| System Task | BP06-ST03 | Package information |
+| System Task | BP06-ST04 | Transmit securely |
+| System Task | BP06-ST05 | Log access event |
+| User Task | BP06-UT03 | Handle consent override |
+| End Event | BP06-EE01 | Information shared |
+| End Event | BP06-EE02 | Request denied |
+
+### Process Flow
+
+| From | To | Condition |
+|---|---|---|
+| BP06-SE01 | BP06-ST01 | Always |
+| BP06-ST01 | BP06-GW01 | Identity verified |
+| BP06-GW01 | BP06-UT01 | Legitimate = Yes |
+| BP06-GW01 | BP06-EE02 | Legitimate = No |
+| BP06-UT01 | BP06-GW02 | Consent checked |
+| BP06-GW02 | BP06-UT02 | Consent = Yes |
+| BP06-GW02 | BP06-UT03 | Consent = No |
+| BP06-UT02 | BP06-ST02 | Filters applied |
+| BP06-ST02 | BP06-ST03 | Data redacted |
+| BP06-ST03 | BP06-ST04 | Package created |
+| BP06-ST04 | BP06-ST05 | Transmitted |
+| BP06-ST05 | BP06-EE01 | Access logged |
+| BP06-UT03 | BP06-EE02 | Override denied |
