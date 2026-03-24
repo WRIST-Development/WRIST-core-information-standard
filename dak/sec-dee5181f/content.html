@@ -1,0 +1,143 @@
+## Overview
+
+This section provides a comprehensive data dictionary for the WRIST Core Information Standard v2.0.76. The data elements are organized by functional domain and include detailed specifications for implementation in digital health systems. Each element includes unique identifiers, descriptions, data types, validation rules, and clinical terminology mappings aligned with UK Core FHIR R4 profiles.
+
+## Person Demographics and Identification
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PER001 | NHS Number | Unique NHS identifier for the person | String | Yes | 10 digits, checksum validation | BP001 | SNOMED: 9999999999 \| NHS number |
+| PER002 | Family Name | Person's surname or family name | String | Yes | Max 100 chars, unicode support | BP001 | - |
+| PER003 | Given Name(s) | Person's given or first name(s) | String | Yes | Max 100 chars, unicode support | BP001 | - |
+| PER004 | Date of Birth | Person's date of birth | Date | Yes | Format: YYYY-MM-DD, not future | BP001 | LOINC: 21112-8 \| Birth date |
+| PER005 | Gender | Administrative gender | CodeableConcept | Yes | ValueSet: male/female/other/unknown | BP001 | SNOMED: 263495000 \| Gender |
+| PER006 | Usual Address | Person's primary residence | Address | Yes | Structured UK address format | BP001 | - |
+| PER007 | Contact Number | Primary telephone contact | String | Yes | E.164 format validation | BP001 | - |
+| PER008 | Email Address | Electronic mail address | String | No | RFC 5322 email validation | BP001 | - |
+| PER009 | Preferred Language | Language for communication | CodeableConcept | Yes | ISO 639-1 language codes | BP001 | SNOMED: 103579009 \| Preferred language |
+| PER010 | Ethnicity | Self-declared ethnic category | CodeableConcept | Yes | NHS Data Dictionary ethnic codes | BP001 | SNOMED: 372148003 \| Ethnic group |
+| PER011 | Registered GP Practice | ODS code of registered practice | String | Yes | Valid ODS practice code | BP001 | - |
+| PER012 | CHI Number | Community Health Index (Scotland) | String | Conditional | 10 chars, Scotland only | BP001 | - |
+| PER013 | H&C Number | Health & Care Number (N. Ireland) | String | Conditional | Format validation, NI only | BP001 | - |
+| PER014 | Deceased Indicator | Whether person is deceased | Boolean | Yes | True/False | BP001 | SNOMED: 419099009 \| Deceased |
+| PER015 | Date of Death | When person died | DateTime | Conditional | Required if deceased = true | BP001 | LOINC: 81956-5 \| Death date |
+
+## Individual Requirements and Reasonable Adjustments
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| REQ001 | Adjustment Category | Type of reasonable adjustment | CodeableConcept | Yes | SNOMED reasonable adjustment subset | BP001 | SNOMED: 1082621000000108 \| Reasonable adjustment |
+| REQ002 | Adjustment Description | Detailed description of need | String | Yes | Max 1000 chars | BP001 | - |
+| REQ003 | Communication Method | Preferred communication approach | CodeableConcept | No | SNOMED communication methods | BP001 | SNOMED: 1082681000000105 \| Communication method |
+| REQ004 | Mobility Requirement | Mobility support needs | CodeableConcept | No | SNOMED mobility aids subset | BP001 | SNOMED: 183141000 \| Mobility aid |
+| REQ005 | Cognitive Support | Cognitive support requirements | String | No | Free text description | BP001 | - |
+| REQ006 | Sensory Impairment | Vision/hearing impairments | CodeableConcept | No | SNOMED sensory impairment codes | BP001 | SNOMED: 95718005 \| Sensory impairment |
+| REQ007 | Interpreter Required | Need for language interpretation | Boolean | Yes | True/False | BP001 | SNOMED: 315594003 \| Interpreter required |
+| REQ008 | Interpreter Language | Language for interpretation | CodeableConcept | Conditional | Required if interpreter = true | BP001 | ISO 639-1 codes |
+| REQ009 | Learning Disability | Presence of learning disability | CodeableConcept | No | SNOMED learning disability codes | BP001, BP009 | SNOMED: 110359009 \| Learning disability |
+| REQ010 | Mental Capacity | Capacity for specific decisions | CodeableConcept | No | MCA decision-specific capacity | BP001, BP010 | SNOMED: 702909005 \| Mental capacity |
+
+## Clinical Alerts and Warnings
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ALT001 | Alert Type | Category of alert | CodeableConcept | Yes | SNOMED alert type codes | BP004 | SNOMED: 423409002 \| Clinical alert |
+| ALT002 | Alert Description | Detailed alert information | String | Yes | Max 500 chars | BP004 | - |
+| ALT003 | Alert Severity | Criticality level | CodeableConcept | Yes | high/medium/low | BP004 | SNOMED: 24484000 \| Severity |
+| ALT004 | Alert Start Date | When alert became active | DateTime | Yes | Not future date | BP004 | - |
+| ALT005 | Alert End Date | When alert expires/resolved | DateTime | No | Must be after start date | BP004 | - |
+| ALT006 | Alert Status | Current status of alert | CodeableConcept | Yes | active/inactive/resolved | BP004 | - |
+| ALT007 | Recording Professional | Who created the alert | Reference | Yes | Link to practitioner | BP004 | - |
+| ALT008 | Safeguarding Alert | Safeguarding concern flag | Boolean | Yes | Links to safeguarding record | BP004, BP009 | SNOMED: 1082771000000101 \| Safeguarding concern |
+| ALT009 | Infection Control Alert | Infection risk warning | CodeableConcept | No | SNOMED infection organisms | BP004 | SNOMED: 409822003 \| Infection control |
+| ALT010 | Behavioral Risk Alert | Risk of violence/absconding | CodeableConcept | No | Risk behavior types | BP004 | SNOMED: 284851003 \| Risk of violence |
+
+## Problems and Diagnoses
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| PRB001 | Problem/Diagnosis Code | Clinical condition code | CodeableConcept | Yes | SNOMED CT clinical findings | BP001, BP003 | SNOMED CT disorder codes |
+| PRB002 | Problem Description | Free text condition description | String | Yes | Max 500 chars | BP001, BP003 | - |
+| PRB003 | Clinical Status | Active/resolved/remission | CodeableConcept | Yes | HL7 condition clinical status | BP003 | SNOMED: 410515003 \| Clinical status |
+| PRB004 | Verification Status | Confirmed/provisional/differential | CodeableConcept | Yes | HL7 condition verification | BP001 | SNOMED: 410514004 \| Verification status |
+| PRB005 | Severity | Mild/moderate/severe | CodeableConcept | No | SNOMED severity codes | BP003 | SNOMED: 272141005 \| Severity |
+| PRB006 | Onset Date | When condition started | Date | No | Partial dates allowed | BP001 | - |
+| PRB007 | Date Recorded | When added to record | DateTime | Yes | Audit timestamp | BP001 | - |
+| PRB008 | Recorded By | Professional recording | Reference | Yes | Link to practitioner | BP001 | - |
+| PRB009 | Primary Diagnosis | Main diagnosis flag | Boolean | No | Only one per episode | BP001 | SNOMED: 8319008 \| Principal diagnosis |
+| PRB010 | Episode Link | Related admission/episode | Reference | No | Link to encounter | BP001 | - |
+
+## Medications and Prescribing
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| MED001 | Medication Code | dm+d medication code | CodeableConcept | Yes | Valid dm+d SNOMED code | BP005 | dm+d SNOMED codes |
+| MED002 | Medication Name | Display name of medication | String | Yes | From dm+d preferred term | BP005 | - |
+| MED003 | Dose Amount | Quantity per administration | Quantity | Yes | Positive number + UCUM unit | BP005 | UCUM units |
+| MED004 | Dose Frequency | How often administered | CodeableConcept | Yes | SNOMED frequency codes | BP005 | SNOMED: 307439001 \| Dosing frequency |
+| MED005 | Route | Administration route | CodeableConcept | Yes | SNOMED route codes | BP005 | SNOMED: 284009009 \| Route |
+| MED006 | Prescription Type | Acute/repeat/discharge | CodeableConcept | Yes | NHS prescription types | BP005 | - |
+| MED007 | Start Date | When medication started | Date | Yes | Not future for active meds | BP005 | - |
+| MED008 | End Date | When medication stopped | Date | No | After start date | BP005 | - |
+| MED009 | Discontinuation Reason | Why medication stopped | CodeableConcept | No | SNOMED discontinuation reasons | BP005 | SNOMED: 274512008 \| Discontinuation reason |
+| MED010 | Prescriber | Professional who prescribed | Reference | Yes | GMC/NMC number required | BP005 | - |
+| MED011 | Medication Status | Active/completed/stopped | CodeableConcept | Yes | FHIR medication status | BP005 | - |
+| MED012 | Brand Required | Specific brand needed | Boolean | No | True/false | BP005 | SNOMED: 9011000001109 \| Brand required |
+| MED013 | Monitoring Required | Special monitoring needs | String | No | Free text instructions | BP005 | - |
+| MED014 | Controlled Drug | Schedule 2-5 indicator | Boolean | Yes | Links to CD register | BP005 | SNOMED: 419851000000103 \| Controlled drug |
+| MED015 | Review Date | Next medication review | Date | No | Future date | BP005 | - |
+
+## Allergies and Adverse Reactions
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| ALG001 | Allergen Code | Substance causing reaction | CodeableConcept | Yes | SNOMED substance codes | BP001, BP005 | SNOMED substance hierarchy |
+| ALG002 | Allergen Description | Free text allergen | String | Yes | Required if no code | BP001, BP005 | - |
+| ALG003 | Reaction Type | Allergy/intolerance/adverse | CodeableConcept | Yes | SNOMED reaction types | BP001 | SNOMED: 419511003 \| Reaction type |
+| ALG004 | Reaction Severity | Mild/moderate/severe/fatal | CodeableConcept | Yes | SNOMED severity scale | BP004 | SNOMED: 442452003 \| Reaction severity |
+| ALG005 | Reaction Description | Manifestation details | String | Yes | Clinical description | BP001 | - |
+| ALG006 | Certainty | Confirmed/probable/unlikely | CodeableConcept | No | Certainty levels | BP001 | SNOMED: 410546004 \| Certainty |
+| ALG007 | Date Recorded | When allergy documented | DateTime | Yes | Audit trail | BP001 | - |
+| ALG008 | Recorded By | Professional documenting | Reference | Yes | Link to practitioner | BP001 | - |
+| ALG009 | Onset Date | When reaction first occurred | Date | No | Historical date | BP001 | - |
+| ALG010 | Status | Active/inactive/resolved | CodeableConcept | Yes | Allergy status | BP001, BP005 | - |
+
+## Investigations and Results
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| INV001 | Investigation Type | Category of test | CodeableConcept | Yes | LOINC/SNOMED codes | BP002 | LOINC laboratory codes |
+| INV002 | Investigation Name | Display name of test | String | Yes | From coding system | BP002 | - |
+| INV003 | Result Value | Numeric result | Quantity | Conditional | Number + UCUM unit | BP002 | UCUM units |
+| INV004 | Result Text | Textual result | String | Conditional | For non-numeric results | BP002 | - |
+| INV005 | Result Status | Final/preliminary/corrected | CodeableConcept | Yes | HL7 result status | BP002 | - |
+| INV006 | Abnormal Flag | High/low/abnormal | CodeableConcept | No | HL7 abnormal flags | BP002 | SNOMED: 263654008 \| Abnormal |
+| INV007 | Reference Range | Normal range for result | Range | No | Low and high bounds | BP002 | - |
+| INV008 | Specimen Type | Sample type tested | CodeableConcept | No | SNOMED specimen types | BP002 | SNOMED specimen hierarchy |
+| INV009 | Collection DateTime | When specimen collected | DateTime | Yes | Before result date | BP002 | - |
+| INV010 | Result DateTime | When result available | DateTime | Yes | After collection date | BP002 | - |
+| INV011 | Performing Lab | Laboratory/department | String | No | ODS code preferred | BP002 | - |
+| INV012 | Requesting Clinician | Who ordered test | Reference | Yes | Link to practitioner | BP002 | - |
+| INV013 | Clinical Notes | Interpretation/comments | String | No | Clinical significance | BP002 | - |
+| INV014 | Report Link | Link to full report | Attachment | No | PDF/image reference | BP002 | - |
+| INV015 | Critical Result | Panic value indicator | Boolean | No | Triggers urgent review | BP002 | SNOMED: 427177005 \| Critical value |
+
+## Care Plans and Goals
+
+| Element ID | Label | Description | Data Type | Required | Validation | Linked Process | Code |
+|---|---|---|---|---|---|---|---|
+| CPL001 | Plan Title | Name of care plan | String | Yes | Max 200 chars | BP003 | - |
+| CPL002 | Plan Type | Category of plan | CodeableConcept | Yes | SNOMED care plan types | BP003 | SNOMED: 734163000 \| Care plan |
+| CPL003 | Plan Status | Draft/active/completed | CodeableConcept | Yes | FHIR care plan status | BP003 | - |
+| CPL004 | Plan Period Start | When plan begins | Date | Yes | Not before assessment | BP003 | - |
+| CPL005 | Plan Period End | When plan expires | Date | No | After start date | BP003 | - |
+| CPL006 | Goal Description | Person-centered goal | String | Yes | SMART goal format | BP003 | - |
+| CPL007 | Goal Status | Proposed/active/achieved | CodeableConcept | Yes | Goal lifecycle status | BP003 | SNOMED: 390802008 \| Goal status |
+| CPL008 | Goal Target Date | Expected achievement date | Date | No | Future date | BP003 | - |
+| CPL009 | Intervention Description | Planned intervention/action | String | Yes | Specific actions | BP003 | - |
+| CPL010 | Intervention Category | Type of intervention | CodeableConcept | No | SNOMED intervention codes | BP003 | SNOMED intervention hierarchy |
+| CPL011 | Responsible Professional | Who delivers intervention | Reference | Yes | Link to practitioner/team | BP003 | - |
+| CPL012 | Review Date | Next plan review | Date | Yes | Within 12 months | BP003 | - |
+| CPL013 | Outcome Measure | How success measured | String | No | Measurable indicator | BP003 | - |
+| CPL014 | Person Agreement | Individual consented to plan | Boolean | Yes | Requires capacity check | BP003 | SNOMED: 310496002 \| Agreed |
+| CPL015 | Supporting Plans | Links to other plans | Reference | No | Related care plans | BP003 | - |
