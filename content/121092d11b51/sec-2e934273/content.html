@@ -1,0 +1,44 @@
+## Core Data Elements
+
+The Core Information Standard defines comprehensive data elements organised by functional domain. Each element includes standardised definitions, data types, and terminology bindings.
+
+### Demographics and Identification
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE001 | NHS Number | Unique patient identifier for England and Wales | String(10) | Yes | NHS DD |
+| CISV2.DE002 | Person First Name | Given names including middle names | String(35) | Yes | NHS DD |
+| CISV2.DE003 | Person Family Name | Family name or surname | String(35) | Yes | NHS DD |
+| CISV2.DE004 | Date of Birth | Person's date of birth | Date | Yes | NHS DD |
+| CISV2.DE005 | Gender | Person's stated gender | String(1) | Yes | NHS DD |
+| CISV2.DE006 | Postcode | Current address postcode | String(8) | No | NHS DD |
+
+### Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE010 | Problem Diagnosis | Clinical problems and diagnoses | Coded Text | No | SNOMED CT |
+| CISV2.DE011 | Medication Name | Prescribed medication | Coded Text | No | dm+d |
+| CISV2.DE012 | Allergy Agent | Causative agent for allergic reactions | Coded Text | No | SNOMED CT |
+| CISV2.DE013 | Procedure Code | Clinical procedures performed | Coded Text | No | SNOMED CT |
+| CISV2.DE014 | Observation Value | Clinical measurements and findings | Quantity | No | SNOMED CT |
+
+### Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE020 | Care Goal | Person-centred care objectives | Text | No | SNOMED CT |
+| CISV2.DE021 | Goal Importance | Priority rating for goals (1-10) | Integer | No | - |
+| CISV2.DE022 | Action Status | Status of planned care actions | Coded Text | No | SNOMED CT |
+| CISV2.DE023 | Review Date | Scheduled review date for care plans | DateTime | No | - |
+
+### Social Context
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE030 | Household Composition | Living arrangements description | Coded Text | No | SNOMED CT |
+| CISV2.DE031 | Accommodation Type | Type of housing/care setting | Coded Text | No | NHS DD |
+| CISV2.DE032 | Smoking Status | Current smoking status | Coded Text | No | SNOMED CT |
+| CISV2.DE033 | Alcohol Intake | Current alcohol consumption | Coded Text | No | SNOMED CT |
+
+All data elements support both coded and free-text values to accommodate varying levels of system sophistication while maintaining semantic interoperability through standard terminologies.
