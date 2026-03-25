@@ -1,0 +1,36 @@
+## Demographics and Identity
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | Person first name | The first name(s) of the person including middle names | String(35) | Mandatory | NHS_DD |
+| CISV2.DE2 | Person family name | The family name or surname of the person | String(35) | Mandatory | NHS_DD |
+| CISV2.DE3 | Date of birth | The date of birth of the person | Date | Mandatory | NHS_DD |
+| CISV2.DE4 | NHS number | Unique identifier for person within NHS England and Wales | String(10) | Mandatory | NHS_DD |
+| CISV2.DE5 | Gender | The person's stated gender | String(1) | Required | NHS_DD |
+| CISV2.DE6 | Ethnicity | The ethnicity as specified by the person | String(2) | Required | NHS_DD |
+
+## Contact Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE7 | Address line 1 | Person's first line of address | String(35) | Mandatory | NHS_DD |
+| CISV2.DE8 | Postcode | The person's postcode | String(8) | Required | NHS_DD |
+| CISV2.DE9 | Telephone number | The person's telephone number | String(35) | Required | NHS_DD |
+| CISV2.DE10 | Email address | Email address of the person | String(255) | Required | NHS_DD |
+
+## Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE11 | Problem description | Health problems requiring investigation or treatment | Text | Required | SNOMED_CT |
+| CISV2.DE12 | Medication name | Name of prescribed medication | String(150) | Required | DM&D |
+| CISV2.DE13 | Allergy causative agent | Substance causing allergic reaction | String(150) | Mandatory | DM&D/SNOMED_CT |
+| CISV2.DE14 | Procedure performed | Therapeutic or diagnostic procedure | String(150) | Required | SNOMED_CT |
+
+## Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE15 | Care goal | Person's health and wellbeing goals | Text | Required | SNOMED_CT |
+| CISV2.DE16 | Action description | Planned actions to achieve goals | Text | Required | SNOMED_CT |
+| CISV2.DE17 | Review date | Date for care plan review | DateTime | Required | Standard |
