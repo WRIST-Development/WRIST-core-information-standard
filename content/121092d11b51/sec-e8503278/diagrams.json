@@ -2,90 +2,463 @@
   "summary_markdown": "Healthcare processes supported by the Core Information Standard enable comprehensive person-centred care through structured information management and coordinated service delivery.",
   "activities": [
     {
-      "id": "CISV2.BP1",
-      "title": "Person Registration and Demographics Capture",
-      "objectives": "Establish comprehensive person record with essential demographic and contact information for healthcare service delivery",
+      "data_collected": [
+        {
+          "element": "Person demographics",
+          "type": "structured",
+          "notes": "Names, DOB, gender, ethnicity"
+        },
+        {
+          "element": "Contact details",
+          "type": "structured",
+          "notes": "Address, phone, email"
+        },
+        {
+          "element": "GP practice details",
+          "type": "structured",
+          "notes": "Practice identifier and contact"
+        },
+        {
+          "element": "Consent preferences",
+          "type": "coded",
+          "notes": "Information sharing consent status"
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "NHS number",
+          "type": "identifier",
+          "source": "Person/PDS"
+        },
+        {
+          "element": "Person name",
+          "type": "demographic",
+          "source": "Person"
+        },
+        {
+          "element": "Date of birth",
+          "type": "demographic",
+          "source": "Person"
+        },
+        {
+          "element": "Address",
+          "type": "contact",
+          "source": "Person"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Person presents for registration"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "a6a08fb7-870a-4858-b75b-7f2afdb58b73",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Person presents for registration",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "verify_id",
-            "type": "activity",
-            "label": "Verify person identity"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "165657da-561f-45fe-ba06-6b89e12e4eda",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify person identity",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "capture_demographics",
-            "type": "activity",
-            "label": "Capture demographic data"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "072cb10a-702a-471b-9a0d-6294dc6619dc",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Capture demographic data",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "record_contacts",
-            "type": "activity",
-            "label": "Record contact details"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "9ca7ad9f-ea65-44a5-bbf8-b3a46ca1a53f",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record contact details",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "consent_check",
-            "type": "decision",
-            "label": "Information sharing consent given?"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 58,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "b3109203-097c-4830-8e63-2ea1f39357f9",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Information sharing consent given?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "record_consent",
-            "type": "activity",
-            "label": "Record consent preferences"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "b1fc5ba3-a67e-4bc8-a455-4c1b15095a9a",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record consent preferences",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "create_record",
-            "type": "activity",
-            "label": "Create healthcare record"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "3d5e0520-270f-4df9-a506-10d1170e2c30",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Create healthcare record",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Registration complete"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "verify_id",
-            "label": ""
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "b7aa7540-aa90-4a00-a187-ab5dd22d8aa1",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Registration complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "verify_id",
-            "to": "capture_demographics",
-            "label": "Identity confirmed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a6a08fb7-870a-4858-b75b-7f2afdb58b73"
+            },
+            "target": {
+              "id": "165657da-561f-45fe-ba06-6b89e12e4eda"
+            },
+            "id": "02d9964e-c66f-4c34-8dba-e04f21caaa81",
+            "z": 9,
+            "attrs": {}
           },
           {
-            "from": "capture_demographics",
-            "to": "record_contacts",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "165657da-561f-45fe-ba06-6b89e12e4eda"
+            },
+            "target": {
+              "id": "072cb10a-702a-471b-9a0d-6294dc6619dc"
+            },
+            "id": "753c0df3-f048-4665-92e5-d4be4fda853f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Identity confirmed"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "record_contacts",
-            "to": "consent_check",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "072cb10a-702a-471b-9a0d-6294dc6619dc"
+            },
+            "target": {
+              "id": "9ca7ad9f-ea65-44a5-bbf8-b3a46ca1a53f"
+            },
+            "id": "6a9b3d27-c431-4eb1-ac8d-9361fd77c943",
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "consent_check",
-            "to": "record_consent",
-            "label": "Yes/No"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "9ca7ad9f-ea65-44a5-bbf8-b3a46ca1a53f"
+            },
+            "target": {
+              "id": "b3109203-097c-4830-8e63-2ea1f39357f9"
+            },
+            "id": "fe75ba60-7047-426e-9351-fdbe3f54cd9e",
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "record_consent",
-            "to": "create_record",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b3109203-097c-4830-8e63-2ea1f39357f9"
+            },
+            "target": {
+              "id": "b1fc5ba3-a67e-4bc8-a455-4c1b15095a9a"
+            },
+            "id": "e2093d63-0063-4a22-8d48-5d0509606a05",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes/No"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "create_record",
-            "to": "end",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b1fc5ba3-a67e-4bc8-a455-4c1b15095a9a"
+            },
+            "target": {
+              "id": "3d5e0520-270f-4df9-a506-10d1170e2c30"
+            },
+            "id": "91a239c3-b3f2-41db-bcfe-13aca7b47611",
+            "z": 14,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "3d5e0520-270f-4df9-a506-10d1170e2c30"
+            },
+            "target": {
+              "id": "b7aa7540-aa90-4a00-a187-ab5dd22d8aa1"
+            },
+            "id": "831c42e9-3fce-4683-8fc0-abbb3d463dc8",
+            "z": 15,
+            "attrs": {}
           }
         ]
       },
+      "id": "CISV2.BP1",
+      "objectives": "Establish comprehensive person record with essential demographic and contact information for healthcare service delivery",
       "process_elements": [
         {
           "type": "event",
@@ -165,151 +538,546 @@
           "label": ""
         }
       ],
-      "data_seen": [
-        {
-          "element": "NHS number",
-          "type": "identifier",
-          "source": "Person/PDS"
-        },
-        {
-          "element": "Person name",
-          "type": "demographic",
-          "source": "Person"
-        },
-        {
-          "element": "Date of birth",
-          "type": "demographic",
-          "source": "Person"
-        },
-        {
-          "element": "Address",
-          "type": "contact",
-          "source": "Person"
-        }
-      ],
-      "data_collected": [
-        {
-          "element": "Person demographics",
-          "type": "structured",
-          "notes": "Names, DOB, gender, ethnicity"
-        },
-        {
-          "element": "Contact details",
-          "type": "structured",
-          "notes": "Address, phone, email"
-        },
-        {
-          "element": "GP practice details",
-          "type": "structured",
-          "notes": "Practice identifier and contact"
-        },
-        {
-          "element": "Consent preferences",
-          "type": "coded",
-          "notes": "Information sharing consent status"
-        }
-      ]
+      "title": "Person Registration and Demographics Capture"
     },
     {
-      "id": "CISV2.BP2",
-      "title": "Care Planning and Goal Setting",
-      "objectives": "Develop person-centred care plans with agreed goals, actions, and review arrangements",
+      "data_collected": [
+        {
+          "element": "Care goals",
+          "type": "structured",
+          "notes": "Person's goals and priorities"
+        },
+        {
+          "element": "Action plans",
+          "type": "structured",
+          "notes": "Specific actions and responsibilities"
+        },
+        {
+          "element": "Review dates",
+          "type": "administrative",
+          "notes": "Scheduled review appointments"
+        },
+        {
+          "element": "Person agreement",
+          "type": "coded",
+          "notes": "Consent to care plan"
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "Assessment results",
+          "type": "clinical",
+          "source": "Professional"
+        },
+        {
+          "element": "Person preferences",
+          "type": "structured",
+          "source": "Person"
+        },
+        {
+          "element": "Problem list",
+          "type": "clinical",
+          "source": "Healthcare record"
+        },
+        {
+          "element": "Professional contacts",
+          "type": "administrative",
+          "source": "System"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Care planning initiated"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 125,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "30f4c623-02c2-4878-9f8f-97e6e202edec",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care planning initiated",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "assess_needs",
-            "type": "activity",
-            "label": "Assess person's needs"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 90,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "5ecffa3b-7ae5-4e02-9e50-72160a9a5289",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Assess person's needs",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "identify_goals",
-            "type": "activity",
-            "label": "Identify care goals"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 90,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "253f8750-995a-435e-b8f3-259214c03ce1",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Identify care goals",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "develop_plan",
-            "type": "activity",
-            "label": "Develop care plan"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 90,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "3e861673-d993-4aa9-8530-2f1842c3efcb",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Develop care plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "person_agrees",
-            "type": "decision",
-            "label": "Person agrees to plan?"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 118,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "c9570c55-bccb-4f4c-ad14-0c30d8acf22e",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Person agrees to plan?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "revise_plan",
-            "type": "activity",
-            "label": "Revise care plan"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "68d01991-8a2e-4525-b321-e506f64bdf5b",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Revise care plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "implement_plan",
-            "type": "activity",
-            "label": "Implement care plan"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 190,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "fc0d7279-1862-4667-a8d1-0e99ef95e647",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Implement care plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "schedule_review",
-            "type": "activity",
-            "label": "Schedule plan review"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 190,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "ba4d2910-2c84-4a97-a12d-20ff009c8fd5",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Schedule plan review",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Care plan active"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "assess_needs",
-            "label": ""
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 225,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "132c5174-cd1b-4642-bc4c-e88735b95b15",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care plan active",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "assess_needs",
-            "to": "identify_goals",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "30f4c623-02c2-4878-9f8f-97e6e202edec"
+            },
+            "target": {
+              "id": "5ecffa3b-7ae5-4e02-9e50-72160a9a5289"
+            },
+            "id": "60d66e50-d45d-4064-893d-e093de6d1bc5",
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "identify_goals",
-            "to": "develop_plan",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "5ecffa3b-7ae5-4e02-9e50-72160a9a5289"
+            },
+            "target": {
+              "id": "253f8750-995a-435e-b8f3-259214c03ce1"
+            },
+            "id": "9d8c7032-7f75-4358-93fb-0cbf4a7db4fb",
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "develop_plan",
-            "to": "person_agrees",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "253f8750-995a-435e-b8f3-259214c03ce1"
+            },
+            "target": {
+              "id": "3e861673-d993-4aa9-8530-2f1842c3efcb"
+            },
+            "id": "1beeb2ef-cc9b-4fc9-8096-b5b96b96de5d",
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "person_agrees",
-            "to": "revise_plan",
-            "label": "No"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "3e861673-d993-4aa9-8530-2f1842c3efcb"
+            },
+            "target": {
+              "id": "c9570c55-bccb-4f4c-ad14-0c30d8acf22e"
+            },
+            "id": "f2fd6d2f-98e8-4885-b702-2a9f5c10b3df",
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "person_agrees",
-            "to": "implement_plan",
-            "label": "Yes"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "c9570c55-bccb-4f4c-ad14-0c30d8acf22e"
+            },
+            "target": {
+              "id": "68d01991-8a2e-4525-b321-e506f64bdf5b"
+            },
+            "id": "83a4bd34-fcde-46d8-9605-47ed9e2013a5",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "revise_plan",
-            "to": "person_agrees",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "c9570c55-bccb-4f4c-ad14-0c30d8acf22e"
+            },
+            "target": {
+              "id": "fc0d7279-1862-4667-a8d1-0e99ef95e647"
+            },
+            "id": "1a96b6ab-4aa9-4952-8b2c-e7a9898009a5",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "implement_plan",
-            "to": "schedule_review",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "68d01991-8a2e-4525-b321-e506f64bdf5b"
+            },
+            "target": {
+              "id": "c9570c55-bccb-4f4c-ad14-0c30d8acf22e"
+            },
+            "id": "33640440-b6ff-418b-bebe-02fe38bb46bb",
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "schedule_review",
-            "to": "end",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "fc0d7279-1862-4667-a8d1-0e99ef95e647"
+            },
+            "target": {
+              "id": "ba4d2910-2c84-4a97-a12d-20ff009c8fd5"
+            },
+            "id": "d30167fa-dfa4-462b-bbd1-c5eb69bcba97",
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ba4d2910-2c84-4a97-a12d-20ff009c8fd5"
+            },
+            "target": {
+              "id": "132c5174-cd1b-4642-bc4c-e88735b95b15"
+            },
+            "id": "e97161a1-01d4-4ae9-a727-91d419e50d08",
+            "z": 18,
+            "attrs": {}
           }
         ]
       },
+      "id": "CISV2.BP2",
+      "objectives": "Develop person-centred care plans with agreed goals, actions, and review arrangements",
       "process_elements": [
         {
           "type": "event",
@@ -404,50 +1172,7 @@
           "label": ""
         }
       ],
-      "data_seen": [
-        {
-          "element": "Assessment results",
-          "type": "clinical",
-          "source": "Professional"
-        },
-        {
-          "element": "Person preferences",
-          "type": "structured",
-          "source": "Person"
-        },
-        {
-          "element": "Problem list",
-          "type": "clinical",
-          "source": "Healthcare record"
-        },
-        {
-          "element": "Professional contacts",
-          "type": "administrative",
-          "source": "System"
-        }
-      ],
-      "data_collected": [
-        {
-          "element": "Care goals",
-          "type": "structured",
-          "notes": "Person's goals and priorities"
-        },
-        {
-          "element": "Action plans",
-          "type": "structured",
-          "notes": "Specific actions and responsibilities"
-        },
-        {
-          "element": "Review dates",
-          "type": "administrative",
-          "notes": "Scheduled review appointments"
-        },
-        {
-          "element": "Person agreement",
-          "type": "coded",
-          "notes": "Consent to care plan"
-        }
-      ]
+      "title": "Care Planning and Goal Setting"
     }
   ]
 }
