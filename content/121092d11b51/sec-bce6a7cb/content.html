@@ -1,0 +1,39 @@
+## Demographics and Identity
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | NHS Number | Unique NHS identifier | String(10) | Yes | NHS_DD |
+| CISV2.DE2 | Person Name | Complete name including given and family names | Complex | Yes | NHS_DD |
+| CISV2.DE3 | Date of Birth | Person's birth date | Date | Yes | NHS_DD |
+| CISV2.DE4 | Gender | Person's stated gender | String(1) | No | NHS_DD |
+| CISV2.DE5 | Address | Person's residential address | Complex | Yes | NHS_DD |
+
+## Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE6 | Problem List | Active health problems and conditions | Complex | No | SNOMED_CT |
+| CISV2.DE7 | Medications | Current and historical medications | Complex | No | dm+d |
+| CISV2.DE8 | Allergies | Known allergies and adverse reactions | Complex | No | SNOMED_CT |
+| CISV2.DE9 | Vaccinations | Immunization history | Complex | No | SNOMED_CT |
+| CISV2.DE10 | Examination Findings | Clinical examination results | Complex | No | SNOMED_CT |
+
+## Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE11 | Care Plan | Structured care and support plan | Complex | No | SNOMED_CT |
+| CISV2.DE12 | Goals and Objectives | Person's care goals and targets | Complex | No | SNOMED_CT |
+| CISV2.DE13 | Risk Assessment | Identified risks and mitigation strategies | Complex | No | SNOMED_CT |
+| CISV2.DE14 | Contingency Plans | Emergency and safety plans | Complex | No | Local |
+
+## Legal and Consent
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE15 | Mental Capacity | Assessment of decision-making capacity | Complex | No | SNOMED_CT |
+| CISV2.DE16 | Consent Status | Information sharing consent details | Complex | No | Local |
+| CISV2.DE17 | Legal Status | Mental health act or equivalent status | String | No | NHS_DD |
+| CISV2.DE18 | Advance Decisions | ADRT and advance statement details | Complex | No | SNOMED_CT |
+
+All data elements support structured coding where applicable, with fallback to free text for local requirements.
