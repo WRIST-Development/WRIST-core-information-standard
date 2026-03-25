@@ -2,132 +2,6 @@
   "summary_markdown": "The Core Information Standard supports three core business processes that ensure comprehensive person-centred care delivery across health and social care settings.",
   "activities": [
     {
-      "id": "CISV2.BP1",
-      "title": "Initial Patient Registration and Assessment",
-      "objectives": "Capture comprehensive person demographics, health history, and preferences to establish a complete baseline record for new service users.",
-      "diagram": {
-        "nodes": [
-          {
-            "id": "start",
-            "type": "start",
-            "label": "Patient Arrives"
-          },
-          {
-            "id": "verify_id",
-            "type": "activity",
-            "label": "Verify Identity & NHS Number"
-          },
-          {
-            "id": "capture_demographics",
-            "type": "activity",
-            "label": "Capture Demographics"
-          },
-          {
-            "id": "record_gp",
-            "type": "activity",
-            "label": "Record GP Practice Details"
-          },
-          {
-            "id": "assess_needs",
-            "type": "activity",
-            "label": "Assess Individual Requirements"
-          },
-          {
-            "id": "record_contacts",
-            "type": "activity",
-            "label": "Record Professional & Personal Contacts"
-          },
-          {
-            "id": "complete_about_me",
-            "type": "activity",
-            "label": "Complete 'About Me' Section"
-          },
-          {
-            "id": "review_complete",
-            "type": "decision",
-            "label": "Registration Complete?"
-          },
-          {
-            "id": "save_record",
-            "type": "activity",
-            "label": "Save Patient Record"
-          },
-          {
-            "id": "end",
-            "type": "end",
-            "label": "Registration Complete"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "verify_id",
-            "label": ""
-          },
-          {
-            "from": "verify_id",
-            "to": "capture_demographics",
-            "label": ""
-          },
-          {
-            "from": "capture_demographics",
-            "to": "record_gp",
-            "label": ""
-          },
-          {
-            "from": "record_gp",
-            "to": "assess_needs",
-            "label": ""
-          },
-          {
-            "from": "assess_needs",
-            "to": "record_contacts",
-            "label": ""
-          },
-          {
-            "from": "record_contacts",
-            "to": "complete_about_me",
-            "label": ""
-          },
-          {
-            "from": "complete_about_me",
-            "to": "review_complete",
-            "label": ""
-          },
-          {
-            "from": "review_complete",
-            "to": "save_record",
-            "label": "Yes"
-          },
-          {
-            "from": "review_complete",
-            "to": "capture_demographics",
-            "label": "No - Missing Data"
-          },
-          {
-            "from": "save_record",
-            "to": "end",
-            "label": ""
-          }
-        ]
-      },
-      "data_seen": [
-        {
-          "element": "NHS Number",
-          "source": "Patient ID Card",
-          "type": "Identity"
-        },
-        {
-          "element": "Previous Records",
-          "source": "GP Practice",
-          "type": "Medical History"
-        },
-        {
-          "element": "Medication List",
-          "source": "Patient/Pharmacy",
-          "type": "Clinical"
-        }
-      ],
       "data_collected": [
         {
           "element": "Person Name",
@@ -164,135 +38,572 @@
           "type": "Personal",
           "notes": "Patient's own description of needs and preferences"
         }
-      ]
-    },
-    {
-      "id": "CISV2.BP2",
-      "title": "Care Plan Development and Review",
-      "objectives": "Develop comprehensive, person-centred care plans with clear goals, actions, and review mechanisms involving the person and their support network.",
+      ],
+      "data_seen": [
+        {
+          "element": "NHS Number",
+          "type": "Identity",
+          "source": "Patient ID Card"
+        },
+        {
+          "element": "Previous Records",
+          "type": "Medical History",
+          "source": "GP Practice"
+        },
+        {
+          "element": "Medication List",
+          "type": "Clinical",
+          "source": "Patient/Pharmacy"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Care Planning Triggered"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 115,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "5a63f559-e9de-4983-b68d-86524e7dcf19",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Patient Arrives",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "assess_needs",
-            "type": "activity",
-            "label": "Assess Current Needs"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "eb286586-08e1-4216-949b-c8c5158d26fb",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify Identity & NHS Number",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "identify_goals",
-            "type": "activity",
-            "label": "Identify Goals with Person"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "161c2293-e270-49b2-9ef7-1d034cc071bc",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Capture Demographics",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "develop_actions",
-            "type": "activity",
-            "label": "Develop Action Plans"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "9e890b85-f28a-47c9-bc13-532696a16876",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record GP Practice Details",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "assign_responsibilities",
-            "type": "activity",
-            "label": "Assign Responsibilities"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "7f0e4169-f892-40b0-9c8f-e573e83b51a9",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Assess Individual Requirements",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "agree_plan",
-            "type": "decision",
-            "label": "Person Agrees Plan?"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 554
+            },
+            "angle": 0,
+            "id": "a86a135e-777e-43b8-b337-b3f4bb6d50ff",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record Professional & Personal Contacts",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "revise_plan",
-            "type": "activity",
-            "label": "Revise Plan"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 660
+            },
+            "angle": 0,
+            "id": "baa61b7b-5543-41ee-855a-f3f2d88d3f43",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Complete 'About Me' Section",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "document_plan",
-            "type": "activity",
-            "label": "Document Care Plan"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 108,
+              "y": 766
+            },
+            "angle": 0,
+            "id": "13e50c40-e688-4e82-88b7-99dceaf3ba5f",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Registration Complete?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "set_review",
-            "type": "activity",
-            "label": "Schedule Review Date"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 880
+            },
+            "angle": 0,
+            "id": "b92d671d-d34c-41e2-ad3b-8ff1f0a3f3c9",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Save Patient Record",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Care Plan Active"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "assess_needs",
-            "label": ""
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 115,
+              "y": 986
+            },
+            "angle": 0,
+            "id": "67177ad4-8481-46a0-b951-14b34891c5ce",
+            "z": 10,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Registration Complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "assess_needs",
-            "to": "identify_goals",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "5a63f559-e9de-4983-b68d-86524e7dcf19"
+            },
+            "target": {
+              "id": "eb286586-08e1-4216-949b-c8c5158d26fb"
+            },
+            "id": "691d0e4a-70e4-421c-9739-57f412eeff03",
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "identify_goals",
-            "to": "develop_actions",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "eb286586-08e1-4216-949b-c8c5158d26fb"
+            },
+            "target": {
+              "id": "161c2293-e270-49b2-9ef7-1d034cc071bc"
+            },
+            "id": "a878fe8b-e087-4dbb-99e6-3b37906c15bf",
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "develop_actions",
-            "to": "assign_responsibilities",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "161c2293-e270-49b2-9ef7-1d034cc071bc"
+            },
+            "target": {
+              "id": "9e890b85-f28a-47c9-bc13-532696a16876"
+            },
+            "id": "bd613d85-8df7-4a5a-88eb-e5f1aca3adfa",
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "assign_responsibilities",
-            "to": "agree_plan",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "9e890b85-f28a-47c9-bc13-532696a16876"
+            },
+            "target": {
+              "id": "7f0e4169-f892-40b0-9c8f-e573e83b51a9"
+            },
+            "id": "cb8080d1-6c24-4871-aa8f-f5e1febf8ee5",
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "agree_plan",
-            "to": "document_plan",
-            "label": "Yes"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "7f0e4169-f892-40b0-9c8f-e573e83b51a9"
+            },
+            "target": {
+              "id": "a86a135e-777e-43b8-b337-b3f4bb6d50ff"
+            },
+            "id": "3092ecbd-27c5-43e7-9e0e-78df8fd7cee7",
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "agree_plan",
-            "to": "revise_plan",
-            "label": "No"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a86a135e-777e-43b8-b337-b3f4bb6d50ff"
+            },
+            "target": {
+              "id": "baa61b7b-5543-41ee-855a-f3f2d88d3f43"
+            },
+            "id": "f4f7039c-75f2-49a4-ba66-c1a64a3b4b05",
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "revise_plan",
-            "to": "identify_goals",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "baa61b7b-5543-41ee-855a-f3f2d88d3f43"
+            },
+            "target": {
+              "id": "13e50c40-e688-4e82-88b7-99dceaf3ba5f"
+            },
+            "id": "0cca1a93-74a7-474c-87b5-b6a7ddec0bb3",
+            "z": 17,
+            "attrs": {}
           },
           {
-            "from": "document_plan",
-            "to": "set_review",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "13e50c40-e688-4e82-88b7-99dceaf3ba5f"
+            },
+            "target": {
+              "id": "b92d671d-d34c-41e2-ad3b-8ff1f0a3f3c9"
+            },
+            "id": "255ef33a-a30d-4c17-8ba2-7476ef0e956b",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
           },
           {
-            "from": "set_review",
-            "to": "end",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "13e50c40-e688-4e82-88b7-99dceaf3ba5f"
+            },
+            "target": {
+              "id": "161c2293-e270-49b2-9ef7-1d034cc071bc"
+            },
+            "id": "6bbe073d-b8ac-4b8a-b888-90d74f97d374",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No - Missing Data"
+                  }
+                }
+              }
+            ],
+            "z": 19,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b92d671d-d34c-41e2-ad3b-8ff1f0a3f3c9"
+            },
+            "target": {
+              "id": "67177ad4-8481-46a0-b951-14b34891c5ce"
+            },
+            "id": "19ab88e8-52d1-4814-a184-62ca74b53863",
+            "z": 20,
+            "attrs": {}
           }
         ]
       },
-      "data_seen": [
-        {
-          "element": "Previous Care Plans",
-          "source": "Patient Record",
-          "type": "Care History"
-        },
-        {
-          "element": "Assessment Results",
-          "source": "Clinical Team",
-          "type": "Assessment"
-        },
-        {
-          "element": "Person Preferences",
-          "source": "About Me Section",
-          "type": "Personal"
-        }
-      ],
+      "id": "CISV2.BP1",
+      "objectives": "Capture comprehensive person demographics, health history, and preferences to establish a complete baseline record for new service users.",
+      "title": "Initial Patient Registration and Assessment"
+    },
+    {
       "data_collected": [
         {
           "element": "Strengths and Assets",
@@ -319,135 +630,572 @@
           "type": "Planning",
           "notes": "Review dates and responsibilities"
         }
-      ]
-    },
-    {
-      "id": "CISV2.BP3",
-      "title": "Emergency Information Access",
-      "objectives": "Provide rapid access to critical patient information during emergency care episodes while maintaining appropriate security and consent frameworks.",
+      ],
+      "data_seen": [
+        {
+          "element": "Previous Care Plans",
+          "type": "Care History",
+          "source": "Patient Record"
+        },
+        {
+          "element": "Assessment Results",
+          "type": "Assessment",
+          "source": "Clinical Team"
+        },
+        {
+          "element": "Person Preferences",
+          "type": "Personal",
+          "source": "About Me Section"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Emergency Situation"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 145,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "a2534c24-99f6-4f01-8601-7ae5f2b76426",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care Planning Triggered",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "verify_patient",
-            "type": "activity",
-            "label": "Verify Patient Identity"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "b22f22e2-5102-4540-992c-67755a3b76d0",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Assess Current Needs",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "check_consent",
-            "type": "decision",
-            "label": "Consent Available?"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "62b87795-cdd0-45e5-8ded-86a65e09cb23",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Identify Goals with Person",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "emergency_access",
-            "type": "activity",
-            "label": "Emergency Access Override"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 50,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "863dee75-82ac-4b5d-8209-0eafc697c7fd",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Develop Action Plans",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "retrieve_critical",
-            "type": "activity",
-            "label": "Retrieve Critical Information"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 50,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "e73ed119-9ce3-4afa-a55e-4a896bf41b56",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Assign Responsibilities",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "review_alerts",
-            "type": "activity",
-            "label": "Review Alerts & Warnings"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 78,
+              "y": 554
+            },
+            "angle": 0,
+            "id": "8f3b5628-9b41-4fb6-ad19-ecd3ab874928",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Person Agrees Plan?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "access_medications",
-            "type": "activity",
-            "label": "Access Current Medications"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 190,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "32e5ba84-7f40-405d-8c08-0a641322e01f",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Revise Plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "review_advance_decisions",
-            "type": "activity",
-            "label": "Review Advance Decisions"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "316ed97c-1902-4e6d-8f09-8cc1a81e6b36",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Document Care Plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "document_access",
-            "type": "activity",
-            "label": "Document Information Access"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "17dd7714-ee0f-48df-803b-e9e25a920cb2",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Schedule Review Date",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Information Retrieved"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "verify_patient",
-            "label": ""
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 880
+            },
+            "angle": 0,
+            "id": "aa8b1ce8-b7cd-4c44-9b2b-f21b76212747",
+            "z": 10,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care Plan Active",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "verify_patient",
-            "to": "check_consent",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a2534c24-99f6-4f01-8601-7ae5f2b76426"
+            },
+            "target": {
+              "id": "b22f22e2-5102-4540-992c-67755a3b76d0"
+            },
+            "id": "2771443b-8e69-452c-957c-e7238e7a8a3d",
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "check_consent",
-            "to": "retrieve_critical",
-            "label": "Yes"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b22f22e2-5102-4540-992c-67755a3b76d0"
+            },
+            "target": {
+              "id": "62b87795-cdd0-45e5-8ded-86a65e09cb23"
+            },
+            "id": "f9dba1cd-9d11-4764-a37b-749df4e8ef59",
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "check_consent",
-            "to": "emergency_access",
-            "label": "No - Emergency Override"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "62b87795-cdd0-45e5-8ded-86a65e09cb23"
+            },
+            "target": {
+              "id": "863dee75-82ac-4b5d-8209-0eafc697c7fd"
+            },
+            "id": "805736c8-ecbe-4345-9bfb-ddb845ec8ced",
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "emergency_access",
-            "to": "retrieve_critical",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "863dee75-82ac-4b5d-8209-0eafc697c7fd"
+            },
+            "target": {
+              "id": "e73ed119-9ce3-4afa-a55e-4a896bf41b56"
+            },
+            "id": "79479d7f-f3e8-4344-8444-35b9f5c8cfea",
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "retrieve_critical",
-            "to": "review_alerts",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "e73ed119-9ce3-4afa-a55e-4a896bf41b56"
+            },
+            "target": {
+              "id": "8f3b5628-9b41-4fb6-ad19-ecd3ab874928"
+            },
+            "id": "4179ec84-5689-42f8-95f2-b9d960dfcfe6",
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "review_alerts",
-            "to": "access_medications",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "8f3b5628-9b41-4fb6-ad19-ecd3ab874928"
+            },
+            "target": {
+              "id": "316ed97c-1902-4e6d-8f09-8cc1a81e6b36"
+            },
+            "id": "ddb5f6bf-3599-423e-b223-78cb8fee1ff0",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "access_medications",
-            "to": "review_advance_decisions",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "8f3b5628-9b41-4fb6-ad19-ecd3ab874928"
+            },
+            "target": {
+              "id": "32e5ba84-7f40-405d-8c08-0a641322e01f"
+            },
+            "id": "9f340ccb-0338-4193-b0c7-d0b0886fd952",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
           },
           {
-            "from": "review_advance_decisions",
-            "to": "document_access",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "32e5ba84-7f40-405d-8c08-0a641322e01f"
+            },
+            "target": {
+              "id": "62b87795-cdd0-45e5-8ded-86a65e09cb23"
+            },
+            "id": "85b57a5a-e526-42fb-90a0-363c1fc8e5e4",
+            "z": 18,
+            "attrs": {}
           },
           {
-            "from": "document_access",
-            "to": "end",
-            "label": ""
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "316ed97c-1902-4e6d-8f09-8cc1a81e6b36"
+            },
+            "target": {
+              "id": "17dd7714-ee0f-48df-803b-e9e25a920cb2"
+            },
+            "id": "be6836b0-914a-4557-bd3a-638d280832e1",
+            "z": 19,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "17dd7714-ee0f-48df-803b-e9e25a920cb2"
+            },
+            "target": {
+              "id": "aa8b1ce8-b7cd-4c44-9b2b-f21b76212747"
+            },
+            "id": "371e12fd-c280-4fb3-976f-11da664f6bf2",
+            "z": 20,
+            "attrs": {}
           }
         ]
       },
-      "data_seen": [
-        {
-          "element": "Patient Identity",
-          "source": "Emergency Services",
-          "type": "Demographics"
-        },
-        {
-          "element": "Critical Alerts",
-          "source": "Patient Record",
-          "type": "Safety"
-        },
-        {
-          "element": "Emergency Contacts",
-          "source": "Patient Record",
-          "type": "Contacts"
-        }
-      ],
+      "id": "CISV2.BP2",
+      "objectives": "Develop comprehensive, person-centred care plans with clear goals, actions, and review mechanisms involving the person and their support network.",
+      "title": "Care Plan Development and Review"
+    },
+    {
       "data_collected": [
         {
           "element": "Emergency Access Log",
@@ -464,7 +1212,570 @@
           "type": "Legal",
           "notes": "Whether consent was available or emergency override used"
         }
-      ]
+      ],
+      "data_seen": [
+        {
+          "element": "Patient Identity",
+          "type": "Demographics",
+          "source": "Emergency Services"
+        },
+        {
+          "element": "Critical Alerts",
+          "type": "Safety",
+          "source": "Patient Record"
+        },
+        {
+          "element": "Emergency Contacts",
+          "type": "Contacts",
+          "source": "Patient Record"
+        }
+      ],
+      "diagram": {
+        "cells": [
+          {
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "4590b4d5-688c-4a49-8027-6bb05db99897",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Emergency Situation",
+                "fontSize": 9
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "b8edf8d5-6bc0-4411-adc8-1cec553028d6",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify Patient Identity",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 58,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "bd4a82a8-9c12-4cfe-b9a4-72ce90bb560f",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Consent Available?",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 350
+            },
+            "angle": 0,
+            "id": "c648043e-112a-4215-a7a7-ddeee29209bd",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Emergency Access Override",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 456
+            },
+            "angle": 0,
+            "id": "7cc562ab-8797-4c11-85b3-085c3beb470b",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Retrieve Critical Information",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "260b0139-2453-4d3f-a497-983337c69e81",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Review Alerts & Warnings",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "860a2406-0887-45d7-a42a-60735c0f4940",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Access Current Medications",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "9222b3ae-857d-42d9-9a42-e10229a9ecc8",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Review Advance Decisions",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 880
+            },
+            "angle": 0,
+            "id": "dbfbe68b-3f95-4990-bf56-f8a73d9dc462",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Document Information Access",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 986
+            },
+            "angle": 0,
+            "id": "8c85da29-bb02-49da-ac92-2cd14a45e7d9",
+            "z": 10,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Information Retrieved",
+                "fontSize": 9
+              }
+            }
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "4590b4d5-688c-4a49-8027-6bb05db99897"
+            },
+            "target": {
+              "id": "b8edf8d5-6bc0-4411-adc8-1cec553028d6"
+            },
+            "id": "95f9351c-4556-4400-99f9-5b68bb7b9847",
+            "z": 11,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b8edf8d5-6bc0-4411-adc8-1cec553028d6"
+            },
+            "target": {
+              "id": "bd4a82a8-9c12-4cfe-b9a4-72ce90bb560f"
+            },
+            "id": "b10917e5-6e3d-4e45-84a2-f4719a2a63be",
+            "z": 12,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "bd4a82a8-9c12-4cfe-b9a4-72ce90bb560f"
+            },
+            "target": {
+              "id": "7cc562ab-8797-4c11-85b3-085c3beb470b"
+            },
+            "id": "4f6a661d-a3c8-4e2a-877a-5c866dba5e2c",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "bd4a82a8-9c12-4cfe-b9a4-72ce90bb560f"
+            },
+            "target": {
+              "id": "c648043e-112a-4215-a7a7-ddeee29209bd"
+            },
+            "id": "d3772cd5-1141-44f8-bdf4-4f8ebeefcbf5",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No - Emergency Override"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "c648043e-112a-4215-a7a7-ddeee29209bd"
+            },
+            "target": {
+              "id": "7cc562ab-8797-4c11-85b3-085c3beb470b"
+            },
+            "id": "ebee7315-982b-4153-a43f-0e0f182e2bc9",
+            "z": 15,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "7cc562ab-8797-4c11-85b3-085c3beb470b"
+            },
+            "target": {
+              "id": "260b0139-2453-4d3f-a497-983337c69e81"
+            },
+            "id": "4e5e20de-848e-47ff-95fa-bb2bd2a9f57e",
+            "z": 16,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "260b0139-2453-4d3f-a497-983337c69e81"
+            },
+            "target": {
+              "id": "860a2406-0887-45d7-a42a-60735c0f4940"
+            },
+            "id": "d351520d-8e6a-4c0d-aa42-474edb18474a",
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "860a2406-0887-45d7-a42a-60735c0f4940"
+            },
+            "target": {
+              "id": "9222b3ae-857d-42d9-9a42-e10229a9ecc8"
+            },
+            "id": "9f6a7058-9ed3-4055-8fcf-ae4bff40ce75",
+            "z": 18,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "9222b3ae-857d-42d9-9a42-e10229a9ecc8"
+            },
+            "target": {
+              "id": "dbfbe68b-3f95-4990-bf56-f8a73d9dc462"
+            },
+            "id": "221303f1-c410-4c16-9d11-9b1eba529fae",
+            "z": 19,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "dbfbe68b-3f95-4990-bf56-f8a73d9dc462"
+            },
+            "target": {
+              "id": "8c85da29-bb02-49da-ac92-2cd14a45e7d9"
+            },
+            "id": "b14e86a3-6d6e-4a86-8dd8-aa26159175f2",
+            "z": 20,
+            "attrs": {}
+          }
+        ]
+      },
+      "id": "CISV2.BP3",
+      "objectives": "Provide rapid access to critical patient information during emergency care episodes while maintaining appropriate security and consent frameworks.",
+      "title": "Emergency Information Access"
     }
   ]
 }
