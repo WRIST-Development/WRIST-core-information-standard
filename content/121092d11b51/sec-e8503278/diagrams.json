@@ -1,0 +1,453 @@
+{
+  "summary_markdown": "Healthcare processes supported by the Core Information Standard enable comprehensive person-centred care through structured information management and coordinated service delivery.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Person Registration and Demographics Capture",
+      "objectives": "Establish comprehensive person record with essential demographic and contact information for healthcare service delivery",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for registration"
+          },
+          {
+            "id": "verify_id",
+            "type": "activity",
+            "label": "Verify person identity"
+          },
+          {
+            "id": "capture_demographics",
+            "type": "activity",
+            "label": "Capture demographic data"
+          },
+          {
+            "id": "record_contacts",
+            "type": "activity",
+            "label": "Record contact details"
+          },
+          {
+            "id": "consent_check",
+            "type": "decision",
+            "label": "Information sharing consent given?"
+          },
+          {
+            "id": "record_consent",
+            "type": "activity",
+            "label": "Record consent preferences"
+          },
+          {
+            "id": "create_record",
+            "type": "activity",
+            "label": "Create healthcare record"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify_id",
+            "label": ""
+          },
+          {
+            "from": "verify_id",
+            "to": "capture_demographics",
+            "label": "Identity confirmed"
+          },
+          {
+            "from": "capture_demographics",
+            "to": "record_contacts",
+            "label": ""
+          },
+          {
+            "from": "record_contacts",
+            "to": "consent_check",
+            "label": ""
+          },
+          {
+            "from": "consent_check",
+            "to": "record_consent",
+            "label": "Yes/No"
+          },
+          {
+            "from": "record_consent",
+            "to": "create_record",
+            "label": ""
+          },
+          {
+            "from": "create_record",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "process_elements": [
+        {
+          "type": "event",
+          "id": "start",
+          "label": "Person presents for registration"
+        },
+        {
+          "type": "activity",
+          "id": "verify_id",
+          "label": "Verify person identity"
+        },
+        {
+          "type": "activity",
+          "id": "capture_demographics",
+          "label": "Capture demographic data"
+        },
+        {
+          "type": "activity",
+          "id": "record_contacts",
+          "label": "Record contact details"
+        },
+        {
+          "type": "decision",
+          "id": "consent_check",
+          "label": "Information sharing consent given?"
+        },
+        {
+          "type": "activity",
+          "id": "record_consent",
+          "label": "Record consent preferences"
+        },
+        {
+          "type": "activity",
+          "id": "create_record",
+          "label": "Create healthcare record"
+        },
+        {
+          "type": "event",
+          "id": "end",
+          "label": "Registration complete"
+        }
+      ],
+      "process_flows": [
+        {
+          "from": "start",
+          "to": "verify_id",
+          "label": ""
+        },
+        {
+          "from": "verify_id",
+          "to": "capture_demographics",
+          "label": "Identity confirmed"
+        },
+        {
+          "from": "capture_demographics",
+          "to": "record_contacts",
+          "label": ""
+        },
+        {
+          "from": "record_contacts",
+          "to": "consent_check",
+          "label": ""
+        },
+        {
+          "from": "consent_check",
+          "to": "record_consent",
+          "label": "Yes/No"
+        },
+        {
+          "from": "record_consent",
+          "to": "create_record",
+          "label": ""
+        },
+        {
+          "from": "create_record",
+          "to": "end",
+          "label": ""
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "NHS number",
+          "type": "identifier",
+          "source": "Person/PDS"
+        },
+        {
+          "element": "Person name",
+          "type": "demographic",
+          "source": "Person"
+        },
+        {
+          "element": "Date of birth",
+          "type": "demographic",
+          "source": "Person"
+        },
+        {
+          "element": "Address",
+          "type": "contact",
+          "source": "Person"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Person demographics",
+          "type": "structured",
+          "notes": "Names, DOB, gender, ethnicity"
+        },
+        {
+          "element": "Contact details",
+          "type": "structured",
+          "notes": "Address, phone, email"
+        },
+        {
+          "element": "GP practice details",
+          "type": "structured",
+          "notes": "Practice identifier and contact"
+        },
+        {
+          "element": "Consent preferences",
+          "type": "coded",
+          "notes": "Information sharing consent status"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Care Planning and Goal Setting",
+      "objectives": "Develop person-centred care plans with agreed goals, actions, and review arrangements",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care planning initiated"
+          },
+          {
+            "id": "assess_needs",
+            "type": "activity",
+            "label": "Assess person's needs"
+          },
+          {
+            "id": "identify_goals",
+            "type": "activity",
+            "label": "Identify care goals"
+          },
+          {
+            "id": "develop_plan",
+            "type": "activity",
+            "label": "Develop care plan"
+          },
+          {
+            "id": "person_agrees",
+            "type": "decision",
+            "label": "Person agrees to plan?"
+          },
+          {
+            "id": "revise_plan",
+            "type": "activity",
+            "label": "Revise care plan"
+          },
+          {
+            "id": "implement_plan",
+            "type": "activity",
+            "label": "Implement care plan"
+          },
+          {
+            "id": "schedule_review",
+            "type": "activity",
+            "label": "Schedule plan review"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Care plan active"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess_needs",
+            "label": ""
+          },
+          {
+            "from": "assess_needs",
+            "to": "identify_goals",
+            "label": ""
+          },
+          {
+            "from": "identify_goals",
+            "to": "develop_plan",
+            "label": ""
+          },
+          {
+            "from": "develop_plan",
+            "to": "person_agrees",
+            "label": ""
+          },
+          {
+            "from": "person_agrees",
+            "to": "revise_plan",
+            "label": "No"
+          },
+          {
+            "from": "person_agrees",
+            "to": "implement_plan",
+            "label": "Yes"
+          },
+          {
+            "from": "revise_plan",
+            "to": "person_agrees",
+            "label": ""
+          },
+          {
+            "from": "implement_plan",
+            "to": "schedule_review",
+            "label": ""
+          },
+          {
+            "from": "schedule_review",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "process_elements": [
+        {
+          "type": "event",
+          "id": "start",
+          "label": "Care planning initiated"
+        },
+        {
+          "type": "activity",
+          "id": "assess_needs",
+          "label": "Assess person's needs"
+        },
+        {
+          "type": "activity",
+          "id": "identify_goals",
+          "label": "Identify care goals"
+        },
+        {
+          "type": "activity",
+          "id": "develop_plan",
+          "label": "Develop care plan"
+        },
+        {
+          "type": "decision",
+          "id": "person_agrees",
+          "label": "Person agrees to plan?"
+        },
+        {
+          "type": "activity",
+          "id": "revise_plan",
+          "label": "Revise care plan"
+        },
+        {
+          "type": "activity",
+          "id": "implement_plan",
+          "label": "Implement care plan"
+        },
+        {
+          "type": "activity",
+          "id": "schedule_review",
+          "label": "Schedule plan review"
+        },
+        {
+          "type": "event",
+          "id": "end",
+          "label": "Care plan active"
+        }
+      ],
+      "process_flows": [
+        {
+          "from": "start",
+          "to": "assess_needs",
+          "label": ""
+        },
+        {
+          "from": "assess_needs",
+          "to": "identify_goals",
+          "label": ""
+        },
+        {
+          "from": "identify_goals",
+          "to": "develop_plan",
+          "label": ""
+        },
+        {
+          "from": "develop_plan",
+          "to": "person_agrees",
+          "label": ""
+        },
+        {
+          "from": "person_agrees",
+          "to": "revise_plan",
+          "label": "No"
+        },
+        {
+          "from": "person_agrees",
+          "to": "implement_plan",
+          "label": "Yes"
+        },
+        {
+          "from": "revise_plan",
+          "to": "person_agrees",
+          "label": ""
+        },
+        {
+          "from": "implement_plan",
+          "to": "schedule_review",
+          "label": ""
+        },
+        {
+          "from": "schedule_review",
+          "to": "end",
+          "label": ""
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "Assessment results",
+          "type": "clinical",
+          "source": "Professional"
+        },
+        {
+          "element": "Person preferences",
+          "type": "structured",
+          "source": "Person"
+        },
+        {
+          "element": "Problem list",
+          "type": "clinical",
+          "source": "Healthcare record"
+        },
+        {
+          "element": "Professional contacts",
+          "type": "administrative",
+          "source": "System"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Care goals",
+          "type": "structured",
+          "notes": "Person's goals and priorities"
+        },
+        {
+          "element": "Action plans",
+          "type": "structured",
+          "notes": "Specific actions and responsibilities"
+        },
+        {
+          "element": "Review dates",
+          "type": "administrative",
+          "notes": "Scheduled review appointments"
+        },
+        {
+          "element": "Person agreement",
+          "type": "coded",
+          "notes": "Consent to care plan"
+        }
+      ]
+    }
+  ]
+}
