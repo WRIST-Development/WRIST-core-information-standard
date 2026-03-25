@@ -1,0 +1,523 @@
+{
+  "summary_markdown": "The Core Information Standard supports three critical care coordination processes that ensure seamless information flow while maintaining person-centred approaches and regulatory compliance.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Person Registration and Demographics Management",
+      "objectives": "Establish and maintain accurate demographic and contact information for care coordination",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for care"
+          },
+          {
+            "id": "verify_identity",
+            "type": "activity",
+            "label": "Verify person identity"
+          },
+          {
+            "id": "existing_record",
+            "type": "decision",
+            "label": "Existing record found?"
+          },
+          {
+            "id": "create_record",
+            "type": "activity",
+            "label": "Create new person record"
+          },
+          {
+            "id": "update_demographics",
+            "type": "activity",
+            "label": "Update demographic information"
+          },
+          {
+            "id": "record_contacts",
+            "type": "activity",
+            "label": "Record contact details"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify_identity"
+          },
+          {
+            "from": "verify_identity",
+            "to": "existing_record"
+          },
+          {
+            "from": "existing_record",
+            "to": "create_record",
+            "label": "No"
+          },
+          {
+            "from": "existing_record",
+            "to": "update_demographics",
+            "label": "Yes"
+          },
+          {
+            "from": "create_record",
+            "to": "record_contacts"
+          },
+          {
+            "from": "update_demographics",
+            "to": "record_contacts"
+          },
+          {
+            "from": "record_contacts",
+            "to": "end"
+          }
+        ]
+      },
+      "process_elements": [
+        {
+          "type": "event",
+          "id": "start",
+          "label": "Person presents for care"
+        },
+        {
+          "type": "activity",
+          "id": "verify_identity",
+          "label": "Verify person identity"
+        },
+        {
+          "type": "decision",
+          "id": "existing_record",
+          "label": "Existing record found?"
+        },
+        {
+          "type": "activity",
+          "id": "create_record",
+          "label": "Create new person record"
+        },
+        {
+          "type": "activity",
+          "id": "update_demographics",
+          "label": "Update demographic information"
+        },
+        {
+          "type": "activity",
+          "id": "record_contacts",
+          "label": "Record contact details"
+        },
+        {
+          "type": "event",
+          "id": "end",
+          "label": "Registration complete"
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "NHS Number",
+          "source": "NHS Spine",
+          "type": "Identifier"
+        },
+        {
+          "element": "Previous records",
+          "source": "Local system",
+          "type": "Historical data"
+        },
+        {
+          "element": "Identity documents",
+          "source": "Person",
+          "type": "Verification"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Person name",
+          "type": "Demographics"
+        },
+        {
+          "element": "Date of birth",
+          "type": "Demographics"
+        },
+        {
+          "element": "Contact details",
+          "type": "Administrative"
+        },
+        {
+          "element": "Address information",
+          "type": "Administrative"
+        },
+        {
+          "element": "GP practice details",
+          "type": "Healthcare"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Assessment and Care Planning",
+      "objectives": "Conduct comprehensive needs assessment and develop collaborative care plans with person involvement",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Assessment requested"
+          },
+          {
+            "id": "gather_info",
+            "type": "activity",
+            "label": "Gather background information"
+          },
+          {
+            "id": "conduct_assessment",
+            "type": "activity",
+            "label": "Conduct holistic assessment"
+          },
+          {
+            "id": "identify_needs",
+            "type": "activity",
+            "label": "Identify needs and goals"
+          },
+          {
+            "id": "develop_plan",
+            "type": "activity",
+            "label": "Develop care plan"
+          },
+          {
+            "id": "person_agrees",
+            "type": "decision",
+            "label": "Person agrees to plan?"
+          },
+          {
+            "id": "revise_plan",
+            "type": "activity",
+            "label": "Revise care plan"
+          },
+          {
+            "id": "share_plan",
+            "type": "activity",
+            "label": "Share plan with relevant parties"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Care plan implemented"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "gather_info"
+          },
+          {
+            "from": "gather_info",
+            "to": "conduct_assessment"
+          },
+          {
+            "from": "conduct_assessment",
+            "to": "identify_needs"
+          },
+          {
+            "from": "identify_needs",
+            "to": "develop_plan"
+          },
+          {
+            "from": "develop_plan",
+            "to": "person_agrees"
+          },
+          {
+            "from": "person_agrees",
+            "to": "revise_plan",
+            "label": "No"
+          },
+          {
+            "from": "person_agrees",
+            "to": "share_plan",
+            "label": "Yes"
+          },
+          {
+            "from": "revise_plan",
+            "to": "person_agrees"
+          },
+          {
+            "from": "share_plan",
+            "to": "end"
+          }
+        ]
+      },
+      "process_elements": [
+        {
+          "type": "event",
+          "id": "start",
+          "label": "Assessment requested"
+        },
+        {
+          "type": "activity",
+          "id": "gather_info",
+          "label": "Gather background information"
+        },
+        {
+          "type": "activity",
+          "id": "conduct_assessment",
+          "label": "Conduct holistic assessment"
+        },
+        {
+          "type": "activity",
+          "id": "identify_needs",
+          "label": "Identify needs and goals"
+        },
+        {
+          "type": "activity",
+          "id": "develop_plan",
+          "label": "Develop care plan"
+        },
+        {
+          "type": "decision",
+          "id": "person_agrees",
+          "label": "Person agrees to plan?"
+        },
+        {
+          "type": "activity",
+          "id": "revise_plan",
+          "label": "Revise care plan"
+        },
+        {
+          "type": "activity",
+          "id": "share_plan",
+          "label": "Share plan with relevant parties"
+        },
+        {
+          "type": "event",
+          "id": "end",
+          "label": "Care plan implemented"
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "Medical history",
+          "source": "GP records",
+          "type": "Clinical"
+        },
+        {
+          "element": "Previous assessments",
+          "source": "Care providers",
+          "type": "Historical"
+        },
+        {
+          "element": "Family concerns",
+          "source": "Carers",
+          "type": "Social context"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Assessment findings",
+          "type": "Clinical"
+        },
+        {
+          "element": "Person goals",
+          "type": "Care planning"
+        },
+        {
+          "element": "Risk factors",
+          "type": "Safety"
+        },
+        {
+          "element": "Care preferences",
+          "type": "Person-centred"
+        },
+        {
+          "element": "Support needs",
+          "type": "Care planning"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Information Sharing and Consent Management",
+      "objectives": "Manage consent preferences and facilitate appropriate information sharing across care settings",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Information sharing required"
+          },
+          {
+            "id": "check_consent",
+            "type": "activity",
+            "label": "Check existing consent"
+          },
+          {
+            "id": "consent_exists",
+            "type": "decision",
+            "label": "Valid consent exists?"
+          },
+          {
+            "id": "obtain_consent",
+            "type": "activity",
+            "label": "Obtain consent from person"
+          },
+          {
+            "id": "consent_given",
+            "type": "decision",
+            "label": "Consent provided?"
+          },
+          {
+            "id": "share_info",
+            "type": "activity",
+            "label": "Share relevant information"
+          },
+          {
+            "id": "record_sharing",
+            "type": "activity",
+            "label": "Record information sharing"
+          },
+          {
+            "id": "no_share",
+            "type": "activity",
+            "label": "Document refusal reason"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Process complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "check_consent"
+          },
+          {
+            "from": "check_consent",
+            "to": "consent_exists"
+          },
+          {
+            "from": "consent_exists",
+            "to": "share_info",
+            "label": "Yes"
+          },
+          {
+            "from": "consent_exists",
+            "to": "obtain_consent",
+            "label": "No"
+          },
+          {
+            "from": "obtain_consent",
+            "to": "consent_given"
+          },
+          {
+            "from": "consent_given",
+            "to": "share_info",
+            "label": "Yes"
+          },
+          {
+            "from": "consent_given",
+            "to": "no_share",
+            "label": "No"
+          },
+          {
+            "from": "share_info",
+            "to": "record_sharing"
+          },
+          {
+            "from": "record_sharing",
+            "to": "end"
+          },
+          {
+            "from": "no_share",
+            "to": "end"
+          }
+        ]
+      },
+      "process_elements": [
+        {
+          "type": "event",
+          "id": "start",
+          "label": "Information sharing required"
+        },
+        {
+          "type": "activity",
+          "id": "check_consent",
+          "label": "Check existing consent"
+        },
+        {
+          "type": "decision",
+          "id": "consent_exists",
+          "label": "Valid consent exists?"
+        },
+        {
+          "type": "activity",
+          "id": "obtain_consent",
+          "label": "Obtain consent from person"
+        },
+        {
+          "type": "decision",
+          "id": "consent_given",
+          "label": "Consent provided?"
+        },
+        {
+          "type": "activity",
+          "id": "share_info",
+          "label": "Share relevant information"
+        },
+        {
+          "type": "activity",
+          "id": "record_sharing",
+          "label": "Record information sharing"
+        },
+        {
+          "type": "activity",
+          "id": "no_share",
+          "label": "Document refusal reason"
+        },
+        {
+          "type": "event",
+          "id": "end",
+          "label": "Process complete"
+        }
+      ],
+      "data_seen": [
+        {
+          "element": "Consent records",
+          "source": "Local system",
+          "type": "Legal"
+        },
+        {
+          "element": "Information requests",
+          "source": "Care providers",
+          "type": "Administrative"
+        },
+        {
+          "element": "Person capacity assessment",
+          "source": "Clinical team",
+          "type": "Clinical"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Consent status",
+          "type": "Legal"
+        },
+        {
+          "element": "Consent scope",
+          "type": "Legal"
+        },
+        {
+          "element": "Sharing log",
+          "type": "Audit"
+        },
+        {
+          "element": "Refusal reasons",
+          "type": "Legal"
+        },
+        {
+          "element": "Review dates",
+          "type": "Administrative"
+        }
+      ]
+    }
+  ]
+}
