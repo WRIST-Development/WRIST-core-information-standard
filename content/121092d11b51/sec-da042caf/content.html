@@ -1,0 +1,42 @@
+# Core Data Elements
+
+The Core Information Standard defines comprehensive data elements organised by domain. Key elements include:
+
+## Demographics Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | Person First Name | First name(s) including middle names | String(35) | Yes | - |
+| CISV2.DE2 | Person Family Name | Family name or surname | String(35) | Yes | - |
+| CISV2.DE3 | NHS Number | Unique NHS identifier | String(10) | Yes | NHS_DD |
+| CISV2.DE4 | Date of Birth | Person's date of birth | Date | Yes | - |
+| CISV2.DE5 | Gender | Person's stated gender | String(1) | Yes | NHS_DD |
+| CISV2.DE6 | Address | Person's residential address | Complex | Yes | - |
+
+## Clinical Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE7 | Problem List | Active health problems | Coded/Text | No | SNOMED CT |
+| CISV2.DE8 | Medication Name | Current medications | Coded/Text | No | dm+d |
+| CISV2.DE9 | Allergy Causative Agent | Substance causing allergy | Coded/Text | No | SNOMED CT/dm+d |
+| CISV2.DE10 | Examination Findings | Clinical examination results | Coded/Text | No | SNOMED CT |
+| CISV2.DE11 | Investigation Results | Test results and values | Complex | No | LOINC/SNOMED CT |
+
+## Care Planning Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE12 | Goals and Hopes | Person's care goals | Text | No | SNOMED CT |
+| CISV2.DE13 | Actions and Activities | Planned interventions | Complex | No | SNOMED CT |
+| CISV2.DE14 | Review Date | Next review date | DateTime | No | - |
+| CISV2.DE15 | Risk Assessment | Identified risks | Coded/Text | No | SNOMED CT |
+
+## Social Care Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE16 | Household Composition | Living arrangements | Coded/Text | No | SNOMED CT |
+| CISV2.DE17 | Accommodation Status | Type of accommodation | String(4) | No | NHS_DD |
+| CISV2.DE18 | Primary Support Reason | Main support category | Text | No | - |
+| CISV2.DE19 | Service Package Type | Type of care package | Text | No | - |
