@@ -1,0 +1,450 @@
+{
+  "summary_markdown": "The Core Information Standard supports comprehensive healthcare workflows through systematic data capture and sharing processes.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Person Registration and Demographics Capture",
+      "objectives": "Capture comprehensive demographic and contact information for new service users, ensuring accurate identification and communication pathways are established.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for registration"
+          },
+          {
+            "id": "verify_id",
+            "type": "activity",
+            "label": "Verify identity and NHS number"
+          },
+          {
+            "id": "capture_demographics",
+            "type": "activity",
+            "label": "Capture demographic details"
+          },
+          {
+            "id": "record_contacts",
+            "type": "activity",
+            "label": "Record contact information"
+          },
+          {
+            "id": "assess_needs",
+            "type": "decision",
+            "label": "Individual requirements?"
+          },
+          {
+            "id": "record_adjustments",
+            "type": "activity",
+            "label": "Record reasonable adjustments"
+          },
+          {
+            "id": "complete_registration",
+            "type": "activity",
+            "label": "Complete registration"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify_id",
+            "label": "New registration"
+          },
+          {
+            "from": "verify_id",
+            "to": "capture_demographics",
+            "label": "Identity confirmed"
+          },
+          {
+            "from": "capture_demographics",
+            "to": "record_contacts",
+            "label": "Demographics captured"
+          },
+          {
+            "from": "record_contacts",
+            "to": "assess_needs",
+            "label": "Contacts recorded"
+          },
+          {
+            "from": "assess_needs",
+            "to": "record_adjustments",
+            "label": "Adjustments needed"
+          },
+          {
+            "from": "assess_needs",
+            "to": "complete_registration",
+            "label": "No adjustments"
+          },
+          {
+            "from": "record_adjustments",
+            "to": "complete_registration",
+            "label": "Adjustments recorded"
+          },
+          {
+            "from": "complete_registration",
+            "to": "end",
+            "label": "Process complete"
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "NHS Number Status",
+          "source": "PDS Verification",
+          "type": "Reference data"
+        },
+        {
+          "element": "Existing Records",
+          "source": "Local systems",
+          "type": "Historical data"
+        },
+        {
+          "element": "GP Practice Details",
+          "source": "PDS/Patient report",
+          "type": "Reference data"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Person Name",
+          "type": "Demographic",
+          "notes": "Full name including preferred name"
+        },
+        {
+          "element": "Date of Birth",
+          "type": "Demographic",
+          "notes": "Verified against ID documents"
+        },
+        {
+          "element": "Address Details",
+          "type": "Contact",
+          "notes": "Current and correspondence addresses"
+        },
+        {
+          "element": "Telephone Numbers",
+          "type": "Contact",
+          "notes": "Multiple numbers with preferences"
+        },
+        {
+          "element": "Reasonable Adjustments",
+          "type": "Individual Requirements",
+          "notes": "Accessibility needs assessment"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Care Planning and Goal Setting",
+      "objectives": "Develop comprehensive, person-centred care plans that reflect individual goals, preferences, and support needs while coordinating across multiple service providers.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care planning initiated"
+          },
+          {
+            "id": "assess_needs",
+            "type": "activity",
+            "label": "Conduct comprehensive assessment"
+          },
+          {
+            "id": "identify_goals",
+            "type": "activity",
+            "label": "Identify person's goals and priorities"
+          },
+          {
+            "id": "develop_actions",
+            "type": "activity",
+            "label": "Develop actions and interventions"
+          },
+          {
+            "id": "review_capacity",
+            "type": "decision",
+            "label": "Person has capacity?"
+          },
+          {
+            "id": "obtain_consent",
+            "type": "activity",
+            "label": "Obtain informed consent"
+          },
+          {
+            "id": "best_interests",
+            "type": "activity",
+            "label": "Best interests decision"
+          },
+          {
+            "id": "create_plan",
+            "type": "activity",
+            "label": "Create formal care plan"
+          },
+          {
+            "id": "share_plan",
+            "type": "activity",
+            "label": "Share with care team"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Plan active"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess_needs",
+            "label": "Planning required"
+          },
+          {
+            "from": "assess_needs",
+            "to": "identify_goals",
+            "label": "Assessment complete"
+          },
+          {
+            "from": "identify_goals",
+            "to": "develop_actions",
+            "label": "Goals identified"
+          },
+          {
+            "from": "develop_actions",
+            "to": "review_capacity",
+            "label": "Actions developed"
+          },
+          {
+            "from": "review_capacity",
+            "to": "obtain_consent",
+            "label": "Has capacity"
+          },
+          {
+            "from": "review_capacity",
+            "to": "best_interests",
+            "label": "Lacks capacity"
+          },
+          {
+            "from": "obtain_consent",
+            "to": "create_plan",
+            "label": "Consent given"
+          },
+          {
+            "from": "best_interests",
+            "to": "create_plan",
+            "label": "Decision made"
+          },
+          {
+            "from": "create_plan",
+            "to": "share_plan",
+            "label": "Plan created"
+          },
+          {
+            "from": "share_plan",
+            "to": "end",
+            "label": "Plan shared"
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Previous assessments",
+          "source": "Care records",
+          "type": "Assessment data"
+        },
+        {
+          "element": "Current medications",
+          "source": "Medication records",
+          "type": "Treatment data"
+        },
+        {
+          "element": "Social circumstances",
+          "source": "Social care records",
+          "type": "Context data"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Assessment results",
+          "type": "Assessment",
+          "notes": "Comprehensive needs assessment"
+        },
+        {
+          "element": "Personal goals",
+          "type": "Care Plan",
+          "notes": "Person-identified priorities"
+        },
+        {
+          "element": "Action plans",
+          "type": "Care Plan",
+          "notes": "Specific interventions and responsibilities"
+        },
+        {
+          "element": "Consent records",
+          "type": "Legal",
+          "notes": "Informed consent or best interests decisions"
+        },
+        {
+          "element": "Review dates",
+          "type": "Care Plan",
+          "notes": "Planned review schedule"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Medication Management and Safety",
+      "objectives": "Ensure safe medication prescribing, administration, and monitoring through comprehensive medication histories, allergy checking, and drug interaction screening.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Medication review initiated"
+          },
+          {
+            "id": "check_allergies",
+            "type": "activity",
+            "label": "Check allergy status"
+          },
+          {
+            "id": "review_current",
+            "type": "activity",
+            "label": "Review current medications"
+          },
+          {
+            "id": "assess_interactions",
+            "type": "activity",
+            "label": "Check for interactions"
+          },
+          {
+            "id": "changes_needed",
+            "type": "decision",
+            "label": "Changes required?"
+          },
+          {
+            "id": "prescribe_new",
+            "type": "activity",
+            "label": "Prescribe new medications"
+          },
+          {
+            "id": "discontinue_old",
+            "type": "activity",
+            "label": "Discontinue medications"
+          },
+          {
+            "id": "provide_information",
+            "type": "activity",
+            "label": "Provide patient information"
+          },
+          {
+            "id": "schedule_review",
+            "type": "activity",
+            "label": "Schedule follow-up"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Review complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "check_allergies",
+            "label": "Review initiated"
+          },
+          {
+            "from": "check_allergies",
+            "to": "review_current",
+            "label": "Allergies checked"
+          },
+          {
+            "from": "review_current",
+            "to": "assess_interactions",
+            "label": "Current meds reviewed"
+          },
+          {
+            "from": "assess_interactions",
+            "to": "changes_needed",
+            "label": "Interactions assessed"
+          },
+          {
+            "from": "changes_needed",
+            "to": "prescribe_new",
+            "label": "New prescriptions needed"
+          },
+          {
+            "from": "changes_needed",
+            "to": "provide_information",
+            "label": "No changes needed"
+          },
+          {
+            "from": "prescribe_new",
+            "to": "discontinue_old",
+            "label": "New prescribed"
+          },
+          {
+            "from": "discontinue_old",
+            "to": "provide_information",
+            "label": "Old discontinued"
+          },
+          {
+            "from": "provide_information",
+            "to": "schedule_review",
+            "label": "Information provided"
+          },
+          {
+            "from": "schedule_review",
+            "to": "end",
+            "label": "Review scheduled"
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Allergy history",
+          "source": "Clinical records",
+          "type": "Safety data"
+        },
+        {
+          "element": "Current medication list",
+          "source": "Prescription records",
+          "type": "Treatment data"
+        },
+        {
+          "element": "Recent investigations",
+          "source": "Laboratory results",
+          "type": "Monitoring data"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Medication changes",
+          "type": "Medication",
+          "notes": "New prescriptions and discontinuations"
+        },
+        {
+          "element": "Dosage instructions",
+          "type": "Medication",
+          "notes": "Structured dose directions"
+        },
+        {
+          "element": "Safety warnings",
+          "type": "Medication",
+          "notes": "Allergy alerts and contraindications"
+        },
+        {
+          "element": "Review schedule",
+          "type": "Medication",
+          "notes": "Follow-up appointments"
+        },
+        {
+          "element": "Patient education",
+          "type": "Medication",
+          "notes": "Information provided to patient"
+        }
+      ]
+    }
+  ]
+}
