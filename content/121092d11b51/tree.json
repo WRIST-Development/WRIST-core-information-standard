@@ -1,502 +1,542 @@
 [
   {
-    "children": [],
-    "content": "## Purpose and Scope\n\nThe Core Information Standard (CISV2) provides a comprehensive framework for capturing, structuring, and sharing essential health and care information about individuals across the UK health and social care system. Developed using WRIST (Wonderful Ramsey Systems Information Specification Tool), this standard establishes a common data model that enables interoperability between different health and care systems.\n\n## Background\n\nThis standard addresses the critical need for consistent information sharing across health and social care settings. It encompasses person demographics, clinical information, care planning, legal requirements, and administrative data necessary for delivering coordinated care. The model supports both acute and community care scenarios, mental health services, and social care provision.\n\n## Document Overview\n\nThis Digital Adaptation Kit (DAK) provides implementation guidance for the Core Information Standard v2.0, including business processes, data specifications, decision logic, and functional requirements. The standard covers over 40 major information domains from basic demographics to complex care planning and end-of-life care provisions.",
-    "id": "sec-401af4c1",
-    "level": 1,
+    "id": "sec-99c94a20",
     "sectionType": "introduction",
+    "title": "Introduction",
+    "level": 1,
     "status": "draft",
-    "title": "Introduction"
+    "children": [],
+    "content": "## Purpose and Scope\n\nThis Digital Adaptation Kit (DAK) documents the implementation guidance for the **Core Information Standard v2.0**, a comprehensive healthcare information model developed using WRIST (Wonderful Ramsey Systems Information Specification Tool). The standard defines a unified approach to capturing, storing, and exchanging person-centred healthcare information across UK health and social care settings.\n\nThe Core Information Standard encompasses the complete spectrum of healthcare data, from basic demographics to complex care planning and end-of-life preferences. It is designed to support integrated care delivery by providing consistent data structures and terminologies that enable seamless information sharing between healthcare providers, social services, and other care organisations.\n\n## Document Overview\n\nThis DAK provides implementers with the necessary guidance to adopt the Core Information Standard v2.0, including:\n\n- Health interventions and evidence-based recommendations\n- Generic personas representing key user roles\n- User scenarios demonstrating typical workflows\n- Business process models with BPMN-style diagrams\n- Comprehensive data element definitions\n- Decision-support logic tables\n- Performance indicators and metrics\n- Functional and non-functional requirements\n- References to supporting standards and guidelines\n\nThe standard aligns with UK healthcare terminology standards including SNOMED CT for clinical terms, NHS Data Dictionary codes, dm+d for medications, and UCUM for units of measure."
   },
   {
-    "children": [],
-    "content": "## Key Clinical and Care Interventions\n\nThe Core Information Standard supports documentation of evidence-based interventions across health and social care settings:\n\n| Intervention | Recommendation | Source | Grade |\n|---|---|---|---|\n| Person-Centred Care Planning | Develop individualized care plans with person involvement | NICE NG86 | A |\n| Reasonable Adjustments | Assess and implement adjustments per Equality Act 2010 | Equality Act 2010 | Mandatory |\n| Mental Capacity Assessment | Conduct assessments where capacity is in doubt | Mental Capacity Act 2005 | Mandatory |\n| Medication Reconciliation | Review and reconcile medications at care transitions | NICE NG5 | A |\n| Advance Care Planning | Document preferences for future care | NICE NG142 | B |\n| Safeguarding Assessment | Identify and respond to safeguarding concerns | Care Act 2014 | Mandatory |\n| Risk Assessment | Evaluate and document risks to self and others | Local Policy | C |\n| Immunization Recording | Maintain accurate vaccination records | PHE Guidance | A |\n\nThese interventions form the foundation for comprehensive care documentation and support evidence-based decision making across all care settings.",
-    "id": "sec-c75b5001",
-    "level": 1,
+    "id": "sec-35ebdd79",
     "sectionType": "interventions",
+    "title": "Health Interventions & Recommendations",
+    "level": 1,
     "status": "draft",
-    "title": "Health Interventions & Recommendations"
+    "children": [],
+    "content": "## Key Recommendations\n\nThe Core Information Standard v2.0 supports evidence-based healthcare delivery through structured data capture and decision support. The following interventions are recommended for successful implementation:\n\n| Intervention | Recommendation | Source | Grade |\n|---|---|---|---|\n| Person-centred data collection | Implement comprehensive demographic and social context capture to support holistic care planning | PRSB Standards | A |\n| Standardised terminology | Use SNOMED CT, NHS DD codes, dm+d, and UCUM consistently across all data elements | NHS Digital | A |\n| Integrated care records | Establish shared care records linking health, social care, and voluntary sector information | NHS Long Term Plan | B |\n| Reasonable adjustments tracking | Systematically record and share accessibility requirements under Equality Act 2010 | Equality Act 2010 | A |\n| Medication reconciliation | Implement structured medication histories with dose directions and safety information | NICE Guidelines | A |\n| Advanced care planning | Capture and share end-of-life preferences including CPR decisions and preferred place of care | NHS England Guidance | B |\n| Risk assessment protocols | Use standardised risk assessment tools and share findings across care teams | CQC Standards | B |\n| Safeguarding procedures | Implement systematic safeguarding concern identification and escalation processes | Safeguarding Guidance | A |\n\nThese recommendations are based on current UK healthcare policies, clinical guidelines, and regulatory requirements. Implementation should be tailored to local organisational contexts while maintaining compliance with national standards."
   },
   {
-    "children": [],
-    "content": "## Key User Personas\n\nThe following personas represent the primary users of systems implementing the Core Information Standard:\n\n| Persona ID | Title | Description | Key Competencies |\n|---|---|---|---|\n| CISV2.P1 | GP/Primary Care Physician | Provides comprehensive primary care and coordinates patient care | Clinical assessment, care coordination, prescribing |\n| CISV2.P2 | Community Nurse | Delivers nursing care in community settings | Clinical assessment, care planning, medication management |\n| CISV2.P3 | Social Worker | Assesses social care needs and coordinates support services | Needs assessment, care planning, safeguarding |\n| CISV2.P4 | Hospital Consultant | Provides specialist medical care in acute settings | Specialist diagnosis, treatment planning, clinical leadership |\n| CISV2.P5 | Care Home Manager | Oversees residential care provision | Care oversight, staff management, regulatory compliance |\n| CISV2.P6 | Mental Health Professional | Provides specialist mental health assessment and treatment | Mental health assessment, therapeutic intervention, risk assessment |\n| CISV2.P7 | Administrative Staff | Manages patient records and administrative processes | Data entry, record management, appointment scheduling |\n| CISV2.P8 | Emergency Services Clinician | Provides urgent and emergency care | Rapid assessment, emergency treatment, critical decision making |\n\nEach persona has specific information needs and workflows that the standard must accommodate, from detailed clinical documentation to streamlined emergency access.",
-    "id": "sec-c705bad6",
-    "level": 1,
+    "id": "sec-28b65148",
     "sectionType": "personas",
+    "title": "Generic Personas",
+    "level": 1,
     "status": "draft",
-    "title": "Generic Personas"
+    "children": [],
+    "content": "## User Personas\n\nThe following personas represent key stakeholder groups who interact with the Core Information Standard:\n\n| Persona ID | Title | Description | Key Competencies |\n|---|---|---|---|\n| CISV2.P1 | General Practitioner | Primary care physician responsible for comprehensive patient care | Clinical decision-making, care coordination, medication management, referral pathways |\n| CISV2.P2 | Community Nurse | Registered nurse providing care in community settings | Patient assessment, care planning, medication administration, health promotion |\n| CISV2.P3 | Social Care Worker | Professional supporting individuals with social care needs | Needs assessment, care planning, safeguarding, multi-agency working |\n| CISV2.P4 | Hospital Consultant | Specialist physician providing secondary care services | Specialist clinical expertise, complex case management, multidisciplinary team leadership |\n| CISV2.P5 | Care Home Manager | Manager overseeing residential care facility operations | Staff management, regulatory compliance, resident care oversight, family communication |\n| CISV2.P6 | Mental Health Professional | Specialist providing mental health assessment and treatment | Mental health assessment, therapeutic interventions, risk management, recovery planning |\n| CISV2.P7 | Administrative Staff | Personnel managing healthcare records and appointments | Data entry, record maintenance, appointment scheduling, information governance |\n| CISV2.P8 | Patient/Service User | Individual receiving healthcare and social care services | Self-advocacy, care preferences communication, treatment compliance, feedback provision |\n\n**CISV2.P1 (General Practitioner)** requires comprehensive access to all patient information domains to provide holistic primary care and coordinate with other services effectively.\n\n**CISV2.P2 (Community Nurse)** focuses on care delivery and monitoring, requiring detailed access to care plans, medications, and assessment data.\n\n**CISV2.P8 (Patient/Service User)** represents the central focus of person-centred care, with information captured reflecting their preferences, needs, and circumstances."
   },
   {
-    "children": [],
-    "content": "## Scenario 1: Hospital Admission with Complex Care Needs\n\n**Narrative:** Margaret, 78, is admitted to hospital via A&E with a fall. She has dementia, lives in a care home, and has multiple medications. The admitting team needs comprehensive information to provide safe, person-centred care.\n\n| Category | Description |\n|---|---|\n| Primary User | Hospital Consultant (CISV2.P4), Emergency Services Clinician (CISV2.P8) |\n| Information Needed | Demographics, medical history, current medications, care plans, legal status, contact details |\n| Key Challenges | Rapid access to accurate information, understanding care preferences, medication reconciliation |\n| Expected Outcome | Safe admission with appropriate care adjustments and family notification |\n\n## Scenario 2: Community Mental Health Assessment\n\n**Narrative:** David, 34, is referred to community mental health services following concerns about his wellbeing. A comprehensive assessment is needed to develop appropriate support plans.\n\n| Category | Description |\n|---|---|\n| Primary User | Mental Health Professional (CISV2.P6), Social Worker (CISV2.P3) |\n| Information Needed | Mental health history, risk factors, social circumstances, support networks, current treatments |\n| Key Challenges | Risk assessment, capacity evaluation, coordinating multi-agency support |\n| Expected Outcome | Comprehensive mental health care plan with appropriate safeguards |\n\n## Scenario 3: Routine Primary Care Review\n\n**Narrative:** Sarah, 45, attends her GP for annual review of her diabetes and hypertension. The consultation includes medication review, lifestyle advice, and care planning.\n\n| Category | Description |\n|---|---|\n| Primary User | GP/Primary Care Physician (CISV2.P1), Community Nurse (CISV2.P2) |\n| Information Needed | Medical history, current medications, test results, care plans, patient preferences |\n| Key Challenges | Medication optimization, lifestyle counselling, coordinating specialist care |\n| Expected Outcome | Updated care plan with medication adjustments and follow-up arrangements |\n\nThese scenarios demonstrate the standard's application across different care settings and user requirements.",
-    "id": "sec-35cc948d",
-    "level": 1,
+    "id": "sec-dd55cf05",
     "sectionType": "user_scenarios",
+    "title": "User Scenarios",
+    "level": 1,
     "status": "draft",
-    "title": "User Scenarios"
+    "children": [],
+    "content": "## User Scenarios\n\n### Scenario 1: Complex Care Coordination\n\nMargaret, an 82-year-old woman with dementia, diabetes, and mobility issues, requires coordinated care across multiple services. Her GP (CISV2.P1) reviews her comprehensive record including medications, recent assessments, and care plans before her quarterly review.\n\n| Category | Description |\n|---|---|\n| Context | Multi-morbid elderly patient requiring integrated care |\n| Primary Actor | General Practitioner (CISV2.P1) |\n| Supporting Actors | Community Nurse (CISV2.P2), Social Care Worker (CISV2.P3), Family |\n| Data Accessed | Demographics, problem list, medications, assessments, care plans, social context |\n| Outcome | Updated care plan with medication adjustments and social care referral |\n\nThis scenario demonstrates how the standard supports comprehensive care coordination by providing access to all relevant information domains in a structured format.\n\n### Scenario 2: Hospital Discharge Planning\n\nDavid, a 45-year-old man recovering from a stroke, is being discharged from hospital back to his home with new care needs. The discharge team reviews his preferences, capabilities, and support network to develop an appropriate care package.\n\n| Category | Description |\n|---|---|\n| Context | Hospital discharge with new disability and care needs |\n| Primary Actor | Hospital Consultant (CISV2.P4) |\n| Supporting Actors | Community Nurse (CISV2.P2), Social Care Worker (CISV2.P3) |\n| Data Accessed | Individual requirements, mobility needs, care preferences, contact details |\n| Outcome | Comprehensive discharge plan with community support arrangements |\n\n### Scenario 3: Safeguarding Concern Management\n\nSarah, a social care worker (CISV2.P3), identifies potential neglect concerns during a routine visit to an elderly service user. She needs to access the person's history, document her concerns, and initiate appropriate safeguarding procedures.\n\n| Category | Description |\n|---|---|\n| Context | Potential safeguarding issue requiring immediate action |\n| Primary Actor | Social Care Worker (CISV2.P3) |\n| Supporting Actors | Administrative Staff (CISV2.P7), Safeguarding Team |\n| Data Accessed | Social context, previous concerns, contact details, legal information |\n| Outcome | Safeguarding referral with comprehensive supporting documentation |\n\n**Linked Personas**: All scenarios involve multiple personas working collaboratively using shared information structures.\n**Linked Processes**: These scenarios connect to care planning, risk assessment, and information sharing processes."
   },
   {
-    "children": [],
-    "content": "The Core Information Standard enables streamlined workflows for patient care, from initial registration through ongoing care management and information sharing between providers.",
-    "id": "sec-3fcb2371",
+    "id": "sec-ad243009",
+    "sectionType": "processes",
+    "title": "Business Processes & Workflows",
     "level": 1,
+    "status": "draft",
+    "children": [],
+    "content": "The Core Information Standard supports comprehensive healthcare workflows through systematic data capture and sharing processes.",
     "processes_data": {
+      "summary_markdown": "The Core Information Standard supports comprehensive healthcare workflows through systematic data capture and sharing processes.",
       "activities": [
         {
-          "data_collected": [
-            {
-              "element": "Person demographics",
-              "notes": "Complete demographic information including contact details",
-              "type": "Demographic"
-            },
-            {
-              "element": "GP practice details",
-              "notes": "Current GP registration",
-              "type": "Administrative"
-            },
-            {
-              "element": "Individual requirements",
-              "notes": "Reasonable adjustments and access needs",
-              "type": "Assessment"
-            }
-          ],
+          "id": "CISV2.BP1",
+          "title": "Person Registration and Demographics Capture",
+          "objectives": "Capture comprehensive demographic and contact information for new service users, ensuring accurate identification and communication pathways are established.",
+          "diagram": {
+            "nodes": [
+              {
+                "id": "start",
+                "type": "start",
+                "label": "Person presents for registration"
+              },
+              {
+                "id": "verify_id",
+                "type": "activity",
+                "label": "Verify identity and NHS number"
+              },
+              {
+                "id": "capture_demographics",
+                "type": "activity",
+                "label": "Capture demographic details"
+              },
+              {
+                "id": "record_contacts",
+                "type": "activity",
+                "label": "Record contact information"
+              },
+              {
+                "id": "assess_needs",
+                "type": "decision",
+                "label": "Individual requirements?"
+              },
+              {
+                "id": "record_adjustments",
+                "type": "activity",
+                "label": "Record reasonable adjustments"
+              },
+              {
+                "id": "complete_registration",
+                "type": "activity",
+                "label": "Complete registration"
+              },
+              {
+                "id": "end",
+                "type": "end",
+                "label": "Registration complete"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "verify_id",
+                "label": "New registration"
+              },
+              {
+                "from": "verify_id",
+                "to": "capture_demographics",
+                "label": "Identity confirmed"
+              },
+              {
+                "from": "capture_demographics",
+                "to": "record_contacts",
+                "label": "Demographics captured"
+              },
+              {
+                "from": "record_contacts",
+                "to": "assess_needs",
+                "label": "Contacts recorded"
+              },
+              {
+                "from": "assess_needs",
+                "to": "record_adjustments",
+                "label": "Adjustments needed"
+              },
+              {
+                "from": "assess_needs",
+                "to": "complete_registration",
+                "label": "No adjustments"
+              },
+              {
+                "from": "record_adjustments",
+                "to": "complete_registration",
+                "label": "Adjustments recorded"
+              },
+              {
+                "from": "complete_registration",
+                "to": "end",
+                "label": "Process complete"
+              }
+            ]
+          },
           "data_seen": [
             {
-              "element": "NHS Number",
-              "source": "Patient/PDS",
-              "type": "Identifier"
+              "element": "NHS Number Status",
+              "source": "PDS Verification",
+              "type": "Reference data"
             },
             {
+              "element": "Existing Records",
+              "source": "Local systems",
+              "type": "Historical data"
+            },
+            {
+              "element": "GP Practice Details",
+              "source": "PDS/Patient report",
+              "type": "Reference data"
+            }
+          ],
+          "data_collected": [
+            {
               "element": "Person Name",
-              "source": "Patient",
-              "type": "Demographic"
+              "type": "Demographic",
+              "notes": "Full name including preferred name"
             },
             {
               "element": "Date of Birth",
-              "source": "Patient/PDS",
-              "type": "Demographic"
+              "type": "Demographic",
+              "notes": "Verified against ID documents"
+            },
+            {
+              "element": "Address Details",
+              "type": "Contact",
+              "notes": "Current and correspondence addresses"
+            },
+            {
+              "element": "Telephone Numbers",
+              "type": "Contact",
+              "notes": "Multiple numbers with preferences"
+            },
+            {
+              "element": "Reasonable Adjustments",
+              "type": "Individual Requirements",
+              "notes": "Accessibility needs assessment"
             }
-          ],
+          ]
+        },
+        {
+          "id": "CISV2.BP2",
+          "title": "Care Planning and Goal Setting",
+          "objectives": "Develop comprehensive, person-centred care plans that reflect individual goals, preferences, and support needs while coordinating across multiple service providers.",
           "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "label": "",
-                "to": "verify"
-              },
-              {
-                "from": "verify",
-                "label": "",
-                "to": "existing"
-              },
-              {
-                "from": "existing",
-                "label": "No",
-                "to": "register"
-              },
-              {
-                "from": "existing",
-                "label": "Yes",
-                "to": "update"
-              },
-              {
-                "from": "register",
-                "label": "",
-                "to": "assess"
-              },
-              {
-                "from": "update",
-                "label": "",
-                "to": "assess"
-              },
-              {
-                "from": "assess",
-                "label": "",
-                "to": "adjustments"
-              },
-              {
-                "from": "adjustments",
-                "label": "",
-                "to": "complete"
-              },
-              {
-                "from": "complete",
-                "label": "",
-                "to": "end"
-              }
-            ],
             "nodes": [
               {
                 "id": "start",
-                "label": "Patient presents for care",
-                "type": "start"
+                "type": "start",
+                "label": "Care planning initiated"
               },
               {
-                "id": "verify",
-                "label": "Verify patient identity",
-                "type": "activity"
+                "id": "assess_needs",
+                "type": "activity",
+                "label": "Conduct comprehensive assessment"
               },
               {
-                "id": "existing",
-                "label": "Existing patient?",
-                "type": "decision"
+                "id": "identify_goals",
+                "type": "activity",
+                "label": "Identify person's goals and priorities"
               },
               {
-                "id": "register",
-                "label": "Register new patient",
-                "type": "activity"
+                "id": "develop_actions",
+                "type": "activity",
+                "label": "Develop actions and interventions"
               },
               {
-                "id": "update",
-                "label": "Update existing record",
-                "type": "activity"
+                "id": "review_capacity",
+                "type": "decision",
+                "label": "Person has capacity?"
               },
               {
-                "id": "assess",
-                "label": "Conduct initial assessment",
-                "type": "activity"
+                "id": "obtain_consent",
+                "type": "activity",
+                "label": "Obtain informed consent"
               },
               {
-                "id": "adjustments",
-                "label": "Identify reasonable adjustments",
-                "type": "activity"
+                "id": "best_interests",
+                "type": "activity",
+                "label": "Best interests decision"
               },
               {
-                "id": "complete",
-                "label": "Complete registration",
-                "type": "activity"
+                "id": "create_plan",
+                "type": "activity",
+                "label": "Create formal care plan"
+              },
+              {
+                "id": "share_plan",
+                "type": "activity",
+                "label": "Share with care team"
               },
               {
                 "id": "end",
-                "label": "Registration complete",
-                "type": "end"
+                "type": "end",
+                "label": "Plan active"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "assess_needs",
+                "label": "Planning required"
+              },
+              {
+                "from": "assess_needs",
+                "to": "identify_goals",
+                "label": "Assessment complete"
+              },
+              {
+                "from": "identify_goals",
+                "to": "develop_actions",
+                "label": "Goals identified"
+              },
+              {
+                "from": "develop_actions",
+                "to": "review_capacity",
+                "label": "Actions developed"
+              },
+              {
+                "from": "review_capacity",
+                "to": "obtain_consent",
+                "label": "Has capacity"
+              },
+              {
+                "from": "review_capacity",
+                "to": "best_interests",
+                "label": "Lacks capacity"
+              },
+              {
+                "from": "obtain_consent",
+                "to": "create_plan",
+                "label": "Consent given"
+              },
+              {
+                "from": "best_interests",
+                "to": "create_plan",
+                "label": "Decision made"
+              },
+              {
+                "from": "create_plan",
+                "to": "share_plan",
+                "label": "Plan created"
+              },
+              {
+                "from": "share_plan",
+                "to": "end",
+                "label": "Plan shared"
               }
             ]
           },
-          "id": "CISV2.BP1",
-          "objectives": "Capture comprehensive patient information for new registrations, ensuring all mandatory data elements are recorded and reasonable adjustments identified",
-          "title": "Patient Registration and Initial Assessment"
-        },
-        {
-          "data_collected": [
-            {
-              "element": "Medications and medical devices",
-              "notes": "Reconciled medication list with dosages and frequencies",
-              "type": "Clinical"
-            },
-            {
-              "element": "Medication discontinued entry",
-              "notes": "Record of stopped medications with reasons",
-              "type": "Clinical"
-            },
-            {
-              "element": "Plan and requested actions",
-              "notes": "Actions for medication management",
-              "type": "Care Planning"
-            }
-          ],
           "data_seen": [
+            {
+              "element": "Previous assessments",
+              "source": "Care records",
+              "type": "Assessment data"
+            },
             {
               "element": "Current medications",
-              "source": "Electronic records",
-              "type": "Clinical"
+              "source": "Medication records",
+              "type": "Treatment data"
             },
             {
-              "element": "Patient-reported medications",
-              "source": "Patient/carer",
-              "type": "Clinical"
-            },
-            {
-              "element": "Prescription history",
-              "source": "Pharmacy systems",
-              "type": "Administrative"
+              "element": "Social circumstances",
+              "source": "Social care records",
+              "type": "Context data"
             }
           ],
-          "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "label": "",
-                "to": "gather"
-              },
-              {
-                "from": "gather",
-                "label": "",
-                "to": "review"
-              },
-              {
-                "from": "review",
-                "label": "",
-                "to": "discrepancy"
-              },
-              {
-                "from": "discrepancy",
-                "label": "Yes",
-                "to": "resolve"
-              },
-              {
-                "from": "discrepancy",
-                "label": "No",
-                "to": "update"
-              },
-              {
-                "from": "resolve",
-                "label": "",
-                "to": "update"
-              },
-              {
-                "from": "update",
-                "label": "",
-                "to": "communicate"
-              },
-              {
-                "from": "communicate",
-                "label": "",
-                "to": "end"
-              }
-            ],
-            "nodes": [
-              {
-                "id": "start",
-                "label": "Care transition initiated",
-                "type": "start"
-              },
-              {
-                "id": "gather",
-                "label": "Gather medication sources",
-                "type": "activity"
-              },
-              {
-                "id": "review",
-                "label": "Review current medications",
-                "type": "activity"
-              },
-              {
-                "id": "discrepancy",
-                "label": "Discrepancies found?",
-                "type": "decision"
-              },
-              {
-                "id": "resolve",
-                "label": "Resolve discrepancies",
-                "type": "activity"
-              },
-              {
-                "id": "update",
-                "label": "Update medication record",
-                "type": "activity"
-              },
-              {
-                "id": "communicate",
-                "label": "Communicate changes",
-                "type": "activity"
-              },
-              {
-                "id": "end",
-                "label": "Reconciliation complete",
-                "type": "end"
-              }
-            ]
-          },
-          "id": "CISV2.BP2",
-          "objectives": "Ensure accurate medication records during care transitions, identifying discrepancies and updating prescription information",
-          "title": "Medication Reconciliation Process"
-        },
-        {
           "data_collected": [
             {
-              "element": "Care and support plan",
-              "notes": "Comprehensive person-centred care plan",
-              "type": "Care Planning"
-            },
-            {
-              "element": "Contingency/safety plans",
-              "notes": "Plans for emergency situations",
-              "type": "Care Planning"
-            },
-            {
-              "element": "Plan and requested actions",
-              "notes": "Specific actions and responsibilities",
-              "type": "Care Planning"
-            }
-          ],
-          "data_seen": [
-            {
               "element": "Assessment results",
-              "source": "Clinical assessment",
-              "type": "Assessment"
+              "type": "Assessment",
+              "notes": "Comprehensive needs assessment"
             },
             {
-              "element": "Person preferences",
-              "source": "Patient/family",
-              "type": "Preference"
+              "element": "Personal goals",
+              "type": "Care Plan",
+              "notes": "Person-identified priorities"
             },
             {
-              "element": "Current care arrangements",
-              "source": "Care records",
-              "type": "Administrative"
+              "element": "Action plans",
+              "type": "Care Plan",
+              "notes": "Specific interventions and responsibilities"
+            },
+            {
+              "element": "Consent records",
+              "type": "Legal",
+              "notes": "Informed consent or best interests decisions"
+            },
+            {
+              "element": "Review dates",
+              "type": "Care Plan",
+              "notes": "Planned review schedule"
             }
-          ],
+          ]
+        },
+        {
+          "id": "CISV2.BP3",
+          "title": "Medication Management and Safety",
+          "objectives": "Ensure safe medication prescribing, administration, and monitoring through comprehensive medication histories, allergy checking, and drug interaction screening.",
           "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "label": "",
-                "to": "assess"
-              },
-              {
-                "from": "assess",
-                "label": "",
-                "to": "involve"
-              },
-              {
-                "from": "involve",
-                "label": "",
-                "to": "develop"
-              },
-              {
-                "from": "develop",
-                "label": "",
-                "to": "agree"
-              },
-              {
-                "from": "agree",
-                "label": "No",
-                "to": "revise"
-              },
-              {
-                "from": "revise",
-                "label": "",
-                "to": "agree"
-              },
-              {
-                "from": "agree",
-                "label": "Yes",
-                "to": "implement"
-              },
-              {
-                "from": "implement",
-                "label": "",
-                "to": "monitor"
-              },
-              {
-                "from": "monitor",
-                "label": "",
-                "to": "review"
-              },
-              {
-                "from": "review",
-                "label": "",
-                "to": "end"
-              }
-            ],
             "nodes": [
               {
                 "id": "start",
-                "label": "Care planning initiated",
-                "type": "start"
+                "type": "start",
+                "label": "Medication review initiated"
               },
               {
-                "id": "assess",
-                "label": "Assess needs and goals",
-                "type": "activity"
+                "id": "check_allergies",
+                "type": "activity",
+                "label": "Check allergy status"
               },
               {
-                "id": "involve",
-                "label": "Involve person/representative",
-                "type": "activity"
+                "id": "review_current",
+                "type": "activity",
+                "label": "Review current medications"
               },
               {
-                "id": "develop",
-                "label": "Develop care plan",
-                "type": "activity"
+                "id": "assess_interactions",
+                "type": "activity",
+                "label": "Check for interactions"
               },
               {
-                "id": "agree",
-                "label": "Plan agreed?",
-                "type": "decision"
+                "id": "changes_needed",
+                "type": "decision",
+                "label": "Changes required?"
               },
               {
-                "id": "revise",
-                "label": "Revise plan",
-                "type": "activity"
+                "id": "prescribe_new",
+                "type": "activity",
+                "label": "Prescribe new medications"
               },
               {
-                "id": "implement",
-                "label": "Implement plan",
-                "type": "activity"
+                "id": "discontinue_old",
+                "type": "activity",
+                "label": "Discontinue medications"
               },
               {
-                "id": "monitor",
-                "label": "Monitor progress",
-                "type": "activity"
+                "id": "provide_information",
+                "type": "activity",
+                "label": "Provide patient information"
               },
               {
-                "id": "review",
-                "label": "Scheduled review",
-                "type": "activity"
+                "id": "schedule_review",
+                "type": "activity",
+                "label": "Schedule follow-up"
               },
               {
                 "id": "end",
-                "label": "Plan active",
-                "type": "end"
+                "type": "end",
+                "label": "Review complete"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "check_allergies",
+                "label": "Review initiated"
+              },
+              {
+                "from": "check_allergies",
+                "to": "review_current",
+                "label": "Allergies checked"
+              },
+              {
+                "from": "review_current",
+                "to": "assess_interactions",
+                "label": "Current meds reviewed"
+              },
+              {
+                "from": "assess_interactions",
+                "to": "changes_needed",
+                "label": "Interactions assessed"
+              },
+              {
+                "from": "changes_needed",
+                "to": "prescribe_new",
+                "label": "New prescriptions needed"
+              },
+              {
+                "from": "changes_needed",
+                "to": "provide_information",
+                "label": "No changes needed"
+              },
+              {
+                "from": "prescribe_new",
+                "to": "discontinue_old",
+                "label": "New prescribed"
+              },
+              {
+                "from": "discontinue_old",
+                "to": "provide_information",
+                "label": "Old discontinued"
+              },
+              {
+                "from": "provide_information",
+                "to": "schedule_review",
+                "label": "Information provided"
+              },
+              {
+                "from": "schedule_review",
+                "to": "end",
+                "label": "Review scheduled"
               }
             ]
           },
-          "id": "CISV2.BP3",
-          "objectives": "Develop person-centred care plans involving the individual and relevant professionals, with regular review and updates",
-          "title": "Care Plan Development and Review"
+          "data_seen": [
+            {
+              "element": "Allergy history",
+              "source": "Clinical records",
+              "type": "Safety data"
+            },
+            {
+              "element": "Current medication list",
+              "source": "Prescription records",
+              "type": "Treatment data"
+            },
+            {
+              "element": "Recent investigations",
+              "source": "Laboratory results",
+              "type": "Monitoring data"
+            }
+          ],
+          "data_collected": [
+            {
+              "element": "Medication changes",
+              "type": "Medication",
+              "notes": "New prescriptions and discontinuations"
+            },
+            {
+              "element": "Dosage instructions",
+              "type": "Medication",
+              "notes": "Structured dose directions"
+            },
+            {
+              "element": "Safety warnings",
+              "type": "Medication",
+              "notes": "Allergy alerts and contraindications"
+            },
+            {
+              "element": "Review schedule",
+              "type": "Medication",
+              "notes": "Follow-up appointments"
+            },
+            {
+              "element": "Patient education",
+              "type": "Medication",
+              "notes": "Information provided to patient"
+            }
+          ]
         }
-      ],
-      "summary_markdown": "The Core Information Standard enables streamlined workflows for patient care, from initial registration through ongoing care management and information sharing between providers."
-    },
-    "sectionType": "processes",
-    "status": "draft",
-    "title": "Business Processes & Workflows"
+      ]
+    }
   },
   {
-    "children": [],
-    "content": "## Demographics and Identity\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE1 | NHS Number | Unique NHS identifier | String(10) | Yes | NHS_DD |\n| CISV2.DE2 | Person Name | Complete name including given and family names | Complex | Yes | NHS_DD |\n| CISV2.DE3 | Date of Birth | Person's birth date | Date | Yes | NHS_DD |\n| CISV2.DE4 | Gender | Person's stated gender | String(1) | No | NHS_DD |\n| CISV2.DE5 | Address | Person's residential address | Complex | Yes | NHS_DD |\n\n## Clinical Information\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE6 | Problem List | Active health problems and conditions | Complex | No | SNOMED_CT |\n| CISV2.DE7 | Medications | Current and historical medications | Complex | No | dm+d |\n| CISV2.DE8 | Allergies | Known allergies and adverse reactions | Complex | No | SNOMED_CT |\n| CISV2.DE9 | Vaccinations | Immunization history | Complex | No | SNOMED_CT |\n| CISV2.DE10 | Examination Findings | Clinical examination results | Complex | No | SNOMED_CT |\n\n## Care Planning\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE11 | Care Plan | Structured care and support plan | Complex | No | SNOMED_CT |\n| CISV2.DE12 | Goals and Objectives | Person's care goals and targets | Complex | No | SNOMED_CT |\n| CISV2.DE13 | Risk Assessment | Identified risks and mitigation strategies | Complex | No | SNOMED_CT |\n| CISV2.DE14 | Contingency Plans | Emergency and safety plans | Complex | No | Local |\n\n## Legal and Consent\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE15 | Mental Capacity | Assessment of decision-making capacity | Complex | No | SNOMED_CT |\n| CISV2.DE16 | Consent Status | Information sharing consent details | Complex | No | Local |\n| CISV2.DE17 | Legal Status | Mental health act or equivalent status | String | No | NHS_DD |\n| CISV2.DE18 | Advance Decisions | ADRT and advance statement details | Complex | No | SNOMED_CT |\n\nAll data elements support structured coding where applicable, with fallback to free text for local requirements.",
-    "id": "sec-bce6a7cb",
-    "level": 1,
+    "id": "sec-2e934273",
     "sectionType": "data_elements",
+    "title": "Core Data Elements",
+    "level": 1,
     "status": "draft",
-    "title": "Core Data Elements"
+    "children": [],
+    "content": "## Core Data Elements\n\nThe Core Information Standard defines comprehensive data elements organised by functional domain. Each element includes standardised definitions, data types, and terminology bindings.\n\n### Demographics and Identification\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE001 | NHS Number | Unique patient identifier for England and Wales | String(10) | Yes | NHS DD |\n| CISV2.DE002 | Person First Name | Given names including middle names | String(35) | Yes | NHS DD |\n| CISV2.DE003 | Person Family Name | Family name or surname | String(35) | Yes | NHS DD |\n| CISV2.DE004 | Date of Birth | Person's date of birth | Date | Yes | NHS DD |\n| CISV2.DE005 | Gender | Person's stated gender | String(1) | Yes | NHS DD |\n| CISV2.DE006 | Postcode | Current address postcode | String(8) | No | NHS DD |\n\n### Clinical Information\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE010 | Problem Diagnosis | Clinical problems and diagnoses | Coded Text | No | SNOMED CT |\n| CISV2.DE011 | Medication Name | Prescribed medication | Coded Text | No | dm+d |\n| CISV2.DE012 | Allergy Agent | Causative agent for allergic reactions | Coded Text | No | SNOMED CT |\n| CISV2.DE013 | Procedure Code | Clinical procedures performed | Coded Text | No | SNOMED CT |\n| CISV2.DE014 | Observation Value | Clinical measurements and findings | Quantity | No | SNOMED CT |\n\n### Care Planning\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE020 | Care Goal | Person-centred care objectives | Text | No | SNOMED CT |\n| CISV2.DE021 | Goal Importance | Priority rating for goals (1-10) | Integer | No | - |\n| CISV2.DE022 | Action Status | Status of planned care actions | Coded Text | No | SNOMED CT |\n| CISV2.DE023 | Review Date | Scheduled review date for care plans | DateTime | No | - |\n\n### Social Context\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE030 | Household Composition | Living arrangements description | Coded Text | No | SNOMED CT |\n| CISV2.DE031 | Accommodation Type | Type of housing/care setting | Coded Text | No | NHS DD |\n| CISV2.DE032 | Smoking Status | Current smoking status | Coded Text | No | SNOMED CT |\n| CISV2.DE033 | Alcohol Intake | Current alcohol consumption | Coded Text | No | SNOMED CT |\n\nAll data elements support both coded and free-text values to accommodate varying levels of system sophistication while maintaining semantic interoperability through standard terminologies."
   },
   {
-    "children": [],
-    "content": "## Reasonable Adjustments Decision Table\n\n**Description:** Determines when reasonable adjustments are required based on identified impairments and individual needs.\n\n| Impairment Category | Communication Need | Mobility Need | Reasonable Adjustment Required | Output Action |\n|---|---|---|---|---|\n| Physical Disability | Any | Yes | Yes | Assess mobility aids and access requirements |\n| Sensory Disability | Yes | Any | Yes | Provide communication support and sensory aids |\n| Learning Disability | Yes | Any | Yes | Use easy read materials and longer appointments |\n| Mental Health | Variable | No | Maybe | Assess individual needs and provide appropriate support |\n| None | No | No | No | Standard care pathway |\n\n## Mental Capacity Assessment Decision Table\n\n**Description:** Guides when mental capacity assessment is required and what actions to take.\n\n| Age | Cognitive Impairment | Decision Complexity | Capacity Assessment Needed | Output Action |\n|---|---|---|---|---|\n| <16 | Any | Any | No | Apply Gillick competence assessment |\n| ≥16 | Severe | Any | Yes | Formal capacity assessment required |\n| ≥16 | Moderate | High | Yes | Formal capacity assessment recommended |\n| ≥16 | Mild | Low | No | Assume capacity with supportive decision making |\n| ≥16 | None | Any | No | Assume capacity |\n\n## Medication Safety Decision Table\n\n**Description:** Identifies high-risk medication scenarios requiring additional safety measures.\n\n| Patient Age | Number of Medications | Allergy Status | Organ Function | Safety Risk Level | Output Action |\n|---|---|---|---|---|---|\n| ≥75 | >5 | Known allergies | Impaired | High | Pharmacist review and monitoring required |\n| ≥65 | >10 | Any | Any | High | Medication review and reconciliation |\n| Any | ≥5 | Severe allergies | Any | Medium | Allergy alert and careful monitoring |\n| <65 | <5 | No allergies | Normal | Low | Standard medication management |\n\n## Safeguarding Decision Table\n\n**Description:** Determines safeguarding response based on risk indicators.\n\n| Vulnerability | Risk Indicators | Immediate Danger | Safeguarding Action Required | Output Action |\n|---|---|---|---|---|\n| Adult at risk | Multiple concerns | Yes | Yes | Immediate safeguarding referral and protection |\n| Child | Any concern | Yes | Yes | Emergency child protection measures |\n| Adult at risk | Single concern | No | Yes | Safeguarding assessment and planning |\n| General population | No concerns | No | No | Continue routine care |\n\nThese decision tables provide structured logic for key clinical and care decisions within the Core Information Standard implementation.",
-    "id": "sec-f1b0bcdb",
-    "level": 1,
+    "id": "sec-c96051cc",
     "sectionType": "decision_tables",
+    "title": "Decision-Support Logic",
+    "level": 1,
     "status": "draft",
-    "title": "Decision-Support Logic"
+    "children": [],
+    "content": "## Decision Support Tables\n\nThe Core Information Standard incorporates clinical decision-support logic to improve care quality and safety. The following decision tables provide structured guidance for common scenarios.\n\n### Decision Table 1: Medication Safety Screening\n\n**Description**: Automated screening for medication safety based on patient allergies, age, and clinical conditions.\n\n| Patient Age | Allergy Status | Renal Function | Medication Type | Output Action |\n|---|---|---|---|---|\n| >65 years | Any drug allergy | Impaired | High-risk medication | Alert prescriber + dose adjustment |\n| >65 years | No allergies | Normal | High-risk medication | Alert prescriber only |\n| >65 years | Specific allergy | Any | Contraindicated drug | Block prescription + suggest alternative |\n| <65 years | Specific allergy | Any | Contraindicated drug | Block prescription + suggest alternative |\n| Any age | No allergies | Any | Standard medication | Proceed with standard dose |\n| Any age | Unknown allergy | Any | Any medication | Prompt for allergy check |\n\n### Decision Table 2: Care Plan Review Scheduling\n\n**Description**: Determines appropriate review intervals based on risk factors and care complexity.\n\n| Risk Level | Care Complexity | Recent Admission | Medication Changes | Review Interval |\n|---|---|---|---|---|\n| High | Complex | <30 days | Yes | 2 weeks |\n| High | Complex | <30 days | No | 4 weeks |\n| High | Standard | Any | Yes | 4 weeks |\n| Medium | Complex | >30 days | Yes | 6 weeks |\n| Medium | Standard | >30 days | No | 3 months |\n| Low | Standard | >90 days | No | 6 months |\n| Low | Minimal | >90 days | No | 12 months |\n\n### Decision Table 3: Safeguarding Risk Assessment\n\n**Description**: Systematic assessment of safeguarding concerns requiring escalation.\n\n| Vulnerability Level | Concern Severity | Previous Concerns | Support Network | Action Required |\n|---|---|---|---|---|\n| High | Severe | Yes | Minimal | Immediate safeguarding referral |\n| High | Moderate | Any | Any | Safeguarding referral within 24 hours |\n| Medium | Severe | Any | Any | Safeguarding referral within 48 hours |\n| Medium | Moderate | Yes | Minimal | Enhanced monitoring + referral |\n| Medium | Moderate | No | Good | Enhanced monitoring |\n| Low | Mild | No | Good | Routine monitoring |\n| Any | Severe | Any | Any | Consider emergency services |\n\nThese decision tables are implemented through configurable business rules engines and can be customised to reflect local policies and procedures while maintaining consistency with national guidance."
   },
   {
-    "children": [],
-    "content": "## Quality and Safety Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.I1 | Medication Reconciliation Rate | Patients with completed reconciliation | All care transitions | Care setting, age group | Monthly |\n| CISV2.I2 | Reasonable Adjustments Implementation | Patients with documented adjustments | Patients requiring adjustments | Disability type, organisation | Quarterly |\n| CISV2.I3 | Care Plan Completion | Patients with active care plans | Patients eligible for care planning | Care setting, complexity | Monthly |\n| CISV2.I4 | Mental Capacity Assessment Compliance | Assessments completed when required | Situations requiring assessment | Setting, professional group | Monthly |\n| CISV2.I5 | Safeguarding Referral Timeliness | Referrals made within 24 hours | Safeguarding concerns identified | Vulnerability type, urgency | Weekly |\n\n## Information Quality Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.I6 | Data Completeness Score | Complete mandatory fields | Total mandatory fields | Data domain, user type | Weekly |\n| CISV2.I7 | Information Sharing Consent Rate | Patients with documented consent | All active patients | Care setting, age group | Monthly |\n| CISV2.I8 | Allergy Documentation Rate | Patients with allergy status recorded | All patients | Clinical specialty, age | Quarterly |\n| CISV2.I9 | Contact Information Currency | Records updated within 12 months | Total patient records | Demographics, setting | Quarterly |\n| CISV2.I10 | Clinical Coding Accuracy | Correctly coded clinical terms | Total coded terms | Terminology system, domain | Monthly |\n\n## Care Coordination Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.I11 | Care Transition Information Transfer | Transitions with complete information | All care transitions | Transition type, organisations | Monthly |\n| CISV2.I12 | Professional Contact Currency | Updated professional contact details | Total professional contacts | Professional type, organisation | Quarterly |\n| CISV2.I13 | Care Plan Review Timeliness | Plans reviewed within timeframe | Plans due for review | Care setting, complexity | Monthly |\n\nThese indicators support quality improvement, regulatory compliance, and evidence-based care delivery across all implementations of the Core Information Standard.",
-    "id": "sec-1a2bb3b3",
-    "level": 1,
+    "id": "sec-d325d5f9",
     "sectionType": "indicators",
+    "title": "Indicators & Performance Metrics",
+    "level": 1,
     "status": "draft",
-    "title": "Indicators & Performance Metrics"
+    "children": [],
+    "content": "## Performance Indicators\n\nThe Core Information Standard supports quality improvement through systematic measurement of key performance indicators across health and social care domains.\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.IND01 | Demographics Completeness | Records with complete name, DOB, NHS number, address | All active patient records | By care setting, age group | Monthly |\n| CISV2.IND02 | Allergy Information Coverage | Records with documented allergy status | All records with medication history | By prescriber type, patient age | Quarterly |\n| CISV2.IND03 | Care Plan Currency | Care plans reviewed within scheduled timeframe | All active care plans | By risk level, care setting | Monthly |\n| CISV2.IND04 | Medication Reconciliation Rate | Admissions with completed medication reconciliation | All hospital admissions | By specialty, admission type | Monthly |\n| CISV2.IND05 | Reasonable Adjustments Recording | Records with documented accessibility needs | Records of patients with disabilities | By adjustment type, location | Quarterly |\n| CISV2.IND06 | Advanced Care Planning Coverage | Patients with documented end-of-life preferences | Patients with terminal diagnoses | By age, diagnosis, location | Quarterly |\n| CISV2.IND07 | Safeguarding Response Time | Concerns escalated within policy timeframes | All identified safeguarding concerns | By concern type, vulnerability | Monthly |\n| CISV2.IND08 | Information Sharing Consent | Records with documented sharing preferences | All active records | By care setting, patient age | Quarterly |\n| CISV2.IND09 | Risk Assessment Completion | Patients with current risk assessments | High-risk patient cohort | By risk type, assessor role | Monthly |\n| CISV2.IND10 | Contact Information Currency | Records with updated contact details <90 days | All active patient records | By age group, care setting | Monthly |\n| CISV2.IND11 | GP Practice Registration | Records with current GP practice details | All patient records | By geographical area | Quarterly |\n| CISV2.IND12 | Social Context Documentation | Records with social circumstances recorded | Community care patients | By service type, age group | Quarterly |\n\n### Data Quality Metrics\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.IND20 | Coding Standard Compliance | Data elements using standard terminologies | All coded data elements | By domain, system type | Monthly |\n| CISV2.IND21 | Record Completeness Score | Essential fields completed per record | All active records | By record age, care setting | Weekly |\n| CISV2.IND22 | Data Validation Error Rate | Records failing validation rules | All record updates | By error type, user role | Daily |\n\nThese indicators support continuous quality improvement, regulatory compliance, and benchmarking across organisations implementing the Core Information Standard."
   },
   {
-    "children": [],
-    "content": "## Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.FR1 | Patient Registration | System must support comprehensive patient registration including demographics, identifiers, and contact details | High |\n| CISV2.FR2 | Clinical Data Capture | System must capture and store clinical information including problems, medications, allergies, and procedures | High |\n| CISV2.FR3 | Care Plan Management | System must support creation, review, and updating of person-centred care plans | High |\n| CISV2.FR4 | Medication Reconciliation | System must facilitate medication reconciliation during care transitions | High |\n| CISV2.FR5 | Reasonable Adjustments | System must identify, document, and flag reasonable adjustment requirements | Medium |\n| CISV2.FR6 | Mental Capacity Recording | System must support recording of mental capacity assessments and decisions | Medium |\n| CISV2.FR7 | Safeguarding Alerts | System must provide alerts and workflows for safeguarding concerns | High |\n| CISV2.FR8 | Information Sharing Consent | System must manage and enforce information sharing consent preferences | High |\n| CISV2.FR9 | Professional Contact Management | System must maintain current contact information for healthcare professionals | Medium |\n| CISV2.FR10 | Document Management | System must support storage and retrieval of clinical documents and images | Medium |\n\n## Non-Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.NFR1 | Data Security | System must comply with NHS Digital security standards and GDPR requirements | High |\n| CISV2.NFR2 | Interoperability | System must support FHIR R4 and NHS Digital integration standards | High |\n| CISV2.NFR3 | Performance | System must respond to user queries within 2 seconds for 95% of requests | High |\n| CISV2.NFR4 | Availability | System must maintain 99.5% uptime during operational hours | High |\n| CISV2.NFR5 | Scalability | System must support concurrent access by up to 1000 users | Medium |\n| CISV2.NFR6 | Backup and Recovery | System must perform daily backups with 4-hour recovery time objective | High |\n| CISV2.NFR7 | Audit Trail | System must maintain comprehensive audit logs for all data access and changes | High |\n| CISV2.NFR8 | Data Quality | System must enforce data validation rules and provide data quality reporting | Medium |\n| CISV2.NFR9 | User Interface | System must provide intuitive interfaces optimised for clinical workflows | Medium |\n| CISV2.NFR10 | Integration Capability | System must support integration with existing clinical and administrative systems | High |\n\nThese requirements ensure that implementations of the Core Information Standard meet the functional needs of users while maintaining appropriate levels of security, performance, and reliability.",
-    "id": "sec-faf3e09d",
-    "level": 1,
+    "id": "sec-b40f39a0",
     "sectionType": "requirements",
+    "title": "Functional & Non-Functional Requirements",
+    "level": 1,
     "status": "draft",
-    "title": "Functional & Non-Functional Requirements"
+    "children": [],
+    "content": "## Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.FR01 | Demographic Data Capture | System shall capture complete demographic information including names, addresses, contact details, and identifiers | High |\n| CISV2.FR02 | Clinical Information Recording | System shall record clinical problems, medications, allergies, procedures, and observations using standard terminologies | High |\n| CISV2.FR03 | Care Plan Management | System shall support creation, modification, and sharing of person-centred care plans with goal tracking | High |\n| CISV2.FR04 | Risk Assessment Tools | System shall provide structured risk assessment forms with automated scoring and escalation alerts | Medium |\n| CISV2.FR05 | Medication Safety Checking | System shall perform allergy, interaction, and contraindication checks during prescribing workflows | High |\n| CISV2.FR06 | Safeguarding Workflows | System shall support identification, documentation, and escalation of safeguarding concerns | High |\n| CISV2.FR07 | Legal Information Tracking | System shall record consent, capacity assessments, advanced directives, and legal status | Medium |\n| CISV2.FR08 | Social Context Documentation | System shall capture social circumstances, housing, employment, and lifestyle factors | Medium |\n| CISV2.FR09 | Assessment Integration | System shall support various assessment tools with structured data capture and analysis | Medium |\n| CISV2.FR10 | Document Management | System shall manage clinical documents, images, and correspondence with version control | Low |\n\n## Non-Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.NFR01 | Information Governance | System shall implement data protection, access controls, and audit logging compliant with UK GDPR | High |\n| CISV2.NFR02 | Interoperability Standards | System shall support FHIR R4, SNOMED CT, NHS Data Dictionary, and other UK health standards | High |\n| CISV2.NFR03 | Performance Requirements | System shall respond to user queries within 3 seconds for 95% of transactions during peak hours | High |\n| CISV2.NFR04 | Availability Target | System shall maintain 99.5% uptime during business hours (8am-6pm, Monday-Friday) | High |\n| CISV2.NFR05 | Scalability Support | System shall support up to 100,000 active patient records with linear performance degradation | Medium |\n| CISV2.NFR06 | Security Controls | System shall implement multi-factor authentication, encryption at rest and in transit, and role-based access | High |\n| CISV2.NFR07 | Backup and Recovery | System shall perform automated daily backups with 4-hour recovery time objective | Medium |\n| CISV2.NFR08 | User Interface Design | System shall provide intuitive, accessible interfaces compliant with WCAG 2.1 Level AA standards | Medium |\n| CISV2.NFR09 | Mobile Compatibility | System shall function effectively on tablets and smartphones with responsive design | Low |\n| CISV2.NFR10 | Integration Capability | System shall support REST APIs for integration with third-party systems and national services | High |\n| CISV2.NFR11 | Data Migration Support | System shall provide tools and processes for migrating existing patient data from legacy systems | Medium |\n| CISV2.NFR12 | Reporting and Analytics | System shall generate standard reports and support custom queries for quality improvement activities | Medium |\n\nThese requirements provide the foundation for successful implementation while ensuring compliance with UK healthcare regulations and standards."
   },
   {
-    "children": [],
-    "content": "## Clinical Standards and Guidelines\n\n1. National Institute for Health and Care Excellence (2023). *Medicines optimisation: the safe and effective use of medicines to enable the best possible outcomes.* NICE guideline [NG5]. Available at: https://www.nice.org.uk/guidance/ng5\n\n2. National Institute for Health and Care Excellence (2022). *Decision-making and mental capacity.* NICE guideline [NG108]. Available at: https://www.nice.org.uk/guidance/ng108\n\n3. National Institute for Health and Care Excellence (2021). *Shared decision making.* NICE guideline [NG197]. Available at: https://www.nice.org.uk/guidance/ng197\n\n## Legal and Regulatory Framework\n\n4. HM Government (2010). *Equality Act 2010.* London: The Stationery Office. Available at: https://www.legislation.gov.uk/ukpga/2010/15/contents\n\n5. HM Government (2005). *Mental Capacity Act 2005.* London: The Stationery Office. Available at: https://www.legislation.gov.uk/ukpga/2005/9/contents\n\n6. HM Government (2014). *Care Act 2014.* London: The Stationery Office. Available at: https://www.legislation.gov.uk/ukpga/2014/23/contents\n\n7. Information Commissioner's Office (2021). *General Data Protection Regulation (GDPR).* Available at: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/\n\n## Technical Standards\n\n8. NHS Digital (2023). *FHIR UK Core Implementation Guide.* Available at: https://simplifier.net/hl7fhirukcorer4\n\n9. SNOMED International (2023). *SNOMED CT UK Edition.* Available at: https://termbrowser.nhs.uk/\n\n10. NHS Digital (2023). *Dictionary of medicines and devices (dm+d).* Available at: https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd\n\n## Professional Standards\n\n11. Professional Record Standards Body (2023). *Clinical document indexing standards.* Available at: https://theprsb.org/standards/\n\n12. Royal College of Nursing (2021). *Record keeping and information governance guidance.* London: RCN Publications.\n\n13. General Medical Council (2022). *Good practice in prescribing and managing medicines and devices.* London: GMC.\n\n## Information Governance\n\n14. NHS Digital (2023). *Data Security and Protection Toolkit.* Available at: https://www.dsptoolkit.nhs.uk/\n\n15. NHS England (2022). *Information sharing framework.* Available at: https://www.england.nhs.uk/publication/information-sharing-framework/\n\nThese references provide the foundational evidence base and regulatory context for implementing the Core Information Standard across UK health and social care settings.",
-    "id": "sec-99959491",
-    "level": 1,
+    "id": "sec-a914b76b",
     "sectionType": "references",
+    "title": "References",
+    "level": 1,
     "status": "draft",
-    "title": "References"
+    "children": [],
+    "content": "## Standards and Specifications\n\n1. **NHS Data Dictionary** - [https://datadictionary.nhs.uk/](https://datadictionary.nhs.uk/) - National data definitions and standards for NHS England\n2. **SNOMED CT UK Edition** - [https://termbrowser.nhs.uk/](https://termbrowser.nhs.uk/) - Clinical terminology standard for the UK\n3. **Dictionary of Medicines and Devices (dm+d)** - [https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd) - UK medication coding standard\n4. **UCUM - Unified Code for Units of Measure** - [https://ucum.org/](https://ucum.org/) - International standard for units of measure\n5. **HL7 FHIR R4** - [https://hl7.org/fhir/R4/](https://hl7.org/fhir/R4/) - Healthcare interoperability standard\n6. **UK Core FHIR R4 Profiles** - [https://simplifier.net/ukcore](https://simplifier.net/ukcore) - UK-specific FHIR implementation guidance\n\n## Policy and Guidance Documents\n\n7. **NHS Long Term Plan** (2019) - NHS strategic framework for healthcare transformation\n8. **Data Saves Lives: Reshaping health and social care with data** (2022) - UK government strategy for health data\n9. **The Future of UK Clinical Terminology** - NHS Digital strategy for terminology services\n10. **Information Governance Framework for Health and Care** - NHS guidance on data governance\n11. **Accessible Information Standard** - NHS England requirements for accessible communication\n12. **General Data Protection Regulation (UK GDPR)** - Data protection legislation applicable to health records\n\n## Clinical Guidelines\n\n13. **NICE Guidelines** - [https://www.nice.org.uk/guidance](https://www.nice.org.uk/guidance) - Evidence-based clinical practice recommendations\n14. **Royal College Guidelines** - Professional body guidance for clinical specialties\n15. **SIGN Guidelines** - Scottish clinical practice guidelines applicable across the UK\n16. **GMC Good Medical Practice** - Professional standards for medical practitioners\n\n## Technical Standards\n\n17. **ISO/TS 14265:2011** - Classification of purposes for processing personal health information\n18. **ISO 21090:2011** - Health informatics — Harmonized data types for information interchange\n19. **BS 8538:2011** - Provision of health informatics for healthcare systems\n20. **DCB0129** - Clinical Risk Management: its Application in the Manufacture of Health IT Systems\n21. **DCB0160** - Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems\n\n## Professional Resources\n\n22. **Professional Record Standards Body (PRSB)** - [https://theprsb.org/](https://theprsb.org/) - Standards for clinical record content\n23. **BCS Health Informatics** - Professional body for health informatics specialists\n24. **Health and Care Information Centre (HSCIC)** - Now NHS Digital, source of health data standards\n25. **Care Quality Commission (CQC)** - Healthcare quality regulator requirements and guidance\n\nThese references provide the authoritative basis for implementing the Core Information Standard v2.0 in compliance with UK healthcare requirements and best practices."
   }
 ]
