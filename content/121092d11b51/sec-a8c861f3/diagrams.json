@@ -596,6 +596,29 @@
             "id": "19ab88e8-52d1-4814-a184-62ca74b53863",
             "z": 20,
             "attrs": {}
+          },
+          {
+            "type": "bpmn.SubProcess",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 565.4876708984375,
+              "y": 511.082763671875
+            },
+            "angle": 0,
+            "id": "f62d7f81-6291-4c6e-beaa-b2e89ffc56d0",
+            "z": 21,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "fontSize": 10
+              }
+            }
           }
         ]
       },
