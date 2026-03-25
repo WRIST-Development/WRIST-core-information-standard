@@ -1,0 +1,46 @@
+## Decision Support Tables
+
+The Core Information Standard incorporates clinical decision-support logic to improve care quality and safety. The following decision tables provide structured guidance for common scenarios.
+
+### Decision Table 1: Medication Safety Screening
+
+**Description**: Automated screening for medication safety based on patient allergies, age, and clinical conditions.
+
+| Patient Age | Allergy Status | Renal Function | Medication Type | Output Action |
+|---|---|---|---|---|
+| >65 years | Any drug allergy | Impaired | High-risk medication | Alert prescriber + dose adjustment |
+| >65 years | No allergies | Normal | High-risk medication | Alert prescriber only |
+| >65 years | Specific allergy | Any | Contraindicated drug | Block prescription + suggest alternative |
+| <65 years | Specific allergy | Any | Contraindicated drug | Block prescription + suggest alternative |
+| Any age | No allergies | Any | Standard medication | Proceed with standard dose |
+| Any age | Unknown allergy | Any | Any medication | Prompt for allergy check |
+
+### Decision Table 2: Care Plan Review Scheduling
+
+**Description**: Determines appropriate review intervals based on risk factors and care complexity.
+
+| Risk Level | Care Complexity | Recent Admission | Medication Changes | Review Interval |
+|---|---|---|---|---|
+| High | Complex | <30 days | Yes | 2 weeks |
+| High | Complex | <30 days | No | 4 weeks |
+| High | Standard | Any | Yes | 4 weeks |
+| Medium | Complex | >30 days | Yes | 6 weeks |
+| Medium | Standard | >30 days | No | 3 months |
+| Low | Standard | >90 days | No | 6 months |
+| Low | Minimal | >90 days | No | 12 months |
+
+### Decision Table 3: Safeguarding Risk Assessment
+
+**Description**: Systematic assessment of safeguarding concerns requiring escalation.
+
+| Vulnerability Level | Concern Severity | Previous Concerns | Support Network | Action Required |
+|---|---|---|---|---|
+| High | Severe | Yes | Minimal | Immediate safeguarding referral |
+| High | Moderate | Any | Any | Safeguarding referral within 24 hours |
+| Medium | Severe | Any | Any | Safeguarding referral within 48 hours |
+| Medium | Moderate | Yes | Minimal | Enhanced monitoring + referral |
+| Medium | Moderate | No | Good | Enhanced monitoring |
+| Low | Mild | No | Good | Routine monitoring |
+| Any | Severe | Any | Any | Consider emergency services |
+
+These decision tables are implemented through configurable business rules engines and can be customised to reflect local policies and procedures while maintaining consistency with national guidance.
