@@ -1,0 +1,36 @@
+## Information Sharing Decision Logic
+
+**Description:** Determines appropriate information sharing based on consent status, legal basis, and care context.
+
+| Person Capacity | Consent Status | Care Context | Emergency | Output Action |
+|---|---|---|---|---|
+| Has capacity | Explicit consent given | Routine care | No | Share full information |
+| Has capacity | Consent refused | Routine care | No | Share essential safety information only |
+| Has capacity | No consent recorded | Routine care | No | Obtain consent before sharing |
+| Lacks capacity | Best interests decision | Routine care | No | Share information in person's best interests |
+| Any | Any | Any | Yes | Share information for immediate care |
+| Has capacity | Explicit consent | Mental health care | No | Share according to consent scope |
+| Under 16 | Parent/guardian consent | Child care | No | Share with parental consent |
+
+## Risk Assessment Decision Logic
+
+**Description:** Categorises risk levels and determines required interventions based on assessment findings.
+
+| Safeguarding Concern | Self-harm Risk | Capacity Issues | Support Network | Output Action |
+|---|---|---|---|---|
+| High | High | Lacks capacity | Poor | Immediate safeguarding referral |
+| High | Low | Has capacity | Good | Safeguarding alert with monitoring |
+| Low | High | Has capacity | Poor | Mental health crisis referral |
+| Low | Low | Has capacity | Good | Standard care pathway |
+| Any | Any | Lacks capacity | Any | Mental capacity assessment required |
+
+## Care Planning Decision Logic
+
+**Description:** Determines care planning approach based on person's needs, preferences, and circumstances.
+
+| Dependency Level | Cognitive Function | Family Support | Resources Available | Output Action |
+|---|---|---|---|---|
+| High | Impaired | Limited | Available | Formal care package |
+| High | Good | Available | Limited | Family-led care with support |
+| Medium | Good | Available | Available | Shared care approach |
+| Low | Good | Available | Available | Self-directed care with monitoring |
