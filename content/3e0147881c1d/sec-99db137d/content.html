@@ -1,21 +1,15 @@
 ## Overview
-
 This section defines the key business processes and workflows for managing core information across health and social care settings. Each process includes objectives, workflow elements, and information flows that ensure comprehensive, accurate, and accessible person-centered information.
-
 ## CIS.BP1: Emergency Information Access
-
-**Process ID:** CIS.BP1
-**Title:** Emergency Information Access
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP1 \*\*Title:\*\* Emergency Information Access
+\*\*Objectives:\*\*
 - Enable rapid access to critical information in emergency situations
 - Ensure patient safety through immediate visibility of allergies, medications, and advance decisions
 - Support emergency responders with essential contact and preference information
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP1.SE1 | Emergency situation identified |
 | User Task | CIS.BP1.UT1 | Authenticate emergency access |
 | Service Task | CIS.BP1.ST1 | Retrieve emergency summary |
@@ -25,10 +19,10 @@ This section defines the key business processes and workflows for managing core 
 | User Task | CIS.BP1.UT4 | Document emergency interventions |
 | End Event | CIS.BP1.EE1 | Emergency access completed |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP1.SE1 | CIS.BP1.UT1 | Always |
 | CIS.BP1.UT1 | CIS.BP1.ST1 | Authentication successful |
 | CIS.BP1.ST1 | CIS.BP1.UT2 | Data retrieved |
@@ -39,19 +33,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP1.UT4 | CIS.BP1.EE1 | Documentation complete |
 
 ## CIS.BP2: Information Sharing with Consent
-
-**Process ID:** CIS.BP2
-**Title:** Information Sharing with Consent
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP2 \*\*Title:\*\* Information Sharing with Consent
+\*\*Objectives:\*\*
 - Ensure lawful and ethical sharing of personal information
 - Document consent decisions and sharing agreements
 - Enable appropriate access while protecting privacy
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP2.SE1 | Information sharing request initiated |
 | User Task | CIS.BP2.UT1 | Identify information to be shared |
 | User Task | CIS.BP2.UT2 | Check existing consent status |
@@ -63,10 +53,10 @@ This section defines the key business processes and workflows for managing core 
 | User Task | CIS.BP2.UT5 | Document refusal and limitations |
 | End Event | CIS.BP2.EE1 | Sharing process completed |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP2.SE1 | CIS.BP2.UT1 | Always |
 | CIS.BP2.UT1 | CIS.BP2.UT2 | Scope identified |
 | CIS.BP2.UT2 | CIS.BP2.DG1 | Consent checked |
@@ -80,19 +70,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP2.UT5 | CIS.BP2.EE1 | Refusal documented |
 
 ## CIS.BP3: Assessment Documentation
-
-**Process ID:** CIS.BP3
-**Title:** Assessment Documentation
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP3 \*\*Title:\*\* Assessment Documentation
+\*\*Objectives:\*\*
 - Standardize assessment recording across services
 - Ensure comprehensive capture of needs and risks
 - Support multi-disciplinary assessment processes
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP3.SE1 | Assessment required |
 | User Task | CIS.BP3.UT1 | Prepare for assessment |
 | User Task | CIS.BP3.UT2 | Conduct assessment with person |
@@ -103,10 +89,10 @@ This section defines the key business processes and workflows for managing core 
 | Service Task | CIS.BP3.ST1 | Update care record |
 | End Event | CIS.BP3.EE1 | Assessment documented |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP3.SE1 | CIS.BP3.UT1 | Always |
 | CIS.BP3.UT1 | CIS.BP3.UT2 | Preparation complete |
 | CIS.BP3.UT2 | CIS.BP3.UT3 | Assessment complete |
@@ -118,19 +104,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP3.ST1 | CIS.BP3.EE1 | Record updated |
 
 ## CIS.BP4: Reasonable Adjustments Implementation
-
-**Process ID:** CIS.BP4
-**Title:** Reasonable Adjustments Implementation
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP4 \*\*Title:\*\* Reasonable Adjustments Implementation
+\*\*Objectives:\*\*
 - Identify and document required adjustments per Equality Act 2010
 - Ensure adjustments are communicated to all relevant staff
 - Monitor implementation and effectiveness
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP4.SE1 | Adjustment need identified |
 | User Task | CIS.BP4.UT1 | Assess specific requirements |
 | User Task | CIS.BP4.UT2 | Document adjustment details |
@@ -140,10 +122,10 @@ This section defines the key business processes and workflows for managing core 
 | User Task | CIS.BP4.UT5 | Review effectiveness |
 | End Event | CIS.BP4.EE1 | Adjustments in place |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP4.SE1 | CIS.BP4.UT1 | Always |
 | CIS.BP4.UT1 | CIS.BP4.UT2 | Requirements assessed |
 | CIS.BP4.UT2 | CIS.BP4.ST1 | Documentation complete |
@@ -153,19 +135,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP4.UT5 | CIS.BP4.EE1 | Review complete |
 
 ## CIS.BP5: Clinical Review and Update
-
-**Process ID:** CIS.BP5
-**Title:** Clinical Review and Update
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP5 \*\*Title:\*\* Clinical Review and Update
+\*\*Objectives:\*\*
 - Maintain accurate and current clinical information
 - Review and reconcile information from multiple sources
 - Update care plans based on clinical changes
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP5.SE1 | Clinical review scheduled |
 | User Task | CIS.BP5.UT1 | Review current information |
 | User Task | CIS.BP5.UT2 | Conduct clinical examination |
@@ -176,10 +154,10 @@ This section defines the key business processes and workflows for managing core 
 | Service Task | CIS.BP5.ST1 | Synchronize records |
 | End Event | CIS.BP5.EE1 | Review completed |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP5.SE1 | CIS.BP5.UT1 | Always |
 | CIS.BP5.UT1 | CIS.BP5.UT2 | Review complete |
 | CIS.BP5.UT2 | CIS.BP5.UT3 | Examination complete |
@@ -191,19 +169,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP5.ST1 | CIS.BP5.EE1 | Sync complete |
 
 ## CIS.BP6: Care Plan Creation and Update
-
-**Process ID:** CIS.BP6
-**Title:** Care Plan Creation and Update
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP6 \*\*Title:\*\* Care Plan Creation and Update
+\*\*Objectives:\*\*
 - Co-produce person-centered care plans
 - Integrate goals, actions, and outcomes
 - Ensure regular review and adaptation
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP6.SE1 | Care planning initiated |
 | User Task | CIS.BP6.UT1 | Engage person/carer |
 | User Task | CIS.BP6.UT2 | Identify goals and priorities |
@@ -215,10 +189,10 @@ This section defines the key business processes and workflows for managing core 
 | User Task | CIS.BP6.UT6 | Schedule review |
 | End Event | CIS.BP6.EE1 | Care plan active |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP6.SE1 | CIS.BP6.UT1 | Always |
 | CIS.BP6.UT1 | CIS.BP6.UT2 | Engagement complete |
 | CIS.BP6.UT2 | CIS.BP6.UT3 | Goals identified |
@@ -231,19 +205,15 @@ This section defines the key business processes and workflows for managing core 
 | CIS.BP6.UT6 | CIS.BP6.EE1 | Review scheduled |
 
 ## CIS.BP7: Care Transition Communication
-
-**Process ID:** CIS.BP7
-**Title:** Care Transition Communication
-
-**Objectives:**
+\*\*Process ID:\*\* CIS.BP7 \*\*Title:\*\* Care Transition Communication
+\*\*Objectives:\*\*
 - Ensure safe handover between care settings
 - Transfer complete and accurate information
 - Confirm receipt and understanding
-
-**Process Elements:**
+\*\*Process Elements:\*\*
 
 | Type | Element ID | Label |
-|------|------------|-------|
+| --- | --- | --- |
 | Start Event | CIS.BP7.SE1 | Transition planned |
 | User Task | CIS.BP7.UT1 | Compile transition summary |
 | User Task | CIS.BP7.UT2 | Identify receiving team |
@@ -253,10 +223,10 @@ This section defines the key business processes and workflows for managing core 
 | User Task | CIS.BP7.UT5 | Document transition |
 | End Event | CIS.BP7.EE1 | Transition complete |
 
-**Process Flow:**
+\*\*Process Flow:\*\*
 
 | From | To | Condition |
-|------|----|----------|
+| --- | --- | --- |
 | CIS.BP7.SE1 | CIS.BP7.UT1 | Always |
 | CIS.BP7.UT1 | CIS.BP7.UT2 | Summary complete |
 | CIS.BP7.UT2 | CIS.BP7.ST1 | Team identified |
