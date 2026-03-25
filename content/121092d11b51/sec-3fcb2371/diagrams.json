@@ -1,0 +1,410 @@
+{
+  "summary_markdown": "The Core Information Standard enables streamlined workflows for patient care, from initial registration through ongoing care management and information sharing between providers.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Patient Registration and Initial Assessment",
+      "objectives": "Capture comprehensive patient information for new registrations, ensuring all mandatory data elements are recorded and reasonable adjustments identified",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Patient presents for care"
+          },
+          {
+            "id": "verify",
+            "type": "activity",
+            "label": "Verify patient identity"
+          },
+          {
+            "id": "existing",
+            "type": "decision",
+            "label": "Existing patient?"
+          },
+          {
+            "id": "register",
+            "type": "activity",
+            "label": "Register new patient"
+          },
+          {
+            "id": "update",
+            "type": "activity",
+            "label": "Update existing record"
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Conduct initial assessment"
+          },
+          {
+            "id": "adjustments",
+            "type": "activity",
+            "label": "Identify reasonable adjustments"
+          },
+          {
+            "id": "complete",
+            "type": "activity",
+            "label": "Complete registration"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify",
+            "label": ""
+          },
+          {
+            "from": "verify",
+            "to": "existing",
+            "label": ""
+          },
+          {
+            "from": "existing",
+            "to": "register",
+            "label": "No"
+          },
+          {
+            "from": "existing",
+            "to": "update",
+            "label": "Yes"
+          },
+          {
+            "from": "register",
+            "to": "assess",
+            "label": ""
+          },
+          {
+            "from": "update",
+            "to": "assess",
+            "label": ""
+          },
+          {
+            "from": "assess",
+            "to": "adjustments",
+            "label": ""
+          },
+          {
+            "from": "adjustments",
+            "to": "complete",
+            "label": ""
+          },
+          {
+            "from": "complete",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "NHS Number",
+          "source": "Patient/PDS",
+          "type": "Identifier"
+        },
+        {
+          "element": "Person Name",
+          "source": "Patient",
+          "type": "Demographic"
+        },
+        {
+          "element": "Date of Birth",
+          "source": "Patient/PDS",
+          "type": "Demographic"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Person demographics",
+          "type": "Demographic",
+          "notes": "Complete demographic information including contact details"
+        },
+        {
+          "element": "GP practice details",
+          "type": "Administrative",
+          "notes": "Current GP registration"
+        },
+        {
+          "element": "Individual requirements",
+          "type": "Assessment",
+          "notes": "Reasonable adjustments and access needs"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Medication Reconciliation Process",
+      "objectives": "Ensure accurate medication records during care transitions, identifying discrepancies and updating prescription information",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care transition initiated"
+          },
+          {
+            "id": "gather",
+            "type": "activity",
+            "label": "Gather medication sources"
+          },
+          {
+            "id": "review",
+            "type": "activity",
+            "label": "Review current medications"
+          },
+          {
+            "id": "discrepancy",
+            "type": "decision",
+            "label": "Discrepancies found?"
+          },
+          {
+            "id": "resolve",
+            "type": "activity",
+            "label": "Resolve discrepancies"
+          },
+          {
+            "id": "update",
+            "type": "activity",
+            "label": "Update medication record"
+          },
+          {
+            "id": "communicate",
+            "type": "activity",
+            "label": "Communicate changes"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Reconciliation complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "gather",
+            "label": ""
+          },
+          {
+            "from": "gather",
+            "to": "review",
+            "label": ""
+          },
+          {
+            "from": "review",
+            "to": "discrepancy",
+            "label": ""
+          },
+          {
+            "from": "discrepancy",
+            "to": "resolve",
+            "label": "Yes"
+          },
+          {
+            "from": "discrepancy",
+            "to": "update",
+            "label": "No"
+          },
+          {
+            "from": "resolve",
+            "to": "update",
+            "label": ""
+          },
+          {
+            "from": "update",
+            "to": "communicate",
+            "label": ""
+          },
+          {
+            "from": "communicate",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Current medications",
+          "source": "Electronic records",
+          "type": "Clinical"
+        },
+        {
+          "element": "Patient-reported medications",
+          "source": "Patient/carer",
+          "type": "Clinical"
+        },
+        {
+          "element": "Prescription history",
+          "source": "Pharmacy systems",
+          "type": "Administrative"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Medications and medical devices",
+          "type": "Clinical",
+          "notes": "Reconciled medication list with dosages and frequencies"
+        },
+        {
+          "element": "Medication discontinued entry",
+          "type": "Clinical",
+          "notes": "Record of stopped medications with reasons"
+        },
+        {
+          "element": "Plan and requested actions",
+          "type": "Care Planning",
+          "notes": "Actions for medication management"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Care Plan Development and Review",
+      "objectives": "Develop person-centred care plans involving the individual and relevant professionals, with regular review and updates",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care planning initiated"
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Assess needs and goals"
+          },
+          {
+            "id": "involve",
+            "type": "activity",
+            "label": "Involve person/representative"
+          },
+          {
+            "id": "develop",
+            "type": "activity",
+            "label": "Develop care plan"
+          },
+          {
+            "id": "agree",
+            "type": "decision",
+            "label": "Plan agreed?"
+          },
+          {
+            "id": "revise",
+            "type": "activity",
+            "label": "Revise plan"
+          },
+          {
+            "id": "implement",
+            "type": "activity",
+            "label": "Implement plan"
+          },
+          {
+            "id": "monitor",
+            "type": "activity",
+            "label": "Monitor progress"
+          },
+          {
+            "id": "review",
+            "type": "activity",
+            "label": "Scheduled review"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Plan active"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess",
+            "label": ""
+          },
+          {
+            "from": "assess",
+            "to": "involve",
+            "label": ""
+          },
+          {
+            "from": "involve",
+            "to": "develop",
+            "label": ""
+          },
+          {
+            "from": "develop",
+            "to": "agree",
+            "label": ""
+          },
+          {
+            "from": "agree",
+            "to": "revise",
+            "label": "No"
+          },
+          {
+            "from": "revise",
+            "to": "agree",
+            "label": ""
+          },
+          {
+            "from": "agree",
+            "to": "implement",
+            "label": "Yes"
+          },
+          {
+            "from": "implement",
+            "to": "monitor",
+            "label": ""
+          },
+          {
+            "from": "monitor",
+            "to": "review",
+            "label": ""
+          },
+          {
+            "from": "review",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Assessment results",
+          "source": "Clinical assessment",
+          "type": "Assessment"
+        },
+        {
+          "element": "Person preferences",
+          "source": "Patient/family",
+          "type": "Preference"
+        },
+        {
+          "element": "Current care arrangements",
+          "source": "Care records",
+          "type": "Administrative"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Care and support plan",
+          "type": "Care Planning",
+          "notes": "Comprehensive person-centred care plan"
+        },
+        {
+          "element": "Contingency/safety plans",
+          "type": "Care Planning",
+          "notes": "Plans for emergency situations"
+        },
+        {
+          "element": "Plan and requested actions",
+          "type": "Care Planning",
+          "notes": "Specific actions and responsibilities"
+        }
+      ]
+    }
+  ]
+}
