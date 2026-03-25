@@ -2,112 +2,6 @@
   "summary_markdown": "The Core Information Standard supports comprehensive healthcare workflows through systematic data capture and sharing processes.",
   "activities": [
     {
-      "id": "CISV2.BP1",
-      "title": "Person Registration and Demographics Capture",
-      "objectives": "Capture comprehensive demographic and contact information for new service users, ensuring accurate identification and communication pathways are established.",
-      "diagram": {
-        "nodes": [
-          {
-            "id": "start",
-            "type": "start",
-            "label": "Person presents for registration"
-          },
-          {
-            "id": "verify_id",
-            "type": "activity",
-            "label": "Verify identity and NHS number"
-          },
-          {
-            "id": "capture_demographics",
-            "type": "activity",
-            "label": "Capture demographic details"
-          },
-          {
-            "id": "record_contacts",
-            "type": "activity",
-            "label": "Record contact information"
-          },
-          {
-            "id": "assess_needs",
-            "type": "decision",
-            "label": "Individual requirements?"
-          },
-          {
-            "id": "record_adjustments",
-            "type": "activity",
-            "label": "Record reasonable adjustments"
-          },
-          {
-            "id": "complete_registration",
-            "type": "activity",
-            "label": "Complete registration"
-          },
-          {
-            "id": "end",
-            "type": "end",
-            "label": "Registration complete"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "verify_id",
-            "label": "New registration"
-          },
-          {
-            "from": "verify_id",
-            "to": "capture_demographics",
-            "label": "Identity confirmed"
-          },
-          {
-            "from": "capture_demographics",
-            "to": "record_contacts",
-            "label": "Demographics captured"
-          },
-          {
-            "from": "record_contacts",
-            "to": "assess_needs",
-            "label": "Contacts recorded"
-          },
-          {
-            "from": "assess_needs",
-            "to": "record_adjustments",
-            "label": "Adjustments needed"
-          },
-          {
-            "from": "assess_needs",
-            "to": "complete_registration",
-            "label": "No adjustments"
-          },
-          {
-            "from": "record_adjustments",
-            "to": "complete_registration",
-            "label": "Adjustments recorded"
-          },
-          {
-            "from": "complete_registration",
-            "to": "end",
-            "label": "Process complete"
-          }
-        ]
-      },
-      "data_seen": [
-        {
-          "element": "NHS Number Status",
-          "source": "PDS Verification",
-          "type": "Reference data"
-        },
-        {
-          "element": "Existing Records",
-          "source": "Local systems",
-          "type": "Historical data"
-        },
-        {
-          "element": "GP Practice Details",
-          "source": "PDS/Patient report",
-          "type": "Reference data"
-        }
-      ],
       "data_collected": [
         {
           "element": "Person Name",
@@ -134,135 +28,524 @@
           "type": "Individual Requirements",
           "notes": "Accessibility needs assessment"
         }
-      ]
-    },
-    {
-      "id": "CISV2.BP2",
-      "title": "Care Planning and Goal Setting",
-      "objectives": "Develop comprehensive, person-centred care plans that reflect individual goals, preferences, and support needs while coordinating across multiple service providers.",
+      ],
+      "data_seen": [
+        {
+          "element": "NHS Number Status",
+          "type": "Reference data",
+          "source": "PDS Verification"
+        },
+        {
+          "element": "Existing Records",
+          "type": "Historical data",
+          "source": "Local systems"
+        },
+        {
+          "element": "GP Practice Details",
+          "type": "Reference data",
+          "source": "PDS/Patient report"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Care planning initiated"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "e693588a-6248-42bb-9144-efaa375b66a5",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Person presents for registration",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "assess_needs",
-            "type": "activity",
-            "label": "Conduct comprehensive assessment"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "26ae9cc3-083a-4a6e-afe8-7a1402543af9",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify identity and NHS number",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "identify_goals",
-            "type": "activity",
-            "label": "Identify person's goals and priorities"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "80963d87-6948-47d1-9d2a-b41b5c186bd3",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Capture demographic details",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "develop_actions",
-            "type": "activity",
-            "label": "Develop actions and interventions"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "6e878cf0-d231-4586-b719-82e6e7a11a6f",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record contact information",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "review_capacity",
-            "type": "decision",
-            "label": "Person has capacity?"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 58,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "48c09b14-f992-4e71-a87b-3b2ed6363e1c",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Individual requirements?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "obtain_consent",
-            "type": "activity",
-            "label": "Obtain informed consent"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "4f72feb4-ab4c-4b2f-b747-de6de944d9cf",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record reasonable adjustments",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "best_interests",
-            "type": "activity",
-            "label": "Best interests decision"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "1161e19b-0ee1-46df-a138-565759ad2092",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Complete registration",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "create_plan",
-            "type": "activity",
-            "label": "Create formal care plan"
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "a9c9d69b-9c1e-4d15-a06d-31e8c0f864df",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Registration complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "share_plan",
-            "type": "activity",
-            "label": "Share with care team"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "e693588a-6248-42bb-9144-efaa375b66a5"
+            },
+            "target": {
+              "id": "26ae9cc3-083a-4a6e-afe8-7a1402543af9"
+            },
+            "id": "8322650a-c900-46c6-82bf-15fbdb3f3812",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "New registration"
+                  }
+                }
+              }
+            ],
+            "z": 9,
+            "attrs": {}
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Plan active"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "assess_needs",
-            "label": "Planning required"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "26ae9cc3-083a-4a6e-afe8-7a1402543af9"
+            },
+            "target": {
+              "id": "80963d87-6948-47d1-9d2a-b41b5c186bd3"
+            },
+            "id": "cb109bae-0ca4-4d21-b14e-f4df6c458da9",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Identity confirmed"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "assess_needs",
-            "to": "identify_goals",
-            "label": "Assessment complete"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "80963d87-6948-47d1-9d2a-b41b5c186bd3"
+            },
+            "target": {
+              "id": "6e878cf0-d231-4586-b719-82e6e7a11a6f"
+            },
+            "id": "6859e59b-05ed-43f0-93da-a6c0a104d874",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Demographics captured"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "identify_goals",
-            "to": "develop_actions",
-            "label": "Goals identified"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "6e878cf0-d231-4586-b719-82e6e7a11a6f"
+            },
+            "target": {
+              "id": "48c09b14-f992-4e71-a87b-3b2ed6363e1c"
+            },
+            "id": "0ffc6eb6-58e3-4c90-9ad4-926fdbc745f1",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Contacts recorded"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "develop_actions",
-            "to": "review_capacity",
-            "label": "Actions developed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "48c09b14-f992-4e71-a87b-3b2ed6363e1c"
+            },
+            "target": {
+              "id": "4f72feb4-ab4c-4b2f-b747-de6de944d9cf"
+            },
+            "id": "c4fa2d26-f395-418c-8087-15b9a8fc4f1e",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Adjustments needed"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "review_capacity",
-            "to": "obtain_consent",
-            "label": "Has capacity"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "48c09b14-f992-4e71-a87b-3b2ed6363e1c"
+            },
+            "target": {
+              "id": "1161e19b-0ee1-46df-a138-565759ad2092"
+            },
+            "id": "ece7957c-d6af-4b76-9a88-80604f71c1ca",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No adjustments"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "review_capacity",
-            "to": "best_interests",
-            "label": "Lacks capacity"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "4f72feb4-ab4c-4b2f-b747-de6de944d9cf"
+            },
+            "target": {
+              "id": "1161e19b-0ee1-46df-a138-565759ad2092"
+            },
+            "id": "2a5edf34-ddc9-4a4b-96db-b3a9d5daaa74",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Adjustments recorded"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "obtain_consent",
-            "to": "create_plan",
-            "label": "Consent given"
-          },
-          {
-            "from": "best_interests",
-            "to": "create_plan",
-            "label": "Decision made"
-          },
-          {
-            "from": "create_plan",
-            "to": "share_plan",
-            "label": "Plan created"
-          },
-          {
-            "from": "share_plan",
-            "to": "end",
-            "label": "Plan shared"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "1161e19b-0ee1-46df-a138-565759ad2092"
+            },
+            "target": {
+              "id": "a9c9d69b-9c1e-4d15-a06d-31e8c0f864df"
+            },
+            "id": "dff3243e-7645-44d9-bfe2-a51ce8ddbf67",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Process complete"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           }
         ]
       },
-      "data_seen": [
-        {
-          "element": "Previous assessments",
-          "source": "Care records",
-          "type": "Assessment data"
-        },
-        {
-          "element": "Current medications",
-          "source": "Medication records",
-          "type": "Treatment data"
-        },
-        {
-          "element": "Social circumstances",
-          "source": "Social care records",
-          "type": "Context data"
-        }
-      ],
+      "id": "CISV2.BP1",
+      "objectives": "Capture comprehensive demographic and contact information for new service users, ensuring accurate identification and communication pathways are established.",
+      "title": "Person Registration and Demographics Capture",
+      "process_elements": [],
+      "process_flows": []
+    },
+    {
       "data_collected": [
         {
           "element": "Assessment results",
@@ -289,135 +572,646 @@
           "type": "Care Plan",
           "notes": "Planned review schedule"
         }
-      ]
-    },
-    {
-      "id": "CISV2.BP3",
-      "title": "Medication Management and Safety",
-      "objectives": "Ensure safe medication prescribing, administration, and monitoring through comprehensive medication histories, allergy checking, and drug interaction screening.",
+      ],
+      "data_seen": [
+        {
+          "element": "Previous assessments",
+          "type": "Assessment data",
+          "source": "Care records"
+        },
+        {
+          "element": "Current medications",
+          "type": "Treatment data",
+          "source": "Medication records"
+        },
+        {
+          "element": "Social circumstances",
+          "type": "Context data",
+          "source": "Social care records"
+        }
+      ],
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start",
-            "type": "start",
-            "label": "Medication review initiated"
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 145,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "b71fa782-19aa-4324-a205-a8151bde3225",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care planning initiated",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "check_allergies",
-            "type": "activity",
-            "label": "Check allergy status"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "fc81f4e2-aee5-47e3-94aa-1970677d07a2",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Conduct comprehensive assessment",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "review_current",
-            "type": "activity",
-            "label": "Review current medications"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "cfe351b0-3182-4cc4-86ff-aa304eb8c2ad",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Identify person's goals and priorities",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "assess_interactions",
-            "type": "activity",
-            "label": "Check for interactions"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "b77d525e-1f95-4d20-ae08-4e5db10dff17",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Develop actions and interventions",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "changes_needed",
-            "type": "decision",
-            "label": "Changes required?"
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 138,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "a357dfa4-525d-477b-9b10-f454edc478bc",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Person has capacity?",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "prescribe_new",
-            "type": "activity",
-            "label": "Prescribe new medications"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "addd40f6-57b0-4b56-8f01-90657998249f",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Obtain informed consent",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "discontinue_old",
-            "type": "activity",
-            "label": "Discontinue medications"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 190,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "c11c685a-36a9-4bd5-bc44-c71d059170d5",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Best interests decision",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "provide_information",
-            "type": "activity",
-            "label": "Provide patient information"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "43cf82b9-cfc8-4500-8710-59723b8a32df",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Create formal care plan",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "schedule_review",
-            "type": "activity",
-            "label": "Schedule follow-up"
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 110,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "794e622f-0b22-42b7-96da-b5cca5660097",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Share with care team",
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end",
-            "type": "end",
-            "label": "Review complete"
-          }
-        ],
-        "edges": [
-          {
-            "from": "start",
-            "to": "check_allergies",
-            "label": "Review initiated"
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 145,
+              "y": 880
+            },
+            "angle": 0,
+            "id": "202cf7e0-74d5-489c-a385-d484de665de7",
+            "z": 10,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Plan active",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "check_allergies",
-            "to": "review_current",
-            "label": "Allergies checked"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b71fa782-19aa-4324-a205-a8151bde3225"
+            },
+            "target": {
+              "id": "fc81f4e2-aee5-47e3-94aa-1970677d07a2"
+            },
+            "id": "423bf17c-bf8e-41e5-8210-a34b8579b43f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Planning required"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "review_current",
-            "to": "assess_interactions",
-            "label": "Current meds reviewed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "fc81f4e2-aee5-47e3-94aa-1970677d07a2"
+            },
+            "target": {
+              "id": "cfe351b0-3182-4cc4-86ff-aa304eb8c2ad"
+            },
+            "id": "bc7c4dc0-2bad-4fa9-8e4a-e157950a0363",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Assessment complete"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "assess_interactions",
-            "to": "changes_needed",
-            "label": "Interactions assessed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "cfe351b0-3182-4cc4-86ff-aa304eb8c2ad"
+            },
+            "target": {
+              "id": "b77d525e-1f95-4d20-ae08-4e5db10dff17"
+            },
+            "id": "e8be3ffb-44e2-4f05-915e-329e108f7a61",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Goals identified"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "changes_needed",
-            "to": "prescribe_new",
-            "label": "New prescriptions needed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "b77d525e-1f95-4d20-ae08-4e5db10dff17"
+            },
+            "target": {
+              "id": "a357dfa4-525d-477b-9b10-f454edc478bc"
+            },
+            "id": "346bf1c6-aa58-4852-8a8b-7e2d43fd0d75",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Actions developed"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "changes_needed",
-            "to": "provide_information",
-            "label": "No changes needed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a357dfa4-525d-477b-9b10-f454edc478bc"
+            },
+            "target": {
+              "id": "addd40f6-57b0-4b56-8f01-90657998249f"
+            },
+            "id": "f8e1a659-15dc-45d6-a153-437255ce9186",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Has capacity"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "prescribe_new",
-            "to": "discontinue_old",
-            "label": "New prescribed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a357dfa4-525d-477b-9b10-f454edc478bc"
+            },
+            "target": {
+              "id": "c11c685a-36a9-4bd5-bc44-c71d059170d5"
+            },
+            "id": "7411bf02-0187-4f16-a28f-4be596a04782",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Lacks capacity"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "discontinue_old",
-            "to": "provide_information",
-            "label": "Old discontinued"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "addd40f6-57b0-4b56-8f01-90657998249f"
+            },
+            "target": {
+              "id": "43cf82b9-cfc8-4500-8710-59723b8a32df"
+            },
+            "id": "4f8f473b-1a4b-4573-bf41-f56a68b5a9f4",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Consent given"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
           },
           {
-            "from": "provide_information",
-            "to": "schedule_review",
-            "label": "Information provided"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "c11c685a-36a9-4bd5-bc44-c71d059170d5"
+            },
+            "target": {
+              "id": "43cf82b9-cfc8-4500-8710-59723b8a32df"
+            },
+            "id": "5deb0675-abe2-4bab-8b31-69264941e1a8",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Decision made"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
           },
           {
-            "from": "schedule_review",
-            "to": "end",
-            "label": "Review scheduled"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "43cf82b9-cfc8-4500-8710-59723b8a32df"
+            },
+            "target": {
+              "id": "794e622f-0b22-42b7-96da-b5cca5660097"
+            },
+            "id": "4711f0b9-fceb-49c7-abc8-9329b401ddcf",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Plan created"
+                  }
+                }
+              }
+            ],
+            "z": 19,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "794e622f-0b22-42b7-96da-b5cca5660097"
+            },
+            "target": {
+              "id": "202cf7e0-74d5-489c-a385-d484de665de7"
+            },
+            "id": "707cf509-2d88-4942-b72d-3a30920f038c",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Plan shared"
+                  }
+                }
+              }
+            ],
+            "z": 20,
+            "attrs": {}
           }
         ]
       },
-      "data_seen": [
-        {
-          "element": "Allergy history",
-          "source": "Clinical records",
-          "type": "Safety data"
-        },
-        {
-          "element": "Current medication list",
-          "source": "Prescription records",
-          "type": "Treatment data"
-        },
-        {
-          "element": "Recent investigations",
-          "source": "Laboratory results",
-          "type": "Monitoring data"
-        }
-      ],
+      "id": "CISV2.BP2",
+      "objectives": "Develop comprehensive, person-centred care plans that reflect individual goals, preferences, and support needs while coordinating across multiple service providers.",
+      "title": "Care Planning and Goal Setting",
+      "process_elements": [],
+      "process_flows": []
+    },
+    {
       "data_collected": [
         {
           "element": "Medication changes",
@@ -444,7 +1238,644 @@
           "type": "Medication",
           "notes": "Information provided to patient"
         }
-      ]
+      ],
+      "data_seen": [
+        {
+          "element": "Allergy history",
+          "type": "Safety data",
+          "source": "Clinical records"
+        },
+        {
+          "element": "Current medication list",
+          "type": "Treatment data",
+          "source": "Prescription records"
+        },
+        {
+          "element": "Recent investigations",
+          "type": "Monitoring data",
+          "source": "Laboratory results"
+        }
+      ],
+      "diagram": {
+        "cells": [
+          {
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "9a1a7d14-9cfb-40b9-99ac-efdc9d2e3391",
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Medication review initiated",
+                "fontSize": 9
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 130
+            },
+            "angle": 0,
+            "id": "98f4fd55-5eee-427a-8141-dfe30257f24b",
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Check allergy status",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 236
+            },
+            "angle": 0,
+            "id": "d512d185-8a2d-4115-8638-a639a9cc0f47",
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Review current medications",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 342
+            },
+            "angle": 0,
+            "id": "200b4f8c-26c1-42b9-8ef2-8d69bd20c994",
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Check for interactions",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 58,
+              "y": 448
+            },
+            "angle": 0,
+            "id": "3eaa943c-3e5f-48af-aebf-a9a1cfc42103",
+            "z": 5,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Changes required?",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 562
+            },
+            "angle": 0,
+            "id": "17767d7a-53f2-48f6-8003-5af7491213ac",
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Prescribe new medications",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 80,
+              "y": 668
+            },
+            "angle": 0,
+            "id": "8a113dad-a24d-4f9f-9852-84e3ebbb47d8",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Discontinue medications",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 774
+            },
+            "angle": 0,
+            "id": "e2416f38-b0c9-4d02-b98e-13883c58173a",
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Provide patient information",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 30,
+              "y": 880
+            },
+            "angle": 0,
+            "id": "02fc9941-c408-49fd-9bdd-7b87decb2f22",
+            "z": 9,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Schedule follow-up",
+                "fontSize": 10
+              }
+            }
+          },
+          {
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 65,
+              "y": 986
+            },
+            "angle": 0,
+            "id": "e52cd144-2af7-454c-a54e-0d9a2cd5f9a2",
+            "z": 10,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Review complete",
+                "fontSize": 9
+              }
+            }
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "9a1a7d14-9cfb-40b9-99ac-efdc9d2e3391"
+            },
+            "target": {
+              "id": "98f4fd55-5eee-427a-8141-dfe30257f24b"
+            },
+            "id": "5585cf5f-3fec-4cf4-8bfb-76ffbc57b63f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Review initiated"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "98f4fd55-5eee-427a-8141-dfe30257f24b"
+            },
+            "target": {
+              "id": "d512d185-8a2d-4115-8638-a639a9cc0f47"
+            },
+            "id": "5d2333b0-7926-403f-ab6e-eeeb5a8e5b05",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Allergies checked"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "d512d185-8a2d-4115-8638-a639a9cc0f47"
+            },
+            "target": {
+              "id": "200b4f8c-26c1-42b9-8ef2-8d69bd20c994"
+            },
+            "id": "705fe898-bd84-4243-ac7f-d0b0d369fd98",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Current meds reviewed"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "200b4f8c-26c1-42b9-8ef2-8d69bd20c994"
+            },
+            "target": {
+              "id": "3eaa943c-3e5f-48af-aebf-a9a1cfc42103"
+            },
+            "id": "82c8b435-100c-45a3-8291-970b58319156",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Interactions assessed"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "3eaa943c-3e5f-48af-aebf-a9a1cfc42103"
+            },
+            "target": {
+              "id": "17767d7a-53f2-48f6-8003-5af7491213ac"
+            },
+            "id": "2fdfbd55-735c-494d-a086-3195b189880b",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "New prescriptions needed"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "3eaa943c-3e5f-48af-aebf-a9a1cfc42103"
+            },
+            "target": {
+              "id": "e2416f38-b0c9-4d02-b98e-13883c58173a"
+            },
+            "id": "ad1d0224-ee72-4c03-8390-ab91137f78d4",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No changes needed"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "17767d7a-53f2-48f6-8003-5af7491213ac"
+            },
+            "target": {
+              "id": "8a113dad-a24d-4f9f-9852-84e3ebbb47d8"
+            },
+            "id": "b2f9e0d8-fb24-4653-acc7-dc87783b227d",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "New prescribed"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "8a113dad-a24d-4f9f-9852-84e3ebbb47d8"
+            },
+            "target": {
+              "id": "e2416f38-b0c9-4d02-b98e-13883c58173a"
+            },
+            "id": "54f7facb-d8c0-433b-b62f-01564c70f076",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Old discontinued"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "e2416f38-b0c9-4d02-b98e-13883c58173a"
+            },
+            "target": {
+              "id": "02fc9941-c408-49fd-9bdd-7b87decb2f22"
+            },
+            "id": "125f0ce0-f27b-4d31-94f7-a6db04026dd8",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Information provided"
+                  }
+                }
+              }
+            ],
+            "z": 19,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "02fc9941-c408-49fd-9bdd-7b87decb2f22"
+            },
+            "target": {
+              "id": "e52cd144-2af7-454c-a54e-0d9a2cd5f9a2"
+            },
+            "id": "d2bbc550-285d-4783-b3c2-868fd471287f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Review scheduled"
+                  }
+                }
+              }
+            ],
+            "z": 20,
+            "attrs": {}
+          }
+        ]
+      },
+      "id": "CISV2.BP3",
+      "objectives": "Ensure safe medication prescribing, administration, and monitoring through comprehensive medication histories, allergy checking, and drug interaction screening.",
+      "title": "Medication Management and Safety",
+      "process_elements": [],
+      "process_flows": []
     }
   ]
 }
