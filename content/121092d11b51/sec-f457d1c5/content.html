@@ -1,0 +1,48 @@
+# Decision-Support Logic
+
+## Decision Table 1: Reasonable Adjustment Requirements
+
+**Description:** Determines when reasonable adjustments must be recorded based on person's needs and legal requirements.
+
+| Communication Difficulty | Mobility Issues | Sensory Impairment | Learning Disability | Output Action |
+|---|---|---|---|---|
+| Yes | Any | Any | Any | Record reasonable adjustment - Required |
+| Any | Yes | Any | Any | Record reasonable adjustment - Required |
+| Any | Any | Yes | Any | Record reasonable adjustment - Required |
+| Any | Any | Any | Yes | Record reasonable adjustment - Required |
+| No | No | No | No | Reasonable adjustment - Optional |
+
+## Decision Table 2: Mental Capacity Assessment Trigger
+
+**Description:** Identifies when mental capacity assessment should be conducted for decision-making.
+
+| Age | Complex Decision | Cognitive Concerns | Communication Barriers | Output Action |
+|---|---|---|---|---|
+| ≥18 | Yes | Any | Any | Conduct capacity assessment |
+| ≥18 | Any | Yes | Any | Consider capacity assessment |
+| ≥18 | Any | Any | Yes | Assess with appropriate support |
+| <18 | Any | Any | Any | Apply Gillick competency |
+
+## Decision Table 3: Care Plan Review Frequency
+
+**Description:** Determines appropriate review intervals for care plans based on risk and complexity.
+
+| Risk Level | Service Complexity | Recent Changes | Health Status | Review Frequency |
+|---|---|---|---|---|
+| High | Any | Any | Any | Monthly |
+| Medium | High | Yes | Deteriorating | 6 weeks |
+| Medium | High | No | Stable | 3 months |
+| Low | Low | No | Stable | 6 months |
+| Low | Medium | Yes | Any | 3 months |
+
+## Decision Table 4: Information Sharing Consent
+
+**Description:** Determines information sharing permissions based on consent status and circumstances.
+
+| Explicit Consent | Emergency Situation | Best Interests | Safeguarding Concern | Sharing Permitted |
+|---|---|---|---|---|
+| Yes | Any | Any | Any | Full sharing |
+| No | Yes | Any | Any | Emergency access only |
+| No | No | Yes (documented) | Any | Limited sharing |
+| No | No | Any | Yes | Safeguarding disclosure |
+| Declined | No | No | No | No sharing |
