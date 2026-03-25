@@ -1,0 +1,470 @@
+{
+  "summary_markdown": "The Core Information Standard supports three core business processes that ensure comprehensive person-centred care delivery across health and social care settings.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Initial Patient Registration and Assessment",
+      "objectives": "Capture comprehensive person demographics, health history, and preferences to establish a complete baseline record for new service users.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Patient Arrives"
+          },
+          {
+            "id": "verify_id",
+            "type": "activity",
+            "label": "Verify Identity & NHS Number"
+          },
+          {
+            "id": "capture_demographics",
+            "type": "activity",
+            "label": "Capture Demographics"
+          },
+          {
+            "id": "record_gp",
+            "type": "activity",
+            "label": "Record GP Practice Details"
+          },
+          {
+            "id": "assess_needs",
+            "type": "activity",
+            "label": "Assess Individual Requirements"
+          },
+          {
+            "id": "record_contacts",
+            "type": "activity",
+            "label": "Record Professional & Personal Contacts"
+          },
+          {
+            "id": "complete_about_me",
+            "type": "activity",
+            "label": "Complete 'About Me' Section"
+          },
+          {
+            "id": "review_complete",
+            "type": "decision",
+            "label": "Registration Complete?"
+          },
+          {
+            "id": "save_record",
+            "type": "activity",
+            "label": "Save Patient Record"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration Complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify_id",
+            "label": ""
+          },
+          {
+            "from": "verify_id",
+            "to": "capture_demographics",
+            "label": ""
+          },
+          {
+            "from": "capture_demographics",
+            "to": "record_gp",
+            "label": ""
+          },
+          {
+            "from": "record_gp",
+            "to": "assess_needs",
+            "label": ""
+          },
+          {
+            "from": "assess_needs",
+            "to": "record_contacts",
+            "label": ""
+          },
+          {
+            "from": "record_contacts",
+            "to": "complete_about_me",
+            "label": ""
+          },
+          {
+            "from": "complete_about_me",
+            "to": "review_complete",
+            "label": ""
+          },
+          {
+            "from": "review_complete",
+            "to": "save_record",
+            "label": "Yes"
+          },
+          {
+            "from": "review_complete",
+            "to": "capture_demographics",
+            "label": "No - Missing Data"
+          },
+          {
+            "from": "save_record",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "NHS Number",
+          "source": "Patient ID Card",
+          "type": "Identity"
+        },
+        {
+          "element": "Previous Records",
+          "source": "GP Practice",
+          "type": "Medical History"
+        },
+        {
+          "element": "Medication List",
+          "source": "Patient/Pharmacy",
+          "type": "Clinical"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Person Name",
+          "type": "Demographics",
+          "notes": "Full name including preferred name"
+        },
+        {
+          "element": "Date of Birth",
+          "type": "Demographics",
+          "notes": "Verified against NHS number"
+        },
+        {
+          "element": "Address",
+          "type": "Demographics",
+          "notes": "Current and correspondence addresses"
+        },
+        {
+          "element": "Contact Details",
+          "type": "Demographics",
+          "notes": "Phone, email, preferred contact method"
+        },
+        {
+          "element": "GP Practice Details",
+          "type": "Healthcare",
+          "notes": "Practice code and GP name"
+        },
+        {
+          "element": "Reasonable Adjustments",
+          "type": "Requirements",
+          "notes": "Accessibility and communication needs"
+        },
+        {
+          "element": "About Me Information",
+          "type": "Personal",
+          "notes": "Patient's own description of needs and preferences"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Care Plan Development and Review",
+      "objectives": "Develop comprehensive, person-centred care plans with clear goals, actions, and review mechanisms involving the person and their support network.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care Planning Triggered"
+          },
+          {
+            "id": "assess_needs",
+            "type": "activity",
+            "label": "Assess Current Needs"
+          },
+          {
+            "id": "identify_goals",
+            "type": "activity",
+            "label": "Identify Goals with Person"
+          },
+          {
+            "id": "develop_actions",
+            "type": "activity",
+            "label": "Develop Action Plans"
+          },
+          {
+            "id": "assign_responsibilities",
+            "type": "activity",
+            "label": "Assign Responsibilities"
+          },
+          {
+            "id": "agree_plan",
+            "type": "decision",
+            "label": "Person Agrees Plan?"
+          },
+          {
+            "id": "revise_plan",
+            "type": "activity",
+            "label": "Revise Plan"
+          },
+          {
+            "id": "document_plan",
+            "type": "activity",
+            "label": "Document Care Plan"
+          },
+          {
+            "id": "set_review",
+            "type": "activity",
+            "label": "Schedule Review Date"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Care Plan Active"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess_needs",
+            "label": ""
+          },
+          {
+            "from": "assess_needs",
+            "to": "identify_goals",
+            "label": ""
+          },
+          {
+            "from": "identify_goals",
+            "to": "develop_actions",
+            "label": ""
+          },
+          {
+            "from": "develop_actions",
+            "to": "assign_responsibilities",
+            "label": ""
+          },
+          {
+            "from": "assign_responsibilities",
+            "to": "agree_plan",
+            "label": ""
+          },
+          {
+            "from": "agree_plan",
+            "to": "document_plan",
+            "label": "Yes"
+          },
+          {
+            "from": "agree_plan",
+            "to": "revise_plan",
+            "label": "No"
+          },
+          {
+            "from": "revise_plan",
+            "to": "identify_goals",
+            "label": ""
+          },
+          {
+            "from": "document_plan",
+            "to": "set_review",
+            "label": ""
+          },
+          {
+            "from": "set_review",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Previous Care Plans",
+          "source": "Patient Record",
+          "type": "Care History"
+        },
+        {
+          "element": "Assessment Results",
+          "source": "Clinical Team",
+          "type": "Assessment"
+        },
+        {
+          "element": "Person Preferences",
+          "source": "About Me Section",
+          "type": "Personal"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Strengths and Assets",
+          "type": "Assessment",
+          "notes": "Person's capabilities and resources"
+        },
+        {
+          "element": "Needs and Concerns",
+          "type": "Assessment",
+          "notes": "Areas requiring support or intervention"
+        },
+        {
+          "element": "Goals and Hopes",
+          "type": "Planning",
+          "notes": "Person's aspirations and targets"
+        },
+        {
+          "element": "Actions and Activities",
+          "type": "Planning",
+          "notes": "Specific interventions and responsible parties"
+        },
+        {
+          "element": "Review Arrangements",
+          "type": "Planning",
+          "notes": "Review dates and responsibilities"
+        }
+      ]
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Emergency Information Access",
+      "objectives": "Provide rapid access to critical patient information during emergency care episodes while maintaining appropriate security and consent frameworks.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Emergency Situation"
+          },
+          {
+            "id": "verify_patient",
+            "type": "activity",
+            "label": "Verify Patient Identity"
+          },
+          {
+            "id": "check_consent",
+            "type": "decision",
+            "label": "Consent Available?"
+          },
+          {
+            "id": "emergency_access",
+            "type": "activity",
+            "label": "Emergency Access Override"
+          },
+          {
+            "id": "retrieve_critical",
+            "type": "activity",
+            "label": "Retrieve Critical Information"
+          },
+          {
+            "id": "review_alerts",
+            "type": "activity",
+            "label": "Review Alerts & Warnings"
+          },
+          {
+            "id": "access_medications",
+            "type": "activity",
+            "label": "Access Current Medications"
+          },
+          {
+            "id": "review_advance_decisions",
+            "type": "activity",
+            "label": "Review Advance Decisions"
+          },
+          {
+            "id": "document_access",
+            "type": "activity",
+            "label": "Document Information Access"
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Information Retrieved"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify_patient",
+            "label": ""
+          },
+          {
+            "from": "verify_patient",
+            "to": "check_consent",
+            "label": ""
+          },
+          {
+            "from": "check_consent",
+            "to": "retrieve_critical",
+            "label": "Yes"
+          },
+          {
+            "from": "check_consent",
+            "to": "emergency_access",
+            "label": "No - Emergency Override"
+          },
+          {
+            "from": "emergency_access",
+            "to": "retrieve_critical",
+            "label": ""
+          },
+          {
+            "from": "retrieve_critical",
+            "to": "review_alerts",
+            "label": ""
+          },
+          {
+            "from": "review_alerts",
+            "to": "access_medications",
+            "label": ""
+          },
+          {
+            "from": "access_medications",
+            "to": "review_advance_decisions",
+            "label": ""
+          },
+          {
+            "from": "review_advance_decisions",
+            "to": "document_access",
+            "label": ""
+          },
+          {
+            "from": "document_access",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      },
+      "data_seen": [
+        {
+          "element": "Patient Identity",
+          "source": "Emergency Services",
+          "type": "Demographics"
+        },
+        {
+          "element": "Critical Alerts",
+          "source": "Patient Record",
+          "type": "Safety"
+        },
+        {
+          "element": "Emergency Contacts",
+          "source": "Patient Record",
+          "type": "Contacts"
+        }
+      ],
+      "data_collected": [
+        {
+          "element": "Emergency Access Log",
+          "type": "Audit",
+          "notes": "Record of who accessed what information when"
+        },
+        {
+          "element": "Information Used",
+          "type": "Clinical",
+          "notes": "Which data elements were accessed for care decisions"
+        },
+        {
+          "element": "Consent Status",
+          "type": "Legal",
+          "notes": "Whether consent was available or emergency override used"
+        }
+      ]
+    }
+  ]
+}
