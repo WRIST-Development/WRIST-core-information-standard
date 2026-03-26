@@ -1,0 +1,981 @@
+{
+  "summary_markdown": "The following business processes demonstrate how healthcare professionals capture and utilise Core Information Standard data to deliver person-centred care. Each process shows the flow of clinical activities, data collection points, and professional responsibilities required for safe, effective healthcare delivery.",
+  "activities": [
+    {
+      "id": "initial_assessment_process",
+      "processId": "CISV2.A",
+      "title": "Initial Patient Assessment and Registration",
+      "personas": "Clinical Information Manager, Health IT System Analyst, Clinical Safety Officer",
+      "objectives": "Capture comprehensive patient demographics, clinical history, and establish care baseline while ensuring data quality and clinical safety",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start_assessment",
+            "type": "start",
+            "label": "Patient presents for care",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify_identity",
+            "type": "activity",
+            "label": "Verify patient identity and demographics",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "verification",
+                "source": "NHS records"
+              },
+              {
+                "element": "CISV2.DE10",
+                "type": "confirmation",
+                "source": "patient documents"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE4",
+                "type": "structured",
+                "notes": "First name captured"
+              },
+              {
+                "element": "CISV2.DE5",
+                "type": "structured",
+                "notes": "Family name captured"
+              },
+              {
+                "element": "CISV2.DE15",
+                "type": "identifier",
+                "notes": "NHS number verified"
+              },
+              {
+                "element": "CISV2.DE10",
+                "type": "date",
+                "notes": "Date of birth confirmed"
+              }
+            ]
+          },
+          {
+            "id": "collect_contact_details",
+            "type": "activity",
+            "label": "Record contact information and address",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE19",
+                "type": "structured",
+                "notes": "Primary address line 1"
+              },
+              {
+                "element": "CISV2.DE24",
+                "type": "structured",
+                "notes": "Postcode captured"
+              },
+              {
+                "element": "CISV2.DE29",
+                "type": "structured",
+                "notes": "Phone number recorded"
+              },
+              {
+                "element": "CISV2.DE33",
+                "type": "structured",
+                "notes": "Email address if provided"
+              }
+            ]
+          },
+          {
+            "id": "safety_check",
+            "type": "decision",
+            "label": "Critical safety information present?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "record_alerts",
+            "type": "activity",
+            "label": "Document alerts and allergies",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE199",
+                "type": "safety",
+                "notes": "Clinical alerts flagged"
+              },
+              {
+                "element": "CISV2.DE1268",
+                "type": "clinical",
+                "notes": "Allergy causative agents"
+              },
+              {
+                "element": "CISV2.DE1279",
+                "type": "clinical",
+                "notes": "Reaction descriptions"
+              }
+            ]
+          },
+          {
+            "id": "clinical_history",
+            "type": "activity",
+            "label": "Capture clinical history and problems",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "reference",
+                "source": "previous records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE654",
+                "type": "clinical",
+                "notes": "Active problems documented"
+              },
+              {
+                "element": "CISV2.DE1052",
+                "type": "clinical",
+                "notes": "Family history captured"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "medication",
+                "notes": "Current medications listed"
+              }
+            ]
+          },
+          {
+            "id": "complete_record",
+            "type": "activity",
+            "label": "Validate and sign off assessment",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE199",
+                "type": "validation",
+                "source": "current session"
+              },
+              {
+                "element": "CISV2.DE654",
+                "type": "validation",
+                "source": "current session"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE97",
+                "type": "completion",
+                "notes": "Assessment completion date"
+              },
+              {
+                "element": "CISV2.DE91",
+                "type": "accountability",
+                "notes": "Completing professional name"
+              },
+              {
+                "element": "CISV2.DE96",
+                "type": "identifier",
+                "notes": "Professional registration number"
+              }
+            ]
+          },
+          {
+            "id": "end_assessment",
+            "type": "end",
+            "label": "Assessment complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start_assessment",
+            "to": "verify_identity",
+            "label": "Begin assessment"
+          },
+          {
+            "from": "verify_identity",
+            "to": "collect_contact_details",
+            "label": "Identity confirmed"
+          },
+          {
+            "from": "collect_contact_details",
+            "to": "safety_check",
+            "label": "Contact details recorded"
+          },
+          {
+            "from": "safety_check",
+            "to": "record_alerts",
+            "label": "Yes - safety concerns"
+          },
+          {
+            "from": "safety_check",
+            "to": "clinical_history",
+            "label": "No alerts identified"
+          },
+          {
+            "from": "record_alerts",
+            "to": "clinical_history",
+            "label": "Safety information documented"
+          },
+          {
+            "from": "clinical_history",
+            "to": "complete_record",
+            "label": "History captured"
+          },
+          {
+            "from": "complete_record",
+            "to": "end_assessment",
+            "label": "Record validated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "care_planning_process",
+      "processId": "CISV2.B",
+      "title": "Care Planning and Goal Setting",
+      "personas": "Clinical Information Manager, Clinical Safety Officer, Implementation Project Manager",
+      "objectives": "Develop person-centred care plans with agreed goals, actions, and professional responsibilities while ensuring patient involvement and safety",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start_planning",
+            "type": "start",
+            "label": "Care planning initiated",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "review_assessment",
+            "type": "activity",
+            "label": "Review assessment and clinical information",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "clinical",
+                "source": "problem list"
+              },
+              {
+                "element": "CISV2.DE1239",
+                "type": "risk",
+                "source": "risk assessment"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "medication",
+                "source": "current prescriptions"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "engage_patient",
+            "type": "activity",
+            "label": "Discuss preferences and priorities with patient",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE54",
+                "type": "preference",
+                "source": "about me section"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "goal",
+                "notes": "Patient goals and hopes"
+              },
+              {
+                "element": "CISV2.DE1437",
+                "type": "concern",
+                "notes": "Patient needs and concerns"
+              },
+              {
+                "element": "CISV2.DE1434",
+                "type": "strength",
+                "notes": "Patient strengths identified"
+              }
+            ]
+          },
+          {
+            "id": "develop_goals",
+            "type": "activity",
+            "label": "Set SMART goals and priorities",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "reference",
+                "source": "current session"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1442",
+                "type": "priority",
+                "notes": "Goal importance scores"
+              },
+              {
+                "element": "CISV2.DE1471",
+                "type": "status",
+                "notes": "Goal status tracking"
+              },
+              {
+                "element": "CISV2.DE1445",
+                "type": "action",
+                "notes": "Specific actions defined"
+              }
+            ]
+          },
+          {
+            "id": "assign_responsibilities",
+            "type": "activity",
+            "label": "Assign professional responsibilities and timelines",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1448",
+                "type": "professional",
+                "notes": "Responsible person name"
+              },
+              {
+                "element": "CISV2.DE1449",
+                "type": "role",
+                "notes": "Professional role assignment"
+              },
+              {
+                "element": "CISV2.DE1452",
+                "type": "timeline",
+                "notes": "Action due dates"
+              },
+              {
+                "element": "CISV2.DE1459",
+                "type": "review",
+                "notes": "Review date scheduled"
+              }
+            ]
+          },
+          {
+            "id": "patient_agreement",
+            "type": "decision",
+            "label": "Patient agrees to care plan?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "revise_plan",
+            "type": "activity",
+            "label": "Revise plan based on patient feedback",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "reference",
+                "source": "current goals"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1445",
+                "type": "revision",
+                "notes": "Updated actions"
+              },
+              {
+                "element": "CISV2.DE1458",
+                "type": "update",
+                "notes": "Last updated timestamp"
+              }
+            ]
+          },
+          {
+            "id": "finalize_plan",
+            "type": "activity",
+            "label": "Document agreed care plan and obtain consent",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1473",
+                "type": "consent",
+                "notes": "Patient agreement confirmed"
+              },
+              {
+                "element": "CISV2.DE1474",
+                "type": "identity",
+                "notes": "Patient name on consent"
+              },
+              {
+                "element": "CISV2.DE1479",
+                "type": "timestamp",
+                "notes": "Plan completion date"
+              },
+              {
+                "element": "CISV2.DE1504",
+                "type": "completion",
+                "notes": "Professional completing record"
+              }
+            ]
+          },
+          {
+            "id": "end_planning",
+            "type": "end",
+            "label": "Care plan established",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start_planning",
+            "to": "review_assessment",
+            "label": "Planning commenced"
+          },
+          {
+            "from": "review_assessment",
+            "to": "engage_patient",
+            "label": "Clinical information reviewed"
+          },
+          {
+            "from": "engage_patient",
+            "to": "develop_goals",
+            "label": "Patient preferences captured"
+          },
+          {
+            "from": "develop_goals",
+            "to": "assign_responsibilities",
+            "label": "Goals established"
+          },
+          {
+            "from": "assign_responsibilities",
+            "to": "patient_agreement",
+            "label": "Responsibilities assigned"
+          },
+          {
+            "from": "patient_agreement",
+            "to": "revise_plan",
+            "label": "No - requires changes"
+          },
+          {
+            "from": "patient_agreement",
+            "to": "finalize_plan",
+            "label": "Yes - plan agreed"
+          },
+          {
+            "from": "revise_plan",
+            "to": "patient_agreement",
+            "label": "Plan revised"
+          },
+          {
+            "from": "finalize_plan",
+            "to": "end_planning",
+            "label": "Plan documented and agreed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "medication_reconciliation",
+      "processId": "CISV2.C",
+      "title": "Medication Reconciliation and Management",
+      "personas": "Clinical Information Manager, Clinical Safety Officer, Health IT System Analyst",
+      "objectives": "Ensure accurate, complete medication records with safety checks, allergy verification, and appropriate clinical oversight",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start_med_review",
+            "type": "start",
+            "label": "Medication review initiated",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "gather_sources",
+            "type": "activity",
+            "label": "Collect medication information from all sources",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "existing",
+                "source": "patient records"
+              },
+              {
+                "element": "CISV2.DE1268",
+                "type": "allergy",
+                "source": "allergy records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "medication",
+                "notes": "Current medications from patient"
+              },
+              {
+                "element": "CISV2.DE1341",
+                "type": "supply",
+                "notes": "Last supply dates"
+              }
+            ]
+          },
+          {
+            "id": "verify_allergies",
+            "type": "activity",
+            "label": "Check for drug allergies and contraindications",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1268",
+                "type": "allergy",
+                "source": "allergy register"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "medication",
+                "source": "current list"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1283",
+                "type": "severity",
+                "notes": "Allergy severity confirmed"
+              },
+              {
+                "element": "CISV2.DE1286",
+                "type": "certainty",
+                "notes": "Allergy certainty verified"
+              }
+            ]
+          },
+          {
+            "id": "safety_conflict",
+            "type": "decision",
+            "label": "Safety concerns identified?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "resolve_conflicts",
+            "type": "activity",
+            "label": "Address medication conflicts and allergies",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1268",
+                "type": "conflict",
+                "source": "allergy check"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1394",
+                "type": "discontinuation",
+                "notes": "Conflicting medications stopped"
+              },
+              {
+                "element": "CISV2.DE1397",
+                "type": "reasoning",
+                "notes": "Clinical rationale for changes"
+              },
+              {
+                "element": "CISV2.DE199",
+                "type": "alert",
+                "notes": "Safety alerts updated"
+              }
+            ]
+          },
+          {
+            "id": "reconcile_list",
+            "type": "activity",
+            "label": "Create accurate medication list with dosing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "reference",
+                "source": "verified sources"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1355",
+                "type": "dose",
+                "notes": "Structured dose amounts"
+              },
+              {
+                "element": "CISV2.DE1343",
+                "type": "route",
+                "notes": "Administration routes"
+              },
+              {
+                "element": "CISV2.DE1359",
+                "type": "instructions",
+                "notes": "Dose direction descriptions"
+              },
+              {
+                "element": "CISV2.DE1368",
+                "type": "indication",
+                "notes": "Clinical indications"
+              }
+            ]
+          },
+          {
+            "id": "clinical_review",
+            "type": "activity",
+            "label": "Clinical pharmacist or prescriber review",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1355",
+                "type": "dose",
+                "source": "reconciled list"
+              },
+              {
+                "element": "CISV2.DE654",
+                "type": "indication",
+                "source": "problem list"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1364",
+                "type": "review",
+                "notes": "Next review date set"
+              },
+              {
+                "element": "CISV2.DE1385",
+                "type": "completion",
+                "notes": "Review completion date"
+              },
+              {
+                "element": "CISV2.DE1380",
+                "type": "role",
+                "notes": "Reviewing professional role"
+              }
+            ]
+          },
+          {
+            "id": "update_records",
+            "type": "activity",
+            "label": "Update medication records and alerts",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1376",
+                "type": "change",
+                "notes": "Date of medication changes"
+              },
+              {
+                "element": "CISV2.DE1377",
+                "type": "description",
+                "notes": "Change descriptions"
+              },
+              {
+                "element": "CISV2.DE1384",
+                "type": "professional",
+                "notes": "Professional identifier for audit"
+              }
+            ]
+          },
+          {
+            "id": "end_med_review",
+            "type": "end",
+            "label": "Medication reconciliation complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start_med_review",
+            "to": "gather_sources",
+            "label": "Review commenced"
+          },
+          {
+            "from": "gather_sources",
+            "to": "verify_allergies",
+            "label": "Medication sources collected"
+          },
+          {
+            "from": "verify_allergies",
+            "to": "safety_conflict",
+            "label": "Allergy check complete"
+          },
+          {
+            "from": "safety_conflict",
+            "to": "resolve_conflicts",
+            "label": "Yes - conflicts found"
+          },
+          {
+            "from": "safety_conflict",
+            "to": "reconcile_list",
+            "label": "No conflicts"
+          },
+          {
+            "from": "resolve_conflicts",
+            "to": "reconcile_list",
+            "label": "Conflicts resolved"
+          },
+          {
+            "from": "reconcile_list",
+            "to": "clinical_review",
+            "label": "List reconciled"
+          },
+          {
+            "from": "clinical_review",
+            "to": "update_records",
+            "label": "Clinical review complete"
+          },
+          {
+            "from": "update_records",
+            "to": "end_med_review",
+            "label": "Records updated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "information_sharing",
+      "processId": "CISV2.D",
+      "title": "Secure Information Sharing and Handover",
+      "personas": "Data Protection Officer, Health IT System Analyst, Implementation Project Manager",
+      "objectives": "Enable secure, appropriate information sharing between healthcare providers while maintaining privacy compliance and clinical safety",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start_sharing",
+            "type": "start",
+            "label": "Information sharing request",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify_consent",
+            "type": "activity",
+            "label": "Verify patient consent for information sharing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE215",
+                "type": "consent",
+                "source": "consent records"
+              },
+              {
+                "element": "CISV2.DE216",
+                "type": "restriction",
+                "source": "consent exceptions"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE212",
+                "type": "verification",
+                "notes": "Consent verification date"
+              },
+              {
+                "element": "CISV2.DE233",
+                "type": "professional",
+                "notes": "Professional verifying consent"
+              }
+            ]
+          },
+          {
+            "id": "consent_valid",
+            "type": "decision",
+            "label": "Valid consent exists?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "seek_consent",
+            "type": "activity",
+            "label": "Obtain appropriate consent for sharing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE54",
+                "type": "preference",
+                "source": "patient preferences"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE215",
+                "type": "consent",
+                "notes": "New consent recorded"
+              },
+              {
+                "element": "CISV2.DE212",
+                "type": "date",
+                "notes": "Consent date captured"
+              },
+              {
+                "element": "CISV2.DE218",
+                "type": "professional",
+                "notes": "Professional obtaining consent"
+              }
+            ]
+          },
+          {
+            "id": "determine_scope",
+            "type": "activity",
+            "label": "Determine appropriate information scope",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE199",
+                "type": "critical",
+                "source": "alerts"
+              },
+              {
+                "element": "CISV2.DE1268",
+                "type": "safety",
+                "source": "allergies"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "medication",
+                "source": "current medications"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1799",
+                "type": "classification",
+                "notes": "Information confidentiality level"
+              },
+              {
+                "element": "CISV2.DE1801",
+                "type": "title",
+                "notes": "Document title for sharing"
+              }
+            ]
+          },
+          {
+            "id": "prepare_summary",
+            "type": "activity",
+            "label": "Create clinical summary for sharing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "clinical",
+                "source": "problem list"
+              },
+              {
+                "element": "CISV2.DE1440",
+                "type": "goals",
+                "source": "care plans"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1798",
+                "type": "location",
+                "notes": "Document storage location"
+              },
+              {
+                "element": "CISV2.DE1816",
+                "type": "comments",
+                "notes": "Additional sharing notes"
+              },
+              {
+                "element": "CISV2.DE1811",
+                "type": "completion",
+                "notes": "Summary completion date"
+              }
+            ]
+          },
+          {
+            "id": "secure_transmission",
+            "type": "activity",
+            "label": "Transmit information via secure channels",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1798",
+                "type": "document",
+                "source": "prepared summary"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1803",
+                "type": "format",
+                "notes": "Transmission format type"
+              },
+              {
+                "element": "CISV2.DE1811",
+                "type": "transmission",
+                "notes": "Transmission completion"
+              }
+            ]
+          },
+          {
+            "id": "log_sharing",
+            "type": "activity",
+            "label": "Record information sharing audit trail",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1810",
+                "type": "audit",
+                "notes": "Professional sharing information"
+              },
+              {
+                "element": "CISV2.DE1811",
+                "type": "audit",
+                "notes": "Sharing completion timestamp"
+              },
+              {
+                "element": "CISV2.DE1799",
+                "type": "audit",
+                "notes": "Confidentiality level shared"
+              }
+            ]
+          },
+          {
+            "id": "end_sharing",
+            "type": "end",
+            "label": "Information sharing complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start_sharing",
+            "to": "verify_consent",
+            "label": "Sharing request received"
+          },
+          {
+            "from": "verify_consent",
+            "to": "consent_valid",
+            "label": "Consent status checked"
+          },
+          {
+            "from": "consent_valid",
+            "to": "seek_consent",
+            "label": "No - consent required"
+          },
+          {
+            "from": "consent_valid",
+            "to": "determine_scope",
+            "label": "Yes - consent exists"
+          },
+          {
+            "from": "seek_consent",
+            "to": "determine_scope",
+            "label": "Consent obtained"
+          },
+          {
+            "from": "determine_scope",
+            "to": "prepare_summary",
+            "label": "Scope determined"
+          },
+          {
+            "from": "prepare_summary",
+            "to": "secure_transmission",
+            "label": "Summary prepared"
+          },
+          {
+            "from": "secure_transmission",
+            "to": "log_sharing",
+            "label": "Information transmitted"
+          },
+          {
+            "from": "log_sharing",
+            "to": "end_sharing",
+            "label": "Audit trail complete"
+          }
+        ]
+      }
+    }
+  ]
+}
