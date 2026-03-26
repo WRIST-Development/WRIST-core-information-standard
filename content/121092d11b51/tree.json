@@ -1,943 +1,2081 @@
 [
   {
-    "children": [],
-    "content": "## Introduction\n\nThe Core Information Standard v2.0 defines the essential data elements for person-centered health and care records across the UK. This standard establishes a comprehensive framework for capturing demographic information, clinical data, social care needs, and personal preferences in a structured, interoperable format.\n\n### Purpose and Scope\n\nThis Digital Adaptation Kit (DAK) provides implementation guidance for the Core Information Standard v2.0, supporting healthcare organizations, social care providers, and technology vendors in adopting this foundational standard. The standard covers the complete spectrum of person-centered information from basic demographics through complex care planning, legal frameworks, and end-of-life preferences.\n\n### Background\n\nDeveloped through extensive stakeholder consultation, the Core Information Standard v2.0 represents a significant evolution in integrated health and social care documentation. It emphasizes person-centered care by incorporating \"About Me\" sections alongside traditional clinical data, ensuring that individual preferences, communication needs, and personal circumstances are captured systematically. The standard aligns with UK regulatory requirements including the Equality Act 2010, Mental Capacity Act 2005, and supports initiatives like the Accessible Information Standard.",
-    "id": "sec-0589b6f9",
-    "level": 1,
+    "id": "sec-f94f6f01",
     "sectionType": "introduction",
+    "title": "Introduction",
+    "level": 1,
     "status": "draft",
-    "title": "Introduction"
+    "children": [],
+    "content": "## Purpose and Scope\n\nThe Core Information Standard Version 2.0 defines the fundamental information requirements for person-centred health and care records across all settings in the United Kingdom. This standard ensures consistent capture and sharing of essential demographic, clinical, and social care information to support integrated care delivery.\n\nThe standard applies to all health and care professionals, organisations, and systems involved in delivering or coordinating care. It encompasses acute, community, mental health, and social care settings, promoting seamless information exchange across organisational boundaries.\n\n## Background\n\nDeveloped through extensive stakeholder consultation, this standard addresses the critical need for standardised information capture in an increasingly integrated care landscape. It builds upon previous PRSB standards while incorporating lessons learned from implementation experiences and evolving care models. The standard supports the NHS Long Term Plan's vision for joined-up care by ensuring all professionals have access to consistent, comprehensive information about the people they serve.\n\n## Document Overview\n\nThis Digital Adaptation Kit provides implementation guidance for the Core Information Standard Version 2.0. It includes clinical terminology mappings, technical specifications, and practical recommendations for system developers and implementers. The kit is organised to support phased implementation, beginning with foundational elements and progressing through increasingly complex information requirements."
   },
   {
-    "children": [],
-    "content": "## Health Interventions & Recommendations\n\nThe Core Information Standard v2.0 enables comprehensive documentation of health interventions across multiple care contexts. Key recommendations focus on person-centered implementation and data quality.\n\n### Key Recommendations\n\n| Intervention | Recommendation | Source | Grade |\n|---|---|---|---|\n| Reasonable Adjustments | Mandatory documentation per Equality Act 2010; use SNOMED CT coding (1108111000000107) | NHS England Accessible Information Standard | A |\n| Mental Capacity Assessment | Document capacity decisions with clear rationale; include best interests decisions where applicable | Mental Capacity Act 2005 | A |\n| Medication Management | Use dm+d coding for all medications; document administration details and discontinuation reasons | NHS Digital Dose Syntax Guidance | A |\n| Care Planning | Integrate person's goals, strengths, and preferences; document agreement with person/representative | NICE Guidelines on Person-Centered Care | B |\n| Risk Assessment | Document risk type, mitigation strategies, and review dates; include self-harm and safeguarding risks | NHS Safeguarding Guidelines | A |\n| Advance Care Planning | Record ADRT, LPA details, and preferred place of care/death with regular review | Gold Standards Framework | B |\n| Communication Support | Document communication methods, aids required, and language preferences | Accessible Information Standard | A |\n| Social Care Needs | Capture primary support reasons, care package details, and funding arrangements | Care Act 2014 Guidance | A |\n\n### Context\n\nThese recommendations emphasize the importance of capturing both clinical and social determinants of health. The standard's comprehensive approach ensures continuity of care across settings while maintaining focus on individual preferences and legal requirements.",
-    "id": "sec-16fbbf6b",
-    "level": 1,
+    "id": "sec-da3282b2",
     "sectionType": "interventions",
+    "title": "Health Interventions & Recommendations",
+    "level": 1,
     "status": "draft",
-    "title": "Health Interventions & Recommendations"
+    "children": [],
+    "content": "## Key Recommendations\n\n| Intervention | Recommendation | Source | Grade |\n|---|---|---|---|\n| Information Governance | Implement robust consent management processes for information sharing, including explicit recording of consent decisions and rationale | Information Governance Alliance | A |\n| Reasonable Adjustments | Proactively identify and document all reasonable adjustments required under the Equality Act 2010 to ensure equitable access to services | Equality Act 2010, NHS England | A |\n| Safeguarding | Establish clear protocols for recording and sharing safeguarding concerns across organisational boundaries | NHS Safeguarding Accountability Framework | A |\n| Mental Capacity | Document all mental capacity assessments with clear decision-specific outcomes and best interests decisions where applicable | Mental Capacity Act 2005 | A |\n| Care Planning | Develop person-centred care plans collaboratively with individuals and their representatives, documenting goals, actions, and review arrangements | NICE Guidelines NG86 | B |\n| End of Life Care | Record CPR decisions, advance statements, and preferred places of care/death with appropriate review mechanisms | ReSPECT Process, NHS England | A |\n| Medication Safety | Maintain comprehensive medication records including allergies, current medications, and discontinuation reasons | NICE Guidelines NG5 | A |\n\n## Implementation Context\n\nThese recommendations form the foundation for safe, effective information sharing across health and care settings. Organisations should prioritise implementation based on local risk assessments and population needs, ensuring compliance with legal requirements takes precedence."
   },
   {
-    "children": [],
-    "content": "## Generic Personas\n\nThe following personas represent key users and stakeholders of the Core Information Standard v2.0 implementation.\n\n| Persona ID | Title | Description | Key Competencies |\n|---|---|---|---|\n| CISV2.P1 | GP/Primary Care Physician | Manages ongoing care for patients in community settings; needs comprehensive view of medical history, medications, and social circumstances | Clinical assessment, medication management, care coordination, SNOMED CT coding |\n| CISV2.P2 | Social Worker | Coordinates social care services and safeguarding; requires access to legal information, care plans, and support networks | Safeguarding assessment, care planning, Mental Capacity Act knowledge, multi-agency coordination |\n| CISV2.P3 | Community Nurse | Provides nursing care in home/community settings; needs medication information, care plans, and communication preferences | Clinical procedures, medication administration, wound care, patient education |\n| CISV2.P4 | Hospital Consultant | Specialist providing acute/specialist care; requires clinical history, investigation results, and advance decisions | Specialist clinical knowledge, diagnostic interpretation, treatment planning |\n| CISV2.P5 | Care Home Manager | Oversees residential care delivery; needs comprehensive personal information, care plans, and legal documentation | Care quality management, staff supervision, regulatory compliance |\n| CISV2.P6 | Patient/Service User | Person receiving care; wants control over personal information sharing and care preferences | Self-advocacy, health literacy (variable), personal preference expression |\n| CISV2.P7 | Family Carer | Provides informal care and advocacy; needs understanding of care plans and communication methods | Care provision, advocacy, emotional support, care coordination |\n| CISV2.P8 | Paramedic/Emergency Responder | Provides urgent/emergency care; requires rapid access to critical information including allergies and advance decisions | Emergency assessment, rapid decision-making, clinical procedures |\n\n### Persona Context\n\nThese personas interact with different aspects of the Core Information Standard based on their roles. GPs and consultants focus on clinical sections, while social workers emphasize legal frameworks and support needs. All personas benefit from the person-centered \"About Me\" information for delivering appropriate care.",
-    "id": "sec-1fb0493e",
-    "level": 1,
+    "id": "sec-7defbc4e",
     "sectionType": "personas",
+    "title": "Generic Personas",
+    "level": 1,
     "status": "draft",
-    "title": "Generic Personas"
+    "children": [],
+    "content": "## Personas Overview\n\n| Persona ID | Occupational Title | Description | Targeted | Key Competencies |\n|---|---|---|---|---|\n| CISV2.P1 | General Practitioner | Primary care physician responsible for ongoing care coordination and medical management | Yes | Clinical assessment, care coordination, information synthesis, prescribing |\n| CISV2.P2 | District Nurse | Community-based nurse providing care in patients' homes | Yes | Clinical procedures, wound care, medication administration, care planning |\n| CISV2.P3 | Social Worker | Professional coordinating social care assessments and support packages | Yes | Needs assessment, safeguarding, care package coordination, advocacy |\n| CISV2.P4 | Care Home Manager | Responsible for residential care facility operations and resident wellbeing | Yes | Care quality oversight, staff management, regulatory compliance, family liaison |\n| CISV2.P5 | Hospital Consultant | Specialist physician managing acute/complex conditions | Yes | Specialist diagnosis, treatment planning, multidisciplinary coordination |\n| CISV2.P6 | Mental Health Nurse | Specialist nurse supporting individuals with mental health needs | Yes | Mental health assessment, therapeutic interventions, risk management, medication management |\n| CISV2.P7 | Occupational Therapist | Allied health professional supporting functional independence | Yes | Functional assessment, equipment provision, environmental adaptation, rehabilitation planning |\n| CISV2.P8 | Pharmacist | Medication expert ensuring safe and effective pharmaceutical care | Yes | Medication review, drug interaction checking, patient counselling, formulary management |\n| CISV2.P9 | Paramedic | Emergency care professional providing pre-hospital treatment | Yes | Emergency assessment, life support, clinical decision-making, handover communication |\n| CISV2.P10 | Patient/Service User | Individual receiving care and support services | Yes | Self-advocacy, care participation, information provision, consent |\n\n### CISV2.P1 - General Practitioner\nGPs serve as the primary point of contact for most healthcare needs, managing ongoing conditions while coordinating specialist referrals. They require comprehensive access to all information sections, particularly medications, problem lists, and care plans.\n\n### CISV2.P2 - District Nurse\nDistrict nurses deliver skilled nursing care in community settings, requiring detailed access to clinical procedures, wound care documentation, and medication administration records. They play a crucial role in identifying changes in condition and updating care plans.\n\n### CISV2.P3 - Social Worker\nSocial workers coordinate complex care packages and safeguarding responses. They need comprehensive access to social circumstances, legal information, and multi-agency plans while ensuring appropriate information governance.\n\n### CISV2.P4 - Care Home Manager\nCare home managers oversee daily care delivery for residents with complex needs. They require access to all resident information to ensure safe, person-centred care while managing regulatory requirements.\n\n### CISV2.P5 - Hospital Consultant\nConsultants provide specialist expertise for complex conditions. They need efficient access to relevant clinical history, investigation results, and current management plans to inform specialist interventions.\n\n### CISV2.P6 - Mental Health Nurse\nMental health nurses support individuals experiencing mental health challenges. They require access to risk assessments, mental health legislation status, and therapeutic interventions while maintaining therapeutic relationships.\n\n### CISV2.P7 - Occupational Therapist\nOccupational therapists assess functional abilities and recommend adaptations. They need access to mobility assessments, equipment provisions, and environmental factors affecting independence.\n\n### CISV2.P8 - Pharmacist\nPharmacists ensure medication safety across care transitions. They require comprehensive medication histories, allergy information, and clinical context to optimise pharmaceutical care.\n\n### CISV2.P9 - Paramedic\nParamedics provide emergency care requiring rapid access to critical information. They need immediate visibility of advance decisions, key medical conditions, and current medications.\n\n### CISV2.P10 - Patient/Service User\nIndividuals receiving care are central to the information standard. They should have meaningful access to their information, contribute to care planning, and control information sharing preferences."
   },
   {
-    "children": [],
-    "content": "## User Scenarios\n\n### Scenario 1: Emergency Hospital Admission\n\n**Narrative**: Mrs. Chen, 78, is brought to A&E following a fall at home. She has moderate dementia and limited English proficiency. The paramedics access her Core Information record via the Summary Care Record.\n\n| Category | Description |\n|---|---|\n| Actors | Paramedic (CISV2.P8), A&E Consultant (CISV2.P4), Mrs. Chen (CISV2.P6), Daughter (CISV2.P7) |\n| Trigger | Emergency call reporting fall with confusion |\n| Key Data Used | Reasonable adjustments (interpreter needed), medications list, DNACPR status, emergency contacts, cognitive impairment details |\n| Outcome | Appropriate care provided with interpreter support; daughter contacted; admission avoided through community support |\n| Linked Processes | Emergency assessment, medication reconciliation, discharge planning |\n\n### Scenario 2: Social Care Review\n\n**Narrative**: Mr. Kumar's annual care package review identifies increasing mobility difficulties. His social worker coordinates with health professionals to reassess needs.\n\n| Category | Description |\n|---|---|\n| Actors | Social Worker (CISV2.P2), Mr. Kumar (CISV2.P6), Community OT, Care Provider |\n| Trigger | Scheduled annual review plus reported mobility changes |\n| Key Data Used | Care and support plan, assessment history, goals and outcomes, equipment provided, primary support reason |\n| Outcome | Care package adjusted with additional mobility aids; referral to falls prevention service |\n| Linked Processes | Needs assessment, care planning, equipment provision, multi-disciplinary review |\n\n### Scenario 3: Medication Change in Primary Care\n\n**Narrative**: Dr. Patel reviews Mr. Thompson's medications following a hospital discharge letter indicating adverse reaction to ACE inhibitor.\n\n| Category | Description |\n|---|---|\n| Actors | GP (CISV2.P1), Mr. Thompson (CISV2.P6), Practice Pharmacist |\n| Trigger | Hospital discharge notification with medication change |\n| Key Data Used | Allergies and adverse reactions, current medications, problem list, recent procedures |\n| Outcome | Medication safely switched with appropriate coding; allergy record updated; patient counselled |\n| Linked Processes | Medication review, allergy documentation, patient education, coding update |",
-    "id": "sec-d0a8990d",
-    "level": 1,
-    "sectionType": "user_scenarios",
-    "status": "draft",
-    "title": "User Scenarios"
-  },
-  {
-    "children": [],
-    "content": "## References\n\n### Standards and Specifications\n\n1. **NHS Data Dictionary** - NHS Digital (2023). Comprehensive data definitions for NHS information standards. Available at: https://datadictionary.nhs.uk/\n\n2. **SNOMED CT UK Edition** - NHS Digital (2023). Clinical terminology for UK healthcare. Available at: https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct\n\n3. **Dictionary of Medicines and Devices (dm+d)** - NHS Digital (2023). UK medicines and devices terminology. Available at: https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd\n\n4. **UK Core FHIR Implementation Guide** - NHS Digital (2023). FHIR profiles for UK use. Available at: https://simplifier.net/ukcore\n\n### Regulatory and Policy Documents\n\n5. **Equality Act 2010** - UK Government. Legislative framework for reasonable adjustments. Available at: https://www.legislation.gov.uk/ukpga/2010/15/contents\n\n6. **Mental Capacity Act 2005** - UK Government. Framework for capacity assessment and best interests decisions. Available at: https://www.legislation.gov.uk/ukpga/2005/9/contents\n\n7. **Accessible Information Standard** - NHS England (2016). Requirements for accessible information and communication support. Available at: https://www.england.nhs.uk/ourwork/accessibleinfo/\n\n8. **Care Act 2014 Statutory Guidance** - Department of Health and Social Care (2023). Guidance on adult social care duties. Available at: https://www.gov.uk/government/publications/care-act-statutory-guidance/care-and-support-statutory-guidance\n\n### Clinical Guidelines\n\n9. **NICE Guideline [NG86]: People's Experience in Adult Social Care Services** - NICE (2018). Person-centered care principles.\n\n10. **Gold Standards Framework** - National Gold Standards Framework Centre (2023). End of life care guidance. Available at: https://www.goldstandardsframework.org.uk/\n\n### Technical Implementation\n\n11. **FHIR Dose Syntax Implementation Guidance** - NHS Digital (2023). Structured dose direction implementation.\n\n12. **PRSB Standards for the Structure and Content of Health and Care Records** - Professional Record Standards Body (2023). Available at: https://theprsb.org/standards/\n\n### Related Standards\n\n13. **Summary Care Record Application (SCRa)** - NHS Digital (2023). National summary record system.\n\n14. **Safeguarding Adults: Roles and Competencies for Health Care Staff** - Royal College of Nursing (2018). Intercollegiate guidance document.\n\n15. **Deprivation of Liberty Safeguards Code of Practice** - Department of Health (2008). DoLS implementation guidance.",
-    "id": "sec-6e77ceee",
-    "level": 1,
+    "id": "sec-b9967dbb",
     "sectionType": "references",
+    "title": "References",
+    "level": 1,
     "status": "draft",
-    "title": "References"
+    "children": [],
+    "content": "## References\n\n### Legislation and Statutory Guidance\n\n1. Equality Act 2010. UK Parliament. Available at: https://www.legislation.gov.uk/ukpga/2010/15/contents\n\n2. Mental Capacity Act 2005. UK Parliament. Available at: https://www.legislation.gov.uk/ukpga/2005/9/contents\n\n3. Mental Health Act 1983 (as amended 2007). UK Parliament. Available at: https://www.legislation.gov.uk/ukpga/1983/20/contents\n\n4. Data Protection Act 2018. UK Parliament. Available at: https://www.legislation.gov.uk/ukpga/2018/12/contents\n\n### NHS Policy and Guidance\n\n5. NHS England (2019). The NHS Long Term Plan. Available at: https://www.longtermplan.nhs.uk/\n\n6. NHS Digital (2022). NHS Data Dictionary. Available at: https://datadictionary.nhs.uk/\n\n7. NHS England (2020). Safeguarding Accountability and Assurance Framework. Available at: https://www.england.nhs.uk/publication/safeguarding-accountability-and-assurance-framework/\n\n8. NHS Digital (2021). Organisation Data Service. Available at: https://digital.nhs.uk/services/organisation-data-service\n\n### Clinical Guidelines\n\n9. NICE (2018). Decision-making and mental capacity (NG108). Available at: https://www.nice.org.uk/guidance/ng108\n\n10. NICE (2016). Multimorbidity: clinical assessment and management (NG56). Available at: https://www.nice.org.uk/guidance/ng56\n\n11. NICE (2015). Medicines optimisation (NG5). Available at: https://www.nice.org.uk/guidance/ng5\n\n12. NICE (2018). People's experience in adult social care services (NG86). Available at: https://www.nice.org.uk/guidance/ng86\n\n### Technical Standards\n\n13. HL7 UK (2021). UK Core FHIR Implementation Guide. Available at: https://simplifier.net/ukcore\n\n14. SNOMED International (2023). SNOMED CT Browser. Available at: https://termbrowser.nhs.uk/\n\n15. NHS Digital (2022). Dictionary of medicines and devices (dm+d). Available at: https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd\n\n### Professional Standards\n\n16. Professional Record Standards Body (2023). Core Information Standard v2.0. Available at: https://theprsb.org/standards/coreinformationstandard/\n\n17. Royal College of Physicians (2017). National Early Warning Score (NEWS) 2. Available at: https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2\n\n18. Resuscitation Council UK (2021). ReSPECT (Recommended Summary Plan for Emergency Care and Treatment). Available at: https://www.resus.org.uk/respect/"
   },
   {
-    "children": [],
-    "content": "The Core Information Standard v2.0 defines five primary business processes that span initial registration through ongoing care management. Each process involves multiple personas working collaboratively to capture, maintain, and utilize person-centered information effectively.",
-    "id": "sec-fe6b038e",
+    "id": "sec-1b419926",
+    "sectionType": "data_elements",
+    "title": "Core Data Elements",
     "level": 1,
+    "status": "draft",
+    "children": [],
+    "content": "## Core Data Elements\n\nThis section provides a comprehensive extraction of all data elements defined in the Core Information Standard Version 2.0. Each element is assigned a unique identifier and documented with its key attributes including description, data type, cardinality, and applicable value sets.\n\nThe elements are organised by their functional groupings as defined in the information model, maintaining the hierarchical structure to show relationships between parent groups and child elements.\n\n## Person demographics\n\n| Element ID | Label | Description | Data Type | Required | Multiple | Value Set |\n|---|---|---|---|---|---|\n| CISV2.DE1 | Person demographics | The person's details and contact information. | Group | M | No | — |\n| CISV2.DE2 | → Person name | Details of the person's name | Group | M | No | — |\n| CISV2.DE3 | → → Person first name | The first name(s) of the person. This includes middle names. | string | M | Yes | NHS Data Dictionary: Person given name |\n| CISV2.DE4 | → → Person family name | The family name or surname of the person | string | M | Yes | NHS Data Dictionary: Person family name |\n| CISV2.DE5 | → → Person preferred name | The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by. | string | R | No | NHS Data Dictionary: Person full name |\n| CISV2.DE6 | → → Title | Person's title | string | R | No | NHS Data Dictionary: Person title |\n| CISV2.DE7 | → → Person name suffix | A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM | string | R | Yes | NHS Data Dictionary: Person name suffix |\n| CISV2.DE8 | → → Person full name | The full name of the person in text representation. | string | R | No | NHS Data Dictionary: Patient full name |\n| CISV2.DE9 | → Date of birth | The date of birth of the person. | date | M | No | NHS Data Dictionary: Person birth date |\n| CISV2.DE10 | → Gender | The person's stated gender. | string | R | No | NHS Data Dictionary: Person stated gender code |\n| CISV2.DE11 | → Ethnicity | The ethnicity of the person as specified by the person. | string | R | No | NHS Data Dictionary: Ethnic category |\n| CISV2.DE12 | → Religion | The religious affiliation as specified by the person. | Coded | R | No | SNOMED CT: <<999000531000000100>> |\n| CISV2.DE13 | → Sex | The person's phenotypic sex. Determines how the person will be treated clinically. | string | O | No | NHS Data Dictionary: person phenotypic sex |\n| CISV2.DE14 | → NHS number | The unique identifier for a person within the NHS in England and Wales. | string | R | No | NHS Data Dictionary: NHS number |\n| CISV2.DE15 | → NHS number status indicator | Provides an indication of the reliability of an NHS Number. | string | R | No | NHS Data Dictionary: NHS number status indicator |\n| CISV2.DE16 | → Other identifier | Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland. | string | R | Yes | NHS Data Dictionary: Local patient identifier(extended) |\n| CISV2.DE17 | → Person's address | Person's usual place of residence, and where relevant temporary and correspondence addresses. | Group | M | Yes | — |\n| CISV2.DE18 | → → Address line 1 | Person's first line of address. | string | M | No | NHS Data Dictionary: Address line 1 |\n| CISV2.DE19 | → → Address line 2 | Person's second line of address. | string | R | No | NHS Data Dictionary: Address line 2 |\n| CISV2.DE20 | → → Address line 3 | Person's third line of address. | string | R | No | NHS Data Dictionary: Address line 3 |\n| CISV2.DE21 | → → Address line 4 | Person's fourth line of address. | string | R | No | NHS Data Dictionary: Address line 4 |\n| CISV2.DE22 | → → Address line 5 | Person's fifth line of address. | string | R | No | NHS Data Dictionary: Address line 5 |\n| CISV2.DE23 | → → Postcode | The person's postcode. | string | R | No | NHS Data Dictionary: Postcode of usual address |\n| CISV2.DE24 | → → Address type | The type of address e.g. Main address, Temp address | string | R | No | NHS Data Dictionary: Address association type |\n| CISV2.DE25 | → Person's contact details | Details of the person's contact information. | Group | R | No | — |\n| CISV2.DE26 | → → Preferred contact method | Preferred contact method, e.g. email, letter, phone, text message etc. | string | R | No | NHS Data Dictionary: Communication contact method |\n| CISV2.DE27 | → → Person's telephone number details | The person's telephone number details | Group | R | Yes | — |\n| CISV2.DE28 | → → → Person's telephone number | The person's telephone number | string | R | No | NHS Data Dictionary: UK telephone number |\n| CISV2.DE29 | → → → Person's telephone number type | The contact type e.g. home, mobile | string | R | No | FHIR: Contact point use |\n| CISV2.DE30 | → → → Preference of telephone number | The preferred order of use for the telephone number | Text | R | No | Free text: Preference of use 1-5, 1 being the highest. |\n| CISV2.DE31 | → → Person's email address details | Details of the person's email address | Group | R | Yes | — |\n| CISV2.DE32 | → → → Person's email address | Email address of the person. | string | R | No | NHS Data Dictionary: Contact email address |\n| CISV2.DE33 | → → → Person's email address type | The type of email address, home, work | string | R | No | FHIR: Contact point use |\n| CISV2.DE34 | → → → Preference of email address | The preferred order of use of email address | Text | R | No | Free text: Preference of use 1-5, 1 being the highest. |\n| CISV2.DE35 | → → Other contact information | Contact details via fax, sms, url | string | R | No | NHS Data Dictionary: Communication contact string |\n| CISV2.DE36 | → Photograph | A photograph of the person for identification and to show what the person looks like normally. | identifier | R | No | Multimedia file |\n| CISV2.DE37 | → Place of birth | The country of birth of the person. | string | O | No | NHS Data Dictionary: Country code (birth) |\n| CISV2.DE38 | → Marital status | An indicator to identify the legal marital status of the person. | string | O | No | NHS Data Dictionary: Person marital status |\n| CISV2.DE39 | → Immigration status | Include details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK. Include start date, end date and any comments. | Group | R | No | — |\n| CISV2.DE40 | → → Immigration status | Details of the immigration status of the person, their permissions to live and receive care and support in the UK e.g. asylum seeker, indefinite leave to remain in the UK. | Coded | R | No | Code: 1-10 (various immigration statuses) |\n| CISV2.DE41 | → → Start date | Start date of immigration status | datetime | R | No | — |\n| CISV2.DE42 | → → End date | End date of immigration status | datetime | R | No | — |\n| CISV2.DE43 | → → Comment | Relevant comments about the person's immigration status | text | R | No | Free text |\n| CISV2.DE44 | → Organ and tissue donation | Whether the person has given consent for organ and/or tissue donation or opted out of automatic donation where applicable. This is information provided by the national register. | boolean | R | No | Flag: Yes or No |\n| CISV2.DE45 | → Overseas visitor status | The charging category relating to an overseas visitor. | string | R | No | NHS Data Dictionary: Overseas visitor charging category |\n\n## GP practice\n\n| Element ID | Label | Description | Data Type | Required | Multiple | Value Set |\n|---|---|---|---|---|---|\n| CISV2.DE46 | GP practice | Details of the person's GP practice. | Group | M | No | — |\n| CISV2.DE47 | → GP practice record entry | This is a GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items. | Group | R | Yes | — |\n| CISV2.DE48 | → → GP name | The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative. | PRSB-Standards/WRIST-ips-datatypes | R | No | — |\n| CISV2.DE49 | → → GP practice details | Name and address of the person's registered GP Practice. Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address. | PRSB-Standards/WRIST-ips-datatypes | R | No | — |\n| CISV2.DE50 | → → GP practice identifier | The identifier of the registered GP practice. | PRSB-Standards/WRIST-ips-datatypes | M | No | NHS Data Dictionary: GENERAL MEDICAL PRACTICE (PATIENT REGISTRATION) |\n\n## About me\n\n| Element ID | Label | Description | Data Type | Required | Multiple | Value Set |\n|---|---|---|---|---|---|\n| CISV2.DE51 | About me | About me | Group | R | No | — |\n| CISV2.DE52 | → What is most important to me | A description of what is most important to you. | Group | R | No | — |\n| CISV2.DE53 | → → What is most important to me | A description of what is most important to you. Emergency Information: Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. Other Information: This could include: Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering | text | R | No | Free text |\n| CISV2.DE54 | → People who are important to me | Details of who is important to you and why. | Group | R | No | — |\n| CISV2.DE55 | → → People who are important to me | Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say | text | R | No | Free text |\n| CISV2.DE56 | → How I communicate and how to communicate with me | A description of how you communicate normally. | Group | R | No | — |\n| CISV2.DE57 | → → How I communicate and how to communicate with me | A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information. Describe how you would like others to engage and communicate with you, including how you would like to be addressed. | text | R | No | Free text |\n| CISV2.DE58 | → My wellness | A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. | Group | R | No | — |\n| CISV2.DE59 | → → My wellness | A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered. Include your wellbeing and lifestyle goals and aspirations | text | R | No | Free text |\n| CISV2.DE60 | → Please do and please don't | A description of things you want someone supporting you to do (or not to do). | Group | R | No | — |\n| CISV2.DE61 | → → Please do and please don't | A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want. | text | R | No | Free text |\n| CISV2.DE62 | → How and when to support me | A description of how and when you want someone caring for you to support you. | Group | R | No | — |\n| CISV2.DE63 | → → How and when to support me | A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood). This could include support you need to maintain important routines or to carry out particular activities, for example: Personal care routines, Eating and drinking, Bedtime routines, Taking medications, Moving and transitioning. This could also include support needed with: wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided. | text | R | No | Free text |\n| CISV2.DE64 | → Also worth knowing about me | A description of what is also worth knowing about you for people caring or supporting you. | Group | R | No | — |\n| CISV2.DE65 | → → Also worth knowing about me | A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life: your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike. This could also include any care and support preferences that have not been included elsewhere. | text | R | No | Free text |\n| CISV2.DE66 | → Date | This is a record of the date that this information was last updated. | datetime | R | No | — |\n| CISV2.DE67 | → Supported to write this by | Where relevant, this is a record of name, relationship/role and contact details of the individual who supported the person to write this section e.g. carer, family member, advocate, professional. | text | R | No | Free text |\n| CISV2.DE68 | → Location to multimedia file | The link to the person's multimedia file | text | R | No | Link to URL |\n\n## Individual requirements\n\n| Element ID | Label | Description | Data Type | Required | Multiple | Value Set |\n|---|---|---|---|---|---|\n| CISV2.DE69 | Individual requirements | The individual requirements of the person. | Group | R | No | — |\n| CISV2.DE70 | → Reasonable adjustment | A record of reasonable adjustments that must be provided by the service to comply with the Equality Act 2010. | Group | R | No | — |\n| CISV2.DE71 | → → Reasonable adjustment record entry | This is a reasonable adjustment record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items | Group | R | Yes | — |\n| CISV2.DE72 | → → → Location | The location where the reasonable adjustment was identified. | Group | R | No | — |\n| CISV2.DE73 | → → → → Coded value | The coded value for location. | string | R | No | NHS Data Dictionary: Organisation data service code |\n| CISV2.DE74 | → → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE75 | → → → Reasonable adjustment flag | Under the Equality Act 2010, organisations have a legal duty to make changes in their approach or provision to ensure that services are as accessible to people with disabilities as they are for everybody else. These changes are called reasonable adjustments. Reasonable adjustments can mean alterations to buildings by providing lifts, wide doors, ramps and tactile signage, but may also mean changes to policies, procedures and staff training to ensure that services work equally well for people with physical or sensory disabilities, learning disabilities or long-term conditions such as dementia. Other adjustments include longer appointments, providing easy read materials or communications via a carer. This legal duty is anticipatory which means a service should know about a person's need for adjustments when they are referred or present for care. For this to happen, and for optimum care to be delivered, adjustments need to be recorded and shared across the NHS. | boolean | R | No | SNOMED CT: 1108111000000107 |Requires reasonable adjustments for health and care access (Equality Act 2010) (finding)| |\n| CISV2.DE76 | → → → Reasonable adjustment | The reasonable adjustment required e.g. requires specific contact method, requires communication professional | Group | R | No | — |\n| CISV2.DE77 | → → → → Coded value | The coded value for reasonable adjustment | Coded | R | No | SNOMED CT: Accessible information standard refsets |\n| CISV2.DE78 | → → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE79 | → → → Reasonable adjustment additional detail | Further detail about the support required and the consequence of not providing it. | string | R | No | Free text |\n| CISV2.DE80 | → → → Date | The date the reasonable adjustment was identified. | datetime | R | No | — |\n| CISV2.DE81 | → → → Performing professional | The professional who confirmed the need for the reasonable adjustment. | Group | R | No | — |\n| CISV2.DE82 | → → → → Name | The name of the professional. | string | R | No | Free text |\n| CISV2.DE83 | → → → → Role | The role the professional has in relation to the person. | Coded | R | No | FHIR: sdsjobrole |\n| CISV2.DE84 | → → → → Grade | The grade of the professional. | text | R | No | Free text |\n| CISV2.DE85 | → → → → Speciality | The specialty of the professional. | string | R | No | NHS Data Dictionary: Main specialty code |\n| CISV2.DE86 | → → → → Professional identifier | Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE87 | → → → → Organisation | The name of the organisation the professional works for. | Group | R | No | — |\n| CISV2.DE88 | → → → → Contact details | Contact details of the professional | string | R | No | NHS Data Dictionary: UK phone number |\n| CISV2.DE89 | → → → Person completing record | A record of the details of the person that entered the reasonable adjustment and the date on which it was entered. | Group | R | No | — |\n| CISV2.DE90 | → → → → Name | The name of the person completing the record. | string | R | No | Free text |\n| CISV2.DE91 | → → → → Role | The organisational role of the person completing record. | Coded | R | No | FHIR: SDSjobrole |\n| CISV2.DE92 | → → → → Grade | The grade of the person completing the record. | text | R | No | Free text |\n| CISV2.DE93 | → → → → Specialty | The main specialty of the person completing the record. | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE94 | → → → → Organisation | The organisation the person completing the record works for. | Coded | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE95 | → → → → Professional identifier | Professional identifier for the person completing the record e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE96 | → → → → Date completed | The date and time the record was completed. | datetime | R | No | — |\n| CISV2.DE97 | → → → → Contact details | Contact details of the person completing the record. | string | R | No | NHS Data Dictionary: UK telephone number |\n| CISV2.DE98 | → Impairment | A record of any impairments for the person relating to reasonable adjustments. | Group | R | No | — |\n| CISV2.DE99 | → → Impairment record entry | This is an impairment record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items | Group | R | Yes | — |\n| CISV2.DE100 | → → → Location | The location where the impairment was identified. | Group | R | No | — |\n| CISV2.DE101 | → → → → Coded value | The coded value for location. | string | R | No | NHS Data Dictionary: Organisation code service |\n| CISV2.DE102 | → → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE103 | → → → Impairment category | The category of the impairment e.g. Autism, Dementia, Physical disability, Sensory disability - such as sight or hearing, Long-term condition | Group | R | No | — |\n| CISV2.DE104 | → → → → Coded value | The coded value for impairment. | Coded | R | No | SNOMED CT |\n| CISV2.DE105 | → → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE106 | → → → Impairment additional detail | Description of what the person can do with the impairment, what they want to be able to do and how they should be supported to do it and what the consequences are of not providing the support. Where there is a sensory disability include sensory processing difficulties (e.g. affects to balance and movement, oversensitive, under-sensitive). | text | R | No | Free text |\n| CISV2.DE107 | → → → Date | The date the impairment was identified. | datetime | R | No | — |\n| CISV2.DE108 | → → → Performing professional | The professional who confirmed the impairment. | Group | R | No | — |\n| CISV2.DE109 | → → → → Name | The name of the professional. | string | R | No | Free text |\n| CISV2.DE110 | → → → → Role | The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc | Coded | R | No | FHIR: SDSjobroletype |\n| CISV2.DE111 | → → → → Grade | The grade of the professional. | text | R | No | Free text |\n| CISV2.DE112 | → → → → Speciality | The specialty of the professional e.g. physiotherapy, oncology, mental health etc | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE113 | → → → → Professional identifier | Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE114 | → → → → Organisation | The name of the organisation the professional works for. | Group | R | No | — |\n| CISV2.DE115 | → → → → Contact details | Contact details of the professional | string | R | No | NHS Data Dictionary: UK phone number |\n| CISV2.DE116 | → → → Person completing record | A record of the details of the person that entered the impairment and the date on which it was entered. | Group | R | No | — |\n| CISV2.DE117 | → → → → Name | The name of the person completing the record. | string | R | No | Free text |\n| CISV2.DE118 | → → → → Role | The organisational role of the person completing record. | Coded | R | No | FHIR: SDSjobrole |\n| CISV2.DE119 | → → → → Grade | The grade of the person completing the record. | text | R | No | Free text |\n| CISV2.DE120 | → → → → Specialty | The main specialty of the person completing the record. | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE121 | → → → → Organisation | The organisation the person completing the record works for. | Coded | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE122 | → → → → Professional identifier | Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE123 | → → → → Date completed | The date and time the record was completed. | datetime | R | No | — |\n| CISV2.DE124 | → → → → Contact details | Contact details of the person completing the record. | string | R | No | NHS Data Dictionary: UK telephone number |\n| CISV2.DE125 | → Cognition | Details of the persons cognitive impairment. | Group | R | Yes | — |\n| CISV2.DE126 | → → Date | The date when the cognitive impairment was identified. | datetime | R | No | — |\n| CISV2.DE127 | → → Location | The location where the cognitive impairment was identified. | Group | R | No | — |\n| CISV2.DE128 | → → → Coded value | The coded value for location. | string | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE129 | → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE130 | → → Cognition | The cognitive impairment to be considered when communicating with the person, child or their primary carer. | text | R | No | Free text |\n| CISV2.DE131 | → → Performing professional | The professional who identified the cognitive impairment. | Group | R | No | — |\n| CISV2.DE132 | → → → Name | The name of the professional. | string | R | No | Free text |\n| CISV2.DE133 | → → → Role | The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc | Coded | R | No | FHIR: SDSjobroletype |\n| CISV2.DE134 | → → → Grade | The grade of the professional. | text | R | No | Free text |\n| CISV2.DE135 | → → → Speciality | The specialty of the professional e.g. physiotherapy, oncology, mental health etc | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE136 | → → → Professional identifier | Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE137 | → → → Organisation | The name of the organisation the professional works for. | Group | R | No | — |\n| CISV2.DE138 | → → → Contact details | Contact details of the professional | string | R | Yes | NHS Data Dictionary: UK phone number |\n| CISV2.DE139 | → → Person completing record | Details of the person completing the record. | Group | R | No | — |\n| CISV2.DE140 | → → → Name | The name of the person completing the record. | string | R | No | Free text |\n| CISV2.DE141 | → → → Role | The organisational role of the person completing record. | Coded | R | No | FHIR: SDSjobrole |\n| CISV2.DE142 | → → → Grade | The grade of the person completing the record. | text | R | No | Free text |\n| CISV2.DE143 | → → → Specialty | The main specialty of the person completing the record. | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE144 | → → → Organisation | The organisation the person completing the record works for. | Coded | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE145 | → → → Professional identifier | Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE146 | → → → Date completed | The date and time the record was completed. | datetime | R | No | — |\n| CISV2.DE147 | → → → Contact details | Contact details of the person completing the record. | string | R | Yes | NHS Data Dictionary: UK telephone number |\n| CISV2.DE148 | → Mobility | Details of the person's mobility needs. | Group | R | Yes | — |\n| CISV2.DE149 | → → Date | The date when the mobility needs were identified. | datetime | R | No | — |\n| CISV2.DE150 | → → Location | The location where the mobility needs were identified. | Group | R | No | — |\n| CISV2.DE151 | → → → Coded value | The coded value for location. | string | R | No | NHS Data Dictionary: Organisation data service code |\n| CISV2.DE152 | → → → Free text | Free text field to be used if no coded text available | text | R | No | Free text |\n| CISV2.DE153 | → → Mobility needs | The mobility needs of the person that allows movement between two spaces and achieves participation and a degree of independence. | Group | R | No | — |\n| CISV2.DE154 | → → → Coded value | The coded value for mobility needs | Coded | R | No | SNOMED CT: ^999002551000000108 |Mobility findings simple reference set (foundation metadata concept)| |\n| CISV2.DE155 | → → → Free text | Free text field to be used if no code is available | text | R | No | Free text |\n| CISV2.DE156 | → → Performing professional | The professional who identified the mobility needs. | Group | R | No | — |\n| CISV2.DE157 | → → → Name | The name of the professional. | string | R | No | Free text |\n| CISV2.DE158 | → → → Role | The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc | Coded | R | No | FHIR: SDSjobroletype |\n| CISV2.DE159 | → → → Grade | The grade of the professional. | text | R | No | Free text |\n| CISV2.DE160 | → → → Speciality | The specialty of the professional e.g. physiotherapy, oncology, mental health etc | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE161 | → → → Professional identifier | Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE162 | → → → Organisation | The name of the organisation the professional works for. | Group | R | No | — |\n| CISV2.DE163 | → → → Contact details | Contact details of the professional | string | R | Yes | NHS Data Dictionary: UK phone number |\n| CISV2.DE164 | → → Person completing record | Details of the person completing the record. | Group | R | No | — |\n| CISV2.DE165 | → → → Name | The name of the person completing the record. | string | R | No | Free text |\n| CISV2.DE166 | → → → Role | The organisational role of the person completing record. | Coded | R | No | FHIR: SDSjobrole |\n| CISV2.DE167 | → → → Grade | The grade of the person completing the record. | text | R | No | Free text |\n| CISV2.DE168 | → → → Specialty | The main specialty of the person completing the record. | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE169 | → → → Organisation | The organisation the person completing the record works for. | Coded | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE170 | → → → Professional identifier | Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE171 | → → → Date completed | The date and time the record was completed. | datetime | R | No | — |\n| CISV2.DE172 | → → → Contact details | Contact details of the person completing the record. | string | R | Yes | NHS Data Dictionary: UK telephone number |\n| CISV2.DE173 | → Other individual requirements | Details of any other individual requirements the person may have | Group | R | Yes | — |\n| CISV2.DE174 | → → Date | The date when the other individual requirements were identified. | datetime | R | No | — |\n| CISV2.DE175 | → → Location | The location where the other individual requirements were identified. | Group | R | No | — |\n| CISV2.DE176 | → → → Coded value | The coded value for location. | string | R | No | NHS Data Dictionary: Organisation service code |\n| CISV2.DE177 | → → → Free text | Free text field to be used if no coded text available | text | R | No | Free text |\n| CISV2.DE178 | → → Other individual requirement | Other individual requirements that a person may have. | text | R | No | Free text |\n| CISV2.DE179 | → → Performing professional | The professional who identified the other individual requirements. | Group | R | No | — |\n| CISV2.DE180 | → → → Name | The name of the professional. | string | R | No | Free text |\n| CISV2.DE181 | → → → Role | The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc | Coded | R | No | FHIR: SDSjobroletype |\n| CISV2.DE182 | → → → Grade | The grade of the professional. | text | R | No | Free text |\n| CISV2.DE183 | → → → Speciality | The specialty of the professional e.g. physiotherapy, oncology, mental health etc | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE184 | → → → Professional identifier | Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE185 | → → → Organisation | The name of the organisation the professional works for. | Group | R | No | — |\n| CISV2.DE186 | → → → Contact details | Contact details of the professional | string | R | Yes | NHS Data Dictionary: UK phone number |\n| CISV2.DE187 | → → Person completing record | Details of the person completing the record. | Group | R | No | — |\n| CISV2.DE188 | → → → Name | The name of the person completing the record. | string | R | No | Free text |\n| CISV2.DE189 | → → → Role | The organisational role of the person completing record. | Coded | R | No | FHIR: SDSjobrole |\n| CISV2.DE190 | → → → Grade | The grade of the person completing the record. | text | R | No | Free text |\n| CISV2.DE191 | → → → Specialty | The main specialty of the person completing the record. | string | R | No | NHS Data Dictionary: Activity treatment function code |\n| CISV2.DE192 | → → → Organisation | The organisation the person completing the record works for. | Coded | R | No | NHS Data Dictionary: Organisation data service |\n| CISV2.DE193 | → → → Professional identifier | Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation. | string | R | No | NHS Data Dictionary: Professional registration identifier |\n| CISV2.DE194 | → → → Date completed | The date and time the record was completed. | datetime | R | No | — |\n| CISV2.DE195 | → → → Contact details | Contact details of the person completing the record. | string | R | Yes | NHS Data Dictionary: UK telephone number |",
+    "data_elements_list": [
+      {
+        "elementId": "CISV2.DE1",
+        "label": "Person demographics",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE2",
+        "label": "Person name",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE3",
+        "label": "Person first name",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE4",
+        "label": "Person family name",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE5",
+        "label": "Person preferred name",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE6",
+        "label": "Title",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE7",
+        "label": "Person name suffix",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE8",
+        "label": "Person full name",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE9",
+        "label": "Date of birth",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE10",
+        "label": "Gender",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE11",
+        "label": "Ethnicity",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE12",
+        "label": "Religion",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE13",
+        "label": "Sex",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE14",
+        "label": "NHS number",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE15",
+        "label": "NHS number status indicator",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE16",
+        "label": "Other identifier",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE17",
+        "label": "Person's address",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE18",
+        "label": "Address line 1",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE19",
+        "label": "Address line 2",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE20",
+        "label": "Address line 3",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE21",
+        "label": "Address line 4",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE22",
+        "label": "Address line 5",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE23",
+        "label": "Postcode",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE24",
+        "label": "Address type",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE25",
+        "label": "Person's contact details",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE26",
+        "label": "Preferred contact method",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE27",
+        "label": "Person's telephone number details",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE28",
+        "label": "Person's telephone number",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE29",
+        "label": "Person's telephone number type",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE30",
+        "label": "Preference of telephone number",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE31",
+        "label": "Person's email address details",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE32",
+        "label": "Person's email address",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE33",
+        "label": "Person's email address type",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE34",
+        "label": "Preference of email address",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE35",
+        "label": "Other contact information",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE36",
+        "label": "Photograph",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE37",
+        "label": "Place of birth",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE38",
+        "label": "Marital status",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE39",
+        "label": "Immigration status",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE40",
+        "label": "Immigration status",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE41",
+        "label": "Start date",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE42",
+        "label": "End date",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE43",
+        "label": "Comment",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE44",
+        "label": "Organ and tissue donation",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE45",
+        "label": "Overseas visitor status",
+        "groupName": "Person demographics"
+      },
+      {
+        "elementId": "CISV2.DE46",
+        "label": "GP practice",
+        "groupName": "GP practice"
+      },
+      {
+        "elementId": "CISV2.DE47",
+        "label": "GP practice record entry",
+        "groupName": "GP practice"
+      },
+      {
+        "elementId": "CISV2.DE48",
+        "label": "GP name",
+        "groupName": "GP practice"
+      },
+      {
+        "elementId": "CISV2.DE49",
+        "label": "GP practice details",
+        "groupName": "GP practice"
+      },
+      {
+        "elementId": "CISV2.DE50",
+        "label": "GP practice identifier",
+        "groupName": "GP practice"
+      },
+      {
+        "elementId": "CISV2.DE51",
+        "label": "About me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE52",
+        "label": "What is most important to me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE53",
+        "label": "What is most important to me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE54",
+        "label": "People who are important to me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE55",
+        "label": "People who are important to me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE56",
+        "label": "How I communicate and how to communicate with me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE57",
+        "label": "How I communicate and how to communicate with me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE58",
+        "label": "My wellness",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE59",
+        "label": "My wellness",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE60",
+        "label": "Please do and please don't",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE61",
+        "label": "Please do and please don't",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE62",
+        "label": "How and when to support me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE63",
+        "label": "How and when to support me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE64",
+        "label": "Also worth knowing about me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE65",
+        "label": "Also worth knowing about me",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE66",
+        "label": "Date",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE67",
+        "label": "Supported to write this by",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE68",
+        "label": "Location to multimedia file",
+        "groupName": "About me"
+      },
+      {
+        "elementId": "CISV2.DE69",
+        "label": "Individual requirements",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE70",
+        "label": "Reasonable adjustment",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE71",
+        "label": "Reasonable adjustment record entry",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE72",
+        "label": "Location",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE73",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE74",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE75",
+        "label": "Reasonable adjustment flag",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE76",
+        "label": "Reasonable adjustment",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE77",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE78",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE79",
+        "label": "Reasonable adjustment additional detail",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE80",
+        "label": "Date",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE81",
+        "label": "Performing professional",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE82",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE83",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE84",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE85",
+        "label": "Speciality",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE86",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE87",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE88",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE89",
+        "label": "Person completing record",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE90",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE91",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE92",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE93",
+        "label": "Specialty",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE94",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE95",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE96",
+        "label": "Date completed",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE97",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE98",
+        "label": "Impairment",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE99",
+        "label": "Impairment record entry",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE100",
+        "label": "Location",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE101",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE102",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE103",
+        "label": "Impairment category",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE104",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE105",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE106",
+        "label": "Impairment additional detail",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE107",
+        "label": "Date",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE108",
+        "label": "Performing professional",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE109",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE110",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE111",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE112",
+        "label": "Speciality",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE113",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE114",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE115",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE116",
+        "label": "Person completing record",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE117",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE118",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE119",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE120",
+        "label": "Specialty",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE121",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE122",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE123",
+        "label": "Date completed",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE124",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE125",
+        "label": "Cognition",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE126",
+        "label": "Date",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE127",
+        "label": "Location",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE128",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE129",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE130",
+        "label": "Cognition",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE131",
+        "label": "Performing professional",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE132",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE133",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE134",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE135",
+        "label": "Speciality",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE136",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE137",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE138",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE139",
+        "label": "Person completing record",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE140",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE141",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE142",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE143",
+        "label": "Specialty",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE144",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE145",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE146",
+        "label": "Date completed",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE147",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE148",
+        "label": "Mobility",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE149",
+        "label": "Date",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE150",
+        "label": "Location",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE151",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE152",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE153",
+        "label": "Mobility needs",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE154",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE155",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE156",
+        "label": "Performing professional",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE157",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE158",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE159",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE160",
+        "label": "Speciality",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE161",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE162",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE163",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE164",
+        "label": "Person completing record",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE165",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE166",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE167",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE168",
+        "label": "Specialty",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE169",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE170",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE171",
+        "label": "Date completed",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE172",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE173",
+        "label": "Other individual requirements",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE174",
+        "label": "Date",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE175",
+        "label": "Location",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE176",
+        "label": "Coded value",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE177",
+        "label": "Free text",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE178",
+        "label": "Other individual requirement",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE179",
+        "label": "Performing professional",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE180",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE181",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE182",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE183",
+        "label": "Speciality",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE184",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE185",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE186",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE187",
+        "label": "Person completing record",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE188",
+        "label": "Name",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE189",
+        "label": "Role",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE190",
+        "label": "Grade",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE191",
+        "label": "Specialty",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE192",
+        "label": "Organisation",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE193",
+        "label": "Professional identifier",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE194",
+        "label": "Date completed",
+        "groupName": "Individual requirements"
+      },
+      {
+        "elementId": "CISV2.DE195",
+        "label": "Contact details",
+        "groupName": "Individual requirements"
+      }
+    ]
+  },
+  {
+    "id": "sec-9656b56d",
+    "sectionType": "processes",
+    "title": "Business Processes & Workflows",
+    "level": 1,
+    "status": "draft",
+    "children": [],
+    "content": "The Core Information Standard Version 2.0 supports essential business processes across health and care settings. These workflows ensure consistent information capture and sharing to enable integrated person-centred care delivery. Each process maps key activities performed by health and care professionals, identifying data requirements and interdependencies.\n\nThe following processes represent common patterns of care delivery, from initial patient registration through ongoing care coordination. Each workflow identifies the personas involved, data elements accessed or collected, and decision points that guide care pathways.",
     "processes_data": {
+      "summary_markdown": "Essential workflows supporting integrated health and care delivery across all settings.",
       "activities": [
         {
-          "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "to": "check-nhs"
-              },
-              {
-                "from": "check-nhs",
-                "to": "identity-decision"
-              },
-              {
-                "from": "identity-decision",
-                "label": "Yes",
-                "to": "verify-identity"
-              },
-              {
-                "from": "identity-decision",
-                "label": "No",
-                "to": "create-nhs"
-              },
-              {
-                "from": "create-nhs",
-                "to": "verify-identity"
-              },
-              {
-                "from": "verify-identity",
-                "to": "capture-contact"
-              },
-              {
-                "from": "capture-contact",
-                "to": "assess-requirements"
-              },
-              {
-                "from": "assess-requirements",
-                "to": "register-gp"
-              },
-              {
-                "from": "register-gp",
-                "to": "end"
-              }
-            ],
-            "nodes": [
-              {
-                "id": "start",
-                "label": "Person presents for registration",
-                "type": "start"
-              },
-              {
-                "dataCollected": [],
-                "dataSeen": [
-                  {
-                    "element": "NHS number",
-                    "source": "PDS/existing systems"
-                  }
-                ],
-                "id": "check-nhs",
-                "label": "Check NHS number/existing records",
-                "type": "activity"
-              },
-              {
-                "id": "identity-decision",
-                "label": "Existing NHS number?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Person name",
-                    "notes": "Including preferred name"
-                  },
-                  {
-                    "element": "Date of birth"
-                  },
-                  {
-                    "element": "Gender"
-                  },
-                  {
-                    "element": "Ethnicity"
-                  }
-                ],
-                "dataSeen": [
-                  {
-                    "element": "Photo ID",
-                    "source": "Person"
-                  }
-                ],
-                "id": "verify-identity",
-                "label": "Verify identity and demographics",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "NHS number",
-                    "notes": "New allocation"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "create-nhs",
-                "label": "Create NHS number registration",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Address",
-                    "notes": "Including type"
-                  },
-                  {
-                    "element": "Telephone numbers"
-                  },
-                  {
-                    "element": "Email addresses"
-                  },
-                  {
-                    "element": "Preferred contact method"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "capture-contact",
-                "label": "Capture contact details",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Reasonable adjustments",
-                    "notes": "Per Equality Act 2010"
-                  },
-                  {
-                    "element": "Communication needs"
-                  },
-                  {
-                    "element": "Impairments"
-                  },
-                  {
-                    "element": "Mobility needs"
-                  }
-                ],
-                "dataSeen": [
-                  {
-                    "element": "Previous assessments",
-                    "source": "Referral/records"
-                  }
-                ],
-                "id": "assess-requirements",
-                "label": "Assess individual requirements",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "GP practice details"
-                  },
-                  {
-                    "element": "GP name"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "register-gp",
-                "label": "Register with GP practice",
-                "type": "activity"
-              },
-              {
-                "id": "end",
-                "label": "Registration complete",
-                "type": "end"
-              }
-            ]
-          },
-          "id": "initial-registration",
-          "objectives": "Establish person's identity, capture core demographics, and register individual requirements including reasonable adjustments",
-          "personas": "GP/Primary Care Physician, Care Home Manager, Social Worker",
+          "id": "CISV2.A",
           "processId": "CISV2.A",
-          "title": "Initial Person Registration & Demographics Capture"
-        },
-        {
+          "title": "Patient Registration and Demographic Update",
+          "personas": "General Practitioner, District Nurse, Care Home Manager",
+          "objectives": "Ensure accurate patient identification and demographic information for safe care delivery",
           "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "to": "review-history"
-              },
-              {
-                "from": "review-history",
-                "to": "clinical-exam"
-              },
-              {
-                "from": "clinical-exam",
-                "to": "risk-assess"
-              },
-              {
-                "from": "risk-assess",
-                "to": "capacity-decision"
-              },
-              {
-                "from": "capacity-decision",
-                "label": "Yes",
-                "to": "capacity-assess"
-              },
-              {
-                "from": "capacity-decision",
-                "label": "No",
-                "to": "develop-plan"
-              },
-              {
-                "from": "capacity-assess",
-                "to": "develop-plan"
-              },
-              {
-                "from": "develop-plan",
-                "to": "document-plan"
-              },
-              {
-                "from": "document-plan",
-                "to": "end"
-              }
-            ],
             "nodes": [
               {
                 "id": "start",
-                "label": "Assessment initiated",
-                "type": "start"
+                "type": "start",
+                "label": "Patient presents for care",
+                "dataSeen": [],
+                "dataCollected": []
               },
               {
-                "dataCollected": [],
+                "id": "verify",
+                "type": "activity",
+                "label": "Verify patient identity",
                 "dataSeen": [
                   {
-                    "element": "Problem list",
-                    "source": "EPR/GP records"
+                    "element": "CISV2.DE14",
+                    "type": "NHS Number",
+                    "source": "PDS"
                   },
                   {
-                    "element": "Medications",
-                    "source": "EPR"
-                  },
-                  {
-                    "element": "Allergies",
-                    "source": "EPR"
+                    "element": "CISV2.DE2",
+                    "type": "Name",
+                    "source": "Patient"
                   }
                 ],
-                "id": "review-history",
-                "label": "Review medical history",
-                "type": "activity"
+                "dataCollected": []
               },
               {
-                "dataCollected": [
-                  {
-                    "element": "Examination findings"
-                  },
-                  {
-                    "element": "Observations",
-                    "notes": "Vitals, measurements"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "clinical-exam",
-                "label": "Conduct clinical examination",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Risk assessment",
-                    "notes": "Self-harm, falls, safeguarding"
-                  }
-                ],
+                "id": "check",
+                "type": "decision",
+                "label": "Demographics current?",
                 "dataSeen": [
                   {
-                    "element": "Previous risks",
-                    "source": "Care records"
-                  }
-                ],
-                "id": "risk-assess",
-                "label": "Assess risks",
-                "type": "activity"
-              },
-              {
-                "id": "capacity-decision",
-                "label": "Mental capacity assessment needed?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Mental capacity assessment"
+                    "element": "CISV2.DE17",
+                    "type": "Address",
+                    "source": "System"
                   },
                   {
-                    "element": "Best interests decision",
-                    "notes": "If lacks capacity"
+                    "element": "CISV2.DE25",
+                    "type": "Contact details",
+                    "source": "System"
                   }
                 ],
+                "dataCollected": []
+              },
+              {
+                "id": "update",
+                "type": "activity",
+                "label": "Update demographics",
                 "dataSeen": [],
-                "id": "capacity-assess",
-                "label": "Conduct capacity assessment",
-                "type": "activity"
-              },
-              {
                 "dataCollected": [
                   {
-                    "element": "Care plan goals"
+                    "element": "CISV2.DE17",
+                    "type": "Address",
+                    "notes": "Current residence"
                   },
                   {
-                    "element": "Actions and activities"
+                    "element": "CISV2.DE25",
+                    "type": "Contact details",
+                    "notes": "Preferred contact method"
                   },
                   {
-                    "element": "Agreed with person"
+                    "element": "CISV2.DE39",
+                    "type": "Immigration status",
+                    "notes": "If applicable"
                   }
-                ],
+                ]
+              },
+              {
+                "id": "requirements",
+                "type": "activity",
+                "label": "Assess individual requirements",
                 "dataSeen": [
                   {
-                    "element": "Person preferences",
-                    "source": "About Me section"
+                    "element": "CISV2.DE69",
+                    "type": "Individual requirements",
+                    "source": "Previous records"
                   }
                 ],
-                "id": "develop-plan",
-                "label": "Develop care plan with person",
-                "type": "activity"
-              },
-              {
                 "dataCollected": [
                   {
-                    "element": "Plan and requested actions"
+                    "element": "CISV2.DE70",
+                    "type": "Reasonable adjustment",
+                    "notes": "Equality Act compliance"
                   },
                   {
-                    "element": "Contingency plans"
+                    "element": "CISV2.DE98",
+                    "type": "Impairment",
+                    "notes": "If disclosed"
                   },
                   {
-                    "element": "Review date"
+                    "element": "CISV2.DE125",
+                    "type": "Cognition",
+                    "notes": "Communication needs"
                   }
-                ],
+                ]
+              },
+              {
+                "id": "complete",
+                "type": "activity",
+                "label": "Complete registration",
                 "dataSeen": [],
-                "id": "document-plan",
-                "label": "Document care decisions",
-                "type": "activity"
+                "dataCollected": [
+                  {
+                    "element": "CISV2.DE46",
+                    "type": "GP practice",
+                    "notes": "Confirm registration"
+                  }
+                ]
               },
               {
                 "id": "end",
-                "label": "Assessment complete",
-                "type": "end"
+                "type": "end",
+                "label": "Registration complete",
+                "dataSeen": [],
+                "dataCollected": []
               }
-            ]
-          },
-          "id": "clinical-assessment",
-          "objectives": "Conduct comprehensive health assessment, identify care needs, and develop person-centered care plan",
-          "personas": "Hospital Consultant, Community Nurse, GP/Primary Care Physician, Patient/Service User, Family Carer",
-          "processId": "CISV2.B",
-          "title": "Clinical Assessment & Care Planning"
-        },
-        {
-          "diagram": {
+            ],
             "edges": [
               {
                 "from": "start",
-                "to": "access-scr"
+                "to": "verify"
               },
               {
-                "from": "access-scr",
-                "to": "review-critical"
+                "from": "verify",
+                "to": "check"
               },
               {
-                "from": "review-critical",
-                "to": "check-adjustments"
+                "from": "check",
+                "to": "update",
+                "label": "No"
               },
               {
-                "from": "check-adjustments",
-                "to": "contact-decision"
+                "from": "check",
+                "to": "requirements",
+                "label": "Yes"
               },
               {
-                "from": "contact-decision",
-                "label": "Yes",
-                "to": "contact-family"
+                "from": "update",
+                "to": "requirements"
               },
               {
-                "from": "contact-decision",
-                "label": "No",
-                "to": "provide-care"
+                "from": "requirements",
+                "to": "complete"
               },
               {
-                "from": "contact-family",
-                "to": "provide-care"
+                "from": "complete",
+                "to": "end"
+              }
+            ]
+          }
+        },
+        {
+          "id": "CISV2.B",
+          "processId": "CISV2.B",
+          "title": "Medication Review and Reconciliation",
+          "personas": "Pharmacist, General Practitioner, Hospital Consultant",
+          "objectives": "Ensure medication safety through comprehensive review and accurate reconciliation",
+          "diagram": {
+            "nodes": [
+              {
+                "id": "start",
+                "type": "start",
+                "label": "Medication review triggered",
+                "dataSeen": [],
+                "dataCollected": []
               },
               {
-                "from": "provide-care",
-                "to": "handover"
+                "id": "gather",
+                "type": "activity",
+                "label": "Gather medication history",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE1",
+                    "type": "Demographics",
+                    "source": "System"
+                  },
+                  {
+                    "element": "CISV2.DE69",
+                    "type": "Individual requirements",
+                    "source": "System"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "review",
+                "type": "subprocess",
+                "label": "Review current medications",
+                "dataSeen": [
+                  {
+                    "element": "MED.DE1",
+                    "type": "Current medications",
+                    "source": "GP system"
+                  },
+                  {
+                    "element": "MED.DE1",
+                    "type": "Hospital medications",
+                    "source": "Hospital system"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "allergies",
+                "type": "activity",
+                "label": "Check allergies and interactions",
+                "dataSeen": [
+                  {
+                    "element": "ALL.DE1",
+                    "type": "Allergies",
+                    "source": "System"
+                  },
+                  {
+                    "element": "CISV2.DE125",
+                    "type": "Medical conditions",
+                    "source": "System"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "discrepancy",
+                "type": "decision",
+                "label": "Discrepancies found?",
+                "dataSeen": [],
+                "dataCollected": []
+              },
+              {
+                "id": "reconcile",
+                "type": "activity",
+                "label": "Reconcile medications",
+                "dataSeen": [],
+                "dataCollected": [
+                  {
+                    "element": "MED.DE3",
+                    "type": "Medication changes",
+                    "notes": "Document all changes"
+                  },
+                  {
+                    "element": "MED.DE4",
+                    "type": "Discontinuations",
+                    "notes": "Stopped medications"
+                  }
+                ]
+              },
+              {
+                "id": "document",
+                "type": "activity",
+                "label": "Document review",
+                "dataSeen": [],
+                "dataCollected": [
+                  {
+                    "element": "MED.DE5",
+                    "type": "Review date",
+                    "notes": "Next review"
+                  },
+                  {
+                    "element": "MED.DE6",
+                    "type": "Review outcome",
+                    "notes": "Actions taken"
+                  }
+                ]
+              },
+              {
+                "id": "communicate",
+                "type": "activity",
+                "label": "Communicate to patient",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE56",
+                    "type": "Communication needs",
+                    "source": "About me"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "end",
+                "type": "end",
+                "label": "Review complete",
+                "dataSeen": [],
+                "dataCollected": []
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "gather"
+              },
+              {
+                "from": "gather",
+                "to": "review"
+              },
+              {
+                "from": "review",
+                "to": "allergies"
+              },
+              {
+                "from": "allergies",
+                "to": "discrepancy"
+              },
+              {
+                "from": "discrepancy",
+                "to": "reconcile",
+                "label": "Yes"
+              },
+              {
+                "from": "discrepancy",
+                "to": "document",
+                "label": "No"
+              },
+              {
+                "from": "reconcile",
+                "to": "document"
+              },
+              {
+                "from": "document",
+                "to": "communicate"
+              },
+              {
+                "from": "communicate",
+                "to": "end"
+              }
+            ]
+          }
+        },
+        {
+          "id": "CISV2.C",
+          "processId": "CISV2.C",
+          "title": "Care Plan Development and Review",
+          "personas": "Social Worker, Occupational Therapist, Mental Health Nurse, Patient/Service User",
+          "objectives": "Create person-centred care plans addressing individual goals and support needs",
+          "diagram": {
+            "nodes": [
+              {
+                "id": "start",
+                "type": "start",
+                "label": "Care planning initiated",
+                "dataSeen": [],
+                "dataCollected": []
+              },
+              {
+                "id": "assess",
+                "type": "subprocess",
+                "label": "Conduct assessments",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE51",
+                    "type": "About me",
+                    "source": "Patient"
+                  },
+                  {
+                    "element": "CISV2.DE69",
+                    "type": "Individual requirements",
+                    "source": "System"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "ASS.DE1",
+                    "type": "Assessment type",
+                    "notes": "Social care needs"
+                  },
+                  {
+                    "element": "ASS.DE2",
+                    "type": "Assessment outcome",
+                    "notes": "Support required"
+                  }
+                ]
+              },
+              {
+                "id": "goals",
+                "type": "activity",
+                "label": "Identify goals with person",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE52",
+                    "type": "What's important",
+                    "source": "About me"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "CP.DE1",
+                    "type": "Goals and hopes",
+                    "notes": "Person's priorities"
+                  },
+                  {
+                    "element": "CP.DE2",
+                    "type": "Strengths",
+                    "notes": "Assets to build on"
+                  }
+                ]
+              },
+              {
+                "id": "capacity",
+                "type": "decision",
+                "label": "Has capacity?",
+                "dataSeen": [
+                  {
+                    "element": "LEG.DE3",
+                    "type": "Mental capacity",
+                    "source": "Previous assessment"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "involve",
+                "type": "activity",
+                "label": "Involve representative",
+                "dataSeen": [
+                  {
+                    "element": "LEG.DE4",
+                    "type": "LPA details",
+                    "source": "Legal information"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "develop",
+                "type": "activity",
+                "label": "Develop care plan",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE54",
+                    "type": "Important people",
+                    "source": "About me"
+                  },
+                  {
+                    "element": "RISK.DE1",
+                    "type": "Risks",
+                    "source": "Risk assessment"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "CP.DE3",
+                    "type": "Actions planned",
+                    "notes": "Who, what, when"
+                  },
+                  {
+                    "element": "CP.DE4",
+                    "type": "Contingency plans",
+                    "notes": "If concerns arise"
+                  }
+                ]
+              },
+              {
+                "id": "agree",
+                "type": "activity",
+                "label": "Agree plan with person",
+                "dataSeen": [],
+                "dataCollected": [
+                  {
+                    "element": "CP.DE5",
+                    "type": "Agreement",
+                    "notes": "Person/representative consent"
+                  },
+                  {
+                    "element": "CP.DE6",
+                    "type": "Review date",
+                    "notes": "When to review"
+                  }
+                ]
+              },
+              {
+                "id": "share",
+                "type": "activity",
+                "label": "Share with care team",
+                "dataSeen": [
+                  {
+                    "element": "LEG.DE1",
+                    "type": "Info sharing consent",
+                    "source": "Legal information"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "end",
+                "type": "end",
+                "label": "Plan implemented",
+                "dataSeen": [],
+                "dataCollected": []
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "assess"
+              },
+              {
+                "from": "assess",
+                "to": "goals"
+              },
+              {
+                "from": "goals",
+                "to": "capacity"
+              },
+              {
+                "from": "capacity",
+                "to": "develop",
+                "label": "Yes"
+              },
+              {
+                "from": "capacity",
+                "to": "involve",
+                "label": "No"
+              },
+              {
+                "from": "involve",
+                "to": "develop"
+              },
+              {
+                "from": "develop",
+                "to": "agree"
+              },
+              {
+                "from": "agree",
+                "to": "share"
+              },
+              {
+                "from": "share",
+                "to": "end"
+              }
+            ]
+          }
+        },
+        {
+          "id": "CISV2.D",
+          "processId": "CISV2.D",
+          "title": "Emergency Response Coordination",
+          "personas": "Paramedic, Hospital Consultant, District Nurse",
+          "objectives": "Rapid access to critical information for emergency care decisions",
+          "diagram": {
+            "nodes": [
+              {
+                "id": "start",
+                "type": "start",
+                "label": "Emergency call received",
+                "dataSeen": [],
+                "dataCollected": []
+              },
+              {
+                "id": "access",
+                "type": "activity",
+                "label": "Access emergency info",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE1",
+                    "type": "Demographics",
+                    "source": "Emergency system"
+                  },
+                  {
+                    "element": "CISV2.DE14",
+                    "type": "NHS Number",
+                    "source": "Emergency system"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "critical",
+                "type": "subprocess",
+                "label": "Review critical data",
+                "dataSeen": [
+                  {
+                    "element": "ALL.DE1",
+                    "type": "Allergies",
+                    "source": "System"
+                  },
+                  {
+                    "element": "MED.DE1",
+                    "type": "Current medications",
+                    "source": "System"
+                  },
+                  {
+                    "element": "LEG.DE5",
+                    "type": "ADRT status",
+                    "source": "Legal information"
+                  },
+                  {
+                    "element": "EOL.DE1",
+                    "type": "CPR decision",
+                    "source": "End of life"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "onscene",
+                "type": "activity",
+                "label": "Provide emergency care",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE60",
+                    "type": "Do's and don'ts",
+                    "source": "About me"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "CONT.DE1",
+                    "type": "Contact type",
+                    "notes": "Emergency attendance"
+                  },
+                  {
+                    "element": "EX.DE1",
+                    "type": "Observations",
+                    "notes": "Vital signs"
+                  }
+                ]
+              },
+              {
+                "id": "transport",
+                "type": "decision",
+                "label": "Hospital transfer needed?",
+                "dataSeen": [
+                  {
+                    "element": "CP.DE4",
+                    "type": "Contingency plans",
+                    "source": "Care plan"
+                  }
+                ],
+                "dataCollected": []
+              },
+              {
+                "id": "handover",
+                "type": "activity",
+                "label": "Hospital handover",
+                "dataSeen": [],
+                "dataCollected": [
+                  {
+                    "element": "ADM.DE1",
+                    "type": "Admission details",
+                    "notes": "Emergency admission"
+                  },
+                  {
+                    "element": "ADM.DE2",
+                    "type": "Reason for admission",
+                    "notes": "Clinical presentation"
+                  }
+                ]
+              },
+              {
+                "id": "community",
+                "type": "activity",
+                "label": "Community care arranged",
+                "dataSeen": [
+                  {
+                    "element": "PROF.DE1",
+                    "type": "Professional contacts",
+                    "source": "System"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "REF.DE1",
+                    "type": "Referral details",
+                    "notes": "To community team"
+                  }
+                ]
+              },
+              {
+                "id": "end",
+                "type": "end",
+                "label": "Emergency response complete",
+                "dataSeen": [],
+                "dataCollected": []
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "access"
+              },
+              {
+                "from": "access",
+                "to": "critical"
+              },
+              {
+                "from": "critical",
+                "to": "onscene"
+              },
+              {
+                "from": "onscene",
+                "to": "transport"
+              },
+              {
+                "from": "transport",
+                "to": "handover",
+                "label": "Yes"
+              },
+              {
+                "from": "transport",
+                "to": "community",
+                "label": "No"
               },
               {
                 "from": "handover",
                 "to": "end"
-              }
-            ],
-            "nodes": [
-              {
-                "id": "start",
-                "label": "Emergency call received",
-                "type": "start"
               },
               {
-                "dataCollected": [],
-                "dataSeen": [
-                  {
-                    "element": "NHS number",
-                    "source": "999 call/patient"
-                  }
-                ],
-                "id": "access-scr",
-                "label": "Access Summary Care Record",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [],
-                "dataSeen": [
-                  {
-                    "element": "DNACPR status",
-                    "source": "SCR"
-                  },
-                  {
-                    "element": "Allergies",
-                    "source": "SCR"
-                  },
-                  {
-                    "element": "Current medications",
-                    "source": "SCR"
-                  }
-                ],
-                "id": "review-critical",
-                "label": "Review critical information",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [],
-                "dataSeen": [
-                  {
-                    "element": "Reasonable adjustments",
-                    "source": "SCR"
-                  },
-                  {
-                    "element": "Communication needs",
-                    "source": "SCR"
-                  }
-                ],
-                "id": "check-adjustments",
-                "label": "Check individual requirements",
-                "type": "activity"
-              },
-              {
-                "id": "contact-decision",
-                "label": "Emergency contacts available?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Family notified",
-                    "notes": "Time and person"
-                  }
-                ],
-                "dataSeen": [
-                  {
-                    "element": "Emergency contacts",
-                    "source": "SCR"
-                  }
-                ],
-                "id": "contact-family",
-                "label": "Contact family/carer",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Treatment provided"
-                  },
-                  {
-                    "element": "Medications administered"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "provide-care",
-                "label": "Provide emergency care",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Handover notes"
-                  },
-                  {
-                    "element": "Admission details"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "handover",
-                "label": "Hospital handover",
-                "type": "activity"
-              },
-              {
-                "id": "end",
-                "label": "Emergency response complete",
-                "type": "end"
+                "from": "community",
+                "to": "end"
               }
             ]
-          },
-          "id": "emergency-response",
-          "objectives": "Rapid access to critical information during emergency situations to ensure appropriate and safe care delivery",
-          "personas": "Paramedic/Emergency Responder, Hospital Consultant, Family Carer",
-          "processId": "CISV2.C",
-          "title": "Emergency Response & Information Access"
+          }
         },
         {
+          "id": "CISV2.E",
+          "processId": "CISV2.E",
+          "title": "Discharge Planning and Coordination",
+          "personas": "Hospital Consultant, Social Worker, Care Home Manager, District Nurse",
+          "objectives": "Safe and timely discharge with appropriate support arrangements",
           "diagram": {
-            "edges": [
-              {
-                "from": "start",
-                "to": "initial-screen"
-              },
-              {
-                "from": "initial-screen",
-                "to": "home-visit"
-              },
-              {
-                "from": "home-visit",
-                "to": "needs-assess"
-              },
-              {
-                "from": "needs-assess",
-                "to": "eligibility-decision"
-              },
-              {
-                "from": "eligibility-decision",
-                "label": "Yes",
-                "to": "develop-package"
-              },
-              {
-                "from": "eligibility-decision",
-                "label": "No",
-                "to": "signpost"
-              },
-              {
-                "from": "develop-package",
-                "to": "arrange-services"
-              },
-              {
-                "from": "arrange-services",
-                "to": "end"
-              },
-              {
-                "from": "signpost",
-                "to": "end"
-              }
-            ],
             "nodes": [
               {
                 "id": "start",
-                "label": "Referral received",
-                "type": "start"
-              },
-              {
-                "dataCollected": [],
-                "dataSeen": [
-                  {
-                    "element": "Referral information",
-                    "source": "Referral form"
-                  },
-                  {
-                    "element": "Safeguarding flags",
-                    "source": "Care records"
-                  }
-                ],
-                "id": "initial-screen",
-                "label": "Initial screening",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Social circumstances"
-                  },
-                  {
-                    "element": "Household composition"
-                  },
-                  {
-                    "element": "Accommodation status"
-                  }
-                ],
-                "dataSeen": [
-                  {
-                    "element": "About Me information",
-                    "source": "Person/carer"
-                  }
-                ],
-                "id": "home-visit",
-                "label": "Conduct home visit",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Primary support reason"
-                  },
-                  {
-                    "element": "Assessment findings"
-                  },
-                  {
-                    "element": "ADL assessment"
-                  }
-                ],
+                "type": "start",
+                "label": "Discharge planning starts",
                 "dataSeen": [],
-                "id": "needs-assess",
-                "label": "Assess care needs",
-                "type": "activity"
+                "dataCollected": []
               },
               {
-                "id": "eligibility-decision",
-                "label": "Eligible for support?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Services and care plan"
-                  },
-                  {
-                    "element": "Equipment needs"
-                  },
-                  {
-                    "element": "Care funding source"
-                  }
-                ],
+                "id": "assess",
+                "type": "activity",
+                "label": "Assess discharge needs",
                 "dataSeen": [
                   {
-                    "element": "Person preferences",
+                    "element": "CISV2.DE51",
+                    "type": "About me",
+                    "source": "System"
+                  },
+                  {
+                    "element": "SOC.DE1",
+                    "type": "Social circumstances",
+                    "source": "Assessment"
+                  },
+                  {
+                    "element": "SOC.DE2",
+                    "type": "Accommodation status",
                     "source": "Assessment"
                   }
                 ],
-                "id": "develop-package",
-                "label": "Develop care package",
-                "type": "activity"
+                "dataCollected": []
               },
               {
-                "dataCollected": [
+                "id": "support",
+                "type": "decision",
+                "label": "Support needed?",
+                "dataSeen": [
                   {
-                    "element": "Service start dates"
+                    "element": "CISV2.DE148",
+                    "type": "Mobility",
+                    "source": "Assessment"
                   },
                   {
-                    "element": "Provider details"
+                    "element": "CISV2.DE125",
+                    "type": "Cognition",
+                    "source": "Assessment"
                   }
                 ],
-                "dataSeen": [],
-                "id": "arrange-services",
-                "label": "Arrange services",
-                "type": "activity"
+                "dataCollected": []
               },
               {
-                "dataCollected": [
+                "id": "arrange",
+                "type": "subprocess",
+                "label": "Arrange support services",
+                "dataSeen": [
                   {
-                    "element": "Signposting information"
+                    "element": "SERV.DE1",
+                    "type": "Current services",
+                    "source": "Social care"
                   }
                 ],
+                "dataCollected": [
+                  {
+                    "element": "SERV.DE2",
+                    "type": "Services arranged",
+                    "notes": "Package of care"
+                  },
+                  {
+                    "element": "EQ.DE1",
+                    "type": "Equipment needed",
+                    "notes": "Aids and adaptations"
+                  }
+                ]
+              },
+              {
+                "id": "meds",
+                "type": "activity",
+                "label": "Prepare discharge medications",
+                "dataSeen": [
+                  {
+                    "element": "MED.DE1",
+                    "type": "Current medications",
+                    "source": "Hospital system"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "MED.DE2",
+                    "type": "Discharge medications",
+                    "notes": "TTO/TTA"
+                  },
+                  {
+                    "element": "MED.DE3",
+                    "type": "Medication changes",
+                    "notes": "From admission"
+                  }
+                ]
+              },
+              {
+                "id": "communicate",
+                "type": "activity",
+                "label": "Communicate with primary care",
+                "dataSeen": [
+                  {
+                    "element": "CISV2.DE46",
+                    "type": "GP practice",
+                    "source": "Demographics"
+                  }
+                ],
+                "dataCollected": [
+                  {
+                    "element": "DIS.DE1",
+                    "type": "Discharge details",
+                    "notes": "Summary and plan"
+                  },
+                  {
+                    "element": "FUT.DE1",
+                    "type": "Follow-up arranged",
+                    "notes": "Appointments"
+                  }
+                ]
+              },
+              {
+                "id": "ready",
+                "type": "decision",
+                "label": "Ready for discharge?",
                 "dataSeen": [],
-                "id": "signpost",
-                "label": "Signpost to other services",
-                "type": "activity"
+                "dataCollected": []
+              },
+              {
+                "id": "discharge",
+                "type": "activity",
+                "label": "Complete discharge",
+                "dataSeen": [],
+                "dataCollected": [
+                  {
+                    "element": "DIS.DE2",
+                    "type": "Discharge date/time",
+                    "notes": "Actual discharge"
+                  },
+                  {
+                    "element": "DIS.DE3",
+                    "type": "Discharge destination",
+                    "notes": "Where to"
+                  }
+                ]
               },
               {
                 "id": "end",
-                "label": "Assessment complete",
-                "type": "end"
+                "type": "end",
+                "label": "Discharge complete",
+                "dataSeen": [],
+                "dataCollected": []
               }
-            ]
-          },
-          "id": "social-care-assessment",
-          "objectives": "Assess social care needs, determine support requirements, and coordinate care package delivery",
-          "personas": "Social Worker, Care Home Manager, Community Nurse, Patient/Service User, Family Carer",
-          "processId": "CISV2.D",
-          "title": "Social Care Needs Assessment"
-        },
-        {
-          "diagram": {
+            ],
             "edges": [
               {
                 "from": "start",
-                "to": "assess-understanding"
+                "to": "assess"
               },
               {
-                "from": "assess-understanding",
-                "to": "discuss-preferences"
+                "from": "assess",
+                "to": "support"
               },
               {
-                "from": "discuss-preferences",
-                "to": "dnacpr-decision"
+                "from": "support",
+                "to": "arrange",
+                "label": "Yes"
               },
               {
-                "from": "dnacpr-decision",
-                "label": "Yes",
-                "to": "document-dnacpr"
+                "from": "support",
+                "to": "meds",
+                "label": "No"
               },
               {
-                "from": "dnacpr-decision",
-                "label": "No",
-                "to": "advance-decision"
+                "from": "arrange",
+                "to": "meds"
               },
               {
-                "from": "document-dnacpr",
-                "to": "advance-decision"
+                "from": "meds",
+                "to": "communicate"
               },
               {
-                "from": "advance-decision",
-                "label": "Yes",
-                "to": "document-adrt"
+                "from": "communicate",
+                "to": "ready"
               },
               {
-                "from": "advance-decision",
-                "label": "No",
-                "to": "plan-care"
+                "from": "ready",
+                "to": "discharge",
+                "label": "Yes"
               },
               {
-                "from": "document-adrt",
-                "to": "plan-care"
+                "from": "ready",
+                "to": "assess",
+                "label": "No"
               },
               {
-                "from": "plan-care",
-                "to": "coordinate-services"
-              },
-              {
-                "from": "coordinate-services",
+                "from": "discharge",
                 "to": "end"
               }
-            ],
-            "nodes": [
-              {
-                "id": "start",
-                "label": "EoL conversation initiated",
-                "type": "start"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Awareness of prognosis"
-                  }
-                ],
-                "dataSeen": [
-                  {
-                    "element": "Diagnosis",
-                    "source": "Medical records"
-                  }
-                ],
-                "id": "assess-understanding",
-                "label": "Assess awareness of prognosis",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Preferred place of care"
-                  },
-                  {
-                    "element": "Preferred place of death"
-                  },
-                  {
-                    "element": "Priorities of care"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "discuss-preferences",
-                "label": "Discuss preferences",
-                "type": "activity"
-              },
-              {
-                "id": "dnacpr-decision",
-                "label": "Discuss DNACPR?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "CPR decision"
-                  },
-                  {
-                    "element": "Date for review"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "document-dnacpr",
-                "label": "Document CPR decision",
-                "type": "activity"
-              },
-              {
-                "id": "advance-decision",
-                "label": "Advance decisions needed?",
-                "type": "decision"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Advance decision to refuse treatment"
-                  },
-                  {
-                    "element": "Location of document"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "document-adrt",
-                "label": "Document ADRT",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Anticipatory actions"
-                  },
-                  {
-                    "element": "Anticipatory medicines"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "plan-care",
-                "label": "Plan anticipatory care",
-                "type": "activity"
-              },
-              {
-                "dataCollected": [
-                  {
-                    "element": "Service referrals"
-                  },
-                  {
-                    "element": "Equipment provision"
-                  }
-                ],
-                "dataSeen": [],
-                "id": "coordinate-services",
-                "label": "Coordinate services",
-                "type": "activity"
-              },
-              {
-                "id": "end",
-                "label": "EoL planning complete",
-                "type": "end"
-              }
             ]
-          },
-          "id": "end-of-life-planning",
-          "objectives": "Establish person's end of life preferences, document advance decisions, and coordinate palliative care",
-          "personas": "GP/Primary Care Physician, Community Nurse, Hospital Consultant, Patient/Service User, Family Carer",
-          "processId": "CISV2.E",
-          "title": "End of Life Care Planning"
+          }
         }
-      ],
-      "summary_markdown": "The Core Information Standard v2.0 defines five primary business processes that span initial registration through ongoing care management. Each process involves multiple personas working collaboratively to capture, maintain, and utilize person-centered information effectively."
-    },
-    "sectionType": "processes",
-    "status": "draft",
-    "title": "Business Processes & Workflows"
+      ]
+    }
   },
   {
-    "children": [],
-    "content": "## Core Data Elements\n\nThe Core Information Standard v2.0 defines essential data elements organized by domain to ensure comprehensive person-centered documentation.\n\n### Person Demographics Domain\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE1 | Person first name | The first name(s) of the person including middle names | String (max 35) | M | NHS_DD: Person given name |\n| CISV2.DE2 | Person family name | The family name or surname of the person | String (max 35) | M | NHS_DD: Person family name |\n| CISV2.DE3 | Person preferred name | Name by which person wishes to be addressed | String (max 70) | R | NHS_DD: Person full name |\n| CISV2.DE4 | Date of birth | The date of birth of the person | Date (YMD) | M | NHS_DD: Person birth date |\n| CISV2.DE5 | NHS number | Unique identifier within NHS England/Wales | String (10) | R | NHS_DD: NHS number |\n| CISV2.DE6 | Gender | Person's stated gender | String (1) | R | NHS_DD: Person stated gender code |\n| CISV2.DE7 | Address line 1 | First line of person's address | String (max 35) | M | NHS_DD: Patient usual address |\n| CISV2.DE8 | Postcode | Person's postcode | String (max 8) | R | NHS_DD: Postcode of usual address |\n\n### Individual Requirements Domain\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE9 | Reasonable adjustment flag | Indicates reasonable adjustments required | Boolean | R | SNOMED CT: 1108111000000107 |\n| CISV2.DE10 | Reasonable adjustment type | Type of adjustment required | Coded | R | SNOMED CT: Accessible information refsets |\n| CISV2.DE11 | Communication method | How person communicates | Text | R | Free text |\n| CISV2.DE12 | Impairment category | Category of impairment | Coded | R | SNOMED CT |\n| CISV2.DE13 | Mobility needs | Person's mobility requirements | Coded | R | SNOMED CT: 999002551000000108 |\n\n### Clinical Information Domain\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE14 | Problem | Condition requiring treatment | Coded | M | SNOMED CT: 1127581000000103 |\n| CISV2.DE15 | Medication name | Generic or brand name | Coded | M | dm+d: VTM/VMP/AMP |\n| CISV2.DE16 | Allergy causative agent | Substance causing allergy | Coded | M | dm+d/SNOMED CT |\n| CISV2.DE17 | Investigation performed | Type of investigation | Coded | M | SNOMED CT: 71388002 |\n| CISV2.DE18 | Procedure performed | Therapeutic/diagnostic procedure | Coded | M | SNOMED CT: 71388002 |\n\n### Care Planning Domain\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE19 | Care plan goal | Person's goals and hopes | Text/Coded | R | SNOMED CT context |\n| CISV2.DE20 | Goal importance score | Importance to person (1-10) | Decimal | R | Numeric scale |\n| CISV2.DE21 | Actions planned | Actions to achieve goals | Text/Coded | R | SNOMED CT procedures |\n| CISV2.DE22 | Agreed with person | Plan agreement status | Boolean | R | Yes/No |\n| CISV2.DE23 | Review date | When plan will be reviewed | DateTime | R | Date/time |\n\n### Legal & Safeguarding Domain\n\n| Element ID | Label | Description | Data Type | Required | Code |\n|---|---|---|---|---|---|\n| CISV2.DE24 | Mental capacity assessment | Capacity for specific decision | Text | R | Free text |\n| CISV2.DE25 | LPA status | Lasting power of attorney | Coded | R | SNOMED CT: 999001951000000107 |\n| CISV2.DE26 | DNACPR status | CPR decision status | Coded | R | SNOMED CT: 450475007/450476008 |\n| CISV2.DE27 | Safeguarding indicator | Safeguarding concerns flag | Boolean | R | Yes/No |\n| CISV2.DE28 | DoLS status | Deprivation of Liberty status | String | R | Requested/Authorised |",
-    "id": "sec-86d44b9f",
+    "id": "sec-fec15565",
+    "sectionType": "user_scenarios",
+    "title": "User Scenarios",
     "level": 1,
-    "sectionType": "data_elements",
     "status": "draft",
-    "title": "Core Data Elements"
+    "children": [],
+    "content": "## Emergency Admission with Complex Needs\n\nMrs. Elizabeth Thompson, an 82-year-old woman with multiple comorbidities including diabetes, heart failure, and mild cognitive impairment, is brought to the Emergency Department following a fall at home. The paramedic team needs immediate access to her medical history, current medications, and any advance decisions to provide appropriate care.\n\n**Personas involved:** Paramedic, Hospital Consultant, District Nurse\n\n**Linked processes:** CISV2.D\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE14 | NHS number | Patient identification and record retrieval |\n| CISV2.DE2 | Person name | Patient verification |\n| CISV2.DE70 | Reasonable adjustment | Identifying communication needs due to cognitive impairment |\n| CISV2.DE52 | What is most important to me | Understanding patient preferences during emergency care |\n| CISV2.DE56 | How I communicate and how to communicate with me | Adapting communication approach |\n\n## Medication Review in Community Setting\n\nMr. James Wilson, a 75-year-old man with polypharmacy (taking 8 regular medications), attends his GP practice for a routine medication review. The pharmacist needs to reconcile his current medications, check for interactions, and ensure optimal therapy while considering his kidney function and recent hospital discharge.\n\n**Personas involved:** Pharmacist, General Practitioner\n\n**Linked processes:** CISV2.B\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE14 | NHS number | Patient identification |\n| CISV2.DE46 | GP practice | Confirming registered practice |\n| CISV2.DE48 | GP name | Identifying responsible GP |\n| CISV2.DE9 | Date of birth | Age-appropriate prescribing |\n| CISV2.DE10 | Gender | Gender-specific medication considerations |\n\n## Social Care Assessment for Independent Living\n\nMrs. Priya Patel, a 68-year-old woman living alone, has been referred for a social care assessment following concerns raised by her daughter about her ability to manage daily activities. The social worker needs to conduct a comprehensive assessment considering her cultural needs, home environment, and support network.\n\n**Personas involved:** Social Worker, Occupational Therapist, Patient/Service User\n\n**Linked processes:** CISV2.C\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE17 | Person's address | Assessing home environment and location |\n| CISV2.DE11 | Ethnicity | Understanding cultural considerations |\n| CISV2.DE12 | Religion | Considering religious practices in care planning |\n| CISV2.DE54 | People who are important to me | Identifying support network |\n| CISV2.DE148 | Mobility | Assessing physical capabilities |\n| CISV2.DE173 | Other individual requirements | Capturing specific needs |\n\n## Hospital Discharge to Care Home\n\nMr. George Brown, an 89-year-old man with advanced dementia, is being discharged from hospital to a care home following treatment for pneumonia. Multiple professionals need to coordinate to ensure safe transfer and continuity of care.\n\n**Personas involved:** Hospital Consultant, Social Worker, Care Home Manager, District Nurse\n\n**Linked processes:** CISV2.E\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE125 | Cognition | Documenting cognitive status for care home |\n| CISV2.DE69 | Individual requirements | Identifying all support needs |\n| CISV2.DE98 | Impairment | Recording functional impairments |\n| CISV2.DE60 | Please do and please don't | Providing care preferences to new setting |\n| CISV2.DE62 | How and when to support me | Guiding care home staff |\n\n## Mental Health Crisis Response\n\nMs. Sarah Johnson, a 34-year-old woman with bipolar disorder, presents in mental health crisis at A&E. The mental health nurse needs to assess her current state, review her care plan, and determine appropriate intervention while ensuring her safety.\n\n**Personas involved:** Mental Health Nurse, Hospital Consultant\n\n**Linked processes:** CISV2.D\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE14 | NHS number | Accessing mental health records |\n| CISV2.DE70 | Reasonable adjustment | Understanding specific mental health accommodations |\n| CISV2.DE58 | My wellness | Identifying baseline functioning and triggers |\n| CISV2.DE64 | Also worth knowing about me | Understanding personal context |\n\n## Routine GP Consultation with Multiple Conditions\n\nMr. David Chen, a 65-year-old man with diabetes, hypertension, and recently diagnosed COPD, attends his GP for routine monitoring. The GP needs to review all conditions, adjust medications, and coordinate care with specialist services.\n\n**Personas involved:** General Practitioner, Patient/Service User\n\n**Linked processes:** CISV2.A\n\n**Data elements involved:**\n\n| Element ID | Label | Used For |\n|---|---|---|\n| CISV2.DE14 | NHS number | Patient identification |\n| CISV2.DE9 | Date of birth | Age-related clinical decisions |\n| CISV2.DE46 | GP practice | Confirming registration |\n| CISV2.DE27 | Person's telephone number details | Updating contact information |\n| CISV2.DE31 | Person's email address details | Providing digital communication options |",
+    "scenarios_metadata": [
+      {
+        "title": "Emergency Admission with Complex Needs",
+        "linkedProcesses": [
+          "CISV2.D"
+        ],
+        "dataElements": [
+          "CISV2.DE14",
+          "CISV2.DE2",
+          "CISV2.DE70",
+          "CISV2.DE52",
+          "CISV2.DE56"
+        ]
+      },
+      {
+        "title": "Medication Review in Community Setting",
+        "linkedProcesses": [
+          "CISV2.B"
+        ],
+        "dataElements": [
+          "CISV2.DE14",
+          "CISV2.DE46",
+          "CISV2.DE48",
+          "CISV2.DE9",
+          "CISV2.DE10"
+        ]
+      },
+      {
+        "title": "Social Care Assessment for Independent Living",
+        "linkedProcesses": [
+          "CISV2.C"
+        ],
+        "dataElements": [
+          "CISV2.DE17",
+          "CISV2.DE11",
+          "CISV2.DE12",
+          "CISV2.DE54",
+          "CISV2.DE148",
+          "CISV2.DE173"
+        ]
+      },
+      {
+        "title": "Hospital Discharge to Care Home",
+        "linkedProcesses": [
+          "CISV2.E"
+        ],
+        "dataElements": [
+          "CISV2.DE125",
+          "CISV2.DE69",
+          "CISV2.DE98",
+          "CISV2.DE60",
+          "CISV2.DE62"
+        ]
+      },
+      {
+        "title": "Mental Health Crisis Response",
+        "linkedProcesses": [
+          "CISV2.D"
+        ],
+        "dataElements": [
+          "CISV2.DE14",
+          "CISV2.DE70",
+          "CISV2.DE58",
+          "CISV2.DE64"
+        ]
+      },
+      {
+        "title": "Routine GP Consultation with Multiple Conditions",
+        "linkedProcesses": [
+          "CISV2.A"
+        ],
+        "dataElements": [
+          "CISV2.DE14",
+          "CISV2.DE9",
+          "CISV2.DE46",
+          "CISV2.DE27",
+          "CISV2.DE31"
+        ]
+      }
+    ]
   },
   {
-    "children": [],
-    "content": "## Decision-Support Logic\n\nThe Core Information Standard v2.0 incorporates decision support to guide appropriate documentation and care delivery based on person characteristics and circumstances.\n\n### Decision Table: Reasonable Adjustment Requirements\n\n**Title**: Determining Required Reasonable Adjustments\n**Description**: Based on identified impairments and communication needs, determine which reasonable adjustments must be provided under the Equality Act 2010.\n\n| Condition (Input) | Output Action |\n|---|---|\n| Impairment = Sensory (sight) | Provide information in alternative formats (large print, audio, Braille) |\n| Impairment = Sensory (hearing) | Provide BSL interpreter or written communication |\n| Impairment = Learning disability | Provide easy-read materials; allow extra time; support person present |\n| Impairment = Dementia | Simplify communication; involve carer; provide visual cues |\n| Impairment = Physical disability | Ensure accessible facilities; adjust appointment times; home visits |\n| Communication need = Non-English speaker | Provide professional interpreter (not family member) |\n| Multiple impairments present | Combine adjustments; prioritize based on severity |\n\n### Decision Table: Mental Capacity Assessment Triggers\n\n**Title**: When to Conduct Mental Capacity Assessment\n**Description**: Triggers that indicate a mental capacity assessment should be conducted for specific decisions.\n\n| Condition (Input) | Output Action |\n|---|---|\n| Major treatment decision required | Assess capacity for specific treatment decision |\n| Person has dementia diagnosis | Assess capacity for each significant decision |\n| Person has learning disability | Consider capacity; adjust communication method |\n| Refusal of recommended treatment | Assess capacity to refuse treatment |\n| Significant change in mental state | Reassess capacity for ongoing decisions |\n| Financial or legal decision needed | Assess capacity for specific decision type |\n| Conflicting views (person vs family) | Formal capacity assessment required |\n\n### Decision Table: Safeguarding Response Requirements\n\n**Title**: Safeguarding Response Based on Risk Type\n**Description**: Determines required actions based on identified safeguarding concerns.\n\n| Condition (Input) | Output Action |\n|---|---|\n| Risk of self-harm identified | Immediate risk assessment; mental health referral; safety plan |\n| Financial abuse suspected | Adult safeguarding referral; secure finances; document evidence |\n| Physical abuse indicators | Safeguarding referral; medical examination; photograph injuries |\n| Neglect concerns | Multi-agency meeting; care package review; monitoring plan |\n| Child at risk in household | Children's services notification; joint assessment |\n| Domestic violence disclosed | Safety planning; specialist service referral; consider MARAC |\n\n### Decision Table: Emergency Information Priority\n\n**Title**: Critical Information for Emergency Response\n**Description**: Prioritizes information display for emergency responders based on clinical scenario.\n\n| Condition (Input) | Output Action |\n|---|---|\n| Cardiac arrest scenario | Display: DNACPR status → Advance decisions → Emergency contacts |\n| Anaphylaxis risk | Display: Allergies → Current medications → Emergency contacts |\n| Mental health crisis | Display: Mental health act status → Risks → Crisis plan → Contacts |\n| Fall with injury | Display: Anticoagulation status → Mobility aids → Emergency contacts |\n| Unknown emergency | Display: DNACPR → Allergies → Medications → Key conditions |\n\n### Decision Table: Care Setting Transitions\n\n**Title**: Information Requirements for Care Transitions\n**Description**: Determines essential information to transfer based on transition type.\n\n| Condition (Input) | Output Action |\n|---|---|\n| Hospital to home | Medications changes, follow-up appointments, equipment needs, care plan |\n| Home to care home | Full assessment, About Me, legal status, medication list, care preferences |\n| Hospital to hospice | EoL preferences, DNACPR, symptom management, family contacts |\n| GP to specialist | Reason for referral, current problems, medications, relevant history |\n| Emergency admission | Allergies, medications, DNACPR, capacity status, key contacts |",
-    "id": "sec-fdd46081",
-    "level": 1,
+    "id": "sec-f7c942f7",
     "sectionType": "decision_tables",
+    "title": "Decision-Support Logic",
+    "level": 1,
     "status": "draft",
-    "title": "Decision-Support Logic"
+    "children": [],
+    "content": "## Decision-Support Logic\n\nThe following decision tables define key clinical and operational logic within the Core Information Standard to support consistent, evidence-based decision-making across care settings.\n\n### Table 1: Reasonable Adjustment Identification\n\n**Description:** Determines when reasonable adjustments should be flagged and documented based on identified impairments or individual requirements.\n\n| Condition | Input Data Elements | Output Action |\n|---|---|---|\n| Impairment category identified | CISV2.DE103 (Impairment category - Coded value) | Set CISV2.DE75 (Reasonable adjustment flag) = TRUE |\n| Communication impairment present | CISV2.DE103 = \"Communication impairment\" | Populate CISV2.DE77 (Reasonable adjustment - Coded value) with appropriate communication support code |\n| Mobility impairment present | CISV2.DE153 (Mobility needs - Coded value) populated | Set CISV2.DE75 = TRUE and document mobility accommodations |\n| Cognitive impairment identified | CISV2.DE130 (Cognition) populated | Set CISV2.DE75 = TRUE and specify cognitive support requirements |\n| Sensory impairment documented | CISV2.DE103 = \"Sensory disability\" | Set CISV2.DE75 = TRUE and detail sensory accommodations needed |\n\n### Table 2: Safeguarding Alert Triggers\n\n**Description:** Identifies conditions that should trigger safeguarding assessments or alerts.\n\n| Condition | Input Data Elements | Output Action |\n|---|---|---|\n| Safeguarding indicator = TRUE | Alert element (Safeguarding indicator) = Y | Generate safeguarding alert to care team |\n| Looked after child status active | Looked after child start date populated AND end date empty | Flag for social services coordination |\n| Mental capacity assessment indicates lack of capacity | Mental capacity assessment outcome = \"Lacks capacity\" | Review consent arrangements and best interests decisions |\n| DoLS authorised | DoLS application status = \"Authorised\" | Ensure care plan reflects DoLS conditions |\n| Child protection plan active | Child protection plan start date populated AND end date empty | Priority safeguarding coordination required |\n\n### Table 3: Emergency Information Priority\n\n**Description:** Determines which information elements must be immediately accessible during emergency care.\n\n| Condition | Input Data Elements | Output Action |\n|---|---|---|\n| Emergency admission | Process = CISV2.D | Display: CISV2.DE14 (NHS number), CISV2.DE70 (Reasonable adjustments), Allergies section, Problem list, Current medications |\n| CPR decision exists | CPR decision populated | Prominently display CPR status (CISV2.DE450-456) |\n| Advance decision present | ADRT section populated | Flag advance decisions for clinical team |\n| Mental Health Act status | MHA status populated | Display legal status and restrictions |\n| Communication needs identified | CISV2.DE56 (How I communicate) populated | Show communication requirements prominently |\n\n### Table 4: Medication Reconciliation Logic\n\n**Description:** Supports medication safety through systematic reconciliation processes.\n\n| Condition | Input Data Elements | Output Action |\n|---|---|---|\n| Admission medication review | Process = CISV2.B AND Location = \"Hospital\" | Compare current medications with GP records; flag discrepancies |\n| Allergy/adverse reaction recorded | Causative agent (medication) matches current prescription | Generate contraindication alert |\n| Medication status = \"stopped\" | Medication discontinued entry populated | Update active medication list; document reason |\n| Polypharmacy threshold exceeded | Count of active medications ≥ 8 | Trigger comprehensive medication review |\n| High-risk medication prescribed | Medication name matches high-risk drug list | Require additional safety checks and monitoring plan |"
   },
   {
-    "children": [],
-    "content": "## Indicators & Performance Metrics\n\nKey performance indicators for monitoring implementation and quality of the Core Information Standard v2.0.\n\n### Quality & Completeness Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.KPI01 | Demographic completeness | Records with all mandatory demographic fields complete | Total active records | By organization, care setting | Monthly |\n| CISV2.KPI02 | Reasonable adjustment documentation | Persons with documented reasonable adjustments | Persons with identified impairments | By impairment type, organization | Quarterly |\n| CISV2.KPI03 | About Me completion rate | Records with completed About Me section | Total registered persons | By age group, care setting | Monthly |\n| CISV2.KPI04 | Care plan currency | Care plans reviewed within specified timeframe | Total care plans requiring review | By service type, risk level | Monthly |\n| CISV2.KPI05 | DNACPR documentation | Persons with documented CPR decision | Persons identified for EoL care | By setting, diagnosis group | Monthly |\n\n### Safety & Risk Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.KPI06 | Allergy recording | Persons with allergy status recorded | Total registered persons | By allergy type, severity | Monthly |\n| CISV2.KPI07 | Safeguarding identification | New safeguarding concerns identified | Total assessments conducted | By risk type, age group | Weekly |\n| CISV2.KPI08 | Mental capacity documentation | Decisions with capacity assessment documented | Significant decisions made | By decision type, outcome | Monthly |\n| CISV2.KPI09 | Risk assessment completion | Persons with current risk assessment | Persons requiring risk assessment | By risk category, setting | Monthly |\n\n### Process & Efficiency Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.KPI10 | Emergency access time | Records accessed within 2 minutes | Total emergency access attempts | By access point, time of day | Real-time |\n| CISV2.KPI11 | Assessment timeliness | Assessments completed within target | Total assessments required | By assessment type, priority | Weekly |\n| CISV2.KPI12 | Information sharing compliance | Appropriate sharing with documented consent | Total information sharing events | By recipient type, purpose | Monthly |\n| CISV2.KPI13 | Multi-agency coordination | Care plans with multi-agency input | Complex care plans | By lead agency, condition | Quarterly |\n\n### Outcome Indicators\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.KPI14 | Person-centered goal achievement | Goals achieved or partially achieved | Total goals set in care plans | By goal type, timeframe | Quarterly |\n| CISV2.KPI15 | Preferred place of death achievement | Deaths in preferred place | Deaths with documented preference | By place type, service | Annual |\n| CISV2.KPI16 | Unplanned admissions | Emergency admissions for persons with care plans | Persons with active care plans | By primary condition, age | Monthly |\n| CISV2.KPI17 | Communication effectiveness | Successful communications per documented method | Communication attempts | By adjustment type | Quarterly |",
-    "id": "sec-80da4957",
-    "level": 1,
+    "id": "sec-45949678",
     "sectionType": "indicators",
+    "title": "Indicators & Performance Metrics",
+    "level": 1,
     "status": "draft",
-    "title": "Indicators & Performance Metrics"
+    "children": [],
+    "content": "## Indicators & Performance Metrics\n\nThe following indicators support quality monitoring and performance improvement for Core Information Standard implementation.\n\n| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |\n|---|---|---|---|---|---|\n| CISV2.IND.01 | Reasonable Adjustment Documentation Rate | Count of records with CISV2.DE75 (Reasonable adjustment flag) = TRUE AND CISV2.DE77 (Reasonable adjustment details) populated | Total records with CISV2.DE103 (Impairment category) populated | By organisation, impairment type, age group | Monthly |\n| CISV2.IND.02 | About Me Completion Rate | Count of records with ≥3 populated subsections in CISV2.DE51-68 (About me section) | Total active patient records | By care setting, age group, length of care | Quarterly |\n| CISV2.IND.03 | Consent Documentation Completeness | Records with consent for information sharing (Legal information section) documented with date and decision | Total records | By organisation, care setting | Monthly |\n| CISV2.IND.04 | Safeguarding Response Time | Records where time between safeguarding indicator = TRUE and first safeguarding action < 24 hours | Total records with safeguarding indicator = TRUE | By organisation, safeguarding type | Monthly |\n| CISV2.IND.05 | Care Plan Currency | Records with care plan (Care and support plan section) reviewed within specified timeframe | Total records with active care plans | By care setting, primary support reason | Quarterly |\n| CISV2.IND.06 | Emergency Information Availability | Records with populated: NHS number (CISV2.DE14), allergies section, problem list, current medications | Total emergency admissions (Process CISV2.D) | By admission source, time of day | Monthly |\n| CISV2.IND.07 | Advance Decision Recording | Records with ADRT or advance statement documented | Total records for patients aged ≥65 OR with life-limiting conditions | By age group, diagnosis category | Quarterly |\n| CISV2.IND.08 | Professional Contact Completeness | Records with ≥1 professional contact (Professional contacts section) with name, role, and contact details | Total active care records | By care setting, complexity score | Monthly |\n| CISV2.IND.09 | Risk Assessment Documentation | Records with current risk assessment (Risks section with date within 6 months) | Total records flagged as requiring risk assessment | By risk type, care setting | Quarterly |\n| CISV2.IND.10 | Medication Reconciliation Completion | Admission records with documented medication reconciliation within 24 hours | Total admissions (Process CISV2.E) | By admission type, day of week | Monthly |\n| CISV2.IND.11 | Social Context Recording | Records with populated household composition OR accommodation status OR social circumstances | Total records | By age group, care setting | Quarterly |\n| CISV2.IND.12 | Communication Needs Identification | Records with CISV2.DE56 (How I communicate) populated for patients with CISV2.DE103 indicating communication impairment | Total records with communication impairment | By impairment type, organisation | Monthly |"
   },
   {
-    "children": [],
-    "content": "## Functional & Non-Functional Requirements\n\nSystem requirements for implementing the Core Information Standard v2.0 to ensure comprehensive person-centered care documentation.\n\n### Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.FR01 | Person identification | System must support NHS number as primary identifier with ability to manage temporary numbers and merge duplicate records | High |\n| CISV2.FR02 | Reasonable adjustment recording | Capture, display and share reasonable adjustment requirements prominently across all care interfaces per Equality Act 2010 | High |\n| CISV2.FR03 | About Me documentation | Enable person/carer to directly input preferences, routines, and communication needs with multimedia support | High |\n| CISV2.FR04 | Consent management | Record and track consent decisions for information sharing with audit trail and ability to withdraw/modify | High |\n| CISV2.FR05 | Care plan creation | Support collaborative care planning with goals, actions, responsibilities and progress tracking | High |\n| CISV2.FR06 | Emergency information access | Provide rapid access to critical information (allergies, DNACPR, medications) within 2 minutes | High |\n| CISV2.FR07 | Multi-agency coordination | Enable secure information sharing across health and social care boundaries with role-based access | High |\n| CISV2.FR08 | Legal status tracking | Maintain current legal status (MCA, MHA, DoLS) with expiry alerts and review requirements | Medium |\n| CISV2.FR09 | Risk assessment tools | Provide structured risk assessment with automated flagging of high-risk scenarios | Medium |\n| CISV2.FR10 | Document management | Store and retrieve associated documents (advance decisions, LPA) with version control | Medium |\n| CISV2.FR11 | Safeguarding workflow | Support safeguarding referral process with secure information sharing to relevant authorities | High |\n| CISV2.FR12 | Medication reconciliation | Compare and reconcile medications across care transitions with interaction checking | High |\n| CISV2.FR13 | Assessment scheduling | Schedule and track required assessments with automated reminders for reviews | Medium |\n| CISV2.FR14 | Family/carer access | Provide appropriate access for authorized family/carers to view and contribute information | Medium |\n| CISV2.FR15 | Audit reporting | Generate compliance and quality reports against standard indicators | Low |\n\n### Non-Functional Requirements\n\n| ID | Title | Description | Priority |\n|---|---|---|---|\n| CISV2.NFR01 | Availability | System available 99.9% with planned maintenance windows outside core hours | High |\n| CISV2.NFR02 | Response time | Page load <3 seconds; search results <5 seconds; emergency access <2 minutes | High |\n| CISV2.NFR03 | Security | NHS Data Security and Protection Toolkit compliance; role-based access control; encryption at rest and in transit | High |\n| CISV2.NFR04 | Accessibility | WCAG 2.1 AA compliance; screen reader compatible; keyboard navigation; adjustable fonts/contrast | High |\n| CISV2.NFR05 | Interoperability | HL7 FHIR R4 UK Core compliance; integrate with PDS, SCR, GP systems | High |\n| CISV2.NFR06 | Scalability | Support 100,000 concurrent users; 10 million patient records; linear scaling | Medium |\n| CISV2.NFR07 | Mobile compatibility | Responsive design for tablets/smartphones; offline capability for community staff | Medium |\n| CISV2.NFR08 | Data retention | Maintain records per NHS retention schedules; support legal holds | Medium |\n| CISV2.NFR09 | Disaster recovery | RPO <1 hour; RTO <4 hours; geographic redundancy | High |\n| CISV2.NFR10 | Usability | Intuitive interface requiring <2 hours training; context-sensitive help | Medium |\n| CISV2.NFR11 | Multi-language support | Interface in Welsh and community languages; translation services integration | Low |\n| CISV2.NFR12 | Performance degradation | Graceful degradation under load; priority queuing for emergency access | Medium |",
-    "id": "sec-c8e95485",
-    "level": 1,
+    "id": "sec-6a7e065a",
     "sectionType": "requirements",
+    "title": "Functional & Non-Functional Requirements",
+    "level": 1,
     "status": "draft",
-    "title": "Functional & Non-Functional Requirements"
+    "children": [],
+    "content": "## Functional & Non-Functional Requirements\n\n### Functional Requirements\n\n| ID | Title | Description | Linked Processes | Priority |\n|---|---|---|---|---|\n| CISV2.FR.01 | Patient Registration & Demographics | System SHALL support creation and update of patient records with all mandatory demographic elements (CISV2.DE1-50) including NHS number validation | CISV2.A | Critical |\n| CISV2.FR.02 | Reasonable Adjustment Management | System SHALL flag and document reasonable adjustments per Equality Act 2010, supporting all adjustment categories in CISV2.DE70-195 | CISV2.A, CISV2.C, CISV2.E | Critical |\n| CISV2.FR.03 | Multi-professional Access Control | System SHALL provide role-based access supporting all personas (CISV2.P1-P10) with appropriate information visibility | All processes | Critical |\n| CISV2.FR.04 | Emergency Information Display | System SHALL present critical information (allergies, CPR status, key conditions) within 3 clicks during emergency access | CISV2.D | Critical |\n| CISV2.FR.05 | Medication Reconciliation Workflow | System SHALL support systematic medication review comparing current medications across care settings with conflict detection | CISV2.B | High |\n| CISV2.FR.06 | Care Plan Versioning | System SHALL maintain version history of care plans with ability to track changes, review dates, and responsible professionals | CISV2.C | High |\n| CISV2.FR.07 | Consent Management | System SHALL record and enforce information sharing consent decisions including best interests determinations | All processes | Critical |\n| CISV2.FR.08 | Safeguarding Alerts | System SHALL generate automatic alerts when safeguarding indicators are triggered with escalation workflows | CISV2.C, CISV2.D | Critical |\n| CISV2.FR.09 | Cross-Setting Information Exchange | System SHALL support bidirectional data exchange using standard APIs between acute, primary, and social care systems | CISV2.E | High |\n| CISV2.FR.10 | Patient-Contributed Information | System SHALL allow patient/carer input for \"About Me\" sections with appropriate validation and professional review | CISV2.A, CISV2.C | Medium |\n| CISV2.FR.11 | Advance Decision Recording | System SHALL support structured capture of ADRT, advance statements, and end-of-life preferences with prominence flags | All processes | High |\n| CISV2.FR.12 | Audit Trail Generation | System SHALL maintain comprehensive audit logs of all access, modifications, and consent overrides with user attribution | All processes | Critical |\n\n### Non-Functional Requirements\n\n| ID | Title | Description | Classification | Priority |\n|---|---|---|---|---|\n| CISV2.NFR.01 | Response Time - Emergency Access | Emergency information retrieval SHALL complete within 2 seconds for 95% of requests | Performance | Critical |\n| CISV2.NFR.02 | System Availability | System SHALL maintain 99.9% availability during core hours (8am-8pm) with 99.5% overall | Availability | Critical |\n| CISV2.NFR.03 | Data Encryption | All patient data SHALL be encrypted at rest (AES-256) and in transit (TLS 1.3 minimum) | Security | Critical |\n| CISV2.NFR.04 | Concurrent User Support | System SHALL support minimum 1000 concurrent users per organisation without performance degradation | Scalability | High |\n| CISV2.NFR.05 | Mobile Responsiveness | Interface SHALL be fully functional on tablets and mobile devices for community care scenarios | Usability | High |\n| CISV2.NFR.06 | Accessibility Compliance | System SHALL meet WCAG 2.1 AA standards supporting users with disabilities | Accessibility | Critical |\n| CISV2.NFR.07 | Backup & Recovery | System SHALL maintain hourly backups with recovery point objective (RPO) of 1 hour and recovery time objective (RTO) of 4 hours | Reliability | Critical |\n| CISV2.NFR.08 | Integration Standards | System SHALL support HL7 FHIR R4 UK Core for all data exchange with response times <5 seconds | Interoperability | High |\n| CISV2.NFR.09 | Clinical Safety Compliance | System SHALL comply with DCB0129 and DCB0160 clinical safety standards with documented hazard log | Safety | Critical |\n| CISV2.NFR.10 | Session Management | System SHALL enforce session timeout after 20 minutes of inactivity with secure session resumption | Security | High |\n| CISV2.NFR.11 | Search Performance | Patient search SHALL return results within 3 seconds for databases up to 10 million records | Performance | High |\n| CISV2.NFR.12 | Data Retention Compliance | System SHALL support configurable retention periods per record type in line with NHS Records Management Code | Compliance | Critical |"
   }
 ]
