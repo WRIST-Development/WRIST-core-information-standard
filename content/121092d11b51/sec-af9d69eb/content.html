@@ -1,0 +1,50 @@
+## Core Data Elements
+
+The Core Information Standard defines essential data elements organised by functional domains to support comprehensive person-centred records.
+
+### Person Demographics
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE.01 | Person Name | Full name components including first, family, preferred names | String | M | NHS DD: Person name |
+| CISV2.DE.02 | NHS Number | Unique NHS identifier with verification status | String[10] | M | NHS DD: NHS number |
+| CISV2.DE.03 | Date of Birth | Person's date of birth | Date | M | NHS DD: Person birth date |
+| CISV2.DE.04 | Gender | Person's stated gender | String[1] | R | NHS DD: Person stated gender |
+| CISV2.DE.05 | Contact Details | Phone, email, preferred contact method | Complex | R | NHS DD: Contact details |
+| CISV2.DE.06 | GP Practice | Registered GP practice identifier | String[5] | M | NHS DD: GP practice code |
+
+### Individual Requirements
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE.07 | Reasonable Adjustments | Adjustments required under Equality Act | Boolean + Text | R | SNOMED: 1108111000000107 |
+| CISV2.DE.08 | Communication Needs | Specific communication requirements | Complex | R | SNOMED: AIS refsets |
+| CISV2.DE.09 | Impairments | Recorded impairments affecting care | Complex | R | SNOMED CT |
+| CISV2.DE.10 | Mobility Needs | Mobility requirements and aids | Complex | R | SNOMED: 999002551000000108 |
+
+### Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE.11 | Problem List | Active problems requiring management | Complex | M | SNOMED: 1127581000000103 |
+| CISV2.DE.12 | Medications | Current medications with dm+d coding | Complex | M | dm+d codes |
+| CISV2.DE.13 | Allergies | Allergies and adverse reactions | Complex | M | SNOMED/dm+d |
+| CISV2.DE.14 | Vaccinations | Immunisation records | Complex | R | dm+d/SNOMED |
+
+### Legal and Safeguarding
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE.15 | Mental Capacity | Mental capacity assessment records | Complex | R | Free text |
+| CISV2.DE.16 | Safeguarding Flags | Active safeguarding concerns | Boolean + Detail | R | SNOMED: 999002381000000108 |
+| CISV2.DE.17 | LPA Status | Lasting Power of Attorney records | Complex | R | SNOMED: 999001951000000107 |
+| CISV2.DE.18 | DNACPR Decision | CPR decision and documentation | Complex | R | SNOMED: 450475007/450476008 |
+
+### Care Planning
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE.19 | Care Goals | Person's goals and preferences | Complex | R | SNOMED context codes |
+| CISV2.DE.20 | Care Actions | Planned actions with responsibilities | Complex | R | SNOMED procedures |
+| CISV2.DE.21 | Review Dates | Scheduled review dates | DateTime | R | Free text |
+| CISV2.DE.22 | Contingency Plans | Emergency/deterioration plans | Complex | R | Free text |
