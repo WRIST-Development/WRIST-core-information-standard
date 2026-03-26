@@ -48,7 +48,8 @@
               },
               {
                 "element": "About Me preferences",
-                "type": "CISV2 About Me"
+                "type": "CISV2 About Me",
+                "source": ""
               }
             ],
             "dataCollected": [
@@ -619,7 +620,8 @@
             },
             {
               "element": "About Me preferences",
-              "type": "CISV2 About Me"
+              "type": "CISV2 About Me",
+              "source": ""
             }
           ],
           "dataCollected": [
