@@ -87,17 +87,20 @@
             "dataSeen": [
               {
                 "element": "Individual requirements",
-                "type": "CISV2 Individual Requirements"
+                "type": "CISV2 Individual Requirements",
+                "source": ""
               }
             ],
             "dataCollected": [
               {
                 "element": "Adjustment details",
-                "type": "CISV2 Individual Requirements"
+                "type": "CISV2 Individual Requirements",
+                "notes": ""
               },
               {
                 "element": "Impairment category",
-                "type": "CISV2 Individual Requirements"
+                "type": "CISV2 Individual Requirements",
+                "notes": ""
               }
             ],
             "z": 3,
@@ -639,17 +642,20 @@
           "dataSeen": [
             {
               "element": "Individual requirements",
-              "type": "CISV2 Individual Requirements"
+              "type": "CISV2 Individual Requirements",
+              "source": ""
             }
           ],
           "dataCollected": [
             {
               "element": "Adjustment details",
-              "type": "CISV2 Individual Requirements"
+              "type": "CISV2 Individual Requirements",
+              "notes": ""
             },
             {
               "element": "Impairment category",
-              "type": "CISV2 Individual Requirements"
+              "type": "CISV2 Individual Requirements",
+              "notes": ""
             }
           ]
         },
