@@ -1,0 +1,56 @@
+## Core Data Elements
+
+The Core Information Standard v2.0 defines essential data elements organized by domain to ensure comprehensive person-centered documentation.
+
+### Person Demographics Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | Person first name | The first name(s) of the person including middle names | String (max 35) | M | NHS_DD: Person given name |
+| CISV2.DE2 | Person family name | The family name or surname of the person | String (max 35) | M | NHS_DD: Person family name |
+| CISV2.DE3 | Person preferred name | Name by which person wishes to be addressed | String (max 70) | R | NHS_DD: Person full name |
+| CISV2.DE4 | Date of birth | The date of birth of the person | Date (YMD) | M | NHS_DD: Person birth date |
+| CISV2.DE5 | NHS number | Unique identifier within NHS England/Wales | String (10) | R | NHS_DD: NHS number |
+| CISV2.DE6 | Gender | Person's stated gender | String (1) | R | NHS_DD: Person stated gender code |
+| CISV2.DE7 | Address line 1 | First line of person's address | String (max 35) | M | NHS_DD: Patient usual address |
+| CISV2.DE8 | Postcode | Person's postcode | String (max 8) | R | NHS_DD: Postcode of usual address |
+
+### Individual Requirements Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE9 | Reasonable adjustment flag | Indicates reasonable adjustments required | Boolean | R | SNOMED CT: 1108111000000107 |
+| CISV2.DE10 | Reasonable adjustment type | Type of adjustment required | Coded | R | SNOMED CT: Accessible information refsets |
+| CISV2.DE11 | Communication method | How person communicates | Text | R | Free text |
+| CISV2.DE12 | Impairment category | Category of impairment | Coded | R | SNOMED CT |
+| CISV2.DE13 | Mobility needs | Person's mobility requirements | Coded | R | SNOMED CT: 999002551000000108 |
+
+### Clinical Information Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE14 | Problem | Condition requiring treatment | Coded | M | SNOMED CT: 1127581000000103 |
+| CISV2.DE15 | Medication name | Generic or brand name | Coded | M | dm+d: VTM/VMP/AMP |
+| CISV2.DE16 | Allergy causative agent | Substance causing allergy | Coded | M | dm+d/SNOMED CT |
+| CISV2.DE17 | Investigation performed | Type of investigation | Coded | M | SNOMED CT: 71388002 |
+| CISV2.DE18 | Procedure performed | Therapeutic/diagnostic procedure | Coded | M | SNOMED CT: 71388002 |
+
+### Care Planning Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE19 | Care plan goal | Person's goals and hopes | Text/Coded | R | SNOMED CT context |
+| CISV2.DE20 | Goal importance score | Importance to person (1-10) | Decimal | R | Numeric scale |
+| CISV2.DE21 | Actions planned | Actions to achieve goals | Text/Coded | R | SNOMED CT procedures |
+| CISV2.DE22 | Agreed with person | Plan agreement status | Boolean | R | Yes/No |
+| CISV2.DE23 | Review date | When plan will be reviewed | DateTime | R | Date/time |
+
+### Legal & Safeguarding Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE24 | Mental capacity assessment | Capacity for specific decision | Text | R | Free text |
+| CISV2.DE25 | LPA status | Lasting power of attorney | Coded | R | SNOMED CT: 999001951000000107 |
+| CISV2.DE26 | DNACPR status | CPR decision status | Coded | R | SNOMED CT: 450475007/450476008 |
+| CISV2.DE27 | Safeguarding indicator | Safeguarding concerns flag | Boolean | R | Yes/No |
+| CISV2.DE28 | DoLS status | Deprivation of Liberty status | String | R | Requested/Authorised |
