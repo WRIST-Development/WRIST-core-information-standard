@@ -1,0 +1,29 @@
+## Core Data Elements
+
+### Person Demographics Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | Person First Name | First name(s) including middle names | String[35] | M | NHS DD: Person given name |
+| CISV2.DE2 | Person Family Name | Family name or surname | String[35] | M | NHS DD: Person family name |
+| CISV2.DE3 | Date of Birth | Person's date of birth | Date | M | NHS DD: Person birth date |
+| CISV2.DE4 | NHS Number | Unique NHS identifier | String[10] | R | NHS DD: NHS number |
+| CISV2.DE5 | Address Line 1 | First line of address | String[35] | M | NHS DD: Patient usual address |
+| CISV2.DE6 | Postcode | Postal code | String[8] | R | NHS DD: Postcode of usual address |
+
+### Individual Requirements Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE7 | Reasonable Adjustment Flag | Requires adjustments per Equality Act | Boolean | R | SNOMED: 1108111000000107 |
+| CISV2.DE8 | Communication Method | Preferred communication method | String[1] | R | NHS DD: Communication contact method |
+| CISV2.DE9 | Impairment Category | Type of impairment requiring adjustment | Code | R | SNOMED CT reference set |
+
+### Clinical Information Domain
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE10 | Problem | Clinical problem or diagnosis | Code/Text | M | SNOMED: Health issues reference set |
+| CISV2.DE11 | Medication Name | Name of medication | Code/Text | M | dm+d: VTM/VMP/AMP |
+| CISV2.DE12 | Allergy Causative Agent | Substance causing allergy | Code/Text | M | SNOMED/dm+d |
+| CISV2.DE13 | Procedure | Clinical procedure performed | Code/Text | M | SNOMED: 71388002 |
