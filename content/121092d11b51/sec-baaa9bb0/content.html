@@ -1,0 +1,43 @@
+## Functional & Non-Functional Requirements
+
+Systems implementing the Core Information Standard v2.0 must meet the following functional and non-functional requirements to ensure effective integrated care delivery.
+
+### Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.FR1 | Person Demographics Management | System must capture, validate and maintain all mandatory person demographic elements including NHS number verification, structured name and address components | Mandatory |
+| CISV2.FR2 | Reasonable Adjustments Recording | System must support flagging, detailed recording and sharing of reasonable adjustments with SNOMED coding for adjustment types and impairments | Mandatory |
+| CISV2.FR3 | Multi-Professional Access Control | System must enable role-based access for all defined personas with appropriate permissions based on legitimate relationships and care involvement | Mandatory |
+| CISV2.FR4 | Care Plan Development | System must support collaborative care planning with goals, actions, responsibilities and person agreement tracking with version control | High |
+| CISV2.FR5 | Medication Reconciliation | System must enable medication reconciliation across care transitions with dm+d coding, allergy checking and change documentation | Mandatory |
+| CISV2.FR6 | Safeguarding Workflow | System must support safeguarding workflows including flagging, assessment recording, statutory reporting and multi-agency coordination | Mandatory |
+| CISV2.FR7 | Clinical Coding Support | System must support SNOMED CT coding for clinical findings, dm+d for medications, and LOINC for observations with search and validation | High |
+| CISV2.FR8 | Document Management | System must store and retrieve associated documents including advance decisions, care plans and clinical correspondence with appropriate metadata | High |
+| CISV2.FR9 | End of Life Planning | System must capture CPR decisions, preferred place of death/care, advance care planning with sensitivity flags and controlled sharing | High |
+| CISV2.FR10 | Audit Trail | System must maintain complete audit trail of all access and changes with professional identification, timestamps and justification where required | Mandatory |
+| CISV2.FR11 | Information Sharing | System must support standards-based information exchange using UK Core FHIR R4 profiles for all defined data elements | High |
+| CISV2.FR12 | Person Access | System must provide person/representative access to view and contribute to 'About Me' and care planning sections with appropriate controls | Medium |
+| CISV2.FR13 | Risk Assessment Management | System must support structured risk assessment recording, mitigation planning and review scheduling with alerts for overdue reviews | High |
+| CISV2.FR14 | Professional Registration | System must validate professional registration details against national registers where available and maintain current contact information | High |
+| CISV2.FR15 | Reporting & Analytics | System must generate all defined performance indicators with required disaggregation and support custom queries on the data model | Medium |
+
+### Non-Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.NFR1 | Availability | System must maintain 99.9% availability during core hours (8am-8pm) with planned maintenance outside these hours | Mandatory |
+| CISV2.NFR2 | Response Time | System must return person record queries within 2 seconds and complete saves within 3 seconds under normal load conditions | High |
+| CISV2.NFR3 | Scalability | System must support minimum 100,000 active person records and 500 concurrent users without performance degradation | High |
+| CISV2.NFR4 | Security | System must implement NHS Data Security and Protection Toolkit standards including encryption at rest and in transit, secure authentication | Mandatory |
+| CISV2.NFR5 | Clinical Safety | System must comply with DCB0129 and DCB0160 clinical safety standards with documented hazard assessment and mitigation | Mandatory |
+| CISV2.NFR6 | Accessibility | System must meet WCAG 2.1 AA standards and support assistive technologies for users with disabilities | Mandatory |
+| CISV2.NFR7 | Interoperability | System must implement UK Core FHIR R4 profiles and support standard NHS integration patterns including spine services | Mandatory |
+| CISV2.NFR8 | Data Retention | System must retain records in line with NHS Records Management Code of Practice with appropriate archival and deletion capabilities | High |
+| CISV2.NFR9 | Business Continuity | System must maintain local resilience with maximum 4-hour recovery time objective and 1-hour recovery point objective | High |
+| CISV2.NFR10 | Mobile Access | System must provide responsive design supporting tablets and smartphones for community and ward-based care delivery | Medium |
+| CISV2.NFR11 | Offline Capability | System must support offline access to core information with synchronisation when connectivity restored for community settings | Medium |
+| CISV2.NFR12 | Training & Support | System must include role-based training modules and context-sensitive help meeting NHS accessibility standards | High |
+| CISV2.NFR13 | Configuration | System must support local configuration of workflows, forms and terminology without requiring code changes | Medium |
+| CISV2.NFR14 | Performance Monitoring | System must provide real-time monitoring of system performance, data quality and user activity with alerting capabilities | High |
+| CISV2.NFR15 | Consent Management | System must track and enforce information sharing preferences with granular control over section visibility and override audit | Mandatory |
