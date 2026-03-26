@@ -1,0 +1,523 @@
+{
+  "summary_markdown": "Three critical workflows support the implementation of the Core Information Standard: emergency admission, care assessment, and care transfer processes.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Emergency Admission Process",
+      "objectives": "Rapidly capture and access critical information during emergency admission",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents to A&E"
+          },
+          {
+            "id": "triage",
+            "type": "activity",
+            "label": "Triage Assessment",
+            "dataSeen": [
+              {
+                "element": "NHS Number",
+                "source": "PDS lookup",
+                "type": "identifier"
+              },
+              {
+                "element": "Previous alerts",
+                "source": "EPR",
+                "type": "alert"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Presenting complaint",
+                "notes": "Chief concern",
+                "type": "clinical"
+              },
+              {
+                "element": "Vital signs",
+                "notes": "BP, pulse, temp",
+                "type": "observation"
+              }
+            ]
+          },
+          {
+            "id": "check_capacity",
+            "type": "decision",
+            "label": "Has capacity?",
+            "dataSeen": [
+              {
+                "element": "Mental capacity status",
+                "source": "Previous records",
+                "type": "legal"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "collect_info",
+            "type": "activity",
+            "label": "Collect Critical Information",
+            "dataSeen": [
+              {
+                "element": "GP details",
+                "source": "PDS",
+                "type": "contact"
+              },
+              {
+                "element": "Previous admissions",
+                "source": "EPR",
+                "type": "history"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Allergies",
+                "notes": "Verify with patient",
+                "type": "clinical"
+              },
+              {
+                "element": "Current medications",
+                "notes": "Medicine reconciliation",
+                "type": "medication"
+              },
+              {
+                "element": "Emergency contacts",
+                "type": "contact"
+              }
+            ]
+          },
+          {
+            "id": "best_interests",
+            "type": "subprocess",
+            "label": "Best Interests Process",
+            "dataSeen": [
+              {
+                "element": "LPA details",
+                "source": "Legal records",
+                "type": "legal"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Best interests decision",
+                "notes": "Document rationale",
+                "type": "legal"
+              },
+              {
+                "element": "Consultation record",
+                "type": "documentation"
+              }
+            ]
+          },
+          {
+            "id": "admit",
+            "type": "activity",
+            "label": "Complete Admission",
+            "dataSeen": [
+              {
+                "element": "Bed availability",
+                "source": "Bed management",
+                "type": "resource"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Admission details",
+                "type": "administrative"
+              },
+              {
+                "element": "Initial care plan",
+                "type": "care_plan"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Admission complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "triage"
+          },
+          {
+            "from": "triage",
+            "to": "check_capacity"
+          },
+          {
+            "from": "check_capacity",
+            "to": "collect_info",
+            "label": "Yes"
+          },
+          {
+            "from": "check_capacity",
+            "to": "best_interests",
+            "label": "No"
+          },
+          {
+            "from": "collect_info",
+            "to": "admit"
+          },
+          {
+            "from": "best_interests",
+            "to": "admit"
+          },
+          {
+            "from": "admit",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Care Assessment Process",
+      "objectives": "Conduct comprehensive assessment of care and support needs",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Referral received"
+          },
+          {
+            "id": "schedule",
+            "type": "activity",
+            "label": "Schedule Assessment",
+            "dataSeen": [
+              {
+                "element": "Referral details",
+                "source": "Referral system",
+                "type": "administrative"
+              },
+              {
+                "element": "Person demographics",
+                "source": "Care records",
+                "type": "demographic"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Appointment details",
+                "type": "administrative"
+              },
+              {
+                "element": "Consent for visit",
+                "type": "legal"
+              }
+            ]
+          },
+          {
+            "id": "conduct",
+            "type": "activity",
+            "label": "Conduct Assessment",
+            "dataSeen": [
+              {
+                "element": "Previous assessments",
+                "source": "Care records",
+                "type": "history"
+              },
+              {
+                "element": "Current support",
+                "source": "Care records",
+                "type": "service"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "About me information",
+                "notes": "Person's perspective",
+                "type": "personal"
+              },
+              {
+                "element": "Social circumstances",
+                "type": "social"
+              },
+              {
+                "element": "Care preferences",
+                "type": "preference"
+              },
+              {
+                "element": "Support needs",
+                "type": "assessment"
+              }
+            ]
+          },
+          {
+            "id": "eligibility",
+            "type": "decision",
+            "label": "Meets eligibility?",
+            "dataSeen": [
+              {
+                "element": "Eligibility criteria",
+                "source": "Policy",
+                "type": "criteria"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Eligibility decision",
+                "type": "decision"
+              }
+            ]
+          },
+          {
+            "id": "plan",
+            "type": "activity",
+            "label": "Develop Care Plan",
+            "dataSeen": [
+              {
+                "element": "Available services",
+                "source": "Service directory",
+                "type": "resource"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Goals and outcomes",
+                "type": "care_plan"
+              },
+              {
+                "element": "Actions and activities",
+                "type": "care_plan"
+              },
+              {
+                "element": "Review arrangements",
+                "type": "care_plan"
+              }
+            ]
+          },
+          {
+            "id": "signpost",
+            "type": "activity",
+            "label": "Signpost to Services",
+            "dataSeen": [
+              {
+                "element": "Community resources",
+                "source": "Directory",
+                "type": "resource"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Signposting record",
+                "type": "documentation"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "schedule"
+          },
+          {
+            "from": "schedule",
+            "to": "conduct"
+          },
+          {
+            "from": "conduct",
+            "to": "eligibility"
+          },
+          {
+            "from": "eligibility",
+            "to": "plan",
+            "label": "Yes"
+          },
+          {
+            "from": "eligibility",
+            "to": "signpost",
+            "label": "No"
+          },
+          {
+            "from": "plan",
+            "to": "end"
+          },
+          {
+            "from": "signpost",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Care Transfer Process",
+      "objectives": "Ensure safe transfer of care between settings with complete information handover",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Transfer initiated"
+          },
+          {
+            "id": "prepare",
+            "type": "activity",
+            "label": "Prepare Transfer Summary",
+            "dataSeen": [
+              {
+                "element": "Current care record",
+                "source": "EPR/Care system",
+                "type": "comprehensive"
+              },
+              {
+                "element": "Outstanding actions",
+                "source": "Task list",
+                "type": "action"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Transfer summary",
+                "notes": "All sections",
+                "type": "documentation"
+              },
+              {
+                "element": "Medication list",
+                "notes": "Current meds",
+                "type": "medication"
+              }
+            ]
+          },
+          {
+            "id": "validate",
+            "type": "activity",
+            "label": "Validate Information",
+            "dataSeen": [
+              {
+                "element": "Transfer summary",
+                "source": "Prepared document",
+                "type": "documentation"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Validation checklist",
+                "type": "quality"
+              },
+              {
+                "element": "Missing info flags",
+                "type": "quality"
+              }
+            ]
+          },
+          {
+            "id": "consent",
+            "type": "decision",
+            "label": "Consent to share?",
+            "dataSeen": [
+              {
+                "element": "Information governance",
+                "source": "Policy",
+                "type": "legal"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Consent decision",
+                "type": "legal"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "type": "activity",
+            "label": "Transfer Information",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Transfer confirmation",
+                "type": "administrative"
+              },
+              {
+                "element": "Audit trail",
+                "type": "governance"
+              }
+            ]
+          },
+          {
+            "id": "limited",
+            "type": "activity",
+            "label": "Transfer Limited Info",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Limited transfer record",
+                "notes": "Essential info only",
+                "type": "documentation"
+              }
+            ]
+          },
+          {
+            "id": "confirm",
+            "type": "activity",
+            "label": "Confirm Receipt",
+            "dataSeen": [
+              {
+                "element": "Acknowledgment",
+                "source": "Receiving org",
+                "type": "confirmation"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Transfer completion",
+                "type": "administrative"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Transfer complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "prepare"
+          },
+          {
+            "from": "prepare",
+            "to": "validate"
+          },
+          {
+            "from": "validate",
+            "to": "consent"
+          },
+          {
+            "from": "consent",
+            "to": "transfer",
+            "label": "Yes"
+          },
+          {
+            "from": "consent",
+            "to": "limited",
+            "label": "No"
+          },
+          {
+            "from": "transfer",
+            "to": "confirm"
+          },
+          {
+            "from": "limited",
+            "to": "confirm"
+          },
+          {
+            "from": "confirm",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
