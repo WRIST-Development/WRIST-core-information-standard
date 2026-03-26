@@ -1,0 +1,433 @@
+{
+  "summary_markdown": "Core workflows include patient registration, clinical assessments, care planning, and information sharing processes.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "title": "Patient Registration Workflow",
+      "objectives": "Capture complete demographic information and establish consent for information sharing",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Registration Request"
+          },
+          {
+            "id": "verify",
+            "type": "activity",
+            "label": "Verify Identity",
+            "dataSeen": [
+              {
+                "element": "Photo ID",
+                "source": "Person",
+                "type": "Document"
+              },
+              {
+                "element": "Proof of Address",
+                "source": "Person",
+                "type": "Document"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Identity Verification Status",
+                "type": "Boolean"
+              }
+            ]
+          },
+          {
+            "id": "pds",
+            "type": "activity",
+            "label": "Check PDS",
+            "dataSeen": [
+              {
+                "element": "NHS Number",
+                "source": "PDS",
+                "type": "Identifier"
+              },
+              {
+                "element": "Previous GP",
+                "source": "PDS",
+                "type": "Reference"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "PDS Match Status",
+                "type": "Code"
+              }
+            ]
+          },
+          {
+            "id": "demographics",
+            "type": "activity",
+            "label": "Capture Demographics",
+            "dataSeen": [
+              {
+                "element": "Personal Details",
+                "source": "Person",
+                "type": "Form"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Person Name",
+                "type": "String"
+              },
+              {
+                "element": "Date of Birth",
+                "type": "Date"
+              },
+              {
+                "element": "Address",
+                "type": "Complex"
+              },
+              {
+                "element": "Contact Details",
+                "type": "Complex"
+              }
+            ]
+          },
+          {
+            "id": "consent",
+            "type": "activity",
+            "label": "Record Consent",
+            "dataSeen": [
+              {
+                "element": "Consent Form",
+                "source": "Person",
+                "type": "Document"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Information Sharing Consent",
+                "type": "Boolean"
+              },
+              {
+                "element": "Consent Date",
+                "type": "DateTime"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration Complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify"
+          },
+          {
+            "from": "verify",
+            "to": "pds"
+          },
+          {
+            "from": "pds",
+            "to": "demographics"
+          },
+          {
+            "from": "demographics",
+            "to": "consent"
+          },
+          {
+            "from": "consent",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP2",
+      "title": "Clinical Assessment Workflow",
+      "objectives": "Perform comprehensive clinical assessment including individual requirements and care preferences",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Assessment Required"
+          },
+          {
+            "id": "history",
+            "type": "activity",
+            "label": "Review History",
+            "dataSeen": [
+              {
+                "element": "Problem List",
+                "source": "EHR",
+                "type": "List"
+              },
+              {
+                "element": "Medications",
+                "source": "EHR",
+                "type": "List"
+              },
+              {
+                "element": "Allergies",
+                "source": "EHR",
+                "type": "List"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "History Review Status",
+                "type": "Boolean"
+              }
+            ]
+          },
+          {
+            "id": "requirements",
+            "type": "activity",
+            "label": "Assess Individual Requirements",
+            "dataSeen": [
+              {
+                "element": "About Me",
+                "source": "Person",
+                "type": "Narrative"
+              },
+              {
+                "element": "Communication Needs",
+                "source": "Person",
+                "type": "Complex"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Reasonable Adjustments",
+                "type": "List"
+              },
+              {
+                "element": "Communication Preferences",
+                "type": "Complex"
+              }
+            ]
+          },
+          {
+            "id": "clinical",
+            "type": "activity",
+            "label": "Clinical Examination",
+            "dataSeen": [
+              {
+                "element": "Vital Signs",
+                "source": "Measurement",
+                "type": "Observation"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Examination Findings",
+                "type": "Complex"
+              },
+              {
+                "element": "Observations",
+                "type": "List"
+              }
+            ]
+          },
+          {
+            "id": "plan",
+            "type": "decision",
+            "label": "Care Plan Required?",
+            "dataSeen": [
+              {
+                "element": "Assessment Results",
+                "source": "System",
+                "type": "Complex"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "careplan",
+            "type": "subprocess",
+            "label": "Create Care Plan",
+            "dataSeen": [
+              {
+                "element": "Goals",
+                "source": "Person",
+                "type": "List"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Care Plan",
+                "type": "Complex"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment Complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "history"
+          },
+          {
+            "from": "history",
+            "to": "requirements"
+          },
+          {
+            "from": "requirements",
+            "to": "clinical"
+          },
+          {
+            "from": "clinical",
+            "to": "plan"
+          },
+          {
+            "from": "plan",
+            "to": "careplan",
+            "label": "Yes"
+          },
+          {
+            "from": "plan",
+            "to": "end",
+            "label": "No"
+          },
+          {
+            "from": "careplan",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP3",
+      "title": "Information Sharing Workflow",
+      "objectives": "Share person information across care settings with appropriate consent and security",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Share Request"
+          },
+          {
+            "id": "consent_check",
+            "type": "decision",
+            "label": "Consent Valid?",
+            "dataSeen": [
+              {
+                "element": "Consent Record",
+                "source": "Database",
+                "type": "Record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "prepare",
+            "type": "activity",
+            "label": "Prepare Information",
+            "dataSeen": [
+              {
+                "element": "Core Information",
+                "source": "Database",
+                "type": "Complex"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Information Package",
+                "type": "Complex"
+              }
+            ]
+          },
+          {
+            "id": "redact",
+            "type": "activity",
+            "label": "Apply Redactions",
+            "dataSeen": [
+              {
+                "element": "Sensitivity Markers",
+                "source": "Database",
+                "type": "List"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Redacted Package",
+                "type": "Complex"
+              }
+            ]
+          },
+          {
+            "id": "transmit",
+            "type": "activity",
+            "label": "Transmit Securely",
+            "dataSeen": [
+              {
+                "element": "Recipient Details",
+                "source": "Request",
+                "type": "Reference"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Transmission Log",
+                "type": "Record"
+              }
+            ]
+          },
+          {
+            "id": "audit",
+            "type": "activity",
+            "label": "Audit Access",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Audit Entry",
+                "type": "Record"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Share Complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "consent_check"
+          },
+          {
+            "from": "consent_check",
+            "to": "prepare",
+            "label": "Yes"
+          },
+          {
+            "from": "consent_check",
+            "to": "end",
+            "label": "No"
+          },
+          {
+            "from": "prepare",
+            "to": "redact"
+          },
+          {
+            "from": "redact",
+            "to": "transmit"
+          },
+          {
+            "from": "transmit",
+            "to": "audit"
+          },
+          {
+            "from": "audit",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
