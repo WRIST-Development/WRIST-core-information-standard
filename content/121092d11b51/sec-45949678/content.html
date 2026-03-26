@@ -1,0 +1,18 @@
+## Indicators & Performance Metrics
+
+The following indicators support quality monitoring and performance improvement for Core Information Standard implementation.
+
+| Indicator ID | Title | Numerator | Denominator | Disaggregation | Frequency |
+|---|---|---|---|---|---|
+| CISV2.IND.01 | Reasonable Adjustment Documentation Rate | Count of records with CISV2.DE75 (Reasonable adjustment flag) = TRUE AND CISV2.DE77 (Reasonable adjustment details) populated | Total records with CISV2.DE103 (Impairment category) populated | By organisation, impairment type, age group | Monthly |
+| CISV2.IND.02 | About Me Completion Rate | Count of records with ≥3 populated subsections in CISV2.DE51-68 (About me section) | Total active patient records | By care setting, age group, length of care | Quarterly |
+| CISV2.IND.03 | Consent Documentation Completeness | Records with consent for information sharing (Legal information section) documented with date and decision | Total records | By organisation, care setting | Monthly |
+| CISV2.IND.04 | Safeguarding Response Time | Records where time between safeguarding indicator = TRUE and first safeguarding action < 24 hours | Total records with safeguarding indicator = TRUE | By organisation, safeguarding type | Monthly |
+| CISV2.IND.05 | Care Plan Currency | Records with care plan (Care and support plan section) reviewed within specified timeframe | Total records with active care plans | By care setting, primary support reason | Quarterly |
+| CISV2.IND.06 | Emergency Information Availability | Records with populated: NHS number (CISV2.DE14), allergies section, problem list, current medications | Total emergency admissions (Process CISV2.D) | By admission source, time of day | Monthly |
+| CISV2.IND.07 | Advance Decision Recording | Records with ADRT or advance statement documented | Total records for patients aged ≥65 OR with life-limiting conditions | By age group, diagnosis category | Quarterly |
+| CISV2.IND.08 | Professional Contact Completeness | Records with ≥1 professional contact (Professional contacts section) with name, role, and contact details | Total active care records | By care setting, complexity score | Monthly |
+| CISV2.IND.09 | Risk Assessment Documentation | Records with current risk assessment (Risks section with date within 6 months) | Total records flagged as requiring risk assessment | By risk type, care setting | Quarterly |
+| CISV2.IND.10 | Medication Reconciliation Completion | Admission records with documented medication reconciliation within 24 hours | Total admissions (Process CISV2.E) | By admission type, day of week | Monthly |
+| CISV2.IND.11 | Social Context Recording | Records with populated household composition OR accommodation status OR social circumstances | Total records | By age group, care setting | Quarterly |
+| CISV2.IND.12 | Communication Needs Identification | Records with CISV2.DE56 (How I communicate) populated for patients with CISV2.DE103 indicating communication impairment | Total records with communication impairment | By impairment type, organisation | Monthly |
