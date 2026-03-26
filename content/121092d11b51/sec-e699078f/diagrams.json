@@ -1664,11 +1664,13 @@
             "dataCollected": [
               {
                 "element": "Care funding source",
-                "type": "CISV2 Care and support plan"
+                "type": "CISV2 Care and support plan",
+                "notes": ""
               },
               {
                 "element": "Review date",
-                "type": "CISV2 Care and support plan"
+                "type": "CISV2 Care and support plan",
+                "notes": ""
               }
             ],
             "dataSeen": [],
@@ -2075,11 +2077,13 @@
           "dataCollected": [
             {
               "element": "Care funding source",
-              "type": "CISV2 Care and support plan"
+              "type": "CISV2 Care and support plan",
+              "notes": ""
             },
             {
               "element": "Review date",
-              "type": "CISV2 Care and support plan"
+              "type": "CISV2 Care and support plan",
+              "notes": ""
             }
           ]
         }
