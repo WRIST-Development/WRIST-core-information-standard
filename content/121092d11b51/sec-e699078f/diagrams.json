@@ -222,7 +222,8 @@
             "dataCollected": [
               {
                 "element": "Other individual requirements",
-                "type": "CISV2 Individual Requirements"
+                "type": "CISV2 Individual Requirements",
+                "notes": ""
               }
             ],
             "dataSeen": [],
@@ -688,7 +689,8 @@
           "dataCollected": [
             {
               "element": "Other individual requirements",
-              "type": "CISV2 Individual Requirements"
+              "type": "CISV2 Individual Requirements",
+              "notes": ""
             }
           ]
         },
