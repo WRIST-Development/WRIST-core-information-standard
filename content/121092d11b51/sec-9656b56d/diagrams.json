@@ -1,0 +1,932 @@
+{
+  "summary_markdown": "Essential workflows supporting integrated health and care delivery across all settings.",
+  "activities": [
+    {
+      "id": "CISV2.A",
+      "processId": "CISV2.A",
+      "title": "Patient Registration and Demographic Update",
+      "personas": "General Practitioner, District Nurse, Care Home Manager",
+      "objectives": "Ensure accurate patient identification and demographic information for safe care delivery",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Patient presents for care",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify",
+            "type": "activity",
+            "label": "Verify patient identity",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE14",
+                "type": "NHS Number",
+                "source": "PDS"
+              },
+              {
+                "element": "CISV2.DE2",
+                "type": "Name",
+                "source": "Patient"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check",
+            "type": "decision",
+            "label": "Demographics current?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE17",
+                "type": "Address",
+                "source": "System"
+              },
+              {
+                "element": "CISV2.DE25",
+                "type": "Contact details",
+                "source": "System"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "update",
+            "type": "activity",
+            "label": "Update demographics",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE17",
+                "type": "Address",
+                "notes": "Current residence"
+              },
+              {
+                "element": "CISV2.DE25",
+                "type": "Contact details",
+                "notes": "Preferred contact method"
+              },
+              {
+                "element": "CISV2.DE39",
+                "type": "Immigration status",
+                "notes": "If applicable"
+              }
+            ]
+          },
+          {
+            "id": "requirements",
+            "type": "activity",
+            "label": "Assess individual requirements",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE69",
+                "type": "Individual requirements",
+                "source": "Previous records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE70",
+                "type": "Reasonable adjustment",
+                "notes": "Equality Act compliance"
+              },
+              {
+                "element": "CISV2.DE98",
+                "type": "Impairment",
+                "notes": "If disclosed"
+              },
+              {
+                "element": "CISV2.DE125",
+                "type": "Cognition",
+                "notes": "Communication needs"
+              }
+            ]
+          },
+          {
+            "id": "complete",
+            "type": "activity",
+            "label": "Complete registration",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE46",
+                "type": "GP practice",
+                "notes": "Confirm registration"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify"
+          },
+          {
+            "from": "verify",
+            "to": "check"
+          },
+          {
+            "from": "check",
+            "to": "update",
+            "label": "No"
+          },
+          {
+            "from": "check",
+            "to": "requirements",
+            "label": "Yes"
+          },
+          {
+            "from": "update",
+            "to": "requirements"
+          },
+          {
+            "from": "requirements",
+            "to": "complete"
+          },
+          {
+            "from": "complete",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.B",
+      "processId": "CISV2.B",
+      "title": "Medication Review and Reconciliation",
+      "personas": "Pharmacist, General Practitioner, Hospital Consultant",
+      "objectives": "Ensure medication safety through comprehensive review and accurate reconciliation",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Medication review triggered",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "gather",
+            "type": "activity",
+            "label": "Gather medication history",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1",
+                "type": "Demographics",
+                "source": "System"
+              },
+              {
+                "element": "CISV2.DE69",
+                "type": "Individual requirements",
+                "source": "System"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "review",
+            "type": "subprocess",
+            "label": "Review current medications",
+            "dataSeen": [
+              {
+                "element": "MED.DE1",
+                "type": "Current medications",
+                "source": "GP system"
+              },
+              {
+                "element": "MED.DE1",
+                "type": "Hospital medications",
+                "source": "Hospital system"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "allergies",
+            "type": "activity",
+            "label": "Check allergies and interactions",
+            "dataSeen": [
+              {
+                "element": "ALL.DE1",
+                "type": "Allergies",
+                "source": "System"
+              },
+              {
+                "element": "CISV2.DE125",
+                "type": "Medical conditions",
+                "source": "System"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "discrepancy",
+            "type": "decision",
+            "label": "Discrepancies found?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "reconcile",
+            "type": "activity",
+            "label": "Reconcile medications",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "MED.DE3",
+                "type": "Medication changes",
+                "notes": "Document all changes"
+              },
+              {
+                "element": "MED.DE4",
+                "type": "Discontinuations",
+                "notes": "Stopped medications"
+              }
+            ]
+          },
+          {
+            "id": "document",
+            "type": "activity",
+            "label": "Document review",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "MED.DE5",
+                "type": "Review date",
+                "notes": "Next review"
+              },
+              {
+                "element": "MED.DE6",
+                "type": "Review outcome",
+                "notes": "Actions taken"
+              }
+            ]
+          },
+          {
+            "id": "communicate",
+            "type": "activity",
+            "label": "Communicate to patient",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE56",
+                "type": "Communication needs",
+                "source": "About me"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Review complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "gather"
+          },
+          {
+            "from": "gather",
+            "to": "review"
+          },
+          {
+            "from": "review",
+            "to": "allergies"
+          },
+          {
+            "from": "allergies",
+            "to": "discrepancy"
+          },
+          {
+            "from": "discrepancy",
+            "to": "reconcile",
+            "label": "Yes"
+          },
+          {
+            "from": "discrepancy",
+            "to": "document",
+            "label": "No"
+          },
+          {
+            "from": "reconcile",
+            "to": "document"
+          },
+          {
+            "from": "document",
+            "to": "communicate"
+          },
+          {
+            "from": "communicate",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.C",
+      "processId": "CISV2.C",
+      "title": "Care Plan Development and Review",
+      "personas": "Social Worker, Occupational Therapist, Mental Health Nurse, Patient/Service User",
+      "objectives": "Create person-centred care plans addressing individual goals and support needs",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care planning initiated",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "assess",
+            "type": "subprocess",
+            "label": "Conduct assessments",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE51",
+                "type": "About me",
+                "source": "Patient"
+              },
+              {
+                "element": "CISV2.DE69",
+                "type": "Individual requirements",
+                "source": "System"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "ASS.DE1",
+                "type": "Assessment type",
+                "notes": "Social care needs"
+              },
+              {
+                "element": "ASS.DE2",
+                "type": "Assessment outcome",
+                "notes": "Support required"
+              }
+            ]
+          },
+          {
+            "id": "goals",
+            "type": "activity",
+            "label": "Identify goals with person",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE52",
+                "type": "What's important",
+                "source": "About me"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CP.DE1",
+                "type": "Goals and hopes",
+                "notes": "Person's priorities"
+              },
+              {
+                "element": "CP.DE2",
+                "type": "Strengths",
+                "notes": "Assets to build on"
+              }
+            ]
+          },
+          {
+            "id": "capacity",
+            "type": "decision",
+            "label": "Has capacity?",
+            "dataSeen": [
+              {
+                "element": "LEG.DE3",
+                "type": "Mental capacity",
+                "source": "Previous assessment"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "involve",
+            "type": "activity",
+            "label": "Involve representative",
+            "dataSeen": [
+              {
+                "element": "LEG.DE4",
+                "type": "LPA details",
+                "source": "Legal information"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "develop",
+            "type": "activity",
+            "label": "Develop care plan",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE54",
+                "type": "Important people",
+                "source": "About me"
+              },
+              {
+                "element": "RISK.DE1",
+                "type": "Risks",
+                "source": "Risk assessment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CP.DE3",
+                "type": "Actions planned",
+                "notes": "Who, what, when"
+              },
+              {
+                "element": "CP.DE4",
+                "type": "Contingency plans",
+                "notes": "If concerns arise"
+              }
+            ]
+          },
+          {
+            "id": "agree",
+            "type": "activity",
+            "label": "Agree plan with person",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CP.DE5",
+                "type": "Agreement",
+                "notes": "Person/representative consent"
+              },
+              {
+                "element": "CP.DE6",
+                "type": "Review date",
+                "notes": "When to review"
+              }
+            ]
+          },
+          {
+            "id": "share",
+            "type": "activity",
+            "label": "Share with care team",
+            "dataSeen": [
+              {
+                "element": "LEG.DE1",
+                "type": "Info sharing consent",
+                "source": "Legal information"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Plan implemented",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess"
+          },
+          {
+            "from": "assess",
+            "to": "goals"
+          },
+          {
+            "from": "goals",
+            "to": "capacity"
+          },
+          {
+            "from": "capacity",
+            "to": "develop",
+            "label": "Yes"
+          },
+          {
+            "from": "capacity",
+            "to": "involve",
+            "label": "No"
+          },
+          {
+            "from": "involve",
+            "to": "develop"
+          },
+          {
+            "from": "develop",
+            "to": "agree"
+          },
+          {
+            "from": "agree",
+            "to": "share"
+          },
+          {
+            "from": "share",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.D",
+      "processId": "CISV2.D",
+      "title": "Emergency Response Coordination",
+      "personas": "Paramedic, Hospital Consultant, District Nurse",
+      "objectives": "Rapid access to critical information for emergency care decisions",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Emergency call received",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "access",
+            "type": "activity",
+            "label": "Access emergency info",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1",
+                "type": "Demographics",
+                "source": "Emergency system"
+              },
+              {
+                "element": "CISV2.DE14",
+                "type": "NHS Number",
+                "source": "Emergency system"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "critical",
+            "type": "subprocess",
+            "label": "Review critical data",
+            "dataSeen": [
+              {
+                "element": "ALL.DE1",
+                "type": "Allergies",
+                "source": "System"
+              },
+              {
+                "element": "MED.DE1",
+                "type": "Current medications",
+                "source": "System"
+              },
+              {
+                "element": "LEG.DE5",
+                "type": "ADRT status",
+                "source": "Legal information"
+              },
+              {
+                "element": "EOL.DE1",
+                "type": "CPR decision",
+                "source": "End of life"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "onscene",
+            "type": "activity",
+            "label": "Provide emergency care",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE60",
+                "type": "Do's and don'ts",
+                "source": "About me"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CONT.DE1",
+                "type": "Contact type",
+                "notes": "Emergency attendance"
+              },
+              {
+                "element": "EX.DE1",
+                "type": "Observations",
+                "notes": "Vital signs"
+              }
+            ]
+          },
+          {
+            "id": "transport",
+            "type": "decision",
+            "label": "Hospital transfer needed?",
+            "dataSeen": [
+              {
+                "element": "CP.DE4",
+                "type": "Contingency plans",
+                "source": "Care plan"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "handover",
+            "type": "activity",
+            "label": "Hospital handover",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "ADM.DE1",
+                "type": "Admission details",
+                "notes": "Emergency admission"
+              },
+              {
+                "element": "ADM.DE2",
+                "type": "Reason for admission",
+                "notes": "Clinical presentation"
+              }
+            ]
+          },
+          {
+            "id": "community",
+            "type": "activity",
+            "label": "Community care arranged",
+            "dataSeen": [
+              {
+                "element": "PROF.DE1",
+                "type": "Professional contacts",
+                "source": "System"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "REF.DE1",
+                "type": "Referral details",
+                "notes": "To community team"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Emergency response complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "access"
+          },
+          {
+            "from": "access",
+            "to": "critical"
+          },
+          {
+            "from": "critical",
+            "to": "onscene"
+          },
+          {
+            "from": "onscene",
+            "to": "transport"
+          },
+          {
+            "from": "transport",
+            "to": "handover",
+            "label": "Yes"
+          },
+          {
+            "from": "transport",
+            "to": "community",
+            "label": "No"
+          },
+          {
+            "from": "handover",
+            "to": "end"
+          },
+          {
+            "from": "community",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.E",
+      "processId": "CISV2.E",
+      "title": "Discharge Planning and Coordination",
+      "personas": "Hospital Consultant, Social Worker, Care Home Manager, District Nurse",
+      "objectives": "Safe and timely discharge with appropriate support arrangements",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Discharge planning starts",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Assess discharge needs",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE51",
+                "type": "About me",
+                "source": "System"
+              },
+              {
+                "element": "SOC.DE1",
+                "type": "Social circumstances",
+                "source": "Assessment"
+              },
+              {
+                "element": "SOC.DE2",
+                "type": "Accommodation status",
+                "source": "Assessment"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "support",
+            "type": "decision",
+            "label": "Support needed?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE148",
+                "type": "Mobility",
+                "source": "Assessment"
+              },
+              {
+                "element": "CISV2.DE125",
+                "type": "Cognition",
+                "source": "Assessment"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "arrange",
+            "type": "subprocess",
+            "label": "Arrange support services",
+            "dataSeen": [
+              {
+                "element": "SERV.DE1",
+                "type": "Current services",
+                "source": "Social care"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "SERV.DE2",
+                "type": "Services arranged",
+                "notes": "Package of care"
+              },
+              {
+                "element": "EQ.DE1",
+                "type": "Equipment needed",
+                "notes": "Aids and adaptations"
+              }
+            ]
+          },
+          {
+            "id": "meds",
+            "type": "activity",
+            "label": "Prepare discharge medications",
+            "dataSeen": [
+              {
+                "element": "MED.DE1",
+                "type": "Current medications",
+                "source": "Hospital system"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "MED.DE2",
+                "type": "Discharge medications",
+                "notes": "TTO/TTA"
+              },
+              {
+                "element": "MED.DE3",
+                "type": "Medication changes",
+                "notes": "From admission"
+              }
+            ]
+          },
+          {
+            "id": "communicate",
+            "type": "activity",
+            "label": "Communicate with primary care",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE46",
+                "type": "GP practice",
+                "source": "Demographics"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "DIS.DE1",
+                "type": "Discharge details",
+                "notes": "Summary and plan"
+              },
+              {
+                "element": "FUT.DE1",
+                "type": "Follow-up arranged",
+                "notes": "Appointments"
+              }
+            ]
+          },
+          {
+            "id": "ready",
+            "type": "decision",
+            "label": "Ready for discharge?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "discharge",
+            "type": "activity",
+            "label": "Complete discharge",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "DIS.DE2",
+                "type": "Discharge date/time",
+                "notes": "Actual discharge"
+              },
+              {
+                "element": "DIS.DE3",
+                "type": "Discharge destination",
+                "notes": "Where to"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Discharge complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess"
+          },
+          {
+            "from": "assess",
+            "to": "support"
+          },
+          {
+            "from": "support",
+            "to": "arrange",
+            "label": "Yes"
+          },
+          {
+            "from": "support",
+            "to": "meds",
+            "label": "No"
+          },
+          {
+            "from": "arrange",
+            "to": "meds"
+          },
+          {
+            "from": "meds",
+            "to": "communicate"
+          },
+          {
+            "from": "communicate",
+            "to": "ready"
+          },
+          {
+            "from": "ready",
+            "to": "discharge",
+            "label": "Yes"
+          },
+          {
+            "from": "ready",
+            "to": "assess",
+            "label": "No"
+          },
+          {
+            "from": "discharge",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
