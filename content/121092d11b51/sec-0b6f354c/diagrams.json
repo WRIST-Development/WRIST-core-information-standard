@@ -40,7 +40,13 @@
               "y": 30
             },
             "angle": 0,
-            "id": "3c367b7a-0842-4009-aca6-1cc3551a9936",
+            "dataCollected": [
+              {
+                "element": "Identity Verification Status",
+                "notes": "",
+                "type": "Boolean"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "Photo ID",
@@ -53,13 +59,7 @@
                 "type": "Document"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "Identity Verification Status",
-                "type": "Boolean",
-                "notes": ""
-              }
-            ],
+            "id": "3c367b7a-0842-4009-aca6-1cc3551a9936",
             "z": 2,
             "attrs": {
               "body": {
@@ -84,7 +84,12 @@
               "y": 30
             },
             "angle": 0,
-            "id": "a66b6c7c-1ecb-494f-bcf9-684d66753b67",
+            "dataCollected": [
+              {
+                "element": "PDS Match Status",
+                "type": "Code"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "NHS Number",
@@ -97,12 +102,7 @@
                 "type": "Reference"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "PDS Match Status",
-                "type": "Code"
-              }
-            ],
+            "id": "a66b6c7c-1ecb-494f-bcf9-684d66753b67",
             "z": 3,
             "attrs": {
               "body": {
@@ -127,14 +127,6 @@
               "y": 30
             },
             "angle": 0,
-            "id": "72ec7b8f-8c80-4fef-99d8-a79bd984c85f",
-            "dataSeen": [
-              {
-                "element": "Personal Details",
-                "source": "Person",
-                "type": "Form"
-              }
-            ],
             "dataCollected": [
               {
                 "element": "Person Name",
@@ -153,6 +145,14 @@
                 "type": "Complex"
               }
             ],
+            "dataSeen": [
+              {
+                "element": "Personal Details",
+                "source": "Person",
+                "type": "Form"
+              }
+            ],
+            "id": "72ec7b8f-8c80-4fef-99d8-a79bd984c85f",
             "z": 4,
             "attrs": {
               "body": {
@@ -177,14 +177,6 @@
               "y": 30
             },
             "angle": 0,
-            "id": "1e14d689-4f86-4c4b-9204-87c370da84f1",
-            "dataSeen": [
-              {
-                "element": "Consent Form",
-                "source": "Person",
-                "type": "Document"
-              }
-            ],
             "dataCollected": [
               {
                 "element": "Information Sharing Consent",
@@ -195,6 +187,14 @@
                 "type": "DateTime"
               }
             ],
+            "dataSeen": [
+              {
+                "element": "Consent Form",
+                "source": "Person",
+                "type": "Document"
+              }
+            ],
+            "id": "1e14d689-4f86-4c4b-9204-87c370da84f1",
             "z": 5,
             "attrs": {
               "body": {
@@ -375,11 +375,6 @@
           }
         ]
       },
-      "id": "CISV2.BP1",
-      "objectives": "Capture complete demographic information and establish consent for information sharing",
-      "title": "Patient Registration Workflow",
-      "processId": "CISV2.BP1",
-      "personas": "",
       "element_data": [
         {
           "id": "3c367b7a-0842-4009-aca6-1cc3551a9936",
@@ -400,8 +395,8 @@
           "dataCollected": [
             {
               "element": "Identity Verification Status",
-              "type": "Boolean",
-              "notes": ""
+              "notes": "",
+              "type": "Boolean"
             }
           ]
         },
@@ -480,24 +475,18 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "CISV2.BP1",
+      "objectives": "Capture complete demographic information and establish consent for information sharing",
+      "personas": "",
+      "processId": "CISV2.BP1",
+      "title": "Patient Registration Workflow"
     },
     {
       "diagram": {
         "cells": [
           {
-            "type": "bpmn.StartEvent",
-            "size": {
-              "width": 30,
-              "height": 30
-            },
-            "position": {
-              "x": 30,
-              "y": 37
-            },
             "angle": 0,
-            "id": "b517c2b5-e401-4d1c-89ce-8e9a4f0f85dd",
-            "z": 1,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -505,23 +494,42 @@
                 "r": 14
               },
               "label": {
-                "text": "Assessment Required",
-                "fontSize": 9
+                "fontSize": 9,
+                "text": "Assessment Required"
               }
-            }
+            },
+            "id": "b517c2b5-e401-4d1c-89ce-8e9a4f0f85dd",
+            "position": {
+              "x": 30,
+              "y": 37
+            },
+            "size": {
+              "height": 30,
+              "width": 30
+            },
+            "type": "bpmn.StartEvent",
+            "z": 1
           },
           {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
-            "position": {
-              "x": 180,
-              "y": 34
-            },
             "angle": 0,
-            "id": "2df54a87-253a-4544-b854-3f37424ce809",
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Review History"
+              }
+            },
+            "dataCollected": [
+              {
+                "element": "History Review Status",
+                "notes": "",
+                "type": "Boolean"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "Problem List",
@@ -539,38 +547,41 @@
                 "type": "List"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "History Review Status",
-                "type": "Boolean",
-                "notes": ""
-              }
-            ],
-            "z": 2,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Review History",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
-          },
-          {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
+            "id": "2df54a87-253a-4544-b854-3f37424ce809",
             "position": {
-              "x": 400,
+              "x": 180,
               "y": 34
             },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 2
+          },
+          {
             "angle": 0,
-            "id": "98894148-352d-4b01-b41e-f546ccecfffd",
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Assess Individual Requirements"
+              }
+            },
+            "dataCollected": [
+              {
+                "element": "Reasonable Adjustments",
+                "type": "List"
+              },
+              {
+                "element": "Communication Preferences",
+                "type": "Complex"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "About Me",
@@ -583,48 +594,31 @@
                 "type": "Complex"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "Reasonable Adjustments",
-                "type": "List"
-              },
-              {
-                "element": "Communication Preferences",
-                "type": "Complex"
-              }
-            ],
-            "z": 3,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Assess Individual Requirements",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
-          },
-          {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
+            "id": "98894148-352d-4b01-b41e-f546ccecfffd",
             "position": {
-              "x": 620,
+              "x": 400,
               "y": 34
             },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 3
+          },
+          {
             "angle": 0,
-            "id": "b75da9b4-0621-4cf8-be17-a3a6721e2409",
-            "dataSeen": [
-              {
-                "element": "Vital Signs",
-                "source": "Measurement",
-                "type": "Observation"
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Clinical Examination"
               }
-            ],
+            },
             "dataCollected": [
               {
                 "element": "Examination Findings",
@@ -635,31 +629,38 @@
                 "type": "List"
               }
             ],
-            "z": 4,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Clinical Examination",
-                "refY": -4,
-                "fontSize": 10
+            "dataSeen": [
+              {
+                "element": "Vital Signs",
+                "source": "Measurement",
+                "type": "Observation"
               }
-            }
+            ],
+            "id": "b75da9b4-0621-4cf8-be17-a3a6721e2409",
+            "position": {
+              "x": 620,
+              "y": 34
+            },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 4
           },
           {
-            "type": "bpmn.Decision",
-            "size": {
-              "width": 44,
-              "height": 44
-            },
-            "position": {
-              "x": 840,
-              "y": 30
-            },
             "angle": 0,
-            "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb",
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Care Plan Required?"
+              }
+            },
+            "dataCollected": [],
             "dataSeen": [
               {
                 "element": "Assessment Results",
@@ -667,31 +668,37 @@
                 "type": "Complex"
               }
             ],
-            "dataCollected": [],
-            "z": 5,
-            "attrs": {
-              "body": {
-                "points": "22,0 44,22 22,44 0,22"
-              },
-              "label": {
-                "text": "Care Plan Required?",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
+            "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb",
+            "position": {
+              "x": 840,
+              "y": 30
+            },
+            "size": {
+              "height": 44,
+              "width": 44
+            },
+            "type": "bpmn.Decision",
+            "z": 5
           },
           {
-            "type": "bpmn.SubProcess",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
-            "position": {
-              "x": 1004,
-              "y": 68
-            },
             "angle": 0,
-            "id": "715ff523-2125-4397-803d-c7289528ae40",
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Create Care Plan"
+              }
+            },
+            "dataCollected": [
+              {
+                "element": "Care Plan",
+                "type": "Complex"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "Goals",
@@ -699,38 +706,20 @@
                 "type": "List"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "Care Plan",
-                "type": "Complex"
-              }
-            ],
-            "z": 6,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Create Care Plan",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
+            "id": "715ff523-2125-4397-803d-c7289528ae40",
+            "position": {
+              "x": 1004,
+              "y": 68
+            },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.SubProcess",
+            "z": 6
           },
           {
-            "type": "bpmn.EndEvent",
-            "size": {
-              "width": 30,
-              "height": 30
-            },
-            "position": {
-              "x": 1224,
-              "y": 37
-            },
             "angle": 0,
-            "id": "18aea450-6bff-4483-b62a-b96edfdde1ab",
-            "z": 7,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -738,146 +727,151 @@
                 "r": 14
               },
               "label": {
-                "text": "Assessment Complete",
-                "fontSize": 9
+                "fontSize": 9,
+                "text": "Assessment Complete"
               }
-            }
+            },
+            "id": "18aea450-6bff-4483-b62a-b96edfdde1ab",
+            "position": {
+              "x": 1224,
+              "y": 37
+            },
+            "size": {
+              "height": 30,
+              "width": 30
+            },
+            "type": "bpmn.EndEvent",
+            "z": 7
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "f0b310c3-7656-4c95-86dc-a4bc1b90aa70",
             "source": {
               "id": "b517c2b5-e401-4d1c-89ce-8e9a4f0f85dd"
             },
             "target": {
               "id": "2df54a87-253a-4544-b854-3f37424ce809"
             },
-            "id": "f0b310c3-7656-4c95-86dc-a4bc1b90aa70",
-            "z": 8,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 8
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "1be599a0-8d96-4bcb-8b8d-4d97d09de894",
             "source": {
               "id": "2df54a87-253a-4544-b854-3f37424ce809"
             },
             "target": {
               "id": "98894148-352d-4b01-b41e-f546ccecfffd"
             },
-            "id": "1be599a0-8d96-4bcb-8b8d-4d97d09de894",
-            "z": 9,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 9
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "3af97e8b-6403-4733-a950-edb62b8d00c5",
             "source": {
               "id": "98894148-352d-4b01-b41e-f546ccecfffd"
             },
             "target": {
               "id": "b75da9b4-0621-4cf8-be17-a3a6721e2409"
             },
-            "id": "3af97e8b-6403-4733-a950-edb62b8d00c5",
-            "z": 10,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 10
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "2d3519d6-ad1c-4252-9c04-5f767b2f86b2",
             "source": {
               "id": "b75da9b4-0621-4cf8-be17-a3a6721e2409"
             },
             "target": {
               "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb"
             },
-            "id": "2d3519d6-ad1c-4252-9c04-5f767b2f86b2",
-            "z": 11,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 11
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
-            },
-            "source": {
-              "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb"
-            },
-            "target": {
-              "id": "715ff523-2125-4397-803d-c7289528ae40"
             },
             "id": "2a91e6b2-47f9-4090-b5aa-6657c6ca7533",
             "labels": [
@@ -889,32 +883,32 @@
                 }
               }
             ],
-            "z": 12,
-            "attrs": {}
-          },
-          {
-            "type": "bpmn.Link",
-            "defaultLabel": {
-              "attrs": {
-                "rect": {
-                  "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
-                  "rx": 3,
-                  "ry": 3
-                },
-                "text": {
-                  "fontSize": 12,
-                  "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
-                }
-              }
-            },
             "source": {
               "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb"
             },
             "target": {
-              "id": "18aea450-6bff-4483-b62a-b96edfdde1ab"
+              "id": "715ff523-2125-4397-803d-c7289528ae40"
+            },
+            "type": "bpmn.Link",
+            "z": 12
+          },
+          {
+            "attrs": {},
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "rx": 3,
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
+                },
+                "text": {
+                  "fill": "#374151",
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fontSize": 12
+                }
+              }
             },
             "id": "fa78db98-b8e6-4359-9307-0d90f9476852",
             "labels": [
@@ -926,44 +920,45 @@
                 }
               }
             ],
-            "z": 13,
-            "attrs": {}
+            "source": {
+              "id": "a679bddc-e8c6-4631-93e4-efb3f6b903eb"
+            },
+            "target": {
+              "id": "18aea450-6bff-4483-b62a-b96edfdde1ab"
+            },
+            "type": "bpmn.Link",
+            "z": 13
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "e7a768b3-75c3-4671-ad11-98be823f76c0",
             "source": {
               "id": "715ff523-2125-4397-803d-c7289528ae40"
             },
             "target": {
               "id": "18aea450-6bff-4483-b62a-b96edfdde1ab"
             },
-            "id": "e7a768b3-75c3-4671-ad11-98be823f76c0",
-            "z": 14,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 14
           }
         ]
       },
-      "id": "CISV2.BP2",
-      "objectives": "Perform comprehensive clinical assessment including individual requirements and care preferences",
-      "title": "Clinical Assessment Workflow",
-      "processId": "CISV2.BP2",
-      "personas": "",
       "element_data": [
         {
           "id": "2df54a87-253a-4544-b854-3f37424ce809",
@@ -989,8 +984,8 @@
           "dataCollected": [
             {
               "element": "History Review Status",
-              "type": "Boolean",
-              "notes": ""
+              "notes": "",
+              "type": "Boolean"
             }
           ]
         },
@@ -1074,24 +1069,18 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "CISV2.BP2",
+      "objectives": "Perform comprehensive clinical assessment including individual requirements and care preferences",
+      "personas": "",
+      "processId": "CISV2.BP2",
+      "title": "Clinical Assessment Workflow"
     },
     {
       "diagram": {
         "cells": [
           {
-            "type": "bpmn.StartEvent",
-            "size": {
-              "width": 30,
-              "height": 30
-            },
-            "position": {
-              "x": 30,
-              "y": 37
-            },
             "angle": 0,
-            "id": "1f9cefff-1449-4834-9838-0b5adc55149b",
-            "z": 1,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -1099,23 +1088,35 @@
                 "r": 14
               },
               "label": {
-                "text": "Share Request",
-                "fontSize": 9
+                "fontSize": 9,
+                "text": "Share Request"
               }
-            }
+            },
+            "id": "1f9cefff-1449-4834-9838-0b5adc55149b",
+            "position": {
+              "x": 30,
+              "y": 37
+            },
+            "size": {
+              "height": 30,
+              "width": 30
+            },
+            "type": "bpmn.StartEvent",
+            "z": 1
           },
           {
-            "type": "bpmn.Decision",
-            "size": {
-              "width": 44,
-              "height": 44
-            },
-            "position": {
-              "x": 180,
-              "y": 30
-            },
             "angle": 0,
-            "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2",
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Consent Valid?"
+              }
+            },
+            "dataCollected": [],
             "dataSeen": [
               {
                 "element": "Consent Record",
@@ -1123,31 +1124,37 @@
                 "type": "Record"
               }
             ],
-            "dataCollected": [],
-            "z": 2,
-            "attrs": {
-              "body": {
-                "points": "22,0 44,22 22,44 0,22"
-              },
-              "label": {
-                "text": "Consent Valid?",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
+            "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2",
+            "position": {
+              "x": 180,
+              "y": 30
+            },
+            "size": {
+              "height": 44,
+              "width": 44
+            },
+            "type": "bpmn.Decision",
+            "z": 2
           },
           {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
-            "position": {
-              "x": 344,
-              "y": 68
-            },
             "angle": 0,
-            "id": "cffaf572-af60-459f-9004-bf12a991dd7e",
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Prepare Information"
+              }
+            },
+            "dataCollected": [
+              {
+                "element": "Information Package",
+                "type": "Complex"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "Core Information",
@@ -1155,37 +1162,37 @@
                 "type": "Complex"
               }
             ],
+            "id": "cffaf572-af60-459f-9004-bf12a991dd7e",
+            "position": {
+              "x": 344,
+              "y": 68
+            },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 3
+          },
+          {
+            "angle": 0,
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Apply Redactions"
+              }
+            },
             "dataCollected": [
               {
-                "element": "Information Package",
+                "element": "Redacted Package",
                 "type": "Complex"
               }
             ],
-            "z": 3,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Prepare Information",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
-          },
-          {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
-            "position": {
-              "x": 564,
-              "y": 68
-            },
-            "angle": 0,
-            "id": "0a5b6a6d-9517-4faf-8d42-02ef8ea3233f",
             "dataSeen": [
               {
                 "element": "Sensitivity Markers",
@@ -1193,37 +1200,37 @@
                 "type": "List"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "Redacted Package",
-                "type": "Complex"
-              }
-            ],
-            "z": 4,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Apply Redactions",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
-          },
-          {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
+            "id": "0a5b6a6d-9517-4faf-8d42-02ef8ea3233f",
             "position": {
-              "x": 784,
+              "x": 564,
               "y": 68
             },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 4
+          },
+          {
             "angle": 0,
-            "id": "a5ed44c7-fef3-477a-8d8a-0655fdc847ad",
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Transmit Securely"
+              }
+            },
+            "dataCollected": [
+              {
+                "element": "Transmission Log",
+                "type": "Record"
+              }
+            ],
             "dataSeen": [
               {
                 "element": "Recipient Details",
@@ -1231,70 +1238,52 @@
                 "type": "Reference"
               }
             ],
-            "dataCollected": [
-              {
-                "element": "Transmission Log",
-                "type": "Record"
-              }
-            ],
-            "z": 5,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Transmit Securely",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
-          },
-          {
-            "type": "bpmn.Activity",
-            "size": {
-              "width": 100,
-              "height": 36
-            },
+            "id": "a5ed44c7-fef3-477a-8d8a-0655fdc847ad",
             "position": {
-              "x": 1004,
+              "x": 784,
               "y": 68
             },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 5
+          },
+          {
             "angle": 0,
-            "id": "a801c2b1-f88a-497f-a4fd-8e986388f91e",
-            "dataSeen": [],
+            "attrs": {
+              "body": {
+                "height": 36,
+                "width": 100
+              },
+              "label": {
+                "fontSize": 10,
+                "refY": -4,
+                "text": "Audit Access"
+              }
+            },
             "dataCollected": [
               {
                 "element": "Audit Entry",
                 "type": "Record"
               }
             ],
-            "z": 6,
-            "attrs": {
-              "body": {
-                "width": 100,
-                "height": 36
-              },
-              "label": {
-                "text": "Audit Access",
-                "refY": -4,
-                "fontSize": 10
-              }
-            }
+            "dataSeen": [],
+            "id": "a801c2b1-f88a-497f-a4fd-8e986388f91e",
+            "position": {
+              "x": 1004,
+              "y": 68
+            },
+            "size": {
+              "height": 36,
+              "width": 100
+            },
+            "type": "bpmn.Activity",
+            "z": 6
           },
           {
-            "type": "bpmn.EndEvent",
-            "size": {
-              "width": 30,
-              "height": 30
-            },
-            "position": {
-              "x": 1224,
-              "y": 37
-            },
             "angle": 0,
-            "id": "afadcf25-2fee-45fc-bfe3-fb99ac52c0da",
-            "z": 7,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -1302,62 +1291,67 @@
                 "r": 14
               },
               "label": {
-                "text": "Share Complete",
-                "fontSize": 9
+                "fontSize": 9,
+                "text": "Share Complete"
               }
-            }
+            },
+            "id": "afadcf25-2fee-45fc-bfe3-fb99ac52c0da",
+            "position": {
+              "x": 1224,
+              "y": 37
+            },
+            "size": {
+              "height": 30,
+              "width": 30
+            },
+            "type": "bpmn.EndEvent",
+            "z": 7
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "686f7ca6-8298-4797-ae8d-3ad2c47ebb3a",
             "source": {
               "id": "1f9cefff-1449-4834-9838-0b5adc55149b"
             },
             "target": {
               "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2"
             },
-            "id": "686f7ca6-8298-4797-ae8d-3ad2c47ebb3a",
-            "z": 8,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 8
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
-            },
-            "source": {
-              "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2"
-            },
-            "target": {
-              "id": "cffaf572-af60-459f-9004-bf12a991dd7e"
             },
             "id": "22cba8dd-ec7c-4577-8492-473820a813dd",
             "labels": [
@@ -1369,32 +1363,32 @@
                 }
               }
             ],
-            "z": 9,
-            "attrs": {}
-          },
-          {
-            "type": "bpmn.Link",
-            "defaultLabel": {
-              "attrs": {
-                "rect": {
-                  "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
-                  "rx": 3,
-                  "ry": 3
-                },
-                "text": {
-                  "fontSize": 12,
-                  "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
-                }
-              }
-            },
             "source": {
               "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2"
             },
             "target": {
-              "id": "afadcf25-2fee-45fc-bfe3-fb99ac52c0da"
+              "id": "cffaf572-af60-459f-9004-bf12a991dd7e"
+            },
+            "type": "bpmn.Link",
+            "z": 9
+          },
+          {
+            "attrs": {},
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "rx": 3,
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
+                },
+                "text": {
+                  "fill": "#374151",
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fontSize": 12
+                }
+              }
             },
             "id": "11f730d4-3863-42e6-b320-f682e1bdb5a9",
             "labels": [
@@ -1406,128 +1400,129 @@
                 }
               }
             ],
-            "z": 10,
-            "attrs": {}
+            "source": {
+              "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2"
+            },
+            "target": {
+              "id": "afadcf25-2fee-45fc-bfe3-fb99ac52c0da"
+            },
+            "type": "bpmn.Link",
+            "z": 10
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "8afef9f2-9d0e-40c9-8411-5753692775c2",
             "source": {
               "id": "cffaf572-af60-459f-9004-bf12a991dd7e"
             },
             "target": {
               "id": "0a5b6a6d-9517-4faf-8d42-02ef8ea3233f"
             },
-            "id": "8afef9f2-9d0e-40c9-8411-5753692775c2",
-            "z": 11,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 11
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "8aaa9d9b-e782-4db6-b2b6-b11851ec8d03",
             "source": {
               "id": "0a5b6a6d-9517-4faf-8d42-02ef8ea3233f"
             },
             "target": {
               "id": "a5ed44c7-fef3-477a-8d8a-0655fdc847ad"
             },
-            "id": "8aaa9d9b-e782-4db6-b2b6-b11851ec8d03",
-            "z": 12,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 12
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "3baae1a9-516d-4fbe-9df2-aa3e54a15def",
             "source": {
               "id": "a5ed44c7-fef3-477a-8d8a-0655fdc847ad"
             },
             "target": {
               "id": "a801c2b1-f88a-497f-a4fd-8e986388f91e"
             },
-            "id": "3baae1a9-516d-4fbe-9df2-aa3e54a15def",
-            "z": 13,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 13
           },
           {
-            "type": "bpmn.Link",
+            "attrs": {},
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "stroke": "#e5e7eb",
-                  "strokeWidth": 1,
                   "rx": 3,
-                  "ry": 3
+                  "ry": 3,
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1
                 },
                 "text": {
-                  "fontSize": 12,
+                  "fill": "#374151",
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fill": "#374151"
+                  "fontSize": 12
                 }
               }
             },
+            "id": "7332a464-3834-418b-bccd-3a9aa47e8746",
             "source": {
               "id": "a801c2b1-f88a-497f-a4fd-8e986388f91e"
             },
             "target": {
               "id": "afadcf25-2fee-45fc-bfe3-fb99ac52c0da"
             },
-            "id": "7332a464-3834-418b-bccd-3a9aa47e8746",
-            "z": 14,
-            "attrs": {}
+            "type": "bpmn.Link",
+            "z": 14
           }
         ]
       },
-      "id": "CISV2.BP3",
-      "objectives": "Share person information across care settings with appropriate consent and security",
-      "title": "Information Sharing Workflow",
-      "processId": "CISV2.BP3",
-      "personas": "",
       "element_data": [
         {
           "id": "03d84d13-7e29-4929-81f0-04b9ddaaf8b2",
@@ -1608,7 +1603,12 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "CISV2.BP3",
+      "objectives": "Share person information across care settings with appropriate consent and security",
+      "personas": "",
+      "processId": "CISV2.BP3",
+      "title": "Information Sharing Workflow"
     }
   ]
 }
