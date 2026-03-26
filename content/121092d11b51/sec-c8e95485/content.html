@@ -1,0 +1,40 @@
+## Functional & Non-Functional Requirements
+
+System requirements for implementing the Core Information Standard v2.0 to ensure comprehensive person-centered care documentation.
+
+### Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.FR01 | Person identification | System must support NHS number as primary identifier with ability to manage temporary numbers and merge duplicate records | High |
+| CISV2.FR02 | Reasonable adjustment recording | Capture, display and share reasonable adjustment requirements prominently across all care interfaces per Equality Act 2010 | High |
+| CISV2.FR03 | About Me documentation | Enable person/carer to directly input preferences, routines, and communication needs with multimedia support | High |
+| CISV2.FR04 | Consent management | Record and track consent decisions for information sharing with audit trail and ability to withdraw/modify | High |
+| CISV2.FR05 | Care plan creation | Support collaborative care planning with goals, actions, responsibilities and progress tracking | High |
+| CISV2.FR06 | Emergency information access | Provide rapid access to critical information (allergies, DNACPR, medications) within 2 minutes | High |
+| CISV2.FR07 | Multi-agency coordination | Enable secure information sharing across health and social care boundaries with role-based access | High |
+| CISV2.FR08 | Legal status tracking | Maintain current legal status (MCA, MHA, DoLS) with expiry alerts and review requirements | Medium |
+| CISV2.FR09 | Risk assessment tools | Provide structured risk assessment with automated flagging of high-risk scenarios | Medium |
+| CISV2.FR10 | Document management | Store and retrieve associated documents (advance decisions, LPA) with version control | Medium |
+| CISV2.FR11 | Safeguarding workflow | Support safeguarding referral process with secure information sharing to relevant authorities | High |
+| CISV2.FR12 | Medication reconciliation | Compare and reconcile medications across care transitions with interaction checking | High |
+| CISV2.FR13 | Assessment scheduling | Schedule and track required assessments with automated reminders for reviews | Medium |
+| CISV2.FR14 | Family/carer access | Provide appropriate access for authorized family/carers to view and contribute information | Medium |
+| CISV2.FR15 | Audit reporting | Generate compliance and quality reports against standard indicators | Low |
+
+### Non-Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.NFR01 | Availability | System available 99.9% with planned maintenance windows outside core hours | High |
+| CISV2.NFR02 | Response time | Page load <3 seconds; search results <5 seconds; emergency access <2 minutes | High |
+| CISV2.NFR03 | Security | NHS Data Security and Protection Toolkit compliance; role-based access control; encryption at rest and in transit | High |
+| CISV2.NFR04 | Accessibility | WCAG 2.1 AA compliance; screen reader compatible; keyboard navigation; adjustable fonts/contrast | High |
+| CISV2.NFR05 | Interoperability | HL7 FHIR R4 UK Core compliance; integrate with PDS, SCR, GP systems | High |
+| CISV2.NFR06 | Scalability | Support 100,000 concurrent users; 10 million patient records; linear scaling | Medium |
+| CISV2.NFR07 | Mobile compatibility | Responsive design for tablets/smartphones; offline capability for community staff | Medium |
+| CISV2.NFR08 | Data retention | Maintain records per NHS retention schedules; support legal holds | Medium |
+| CISV2.NFR09 | Disaster recovery | RPO <1 hour; RTO <4 hours; geographic redundancy | High |
+| CISV2.NFR10 | Usability | Intuitive interface requiring <2 hours training; context-sensitive help | Medium |
+| CISV2.NFR11 | Multi-language support | Interface in Welsh and community languages; translation services integration | Low |
+| CISV2.NFR12 | Performance degradation | Graceful degradation under load; priority queuing for emergency access | Medium |
