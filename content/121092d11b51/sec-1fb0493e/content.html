@@ -1,18 +1,33 @@
-## Generic Personas
+## User Scenarios
+### Scenario 1: Emergency Hospital Admission
+\*\*Narrative\*\*: Mrs. Chen, 78, is brought to A&E following a fall at home. She has moderate dementia and limited English proficiency. The paramedics access her Core Information record via the Summary Care Record.
 
-The following personas represent key users and stakeholders of the Core Information Standard v2.0 implementation.
+| Category | Description |
+| --- | --- |
+| Actors | Paramedic (CISV2.P8), A&E Consultant (CISV2.P4), Mrs. Chen (CISV2.P6), Daughter (CISV2.P7) |
+| Trigger | Emergency call reporting fall with confusion |
+| Key Data Used | Reasonable adjustments (interpreter needed), medications list, DNACPR status, emergency contacts, cognitive impairment details |
+| Outcome | Appropriate care provided with interpreter support; daughter contacted; admission avoided through community support |
+| Linked Processes | Emergency assessment, medication reconciliation, discharge planning |
 
-| Persona ID | Title | Description | Key Competencies |
-|---|---|---|---|
-| CISV2.P1 | GP/Primary Care Physician | Manages ongoing care for patients in community settings; needs comprehensive view of medical history, medications, and social circumstances | Clinical assessment, medication management, care coordination, SNOMED CT coding |
-| CISV2.P2 | Social Worker | Coordinates social care services and safeguarding; requires access to legal information, care plans, and support networks | Safeguarding assessment, care planning, Mental Capacity Act knowledge, multi-agency coordination |
-| CISV2.P3 | Community Nurse | Provides nursing care in home/community settings; needs medication information, care plans, and communication preferences | Clinical procedures, medication administration, wound care, patient education |
-| CISV2.P4 | Hospital Consultant | Specialist providing acute/specialist care; requires clinical history, investigation results, and advance decisions | Specialist clinical knowledge, diagnostic interpretation, treatment planning |
-| CISV2.P5 | Care Home Manager | Oversees residential care delivery; needs comprehensive personal information, care plans, and legal documentation | Care quality management, staff supervision, regulatory compliance |
-| CISV2.P6 | Patient/Service User | Person receiving care; wants control over personal information sharing and care preferences | Self-advocacy, health literacy (variable), personal preference expression |
-| CISV2.P7 | Family Carer | Provides informal care and advocacy; needs understanding of care plans and communication methods | Care provision, advocacy, emotional support, care coordination |
-| CISV2.P8 | Paramedic/Emergency Responder | Provides urgent/emergency care; requires rapid access to critical information including allergies and advance decisions | Emergency assessment, rapid decision-making, clinical procedures |
+### Scenario 2: Social Care Review
+\*\*Narrative\*\*: Mr. Kumar's annual care package review identifies increasing mobility difficulties. His social worker coordinates with health professionals to reassess needs.
 
-### Persona Context
+| Category | Description |
+| --- | --- |
+| Actors | Social Worker (CISV2.P2), Mr. Kumar (CISV2.P6), Community OT, Care Provider |
+| Trigger | Scheduled annual review plus reported mobility changes |
+| Key Data Used | Care and support plan, assessment history, goals and outcomes, equipment provided, primary support reason |
+| Outcome | Care package adjusted with additional mobility aids; referral to falls prevention service |
+| Linked Processes | Needs assessment, care planning, equipment provision, multi-disciplinary review |
 
-These personas interact with different aspects of the Core Information Standard based on their roles. GPs and consultants focus on clinical sections, while social workers emphasize legal frameworks and support needs. All personas benefit from the person-centered "About Me" information for delivering appropriate care.
+### Scenario 3: Medication Change in Primary Care
+\*\*Narrative\*\*: Dr. Patel reviews Mr. Thompson's medications following a hospital discharge letter indicating adverse reaction to ACE inhibitor.
+
+| Category | Description |
+| --- | --- |
+| Actors | GP (CISV2.P1), Mr. Thompson (CISV2.P6), Practice Pharmacist |
+| Trigger | Hospital discharge notification with medication change |
+| Key Data Used | Allergies and adverse reactions, current medications, problem list, recent procedures |
+| Outcome | Medication safely switched with appropriate coding; allergy record updated; patient counselled |
+| Linked Processes | Medication review, allergy documentation, patient education, coding update |
