@@ -1,0 +1,791 @@
+{
+  "summary_markdown": "The following business processes demonstrate how different personas interact with the Core Information Standard to deliver integrated care. Each process captures critical data elements and supports information flow between health and social care professionals.",
+  "activities": [
+    {
+      "id": "bp-reasonable-adjustments",
+      "processId": "CISV2.A",
+      "title": "Reasonable Adjustments Identification and Recording",
+      "personas": "Social Worker, GP/Primary Care Physician, Care Coordinator",
+      "objectives": "To identify, document and share reasonable adjustments required under the Equality Act 2010, ensuring all services can provide accessible care.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Start"
+          },
+          {
+            "id": "identify",
+            "type": "activity",
+            "label": "Identify Need for Adjustment",
+            "dataSeen": [
+              {
+                "element": "Person demographics",
+                "type": "CISV2 Core",
+                "source": "Patient record"
+              },
+              {
+                "element": "About Me preferences",
+                "type": "CISV2 About Me"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Reasonable adjustment flag",
+                "type": "CISV2 Individual Requirements",
+                "notes": "Boolean indicator"
+              }
+            ]
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Detailed Assessment",
+            "dataSeen": [
+              {
+                "element": "Individual requirements",
+                "type": "CISV2 Individual Requirements"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Adjustment details",
+                "type": "CISV2 Individual Requirements"
+              },
+              {
+                "element": "Impairment category",
+                "type": "CISV2 Individual Requirements"
+              }
+            ]
+          },
+          {
+            "id": "decision",
+            "type": "decision",
+            "label": "Adjustment Type?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "comm",
+            "type": "activity",
+            "label": "Record Communication Needs",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Communication requirements",
+                "type": "CISV2 Individual Requirements",
+                "notes": "SNOMED coded"
+              }
+            ]
+          },
+          {
+            "id": "mobility",
+            "type": "activity",
+            "label": "Record Mobility Needs",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Mobility needs",
+                "type": "CISV2 Individual Requirements",
+                "notes": "SNOMED coded"
+              }
+            ]
+          },
+          {
+            "id": "other",
+            "type": "activity",
+            "label": "Record Other Requirements",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Other individual requirements",
+                "type": "CISV2 Individual Requirements"
+              }
+            ]
+          },
+          {
+            "id": "share",
+            "type": "activity",
+            "label": "Share Across Systems",
+            "dataSeen": [
+              {
+                "element": "All adjustment records",
+                "type": "CISV2 Individual Requirements"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "identify"
+          },
+          {
+            "from": "identify",
+            "to": "assess"
+          },
+          {
+            "from": "assess",
+            "to": "decision"
+          },
+          {
+            "from": "decision",
+            "to": "comm",
+            "label": "Communication"
+          },
+          {
+            "from": "decision",
+            "to": "mobility",
+            "label": "Mobility"
+          },
+          {
+            "from": "decision",
+            "to": "other",
+            "label": "Other"
+          },
+          {
+            "from": "comm",
+            "to": "share"
+          },
+          {
+            "from": "mobility",
+            "to": "share"
+          },
+          {
+            "from": "other",
+            "to": "share"
+          },
+          {
+            "from": "share",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bp-safeguarding",
+      "processId": "CISV2.B",
+      "title": "Safeguarding Concern Management",
+      "personas": "Social Worker, GP/Primary Care Physician, Hospital Consultant, Care Home Manager",
+      "objectives": "To identify, assess, document and manage safeguarding concerns in accordance with statutory requirements.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Start"
+          },
+          {
+            "id": "concern",
+            "type": "activity",
+            "label": "Identify Safeguarding Concern",
+            "dataSeen": [
+              {
+                "element": "Person demographics",
+                "type": "CISV2 Core"
+              },
+              {
+                "element": "Risk assessments",
+                "type": "CISV2 Risks"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Safeguarding indicator",
+                "type": "CISV2 Safeguarding",
+                "notes": "Boolean flag"
+              }
+            ]
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Assess Concern Type",
+            "dataSeen": [
+              {
+                "element": "Legal status",
+                "type": "CISV2 Legal Information"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Safeguarding concerns",
+                "type": "CISV2 Safeguarding",
+                "notes": "SNOMED coded"
+              }
+            ]
+          },
+          {
+            "id": "decision",
+            "type": "decision",
+            "label": "Child or Adult?",
+            "dataSeen": [
+              {
+                "element": "Date of birth",
+                "type": "CISV2 Person demographics"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "child",
+            "type": "subprocess",
+            "label": "Child Protection Process",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Child protection plan",
+                "type": "CISV2 Safeguarding"
+              },
+              {
+                "element": "Looked after child status",
+                "type": "CISV2 Safeguarding"
+              }
+            ]
+          },
+          {
+            "id": "adult",
+            "type": "subprocess",
+            "label": "Adult Safeguarding Process",
+            "dataSeen": [
+              {
+                "element": "Mental capacity assessment",
+                "type": "CISV2 Legal Information"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "DoLS application",
+                "type": "CISV2 Legal Information"
+              }
+            ]
+          },
+          {
+            "id": "notify",
+            "type": "activity",
+            "label": "Notify Relevant Authorities",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Professional contacts",
+                "type": "CISV2 Professional contacts"
+              }
+            ]
+          },
+          {
+            "id": "monitor",
+            "type": "activity",
+            "label": "Monitor and Review",
+            "dataSeen": [
+              {
+                "element": "Safeguarding records",
+                "type": "CISV2 Safeguarding"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Review dates",
+                "type": "CISV2 Safeguarding"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "concern"
+          },
+          {
+            "from": "concern",
+            "to": "assess"
+          },
+          {
+            "from": "assess",
+            "to": "decision"
+          },
+          {
+            "from": "decision",
+            "to": "child",
+            "label": "Under 18"
+          },
+          {
+            "from": "decision",
+            "to": "adult",
+            "label": "18+"
+          },
+          {
+            "from": "child",
+            "to": "notify"
+          },
+          {
+            "from": "adult",
+            "to": "notify"
+          },
+          {
+            "from": "notify",
+            "to": "monitor"
+          },
+          {
+            "from": "monitor",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bp-care-planning",
+      "processId": "CISV2.C",
+      "title": "Integrated Care Planning",
+      "personas": "Care Coordinator, GP/Primary Care Physician, Social Worker, Allied Health Professional, Person/Patient Representative",
+      "objectives": "To develop person-centred care plans that integrate health and social care needs, with clear goals and actions.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Start"
+          },
+          {
+            "id": "gather",
+            "type": "activity",
+            "label": "Gather Person Information",
+            "dataSeen": [
+              {
+                "element": "About Me",
+                "type": "CISV2 About Me"
+              },
+              {
+                "element": "Problem list",
+                "type": "CISV2 Problem list"
+              },
+              {
+                "element": "Assessments",
+                "type": "CISV2 Assessments"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "goals",
+            "type": "activity",
+            "label": "Identify Goals with Person",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Goals and hopes",
+                "type": "CISV2 Care and support plan"
+              },
+              {
+                "element": "Needs concerns problems",
+                "type": "CISV2 Care and support plan"
+              }
+            ]
+          },
+          {
+            "id": "actions",
+            "type": "activity",
+            "label": "Define Actions & Activities",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Actions and activities",
+                "type": "CISV2 Care and support plan"
+              },
+              {
+                "element": "Stage goals",
+                "type": "CISV2 Care and support plan"
+              }
+            ]
+          },
+          {
+            "id": "assign",
+            "type": "activity",
+            "label": "Assign Responsibilities",
+            "dataSeen": [
+              {
+                "element": "Professional contacts",
+                "type": "CISV2 Professional contacts"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Who (responsible person)",
+                "type": "CISV2 Care and support plan"
+              }
+            ]
+          },
+          {
+            "id": "agree",
+            "type": "decision",
+            "label": "Person Agrees?",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Agreed with person",
+                "type": "CISV2 Care and support plan"
+              }
+            ]
+          },
+          {
+            "id": "revise",
+            "type": "activity",
+            "label": "Revise Plan",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "finalise",
+            "type": "activity",
+            "label": "Finalise & Share Plan",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Care funding source",
+                "type": "CISV2 Care and support plan"
+              },
+              {
+                "element": "Review date",
+                "type": "CISV2 Care and support plan"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "gather"
+          },
+          {
+            "from": "gather",
+            "to": "goals"
+          },
+          {
+            "from": "goals",
+            "to": "actions"
+          },
+          {
+            "from": "actions",
+            "to": "assign"
+          },
+          {
+            "from": "assign",
+            "to": "agree"
+          },
+          {
+            "from": "agree",
+            "to": "finalise",
+            "label": "Yes"
+          },
+          {
+            "from": "agree",
+            "to": "revise",
+            "label": "No"
+          },
+          {
+            "from": "revise",
+            "to": "goals"
+          },
+          {
+            "from": "finalise",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bp-medication-management",
+      "processId": "CISV2.D",
+      "title": "Medication Management Across Settings",
+      "personas": "GP/Primary Care Physician, Hospital Consultant, Community Nurse, Care Home Manager",
+      "objectives": "To ensure safe medication management during transitions of care with complete reconciliation.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Start"
+          },
+          {
+            "id": "review",
+            "type": "activity",
+            "label": "Review Current Medications",
+            "dataSeen": [
+              {
+                "element": "Medication item entry",
+                "type": "CISV2 Medications"
+              },
+              {
+                "element": "Allergies",
+                "type": "CISV2 Allergies"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "changes",
+            "type": "decision",
+            "label": "Changes Required?",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "prescribe",
+            "type": "activity",
+            "label": "Prescribe/Amend Medications",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Medication name",
+                "type": "CISV2 Medications",
+                "notes": "dm+d coded"
+              },
+              {
+                "element": "Dose directions",
+                "type": "CISV2 Medications"
+              }
+            ]
+          },
+          {
+            "id": "reconcile",
+            "type": "activity",
+            "label": "Medication Reconciliation",
+            "dataSeen": [
+              {
+                "element": "Previous medications",
+                "type": "CISV2 Medications"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Medication change summary",
+                "type": "CISV2 Medications"
+              }
+            ]
+          },
+          {
+            "id": "share",
+            "type": "activity",
+            "label": "Share with Care Team",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Professional contacts",
+                "type": "CISV2 Professional contacts"
+              }
+            ]
+          },
+          {
+            "id": "monitor",
+            "type": "activity",
+            "label": "Plan Monitoring",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Review date",
+                "type": "CISV2 Medications"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review"
+          },
+          {
+            "from": "review",
+            "to": "changes"
+          },
+          {
+            "from": "changes",
+            "to": "share",
+            "label": "No"
+          },
+          {
+            "from": "changes",
+            "to": "prescribe",
+            "label": "Yes"
+          },
+          {
+            "from": "prescribe",
+            "to": "reconcile"
+          },
+          {
+            "from": "reconcile",
+            "to": "share"
+          },
+          {
+            "from": "share",
+            "to": "monitor"
+          },
+          {
+            "from": "monitor",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bp-end-of-life",
+      "processId": "CISV2.E",
+      "title": "End of Life Care Planning",
+      "personas": "Hospital Consultant, GP/Primary Care Physician, Community Nurse, Person/Patient Representative, Care Coordinator",
+      "objectives": "To sensitively plan and document end of life care preferences ensuring dignity and respect for person's wishes.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Start"
+          },
+          {
+            "id": "prognosis",
+            "type": "activity",
+            "label": "Assess & Document Prognosis",
+            "dataSeen": [
+              {
+                "element": "Problem list",
+                "type": "CISV2 Problem list"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Estimated prognosis",
+                "type": "CISV2 End of life care"
+              }
+            ]
+          },
+          {
+            "id": "discuss",
+            "type": "activity",
+            "label": "Discuss with Person/Family",
+            "dataSeen": [
+              {
+                "element": "Personal contacts",
+                "type": "CISV2 Personal contacts"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Awareness of prognosis",
+                "type": "CISV2 End of life care"
+              }
+            ]
+          },
+          {
+            "id": "preferences",
+            "type": "activity",
+            "label": "Document Care Preferences",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Preferred place of death",
+                "type": "CISV2 End of life care"
+              },
+              {
+                "element": "Preferred place of care",
+                "type": "CISV2 End of life care"
+              }
+            ]
+          },
+          {
+            "id": "cpr",
+            "type": "activity",
+            "label": "CPR Decision Making",
+            "dataSeen": [
+              {
+                "element": "Mental capacity",
+                "type": "CISV2 Legal Information"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CPR decision",
+                "type": "CISV2 End of life care"
+              }
+            ]
+          },
+          {
+            "id": "anticipatory",
+            "type": "activity",
+            "label": "Plan Anticipatory Care",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Anticipatory actions",
+                "type": "CISV2 End of life care"
+              },
+              {
+                "element": "Anticipatory medicines",
+                "type": "CISV2 End of life care"
+              }
+            ]
+          },
+          {
+            "id": "share",
+            "type": "activity",
+            "label": "Share with All Services",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "End"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "prognosis"
+          },
+          {
+            "from": "prognosis",
+            "to": "discuss"
+          },
+          {
+            "from": "discuss",
+            "to": "preferences"
+          },
+          {
+            "from": "preferences",
+            "to": "cpr"
+          },
+          {
+            "from": "cpr",
+            "to": "anticipatory"
+          },
+          {
+            "from": "anticipatory",
+            "to": "share"
+          },
+          {
+            "from": "share",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
