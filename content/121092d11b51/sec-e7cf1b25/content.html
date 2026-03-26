@@ -1,0 +1,64 @@
+## Core Data Elements
+
+The following table summarises the essential data elements within the Core Information Standard v2.0, grouped by domain. Each element supports integrated care delivery through consistent, structured information capture.
+
+### Person Demographics & Identity
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | Person Name | Full structured name including first, family, preferred names | Complex | Mandatory | NHS_DD Person name |
+| CISV2.DE2 | Date of Birth | Person's date of birth | Date | Mandatory | NHS_DD Person birth date |
+| CISV2.DE3 | NHS Number | Unique NHS identifier | String(10) | Required | NHS_DD NHS number |
+| CISV2.DE4 | Gender | Person's stated gender | String(1) | Required | NHS_DD Person stated gender code |
+| CISV2.DE5 | Address | Structured address including postcode | Complex | Mandatory | NHS_DD Patient usual address |
+| CISV2.DE6 | Contact Details | Phone, email, preferred contact method | Complex | Required | NHS_DD UK telephone number |
+| CISV2.DE7 | GP Practice Details | Registered GP practice information | Complex | Mandatory | ODS code |
+
+### Individual Requirements & Accessibility
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE8 | Reasonable Adjustment Flag | Indicator for required adjustments | Boolean | Required | SNOMED 1108111000000107 |
+| CISV2.DE9 | Reasonable Adjustment Details | Specific adjustments needed | Complex | Required | SNOMED Accessible Information refsets |
+| CISV2.DE10 | Impairment Category | Type of impairment requiring support | Coded | Required | SNOMED CT coded |
+| CISV2.DE11 | Communication Needs | How person communicates | Text | Required | Free text/coded |
+| CISV2.DE12 | Mobility Needs | Movement and access requirements | Coded | Required | SNOMED mobility findings refset |
+
+### Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE13 | Problem List | Active health conditions/issues | Complex | Mandatory | SNOMED Health issues refset |
+| CISV2.DE14 | Allergies/Reactions | Known allergies and adverse reactions | Complex | Mandatory | dm+d/SNOMED substances |
+| CISV2.DE15 | Medications | Current medication list | Complex | Mandatory | dm+d VTM/VMP/AMP |
+| CISV2.DE16 | Vaccinations | Immunisation records | Complex | Required | dm+d vaccine products |
+| CISV2.DE17 | Procedures | Clinical procedures performed | Complex | Required | SNOMED procedures |
+
+### Safeguarding & Legal
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE18 | Safeguarding Indicator | Flag for safeguarding concerns | Boolean | Required | Yes/No flag |
+| CISV2.DE19 | Safeguarding Concerns | Specific safeguarding issues | Coded | Required | SNOMED Safeguarding refset |
+| CISV2.DE20 | Mental Capacity Assessment | Capacity decision records | Complex | Required | Free text/structured |
+| CISV2.DE21 | LPA Status | Lasting Power of Attorney details | Complex | Required | SNOMED LPA findings refset |
+| CISV2.DE22 | DoLS Status | Deprivation of Liberty status | Complex | Required | Requested/Authorised |
+
+### Care Planning & Coordination
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE23 | Care Plan Goals | Person's goals and hopes | Complex | Required | SNOMED/Free text |
+| CISV2.DE24 | Care Plan Actions | Planned activities and interventions | Complex | Required | SNOMED procedures |
+| CISV2.DE25 | Professional Contacts | Care team members | Complex | Required | SDSJobRole/ODS codes |
+| CISV2.DE26 | Personal Contacts | Family/friend contacts | Complex | Mandatory | Free text structured |
+| CISV2.DE27 | Services & Care | Active care packages | Complex | Required | Free text/Local codes |
+
+### End of Life Care
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE28 | CPR Decision | Resuscitation status | Coded | Required | SNOMED 450475007/450476008 |
+| CISV2.DE29 | Preferred Place of Death | Person's preference | Complex | Required | SCC11580 codes |
+| CISV2.DE30 | Estimated Prognosis | Clinical prognosis | Text | Required | Free text |
+| CISV2.DE31 | Advance Statement | Advance care preferences | Complex | Required | SNOMED 816281000000101 |
