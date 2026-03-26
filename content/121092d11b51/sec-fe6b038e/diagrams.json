@@ -1,0 +1,851 @@
+{
+  "summary_markdown": "The Core Information Standard v2.0 defines five primary business processes that span initial registration through ongoing care management. Each process involves multiple personas working collaboratively to capture, maintain, and utilize person-centered information effectively.",
+  "activities": [
+    {
+      "id": "initial-registration",
+      "processId": "CISV2.A",
+      "title": "Initial Person Registration & Demographics Capture",
+      "personas": "GP/Primary Care Physician, Care Home Manager, Social Worker",
+      "objectives": "Establish person's identity, capture core demographics, and register individual requirements including reasonable adjustments",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for registration"
+          },
+          {
+            "id": "check-nhs",
+            "type": "activity",
+            "label": "Check NHS number/existing records",
+            "dataSeen": [
+              {
+                "element": "NHS number",
+                "source": "PDS/existing systems"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "identity-decision",
+            "type": "decision",
+            "label": "Existing NHS number?"
+          },
+          {
+            "id": "verify-identity",
+            "type": "activity",
+            "label": "Verify identity and demographics",
+            "dataSeen": [
+              {
+                "element": "Photo ID",
+                "source": "Person"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Person name",
+                "notes": "Including preferred name"
+              },
+              {
+                "element": "Date of birth"
+              },
+              {
+                "element": "Gender"
+              },
+              {
+                "element": "Ethnicity"
+              }
+            ]
+          },
+          {
+            "id": "create-nhs",
+            "type": "activity",
+            "label": "Create NHS number registration",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "NHS number",
+                "notes": "New allocation"
+              }
+            ]
+          },
+          {
+            "id": "capture-contact",
+            "type": "activity",
+            "label": "Capture contact details",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Address",
+                "notes": "Including type"
+              },
+              {
+                "element": "Telephone numbers"
+              },
+              {
+                "element": "Email addresses"
+              },
+              {
+                "element": "Preferred contact method"
+              }
+            ]
+          },
+          {
+            "id": "assess-requirements",
+            "type": "activity",
+            "label": "Assess individual requirements",
+            "dataSeen": [
+              {
+                "element": "Previous assessments",
+                "source": "Referral/records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Reasonable adjustments",
+                "notes": "Per Equality Act 2010"
+              },
+              {
+                "element": "Communication needs"
+              },
+              {
+                "element": "Impairments"
+              },
+              {
+                "element": "Mobility needs"
+              }
+            ]
+          },
+          {
+            "id": "register-gp",
+            "type": "activity",
+            "label": "Register with GP practice",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "GP practice details"
+              },
+              {
+                "element": "GP name"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "check-nhs"
+          },
+          {
+            "from": "check-nhs",
+            "to": "identity-decision"
+          },
+          {
+            "from": "identity-decision",
+            "to": "verify-identity",
+            "label": "Yes"
+          },
+          {
+            "from": "identity-decision",
+            "to": "create-nhs",
+            "label": "No"
+          },
+          {
+            "from": "create-nhs",
+            "to": "verify-identity"
+          },
+          {
+            "from": "verify-identity",
+            "to": "capture-contact"
+          },
+          {
+            "from": "capture-contact",
+            "to": "assess-requirements"
+          },
+          {
+            "from": "assess-requirements",
+            "to": "register-gp"
+          },
+          {
+            "from": "register-gp",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clinical-assessment",
+      "processId": "CISV2.B",
+      "title": "Clinical Assessment & Care Planning",
+      "personas": "Hospital Consultant, Community Nurse, GP/Primary Care Physician, Patient/Service User, Family Carer",
+      "objectives": "Conduct comprehensive health assessment, identify care needs, and develop person-centered care plan",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Assessment initiated"
+          },
+          {
+            "id": "review-history",
+            "type": "activity",
+            "label": "Review medical history",
+            "dataSeen": [
+              {
+                "element": "Problem list",
+                "source": "EPR/GP records"
+              },
+              {
+                "element": "Medications",
+                "source": "EPR"
+              },
+              {
+                "element": "Allergies",
+                "source": "EPR"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "clinical-exam",
+            "type": "activity",
+            "label": "Conduct clinical examination",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Examination findings"
+              },
+              {
+                "element": "Observations",
+                "notes": "Vitals, measurements"
+              }
+            ]
+          },
+          {
+            "id": "risk-assess",
+            "type": "activity",
+            "label": "Assess risks",
+            "dataSeen": [
+              {
+                "element": "Previous risks",
+                "source": "Care records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Risk assessment",
+                "notes": "Self-harm, falls, safeguarding"
+              }
+            ]
+          },
+          {
+            "id": "capacity-decision",
+            "type": "decision",
+            "label": "Mental capacity assessment needed?"
+          },
+          {
+            "id": "capacity-assess",
+            "type": "activity",
+            "label": "Conduct capacity assessment",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Mental capacity assessment"
+              },
+              {
+                "element": "Best interests decision",
+                "notes": "If lacks capacity"
+              }
+            ]
+          },
+          {
+            "id": "develop-plan",
+            "type": "activity",
+            "label": "Develop care plan with person",
+            "dataSeen": [
+              {
+                "element": "Person preferences",
+                "source": "About Me section"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Care plan goals"
+              },
+              {
+                "element": "Actions and activities"
+              },
+              {
+                "element": "Agreed with person"
+              }
+            ]
+          },
+          {
+            "id": "document-plan",
+            "type": "activity",
+            "label": "Document care decisions",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Plan and requested actions"
+              },
+              {
+                "element": "Contingency plans"
+              },
+              {
+                "element": "Review date"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review-history"
+          },
+          {
+            "from": "review-history",
+            "to": "clinical-exam"
+          },
+          {
+            "from": "clinical-exam",
+            "to": "risk-assess"
+          },
+          {
+            "from": "risk-assess",
+            "to": "capacity-decision"
+          },
+          {
+            "from": "capacity-decision",
+            "to": "capacity-assess",
+            "label": "Yes"
+          },
+          {
+            "from": "capacity-decision",
+            "to": "develop-plan",
+            "label": "No"
+          },
+          {
+            "from": "capacity-assess",
+            "to": "develop-plan"
+          },
+          {
+            "from": "develop-plan",
+            "to": "document-plan"
+          },
+          {
+            "from": "document-plan",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "emergency-response",
+      "processId": "CISV2.C",
+      "title": "Emergency Response & Information Access",
+      "personas": "Paramedic/Emergency Responder, Hospital Consultant, Family Carer",
+      "objectives": "Rapid access to critical information during emergency situations to ensure appropriate and safe care delivery",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Emergency call received"
+          },
+          {
+            "id": "access-scr",
+            "type": "activity",
+            "label": "Access Summary Care Record",
+            "dataSeen": [
+              {
+                "element": "NHS number",
+                "source": "999 call/patient"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "review-critical",
+            "type": "activity",
+            "label": "Review critical information",
+            "dataSeen": [
+              {
+                "element": "DNACPR status",
+                "source": "SCR"
+              },
+              {
+                "element": "Allergies",
+                "source": "SCR"
+              },
+              {
+                "element": "Current medications",
+                "source": "SCR"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-adjustments",
+            "type": "activity",
+            "label": "Check individual requirements",
+            "dataSeen": [
+              {
+                "element": "Reasonable adjustments",
+                "source": "SCR"
+              },
+              {
+                "element": "Communication needs",
+                "source": "SCR"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "contact-decision",
+            "type": "decision",
+            "label": "Emergency contacts available?"
+          },
+          {
+            "id": "contact-family",
+            "type": "activity",
+            "label": "Contact family/carer",
+            "dataSeen": [
+              {
+                "element": "Emergency contacts",
+                "source": "SCR"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Family notified",
+                "notes": "Time and person"
+              }
+            ]
+          },
+          {
+            "id": "provide-care",
+            "type": "activity",
+            "label": "Provide emergency care",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Treatment provided"
+              },
+              {
+                "element": "Medications administered"
+              }
+            ]
+          },
+          {
+            "id": "handover",
+            "type": "activity",
+            "label": "Hospital handover",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Handover notes"
+              },
+              {
+                "element": "Admission details"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Emergency response complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "access-scr"
+          },
+          {
+            "from": "access-scr",
+            "to": "review-critical"
+          },
+          {
+            "from": "review-critical",
+            "to": "check-adjustments"
+          },
+          {
+            "from": "check-adjustments",
+            "to": "contact-decision"
+          },
+          {
+            "from": "contact-decision",
+            "to": "contact-family",
+            "label": "Yes"
+          },
+          {
+            "from": "contact-decision",
+            "to": "provide-care",
+            "label": "No"
+          },
+          {
+            "from": "contact-family",
+            "to": "provide-care"
+          },
+          {
+            "from": "provide-care",
+            "to": "handover"
+          },
+          {
+            "from": "handover",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "social-care-assessment",
+      "processId": "CISV2.D",
+      "title": "Social Care Needs Assessment",
+      "personas": "Social Worker, Care Home Manager, Community Nurse, Patient/Service User, Family Carer",
+      "objectives": "Assess social care needs, determine support requirements, and coordinate care package delivery",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Referral received"
+          },
+          {
+            "id": "initial-screen",
+            "type": "activity",
+            "label": "Initial screening",
+            "dataSeen": [
+              {
+                "element": "Referral information",
+                "source": "Referral form"
+              },
+              {
+                "element": "Safeguarding flags",
+                "source": "Care records"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "home-visit",
+            "type": "activity",
+            "label": "Conduct home visit",
+            "dataSeen": [
+              {
+                "element": "About Me information",
+                "source": "Person/carer"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Social circumstances"
+              },
+              {
+                "element": "Household composition"
+              },
+              {
+                "element": "Accommodation status"
+              }
+            ]
+          },
+          {
+            "id": "needs-assess",
+            "type": "activity",
+            "label": "Assess care needs",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Primary support reason"
+              },
+              {
+                "element": "Assessment findings"
+              },
+              {
+                "element": "ADL assessment"
+              }
+            ]
+          },
+          {
+            "id": "eligibility-decision",
+            "type": "decision",
+            "label": "Eligible for support?"
+          },
+          {
+            "id": "develop-package",
+            "type": "activity",
+            "label": "Develop care package",
+            "dataSeen": [
+              {
+                "element": "Person preferences",
+                "source": "Assessment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Services and care plan"
+              },
+              {
+                "element": "Equipment needs"
+              },
+              {
+                "element": "Care funding source"
+              }
+            ]
+          },
+          {
+            "id": "arrange-services",
+            "type": "activity",
+            "label": "Arrange services",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Service start dates"
+              },
+              {
+                "element": "Provider details"
+              }
+            ]
+          },
+          {
+            "id": "signpost",
+            "type": "activity",
+            "label": "Signpost to other services",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Signposting information"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "initial-screen"
+          },
+          {
+            "from": "initial-screen",
+            "to": "home-visit"
+          },
+          {
+            "from": "home-visit",
+            "to": "needs-assess"
+          },
+          {
+            "from": "needs-assess",
+            "to": "eligibility-decision"
+          },
+          {
+            "from": "eligibility-decision",
+            "to": "develop-package",
+            "label": "Yes"
+          },
+          {
+            "from": "eligibility-decision",
+            "to": "signpost",
+            "label": "No"
+          },
+          {
+            "from": "develop-package",
+            "to": "arrange-services"
+          },
+          {
+            "from": "arrange-services",
+            "to": "end"
+          },
+          {
+            "from": "signpost",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "end-of-life-planning",
+      "processId": "CISV2.E",
+      "title": "End of Life Care Planning",
+      "personas": "GP/Primary Care Physician, Community Nurse, Hospital Consultant, Patient/Service User, Family Carer",
+      "objectives": "Establish person's end of life preferences, document advance decisions, and coordinate palliative care",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "EoL conversation initiated"
+          },
+          {
+            "id": "assess-understanding",
+            "type": "activity",
+            "label": "Assess awareness of prognosis",
+            "dataSeen": [
+              {
+                "element": "Diagnosis",
+                "source": "Medical records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Awareness of prognosis"
+              }
+            ]
+          },
+          {
+            "id": "discuss-preferences",
+            "type": "activity",
+            "label": "Discuss preferences",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Preferred place of care"
+              },
+              {
+                "element": "Preferred place of death"
+              },
+              {
+                "element": "Priorities of care"
+              }
+            ]
+          },
+          {
+            "id": "dnacpr-decision",
+            "type": "decision",
+            "label": "Discuss DNACPR?"
+          },
+          {
+            "id": "document-dnacpr",
+            "type": "activity",
+            "label": "Document CPR decision",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CPR decision"
+              },
+              {
+                "element": "Date for review"
+              }
+            ]
+          },
+          {
+            "id": "advance-decision",
+            "type": "decision",
+            "label": "Advance decisions needed?"
+          },
+          {
+            "id": "document-adrt",
+            "type": "activity",
+            "label": "Document ADRT",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Advance decision to refuse treatment"
+              },
+              {
+                "element": "Location of document"
+              }
+            ]
+          },
+          {
+            "id": "plan-care",
+            "type": "activity",
+            "label": "Plan anticipatory care",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Anticipatory actions"
+              },
+              {
+                "element": "Anticipatory medicines"
+              }
+            ]
+          },
+          {
+            "id": "coordinate-services",
+            "type": "activity",
+            "label": "Coordinate services",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "Service referrals"
+              },
+              {
+                "element": "Equipment provision"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "EoL planning complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess-understanding"
+          },
+          {
+            "from": "assess-understanding",
+            "to": "discuss-preferences"
+          },
+          {
+            "from": "discuss-preferences",
+            "to": "dnacpr-decision"
+          },
+          {
+            "from": "dnacpr-decision",
+            "to": "document-dnacpr",
+            "label": "Yes"
+          },
+          {
+            "from": "dnacpr-decision",
+            "to": "advance-decision",
+            "label": "No"
+          },
+          {
+            "from": "document-dnacpr",
+            "to": "advance-decision"
+          },
+          {
+            "from": "advance-decision",
+            "to": "document-adrt",
+            "label": "Yes"
+          },
+          {
+            "from": "advance-decision",
+            "to": "plan-care",
+            "label": "No"
+          },
+          {
+            "from": "document-adrt",
+            "to": "plan-care"
+          },
+          {
+            "from": "plan-care",
+            "to": "coordinate-services"
+          },
+          {
+            "from": "coordinate-services",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
