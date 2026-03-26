@@ -1,0 +1,1297 @@
+{
+  "summary_markdown": "The Core Information Standard workflow processes enable systematic capture and sharing of person-centered information across health and social care settings. Each process incorporates data collection checkpoints that build the comprehensive record while supporting care delivery.",
+  "activities": [
+    {
+      "id": "CISV2.BP1",
+      "processId": "CISV2.A",
+      "title": "Initial Person Registration",
+      "personas": "Care Coordinator, General Practitioner",
+      "objectives": "Establish core person record with essential demographics, contacts, and initial accessibility requirements",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Registration Request",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify-identity",
+            "type": "activity",
+            "label": "Verify Identity",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "NHS Number",
+                "source": "NHS Spine"
+              },
+              {
+                "element": "CISV2.DE37",
+                "type": "Photograph",
+                "source": "ID Document"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE4",
+                "type": "First Name",
+                "notes": "Legal name from ID"
+              },
+              {
+                "element": "CISV2.DE5",
+                "type": "Family Name",
+                "notes": "Legal surname"
+              },
+              {
+                "element": "CISV2.DE10",
+                "type": "Date of Birth",
+                "notes": "Verified from document"
+              }
+            ]
+          },
+          {
+            "id": "check-existing",
+            "type": "decision",
+            "label": "Existing Record?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "NHS Number",
+                "source": "System Search"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "update-demographics",
+            "type": "activity",
+            "label": "Update Demographics",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "NHS Number",
+                "source": "Existing Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE6",
+                "type": "Preferred Name",
+                "notes": "How person wishes to be addressed"
+              },
+              {
+                "element": "CISV2.DE11",
+                "type": "Gender",
+                "notes": "Current gender identity"
+              },
+              {
+                "element": "CISV2.DE19",
+                "type": "Address Line 1",
+                "notes": "Current residence"
+              }
+            ]
+          },
+          {
+            "id": "create-record",
+            "type": "activity",
+            "label": "Create New Record",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE15",
+                "type": "NHS Number",
+                "notes": "Assigned or traced"
+              },
+              {
+                "element": "CISV2.DE14",
+                "type": "Sex",
+                "notes": "Registered sex at birth"
+              },
+              {
+                "element": "CISV2.DE12",
+                "type": "Ethnicity",
+                "notes": "Self-declared ethnicity"
+              }
+            ]
+          },
+          {
+            "id": "capture-contacts",
+            "type": "activity",
+            "label": "Record Contact Details",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE29",
+                "type": "Telephone Number",
+                "notes": "Primary contact number"
+              },
+              {
+                "element": "CISV2.DE33",
+                "type": "Email Address",
+                "notes": "If available"
+              },
+              {
+                "element": "CISV2.DE27",
+                "type": "Preferred Contact Method",
+                "notes": "Person's preference"
+              }
+            ]
+          },
+          {
+            "id": "register-gp",
+            "type": "activity",
+            "label": "Register GP Practice",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE51",
+                "type": "GP Practice Identifier",
+                "source": "GP System"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE49",
+                "type": "GP Name",
+                "notes": "Responsible GP"
+              },
+              {
+                "element": "CISV2.DE50",
+                "type": "GP Practice Details",
+                "notes": "Practice address"
+              }
+            ]
+          },
+          {
+            "id": "assess-requirements",
+            "type": "subprocess",
+            "label": "Initial Requirements Check",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE76",
+                "type": "Reasonable Adjustment Flag",
+                "notes": "Any adjustments needed"
+              },
+              {
+                "element": "CISV2.DE78",
+                "type": "Reasonable Adjustment",
+                "notes": "Specific requirements"
+              },
+              {
+                "element": "CISV2.DE57",
+                "type": "Communication Needs",
+                "notes": "From About Me section"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration Complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify-identity"
+          },
+          {
+            "from": "verify-identity",
+            "to": "check-existing"
+          },
+          {
+            "from": "check-existing",
+            "to": "update-demographics",
+            "label": "Yes"
+          },
+          {
+            "from": "check-existing",
+            "to": "create-record",
+            "label": "No"
+          },
+          {
+            "from": "update-demographics",
+            "to": "capture-contacts"
+          },
+          {
+            "from": "create-record",
+            "to": "capture-contacts"
+          },
+          {
+            "from": "capture-contacts",
+            "to": "register-gp"
+          },
+          {
+            "from": "register-gp",
+            "to": "assess-requirements"
+          },
+          {
+            "from": "assess-requirements",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP2",
+      "processId": "CISV2.B",
+      "title": "Comprehensive Assessment",
+      "personas": "Social Worker, Community Nurse, Allied Health Professional",
+      "objectives": "Conduct holistic assessment capturing clinical, social, and personal needs to inform care planning",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Assessment Referral",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "review-history",
+            "type": "activity",
+            "label": "Review Existing Information",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "Problem List",
+                "source": "Clinical Record"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "Current Medications",
+                "source": "Medication Record"
+              },
+              {
+                "element": "CISV2.DE380",
+                "type": "Safeguarding Indicator",
+                "source": "Safeguarding System"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "clinical-assessment",
+            "type": "activity",
+            "label": "Clinical Assessment",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1268",
+                "type": "Allergies",
+                "source": "Allergy Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1142",
+                "type": "Examination Findings",
+                "notes": "Physical examination"
+              },
+              {
+                "element": "CISV2.DE1147",
+                "type": "Vital Signs",
+                "notes": "Observations"
+              },
+              {
+                "element": "CISV2.DE1157",
+                "type": "Pregnancy Status",
+                "notes": "If applicable"
+              }
+            ]
+          },
+          {
+            "id": "functional-assessment",
+            "type": "activity",
+            "label": "Functional Assessment",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE131",
+                "type": "Cognition Assessment",
+                "notes": "Cognitive function"
+              },
+              {
+                "element": "CISV2.DE155",
+                "type": "Mobility Needs",
+                "notes": "Mobility status"
+              },
+              {
+                "element": "CISV2.DE1189",
+                "type": "Structured Assessment",
+                "notes": "Validated tools"
+              }
+            ]
+          },
+          {
+            "id": "social-assessment",
+            "type": "activity",
+            "label": "Social Context Assessment",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE715",
+                "type": "Household Composition",
+                "notes": "Living arrangements"
+              },
+              {
+                "element": "CISV2.DE959",
+                "type": "Accommodation Status",
+                "notes": "Housing situation"
+              },
+              {
+                "element": "CISV2.DE740",
+                "type": "Occupational History",
+                "notes": "Work status"
+              },
+              {
+                "element": "CISV2.DE935",
+                "type": "Dependants",
+                "notes": "Caring responsibilities"
+              }
+            ]
+          },
+          {
+            "id": "risk-check",
+            "type": "decision",
+            "label": "Risk Factors Present?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1242",
+                "type": "Risk Assessment",
+                "source": "Assessment"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "detailed-risk",
+            "type": "activity",
+            "label": "Detailed Risk Assessment",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1243",
+                "type": "Risk Type",
+                "notes": "Categorize risk"
+              },
+              {
+                "element": "CISV2.DE387",
+                "type": "Safeguarding Concerns",
+                "notes": "If identified"
+              },
+              {
+                "element": "CISV2.DE199",
+                "type": "Clinical Alerts",
+                "notes": "Safety alerts"
+              }
+            ]
+          },
+          {
+            "id": "person-centered",
+            "type": "activity",
+            "label": "Capture Person Perspective",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE54",
+                "type": "What's Important",
+                "notes": "Person's priorities"
+              },
+              {
+                "element": "CISV2.DE60",
+                "type": "Wellness Description",
+                "notes": "Good/bad days"
+              },
+              {
+                "element": "CISV2.DE62",
+                "type": "Do's and Don'ts",
+                "notes": "Care preferences"
+              }
+            ]
+          },
+          {
+            "id": "formulation",
+            "type": "activity",
+            "label": "Create Formulation",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1142",
+                "type": "Assessment Findings",
+                "source": "This Assessment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1226",
+                "type": "Formulation",
+                "notes": "Assessment summary"
+              },
+              {
+                "element": "CISV2.DE1437",
+                "type": "Identified Needs",
+                "notes": "Key concerns"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment Complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review-history"
+          },
+          {
+            "from": "review-history",
+            "to": "clinical-assessment"
+          },
+          {
+            "from": "clinical-assessment",
+            "to": "functional-assessment"
+          },
+          {
+            "from": "functional-assessment",
+            "to": "social-assessment"
+          },
+          {
+            "from": "social-assessment",
+            "to": "risk-check"
+          },
+          {
+            "from": "risk-check",
+            "to": "detailed-risk",
+            "label": "Yes"
+          },
+          {
+            "from": "risk-check",
+            "to": "person-centered",
+            "label": "No"
+          },
+          {
+            "from": "detailed-risk",
+            "to": "person-centered"
+          },
+          {
+            "from": "person-centered",
+            "to": "formulation"
+          },
+          {
+            "from": "formulation",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP3",
+      "processId": "CISV2.C",
+      "title": "Care Planning Development",
+      "personas": "Care Coordinator, Social Worker",
+      "objectives": "Develop person-centered care plan based on assessment findings and individual goals",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Initiate Care Planning",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "review-assessment",
+            "type": "activity",
+            "label": "Review Assessment",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1226",
+                "type": "Formulation",
+                "source": "Assessment"
+              },
+              {
+                "element": "CISV2.DE1437",
+                "type": "Identified Needs",
+                "source": "Assessment"
+              },
+              {
+                "element": "CISV2.DE54",
+                "type": "What's Important",
+                "source": "About Me"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "identify-strengths",
+            "type": "activity",
+            "label": "Identify Strengths",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE56",
+                "type": "Important People",
+                "source": "About Me"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1434",
+                "type": "Strengths",
+                "notes": "Person's assets and abilities"
+              }
+            ]
+          },
+          {
+            "id": "set-goals",
+            "type": "activity",
+            "label": "Set Goals with Person",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "Goals and Hopes",
+                "notes": "What person wants to achieve"
+              },
+              {
+                "element": "CISV2.DE1442",
+                "type": "Goal Importance",
+                "notes": "Priority scoring"
+              }
+            ]
+          },
+          {
+            "id": "plan-actions",
+            "type": "activity",
+            "label": "Plan Actions",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE454",
+                "type": "Professional Contacts",
+                "source": "Contact Register"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1445",
+                "type": "Action Details",
+                "notes": "What needs to happen"
+              },
+              {
+                "element": "CISV2.DE1448",
+                "type": "Action Responsibility",
+                "notes": "Who will do it"
+              },
+              {
+                "element": "CISV2.DE1452",
+                "type": "Action Timeline",
+                "notes": "When it will happen"
+              }
+            ]
+          },
+          {
+            "id": "check-capacity",
+            "type": "decision",
+            "label": "Has Capacity?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE262",
+                "type": "Capacity Assessment",
+                "source": "Legal Record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "person-agreement",
+            "type": "activity",
+            "label": "Obtain Person Agreement",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1473",
+                "type": "Person Agreement",
+                "notes": "Person consents to plan"
+              },
+              {
+                "element": "CISV2.DE1474",
+                "type": "Person Name",
+                "notes": "Who agreed"
+              }
+            ]
+          },
+          {
+            "id": "rep-agreement",
+            "type": "activity",
+            "label": "Obtain Representative Agreement",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE293",
+                "type": "LPA Name",
+                "source": "Legal Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1473",
+                "type": "Rep Agreement",
+                "notes": "Representative consents"
+              },
+              {
+                "element": "CISV2.DE1475",
+                "type": "Rep Role",
+                "notes": "Legal relationship"
+              }
+            ]
+          },
+          {
+            "id": "create-contingency",
+            "type": "subprocess",
+            "label": "Create Contingency Plans",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1242",
+                "type": "Identified Risks",
+                "source": "Risk Assessment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1508",
+                "type": "Trigger Factors",
+                "notes": "Warning signs"
+              },
+              {
+                "element": "CISV2.DE1514",
+                "type": "Contingency Actions",
+                "notes": "What to do"
+              },
+              {
+                "element": "CISV2.DE1517",
+                "type": "Emergency Contacts",
+                "notes": "Who to call"
+              }
+            ]
+          },
+          {
+            "id": "set-review",
+            "type": "activity",
+            "label": "Set Review Schedule",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1481",
+                "type": "Review Date",
+                "notes": "When to review plan"
+              },
+              {
+                "element": "CISV2.DE1483",
+                "type": "Review Responsibility",
+                "notes": "Who will lead review"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Care Plan Complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review-assessment"
+          },
+          {
+            "from": "review-assessment",
+            "to": "identify-strengths"
+          },
+          {
+            "from": "identify-strengths",
+            "to": "set-goals"
+          },
+          {
+            "from": "set-goals",
+            "to": "plan-actions"
+          },
+          {
+            "from": "plan-actions",
+            "to": "check-capacity"
+          },
+          {
+            "from": "check-capacity",
+            "to": "person-agreement",
+            "label": "Yes"
+          },
+          {
+            "from": "check-capacity",
+            "to": "rep-agreement",
+            "label": "No"
+          },
+          {
+            "from": "person-agreement",
+            "to": "create-contingency"
+          },
+          {
+            "from": "rep-agreement",
+            "to": "create-contingency"
+          },
+          {
+            "from": "create-contingency",
+            "to": "set-review"
+          },
+          {
+            "from": "set-review",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP4",
+      "processId": "CISV2.D",
+      "title": "Ongoing Care Coordination",
+      "personas": "Care Coordinator, General Practitioner, Hospital Clinician",
+      "objectives": "Coordinate care delivery across multiple providers ensuring continuity and appropriate service access",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care Need Identified",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "review-plan",
+            "type": "activity",
+            "label": "Review Current Plan",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1445",
+                "type": "Current Actions",
+                "source": "Care Plan"
+              },
+              {
+                "element": "CISV2.DE454",
+                "type": "Care Team",
+                "source": "Professional Contacts"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-service",
+            "type": "decision",
+            "label": "Service Available?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1003",
+                "type": "Current Services",
+                "source": "Service Record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "create-referral",
+            "type": "activity",
+            "label": "Create Referral",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE489",
+                "type": "Referral Reason",
+                "notes": "Why referring"
+              },
+              {
+                "element": "CISV2.DE491",
+                "type": "Clinical Urgency",
+                "notes": "How urgent"
+              },
+              {
+                "element": "CISV2.DE494",
+                "type": "Referred To",
+                "notes": "Target service"
+              }
+            ]
+          },
+          {
+            "id": "book-appointment",
+            "type": "activity",
+            "label": "Book Appointment",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE27",
+                "type": "Contact Preference",
+                "source": "Person Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE576",
+                "type": "Appointment Date",
+                "notes": "Scheduled time"
+              },
+              {
+                "element": "CISV2.DE578",
+                "type": "Appointment Reason",
+                "notes": "Purpose"
+              },
+              {
+                "element": "CISV2.DE585",
+                "type": "Professional to See",
+                "notes": "Named clinician"
+              }
+            ]
+          },
+          {
+            "id": "record-contact",
+            "type": "activity",
+            "label": "Record Professional Contact",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE508",
+                "type": "Contact Date",
+                "notes": "When occurred"
+              },
+              {
+                "element": "CISV2.DE519",
+                "type": "Contact Type",
+                "notes": "Nature of contact"
+              },
+              {
+                "element": "CISV2.DE526",
+                "type": "Contact Outcome",
+                "notes": "What happened"
+              }
+            ]
+          },
+          {
+            "id": "update-medication",
+            "type": "subprocess",
+            "label": "Update Medications",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "Current Meds",
+                "source": "Medication Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1375",
+                "type": "Med Change",
+                "notes": "What changed"
+              },
+              {
+                "element": "CISV2.DE1376",
+                "type": "Change Date",
+                "notes": "When changed"
+              }
+            ]
+          },
+          {
+            "id": "check-outcomes",
+            "type": "decision",
+            "label": "Goals Met?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "Set Goals",
+                "source": "Care Plan"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1469",
+                "type": "Outcomes",
+                "notes": "What achieved"
+              },
+              {
+                "element": "CISV2.DE1471",
+                "type": "Goal Status",
+                "notes": "Progress update"
+              }
+            ]
+          },
+          {
+            "id": "update-plan",
+            "type": "activity",
+            "label": "Update Care Plan",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1458",
+                "type": "Update Date",
+                "notes": "When updated"
+              },
+              {
+                "element": "CISV2.DE1455",
+                "type": "Action Status",
+                "notes": "Progress on actions"
+              }
+            ]
+          },
+          {
+            "id": "discharge-planning",
+            "type": "subprocess",
+            "label": "Plan Discharge",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE529",
+                "type": "Admission Date",
+                "source": "Admission Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE558",
+                "type": "Discharge Date",
+                "notes": "Planned date"
+              },
+              {
+                "element": "CISV2.DE572",
+                "type": "Discharge Destination",
+                "notes": "Where going"
+              },
+              {
+                "element": "CISV2.DE1419",
+                "type": "Discharge Actions",
+                "notes": "Follow-up needed"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Coordination Complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review-plan"
+          },
+          {
+            "from": "review-plan",
+            "to": "check-service"
+          },
+          {
+            "from": "check-service",
+            "to": "book-appointment",
+            "label": "Yes"
+          },
+          {
+            "from": "check-service",
+            "to": "create-referral",
+            "label": "No"
+          },
+          {
+            "from": "create-referral",
+            "to": "book-appointment"
+          },
+          {
+            "from": "book-appointment",
+            "to": "record-contact"
+          },
+          {
+            "from": "record-contact",
+            "to": "update-medication"
+          },
+          {
+            "from": "update-medication",
+            "to": "check-outcomes"
+          },
+          {
+            "from": "check-outcomes",
+            "to": "update-plan",
+            "label": "No"
+          },
+          {
+            "from": "check-outcomes",
+            "to": "discharge-planning",
+            "label": "Yes"
+          },
+          {
+            "from": "update-plan",
+            "to": "end"
+          },
+          {
+            "from": "discharge-planning",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP5",
+      "processId": "CISV2.E",
+      "title": "Emergency Response",
+      "personas": "Hospital Clinician, Community Nurse",
+      "objectives": "Access critical information and execute appropriate response during emergency situations",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Emergency Presented",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "access-summary",
+            "type": "activity",
+            "label": "Access Emergency Summary",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "NHS Number",
+                "source": "Person/System"
+              },
+              {
+                "element": "CISV2.DE54",
+                "type": "Critical Info",
+                "source": "About Me"
+              },
+              {
+                "element": "CISV2.DE199",
+                "type": "Clinical Alerts",
+                "source": "Alert System"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-allergies",
+            "type": "activity",
+            "label": "Check Allergies & Reactions",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1268",
+                "type": "Causative Agents",
+                "source": "Allergy Record"
+              },
+              {
+                "element": "CISV2.DE1283",
+                "type": "Reaction Severity",
+                "source": "Allergy Record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "review-medications",
+            "type": "activity",
+            "label": "Review Current Medications",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "Active Medications",
+                "source": "Med Record"
+              },
+              {
+                "element": "CISV2.DE1359",
+                "type": "Dosing Instructions",
+                "source": "Med Record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-legal",
+            "type": "decision",
+            "label": "Legal Directives?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE358",
+                "type": "ADRT",
+                "source": "Legal Record"
+              },
+              {
+                "element": "CISV2.DE1621",
+                "type": "CPR Decision",
+                "source": "End of Life"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "apply-directives",
+            "type": "activity",
+            "label": "Apply Legal Directives",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE290",
+                "type": "LPA Details",
+                "source": "Legal Record"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE215",
+                "type": "Consent Status",
+                "notes": "Emergency consent"
+              }
+            ]
+          },
+          {
+            "id": "check-contingency",
+            "type": "decision",
+            "label": "Contingency Plan?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1508",
+                "type": "Trigger Factors",
+                "source": "Contingency Plan"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "execute-plan",
+            "type": "activity",
+            "label": "Execute Contingency Plan",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1514",
+                "type": "Plan Actions",
+                "source": "Contingency Plan"
+              },
+              {
+                "element": "CISV2.DE1517",
+                "type": "Emergency Contacts",
+                "source": "Contingency Plan"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1421",
+                "type": "Actions Taken",
+                "notes": "What was done"
+              }
+            ]
+          },
+          {
+            "id": "emergency-admission",
+            "type": "subprocess",
+            "label": "Emergency Admission",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE529",
+                "type": "Admission Date",
+                "notes": "Emergency admit"
+              },
+              {
+                "element": "CISV2.DE537",
+                "type": "Admission Reason",
+                "notes": "Emergency presentation"
+              },
+              {
+                "element": "CISV2.DE540",
+                "type": "Admission Method",
+                "notes": "Emergency route"
+              }
+            ]
+          },
+          {
+            "id": "notify-contacts",
+            "type": "activity",
+            "label": "Notify Key Contacts",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE467",
+                "type": "Emergency Contacts",
+                "source": "Personal Contacts"
+              },
+              {
+                "element": "CISV2.DE456",
+                "type": "Key Worker",
+                "source": "Professional Contacts"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE508",
+                "type": "Contact Made",
+                "notes": "Who notified when"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Emergency Managed",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "access-summary"
+          },
+          {
+            "from": "access-summary",
+            "to": "check-allergies"
+          },
+          {
+            "from": "check-allergies",
+            "to": "review-medications"
+          },
+          {
+            "from": "review-medications",
+            "to": "check-legal"
+          },
+          {
+            "from": "check-legal",
+            "to": "apply-directives",
+            "label": "Yes"
+          },
+          {
+            "from": "check-legal",
+            "to": "check-contingency",
+            "label": "No"
+          },
+          {
+            "from": "apply-directives",
+            "to": "check-contingency"
+          },
+          {
+            "from": "check-contingency",
+            "to": "execute-plan",
+            "label": "Yes"
+          },
+          {
+            "from": "check-contingency",
+            "to": "emergency-admission",
+            "label": "No"
+          },
+          {
+            "from": "execute-plan",
+            "to": "notify-contacts"
+          },
+          {
+            "from": "emergency-admission",
+            "to": "notify-contacts"
+          },
+          {
+            "from": "notify-contacts",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
