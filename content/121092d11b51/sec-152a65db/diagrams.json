@@ -17,6 +17,8 @@
             "angle": 0,
             "id": "085186c7-9b2f-4399-bea5-6c22dd4c969d",
             "z": 1,
+            "dataSeen": [],
+            "dataCollected": [],
             "attrs": {
               "body": {
                 "cx": 15,
@@ -171,8 +173,8 @@
               "height": 36
             },
             "position": {
-              "x": 564,
-              "y": 126
+              "x": 560,
+              "y": 130
             },
             "angle": 0,
             "id": "1fb22f40-8691-48cf-bd48-ca60d4a169c4",
