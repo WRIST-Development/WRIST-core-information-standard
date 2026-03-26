@@ -17,6 +17,8 @@
             "angle": 0,
             "id": "d0b1f9d4-044d-41b6-b8a4-ccadc1e037af",
             "z": 1,
+            "dataSeen": [],
+            "dataCollected": [],
             "attrs": {
               "body": {
                 "cx": 15,
