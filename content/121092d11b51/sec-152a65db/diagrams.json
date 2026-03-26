@@ -147,7 +147,8 @@
               },
               {
                 "element": "Emergency contacts",
-                "type": "contact"
+                "type": "contact",
+                "notes": ""
               }
             ],
             "z": 4,
@@ -190,7 +191,8 @@
               },
               {
                 "element": "Consultation record",
-                "type": "documentation"
+                "type": "documentation",
+                "notes": ""
               }
             ],
             "z": 5,
@@ -564,7 +566,8 @@
             },
             {
               "element": "Emergency contacts",
-              "type": "contact"
+              "type": "contact",
+              "notes": ""
             }
           ]
         },
@@ -587,7 +590,8 @@
             },
             {
               "element": "Consultation record",
-              "type": "documentation"
+              "type": "documentation",
+              "notes": ""
             }
           ]
         },
