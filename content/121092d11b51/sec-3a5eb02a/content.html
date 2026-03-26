@@ -1,0 +1,72 @@
+## Decision-Support Logic
+
+### Mental Capacity Assessment Decision
+
+**Title:** Mental Capacity Assessment Requirement
+**Description:** Determines when a formal mental capacity assessment should be initiated based on clinical indicators and care context.
+
+| Condition | Value | Output Action |
+|---|---|---|
+| Cognitive impairment recorded (CISV2.DE126) | Present | Trigger capacity assessment |
+| Safeguarding concern raised (CISV2.DE380) | TRUE | Trigger capacity assessment |
+| Complex care decision required | YES | Trigger capacity assessment |
+| Previous capacity assessment date (CISV2.DE258) | >12 months ago | Review assessment |
+| Change in mental state | Significant | Trigger capacity assessment |
+| All conditions | FALSE | No assessment required |
+
+### Reasonable Adjustment Identification
+
+**Title:** Reasonable Adjustment Requirements
+**Description:** Identifies required adjustments based on person's impairments and individual requirements to ensure equitable care delivery.
+
+| Condition | Value | Output Action |
+|---|---|---|
+| Visual impairment (CISV2.DE104) | Recorded | Provide large print/audio materials |
+| Hearing impairment (CISV2.DE104) | Recorded | Arrange BSL interpreter/hearing loop |
+| Learning disability (CISV2.DE104) | Present | Allow extra time, easy-read materials |
+| Mobility needs (CISV2.DE154) | Wheelchair user | Ensure accessible venues/transport |
+| Communication needs (CISV2.DE58) | Non-verbal | Implement agreed communication method |
+| Cognitive impairment (CISV2.DE126) | Moderate-severe | Involve carer/advocate in appointments |
+
+### Emergency Alert Activation
+
+**Title:** Emergency Alert Response
+**Description:** Determines immediate actions required when specific alerts are present during care encounters.
+
+| Condition | Value | Output Action |
+|---|---|---|
+| Allergy severity (CISV2.DE1283) | Life-threatening | Display prominent warning, check all medications |
+| Safeguarding indicator (CISV2.DE380) | TRUE | Notify safeguarding lead immediately |
+| Violence/aggression risk (CISV2.DE1243) | HIGH | Implement safety protocol, 2-person visits |
+| Absconding risk (CISV2.DE1243) | Present | Secure environment, notify security |
+| DNACPR status (CISV2.DE1621) | Active | Display prominently, inform clinical team |
+| Mental Health Act status (CISV2.DE332) | Current section | Check legal requirements for treatment |
+
+### Discharge Safety Assessment
+
+**Title:** Safe Discharge Decision
+**Description:** Evaluates multiple factors to determine if discharge from hospital to community is safe and appropriate.
+
+| Condition | Value | Output Action |
+|---|---|---|
+| Accommodation status (CISV2.DE959) | No fixed abode | Arrange temporary accommodation |
+| Care package in place (CISV2.DE1003) | NO | Delay discharge, arrange services |
+| Equipment required (CISV2.DE1400) | Not delivered | Delay discharge until equipment ready |
+| Carer assessment completed | NO | Complete assessment before discharge |
+| Medications reconciled (CISV2.DE1314) | NO | Complete reconciliation |
+| Follow-up arranged (CISV2.DE576) | NO | Book required appointments |
+| All conditions | SATISFIED | Approve discharge |
+
+### Crisis Plan Activation
+
+**Title:** Crisis Response Activation
+**Description:** Determines when to activate crisis/contingency plans based on early warning signs and triggers.
+
+| Condition | Value | Output Action |
+|---|---|---|
+| Relapse indicators present (CISV2.DE1534) | 2 or more | Activate crisis plan |
+| Mental state deterioration | Rapid | Contact crisis team (CISV2.DE1518) |
+| Medication non-compliance (CISV2.DE1374) | >7 days | Urgent medication review |
+| Support network breakdown | Confirmed | Implement contingency supports |
+| Self-harm ideation expressed | Active | Immediate risk assessment |
+| Trigger factors present (CISV2.DE1507) | Multiple | Initiate preventive actions |
