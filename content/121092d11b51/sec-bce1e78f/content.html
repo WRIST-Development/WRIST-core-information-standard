@@ -1,0 +1,64 @@
+## Decision-Support Logic
+
+The Core Information Standard v2.0 incorporates decision-support logic to guide appropriate care delivery based on person circumstances and requirements. The following decision tables support key clinical and operational decisions.
+
+### Table 1: Reasonable Adjustment Requirements
+
+**Purpose:** Determine required adjustments based on impairment type and individual needs
+
+| Input Conditions | Output Action |
+|---|---|
+| **Impairment Category** = Sensory (Hearing) AND **Preferred Communication** = British Sign Language | Provide BSL interpreter for all appointments; Use visual alerts; Provide written information |
+| **Impairment Category** = Sensory (Visual) AND **Information Format** = Large print | Provide all documentation in minimum 16pt font; Ensure good lighting; Describe procedures verbally |
+| **Impairment Category** = Learning Disability AND **Support Level** = High | Allow extra time (double appointments); Use easy-read materials; Ensure support person present |
+| **Impairment Category** = Autism AND **Sensory Sensitivity** = Present | Provide quiet waiting area; Minimise sudden changes; Give clear advance warning of procedures |
+| **Mobility Needs** = Wheelchair user | Ensure step-free access; Height-adjustable examination couches; Accessible toilet facilities |
+| **Communication Needs** = Non-verbal AND **Uses AAC** = Yes | Support use of communication aids; Allow extra time; Train staff in AAC awareness |
+
+### Table 2: Safeguarding Response Decisions
+
+**Purpose:** Determine appropriate safeguarding response based on concern type and person circumstances
+
+| Input Conditions | Output Action |
+|---|---|
+| **Person Age** < 18 AND **Safeguarding Concern** = Physical abuse | Immediate referral to Children's Services; Document injuries; Consider police involvement |
+| **Person Age** ≥ 18 AND **Mental Capacity** = Lacks capacity AND **Concern** = Financial abuse | Adult safeguarding referral; Consider DoLS application; Notify Office of Public Guardian if LPA |
+| **Safeguarding Indicator** = Yes AND **Risk to Others** = Yes | Multi-agency risk assessment conference (MARAC); Safety planning; Consider emergency measures |
+| **Looked After Child** = Yes AND **New Concern** = Yes | Notify social worker within 24 hours; Update care plan; Review placement suitability |
+| **Mental Health Act Status** = Detained AND **Concern** = Self-neglect | Involve Mental Health team; Review treatment plan; Consider capacity assessment |
+
+### Table 3: Medication Reconciliation Rules
+
+**Purpose:** Guide medication reconciliation decisions during care transitions
+
+| Input Conditions | Output Action |
+|---|---|
+| **Admission** = Yes AND **Medication Count** > 5 | Full medication reconciliation required; Pharmacist review within 24 hours |
+| **Allergy Status** = Multiple drug allergies AND **New Medication** = Yes | Check all ingredients against allergy list; Consider alternative formulations; Document clearly |
+| **Renal Function** = Impaired AND **Medication** = Renally excreted | Adjust dose per eGFR; Monitor levels if applicable; Review at each transition |
+| **Age** > 75 AND **Anticholinergic Burden** = High | Review for deprescribing opportunities; Monitor for confusion; Consider alternatives |
+| **Discharge** = Yes AND **Changes Made** = Yes | Provide medication list to patient; Notify GP within 24 hours; Arrange follow-up |
+
+### Table 4: Care Coordination Triggers
+
+**Purpose:** Identify when enhanced care coordination is required
+
+| Input Conditions | Output Action |
+|---|---|
+| **Hospital Admissions** ≥ 3 in 6 months | Refer to Care Coordinator; Comprehensive assessment; Consider virtual ward |
+| **Professional Contacts** > 5 active AND **No Key Worker** = True | Assign Care Coordinator; Create integrated care plan; Schedule MDT meeting |
+| **Mental Capacity** = Fluctuating AND **Living Alone** = Yes | Social care assessment; Consider support package; Review safeguarding |
+| **End of Life** = Yes AND **Preferred Place** ≠ Current location | Urgent care coordination; Fast-track continuing care; Coordinate with all services |
+| **Complex Needs** = Yes AND **Carer Stress** = High | Carer's assessment; Respite options; Additional support services |
+
+### Table 5: End of Life Care Decisions
+
+**Purpose:** Guide end of life care planning based on prognosis and preferences
+
+| Input Conditions | Output Action |
+|---|---|
+| **Prognosis** = Days AND **Preferred Place of Death** = Home AND **In Hospital** = Yes | Fast-track discharge planning; Arrange 24/7 district nursing; Anticipatory medications |
+| **CPR Decision** = Not for resuscitation AND **Family Aware** = No | Sensitive discussion with family; Document reasoning; Offer support |
+| **Prognosis** = Weeks to months AND **Advance Planning** = None | Initiate advance care planning; Discuss preferences; Document wishes |
+| **Deteriorating** = Yes AND **Anticipatory Meds** = Not available | Prescribe anticipatory medications; Ensure 24/7 availability; Brief all carers |
+| **Preferred Place** = Hospice AND **Bed Available** = No | Add to urgent waiting list; Optimise symptom control; Consider alternatives |
