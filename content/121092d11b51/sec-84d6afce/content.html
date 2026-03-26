@@ -1,0 +1,31 @@
+## Functional & Non-Functional Requirements
+
+### Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.FR.01 | Person Identity Management | System must support NHS number verification and demographic matching across multiple identifiers | Critical |
+| CISV2.FR.02 | Consent Management | Capture, store and enforce consent decisions for information sharing with full audit trail | Critical |
+| CISV2.FR.03 | Reasonable Adjustment Alerts | Display adjustment requirements prominently at point of care with acknowledgement tracking | High |
+| CISV2.FR.04 | Integrated Care Planning | Support collaborative care planning with multiple professional inputs and person agreement | High |
+| CISV2.FR.05 | Medication Reconciliation | Enable medication list compilation from multiple sources with conflict resolution | Critical |
+| CISV2.FR.06 | Safeguarding Workflows | Trigger alerts and workflows based on safeguarding indicators with escalation tracking | High |
+| CISV2.FR.07 | Document Management | Store and retrieve clinical documents with appropriate metadata and access controls | Medium |
+| CISV2.FR.08 | Appointment Scheduling | Book appointments considering reasonable adjustments and preferences | Medium |
+| CISV2.FR.09 | Information Exchange | Support standards-based information exchange using FHIR UK Core | High |
+| CISV2.FR.10 | Reporting and Analytics | Generate required performance indicators and statutory reports | Medium |
+
+### Non-Functional Requirements
+
+| ID | Title | Description | Priority |
+|---|---|---|---|
+| CISV2.NFR.01 | Performance | Page load <2 seconds, search results <3 seconds for 95% of requests | High |
+| CISV2.NFR.02 | Availability | 99.5% uptime during core hours (8am-8pm), 24/7 for critical functions | Critical |
+| CISV2.NFR.03 | Security | NHS Data Security and Protection Toolkit compliance, encryption at rest and in transit | Critical |
+| CISV2.NFR.04 | Accessibility | WCAG 2.1 AA compliance, support for assistive technologies | Critical |
+| CISV2.NFR.05 | Scalability | Support 100,000+ active records with linear performance scaling | High |
+| CISV2.NFR.06 | Interoperability | HL7 FHIR R4 compliance, NHS Integration standards | High |
+| CISV2.NFR.07 | Auditability | Complete audit trail for all data access and changes, 7-year retention | Critical |
+| CISV2.NFR.08 | Usability | Task completion rate >90% without training for core functions | Medium |
+| CISV2.NFR.09 | Mobile Support | Responsive design supporting tablets and smartphones for community use | Medium |
+| CISV2.NFR.10 | Disaster Recovery | RPO <1 hour, RTO <4 hours for critical functions | High |
