@@ -224,11 +224,13 @@
             "dataCollected": [
               {
                 "element": "Admission details",
-                "type": "administrative"
+                "type": "administrative",
+                "notes": ""
               },
               {
                 "element": "Initial care plan",
-                "type": "care_plan"
+                "type": "care_plan",
+                "notes": ""
               }
             ],
             "dataSeen": [
@@ -265,6 +267,8 @@
             "angle": 0,
             "id": "dcbb3649-534b-4d34-9755-80454f9b3da5",
             "z": 7,
+            "dataSeen": [],
+            "dataCollected": [],
             "attrs": {
               "body": {
                 "cx": 15,
@@ -608,11 +612,13 @@
           "dataCollected": [
             {
               "element": "Admission details",
-              "type": "administrative"
+              "type": "administrative",
+              "notes": ""
             },
             {
               "element": "Initial care plan",
-              "type": "care_plan"
+              "type": "care_plan",
+              "notes": ""
             }
           ]
         }
