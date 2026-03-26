@@ -2704,7 +2704,18 @@
       "diagram": {
         "cells": [
           {
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 33
+            },
             "angle": 0,
+            "id": "bd903801-127e-47d4-a981-4171889e2bfb",
+            "z": 1,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -2714,69 +2725,58 @@
               "label": {
                 "fontSize": 9
               }
-            },
-            "id": "bd903801-127e-47d4-a981-4171889e2bfb",
-            "position": {
-              "x": 30,
-              "y": 33
-            },
-            "size": {
-              "height": 30,
-              "width": 30
-            },
-            "type": "bpmn.StartEvent",
-            "z": 1
+            }
           },
           {
-            "angle": 0,
-            "attrs": {
-              "body": {
-                "height": 36,
-                "width": 100
-              },
-              "label": {
-                "fontSize": 10,
-                "refY": -4,
-                "text": "Assess & Document Prognosis"
-              }
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 180,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Estimated prognosis",
-                "type": "CISV2 End of life care"
+                "type": "CISV2 End of life care",
+                "notes": ""
               }
             ],
             "dataSeen": [
               {
                 "element": "Problem list",
-                "type": "CISV2 Problem list"
+                "type": "CISV2 Problem list",
+                "source": ""
               }
             ],
             "id": "4495c1d2-bbfb-4aff-80a3-259dc29b6e69",
-            "position": {
-              "x": 180,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 2
-          },
-          {
-            "angle": 0,
+            "z": 2,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Assess & Document Prognosis",
                 "refY": -4,
-                "text": "Discuss with Person/Family"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 400,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Awareness of prognosis",
@@ -2790,30 +2790,30 @@
               }
             ],
             "id": "eefaf629-37a9-4855-9970-529c8b7fa882",
-            "position": {
-              "x": 400,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 3
-          },
-          {
-            "angle": 0,
+            "z": 3,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Discuss with Person/Family",
                 "refY": -4,
-                "text": "Document Care Preferences"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 620,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Preferred place of death",
@@ -2826,30 +2826,30 @@
             ],
             "dataSeen": [],
             "id": "91a5ab0d-7fe2-4833-b432-7a18df0c7014",
-            "position": {
-              "x": 620,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 4
-          },
-          {
-            "angle": 0,
+            "z": 4,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Document Care Preferences",
                 "refY": -4,
-                "text": "CPR Decision Making"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 840,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "CPR decision",
@@ -2863,30 +2863,30 @@
               }
             ],
             "id": "e151aa44-c223-4417-961c-cc3ca2aafb12",
-            "position": {
-              "x": 840,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 5
-          },
-          {
-            "angle": 0,
+            "z": 5,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "CPR Decision Making",
                 "refY": -4,
-                "text": "Plan Anticipatory Care"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 1060,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Anticipatory actions",
@@ -2899,46 +2899,59 @@
             ],
             "dataSeen": [],
             "id": "62f7b8c2-958b-48a1-9e70-5ceadd8addca",
-            "position": {
-              "x": 1060,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 6
-          },
-          {
-            "angle": 0,
+            "z": 6,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Plan Anticipatory Care",
                 "refY": -4,
-                "text": "Share with All Services"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
-            "dataCollected": [],
-            "dataSeen": [],
-            "id": "aaf867de-c4cd-4b0e-900d-d90ce7f5d493",
             "position": {
               "x": 1280,
               "y": 30
             },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 7
+            "angle": 0,
+            "dataCollected": [],
+            "dataSeen": [],
+            "id": "aaf867de-c4cd-4b0e-900d-d90ce7f5d493",
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Share with All Services",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1500,
+              "y": 33
+            },
             "angle": 0,
+            "id": "8e79362f-ca28-49f7-aefa-db31ddcfe3c4",
+            "z": 8,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -2948,214 +2961,203 @@
               "label": {
                 "fontSize": 9
               }
-            },
-            "id": "8e79362f-ca28-49f7-aefa-db31ddcfe3c4",
-            "position": {
-              "x": 1500,
-              "y": 33
-            },
-            "size": {
-              "height": 30,
-              "width": 30
-            },
-            "type": "bpmn.EndEvent",
-            "z": 8
+            }
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "73972314-a962-4440-8b85-22aa4c4efaa8",
             "source": {
               "id": "bd903801-127e-47d4-a981-4171889e2bfb"
             },
             "target": {
               "id": "4495c1d2-bbfb-4aff-80a3-259dc29b6e69"
             },
-            "type": "bpmn.Link",
-            "z": 9
+            "id": "73972314-a962-4440-8b85-22aa4c4efaa8",
+            "z": 9,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "40cda960-f165-43c4-81b2-a6778dc4c7b3",
             "source": {
               "id": "4495c1d2-bbfb-4aff-80a3-259dc29b6e69"
             },
             "target": {
               "id": "eefaf629-37a9-4855-9970-529c8b7fa882"
             },
-            "type": "bpmn.Link",
-            "z": 10
+            "id": "40cda960-f165-43c4-81b2-a6778dc4c7b3",
+            "z": 10,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "223e535f-cf9e-431f-afc6-33d8291781d4",
             "source": {
               "id": "eefaf629-37a9-4855-9970-529c8b7fa882"
             },
             "target": {
               "id": "91a5ab0d-7fe2-4833-b432-7a18df0c7014"
             },
-            "type": "bpmn.Link",
-            "z": 11
+            "id": "223e535f-cf9e-431f-afc6-33d8291781d4",
+            "z": 11,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "32b59ad6-aae8-4f75-8b0f-e6db484eb712",
             "source": {
               "id": "91a5ab0d-7fe2-4833-b432-7a18df0c7014"
             },
             "target": {
               "id": "e151aa44-c223-4417-961c-cc3ca2aafb12"
             },
-            "type": "bpmn.Link",
-            "z": 12
+            "id": "32b59ad6-aae8-4f75-8b0f-e6db484eb712",
+            "z": 12,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "bc651d42-41b6-4c35-bf6c-3e7753c0e958",
             "source": {
               "id": "e151aa44-c223-4417-961c-cc3ca2aafb12"
             },
             "target": {
               "id": "62f7b8c2-958b-48a1-9e70-5ceadd8addca"
             },
-            "type": "bpmn.Link",
-            "z": 13
+            "id": "bc651d42-41b6-4c35-bf6c-3e7753c0e958",
+            "z": 13,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "ff9966b7-d0f6-44ef-b809-f0b8a7b9b497",
             "source": {
               "id": "62f7b8c2-958b-48a1-9e70-5ceadd8addca"
             },
             "target": {
               "id": "aaf867de-c4cd-4b0e-900d-d90ce7f5d493"
             },
-            "type": "bpmn.Link",
-            "z": 14
+            "id": "ff9966b7-d0f6-44ef-b809-f0b8a7b9b497",
+            "z": 14,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "965e7aed-fc9e-478d-97b2-aa63133ee1ac",
             "source": {
               "id": "aaf867de-c4cd-4b0e-900d-d90ce7f5d493"
             },
             "target": {
               "id": "8e79362f-ca28-49f7-aefa-db31ddcfe3c4"
             },
-            "type": "bpmn.Link",
-            "z": 15
+            "id": "965e7aed-fc9e-478d-97b2-aa63133ee1ac",
+            "z": 15,
+            "attrs": {}
           }
         ]
       },
@@ -3167,13 +3169,15 @@
           "dataSeen": [
             {
               "element": "Problem list",
-              "type": "CISV2 Problem list"
+              "type": "CISV2 Problem list",
+              "source": ""
             }
           ],
           "dataCollected": [
             {
               "element": "Estimated prognosis",
-              "type": "CISV2 End of life care"
+              "type": "CISV2 End of life care",
+              "notes": ""
             }
           ]
         },
