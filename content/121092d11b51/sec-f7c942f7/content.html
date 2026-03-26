@@ -1,0 +1,51 @@
+## Decision-Support Logic
+
+The following decision tables define key clinical and operational logic within the Core Information Standard to support consistent, evidence-based decision-making across care settings.
+
+### Table 1: Reasonable Adjustment Identification
+
+**Description:** Determines when reasonable adjustments should be flagged and documented based on identified impairments or individual requirements.
+
+| Condition | Input Data Elements | Output Action |
+|---|---|---|
+| Impairment category identified | CISV2.DE103 (Impairment category - Coded value) | Set CISV2.DE75 (Reasonable adjustment flag) = TRUE |
+| Communication impairment present | CISV2.DE103 = "Communication impairment" | Populate CISV2.DE77 (Reasonable adjustment - Coded value) with appropriate communication support code |
+| Mobility impairment present | CISV2.DE153 (Mobility needs - Coded value) populated | Set CISV2.DE75 = TRUE and document mobility accommodations |
+| Cognitive impairment identified | CISV2.DE130 (Cognition) populated | Set CISV2.DE75 = TRUE and specify cognitive support requirements |
+| Sensory impairment documented | CISV2.DE103 = "Sensory disability" | Set CISV2.DE75 = TRUE and detail sensory accommodations needed |
+
+### Table 2: Safeguarding Alert Triggers
+
+**Description:** Identifies conditions that should trigger safeguarding assessments or alerts.
+
+| Condition | Input Data Elements | Output Action |
+|---|---|---|
+| Safeguarding indicator = TRUE | Alert element (Safeguarding indicator) = Y | Generate safeguarding alert to care team |
+| Looked after child status active | Looked after child start date populated AND end date empty | Flag for social services coordination |
+| Mental capacity assessment indicates lack of capacity | Mental capacity assessment outcome = "Lacks capacity" | Review consent arrangements and best interests decisions |
+| DoLS authorised | DoLS application status = "Authorised" | Ensure care plan reflects DoLS conditions |
+| Child protection plan active | Child protection plan start date populated AND end date empty | Priority safeguarding coordination required |
+
+### Table 3: Emergency Information Priority
+
+**Description:** Determines which information elements must be immediately accessible during emergency care.
+
+| Condition | Input Data Elements | Output Action |
+|---|---|---|
+| Emergency admission | Process = CISV2.D | Display: CISV2.DE14 (NHS number), CISV2.DE70 (Reasonable adjustments), Allergies section, Problem list, Current medications |
+| CPR decision exists | CPR decision populated | Prominently display CPR status (CISV2.DE450-456) |
+| Advance decision present | ADRT section populated | Flag advance decisions for clinical team |
+| Mental Health Act status | MHA status populated | Display legal status and restrictions |
+| Communication needs identified | CISV2.DE56 (How I communicate) populated | Show communication requirements prominently |
+
+### Table 4: Medication Reconciliation Logic
+
+**Description:** Supports medication safety through systematic reconciliation processes.
+
+| Condition | Input Data Elements | Output Action |
+|---|---|---|
+| Admission medication review | Process = CISV2.B AND Location = "Hospital" | Compare current medications with GP records; flag discrepancies |
+| Allergy/adverse reaction recorded | Causative agent (medication) matches current prescription | Generate contraindication alert |
+| Medication status = "stopped" | Medication discontinued entry populated | Update active medication list; document reason |
+| Polypharmacy threshold exceeded | Count of active medications ≥ 8 | Trigger comprehensive medication review |
+| High-risk medication prescribed | Medication name matches high-risk drug list | Require additional safety checks and monitoring plan |
