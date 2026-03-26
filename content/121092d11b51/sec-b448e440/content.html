@@ -1,0 +1,45 @@
+## Clinical Decision Support Tables
+
+The Core Information Standard includes decision support logic to guide healthcare professionals in making informed clinical decisions. These tables reference specific data elements to trigger appropriate clinical actions and safety checks.
+
+### DT-01: Medication Safety Decision Support
+
+**Description**: Automated decision support for medication prescribing and administration safety
+
+| Condition | Input Data Elements | Logic | Output Action |
+|---|---|---|---|
+| Known allergy present | CISV2.DE1268 (Causative agent), CISV2.DE1330 (Medication name) | IF medication contains known allergen | Display critical alert, prevent prescription |
+| Duplicate medication | CISV2.DE1330 (Medication name), CISV2.DE1367 (Course status) | IF active medication with same therapeutic class | Warn of potential duplication, suggest review |
+| High-risk medication | CISV2.DE1330 (Medication name), CISV2.DE10 (Date of birth) | IF high-risk drug AND patient age >65 | Require dose adjustment or alternative |
+| Interaction risk | CISV2.DE1330 (Medication name), existing medications | IF drug-drug interaction detected | Display interaction warning, suggest monitoring |
+
+### DT-02: Safeguarding Risk Assessment
+
+**Description**: Automated risk identification for vulnerable patients requiring additional safeguarding measures
+
+| Condition | Input Data Elements | Logic | Output Action |
+|---|---|---|---|
+| Child at risk | CISV2.DE10 (Date of birth), CISV2.DE387 (Safeguarding concerns) | IF age <18 AND safeguarding concerns present | Trigger child protection pathway |
+| Mental capacity concern | CISV2.DE262 (Mental capacity assessment), CISV2.DE10 (Date of birth) | IF capacity assessment indicates impairment | Ensure appropriate consent processes |
+| Vulnerable adult | CISV2.DE387 (Safeguarding concerns), CISV2.DE1242 (Risk) | IF safeguarding concerns AND risk factors present | Activate adult safeguarding procedures |
+
+### DT-03: Care Transition Risk Management
+
+**Description**: Decision support for safe care transitions between services and settings
+
+| Condition | Input Data Elements | Logic | Output Action |
+|---|---|---|---|
+| High readmission risk | CISV2.DE654 (Problem), CISV2.DE558 (Date of discharge) | IF multiple comorbidities AND recent discharge | Arrange enhanced community follow-up |
+| Incomplete medication reconciliation | CISV2.DE1315 (Medication item cluster), CISV2.DE558 (Date of discharge) | IF discharge WITHOUT complete medication review | Mandate pharmacy reconciliation |
+| Missing essential information | CISV2.DE215 (Consent for information sharing), CISV2.DE476 (Referral details) | IF referral WITHOUT adequate clinical information | Request additional documentation before transfer |
+
+### DT-04: Emergency Clinical Alerts
+
+**Description**: Critical alert generation for emergency situations requiring immediate clinical attention
+
+| Condition | Input Data Elements | Logic | Output Action |
+|---|---|---|---|
+| Resuscitation status | CISV2.DE1622 (CPR decision), emergency admission | IF DNR order present AND emergency situation | Display prominent DNR status to clinical team |
+| Mental Health Act status | CISV2.DE333 (Mental health act status), location change | IF sectioned under MHA AND location change proposed | Ensure legal compliance before transfer |
+| Critical allergy | CISV2.DE1268 (Causative agent), CISV2.DE1283 (Severity) | IF life-threatening allergy documented | Display prominent allergy warning on all screens |
+| High-risk patient | CISV2.DE199 (Alert), patient contact | IF active safety alert present | Immediately notify clinical team of risk factors |
