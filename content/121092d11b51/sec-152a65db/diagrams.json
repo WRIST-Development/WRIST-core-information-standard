@@ -631,7 +631,18 @@
       "diagram": {
         "cells": [
           {
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 81
+            },
             "angle": 0,
+            "id": "2bd1093b-802d-4d72-8055-5e0fa8bd7d97",
+            "z": 1,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -639,43 +650,32 @@
                 "r": 14
               },
               "label": {
-                "fontSize": 9,
-                "text": "Referral received"
+                "text": "Referral received",
+                "fontSize": 9
               }
-            },
-            "id": "2bd1093b-802d-4d72-8055-5e0fa8bd7d97",
-            "position": {
-              "x": 30,
-              "y": 81
-            },
-            "size": {
-              "height": 30,
-              "width": 30
-            },
-            "type": "bpmn.StartEvent",
-            "z": 1
+            }
           },
           {
-            "angle": 0,
-            "attrs": {
-              "body": {
-                "height": 36,
-                "width": 100
-              },
-              "label": {
-                "fontSize": 10,
-                "refY": -4,
-                "text": "Schedule Assessment"
-              }
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 180,
+              "y": 78
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Appointment details",
-                "type": "administrative"
+                "type": "administrative",
+                "notes": ""
               },
               {
                 "element": "Consent for visit",
-                "type": "legal"
+                "type": "legal",
+                "notes": ""
               }
             ],
             "dataSeen": [
@@ -691,30 +691,30 @@
               }
             ],
             "id": "b21bddb2-6e60-4548-9e7f-b5fb43d0ed15",
-            "position": {
-              "x": 180,
-              "y": 78
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 2
-          },
-          {
-            "angle": 0,
+            "z": 2,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Schedule Assessment",
                 "refY": -4,
-                "text": "Conduct Assessment"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 400,
+              "y": 78
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "About me information",
@@ -747,29 +747,30 @@
               }
             ],
             "id": "784bcc45-ef85-4d55-9a64-35b7f84827c9",
-            "position": {
-              "x": 400,
-              "y": 78
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 3
-          },
-          {
-            "angle": 0,
+            "z": 3,
             "attrs": {
               "body": {
-                "points": "22,0 44,22 22,44 0,22"
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Conduct Assessment",
                 "refY": -4,
-                "text": "Meets eligibility?"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
             },
+            "position": {
+              "x": 620,
+              "y": 74
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Eligibility decision",
@@ -784,30 +785,29 @@
               }
             ],
             "id": "592b335b-b62f-4816-84a5-afa432eea3a8",
-            "position": {
-              "x": 620,
-              "y": 74
-            },
-            "size": {
-              "height": 44,
-              "width": 44
-            },
-            "type": "bpmn.Decision",
-            "z": 4
-          },
-          {
-            "angle": 0,
+            "z": 4,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "points": "22,0 44,22 22,44 0,22"
               },
               "label": {
-                "fontSize": 10,
+                "text": "Meets eligibility?",
                 "refY": -4,
-                "text": "Develop Care Plan"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 784,
+              "y": 30
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Goals and outcomes",
@@ -830,30 +830,30 @@
               }
             ],
             "id": "ce7ba70b-77f7-4165-ab79-2baf686afda0",
-            "position": {
-              "x": 784,
-              "y": 30
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 5
-          },
-          {
-            "angle": 0,
+            "z": 5,
             "attrs": {
               "body": {
-                "height": 36,
-                "width": 100
+                "width": 100,
+                "height": 36
               },
               "label": {
-                "fontSize": 10,
+                "text": "Develop Care Plan",
                 "refY": -4,
-                "text": "Signpost to Services"
+                "fontSize": 10
               }
+            }
+          },
+          {
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
             },
+            "position": {
+              "x": 784,
+              "y": 126
+            },
+            "angle": 0,
             "dataCollected": [
               {
                 "element": "Signposting record",
@@ -868,19 +868,32 @@
               }
             ],
             "id": "16f9553f-79c1-465e-b6ac-fc4a56978f01",
-            "position": {
-              "x": 784,
-              "y": 126
-            },
-            "size": {
-              "height": 36,
-              "width": 100
-            },
-            "type": "bpmn.Activity",
-            "z": 6
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Signpost to Services",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1004,
+              "y": 81
+            },
             "angle": 0,
+            "id": "20fee6ff-4512-4dcf-b93e-3354ea3a345b",
+            "z": 7,
             "attrs": {
               "body": {
                 "cx": 15,
@@ -888,123 +901,118 @@
                 "r": 14
               },
               "label": {
-                "fontSize": 9,
-                "text": "Assessment complete"
+                "text": "Assessment complete",
+                "fontSize": 9
               }
-            },
-            "id": "20fee6ff-4512-4dcf-b93e-3354ea3a345b",
-            "position": {
-              "x": 1004,
-              "y": 81
-            },
-            "size": {
-              "height": 30,
-              "width": 30
-            },
-            "type": "bpmn.EndEvent",
-            "z": 7
+            }
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "c31c746a-934d-473b-b0d0-57a3a7678b9e",
             "source": {
               "id": "2bd1093b-802d-4d72-8055-5e0fa8bd7d97"
             },
             "target": {
               "id": "b21bddb2-6e60-4548-9e7f-b5fb43d0ed15"
             },
-            "type": "bpmn.Link",
-            "z": 8
+            "id": "c31c746a-934d-473b-b0d0-57a3a7678b9e",
+            "z": 8,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "beaa5995-d4b7-4c5b-97e6-33519f098130",
             "source": {
               "id": "b21bddb2-6e60-4548-9e7f-b5fb43d0ed15"
             },
             "target": {
               "id": "784bcc45-ef85-4d55-9a64-35b7f84827c9"
             },
-            "type": "bpmn.Link",
-            "z": 9
+            "id": "beaa5995-d4b7-4c5b-97e6-33519f098130",
+            "z": 9,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "b0a364de-8000-4631-a809-26b734309b6f",
             "source": {
               "id": "784bcc45-ef85-4d55-9a64-35b7f84827c9"
             },
             "target": {
               "id": "592b335b-b62f-4816-84a5-afa432eea3a8"
             },
-            "type": "bpmn.Link",
-            "z": 10
+            "id": "b0a364de-8000-4631-a809-26b734309b6f",
+            "z": 10,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
+            },
+            "source": {
+              "id": "592b335b-b62f-4816-84a5-afa432eea3a8"
+            },
+            "target": {
+              "id": "ce7ba70b-77f7-4165-ab79-2baf686afda0"
             },
             "id": "7a599d39-93bf-4e33-a93c-a8c275bd2e8c",
             "labels": [
@@ -1016,32 +1024,32 @@
                 }
               }
             ],
-            "source": {
-              "id": "592b335b-b62f-4816-84a5-afa432eea3a8"
-            },
-            "target": {
-              "id": "ce7ba70b-77f7-4165-ab79-2baf686afda0"
-            },
-            "type": "bpmn.Link",
-            "z": 11
+            "z": 11,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
+            },
+            "source": {
+              "id": "592b335b-b62f-4816-84a5-afa432eea3a8"
+            },
+            "target": {
+              "id": "16f9553f-79c1-465e-b6ac-fc4a56978f01"
             },
             "id": "fa39c19d-a0b7-49df-8f88-1894bd34a153",
             "labels": [
@@ -1053,70 +1061,64 @@
                 }
               }
             ],
-            "source": {
-              "id": "592b335b-b62f-4816-84a5-afa432eea3a8"
-            },
-            "target": {
-              "id": "16f9553f-79c1-465e-b6ac-fc4a56978f01"
-            },
-            "type": "bpmn.Link",
-            "z": 12
+            "z": 12,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "449ab5b2-e9d7-400e-a25d-d6e3205e165a",
             "source": {
               "id": "ce7ba70b-77f7-4165-ab79-2baf686afda0"
             },
             "target": {
               "id": "20fee6ff-4512-4dcf-b93e-3354ea3a345b"
             },
-            "type": "bpmn.Link",
-            "z": 13
+            "id": "449ab5b2-e9d7-400e-a25d-d6e3205e165a",
+            "z": 13,
+            "attrs": {}
           },
           {
-            "attrs": {},
+            "type": "bpmn.Link",
             "defaultLabel": {
               "attrs": {
                 "rect": {
                   "fill": "#fff",
-                  "rx": 3,
-                  "ry": 3,
                   "stroke": "#e5e7eb",
-                  "strokeWidth": 1
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
                 },
                 "text": {
-                  "fill": "#374151",
+                  "fontSize": 12,
                   "fontFamily": "Segoe UI, system-ui, sans-serif",
-                  "fontSize": 12
+                  "fill": "#374151"
                 }
               }
             },
-            "id": "ccc13f09-3ea6-447e-b4cb-5fa6425d0e13",
             "source": {
               "id": "16f9553f-79c1-465e-b6ac-fc4a56978f01"
             },
             "target": {
               "id": "20fee6ff-4512-4dcf-b93e-3354ea3a345b"
             },
-            "type": "bpmn.Link",
-            "z": 14
+            "id": "ccc13f09-3ea6-447e-b4cb-5fa6425d0e13",
+            "z": 14,
+            "attrs": {}
           }
         ]
       },
@@ -1140,11 +1142,13 @@
           "dataCollected": [
             {
               "element": "Appointment details",
-              "type": "administrative"
+              "type": "administrative",
+              "notes": ""
             },
             {
               "element": "Consent for visit",
-              "type": "legal"
+              "type": "legal",
+              "notes": ""
             }
           ]
         },
