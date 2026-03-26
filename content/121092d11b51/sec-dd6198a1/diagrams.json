@@ -2,980 +2,3461 @@
   "summary_markdown": "The following business processes demonstrate how healthcare professionals capture and utilise Core Information Standard data to deliver person-centred care. Each process shows the flow of clinical activities, data collection points, and professional responsibilities required for safe, effective healthcare delivery.",
   "activities": [
     {
-      "id": "initial_assessment_process",
-      "processId": "CISV2.A",
-      "title": "Initial Patient Assessment and Registration",
-      "personas": "Clinical Information Manager, Health IT System Analyst, Clinical Safety Officer",
-      "objectives": "Capture comprehensive patient demographics, clinical history, and establish care baseline while ensuring data quality and clinical safety",
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start_assessment",
-            "type": "start",
-            "label": "Patient presents for care",
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "98c84913-c50b-46d3-8626-d2a390902b98",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Patient presents for care",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "verify_identity",
-            "type": "activity",
-            "label": "Verify patient identity and demographics",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 180,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "fb4a5944-1f16-4fd8-823e-f4848c34e231",
             "dataSeen": [
               {
                 "element": "CISV2.DE15",
-                "type": "verification",
-                "source": "NHS records"
+                "source": "NHS records",
+                "type": "verification"
               },
               {
                 "element": "CISV2.DE10",
-                "type": "confirmation",
-                "source": "patient documents"
+                "source": "patient documents",
+                "type": "confirmation"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE4",
-                "type": "structured",
-                "notes": "First name captured"
+                "notes": "First name captured",
+                "type": "structured"
               },
               {
                 "element": "CISV2.DE5",
-                "type": "structured",
-                "notes": "Family name captured"
+                "notes": "Family name captured",
+                "type": "structured"
               },
               {
                 "element": "CISV2.DE15",
-                "type": "identifier",
-                "notes": "NHS number verified"
+                "notes": "NHS number verified",
+                "type": "identifier"
               },
               {
                 "element": "CISV2.DE10",
-                "type": "date",
-                "notes": "Date of birth confirmed"
+                "notes": "Date of birth confirmed",
+                "type": "date"
               }
-            ]
+            ],
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify patient identity and demographics",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "collect_contact_details",
-            "type": "activity",
-            "label": "Record contact information and address",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 400,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "1e8c1959-d041-470e-9046-e6418d3b1ff4",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE19",
-                "type": "structured",
-                "notes": "Primary address line 1"
+                "notes": "Primary address line 1",
+                "type": "structured"
               },
               {
                 "element": "CISV2.DE24",
-                "type": "structured",
-                "notes": "Postcode captured"
+                "notes": "Postcode captured",
+                "type": "structured"
               },
               {
                 "element": "CISV2.DE29",
-                "type": "structured",
-                "notes": "Phone number recorded"
+                "notes": "Phone number recorded",
+                "type": "structured"
               },
               {
                 "element": "CISV2.DE33",
-                "type": "structured",
-                "notes": "Email address if provided"
+                "notes": "Email address if provided",
+                "type": "structured"
               }
-            ]
+            ],
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record contact information and address",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "safety_check",
-            "type": "decision",
-            "label": "Critical safety information present?",
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 620,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "642cf53d-ed4c-4fe7-9ce2-012834c671df",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 4,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Critical safety information present?",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "record_alerts",
-            "type": "activity",
-            "label": "Document alerts and allergies",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 784,
+              "y": 68
+            },
+            "angle": 0,
+            "id": "c071ec65-ee70-40bb-885a-2c7ac79367e2",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE199",
-                "type": "safety",
-                "notes": "Clinical alerts flagged"
+                "notes": "Clinical alerts flagged",
+                "type": "safety"
               },
               {
                 "element": "CISV2.DE1268",
-                "type": "clinical",
-                "notes": "Allergy causative agents"
+                "notes": "Allergy causative agents",
+                "type": "clinical"
               },
               {
                 "element": "CISV2.DE1279",
-                "type": "clinical",
-                "notes": "Reaction descriptions"
+                "notes": "Reaction descriptions",
+                "type": "clinical"
               }
-            ]
+            ],
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Document alerts and allergies",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "clinical_history",
-            "type": "activity",
-            "label": "Capture clinical history and problems",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1004,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "ee2c522d-9a63-495e-afd0-b747cc1bb6ee",
             "dataSeen": [
               {
                 "element": "CISV2.DE654",
-                "type": "reference",
-                "source": "previous records"
+                "source": "previous records",
+                "type": "reference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE654",
-                "type": "clinical",
-                "notes": "Active problems documented"
+                "notes": "Active problems documented",
+                "type": "clinical"
               },
               {
                 "element": "CISV2.DE1052",
-                "type": "clinical",
-                "notes": "Family history captured"
+                "notes": "Family history captured",
+                "type": "clinical"
               },
               {
                 "element": "CISV2.DE1330",
-                "type": "medication",
-                "notes": "Current medications listed"
+                "notes": "Current medications listed",
+                "type": "medication"
               }
-            ]
+            ],
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Capture clinical history and problems",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "complete_record",
-            "type": "activity",
-            "label": "Validate and sign off assessment",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1224,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "05ace67a-7e70-4af2-94ea-750c4bfe4697",
             "dataSeen": [
               {
                 "element": "CISV2.DE199",
-                "type": "validation",
-                "source": "current session"
+                "source": "current session",
+                "type": "validation"
               },
               {
                 "element": "CISV2.DE654",
-                "type": "validation",
-                "source": "current session"
+                "source": "current session",
+                "type": "validation"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE97",
-                "type": "completion",
-                "notes": "Assessment completion date"
+                "notes": "Assessment completion date",
+                "type": "completion"
               },
               {
                 "element": "CISV2.DE91",
-                "type": "accountability",
-                "notes": "Completing professional name"
+                "notes": "Completing professional name",
+                "type": "accountability"
               },
               {
                 "element": "CISV2.DE96",
-                "type": "identifier",
-                "notes": "Professional registration number"
+                "notes": "Professional registration number",
+                "type": "identifier"
               }
-            ]
+            ],
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Validate and sign off assessment",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end_assessment",
-            "type": "end",
-            "label": "Assessment complete",
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1444,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "063ce5b1-a893-4b9d-aeb1-386ab3783b0a",
             "dataSeen": [],
-            "dataCollected": []
-          }
-        ],
-        "edges": [
-          {
-            "from": "start_assessment",
-            "to": "verify_identity",
-            "label": "Begin assessment"
+            "dataCollected": [],
+            "z": 8,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Assessment complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "verify_identity",
-            "to": "collect_contact_details",
-            "label": "Identity confirmed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "98c84913-c50b-46d3-8626-d2a390902b98"
+            },
+            "target": {
+              "id": "fb4a5944-1f16-4fd8-823e-f4848c34e231"
+            },
+            "id": "41791660-92cb-4792-8d07-e10090ebff71",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Begin assessment"
+                  }
+                }
+              }
+            ],
+            "z": 9,
+            "attrs": {}
           },
           {
-            "from": "collect_contact_details",
-            "to": "safety_check",
-            "label": "Contact details recorded"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "fb4a5944-1f16-4fd8-823e-f4848c34e231"
+            },
+            "target": {
+              "id": "1e8c1959-d041-470e-9046-e6418d3b1ff4"
+            },
+            "id": "1bde5ad4-b231-401c-84bf-823a91c5e14f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Identity confirmed"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "safety_check",
-            "to": "record_alerts",
-            "label": "Yes - safety concerns"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "1e8c1959-d041-470e-9046-e6418d3b1ff4"
+            },
+            "target": {
+              "id": "642cf53d-ed4c-4fe7-9ce2-012834c671df"
+            },
+            "id": "acbdd292-f4b6-4fd5-813c-8436ce0d1c70",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Contact details recorded"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "safety_check",
-            "to": "clinical_history",
-            "label": "No alerts identified"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "642cf53d-ed4c-4fe7-9ce2-012834c671df"
+            },
+            "target": {
+              "id": "c071ec65-ee70-40bb-885a-2c7ac79367e2"
+            },
+            "id": "0c76c304-6feb-4b9a-a948-eb290b51f12f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes - safety concerns"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "record_alerts",
-            "to": "clinical_history",
-            "label": "Safety information documented"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "642cf53d-ed4c-4fe7-9ce2-012834c671df"
+            },
+            "target": {
+              "id": "ee2c522d-9a63-495e-afd0-b747cc1bb6ee"
+            },
+            "id": "8bf6e711-dc33-4b7a-afc4-4d8c0f5f6e55",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No alerts identified"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "clinical_history",
-            "to": "complete_record",
-            "label": "History captured"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "c071ec65-ee70-40bb-885a-2c7ac79367e2"
+            },
+            "target": {
+              "id": "ee2c522d-9a63-495e-afd0-b747cc1bb6ee"
+            },
+            "id": "b0fc744e-9355-4979-99c0-09fb1d604cab",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Safety information documented"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "complete_record",
-            "to": "end_assessment",
-            "label": "Record validated"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ee2c522d-9a63-495e-afd0-b747cc1bb6ee"
+            },
+            "target": {
+              "id": "05ace67a-7e70-4af2-94ea-750c4bfe4697"
+            },
+            "id": "2611d55b-2385-4383-ae20-1edee6a26152",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "History captured"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "05ace67a-7e70-4af2-94ea-750c4bfe4697"
+            },
+            "target": {
+              "id": "063ce5b1-a893-4b9d-aeb1-386ab3783b0a"
+            },
+            "id": "e15e19ac-722d-4a81-b51e-7bfea7e539a6",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Record validated"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           }
         ]
-      }
+      },
+      "id": "initial_assessment_process",
+      "objectives": "Capture comprehensive patient demographics, clinical history, and establish care baseline while ensuring data quality and clinical safety",
+      "personas": "Clinical Information Manager, Health IT System Analyst, Clinical Safety Officer",
+      "processId": "CISV2.A",
+      "title": "Initial Patient Assessment and Registration",
+      "element_data": [
+        {
+          "id": "fb4a5944-1f16-4fd8-823e-f4848c34e231",
+          "type": "bpmn.Activity",
+          "label": "Verify patient identity and demographics",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE15",
+              "source": "NHS records",
+              "type": "verification"
+            },
+            {
+              "element": "CISV2.DE10",
+              "source": "patient documents",
+              "type": "confirmation"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE4",
+              "notes": "First name captured",
+              "type": "structured"
+            },
+            {
+              "element": "CISV2.DE5",
+              "notes": "Family name captured",
+              "type": "structured"
+            },
+            {
+              "element": "CISV2.DE15",
+              "notes": "NHS number verified",
+              "type": "identifier"
+            },
+            {
+              "element": "CISV2.DE10",
+              "notes": "Date of birth confirmed",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "id": "1e8c1959-d041-470e-9046-e6418d3b1ff4",
+          "type": "bpmn.Activity",
+          "label": "Record contact information and address",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE19",
+              "notes": "Primary address line 1",
+              "type": "structured"
+            },
+            {
+              "element": "CISV2.DE24",
+              "notes": "Postcode captured",
+              "type": "structured"
+            },
+            {
+              "element": "CISV2.DE29",
+              "notes": "Phone number recorded",
+              "type": "structured"
+            },
+            {
+              "element": "CISV2.DE33",
+              "notes": "Email address if provided",
+              "type": "structured"
+            }
+          ]
+        },
+        {
+          "id": "c071ec65-ee70-40bb-885a-2c7ac79367e2",
+          "type": "bpmn.Activity",
+          "label": "Document alerts and allergies",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE199",
+              "notes": "Clinical alerts flagged",
+              "type": "safety"
+            },
+            {
+              "element": "CISV2.DE1268",
+              "notes": "Allergy causative agents",
+              "type": "clinical"
+            },
+            {
+              "element": "CISV2.DE1279",
+              "notes": "Reaction descriptions",
+              "type": "clinical"
+            }
+          ]
+        },
+        {
+          "id": "ee2c522d-9a63-495e-afd0-b747cc1bb6ee",
+          "type": "bpmn.Activity",
+          "label": "Capture clinical history and problems",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE654",
+              "source": "previous records",
+              "type": "reference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE654",
+              "notes": "Active problems documented",
+              "type": "clinical"
+            },
+            {
+              "element": "CISV2.DE1052",
+              "notes": "Family history captured",
+              "type": "clinical"
+            },
+            {
+              "element": "CISV2.DE1330",
+              "notes": "Current medications listed",
+              "type": "medication"
+            }
+          ]
+        },
+        {
+          "id": "05ace67a-7e70-4af2-94ea-750c4bfe4697",
+          "type": "bpmn.Activity",
+          "label": "Validate and sign off assessment",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE199",
+              "source": "current session",
+              "type": "validation"
+            },
+            {
+              "element": "CISV2.DE654",
+              "source": "current session",
+              "type": "validation"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE97",
+              "notes": "Assessment completion date",
+              "type": "completion"
+            },
+            {
+              "element": "CISV2.DE91",
+              "notes": "Completing professional name",
+              "type": "accountability"
+            },
+            {
+              "element": "CISV2.DE96",
+              "notes": "Professional registration number",
+              "type": "identifier"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "care_planning_process",
-      "processId": "CISV2.B",
-      "title": "Care Planning and Goal Setting",
-      "personas": "Clinical Information Manager, Clinical Safety Officer, Implementation Project Manager",
-      "objectives": "Develop person-centred care plans with agreed goals, actions, and professional responsibilities while ensuring patient involvement and safety",
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start_planning",
-            "type": "start",
-            "label": "Care planning initiated",
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 61
+            },
+            "angle": 0,
+            "id": "6b38629e-ff17-412d-8dc8-7b11eb159520",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care planning initiated",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "review_assessment",
-            "type": "activity",
-            "label": "Review assessment and clinical information",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 180,
+              "y": 58
+            },
+            "angle": 0,
+            "id": "02ad990d-53c0-48ec-a7e5-07df5a06ce13",
             "dataSeen": [
               {
                 "element": "CISV2.DE654",
-                "type": "clinical",
-                "source": "problem list"
+                "source": "problem list",
+                "type": "clinical"
               },
               {
                 "element": "CISV2.DE1239",
-                "type": "risk",
-                "source": "risk assessment"
+                "source": "risk assessment",
+                "type": "risk"
               },
               {
                 "element": "CISV2.DE1330",
-                "type": "medication",
-                "source": "current prescriptions"
+                "source": "current prescriptions",
+                "type": "medication"
               }
             ],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Review assessment and clinical information",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "engage_patient",
-            "type": "activity",
-            "label": "Discuss preferences and priorities with patient",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 400,
+              "y": 58
+            },
+            "angle": 0,
+            "id": "1c6b8e75-6405-48b9-8fa3-d79afd094acd",
             "dataSeen": [
               {
                 "element": "CISV2.DE54",
-                "type": "preference",
-                "source": "about me section"
+                "source": "about me section",
+                "type": "preference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1440",
-                "type": "goal",
-                "notes": "Patient goals and hopes"
+                "notes": "Patient goals and hopes",
+                "type": "goal"
               },
               {
                 "element": "CISV2.DE1437",
-                "type": "concern",
-                "notes": "Patient needs and concerns"
+                "notes": "Patient needs and concerns",
+                "type": "concern"
               },
               {
                 "element": "CISV2.DE1434",
-                "type": "strength",
-                "notes": "Patient strengths identified"
+                "notes": "Patient strengths identified",
+                "type": "strength"
               }
-            ]
+            ],
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Discuss preferences and priorities with patient",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "develop_goals",
-            "type": "activity",
-            "label": "Set SMART goals and priorities",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 620,
+              "y": 58
+            },
+            "angle": 0,
+            "id": "ca7b3fea-4f69-4a7c-b1c8-6cd4b727a017",
             "dataSeen": [
               {
                 "element": "CISV2.DE1440",
-                "type": "reference",
-                "source": "current session"
+                "source": "current session",
+                "type": "reference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1442",
-                "type": "priority",
-                "notes": "Goal importance scores"
+                "notes": "Goal importance scores",
+                "type": "priority"
               },
               {
                 "element": "CISV2.DE1471",
-                "type": "status",
-                "notes": "Goal status tracking"
+                "notes": "Goal status tracking",
+                "type": "status"
               },
               {
                 "element": "CISV2.DE1445",
-                "type": "action",
-                "notes": "Specific actions defined"
+                "notes": "Specific actions defined",
+                "type": "action"
               }
-            ]
+            ],
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Set SMART goals and priorities",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "assign_responsibilities",
-            "type": "activity",
-            "label": "Assign professional responsibilities and timelines",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 840,
+              "y": 58
+            },
+            "angle": 0,
+            "id": "91da56aa-dfd6-4455-9249-05e6f6a21739",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE1448",
-                "type": "professional",
-                "notes": "Responsible person name"
+                "notes": "Responsible person name",
+                "type": "professional"
               },
               {
                 "element": "CISV2.DE1449",
-                "type": "role",
-                "notes": "Professional role assignment"
+                "notes": "Professional role assignment",
+                "type": "role"
               },
               {
                 "element": "CISV2.DE1452",
-                "type": "timeline",
-                "notes": "Action due dates"
+                "notes": "Action due dates",
+                "type": "timeline"
               },
               {
                 "element": "CISV2.DE1459",
-                "type": "review",
-                "notes": "Review date scheduled"
+                "notes": "Review date scheduled",
+                "type": "review"
               }
-            ]
+            ],
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Assign professional responsibilities and timelines",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "patient_agreement",
-            "type": "decision",
-            "label": "Patient agrees to care plan?",
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 1060,
+              "y": 54
+            },
+            "angle": 0,
+            "id": "ac91d684-5b92-4083-be0d-3bb3004bb067",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 6,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Patient agrees to care plan?",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "revise_plan",
-            "type": "activity",
-            "label": "Revise plan based on patient feedback",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1224,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "bd877027-e742-4860-8c36-3abd538bf6f5",
             "dataSeen": [
               {
                 "element": "CISV2.DE1440",
-                "type": "reference",
-                "source": "current goals"
+                "source": "current goals",
+                "type": "reference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1445",
-                "type": "revision",
-                "notes": "Updated actions"
+                "notes": "Updated actions",
+                "type": "revision"
               },
               {
                 "element": "CISV2.DE1458",
-                "type": "update",
-                "notes": "Last updated timestamp"
+                "notes": "Last updated timestamp",
+                "type": "update"
               }
-            ]
+            ],
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Revise plan based on patient feedback",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "finalize_plan",
-            "type": "activity",
-            "label": "Document agreed care plan and obtain consent",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1224,
+              "y": 126
+            },
+            "angle": 0,
+            "id": "2fd4e109-9c33-468b-8d62-e03448ea1cd4",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE1473",
-                "type": "consent",
-                "notes": "Patient agreement confirmed"
+                "notes": "Patient agreement confirmed",
+                "type": "consent"
               },
               {
                 "element": "CISV2.DE1474",
-                "type": "identity",
-                "notes": "Patient name on consent"
+                "notes": "Patient name on consent",
+                "type": "identity"
               },
               {
                 "element": "CISV2.DE1479",
-                "type": "timestamp",
-                "notes": "Plan completion date"
+                "notes": "Plan completion date",
+                "type": "timestamp"
               },
               {
                 "element": "CISV2.DE1504",
-                "type": "completion",
-                "notes": "Professional completing record"
+                "notes": "Professional completing record",
+                "type": "completion"
               }
-            ]
+            ],
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Document agreed care plan and obtain consent",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end_planning",
-            "type": "end",
-            "label": "Care plan established",
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1444,
+              "y": 129
+            },
+            "angle": 0,
+            "id": "0a0faa4b-eedc-4396-9827-c6512573be90",
             "dataSeen": [],
-            "dataCollected": []
-          }
-        ],
-        "edges": [
-          {
-            "from": "start_planning",
-            "to": "review_assessment",
-            "label": "Planning commenced"
+            "dataCollected": [],
+            "z": 9,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Care plan established",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "review_assessment",
-            "to": "engage_patient",
-            "label": "Clinical information reviewed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "6b38629e-ff17-412d-8dc8-7b11eb159520"
+            },
+            "target": {
+              "id": "02ad990d-53c0-48ec-a7e5-07df5a06ce13"
+            },
+            "id": "199914f5-6e0a-4d05-ac52-b0c8e12008a1",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Planning commenced"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "engage_patient",
-            "to": "develop_goals",
-            "label": "Patient preferences captured"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "02ad990d-53c0-48ec-a7e5-07df5a06ce13"
+            },
+            "target": {
+              "id": "1c6b8e75-6405-48b9-8fa3-d79afd094acd"
+            },
+            "id": "c35bfa1d-87ee-4fb3-a0ca-4cced2e83fad",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Clinical information reviewed"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "develop_goals",
-            "to": "assign_responsibilities",
-            "label": "Goals established"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "1c6b8e75-6405-48b9-8fa3-d79afd094acd"
+            },
+            "target": {
+              "id": "ca7b3fea-4f69-4a7c-b1c8-6cd4b727a017"
+            },
+            "id": "bd35e6c8-3296-4b7a-9563-cd4d073e7d26",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Patient preferences captured"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "assign_responsibilities",
-            "to": "patient_agreement",
-            "label": "Responsibilities assigned"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ca7b3fea-4f69-4a7c-b1c8-6cd4b727a017"
+            },
+            "target": {
+              "id": "91da56aa-dfd6-4455-9249-05e6f6a21739"
+            },
+            "id": "ffae54da-f4d7-4774-ba24-d67e71225fce",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Goals established"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "patient_agreement",
-            "to": "revise_plan",
-            "label": "No - requires changes"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "91da56aa-dfd6-4455-9249-05e6f6a21739"
+            },
+            "target": {
+              "id": "ac91d684-5b92-4083-be0d-3bb3004bb067"
+            },
+            "id": "fece3fb8-cca4-49e1-8ad8-28ae94b7cbb8",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Responsibilities assigned"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "patient_agreement",
-            "to": "finalize_plan",
-            "label": "Yes - plan agreed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ac91d684-5b92-4083-be0d-3bb3004bb067"
+            },
+            "target": {
+              "id": "bd877027-e742-4860-8c36-3abd538bf6f5"
+            },
+            "id": "3d19dd70-0b8f-4d40-aeba-5906cfa3c4d4",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No - requires changes"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "revise_plan",
-            "to": "patient_agreement",
-            "label": "Plan revised"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ac91d684-5b92-4083-be0d-3bb3004bb067"
+            },
+            "target": {
+              "id": "2fd4e109-9c33-468b-8d62-e03448ea1cd4"
+            },
+            "id": "f838e659-5c23-4abf-8fdd-75ce68c9aba7",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes - plan agreed"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "finalize_plan",
-            "to": "end_planning",
-            "label": "Plan documented and agreed"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "bd877027-e742-4860-8c36-3abd538bf6f5"
+            },
+            "target": {
+              "id": "ac91d684-5b92-4083-be0d-3bb3004bb067"
+            },
+            "id": "38e1aefa-626c-4d11-989b-b911e78f3cfa",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Plan revised"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "2fd4e109-9c33-468b-8d62-e03448ea1cd4"
+            },
+            "target": {
+              "id": "0a0faa4b-eedc-4396-9827-c6512573be90"
+            },
+            "id": "9a91756d-2eb2-4a3c-a2b7-9ea40a5d2aac",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Plan documented and agreed"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
           }
         ]
-      }
+      },
+      "id": "care_planning_process",
+      "objectives": "Develop person-centred care plans with agreed goals, actions, and professional responsibilities while ensuring patient involvement and safety",
+      "personas": "Clinical Information Manager, Clinical Safety Officer, Implementation Project Manager",
+      "processId": "CISV2.B",
+      "title": "Care Planning and Goal Setting",
+      "element_data": [
+        {
+          "id": "02ad990d-53c0-48ec-a7e5-07df5a06ce13",
+          "type": "bpmn.Activity",
+          "label": "Review assessment and clinical information",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE654",
+              "source": "problem list",
+              "type": "clinical"
+            },
+            {
+              "element": "CISV2.DE1239",
+              "source": "risk assessment",
+              "type": "risk"
+            },
+            {
+              "element": "CISV2.DE1330",
+              "source": "current prescriptions",
+              "type": "medication"
+            }
+          ],
+          "dataCollected": []
+        },
+        {
+          "id": "1c6b8e75-6405-48b9-8fa3-d79afd094acd",
+          "type": "bpmn.Activity",
+          "label": "Discuss preferences and priorities with patient",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE54",
+              "source": "about me section",
+              "type": "preference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1440",
+              "notes": "Patient goals and hopes",
+              "type": "goal"
+            },
+            {
+              "element": "CISV2.DE1437",
+              "notes": "Patient needs and concerns",
+              "type": "concern"
+            },
+            {
+              "element": "CISV2.DE1434",
+              "notes": "Patient strengths identified",
+              "type": "strength"
+            }
+          ]
+        },
+        {
+          "id": "ca7b3fea-4f69-4a7c-b1c8-6cd4b727a017",
+          "type": "bpmn.Activity",
+          "label": "Set SMART goals and priorities",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1440",
+              "source": "current session",
+              "type": "reference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1442",
+              "notes": "Goal importance scores",
+              "type": "priority"
+            },
+            {
+              "element": "CISV2.DE1471",
+              "notes": "Goal status tracking",
+              "type": "status"
+            },
+            {
+              "element": "CISV2.DE1445",
+              "notes": "Specific actions defined",
+              "type": "action"
+            }
+          ]
+        },
+        {
+          "id": "91da56aa-dfd6-4455-9249-05e6f6a21739",
+          "type": "bpmn.Activity",
+          "label": "Assign professional responsibilities and timelines",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1448",
+              "notes": "Responsible person name",
+              "type": "professional"
+            },
+            {
+              "element": "CISV2.DE1449",
+              "notes": "Professional role assignment",
+              "type": "role"
+            },
+            {
+              "element": "CISV2.DE1452",
+              "notes": "Action due dates",
+              "type": "timeline"
+            },
+            {
+              "element": "CISV2.DE1459",
+              "notes": "Review date scheduled",
+              "type": "review"
+            }
+          ]
+        },
+        {
+          "id": "bd877027-e742-4860-8c36-3abd538bf6f5",
+          "type": "bpmn.Activity",
+          "label": "Revise plan based on patient feedback",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1440",
+              "source": "current goals",
+              "type": "reference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1445",
+              "notes": "Updated actions",
+              "type": "revision"
+            },
+            {
+              "element": "CISV2.DE1458",
+              "notes": "Last updated timestamp",
+              "type": "update"
+            }
+          ]
+        },
+        {
+          "id": "2fd4e109-9c33-468b-8d62-e03448ea1cd4",
+          "type": "bpmn.Activity",
+          "label": "Document agreed care plan and obtain consent",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1473",
+              "notes": "Patient agreement confirmed",
+              "type": "consent"
+            },
+            {
+              "element": "CISV2.DE1474",
+              "notes": "Patient name on consent",
+              "type": "identity"
+            },
+            {
+              "element": "CISV2.DE1479",
+              "notes": "Plan completion date",
+              "type": "timestamp"
+            },
+            {
+              "element": "CISV2.DE1504",
+              "notes": "Professional completing record",
+              "type": "completion"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "medication_reconciliation",
-      "processId": "CISV2.C",
-      "title": "Medication Reconciliation and Management",
-      "personas": "Clinical Information Manager, Clinical Safety Officer, Health IT System Analyst",
-      "objectives": "Ensure accurate, complete medication records with safety checks, allergy verification, and appropriate clinical oversight",
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start_med_review",
-            "type": "start",
-            "label": "Medication review initiated",
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "4ef853c9-868b-4075-afc8-662c269c76ca",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Medication review initiated",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "gather_sources",
-            "type": "activity",
-            "label": "Collect medication information from all sources",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 180,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "4df8d9d6-82f4-4b7f-a2fe-7e1f50ef30f4",
             "dataSeen": [
               {
                 "element": "CISV2.DE1330",
-                "type": "existing",
-                "source": "patient records"
+                "source": "patient records",
+                "type": "existing"
               },
               {
                 "element": "CISV2.DE1268",
-                "type": "allergy",
-                "source": "allergy records"
+                "source": "allergy records",
+                "type": "allergy"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1330",
-                "type": "medication",
-                "notes": "Current medications from patient"
+                "notes": "Current medications from patient",
+                "type": "medication"
               },
               {
                 "element": "CISV2.DE1341",
-                "type": "supply",
-                "notes": "Last supply dates"
+                "notes": "Last supply dates",
+                "type": "supply"
               }
-            ]
+            ],
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Collect medication information from all sources",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "verify_allergies",
-            "type": "activity",
-            "label": "Check for drug allergies and contraindications",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 400,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "44dc10b9-1e1d-43af-87ec-e8a55c10ed3e",
             "dataSeen": [
               {
                 "element": "CISV2.DE1268",
-                "type": "allergy",
-                "source": "allergy register"
+                "source": "allergy register",
+                "type": "allergy"
               },
               {
                 "element": "CISV2.DE1330",
-                "type": "medication",
-                "source": "current list"
+                "source": "current list",
+                "type": "medication"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1283",
-                "type": "severity",
-                "notes": "Allergy severity confirmed"
+                "notes": "Allergy severity confirmed",
+                "type": "severity"
               },
               {
                 "element": "CISV2.DE1286",
-                "type": "certainty",
-                "notes": "Allergy certainty verified"
+                "notes": "Allergy certainty verified",
+                "type": "certainty"
               }
-            ]
+            ],
+            "z": 3,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Check for drug allergies and contraindications",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "safety_conflict",
-            "type": "decision",
-            "label": "Safety concerns identified?",
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 620,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "42700221-617b-4f6c-942e-1673f722e8cc",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 4,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Safety concerns identified?",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "resolve_conflicts",
-            "type": "activity",
-            "label": "Address medication conflicts and allergies",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 784,
+              "y": 68
+            },
+            "angle": 0,
+            "id": "9ce971ab-7080-4b54-a793-86da1eee11d0",
             "dataSeen": [
               {
                 "element": "CISV2.DE1268",
-                "type": "conflict",
-                "source": "allergy check"
+                "source": "allergy check",
+                "type": "conflict"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1394",
-                "type": "discontinuation",
-                "notes": "Conflicting medications stopped"
+                "notes": "Conflicting medications stopped",
+                "type": "discontinuation"
               },
               {
                 "element": "CISV2.DE1397",
-                "type": "reasoning",
-                "notes": "Clinical rationale for changes"
+                "notes": "Clinical rationale for changes",
+                "type": "reasoning"
               },
               {
                 "element": "CISV2.DE199",
-                "type": "alert",
-                "notes": "Safety alerts updated"
+                "notes": "Safety alerts updated",
+                "type": "alert"
               }
-            ]
+            ],
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Address medication conflicts and allergies",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "reconcile_list",
-            "type": "activity",
-            "label": "Create accurate medication list with dosing",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1004,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "63e5ed10-022a-4a94-a9dc-e5cfc9bfb2a4",
             "dataSeen": [
               {
                 "element": "CISV2.DE1330",
-                "type": "reference",
-                "source": "verified sources"
+                "source": "verified sources",
+                "type": "reference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1355",
-                "type": "dose",
-                "notes": "Structured dose amounts"
+                "notes": "Structured dose amounts",
+                "type": "dose"
               },
               {
                 "element": "CISV2.DE1343",
-                "type": "route",
-                "notes": "Administration routes"
+                "notes": "Administration routes",
+                "type": "route"
               },
               {
                 "element": "CISV2.DE1359",
-                "type": "instructions",
-                "notes": "Dose direction descriptions"
+                "notes": "Dose direction descriptions",
+                "type": "instructions"
               },
               {
                 "element": "CISV2.DE1368",
-                "type": "indication",
-                "notes": "Clinical indications"
+                "notes": "Clinical indications",
+                "type": "indication"
               }
-            ]
+            ],
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Create accurate medication list with dosing",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "clinical_review",
-            "type": "activity",
-            "label": "Clinical pharmacist or prescriber review",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1224,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "501c5f28-360b-4824-a31c-990e9b019f61",
             "dataSeen": [
               {
                 "element": "CISV2.DE1355",
-                "type": "dose",
-                "source": "reconciled list"
+                "source": "reconciled list",
+                "type": "dose"
               },
               {
                 "element": "CISV2.DE654",
-                "type": "indication",
-                "source": "problem list"
+                "source": "problem list",
+                "type": "indication"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1364",
-                "type": "review",
-                "notes": "Next review date set"
+                "notes": "Next review date set",
+                "type": "review"
               },
               {
                 "element": "CISV2.DE1385",
-                "type": "completion",
-                "notes": "Review completion date"
+                "notes": "Review completion date",
+                "type": "completion"
               },
               {
                 "element": "CISV2.DE1380",
-                "type": "role",
-                "notes": "Reviewing professional role"
+                "notes": "Reviewing professional role",
+                "type": "role"
               }
-            ]
+            ],
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Clinical pharmacist or prescriber review",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "update_records",
-            "type": "activity",
-            "label": "Update medication records and alerts",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1444,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "4387b59c-e9f7-4c5e-89da-48b266a0af5a",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE1376",
-                "type": "change",
-                "notes": "Date of medication changes"
+                "notes": "Date of medication changes",
+                "type": "change"
               },
               {
                 "element": "CISV2.DE1377",
-                "type": "description",
-                "notes": "Change descriptions"
+                "notes": "Change descriptions",
+                "type": "description"
               },
               {
                 "element": "CISV2.DE1384",
-                "type": "professional",
-                "notes": "Professional identifier for audit"
+                "notes": "Professional identifier for audit",
+                "type": "professional"
               }
-            ]
+            ],
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Update medication records and alerts",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end_med_review",
-            "type": "end",
-            "label": "Medication reconciliation complete",
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1664,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "fbd7f0a4-e1ee-4f37-b653-c3717b6c4f9f",
             "dataSeen": [],
-            "dataCollected": []
-          }
-        ],
-        "edges": [
-          {
-            "from": "start_med_review",
-            "to": "gather_sources",
-            "label": "Review commenced"
+            "dataCollected": [],
+            "z": 9,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Medication reconciliation complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "gather_sources",
-            "to": "verify_allergies",
-            "label": "Medication sources collected"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "4ef853c9-868b-4075-afc8-662c269c76ca"
+            },
+            "target": {
+              "id": "4df8d9d6-82f4-4b7f-a2fe-7e1f50ef30f4"
+            },
+            "id": "6008ef42-2063-4ca8-9376-9b94e09e91bd",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Review commenced"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "verify_allergies",
-            "to": "safety_conflict",
-            "label": "Allergy check complete"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "4df8d9d6-82f4-4b7f-a2fe-7e1f50ef30f4"
+            },
+            "target": {
+              "id": "44dc10b9-1e1d-43af-87ec-e8a55c10ed3e"
+            },
+            "id": "4585bb01-9494-4298-ac58-f6b03a13daf9",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Medication sources collected"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "safety_conflict",
-            "to": "resolve_conflicts",
-            "label": "Yes - conflicts found"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "44dc10b9-1e1d-43af-87ec-e8a55c10ed3e"
+            },
+            "target": {
+              "id": "42700221-617b-4f6c-942e-1673f722e8cc"
+            },
+            "id": "5db183b7-372f-4733-8415-9e0699fb2685",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Allergy check complete"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "safety_conflict",
-            "to": "reconcile_list",
-            "label": "No conflicts"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "42700221-617b-4f6c-942e-1673f722e8cc"
+            },
+            "target": {
+              "id": "9ce971ab-7080-4b54-a793-86da1eee11d0"
+            },
+            "id": "7205bc14-f0bd-41d9-a444-8511ae0a8d34",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes - conflicts found"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "resolve_conflicts",
-            "to": "reconcile_list",
-            "label": "Conflicts resolved"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "42700221-617b-4f6c-942e-1673f722e8cc"
+            },
+            "target": {
+              "id": "63e5ed10-022a-4a94-a9dc-e5cfc9bfb2a4"
+            },
+            "id": "bac38e33-2d46-4d99-b832-c158418694fe",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No conflicts"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "reconcile_list",
-            "to": "clinical_review",
-            "label": "List reconciled"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "9ce971ab-7080-4b54-a793-86da1eee11d0"
+            },
+            "target": {
+              "id": "63e5ed10-022a-4a94-a9dc-e5cfc9bfb2a4"
+            },
+            "id": "ccb2281a-fcfb-4db9-9a8f-0771a2a3baec",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Conflicts resolved"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "clinical_review",
-            "to": "update_records",
-            "label": "Clinical review complete"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "63e5ed10-022a-4a94-a9dc-e5cfc9bfb2a4"
+            },
+            "target": {
+              "id": "501c5f28-360b-4824-a31c-990e9b019f61"
+            },
+            "id": "91a361db-0c3b-4758-b1c1-234761edfffb",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "List reconciled"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "update_records",
-            "to": "end_med_review",
-            "label": "Records updated"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "501c5f28-360b-4824-a31c-990e9b019f61"
+            },
+            "target": {
+              "id": "4387b59c-e9f7-4c5e-89da-48b266a0af5a"
+            },
+            "id": "845e6485-882d-4d99-9203-52affd30515c",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Clinical review complete"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "4387b59c-e9f7-4c5e-89da-48b266a0af5a"
+            },
+            "target": {
+              "id": "fbd7f0a4-e1ee-4f37-b653-c3717b6c4f9f"
+            },
+            "id": "9baf77f6-53ba-4efa-839e-c2efc1ab30d0",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Records updated"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
           }
         ]
-      }
+      },
+      "id": "medication_reconciliation",
+      "objectives": "Ensure accurate, complete medication records with safety checks, allergy verification, and appropriate clinical oversight",
+      "personas": "Clinical Information Manager, Clinical Safety Officer, Health IT System Analyst",
+      "processId": "CISV2.C",
+      "title": "Medication Reconciliation and Management",
+      "element_data": [
+        {
+          "id": "4df8d9d6-82f4-4b7f-a2fe-7e1f50ef30f4",
+          "type": "bpmn.Activity",
+          "label": "Collect medication information from all sources",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1330",
+              "source": "patient records",
+              "type": "existing"
+            },
+            {
+              "element": "CISV2.DE1268",
+              "source": "allergy records",
+              "type": "allergy"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1330",
+              "notes": "Current medications from patient",
+              "type": "medication"
+            },
+            {
+              "element": "CISV2.DE1341",
+              "notes": "Last supply dates",
+              "type": "supply"
+            }
+          ]
+        },
+        {
+          "id": "44dc10b9-1e1d-43af-87ec-e8a55c10ed3e",
+          "type": "bpmn.Activity",
+          "label": "Check for drug allergies and contraindications",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1268",
+              "source": "allergy register",
+              "type": "allergy"
+            },
+            {
+              "element": "CISV2.DE1330",
+              "source": "current list",
+              "type": "medication"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1283",
+              "notes": "Allergy severity confirmed",
+              "type": "severity"
+            },
+            {
+              "element": "CISV2.DE1286",
+              "notes": "Allergy certainty verified",
+              "type": "certainty"
+            }
+          ]
+        },
+        {
+          "id": "9ce971ab-7080-4b54-a793-86da1eee11d0",
+          "type": "bpmn.Activity",
+          "label": "Address medication conflicts and allergies",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1268",
+              "source": "allergy check",
+              "type": "conflict"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1394",
+              "notes": "Conflicting medications stopped",
+              "type": "discontinuation"
+            },
+            {
+              "element": "CISV2.DE1397",
+              "notes": "Clinical rationale for changes",
+              "type": "reasoning"
+            },
+            {
+              "element": "CISV2.DE199",
+              "notes": "Safety alerts updated",
+              "type": "alert"
+            }
+          ]
+        },
+        {
+          "id": "63e5ed10-022a-4a94-a9dc-e5cfc9bfb2a4",
+          "type": "bpmn.Activity",
+          "label": "Create accurate medication list with dosing",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1330",
+              "source": "verified sources",
+              "type": "reference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1355",
+              "notes": "Structured dose amounts",
+              "type": "dose"
+            },
+            {
+              "element": "CISV2.DE1343",
+              "notes": "Administration routes",
+              "type": "route"
+            },
+            {
+              "element": "CISV2.DE1359",
+              "notes": "Dose direction descriptions",
+              "type": "instructions"
+            },
+            {
+              "element": "CISV2.DE1368",
+              "notes": "Clinical indications",
+              "type": "indication"
+            }
+          ]
+        },
+        {
+          "id": "501c5f28-360b-4824-a31c-990e9b019f61",
+          "type": "bpmn.Activity",
+          "label": "Clinical pharmacist or prescriber review",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1355",
+              "source": "reconciled list",
+              "type": "dose"
+            },
+            {
+              "element": "CISV2.DE654",
+              "source": "problem list",
+              "type": "indication"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1364",
+              "notes": "Next review date set",
+              "type": "review"
+            },
+            {
+              "element": "CISV2.DE1385",
+              "notes": "Review completion date",
+              "type": "completion"
+            },
+            {
+              "element": "CISV2.DE1380",
+              "notes": "Reviewing professional role",
+              "type": "role"
+            }
+          ]
+        },
+        {
+          "id": "4387b59c-e9f7-4c5e-89da-48b266a0af5a",
+          "type": "bpmn.Activity",
+          "label": "Update medication records and alerts",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1376",
+              "notes": "Date of medication changes",
+              "type": "change"
+            },
+            {
+              "element": "CISV2.DE1377",
+              "notes": "Change descriptions",
+              "type": "description"
+            },
+            {
+              "element": "CISV2.DE1384",
+              "notes": "Professional identifier for audit",
+              "type": "professional"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "information_sharing",
-      "processId": "CISV2.D",
-      "title": "Secure Information Sharing and Handover",
-      "personas": "Data Protection Officer, Health IT System Analyst, Implementation Project Manager",
-      "objectives": "Enable secure, appropriate information sharing between healthcare providers while maintaining privacy compliance and clinical safety",
       "diagram": {
-        "nodes": [
+        "cells": [
           {
-            "id": "start_sharing",
-            "type": "start",
-            "label": "Information sharing request",
+            "type": "bpmn.StartEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 30,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "e31e6eb0-22cf-4aff-b219-dda7ee16643d",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 1,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Information sharing request",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "id": "verify_consent",
-            "type": "activity",
-            "label": "Verify patient consent for information sharing",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 180,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "84935cba-bf4c-48ec-a6d6-904508824178",
             "dataSeen": [
               {
                 "element": "CISV2.DE215",
-                "type": "consent",
-                "source": "consent records"
+                "source": "consent records",
+                "type": "consent"
               },
               {
                 "element": "CISV2.DE216",
-                "type": "restriction",
-                "source": "consent exceptions"
+                "source": "consent exceptions",
+                "type": "restriction"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE212",
-                "type": "verification",
-                "notes": "Consent verification date"
+                "notes": "Consent verification date",
+                "type": "verification"
               },
               {
                 "element": "CISV2.DE233",
-                "type": "professional",
-                "notes": "Professional verifying consent"
+                "notes": "Professional verifying consent",
+                "type": "professional"
               }
-            ]
+            ],
+            "z": 2,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Verify patient consent for information sharing",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "consent_valid",
-            "type": "decision",
-            "label": "Valid consent exists?",
+            "type": "bpmn.Decision",
+            "size": {
+              "width": 44,
+              "height": 44
+            },
+            "position": {
+              "x": 400,
+              "y": 30
+            },
+            "angle": 0,
+            "id": "60d39e82-1994-41a6-b194-3cd02b8b9fdf",
             "dataSeen": [],
-            "dataCollected": []
+            "dataCollected": [],
+            "z": 3,
+            "attrs": {
+              "body": {
+                "points": "22,0 44,22 22,44 0,22"
+              },
+              "label": {
+                "text": "Valid consent exists?",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "seek_consent",
-            "type": "activity",
-            "label": "Obtain appropriate consent for sharing",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 564,
+              "y": 68
+            },
+            "angle": 0,
+            "id": "a62d022b-09b0-40c2-96f2-85de1c986b48",
             "dataSeen": [
               {
                 "element": "CISV2.DE54",
-                "type": "preference",
-                "source": "patient preferences"
+                "source": "patient preferences",
+                "type": "preference"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE215",
-                "type": "consent",
-                "notes": "New consent recorded"
+                "notes": "New consent recorded",
+                "type": "consent"
               },
               {
                 "element": "CISV2.DE212",
-                "type": "date",
-                "notes": "Consent date captured"
+                "notes": "Consent date captured",
+                "type": "date"
               },
               {
                 "element": "CISV2.DE218",
-                "type": "professional",
-                "notes": "Professional obtaining consent"
+                "notes": "Professional obtaining consent",
+                "type": "professional"
               }
-            ]
+            ],
+            "z": 4,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Obtain appropriate consent for sharing",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "determine_scope",
-            "type": "activity",
-            "label": "Determine appropriate information scope",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 784,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "1a106be1-5f16-4d3b-89a5-cadb78f83eaa",
             "dataSeen": [
               {
                 "element": "CISV2.DE199",
-                "type": "critical",
-                "source": "alerts"
+                "source": "alerts",
+                "type": "critical"
               },
               {
                 "element": "CISV2.DE1268",
-                "type": "safety",
-                "source": "allergies"
+                "source": "allergies",
+                "type": "safety"
               },
               {
                 "element": "CISV2.DE1330",
-                "type": "medication",
-                "source": "current medications"
+                "source": "current medications",
+                "type": "medication"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1799",
-                "type": "classification",
-                "notes": "Information confidentiality level"
+                "notes": "Information confidentiality level",
+                "type": "classification"
               },
               {
                 "element": "CISV2.DE1801",
-                "type": "title",
-                "notes": "Document title for sharing"
+                "notes": "Document title for sharing",
+                "type": "title"
               }
-            ]
+            ],
+            "z": 5,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Determine appropriate information scope",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "prepare_summary",
-            "type": "activity",
-            "label": "Create clinical summary for sharing",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1004,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "ccb1235f-d660-4289-80da-58af7620c6ec",
             "dataSeen": [
               {
                 "element": "CISV2.DE654",
-                "type": "clinical",
-                "source": "problem list"
+                "source": "problem list",
+                "type": "clinical"
               },
               {
                 "element": "CISV2.DE1440",
-                "type": "goals",
-                "source": "care plans"
+                "source": "care plans",
+                "type": "goals"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1798",
-                "type": "location",
-                "notes": "Document storage location"
+                "notes": "Document storage location",
+                "type": "location"
               },
               {
                 "element": "CISV2.DE1816",
-                "type": "comments",
-                "notes": "Additional sharing notes"
+                "notes": "Additional sharing notes",
+                "type": "comments"
               },
               {
                 "element": "CISV2.DE1811",
-                "type": "completion",
-                "notes": "Summary completion date"
+                "notes": "Summary completion date",
+                "type": "completion"
               }
-            ]
+            ],
+            "z": 6,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Create clinical summary for sharing",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "secure_transmission",
-            "type": "activity",
-            "label": "Transmit information via secure channels",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1224,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "06f7fa3e-9373-4e57-85cc-22788e908c84",
             "dataSeen": [
               {
                 "element": "CISV2.DE1798",
-                "type": "document",
-                "source": "prepared summary"
+                "source": "prepared summary",
+                "type": "document"
               }
             ],
             "dataCollected": [
               {
                 "element": "CISV2.DE1803",
-                "type": "format",
-                "notes": "Transmission format type"
+                "notes": "Transmission format type",
+                "type": "format"
               },
               {
                 "element": "CISV2.DE1811",
-                "type": "transmission",
-                "notes": "Transmission completion"
+                "notes": "Transmission completion",
+                "type": "transmission"
               }
-            ]
+            ],
+            "z": 7,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Transmit information via secure channels",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "log_sharing",
-            "type": "activity",
-            "label": "Record information sharing audit trail",
+            "type": "bpmn.Activity",
+            "size": {
+              "width": 100,
+              "height": 36
+            },
+            "position": {
+              "x": 1444,
+              "y": 34
+            },
+            "angle": 0,
+            "id": "950eb5d2-b8bd-4370-8aae-f4a8de041b13",
             "dataSeen": [],
             "dataCollected": [
               {
                 "element": "CISV2.DE1810",
-                "type": "audit",
-                "notes": "Professional sharing information"
+                "notes": "Professional sharing information",
+                "type": "audit"
               },
               {
                 "element": "CISV2.DE1811",
-                "type": "audit",
-                "notes": "Sharing completion timestamp"
+                "notes": "Sharing completion timestamp",
+                "type": "audit"
               },
               {
                 "element": "CISV2.DE1799",
-                "type": "audit",
-                "notes": "Confidentiality level shared"
+                "notes": "Confidentiality level shared",
+                "type": "audit"
               }
-            ]
+            ],
+            "z": 8,
+            "attrs": {
+              "body": {
+                "width": 100,
+                "height": 36
+              },
+              "label": {
+                "text": "Record information sharing audit trail",
+                "refY": -4,
+                "fontSize": 10
+              }
+            }
           },
           {
-            "id": "end_sharing",
-            "type": "end",
-            "label": "Information sharing complete",
+            "type": "bpmn.EndEvent",
+            "size": {
+              "width": 30,
+              "height": 30
+            },
+            "position": {
+              "x": 1664,
+              "y": 37
+            },
+            "angle": 0,
+            "id": "5ed4f967-cb5c-4dda-9783-29767b837bd6",
             "dataSeen": [],
-            "dataCollected": []
-          }
-        ],
-        "edges": [
-          {
-            "from": "start_sharing",
-            "to": "verify_consent",
-            "label": "Sharing request received"
+            "dataCollected": [],
+            "z": 9,
+            "attrs": {
+              "body": {
+                "cx": 15,
+                "cy": 15,
+                "r": 14
+              },
+              "label": {
+                "text": "Information sharing complete",
+                "fontSize": 9
+              }
+            }
           },
           {
-            "from": "verify_consent",
-            "to": "consent_valid",
-            "label": "Consent status checked"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "e31e6eb0-22cf-4aff-b219-dda7ee16643d"
+            },
+            "target": {
+              "id": "84935cba-bf4c-48ec-a6d6-904508824178"
+            },
+            "id": "40d13f51-df62-41fc-a9ab-542100700af9",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Sharing request received"
+                  }
+                }
+              }
+            ],
+            "z": 10,
+            "attrs": {}
           },
           {
-            "from": "consent_valid",
-            "to": "seek_consent",
-            "label": "No - consent required"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "84935cba-bf4c-48ec-a6d6-904508824178"
+            },
+            "target": {
+              "id": "60d39e82-1994-41a6-b194-3cd02b8b9fdf"
+            },
+            "id": "9c611977-1c60-4f3c-9714-f51c02a4550f",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Consent status checked"
+                  }
+                }
+              }
+            ],
+            "z": 11,
+            "attrs": {}
           },
           {
-            "from": "consent_valid",
-            "to": "determine_scope",
-            "label": "Yes - consent exists"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "60d39e82-1994-41a6-b194-3cd02b8b9fdf"
+            },
+            "target": {
+              "id": "a62d022b-09b0-40c2-96f2-85de1c986b48"
+            },
+            "id": "bd64fec1-48b9-43f2-8987-a92c6db60c1e",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "No - consent required"
+                  }
+                }
+              }
+            ],
+            "z": 12,
+            "attrs": {}
           },
           {
-            "from": "seek_consent",
-            "to": "determine_scope",
-            "label": "Consent obtained"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "60d39e82-1994-41a6-b194-3cd02b8b9fdf"
+            },
+            "target": {
+              "id": "1a106be1-5f16-4d3b-89a5-cadb78f83eaa"
+            },
+            "id": "42112932-cdbe-407f-81a2-2a1eb509d355",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Yes - consent exists"
+                  }
+                }
+              }
+            ],
+            "z": 13,
+            "attrs": {}
           },
           {
-            "from": "determine_scope",
-            "to": "prepare_summary",
-            "label": "Scope determined"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "a62d022b-09b0-40c2-96f2-85de1c986b48"
+            },
+            "target": {
+              "id": "1a106be1-5f16-4d3b-89a5-cadb78f83eaa"
+            },
+            "id": "ec7c0e64-c018-478d-8def-b40dc6fff361",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Consent obtained"
+                  }
+                }
+              }
+            ],
+            "z": 14,
+            "attrs": {}
           },
           {
-            "from": "prepare_summary",
-            "to": "secure_transmission",
-            "label": "Summary prepared"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "1a106be1-5f16-4d3b-89a5-cadb78f83eaa"
+            },
+            "target": {
+              "id": "ccb1235f-d660-4289-80da-58af7620c6ec"
+            },
+            "id": "f084067c-a449-4e84-82ac-75c3a727395c",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Scope determined"
+                  }
+                }
+              }
+            ],
+            "z": 15,
+            "attrs": {}
           },
           {
-            "from": "secure_transmission",
-            "to": "log_sharing",
-            "label": "Information transmitted"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "ccb1235f-d660-4289-80da-58af7620c6ec"
+            },
+            "target": {
+              "id": "06f7fa3e-9373-4e57-85cc-22788e908c84"
+            },
+            "id": "5532be33-4695-4eb2-ba86-20a324ea3c75",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Summary prepared"
+                  }
+                }
+              }
+            ],
+            "z": 16,
+            "attrs": {}
           },
           {
-            "from": "log_sharing",
-            "to": "end_sharing",
-            "label": "Audit trail complete"
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "06f7fa3e-9373-4e57-85cc-22788e908c84"
+            },
+            "target": {
+              "id": "950eb5d2-b8bd-4370-8aae-f4a8de041b13"
+            },
+            "id": "eb5e8f24-e879-480a-a40e-57218707b5ea",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Information transmitted"
+                  }
+                }
+              }
+            ],
+            "z": 17,
+            "attrs": {}
+          },
+          {
+            "type": "bpmn.Link",
+            "defaultLabel": {
+              "attrs": {
+                "rect": {
+                  "fill": "#fff",
+                  "stroke": "#e5e7eb",
+                  "strokeWidth": 1,
+                  "rx": 3,
+                  "ry": 3
+                },
+                "text": {
+                  "fontSize": 12,
+                  "fontFamily": "Segoe UI, system-ui, sans-serif",
+                  "fill": "#374151"
+                }
+              }
+            },
+            "source": {
+              "id": "950eb5d2-b8bd-4370-8aae-f4a8de041b13"
+            },
+            "target": {
+              "id": "5ed4f967-cb5c-4dda-9783-29767b837bd6"
+            },
+            "id": "c022dcae-df99-4658-927b-05bcade10107",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": "Audit trail complete"
+                  }
+                }
+              }
+            ],
+            "z": 18,
+            "attrs": {}
           }
         ]
-      }
+      },
+      "id": "information_sharing",
+      "objectives": "Enable secure, appropriate information sharing between healthcare providers while maintaining privacy compliance and clinical safety",
+      "personas": "Data Protection Officer, Health IT System Analyst, Implementation Project Manager",
+      "processId": "CISV2.D",
+      "title": "Secure Information Sharing and Handover",
+      "element_data": [
+        {
+          "id": "84935cba-bf4c-48ec-a6d6-904508824178",
+          "type": "bpmn.Activity",
+          "label": "Verify patient consent for information sharing",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE215",
+              "source": "consent records",
+              "type": "consent"
+            },
+            {
+              "element": "CISV2.DE216",
+              "source": "consent exceptions",
+              "type": "restriction"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE212",
+              "notes": "Consent verification date",
+              "type": "verification"
+            },
+            {
+              "element": "CISV2.DE233",
+              "notes": "Professional verifying consent",
+              "type": "professional"
+            }
+          ]
+        },
+        {
+          "id": "a62d022b-09b0-40c2-96f2-85de1c986b48",
+          "type": "bpmn.Activity",
+          "label": "Obtain appropriate consent for sharing",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE54",
+              "source": "patient preferences",
+              "type": "preference"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE215",
+              "notes": "New consent recorded",
+              "type": "consent"
+            },
+            {
+              "element": "CISV2.DE212",
+              "notes": "Consent date captured",
+              "type": "date"
+            },
+            {
+              "element": "CISV2.DE218",
+              "notes": "Professional obtaining consent",
+              "type": "professional"
+            }
+          ]
+        },
+        {
+          "id": "1a106be1-5f16-4d3b-89a5-cadb78f83eaa",
+          "type": "bpmn.Activity",
+          "label": "Determine appropriate information scope",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE199",
+              "source": "alerts",
+              "type": "critical"
+            },
+            {
+              "element": "CISV2.DE1268",
+              "source": "allergies",
+              "type": "safety"
+            },
+            {
+              "element": "CISV2.DE1330",
+              "source": "current medications",
+              "type": "medication"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1799",
+              "notes": "Information confidentiality level",
+              "type": "classification"
+            },
+            {
+              "element": "CISV2.DE1801",
+              "notes": "Document title for sharing",
+              "type": "title"
+            }
+          ]
+        },
+        {
+          "id": "ccb1235f-d660-4289-80da-58af7620c6ec",
+          "type": "bpmn.Activity",
+          "label": "Create clinical summary for sharing",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE654",
+              "source": "problem list",
+              "type": "clinical"
+            },
+            {
+              "element": "CISV2.DE1440",
+              "source": "care plans",
+              "type": "goals"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1798",
+              "notes": "Document storage location",
+              "type": "location"
+            },
+            {
+              "element": "CISV2.DE1816",
+              "notes": "Additional sharing notes",
+              "type": "comments"
+            },
+            {
+              "element": "CISV2.DE1811",
+              "notes": "Summary completion date",
+              "type": "completion"
+            }
+          ]
+        },
+        {
+          "id": "06f7fa3e-9373-4e57-85cc-22788e908c84",
+          "type": "bpmn.Activity",
+          "label": "Transmit information via secure channels",
+          "dataSeen": [
+            {
+              "element": "CISV2.DE1798",
+              "source": "prepared summary",
+              "type": "document"
+            }
+          ],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1803",
+              "notes": "Transmission format type",
+              "type": "format"
+            },
+            {
+              "element": "CISV2.DE1811",
+              "notes": "Transmission completion",
+              "type": "transmission"
+            }
+          ]
+        },
+        {
+          "id": "950eb5d2-b8bd-4370-8aae-f4a8de041b13",
+          "type": "bpmn.Activity",
+          "label": "Record information sharing audit trail",
+          "dataSeen": [],
+          "dataCollected": [
+            {
+              "element": "CISV2.DE1810",
+              "notes": "Professional sharing information",
+              "type": "audit"
+            },
+            {
+              "element": "CISV2.DE1811",
+              "notes": "Sharing completion timestamp",
+              "type": "audit"
+            },
+            {
+              "element": "CISV2.DE1799",
+              "notes": "Confidentiality level shared",
+              "type": "audit"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
