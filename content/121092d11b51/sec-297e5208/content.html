@@ -1,34 +1,15 @@
-## Scenario 1: Integrated Care Planning Following Hospital Discharge
-\\\_\\Context:\\\\\_ Mrs Thompson, 78, is being discharged from hospital following a fall and hip fracture. She has mild dementia, diabetes, and lives alone. \\\_\\Actors:\\\\\_ Hospital Consultant (CISV2.P4), Social Worker (CISV2.P3), Community Nurse (CISV2.P2), Care Coordinator (CISV2.P5)
+## System User Personas
+The following personas represent key users of systems implementing the Core Information Standard v2.0:
 
-| Category | Description |
-| --- | --- |
-| **Trigger** | Multidisciplinary discharge planning meeting |
-| **Information Captured** | Discharge summary, mobility assessment, cognitive status, home environment risks, medication changes, care package requirements |
-| **Key Interactions** | Consultant documents clinical status and prognosis; Social worker completes needs assessment and arranges care package; Care coordinator develops integrated care plan with goals |
-| **Outcomes** | Comprehensive discharge record created; Care plan agreed with family; Equipment ordered; Follow-up appointments scheduled |
-| **Data Elements Used** | Admission/discharge details, problem list, procedures, medications, assessments, care plan, equipment, professional contacts |
+| Persona ID | Title | Description | Key Competencies |
+| --- | --- | --- | --- |
+| CISV2.P1 | **GP/Primary Care Physician** | Doctor providing first-contact care, managing chronic conditions, and coordinating referrals. Responsible for maintaining comprehensive patient records. | Clinical assessment, care coordination, medication management, SNOMED CT coding, safeguarding responsibilities |
+| CISV2.P2 | **Community Nurse** | Registered nurse delivering care in community settings, conducting assessments, administering medications, and supporting care plans. | Clinical procedures, medication administration, care plan implementation, risk assessment, wound care |
+| CISV2.P3 | **Social Worker** | Professional assessing social care needs, arranging support services, and ensuring safeguarding compliance. Key role in mental capacity assessments. | Social care assessment, safeguarding procedures, mental capacity assessment, care package coordination |
+| CISV2.P4 | **Hospital Consultant** | Senior doctor managing complex conditions, making treatment decisions, and overseeing specialty care including end-of-life planning. | Specialist clinical knowledge, treatment planning, multidisciplinary coordination, prognostication |
+| CISV2.P5 | **Care Coordinator** | Professional coordinating integrated care across health and social services, ensuring care plan implementation and review. | Care pathway management, service coordination, review scheduling, stakeholder communication |
+| CISV2.P6 | **Allied Health Professional** | Therapist (OT/Physio/SLT) providing specialist assessments, interventions, and equipment recommendations. | Functional assessment, therapy planning, equipment prescription, goal setting |
+| CISV2.P7 | **Care Home Manager** | Registered manager overseeing residential care delivery, ensuring regulatory compliance and coordinating with external services. | Care quality management, regulatory compliance, staff supervision, external liaison |
+| CISV2.P8 | **Person/Patient Representative** | Individual receiving care or their legitimate representative (LPA holder, parent) participating in care decisions and providing personal information. | Self-advocacy, consent provision, personal preference expression, care participation |
 
-## Scenario 2: Reasonable Adjustment Implementation
-\\\_\\Context:\\\\\_ James, 35, has autism and learning disabilities. He needs a routine dental procedure but requires specific adjustments for healthcare access. \\\_\\Actors:\\\\\_ GP (CISV2.P1), Person/Representative (CISV2.P8), Hospital teams
-
-| Category | Description |
-| --- | --- |
-| **Trigger** | GP referral for dental surgery noting need for reasonable adjustments |
-| **Information Captured** | Communication needs (easy read, extra time), sensory sensitivities, support requirements, preferred coping strategies |
-| **Key Interactions** | GP documents adjustments in referral; Person contributes "About Me" information; Hospital team reviews requirements pre-admission |
-| **Outcomes** | Adjustments flagged across systems; Pre-visit arranged; Quiet room allocated; Support plan implemented |
-| **Data Elements Used** | Individual requirements (reasonable adjustments, impairments), About Me section, alerts, care preferences |
-
-## Scenario 3: End-of-Life Care Coordination
-\\\_\\Context:\\\\\_ Mr Patel, 68, has advanced lung cancer. Following discussions with his consultant, he wishes to plan his end-of-life care. \\\_\\Actors:\\\\\_ Hospital Consultant (CISV2.P4), GP (CISV2.P1), Community Nurse (CISV2.P2), Patient (CISV2.P8)
-
-| Category | Description |
-| --- | --- |
-| **Trigger** | Prognosis discussion and patient request for advance care planning |
-| **Information Captured** | CPR decision (DNACPR), preferred place of death (home), advance statement of wishes, anticipatory medications |
-| **Key Interactions** | Consultant documents prognosis and initial discussions; GP coordinates anticipatory prescribing; Community nurse ensures home equipment available |
-| **Outcomes** | ReSPECT form completed; Anticipatory medications prescribed; Care preferences shared across services; Family aware of plans |
-| **Data Elements Used** | End of life care section, advance decisions, contingency plans, medications, professional contacts |
-
-These scenarios demonstrate how the standard supports complex, multi-professional care delivery while maintaining person-centred documentation.
+Each persona interacts with different sections of the standard based on their professional responsibilities and access permissions.
