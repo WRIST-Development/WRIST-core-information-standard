@@ -1,0 +1,910 @@
+{
+  "summary_markdown": "The Core Information Standard defines five key business processes that support integrated care delivery. These range from initial person registration and assessment through to ongoing care coordination and information sharing. Each process involves multiple personas working collaboratively to ensure comprehensive, person-centred information management.",
+  "activities": [
+    {
+      "id": "CISV2.BP.A",
+      "processId": "CISV2.A",
+      "title": "Person Registration and Demographics Management",
+      "personas": "Information Manager, General Practitioner",
+      "objectives": "Establish accurate person identity and demographic information to enable safe care delivery and information sharing across services",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for registration"
+          },
+          {
+            "id": "collect",
+            "type": "activity",
+            "label": "Collect demographic details",
+            "dataSeen": [
+              {
+                "element": "Existing records",
+                "source": "PDS/Local systems"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Person name",
+                "notes": "All name components"
+              },
+              {
+                "element": "Date of birth"
+              },
+              {
+                "element": "NHS number",
+                "type": "Identifier"
+              },
+              {
+                "element": "Contact details"
+              }
+            ]
+          },
+          {
+            "id": "verify",
+            "type": "activity",
+            "label": "Verify NHS number",
+            "dataSeen": [
+              {
+                "element": "NHS number",
+                "source": "Person/PDS"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "NHS number status",
+                "notes": "Verification indicator"
+              }
+            ]
+          },
+          {
+            "id": "capture",
+            "type": "activity",
+            "label": "Capture additional demographics",
+            "dataCollected": [
+              {
+                "element": "Gender",
+                "type": "Demographics"
+              },
+              {
+                "element": "Ethnicity"
+              },
+              {
+                "element": "GP practice details"
+              },
+              {
+                "element": "Immigration status",
+                "notes": "If applicable"
+              }
+            ]
+          },
+          {
+            "id": "decision",
+            "type": "decision",
+            "label": "Reasonable adjustments needed?",
+            "dataSeen": [
+              {
+                "element": "Person requirements",
+                "source": "Assessment"
+              }
+            ]
+          },
+          {
+            "id": "record",
+            "type": "activity",
+            "label": "Record adjustments",
+            "dataCollected": [
+              {
+                "element": "Reasonable adjustment flags"
+              },
+              {
+                "element": "Communication needs"
+              },
+              {
+                "element": "Accessibility requirements"
+              }
+            ]
+          },
+          {
+            "id": "complete",
+            "type": "activity",
+            "label": "Complete registration",
+            "dataCollected": [
+              {
+                "element": "Registration confirmation"
+              },
+              {
+                "element": "Audit trail"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Registration complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "collect"
+          },
+          {
+            "from": "collect",
+            "to": "verify"
+          },
+          {
+            "from": "verify",
+            "to": "capture"
+          },
+          {
+            "from": "capture",
+            "to": "decision"
+          },
+          {
+            "from": "decision",
+            "to": "record",
+            "label": "Yes"
+          },
+          {
+            "from": "decision",
+            "to": "complete",
+            "label": "No"
+          },
+          {
+            "from": "record",
+            "to": "complete"
+          },
+          {
+            "from": "complete",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP.B",
+      "processId": "CISV2.B",
+      "title": "Initial Assessment and Care Planning",
+      "personas": "Social Worker, Community Nurse, Person/Patient, Family Carer",
+      "objectives": "Conduct comprehensive assessment of person's needs, preferences and circumstances to develop personalised care plan",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Assessment referral received"
+          },
+          {
+            "id": "review",
+            "type": "activity",
+            "label": "Review existing information",
+            "dataSeen": [
+              {
+                "element": "Problem list",
+                "source": "Clinical records"
+              },
+              {
+                "element": "Previous assessments"
+              },
+              {
+                "element": "About me information"
+              }
+            ]
+          },
+          {
+            "id": "prepare",
+            "type": "activity",
+            "label": "Prepare for assessment",
+            "dataSeen": [
+              {
+                "element": "Reasonable adjustments"
+              },
+              {
+                "element": "Communication needs"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Assessment arrangements"
+              }
+            ]
+          },
+          {
+            "id": "conduct",
+            "type": "activity",
+            "label": "Conduct assessment with person",
+            "dataCollected": [
+              {
+                "element": "Social circumstances"
+              },
+              {
+                "element": "Household composition"
+              },
+              {
+                "element": "Mobility needs"
+              },
+              {
+                "element": "Cognitive assessment",
+                "notes": "If indicated"
+              }
+            ]
+          },
+          {
+            "id": "goals",
+            "type": "activity",
+            "label": "Discuss goals and preferences",
+            "dataCollected": [
+              {
+                "element": "Person goals and hopes"
+              },
+              {
+                "element": "Strengths and assets"
+              },
+              {
+                "element": "Preferred outcomes"
+              }
+            ]
+          },
+          {
+            "id": "decision",
+            "type": "decision",
+            "label": "Safeguarding concerns?",
+            "dataSeen": [
+              {
+                "element": "Risk indicators",
+                "source": "Assessment findings"
+              }
+            ]
+          },
+          {
+            "id": "safeguard",
+            "type": "subprocess",
+            "label": "Initiate safeguarding process",
+            "dataCollected": [
+              {
+                "element": "Safeguarding alert"
+              },
+              {
+                "element": "Risk assessment"
+              }
+            ]
+          },
+          {
+            "id": "plan",
+            "type": "activity",
+            "label": "Develop care plan",
+            "dataCollected": [
+              {
+                "element": "Care plan actions"
+              },
+              {
+                "element": "Support requirements"
+              },
+              {
+                "element": "Review dates"
+              }
+            ]
+          },
+          {
+            "id": "agree",
+            "type": "activity",
+            "label": "Agree plan with person",
+            "dataCollected": [
+              {
+                "element": "Person agreement",
+                "notes": "Or legitimate representative"
+              },
+              {
+                "element": "Consent records"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Assessment complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "review"
+          },
+          {
+            "from": "review",
+            "to": "prepare"
+          },
+          {
+            "from": "prepare",
+            "to": "conduct"
+          },
+          {
+            "from": "conduct",
+            "to": "goals"
+          },
+          {
+            "from": "goals",
+            "to": "decision"
+          },
+          {
+            "from": "decision",
+            "to": "safeguard",
+            "label": "Yes"
+          },
+          {
+            "from": "decision",
+            "to": "plan",
+            "label": "No"
+          },
+          {
+            "from": "safeguard",
+            "to": "plan"
+          },
+          {
+            "from": "plan",
+            "to": "agree"
+          },
+          {
+            "from": "agree",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP.C",
+      "processId": "CISV2.C",
+      "title": "Medication Management Process",
+      "personas": "General Practitioner, Community Nurse, Hospital Consultant",
+      "objectives": "Ensure safe prescribing, supply and administration of medications with appropriate monitoring and review",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Medication review triggered"
+          },
+          {
+            "id": "check",
+            "type": "activity",
+            "label": "Check current medications",
+            "dataSeen": [
+              {
+                "element": "Current medication list"
+              },
+              {
+                "element": "Allergies and adverse reactions"
+              },
+              {
+                "element": "Recent test results"
+              }
+            ]
+          },
+          {
+            "id": "review",
+            "type": "activity",
+            "label": "Review with person",
+            "dataSeen": [
+              {
+                "element": "Person preferences"
+              },
+              {
+                "element": "Adherence issues"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Medication effectiveness"
+              },
+              {
+                "element": "Side effects experienced"
+              }
+            ]
+          },
+          {
+            "id": "decision",
+            "type": "decision",
+            "label": "Changes needed?",
+            "dataSeen": [
+              {
+                "element": "Clinical indicators"
+              },
+              {
+                "element": "Person feedback"
+              }
+            ]
+          },
+          {
+            "id": "prescribe",
+            "type": "activity",
+            "label": "Update prescriptions",
+            "dataCollected": [
+              {
+                "element": "New medications",
+                "type": "dm+d coded"
+              },
+              {
+                "element": "Discontinued medications"
+              },
+              {
+                "element": "Dose adjustments"
+              }
+            ]
+          },
+          {
+            "id": "reconcile",
+            "type": "activity",
+            "label": "Medication reconciliation",
+            "dataCollected": [
+              {
+                "element": "Updated medication list"
+              },
+              {
+                "element": "Change reasons"
+              }
+            ]
+          },
+          {
+            "id": "communicate",
+            "type": "activity",
+            "label": "Communicate changes",
+            "dataCollected": [
+              {
+                "element": "Patient information"
+              },
+              {
+                "element": "Professional notifications"
+              }
+            ]
+          },
+          {
+            "id": "monitor",
+            "type": "activity",
+            "label": "Set monitoring plan",
+            "dataCollected": [
+              {
+                "element": "Review date"
+              },
+              {
+                "element": "Required monitoring"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Review complete"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "check"
+          },
+          {
+            "from": "check",
+            "to": "review"
+          },
+          {
+            "from": "review",
+            "to": "decision"
+          },
+          {
+            "from": "decision",
+            "to": "prescribe",
+            "label": "Yes"
+          },
+          {
+            "from": "decision",
+            "to": "monitor",
+            "label": "No"
+          },
+          {
+            "from": "prescribe",
+            "to": "reconcile"
+          },
+          {
+            "from": "reconcile",
+            "to": "communicate"
+          },
+          {
+            "from": "communicate",
+            "to": "monitor"
+          },
+          {
+            "from": "monitor",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP.D",
+      "processId": "CISV2.D",
+      "title": "Care Transition and Discharge",
+      "personas": "Hospital Consultant, Social Worker, Community Nurse, Care Home Manager",
+      "objectives": "Coordinate safe transition between care settings with comprehensive handover of information",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Discharge planning initiated"
+          },
+          {
+            "id": "assess",
+            "type": "activity",
+            "label": "Assess discharge needs",
+            "dataSeen": [
+              {
+                "element": "Current clinical status"
+              },
+              {
+                "element": "Social circumstances"
+              },
+              {
+                "element": "Home environment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Discharge criteria met"
+              },
+              {
+                "element": "Support requirements"
+              }
+            ]
+          },
+          {
+            "id": "decision1",
+            "type": "decision",
+            "label": "Complex discharge?",
+            "dataSeen": [
+              {
+                "element": "Assessment findings"
+              }
+            ]
+          },
+          {
+            "id": "mdt",
+            "type": "subprocess",
+            "label": "MDT discharge planning",
+            "dataCollected": [
+              {
+                "element": "MDT assessment"
+              },
+              {
+                "element": "Care package requirements"
+              }
+            ]
+          },
+          {
+            "id": "arrange",
+            "type": "activity",
+            "label": "Arrange services",
+            "dataCollected": [
+              {
+                "element": "Service provisions"
+              },
+              {
+                "element": "Equipment orders"
+              },
+              {
+                "element": "Transport arrangements"
+              }
+            ]
+          },
+          {
+            "id": "prepare",
+            "type": "activity",
+            "label": "Prepare discharge summary",
+            "dataCollected": [
+              {
+                "element": "Discharge summary"
+              },
+              {
+                "element": "Medication changes"
+              },
+              {
+                "element": "Follow-up appointments"
+              }
+            ]
+          },
+          {
+            "id": "decision2",
+            "type": "decision",
+            "label": "All arrangements confirmed?",
+            "dataSeen": [
+              {
+                "element": "Service confirmations"
+              }
+            ]
+          },
+          {
+            "id": "handover",
+            "type": "activity",
+            "label": "Handover to community team",
+            "dataCollected": [
+              {
+                "element": "Handover documentation"
+              },
+              {
+                "element": "Key contact details"
+              }
+            ]
+          },
+          {
+            "id": "discharge",
+            "type": "activity",
+            "label": "Complete discharge",
+            "dataCollected": [
+              {
+                "element": "Discharge date/time"
+              },
+              {
+                "element": "Discharge destination"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Person discharged"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess"
+          },
+          {
+            "from": "assess",
+            "to": "decision1"
+          },
+          {
+            "from": "decision1",
+            "to": "mdt",
+            "label": "Yes"
+          },
+          {
+            "from": "decision1",
+            "to": "arrange",
+            "label": "No"
+          },
+          {
+            "from": "mdt",
+            "to": "arrange"
+          },
+          {
+            "from": "arrange",
+            "to": "prepare"
+          },
+          {
+            "from": "prepare",
+            "to": "decision2"
+          },
+          {
+            "from": "decision2",
+            "to": "handover",
+            "label": "Yes"
+          },
+          {
+            "from": "decision2",
+            "to": "arrange",
+            "label": "No"
+          },
+          {
+            "from": "handover",
+            "to": "discharge"
+          },
+          {
+            "from": "discharge",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CISV2.BP.E",
+      "processId": "CISV2.E",
+      "title": "Information Sharing for Integrated Care",
+      "personas": "Information Manager, General Practitioner, Social Worker, Person/Patient",
+      "objectives": "Enable secure, consent-based sharing of information across health and social care boundaries",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Information request received"
+          },
+          {
+            "id": "identify",
+            "type": "activity",
+            "label": "Identify information needed",
+            "dataSeen": [
+              {
+                "element": "Request details"
+              },
+              {
+                "element": "Purpose of sharing"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Information categories"
+              },
+              {
+                "element": "Recipient details"
+              }
+            ]
+          },
+          {
+            "id": "check",
+            "type": "activity",
+            "label": "Check consent status",
+            "dataSeen": [
+              {
+                "element": "Consent records"
+              },
+              {
+                "element": "Information governance rules"
+              }
+            ]
+          },
+          {
+            "id": "decision1",
+            "type": "decision",
+            "label": "Valid consent?",
+            "dataSeen": [
+              {
+                "element": "Consent status"
+              }
+            ]
+          },
+          {
+            "id": "seek",
+            "type": "subprocess",
+            "label": "Seek consent",
+            "dataCollected": [
+              {
+                "element": "Consent decision"
+              },
+              {
+                "element": "Consent documentation"
+              }
+            ]
+          },
+          {
+            "id": "decision2",
+            "type": "decision",
+            "label": "Consent granted?",
+            "dataSeen": [
+              {
+                "element": "Consent outcome"
+              }
+            ]
+          },
+          {
+            "id": "extract",
+            "type": "activity",
+            "label": "Extract relevant information",
+            "dataSeen": [
+              {
+                "element": "Clinical records"
+              },
+              {
+                "element": "Care plans"
+              },
+              {
+                "element": "Assessment data"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "Information extract"
+              }
+            ]
+          },
+          {
+            "id": "redact",
+            "type": "activity",
+            "label": "Apply redactions",
+            "dataCollected": [
+              {
+                "element": "Redacted information",
+                "notes": "Sensitive data removed"
+              }
+            ]
+          },
+          {
+            "id": "share",
+            "type": "activity",
+            "label": "Share information",
+            "dataCollected": [
+              {
+                "element": "Sharing record"
+              },
+              {
+                "element": "Audit trail"
+              }
+            ]
+          },
+          {
+            "id": "decline",
+            "type": "activity",
+            "label": "Decline request",
+            "dataCollected": [
+              {
+                "element": "Decline reason"
+              },
+              {
+                "element": "Notification sent"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Request processed"
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "identify"
+          },
+          {
+            "from": "identify",
+            "to": "check"
+          },
+          {
+            "from": "check",
+            "to": "decision1"
+          },
+          {
+            "from": "decision1",
+            "to": "extract",
+            "label": "Yes"
+          },
+          {
+            "from": "decision1",
+            "to": "seek",
+            "label": "No"
+          },
+          {
+            "from": "seek",
+            "to": "decision2"
+          },
+          {
+            "from": "decision2",
+            "to": "extract",
+            "label": "Yes"
+          },
+          {
+            "from": "decision2",
+            "to": "decline",
+            "label": "No"
+          },
+          {
+            "from": "extract",
+            "to": "redact"
+          },
+          {
+            "from": "redact",
+            "to": "share"
+          },
+          {
+            "from": "share",
+            "to": "end"
+          },
+          {
+            "from": "decline",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
