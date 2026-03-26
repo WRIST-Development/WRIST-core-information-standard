@@ -1,0 +1,27 @@
+## Person Demographics
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE1 | NHS Number | Unique NHS identifier | string[10] | M | NHS_DD |
+| CISV2.DE2 | Person First Name | Given name(s) including middle | string[35] | M | NHS_DD |
+| CISV2.DE3 | Person Family Name | Surname | string[35] | M | NHS_DD |
+| CISV2.DE4 | Date of Birth | Birth date | date | M | NHS_DD |
+| CISV2.DE5 | Address Line 1 | Primary address line | string[35] | M | NHS_DD |
+| CISV2.DE6 | Postcode | Postal code | string[8] | R | NHS_DD |
+
+## Clinical Information
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE7 | Allergies | Causative agents | coded/text | M | SNOMED CT |
+| CISV2.DE8 | Current Medications | Active medication list | coded/text | R | dm+d |
+| CISV2.DE9 | Problem List | Active problems | coded/text | M | SNOMED CT |
+| CISV2.DE10 | Mental Capacity | Capacity assessment status | text | R | Free text |
+
+## Individual Requirements
+
+| Element ID | Label | Description | Data Type | Required | Code |
+|---|---|---|---|---|---|
+| CISV2.DE11 | Reasonable Adjustments | Required adjustments | coded/text | R | SNOMED CT |
+| CISV2.DE12 | Communication Needs | How person communicates | text | R | Free text |
+| CISV2.DE13 | Mobility Needs | Mobility requirements | coded/text | R | SNOMED CT |
