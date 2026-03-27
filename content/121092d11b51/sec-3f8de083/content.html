@@ -1,0 +1,60 @@
+## Consent and Capacity Decision Support
+
+### Mental Capacity Assessment Table
+
+**Description:** Determines appropriate information sharing permissions based on mental capacity assessment and legal framework.
+
+| Input: Capacity Assessment (CISV2.DE262) | Input: Age | Input: Legal Status (CISV2.DE333) | Output Action |
+|---|---|---|---|
+| Has capacity | ≥18 years | No MHA section | Obtain direct consent (CISV2.DE215) |
+| Has capacity | ≥16 years | No MHA section | Obtain direct consent with parental involvement |
+| Lacks capacity | Any age | No MHA section | Check for LPA/Deputy (CISV2.DE291) |
+| Lacks capacity | <16 years | No MHA section | Obtain parental consent (CISV2.DE239) |
+| Variable capacity | Any age | MHA sectioned | Apply MHA framework for information sharing |
+
+### Risk Assessment and Safety Planning
+
+**Description:** Triggers appropriate safety measures based on risk level and safeguarding indicators.
+
+| Input: Safeguarding Flag (CISV2.DE380) | Input: Risk Level (CISV2.DE1243) | Input: Age | Output Action |
+|---|---|---|---|
+| True | High | <18 years | Initiate child protection procedures (CISV2.DE423) |
+| True | High | ≥18 years | Adult safeguarding referral (CISV2.DE387) |
+| False | High | Any age | Create safety plan (CISV2.DE1510) |
+| False | Medium | Any age | Enhanced monitoring and review |
+| False | Low | Any age | Standard care pathway |
+
+## Clinical Decision Support
+
+### Medication Safety Checks
+
+**Description:** Validates medication prescribing against known allergies and contraindications.
+
+| Input: Prescribed Drug (CISV2.DE1330) | Input: Known Allergy (CISV2.DE1268) | Input: Severity (CISV2.DE1283) | Output Action |
+|---|---|---|---|
+| Drug class match | Any allergen | Severe/Life-threatening | Block prescription, alert prescriber |
+| Drug class match | Any allergen | Moderate | Warning dialogue, require override |
+| Cross-reactivity risk | Related substance | Any severity | Caution alert with guidance |
+| No known interaction | No relevant allergy | N/A | Proceed with standard checks |
+
+### Care Planning Priority Matrix
+
+**Description:** Prioritizes care actions based on person preferences and clinical need.
+
+| Input: Goal Importance (CISV2.DE1442) | Input: Clinical Priority | Input: Person Preference | Output Action |
+|---|---|---|---|
+| High (8-10) | High | Strongly agrees | Immediate implementation (CISV2.DE1445) |
+| High (8-10) | Medium | Agrees | Schedule within 2 weeks |
+| Medium (5-7) | High | Neutral | Clinical discussion required |
+| Low (1-4) | Low | Disagrees | Defer or alternative approach |
+
+### Assessment Trigger Logic
+
+**Description:** Determines when structured assessments should be initiated based on clinical indicators.
+
+| Input: Problem Category (CISV2.DE654) | Input: Impairment Type (CISV2.DE105) | Input: Service Context | Output Action |
+|---|---|---|---|
+| Mental health | Cognitive | Community | Initiate capacity assessment (CISV2.DE262) |
+| Mobility issues | Physical | Discharge planning | Mobility assessment (CISV2.DE155) |
+| Communication needs | Sensory | Any setting | Communication assessment (CISV2.DE58) |
+| Multiple conditions | Long-term condition | Care planning | Comprehensive assessment (CISV2.DE1186) |
