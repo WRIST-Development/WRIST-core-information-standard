@@ -1,0 +1,51 @@
+## Clinical Decision Tables
+
+The Core Information Standard incorporates several key decision support mechanisms to guide safe and effective care delivery.
+
+### Mental Capacity Assessment Decision Logic
+
+**Title:** Mental Capacity Assessment Requirements
+**Description:** Determines when formal mental capacity assessment is required and guides documentation requirements based on decision type and person's presentation.
+
+| Condition | Required Elements | Output Action |
+|---|---|---|
+| Person lacks capacity for specific decision AND no valid LPA/deputy in place | CISV2.DE257 (Mental capacity assessment), CISV2.DE262 (Assessment details), CISV2.DE263 (Document location) | Trigger best interests decision process, notify care team |
+| Valid LPA for health and welfare exists | CISV2.DE285 (LPA details), CISV2.DE293 (LPA name), CISV2.DE294 (Contact details) | Route decisions to attorney, document consultation |
+| Person under Mental Health Act detention | CISV2.DE326 (MHA status), CISV2.DE333 (Section type) | Apply statutory framework, consider capacity for non-treatment decisions |
+| Urgent treatment required AND capacity unclear | CISV2.DE257 (Assessment), CISV2.DE1616 (CPR decision if applicable) | Proceed under best interests, document rationale, assess capacity when feasible |
+
+### Safeguarding Alert Decision Logic
+
+**Title:** Safeguarding Concern Escalation
+**Description:** Guides professionals in identifying and escalating safeguarding concerns based on risk indicators and legal thresholds.
+
+| Condition | Required Elements | Output Action |
+|---|---|---|
+| Child with unexplained injuries OR concerning presentation | CISV2.DE378 (Safeguarding concerns), CISV2.DE380 (Indicator flag), CISV2.DE422 (Child protection plan status) | Immediate safeguarding referral, document concerns, check existing plans |
+| Adult at risk AND unable to protect themselves | CISV2.DE378 (Safeguarding), CISV2.DE257 (Capacity assessment), CISV2.DE1238 (Risks) | Initiate adult safeguarding process, assess capacity for safety decisions |
+| Existing safeguarding plan AND new concerns | CISV2.DE380 (Active indicator), CISV2.DE406 (Previous concerns) | Escalate to safeguarding lead, update risk assessment, convene review |
+| Professional disagreement on threshold | CISV2.DE378 (Concerns), CISV2.DE452 (Professional contacts) | Seek senior consultation, document rationale, consider multi-agency discussion |
+
+### Medication Safety Decision Logic
+
+**Title:** High-Risk Medication Management
+**Description:** Supports safe prescribing and monitoring for medications requiring special precautions.
+
+| Condition | Required Elements | Output Action |
+|---|---|---|
+| New medication AND existing allergies | CISV2.DE1264 (Allergies), CISV2.DE1267 (Causative agent), CISV2.DE1313 (Current medications) | Cross-check allergen database, consider alternatives, document if proceeding |
+| Polypharmacy (≥5 medications) AND age ≥65 | CISV2.DE1313 (Medication list), CISV2.DE10 (Date of birth), CISV2.DE639 (Problem list) | Trigger medication review, assess for interactions, consider deprescribing |
+| Renal/hepatic impairment AND renally/hepatically cleared drugs | CISV2.DE639 (Problem list), CISV2.DE1064 (Investigation results - eGFR/LFTs), CISV2.DE1313 (Medications) | Calculate adjusted doses, increase monitoring frequency, document rationale |
+| High-risk medication (anticoagulant, insulin, etc.) | CISV2.DE1313 (Medication item), CISV2.DE1352 (Dose directions), CISV2.DE1064 (Monitoring results) | Mandate counselling completion, schedule monitoring, provide safety information |
+
+### Care Transition Decision Logic
+
+**Title:** Safe Discharge Readiness Assessment
+**Description:** Ensures all necessary elements are in place for safe transition between care settings.
+
+| Condition | Required Elements | Output Action |
+|---|---|---|
+| Discharge to home AND complex needs | CISV2.DE70 (Individual requirements), CISV2.DE1001 (Services and care), CISV2.DE1432 (Care plan) | Verify support package active, confirm equipment delivered, schedule follow-up |
+| Discharge to care home | CISV2.DE556 (Discharge details), CISV2.DE1313 (Medications), CISV2.DE1398 (Equipment) | Generate transfer summary, reconcile medications, communicate special requirements |
+| Cognitive impairment AND living alone | CISV2.DE126 (Cognition), CISV2.DE708 (Household composition), CISV2.DE1506 (Contingency plans) | Assess capacity for self-care, implement assistive technology, establish check-in protocol |
+| End of life care transition | CISV2.DE1615 (EoL care preferences), CISV2.DE1736 (Preferred place of death), CISV2.DE1713 (Anticipatory medicines) | Confirm anticipatory medications available, verify DNACPR status, align with preferences |
