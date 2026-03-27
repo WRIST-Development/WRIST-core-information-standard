@@ -1,0 +1,35 @@
+## System Requirements
+
+### Functional Requirements
+
+| ID | Title | Description | Linked Processes | Priority |
+|---|---|---|---|---|
+| CISV2.FR.01 | Person Identification and Matching | System must support person identification using NHS number (CISV2.DE15) as primary identifier with ability to match using demographic details when NHS number unavailable | CISV2.A (Initial Registration), CISV2.E (Referral and Transition) | Critical |
+| CISV2.FR.02 | Consent Management | Capture and enforce information sharing consents (CISV2.DE210) with granular control over data access based on purpose and recipient | All processes | Critical |
+| CISV2.FR.03 | Professional Authentication | Authenticate professionals and maintain audit trail of access and modifications with professional details (CISV2.DE82-89 pattern) | All processes | Critical |
+| CISV2.FR.04 | Care Plan Versioning | Maintain version history of care plans (CISV2.DE1432) with ability to track changes, review dates, and responsible professionals | CISV2.B (Care Planning and Review) | High |
+| CISV2.FR.05 | Alert Generation and Display | Generate and prominently display clinical alerts (CISV2.DE197) based on allergies, safeguarding concerns, and risk assessments | CISV2.C (Clinical Encounter), CISV2.F (Safeguarding Response) | Critical |
+| CISV2.FR.06 | Medication Reconciliation | Support medication reconciliation across care transitions with ability to compare medication lists and document changes (CISV2.DE1373) | CISV2.D (Medication Management), CISV2.E (Referral and Transition) | High |
+| CISV2.FR.07 | Multi-Agency Access Control | Enable controlled access for professionals from different organizations based on role and legitimate relationship | CISV2.B (Care Planning), CISV2.F (Safeguarding Response) | High |
+| CISV2.FR.08 | Structured Assessment Recording | Capture structured assessments (CISV2.DE1180) with validated scoring mechanisms and decision support integration | CISV2.A (Initial Assessment), CISV2.B (Care Planning) | Medium |
+| CISV2.FR.09 | Legal Status Tracking | Track and alert on time-bound legal statuses (CISV2.DE326 MHA status, CISV2.DE312 DoLS) with expiry notifications | CISV2.G (Legal Status Management) | High |
+| CISV2.FR.10 | Document Management | Store and retrieve clinical documents (CISV2.DE1787) with appropriate metadata, versioning, and access controls | All processes | Medium |
+| CISV2.FR.11 | Workflow Orchestration | Support clinical workflows with task assignment, escalation paths, and deadline monitoring | CISV2.B (Care Planning), CISV2.E (Referral and Transition) | Medium |
+| CISV2.FR.12 | Emergency Access Override | Provide break-glass functionality for emergency access with full audit trail and post-access review | CISV2.C (Clinical Encounter) | High |
+
+### Non-Functional Requirements
+
+| ID | Title | Description | Classification | Priority |
+|---|---|---|---|---|
+| CISV2.NFR.01 | Response Time - Critical Data | Critical clinical data (allergies, medications, alerts) must be retrievable within 2 seconds 99% of the time | Performance | Critical |
+| CISV2.NFR.02 | Availability | System must maintain 99.9% availability during core hours (08:00-20:00) with degraded service options for critical functions | Availability | Critical |
+| CISV2.NFR.03 | Data Encryption | All data must be encrypted at rest (AES-256) and in transit (TLS 1.2+) with key management compliant with NHS standards | Security | Critical |
+| CISV2.NFR.04 | Audit Logging | Comprehensive audit logging of all access and modifications with tamper-proof storage for 20 years | Security/Compliance | Critical |
+| CISV2.NFR.05 | Concurrent User Support | Support minimum 1000 concurrent users per deployment with linear scalability | Scalability | High |
+| CISV2.NFR.06 | Mobile Responsiveness | Full functionality available on mobile devices with offline capability for critical functions | Usability | High |
+| CISV2.NFR.07 | Accessibility Compliance | Meet WCAG 2.1 AA standards with screen reader compatibility and keyboard navigation | Accessibility | Critical |
+| CISV2.NFR.08 | Disaster Recovery | Recovery Time Objective (RTO) of 4 hours and Recovery Point Objective (RPO) of 1 hour | Reliability | High |
+| CISV2.NFR.09 | Interoperability Standards | Support HL7 FHIR R4 UK Core for all clinical data exchange with backwards compatibility for v3 messaging | Interoperability | High |
+| CISV2.NFR.10 | Clinical Terminology Support | Native support for SNOMED CT, dm+d, LOINC with real-time terminology service integration | Interoperability | Medium |
+| CISV2.NFR.11 | Performance Degradation | System must maintain core functionality with degraded performance when 50% over expected load | Performance | Medium |
+| CISV2.NFR.12 | Data Retention Compliance | Configurable retention policies compliant with NHS Records Management Code of Practice | Compliance | High |
