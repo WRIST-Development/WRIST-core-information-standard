@@ -1,0 +1,916 @@
+{
+  "summary_markdown": "The Core Information Standard supports five core business processes that enable person-centred care coordination across health and social care settings. These processes ensure comprehensive information capture, validation, sharing, and utilisation while maintaining clinical governance and individual consent frameworks.",
+  "activities": [
+    {
+      "id": "person-registration",
+      "processId": "CISV2.A",
+      "title": "Person Registration and Demographics Capture",
+      "personas": "Clinical Data Manager, GP Practice Manager, Health Informatics Specialist",
+      "objectives": "Establish complete person identity and demographic record with verified NHS number and contact details",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Person presents for care",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify-identity",
+            "type": "activity",
+            "label": "Verify person identity and NHS number",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "identifier",
+                "source": "patient documentation"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE16",
+                "type": "status",
+                "notes": "NHS number verification status"
+              }
+            ]
+          },
+          {
+            "id": "capture-demographics",
+            "type": "activity",
+            "label": "Capture core demographic information",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE4",
+                "type": "string",
+                "notes": "First name"
+              },
+              {
+                "element": "CISV2.DE5",
+                "type": "string",
+                "notes": "Family name"
+              },
+              {
+                "element": "CISV2.DE10",
+                "type": "date",
+                "notes": "Date of birth"
+              },
+              {
+                "element": "CISV2.DE11",
+                "type": "string",
+                "notes": "Gender"
+              }
+            ]
+          },
+          {
+            "id": "capture-contact",
+            "type": "activity",
+            "label": "Capture contact details and address",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE19",
+                "type": "string",
+                "notes": "Primary address"
+              },
+              {
+                "element": "CISV2.DE24",
+                "type": "string",
+                "notes": "Postcode"
+              },
+              {
+                "element": "CISV2.DE29",
+                "type": "string",
+                "notes": "Phone number"
+              }
+            ]
+          },
+          {
+            "id": "validate-complete",
+            "type": "decision",
+            "label": "Demographics complete and valid?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE15",
+                "type": "identifier",
+                "source": "system validation"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "update-gp-details",
+            "type": "activity",
+            "label": "Update GP practice details",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE51",
+                "type": "identifier",
+                "notes": "GP practice code"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Person registered",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify-identity",
+            "label": ""
+          },
+          {
+            "from": "verify-identity",
+            "to": "capture-demographics",
+            "label": ""
+          },
+          {
+            "from": "capture-demographics",
+            "to": "capture-contact",
+            "label": ""
+          },
+          {
+            "from": "capture-contact",
+            "to": "validate-complete",
+            "label": ""
+          },
+          {
+            "from": "validate-complete",
+            "to": "capture-demographics",
+            "label": "Incomplete"
+          },
+          {
+            "from": "validate-complete",
+            "to": "update-gp-details",
+            "label": "Valid"
+          },
+          {
+            "from": "update-gp-details",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "consent-management",
+      "processId": "CISV2.B",
+      "title": "Consent and Information Sharing Management",
+      "personas": "Clinical Data Manager, Social Care Coordinator, Health Informatics Specialist",
+      "objectives": "Establish and maintain valid consent frameworks for information sharing across care settings",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Information sharing required",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "assess-capacity",
+            "type": "activity",
+            "label": "Assess mental capacity",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE262",
+                "type": "text",
+                "notes": "Capacity assessment outcome"
+              }
+            ]
+          },
+          {
+            "id": "capacity-decision",
+            "type": "decision",
+            "label": "Has capacity to consent?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE262",
+                "type": "text",
+                "source": "assessment"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-lpa",
+            "type": "activity",
+            "label": "Check for LPA/deputy arrangements",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE291",
+                "type": "coded",
+                "source": "legal documents"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE293",
+                "type": "text",
+                "notes": "LPA contact details"
+              }
+            ]
+          },
+          {
+            "id": "obtain-consent",
+            "type": "activity",
+            "label": "Obtain consent for information sharing",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE215",
+                "type": "text",
+                "notes": "Consent details"
+              },
+              {
+                "element": "CISV2.DE212",
+                "type": "datetime",
+                "notes": "Consent date"
+              }
+            ]
+          },
+          {
+            "id": "consent-given",
+            "type": "decision",
+            "label": "Consent provided?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE215",
+                "type": "text",
+                "source": "consent record"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "record-refusal",
+            "type": "activity",
+            "label": "Record reason for consent refusal",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE216",
+                "type": "text",
+                "notes": "Refusal reason"
+              }
+            ]
+          },
+          {
+            "id": "enable-sharing",
+            "type": "activity",
+            "label": "Enable information sharing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE215",
+                "type": "text",
+                "source": "consent framework"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Consent process complete",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "assess-capacity",
+            "label": ""
+          },
+          {
+            "from": "assess-capacity",
+            "to": "capacity-decision",
+            "label": ""
+          },
+          {
+            "from": "capacity-decision",
+            "to": "obtain-consent",
+            "label": "Has capacity"
+          },
+          {
+            "from": "capacity-decision",
+            "to": "check-lpa",
+            "label": "No capacity"
+          },
+          {
+            "from": "check-lpa",
+            "to": "obtain-consent",
+            "label": ""
+          },
+          {
+            "from": "obtain-consent",
+            "to": "consent-given",
+            "label": ""
+          },
+          {
+            "from": "consent-given",
+            "to": "record-refusal",
+            "label": "Refused"
+          },
+          {
+            "from": "consent-given",
+            "to": "enable-sharing",
+            "label": "Consented"
+          },
+          {
+            "from": "record-refusal",
+            "to": "end",
+            "label": ""
+          },
+          {
+            "from": "enable-sharing",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "clinical-data-capture",
+      "processId": "CISV2.C",
+      "title": "Clinical Data Capture and Validation",
+      "personas": "Community Nurse, Clinical Data Manager, Hospital Systems Analyst",
+      "objectives": "Capture comprehensive clinical information including problems, medications, and care plans with appropriate validation",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Clinical encounter begins",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "capture-problems",
+            "type": "activity",
+            "label": "Document problems and conditions",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE654",
+                "type": "coded",
+                "notes": "SNOMED CT problem codes"
+              },
+              {
+                "element": "CISV2.DE656",
+                "type": "datetime",
+                "notes": "Problem onset date"
+              }
+            ]
+          },
+          {
+            "id": "review-medications",
+            "type": "activity",
+            "label": "Review and update medication list",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1330",
+                "type": "coded",
+                "source": "existing records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1375",
+                "type": "coded",
+                "notes": "Medication changes"
+              },
+              {
+                "element": "CISV2.DE1376",
+                "type": "datetime",
+                "notes": "Change date"
+              }
+            ]
+          },
+          {
+            "id": "check-allergies",
+            "type": "activity",
+            "label": "Verify allergy and adverse reaction status",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1268",
+                "type": "coded",
+                "source": "allergy records"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1279",
+                "type": "coded",
+                "notes": "Reaction details"
+              }
+            ]
+          },
+          {
+            "id": "record-observations",
+            "type": "activity",
+            "label": "Record clinical observations",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1146",
+                "type": "coded",
+                "notes": "Vital signs"
+              },
+              {
+                "element": "CISV2.DE1147",
+                "type": "quantity",
+                "notes": "Measurement values"
+              }
+            ]
+          },
+          {
+            "id": "validate-data",
+            "type": "decision",
+            "label": "Clinical data complete and valid?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "coded",
+                "source": "validation rules"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "update-care-plan",
+            "type": "activity",
+            "label": "Update care and support plan",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1437",
+                "type": "coded",
+                "source": "current needs"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1445",
+                "type": "coded",
+                "notes": "Planned actions"
+              },
+              {
+                "element": "CISV2.DE1459",
+                "type": "datetime",
+                "notes": "Review date"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Clinical record updated",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "capture-problems",
+            "label": ""
+          },
+          {
+            "from": "capture-problems",
+            "to": "review-medications",
+            "label": ""
+          },
+          {
+            "from": "review-medications",
+            "to": "check-allergies",
+            "label": ""
+          },
+          {
+            "from": "check-allergies",
+            "to": "record-observations",
+            "label": ""
+          },
+          {
+            "from": "record-observations",
+            "to": "validate-data",
+            "label": ""
+          },
+          {
+            "from": "validate-data",
+            "to": "capture-problems",
+            "label": "Incomplete"
+          },
+          {
+            "from": "validate-data",
+            "to": "update-care-plan",
+            "label": "Valid"
+          },
+          {
+            "from": "update-care-plan",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "care-coordination",
+      "processId": "CISV2.D",
+      "title": "Multi-disciplinary Care Coordination",
+      "personas": "Social Care Coordinator, Community Nurse, GP Practice Manager, Health Informatics Specialist",
+      "objectives": "Coordinate care across multiple services with shared care planning and professional communication",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Care coordination required",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "identify-team",
+            "type": "activity",
+            "label": "Identify care team members",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE454",
+                "type": "text",
+                "source": "professional contacts"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE456",
+                "type": "boolean",
+                "notes": "Key worker status"
+              }
+            ]
+          },
+          {
+            "id": "assess-needs",
+            "type": "activity",
+            "label": "Conduct comprehensive needs assessment",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1437",
+                "type": "coded",
+                "source": "care plan"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1186",
+                "type": "text",
+                "notes": "Assessment type"
+              },
+              {
+                "element": "CISV2.DE1187",
+                "type": "text",
+                "notes": "Assessment summary"
+              }
+            ]
+          },
+          {
+            "id": "develop-plan",
+            "type": "activity",
+            "label": "Develop integrated care plan",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1434",
+                "type": "coded",
+                "source": "strengths assessment"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "coded",
+                "notes": "Goals and hopes"
+              },
+              {
+                "element": "CISV2.DE1445",
+                "type": "coded",
+                "notes": "Actions and activities"
+              }
+            ]
+          },
+          {
+            "id": "assign-actions",
+            "type": "activity",
+            "label": "Assign actions to team members",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1445",
+                "type": "coded",
+                "source": "care plan actions"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1448",
+                "type": "text",
+                "notes": "Responsible person"
+              },
+              {
+                "element": "CISV2.DE1452",
+                "type": "datetime",
+                "notes": "Action timeline"
+              }
+            ]
+          },
+          {
+            "id": "setup-services",
+            "type": "activity",
+            "label": "Arrange required services",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1003",
+                "type": "text",
+                "notes": "Service package name"
+              },
+              {
+                "element": "CISV2.DE1005",
+                "type": "datetime",
+                "notes": "Service start date"
+              }
+            ]
+          },
+          {
+            "id": "schedule-review",
+            "type": "activity",
+            "label": "Schedule care plan review",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1481",
+                "type": "datetime",
+                "notes": "Review date"
+              },
+              {
+                "element": "CISV2.DE1483",
+                "type": "text",
+                "notes": "Review responsibility"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Care coordination established",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "identify-team",
+            "label": ""
+          },
+          {
+            "from": "identify-team",
+            "to": "assess-needs",
+            "label": ""
+          },
+          {
+            "from": "assess-needs",
+            "to": "develop-plan",
+            "label": ""
+          },
+          {
+            "from": "develop-plan",
+            "to": "assign-actions",
+            "label": ""
+          },
+          {
+            "from": "assign-actions",
+            "to": "setup-services",
+            "label": ""
+          },
+          {
+            "from": "setup-services",
+            "to": "schedule-review",
+            "label": ""
+          },
+          {
+            "from": "schedule-review",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "information-sharing",
+      "processId": "CISV2.E",
+      "title": "Secure Information Sharing Between Services",
+      "personas": "Health Informatics Specialist, Clinical Data Manager, GP Practice Manager, Hospital Systems Analyst",
+      "objectives": "Enable secure sharing of person-centred information across health and social care boundaries with appropriate access controls",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "label": "Information sharing request received",
+            "dataSeen": [],
+            "dataCollected": []
+          },
+          {
+            "id": "verify-consent",
+            "type": "activity",
+            "label": "Verify consent for sharing",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE215",
+                "type": "text",
+                "source": "consent record"
+              },
+              {
+                "element": "CISV2.DE212",
+                "type": "datetime",
+                "source": "consent date"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "consent-valid",
+            "type": "decision",
+            "label": "Valid consent exists?",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE215",
+                "type": "text",
+                "source": "consent status"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "check-alerts",
+            "type": "activity",
+            "label": "Check for critical alerts",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE199",
+                "type": "string",
+                "source": "alert system"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "compile-summary",
+            "type": "activity",
+            "label": "Compile clinical summary",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE654",
+                "type": "coded",
+                "source": "problem list"
+              },
+              {
+                "element": "CISV2.DE1330",
+                "type": "coded",
+                "source": "medications"
+              }
+            ],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1798",
+                "type": "text",
+                "notes": "Summary document location"
+              }
+            ]
+          },
+          {
+            "id": "include-care-plan",
+            "type": "activity",
+            "label": "Include relevant care plan elements",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1440",
+                "type": "coded",
+                "source": "care goals"
+              },
+              {
+                "element": "CISV2.DE1445",
+                "type": "coded",
+                "source": "planned actions"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "apply-access-controls",
+            "type": "activity",
+            "label": "Apply information governance controls",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1799",
+                "type": "coded",
+                "source": "confidentiality settings"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "transmit-securely",
+            "type": "activity",
+            "label": "Transmit information securely",
+            "dataSeen": [
+              {
+                "element": "CISV2.DE1798",
+                "type": "text",
+                "source": "compiled summary"
+              }
+            ],
+            "dataCollected": []
+          },
+          {
+            "id": "log-sharing",
+            "type": "activity",
+            "label": "Log sharing activity for audit",
+            "dataSeen": [],
+            "dataCollected": [
+              {
+                "element": "CISV2.DE1811",
+                "type": "datetime",
+                "notes": "Sharing timestamp"
+              }
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "label": "Information shared successfully",
+            "dataSeen": [],
+            "dataCollected": []
+          }
+        ],
+        "edges": [
+          {
+            "from": "start",
+            "to": "verify-consent",
+            "label": ""
+          },
+          {
+            "from": "verify-consent",
+            "to": "consent-valid",
+            "label": ""
+          },
+          {
+            "from": "consent-valid",
+            "to": "end",
+            "label": "No consent"
+          },
+          {
+            "from": "consent-valid",
+            "to": "check-alerts",
+            "label": "Consent valid"
+          },
+          {
+            "from": "check-alerts",
+            "to": "compile-summary",
+            "label": ""
+          },
+          {
+            "from": "compile-summary",
+            "to": "include-care-plan",
+            "label": ""
+          },
+          {
+            "from": "include-care-plan",
+            "to": "apply-access-controls",
+            "label": ""
+          },
+          {
+            "from": "apply-access-controls",
+            "to": "transmit-securely",
+            "label": ""
+          },
+          {
+            "from": "transmit-securely",
+            "to": "log-sharing",
+            "label": ""
+          },
+          {
+            "from": "log-sharing",
+            "to": "end",
+            "label": ""
+          }
+        ]
+      }
+    }
+  ]
+}
