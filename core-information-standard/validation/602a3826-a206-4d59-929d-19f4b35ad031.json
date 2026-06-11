@@ -1,0 +1,77 @@
+{
+  "type": "component",
+  "done": true,
+  "success": false,
+  "message": {
+    "model_level_component_reference_validation": {
+      "is_valid": false,
+      "out_of_date_components": [
+        {
+          "path": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care",
+          "repo_path": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care",
+          "latest_version": "1-build.11.1",
+          "current_version": "1-build.12.0"
+        },
+        {
+          "path": "PRSB-Standards/WRIST-core-information-standard/core-information-standard",
+          "repo_path": "PRSB-Standards/WRIST-core-information-standard/core-information-standard",
+          "latest_version": "2.0.1",
+          "current_version": "2.0.0"
+        },
+        {
+          "path": "PRSB-Standards/WRIST-core-information-standard/core-information-standard-v2.0",
+          "repo_path": "PRSB-Standards/WRIST-core-information-standard/core-information-standard-v2.0",
+          "latest_version": "2.0.5",
+          "current_version": "2.0.0"
+        },
+        {
+          "path": "PRSB-Standards/WRIST-ips-datatypes/ips-datatypes",
+          "repo_path": "PRSB-Standards/WRIST-ips-datatypes/ips-datatypes",
+          "latest_version": "1-build.0.3",
+          "current_version": "1-build.0.1"
+        }
+      ],
+      "errors": []
+    },
+    "item_level_component_derivation_reference_validation": {
+      "is_valid": false,
+      "out_of_date_components": [
+        {
+          "path": "List Concept/derivedFrom",
+          "repo_path": "PRSB-Standards/WRIST-ips-datatypes/ips-datatypes/List Concept",
+          "latest_version": "1-build.0.3",
+          "current_version": "1-build.0.1"
+        },
+        {
+          "path": "After death/derivedFrom",
+          "repo_path": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/After death",
+          "latest_version": "1-build.11.1",
+          "current_version": "1-build.12.0"
+        },
+        {
+          "path": "Person demographics/derivedFrom",
+          "repo_path": "PRSB-Standards/WRIST-palliative_and_end_of_life_care/palliative_and_end_of_life_care/Person demographics",
+          "latest_version": "1-build.11.1",
+          "current_version": "1-build.12.0"
+        }
+      ],
+      "errors": []
+    },
+    "item_level_component_reference_validation": {
+      "is_valid": true,
+      "out_of_date_components": [],
+      "errors": []
+    },
+    "item_level_component_reference_vs_model_level_component_sets_versions": {
+      "is_valid": true,
+      "out_of_date_components": [],
+      "errors": []
+    },
+    "item_level_derivation_component_reference_vs_model_level_component_sets_versions": {
+      "is_valid": true,
+      "out_of_date_components": [],
+      "errors": []
+    }
+  },
+  "timestamp": 1781181071.418061
+}
