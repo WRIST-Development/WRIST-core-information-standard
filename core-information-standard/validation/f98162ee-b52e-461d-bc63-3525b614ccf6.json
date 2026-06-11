@@ -1,0 +1,4411 @@
+{
+  "type": "url",
+  "done": true,
+  "success": false,
+  "message": {
+    "summary": {
+      "total": 115,
+      "ok": 32,
+      "broken": 7,
+      "warnings": 76
+    },
+    "results": [
+      {
+        "url": "https://example.com/guide",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Person demographics",
+            "field": "Implementation guidance",
+            "linkText": "full guide"
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/hl7fhirukcoreprofiler4-dstu/ukcore-medicationprescribingagency",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Medication prescribed by",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80047",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Reaction details cluster/Certainty/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80724",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Reaction details cluster/Severity/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Alerts/Alerts record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Deprivation of Liberty Safeguards or equivalent/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Professional contacts/Professional contacts record entry/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Participation in research/Participation in research record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Referral details/Referral details record entry/Referrer details/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Referral details/Referral details record entry/Referral to/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Seen by/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Responsible professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Professionals present/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Admission details/Admission details record entry/Responsible care professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Discharge details/Discharge details record entry/Discharging consultant/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Future appointments/Future appointments record entry/Professional to see the person/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Examination findings/Examination findings record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Needs, concerns or problems/Goals and hopes/Actions and activities/Who/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Agreed with person or legitimate representative/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Responsibility for review/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Who should be contacted/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Agreed with person or legitimate representative/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Responsibility for review/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Responsibility for review/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Performing professional/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Person completing record/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/ukcore/valueset-ukcore-reasonimmunizationnotadministered",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Vaccinations/Vaccinations record entry/Outcome status/Vaccination situation (not given reason)",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.hl7.org/fhir/v3/ConfidentialityClassification/vs.html",
+        "category": "broken",
+        "status": "404 Not Found",
+        "detail": "The page does not exist.",
+        "locations": [
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Confidentiality",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "http://www.datadictionary.nhs.uk/data_dictionary/attributes/a/acc/accommodation_status_code_de.asp?shownav=1?query=%22accommodation%22&rank=66.66667&shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Social context/Accommodation status/Accommodation status/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "http://www.datadictionary.nhs.uk/data_dictionary/attributes/s/smo/source_of_admission_de.asp?shownav=1?query=%22source+of+admission%22&rank=100&shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Source of admission/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/attributes/address.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Discharge details/Discharge details record entry/Discharge destination/Discharge address",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/attributes/communication_contact_string.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Other contact information",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/attributes/organisation_code.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Legal information/Mental capacity assessment/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/attributes/organisation_code.html?hl=organisation%2Ccode",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Safeguarding/Safeguarding concerns/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/attributes/organisation_code.html?hl=organisation%2Cdata%2Cservice",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Examination findings/Examination findings record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/activity_location_type_code.html?hl=activity%2Clocation%2Ctype%2Ccode",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Location type",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Specialty/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Discharge details/Discharge details record entry/Discharging specialty/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Future appointments/Future appointments record entry/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Alerts/Alerts record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Deprivation of Liberty Safeguards or equivalent/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Professional contacts/Professional contacts record entry/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Participation in research/Participation in research record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Referral details/Referral details record entry/Referrer details/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Examination findings/Examination findings record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Person completing record/Specialty",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/attended_or_did_not_attend_code.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Outcome of contact",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/clinical_trial_identifier.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Participation in research/Participation in research record entry/Identification code",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/community_health_index_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set pop-up text",
+            "linkText": "Community health index number"
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/ethnic_category.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Ethnicity",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "GP practice record entry/GP practice identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/health_and_care_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set pop-up text",
+            "linkText": "Health and care number (NI only)"
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/mental_health_act_legal_status_classification_code.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Legal information/Mental health act or equivalent status/Mental health act or equivalent status/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Discharge details/Discharge details record entry/Legal status on discharge",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/mental_health_act_legal_status_classification_code__on_admission_.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Legal status on admission",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/nhs_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/NHS number",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/organisation_code__code_of_provider_.html?hl=organisation%2Ccode%2Ccode%2Cprovider",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Admitted to/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/overseas_visitor_charging_category.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Overseas visitor status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/patient_usual_address.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 1",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's address/Address line 2",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's address/Address line 3",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's address/Address line 4",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's address/Address line 5",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/person_family_name.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person family name",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person preferred name",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person name/Person full name",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Agreed with person or legitimate representative/Person full name",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Agreed with person or legitimate representative/Person full name",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person first name",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/person_name_suffix.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person name suffix",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/person_stated_gender_code.html?hl=person%2Cstated%2Cgender%2Ccode",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Gender",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Postcode",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Alerts/Alerts record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Deprivation of Liberty Safeguards or equivalent/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Participation in research/Participation in research record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Examination findings/Examination findings record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Performing professional/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Person completing record/Professional identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Person's telephone number details/Person's telephone number",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Alerts/Alerts record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Lasting power of attorney for health and welfare or court appointed deputy (or equivalent)/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Deprivation of Liberty Safeguards or equivalent/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Participation in research/Participation in research record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Examination findings/Examination findings record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Performing professional/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Person completing record/Contact details",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://datadictionary.nhs.uk/nhs_business_definitions/carer.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Social context/Social circumstances/Social circumstances",
+            "field": "Description",
+            "linkText": "carer"
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_association_type.html?hl=address%2Cassociation",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address type",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_line_1.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 1",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_line_2.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 2",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_line_3.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 3",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_line_4.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 4",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/address_line_5.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address line 5",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/communication_contact_method.html?hl=communication%2Ccontact%2Cmethod",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Preferred contact method",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/communication_contact_string.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Other contact information",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/attributes/organisation_code.html?hl=organisation%2Cdata%2Cservice",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Care and support plan/Care funding source/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/a/add/address_association_type_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Address type",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/card/care_professional_type_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Individual accompanying person/Role",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/com/communication_contact_method_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Preferred contact method",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/cons/consultation_medium_used_de.asp?shownav=1?query=%22consultation%22&rank=30&shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Consultation method",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/cou/country_code_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Place of birth",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/d/disc/discharge_destination_de.asp?shownav=1?query=%22discharge+destination%22&rank=100&shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Discharge details/Discharge details record entry/Discharge destination/Discharge destination",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/d/disc/discharge_method_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Discharge details/Discharge details record entry/Discharge method/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/m/main_specialty_code_de.asp?shownav=1?query=%22MAIN+SPECIALTY+CODE%22&rank=100&shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Performing professional/Speciality",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/n/nhs/nhs_number_status_indicator_code_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/NHS number status indicator",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Legal information/Consent relating to child/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Performing professional/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Local authority/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Local authority/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Local authority/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Professional contacts/Professional contacts record entry/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Referral details/Referral details record entry/Referral to/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contacts with professionals/Contacts with professionals record entry/Location of contact/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Future appointments/Future appointments record entry/Location of future appointment/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Local authority/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Performing professional/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Location",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Reaction details cluster/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/attributes/p/prio/priority_type_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Referral details/Referral details record entry/Clinical urgency of referral/Urgency",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/a/ad/admission_method_code_(hospital_provider_spell)_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Admission details/Admission details record entry/Admission method/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Title",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/nhs_business_definitions/o/organisation_data_service_de.asp?shownav=1",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Referral details/Referral details record entry/Referrer details/Organisation/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Discharge details/Discharge details record entry/Discharge location",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_dictionary/nhs_business_definitions/o/organisation_data_service_de.asp?shownav=1#:~:text=The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital.&text=Health%20and%20Social%20Care%20Organisation,associated%20data%20and%20supporting%20products",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Location/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/community_health_index_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/contact_email_address__patient_or_lead_contact_.html?hl=contact%2Cemail%2Caddress",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Person's email address details/Person's email address",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/ethnic_category.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Ethnicity",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/gender_identity_code.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Gender identity",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/health_and_care_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Other identifier",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/nhs_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/NHS number",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/nhs_number_status_indicator_code.html?hl=nhs%2Cnumber",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/NHS number status indicator",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_family_name.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person family name",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_gender_code_current.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Administrative gender",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_marital_status.html?hl=marital%2Cstatus",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Marital status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_name_suffix.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Person name suffix",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Sex",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html?hl=person%2Cphenotypic%2Csex",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Sex at birth (observed)",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/person_title.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person name/Title",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's address/Postcode",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/data_elements/uk_telephone_number.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Person's telephone number details/Person's telephone number",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/supporting_information/community_treatment_order.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Legal information/Mental health act or equivalent status/Mental health act or equivalent status/Supporting information",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html",
+        "category": "warning",
+        "status": "403 Forbidden",
+        "detail": "The site refused the automated check \u2014 open the link manually to confirm.",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Impairment/Impairment record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Cognition/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Mobility/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Individual requirements/Other individual requirements/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Alerts/Alerts record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent for information sharing/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Consent relating to child/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental capacity assessment/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Mental health act or equivalent status/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Safeguarding concerns/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Looked after child/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Child protection plan/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Safeguarding/Unborn child protection plan/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Participation in research/Participation in research record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Problem list/Problem list record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Procedures and therapies/Procedure record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household composition/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Occupational history/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Educational history/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Lifestyle choices/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Alcohol intake/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Drug/substance use/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Social circumstances/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Access/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Dependants/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Accommodation status/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Household environment/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Services and care/Services and care record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Family history/Family history record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigation results/Investigation results record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Investigations requested/Investigations requested record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Pregnancy status/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Assessments/Assessments record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Formulation/Formulation record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Risks/Risks/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Plan and requested actions/Plan and requested actions record entry/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Advance statement/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Additional support plans/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Cardio-pulmonary resuscitation (CPR) decision/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Estimated prognosis/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Awareness of prognosis/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory actions/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Anticipatory medicines/equipment/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of death/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "End of life care/Preferred place of care/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Person completing record/Organisation",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/stu3/codesystem-contact-point-use.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Person's telephone number details/Person's telephone number type",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's contact details/Person's email address details/Person's email address type",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/stu3/valueset-additional-instruction-codes.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Additional instructions",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/stu3/valueset-observation-interpretation.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Examination findings/Examination findings record entry/Observations/Observations record entry/Interpretation",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://dicom.innolitics.com/ciods",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Additional information required for images./Image procedure",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Additional information required for images./Image procedure",
+            "field": "Value set text",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://hl7.org/fhir/STU3/valueset-contact-point-use.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Person's contact details/Person's telephone number details/Person's telephone number type",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Person's contact details/Person's email address details/Person's email address type",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/national-data-catalogue/data-dictionary/search-the-data-dictionary/ethnic-group/",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Ethnicity",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/national-data-catalogue/data-dictionary/search-the-data-dictionary/marital-status/",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Marital status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Structured dose direction cluster/Structured dose amount",
+            "field": "Description",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Structured dose direction cluster/Structured dose timing",
+            "field": "Description",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Structured dose direction cluster/Dose direction duration",
+            "field": "Description",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Problem list/Problem list record entry/Problem/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Needs, concerns or problems/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127941000000100&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Vaccinations/Vaccinations record entry/Body site/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=123037004&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Procedures and therapies/Procedure record entry/Anatomical site/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Procedures and therapies/Procedure record entry/Procedure/Coded value",
+            "field": "Value set pop-up text",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Needs, concerns or problems/Goals and hopes/Actions and activities/What/Coded value",
+            "field": "Value set pop-up text",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/What should happen/Coded value",
+            "field": "Value set pop-up text",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=182353008&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Procedures and therapies/Procedure record entry/Laterality/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=404684003&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Procedures and therapies/Procedure record entry/Complications related to procedure/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=71388002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Procedures and therapies/Procedure record entry/Procedure/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Care and support plan/Needs, concerns or problems/Goals and hopes/Actions and activities/What/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Contingency/safety plans/What should happen/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000051000001100&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Vaccinations/Vaccinations record entry/Route/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000531000000100&edition=uk-edition&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Religion",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000561000001109&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Legal information/Advance decision to refuse treatment (ADRT)/Advance decision to refuse treatment/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000891000000102&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Social context/Smoking status/Smoking status/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Social context/Smoking status/Date stopped smoking/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999001571000000109&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Social context/Occupational history/Occupational history/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999002381000000108&edition=uk-edition&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Safeguarding/Safeguarding concerns/Safeguarding concerns/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://termbrowser.nhs.uk/?perspective=full&conceptId1=999002761000000100&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "After death/Actual place of death/Type of place",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://terminology.hl7.org/4.0.0/ValueSet-v2-0136.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Organ and tissue donation",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Document name",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Documents (including correspondence, audio and images)/Documents/Document name",
+            "field": "Value set text",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.wales.nhs.uk/#!WordDocuments/ethnicgroup.htm",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Ethnicity",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.datadictionary.wales.nhs.uk/#!WordDocuments/maritalstatus.htm",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Marital status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.ehealthireland.ie/technology-and-transformation-functions/chief-data-and-analytics-office-cdao/standards-and-terminologies/hse-data-dictionary/",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Person demographics/Ethnicity",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Person demographics/Marital status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.gov.uk/guidance/equality-act-2010-guidance",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Individual requirements/Reasonable adjustment/Reasonable adjustment record entry/Reasonable adjustment flag",
+            "field": "Description",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.hl7.org/fhir/STU3/valueset-allergy-intolerance-type.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Allergies and adverse reactions/Allergies and adverse reactions record entry/Type of reaction",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.hl7.org/fhir/valueset-immunization-origin.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Vaccinations/Vaccinations record entry/Reported/Report origin",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Vaccinations/Vaccinations record entry/Reported/Report origin",
+            "field": "Value set text",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.hl7.org/fhir/valueset-medication-statement-status.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Course details cluster/Course status",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication item cluster/Medication change summary cluster/Status",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Medications and medical devices/Medication item entry/Medication discontinued entry/Status",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      },
+      {
+        "url": "https://www.hl7.org/fhir/valueset-relatedperson-relationshiptype.html",
+        "category": "ok",
+        "status": "200 OK",
+        "detail": "",
+        "locations": [
+          {
+            "path": "Personal contacts/Personal contacts record entry/Relationship",
+            "field": "Value set expression",
+            "linkText": ""
+          },
+          {
+            "path": "Admission details/Admission details record entry/Individual accompanying person/Relationship/Coded value",
+            "field": "Value set expression",
+            "linkText": ""
+          }
+        ]
+      }
+    ]
+  },
+  "timestamp": 1781180997.9844177
+}
