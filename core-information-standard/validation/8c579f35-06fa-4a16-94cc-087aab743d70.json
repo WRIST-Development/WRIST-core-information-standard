@@ -1,0 +1,7 @@
+{
+  "type": "schema",
+  "done": true,
+  "success": false,
+  "message": "\u274c Error at 'List Concept': '' is not one of ['Record', 'Event.Record']\n\u274c Error at 'List Concept': '' is not one of ['1', '0', '*']\n\u274c Error at 'List Concept': '' is not one of ['1', '0', '*']\n\u274c Error at 'List Concept': '' is not one of ['M', 'R', 'O']\n\u274c Error at 'List Concept': [{'expression': '', 'popUpText': '', 'prefix': 'PPPP', 'text': '', 'use': 'EXAM'}] is not of type 'string'\n\u274c Error at 'After death': '' is not one of ['Record', 'Event.Record']\n\u274c Error at 'After death': [] is not of type 'string'\n\u274c Error at 'Person demographics': [] is not of type 'string'",
+  "timestamp": 1781181119.642234
+}
